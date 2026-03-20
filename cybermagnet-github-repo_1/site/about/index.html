@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About CyberMagnet — Dallas Digital Marketing Agency | Our Story, Mission & Team</title>
+<meta name="description" content="CyberMagnet is a Dallas-based digital marketing and web design agency built to help local businesses compete online with premium strategy, modern design, and AI-powered growth systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Playfair+Display:ital,wght@1,700;1,800&display=swap" rel="stylesheet">
+<style>
+
+/* ============================================================
+   CYBERMAGNET — ABOUT PAGE
+   Editorial documentary aesthetic
+   Syne + DM Sans + Playfair pull-quotes
+   Matches: Final Dark homepage palette
+   ============================================================ */
+
+:root {
+  --black:      #050810;
+  --deep-navy:  #0a1628;
+  --navy:       #0a2540;
+  --mid-blue:   #1b3b6f;
+  --electric:   #007bff;
+  --el-glow:    rgba(0,123,255,0.25);
+  --el-light:   rgba(0,123,255,0.08);
+  --orange:     #ff7a00;
+  --orange-hot: #ff9500;
+  --or-glow:    rgba(255,122,0,0.32);
+  --or-light:   rgba(255,122,0,0.08);
+  --white:      #ffffff;
+  --off-white:  #dce8f5;
+  --gray-200:   #c8d8e8;
+  --gray-300:   #aabdd0;
+  --gray-400:   #8899aa;
+  --gray-600:   #445566;
+  --dim:        rgba(255,255,255,0.06);
+  --success:    #00c864;
+  --font-d:     'Syne', sans-serif;
+  --font-b:     'DM Sans', sans-serif;
+  --font-pull:  'Playfair Display', serif;
+  --sp:         clamp(72px, 9vw, 120px);
+  --urgency-h:  44px;
+  --nav-h:      68px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-b);
+  font-weight: 300;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+
+/* ── URGENCY BAR ─────────────────────────────────────────── */
+.urgency-bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+  height: var(--urgency-h);
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  background: linear-gradient(90deg, #cc5f00, var(--orange), #e07000, var(--orange), #cc5f00);
+  background-size: 300% 100%;
+  animation: urg-shift 5s ease-in-out infinite;
+  font-size: 0.8rem; font-weight: 500; color: #fff;
+  padding: 0 5%; overflow: hidden;
+}
+.urgency-bar::before { content:''; position:absolute; inset:0; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.07) 50%,transparent); animation:urg-sheen 3.5s ease-in-out infinite; pointer-events:none; }
+@keyframes urg-shift { 0%,100%{background-position:0%} 50%{background-position:100%} }
+@keyframes urg-sheen { 0%{transform:translateX(-100%)} 100%{transform:translateX(100%)} }
+.ub-dot { width:7px; height:7px; background:rgba(255,255,255,0.9); border-radius:50%; flex-shrink:0; animation:ub-p 1.8s ease-in-out infinite; }
+@keyframes ub-p { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.35;transform:scale(0.65)} }
+.ub-sep { color:rgba(255,255,255,0.4); margin:0 10px; font-size:0.65rem; }
+.ub-link { color:#fff; text-decoration:underline; text-underline-offset:2px; font-weight:600; white-space:nowrap; }
+
+/* ── NAV ──────────────────────────────────────────────────── */
+nav {
+  position: fixed; top: var(--urgency-h); left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 6%; height: var(--nav-h);
+  backdrop-filter: blur(22px) saturate(1.4);
+  background: rgba(5,8,16,0.72);
+  border-bottom: 1px solid rgba(0,123,255,0.1);
+  transition: background 0.35s, box-shadow 0.35s;
+}
+nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,0.5); }
+.logo { font-family: var(--font-d); font-weight: 800; font-size: 1.4rem; letter-spacing: -0.02em; color: #fff; text-decoration: none; }
+.logo span { color: var(--electric); }
+.nav-links { display: flex; gap: 2.4rem; list-style: none; }
+.nav-links a { color: var(--gray-400); text-decoration: none; font-size: 0.84rem; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 400; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: #fff; }
+.nav-cta { background: var(--orange); color: #fff; border: none; padding: 9px 22px; border-radius: 6px; font-family: var(--font-b); font-size: 0.84rem; font-weight: 500; cursor: pointer; text-decoration: none; transition: all 0.2s; }
+.nav-cta:hover { background: var(--orange-hot); transform: translateY(-1px); box-shadow: 0 4px 18px var(--or-glow); }
+.nav-ham { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.nav-ham span { width: 22px; height: 2px; background: #fff; border-radius: 2px; }
+
+/* ── HERO ─────────────────────────────────────────────────── */
+.page-hero {
+  position: relative; overflow: hidden;
+  min-height: 70vh;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: calc(var(--urgency-h) + var(--nav-h) + 60px) 6% 80px;
+}
+#hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.hero-grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(rgba(0,123,255,0.03) 1px,transparent 1px), linear-gradient(90deg,rgba(0,123,255,0.03) 1px,transparent 1px);
+  background-size: 56px 56px;
+}
+.hero-orb {
+  position: absolute; right: 3%; top: 45%; transform: translateY(-50%);
+  width: 600px; height: 600px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,123,255,0.09) 0%, transparent 68%);
+  animation: orb-b 5s ease-in-out infinite; pointer-events: none;
+}
+.hero-orb-o {
+  position: absolute; left: 10%; bottom: 0;
+  width: 300px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,122,0,0.05) 0%, transparent 70%);
+  animation: orb-b 5s -2.5s ease-in-out infinite; pointer-events: none;
+}
+@keyframes orb-b { 0%,100%{opacity:0.5;transform:translateY(-50%) scale(1)} 50%{opacity:1;transform:translateY(-50%) scale(1.06)} }
+
+.hero-content { position: relative; z-index: 2; max-width: 860px; }
+
+.breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 0.76rem; color: var(--gray-600); margin-bottom: 22px; animation: fade-up 0.6s ease both; }
+.breadcrumb a { color: var(--gray-600); text-decoration: none; transition: color 0.2s; }
+.breadcrumb a:hover { color: var(--gray-400); }
+
+.hero-label {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--el-light); border: 1px solid rgba(0,123,255,0.2);
+  border-radius: 30px; padding: 6px 16px;
+  font-size: 0.73rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--electric);
+  margin-bottom: 24px; animation: fade-up 0.6s ease both;
+}
+.hero-label::before { content:''; width:6px; height:6px; background:var(--electric); border-radius:50%; animation:blink 1.6s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+.hero-h1 {
+  font-family: var(--font-d);
+  font-size: clamp(3rem, 6.5vw, 6rem);
+  font-weight: 800; line-height: 1.02;
+  letter-spacing: -0.03em; margin-bottom: 24px;
+  animation: fade-up 0.6s 0.08s ease both;
+}
+.hero-h1 .acc-b { color: var(--electric); }
+.hero-h1 .acc-o { color: var(--orange); }
+
+.hero-sub {
+  font-size: clamp(1rem, 1.9vw, 1.2rem);
+  color: var(--gray-400); max-width: 680px;
+  line-height: 1.72; margin-bottom: 40px;
+  animation: fade-up 0.6s 0.16s ease both;
+}
+.hero-sub strong { color: var(--off-white); font-weight: 400; }
+
+/* Dallas badge */
+.dallas-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(255,255,255,0.03); border: 1px solid var(--dim);
+  border-radius: 12px; padding: 12px 20px;
+  animation: fade-up 0.6s 0.24s ease both;
+}
+.db-icon { font-size: 1.3rem; }
+.db-text strong { display: block; font-family: var(--font-d); font-size: 0.9rem; font-weight: 700; }
+.db-text span { font-size: 0.76rem; color: var(--gray-400); }
+
+@keyframes fade-up { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+
+/* ── SHARED SECTION STYLES ───────────────────────────────── */
+.sec-pad { padding: var(--sp) 6%; }
+.bg-deep  { background: var(--deep-navy); }
+.bg-black { background: var(--black); }
+.bg-navy  { background: linear-gradient(135deg, var(--navy) 0%, #0d1f3c 100%); }
+.bg-mid   { background: var(--mid-blue); }
+
+.sec-label {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 0.73rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--electric);
+  margin-bottom: 14px;
+}
+.sec-label::before { content:''; width:20px; height:1px; background:var(--electric); }
+.sec-label.o { color: var(--orange); }
+.sec-label.o::before { background: var(--orange); }
+
+.sec-h2 {
+  font-family: var(--font-d);
+  font-size: clamp(2rem, 3.8vw, 3.2rem);
+  font-weight: 800; line-height: 1.08;
+  letter-spacing: -0.025em; margin-bottom: 16px;
+}
+.sec-h2 span { color: var(--electric); }
+.sec-h2 span.o { color: var(--orange); }
+.sec-body {
+  font-size: 1rem; color: var(--gray-400); line-height: 1.8;
+  max-width: 680px;
+}
+.sec-body strong { color: var(--off-white); font-weight: 500; }
+.sec-body p + p { margin-top: 16px; }
+
+/* ── STORY SECTION ───────────────────────────────────────── */
+.story-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: start;
+}
+
+/* Timeline */
+.story-timeline { padding-top: 8px; }
+.timeline-item {
+  display: flex; gap: 22px;
+  padding-bottom: 40px;
+  position: relative;
+}
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item::before {
+  content: ''; position: absolute;
+  left: 19px; top: 40px; bottom: 0; width: 1px;
+  background: linear-gradient(to bottom, rgba(0,123,255,0.3), transparent);
+}
+.timeline-item:last-child::before { display: none; }
+
+.tl-dot {
+  width: 40px; height: 40px; flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--deep-navy); border: 2px solid rgba(0,123,255,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; position: relative; z-index: 1;
+  transition: all 0.3s;
+}
+.timeline-item:hover .tl-dot {
+  background: var(--electric); border-color: var(--electric);
+  box-shadow: 0 0 24px var(--el-glow);
+}
+
+.tl-content { }
+.tl-year {
+  font-family: var(--font-d); font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--electric);
+  margin-bottom: 4px;
+}
+.tl-title {
+  font-family: var(--font-d); font-size: 1rem; font-weight: 700;
+  color: var(--off-white); margin-bottom: 6px;
+}
+.tl-desc { font-size: 0.88rem; color: var(--gray-400); line-height: 1.65; }
+
+/* ── PULL QUOTE ──────────────────────────────────────────── */
+.pull-quote-section {
+  padding: 80px 6%;
+  background: var(--navy);
+  border-top: 1px solid rgba(0,123,255,0.15);
+  border-bottom: 1px solid rgba(0,123,255,0.15);
+  text-align: center; position: relative; overflow: hidden;
+}
+.pull-quote-section::before {
+  content: '"';
+  position: absolute; top: -20px; left: 50%; transform: translateX(-50%);
+  font-family: var(--font-pull); font-size: 18rem; color: rgba(0,123,255,0.04);
+  line-height: 1; pointer-events: none; user-select: none;
+}
+.pull-quote {
+  font-family: var(--font-pull);
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  font-style: italic; font-weight: 700;
+  line-height: 1.28; color: var(--white);
+  max-width: 900px; margin: 0 auto 24px;
+  position: relative; z-index: 1;
+}
+.pull-quote em { color: var(--electric); font-style: normal; }
+.pull-quote-attr {
+  font-size: 0.84rem; color: var(--gray-400);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  position: relative; z-index: 1;
+}
+.pull-quote-attr span { color: var(--orange); }
+
+/* ── VALUES GRID ─────────────────────────────────────────── */
+.values-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px; max-width: 1100px; margin: 0 auto;
+}
+
+.value-card {
+  background: rgba(255,255,255,0.025); border: 1px solid var(--dim);
+  border-radius: 20px; padding: 36px 30px;
+  position: relative; overflow: hidden;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  cursor: default;
+}
+.value-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--electric), transparent);
+  opacity: 0; transition: opacity 0.3s;
+}
+.value-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(0,123,255,0.25);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.4), 0 0 40px rgba(0,123,255,0.06);
+}
+.value-card:hover::before { opacity: 1; }
+
+/* Alternating orange accent for every other card */
+.value-card:nth-child(even)::before { background: linear-gradient(90deg, transparent, var(--orange), transparent); }
+.value-card:nth-child(even):hover { border-color: rgba(255,122,0,0.25); }
+
+.vc-icon {
+  width: 52px; height: 52px; border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; margin-bottom: 20px;
+  transition: transform 0.3s;
+}
+.value-card:hover .vc-icon { transform: scale(1.1) rotate(-4deg); }
+.vc-icon.blue   { background: var(--el-light); }
+.vc-icon.orange { background: var(--or-light); }
+
+.vc-title {
+  font-family: var(--font-d); font-size: 1.05rem; font-weight: 700;
+  color: var(--off-white); margin-bottom: 10px;
+}
+.vc-desc { font-size: 0.875rem; color: var(--gray-400); line-height: 1.7; }
+
+/* ── DIFFERENTIATORS ─────────────────────────────────────── */
+.diff-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
+}
+.diff-visual {
+  position: relative; height: 760px;
+}
+.diff-card {
+  position: absolute;
+  background: rgba(255,255,255,0.03); border: 1px solid var(--dim);
+  border-radius: 16px; padding: 24px;
+  transition: all 0.3s;
+}
+.diff-card:hover { border-color: rgba(0,123,255,0.3); transform: translateY(-4px); }
+.dc-1 { top: 0;    left: 0;   right: 60px; }
+.dc-2 { top: 195px; left: 40px; right: 0;   background: var(--el-light); border-color: rgba(0,123,255,0.2); }
+.dc-3 { top: 395px; left: 0;   right: 60px; }
+.dc-4 { top: 580px; left: 40px; right: 0;   background: var(--or-light); border-color: rgba(255,122,0,0.2); }
+
+.dc-icon { font-size: 1.4rem; margin-bottom: 10px; }
+.dc-label { font-family: var(--font-d); font-size: 0.9rem; font-weight: 700; color: var(--off-white); margin-bottom: 5px; }
+.dc-desc  { font-size: 0.8rem; color: var(--gray-400); line-height: 1.55; }
+
+.diff-list { display: flex; flex-direction: column; gap: 20px; }
+.diff-item { display: flex; gap: 16px; }
+.di-num {
+  font-family: var(--font-d); font-size: 1.8rem; font-weight: 800;
+  color: rgba(0,123,255,0.2); line-height: 1; flex-shrink: 0;
+  width: 44px; text-align: right;
+  transition: color 0.3s;
+}
+.diff-item:hover .di-num { color: var(--electric); }
+.di-content h4 { font-family: var(--font-d); font-size: 1rem; font-weight: 700; color: var(--off-white); margin-bottom: 6px; }
+.di-content p  { font-size: 0.875rem; color: var(--gray-400); line-height: 1.65; }
+
+/* ── SERVICES ─────────────────────────────────────────────── */
+.services-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.svc-benefit-card {
+  background: rgba(255,255,255,0.025); border: 1px solid var(--dim);
+  border-radius: 16px; padding: 30px 26px;
+  transition: all 0.3s;
+}
+.svc-benefit-card:hover {
+  border-color: rgba(0,123,255,0.22); transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+}
+.sbc-icon { font-size: 1.8rem; margin-bottom: 16px; display: block; }
+.sbc-title { font-family: var(--font-d); font-size: 1rem; font-weight: 700; color: var(--off-white); margin-bottom: 8px; }
+.sbc-desc  { font-size: 0.875rem; color: var(--gray-400); line-height: 1.65; }
+.sbc-benefit {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 14px; font-size: 0.76rem; color: var(--success);
+  font-weight: 500;
+}
+.sbc-benefit::before { content: '→'; }
+
+/* ── APPROACH / PROCESS ──────────────────────────────────── */
+.approach-grid {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: 0; position: relative;
+}
+.approach-grid::before {
+  content: ''; position: absolute; top: 40px; left: 10%; width: 80%; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--electric), var(--electric), transparent);
+  opacity: 0.2;
+}
+.approach-step { text-align: center; padding: 0 12px; }
+.ap-circle {
+  width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 20px;
+  background: var(--deep-navy); border: 2px solid rgba(0,123,255,0.25);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  font-size: 1.4rem; position: relative; z-index: 1;
+  transition: all 0.3s;
+}
+.approach-step:hover .ap-circle {
+  background: var(--electric); border-color: var(--electric);
+  box-shadow: 0 0 32px var(--el-glow);
+}
+.ap-num {
+  position: absolute; top: -6px; right: -6px;
+  width: 22px; height: 22px; border-radius: 50%;
+  background: var(--orange); color: #fff;
+  font-family: var(--font-d); font-size: 0.6rem; font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+.ap-title { font-family: var(--font-d); font-size: 0.9rem; font-weight: 700; color: var(--off-white); margin-bottom: 8px; }
+.ap-desc  { font-size: 0.78rem; color: var(--gray-400); line-height: 1.6; }
+
+/* Philosophy blurb */
+.philosophy-block {
+  max-width: 720px; margin: 60px auto 0;
+  padding: 36px 40px;
+  background: var(--el-light); border: 1px solid rgba(0,123,255,0.18);
+  border-radius: 20px; text-align: center;
+}
+.pb-quote {
+  font-family: var(--font-pull); font-style: italic; font-size: 1.2rem;
+  color: var(--white); line-height: 1.5; margin-bottom: 14px;
+}
+.pb-quote em { color: var(--electric); font-style: normal; }
+.pb-sub { font-size: 0.84rem; color: var(--gray-400); }
+
+/* ── RESULTS STRIP ───────────────────────────────────────── */
+.results-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  background: var(--deep-navy);
+  border-top: 1px solid rgba(0,123,255,0.12);
+  border-bottom: 1px solid rgba(0,123,255,0.12);
+}
+.rs-cell {
+  padding: 48px 0; text-align: center;
+  border-right: 1px solid var(--dim);
+  transition: background 0.25s; position: relative;
+}
+.rs-cell:last-child { border-right: none; }
+.rs-cell:hover { background: rgba(0,123,255,0.04); }
+.rs-cell::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--electric),transparent); opacity:0; transition:opacity 0.3s; }
+.rs-cell:hover::before { opacity:1; }
+.rs-num {
+  font-family: var(--font-d); font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  font-weight: 800; line-height: 1; color: #fff; margin-bottom: 6px;
+}
+.rs-num span { color: var(--electric); }
+.rs-label { font-size: 0.8rem; color: var(--gray-400); letter-spacing: 0.04em; }
+.rs-sub   { font-size: 0.68rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.07em; margin-top: 4px; }
+
+/* ── FOUNDER SECTION ─────────────────────────────────────── */
+.founder-inner {
+  display: grid; grid-template-columns: 340px 1fr;
+  gap: 64px; align-items: start;
+  max-width: 1100px; margin: 0 auto;
+}
+
+.founder-card {
+  background: var(--deep-navy); border: 1px solid rgba(0,123,255,0.15);
+  border-radius: 24px; overflow: hidden; position: sticky; top: 120px;
+}
+.founder-avatar {
+  width: 100%; aspect-ratio: 3/4; max-height: 380px;
+  background: linear-gradient(135deg, var(--navy), var(--mid-blue));
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.founder-avatar img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 15%;
+  display: block; position: relative; z-index: 1;
+}
+.founder-avatar::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
+  background: linear-gradient(to top, var(--deep-navy), transparent);
+  z-index: 2;
+}
+.founder-info { padding: 24px; }
+.founder-name { font-family: var(--font-d); font-size: 1.2rem; font-weight: 800; color: #fff; margin-bottom: 4px; }
+.founder-title { font-size: 0.8rem; color: var(--electric); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 16px; }
+.founder-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+.f-chip {
+  padding: 4px 10px; border-radius: 20px; font-size: 0.68rem; font-weight: 500;
+  background: var(--el-light); border: 1px solid rgba(0,123,255,0.15); color: var(--electric);
+}
+.f-chip.o { background: var(--or-light); border-color: rgba(255,122,0,0.15); color: var(--orange); }
+.founder-location {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.8rem; color: var(--gray-400); padding-top: 14px;
+  border-top: 1px solid var(--dim);
+}
+
+/* Founder bio text */
+.founder-bio { }
+.founder-bio .sec-label { margin-bottom: 16px; }
+.founder-bio .sec-h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 28px; }
+
+.bio-block { margin-bottom: 32px; }
+.bio-block h4 {
+  font-family: var(--font-d); font-size: 0.8rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--electric);
+  margin-bottom: 10px;
+}
+.bio-block p { font-size: 0.95rem; color: var(--gray-400); line-height: 1.8; }
+.bio-block p + p { margin-top: 12px; }
+.bio-block p strong { color: var(--off-white); font-weight: 500; }
+
+.vision-card {
+  background: var(--or-light); border: 1px solid rgba(255,122,0,0.2);
+  border-radius: 14px; padding: 24px 26px; margin-top: 28px;
+}
+.vision-card h4 { font-family: var(--font-d); font-size: 0.9rem; font-weight: 700; color: var(--orange); margin-bottom: 10px; }
+.vision-card p { font-size: 0.88rem; color: var(--gray-300); line-height: 1.7; }
+
+/* ── DALLAS SECTION ──────────────────────────────────────── */
+.dallas-section {
+  padding: 80px 6%;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 80px; align-items: center;
+  background: var(--deep-navy);
+  border-top: 1px solid rgba(0,123,255,0.1);
+  border-bottom: 1px solid rgba(0,123,255,0.1);
+}
+.dallas-visual {
+  background: var(--navy); border-radius: 20px; padding: 40px 36px;
+  border: 1px solid rgba(0,123,255,0.15); position: relative; overflow: hidden;
+}
+.dallas-visual::before {
+  content: ''; position: absolute; bottom: -30px; right: -30px;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,123,255,0.1) 0%, transparent 70%);
+}
+.dallas-skyline { font-size: 3rem; margin-bottom: 20px; display: block; }
+.dallas-stat-row { display: flex; gap: 28px; margin-bottom: 24px; }
+.ds-item { flex: 1; }
+.ds-val { font-family: var(--font-d); font-size: 1.6rem; font-weight: 800; color: #fff; line-height: 1; margin-bottom: 3px; }
+.ds-val span { color: var(--electric); }
+.ds-label { font-size: 0.7rem; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.06em; }
+.dallas-tagline {
+  font-family: var(--font-pull); font-style: italic; font-size: 1.1rem;
+  color: var(--gray-300); line-height: 1.4; border-top: 1px solid var(--dim);
+  padding-top: 20px; margin-top: 4px;
+}
+.dallas-tagline em { color: var(--electric); font-style: normal; }
+
+/* ── TESTIMONIAL HIGHLIGHT ───────────────────────────────── */
+.testi-row {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.testi-card {
+  background: rgba(255,255,255,0.025); border: 1px solid var(--dim);
+  border-radius: 16px; padding: 28px;
+  transition: all 0.25s;
+}
+.testi-card:hover { border-color: rgba(0,123,255,0.25); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.3); }
+.tc-stars { color: var(--orange); font-size: 0.82rem; margin-bottom: 12px; }
+.tc-text { font-size: 0.9rem; color: var(--gray-400); line-height: 1.72; font-style: italic; margin-bottom: 20px; }
+.tc-author { display: flex; align-items: center; gap: 12px; }
+.tc-av { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; color: #fff; }
+.tc-name { font-weight: 500; font-size: 0.88rem; color: var(--off-white); }
+.tc-role { font-size: 0.75rem; color: var(--gray-400); }
+
+/* ── CTA BANNER ──────────────────────────────────────────── */
+.cta-banner {
+  background: linear-gradient(135deg, var(--navy) 0%, #0d1f3c 100%);
+  border-top: 1px solid rgba(0,123,255,0.18);
+  text-align: center; padding: var(--sp) 6%;
+  position: relative; overflow: hidden;
+}
+.cta-banner::before { content:''; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:800px; height:400px; background:radial-gradient(ellipse,rgba(0,123,255,0.08) 0%,transparent 68%); pointer-events:none; }
+.cta-banner h2 { font-family: var(--font-d); font-size: clamp(2rem, 4vw, 3.6rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 14px; position: relative; }
+.cta-banner p { color: var(--gray-400); max-width: 500px; margin: 0 auto 36px; position: relative; font-size: 1rem; line-height: 1.7; }
+.cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+/* ── BUTTONS ──────────────────────────────────────────────── */
+.btn-primary {
+  position: relative; overflow: hidden;
+  background: var(--orange); color: #fff;
+  border: none; padding: 15px 34px; border-radius: 8px;
+  font-family: var(--font-b); font-size: 0.96rem; font-weight: 500;
+  cursor: pointer; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: all 0.25s;
+  animation: cta-pulse 3s ease-in-out infinite;
+}
+.btn-primary::before { content:''; position:absolute; top:0; left:-100%; width:60%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.18),transparent); animation:sheen 3s ease-in-out infinite; pointer-events:none; }
+@keyframes sheen { 0%,65%,100%{left:-100%} 38%{left:140%} }
+@keyframes cta-pulse { 0%,100%{box-shadow:0 0 0 0 rgba(255,122,0,0.4)} 50%{box-shadow:0 0 0 14px rgba(255,122,0,0)} }
+.btn-primary:hover { background: var(--orange-hot); transform: translateY(-2px); box-shadow: 0 10px 32px var(--or-glow); animation: none; }
+
+.btn-secondary {
+  background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.18);
+  padding: 15px 32px; border-radius: 8px;
+  font-family: var(--font-b); font-size: 0.96rem;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+  transition: all 0.25s;
+}
+.btn-secondary:hover { border-color: var(--electric); color: var(--electric); transform: translateY(-2px); }
+
+.btn-outline-electric {
+  background: transparent; color: var(--electric); border: 1px solid rgba(0,123,255,0.4);
+  padding: 12px 26px; border-radius: 8px;
+  font-family: var(--font-b); font-size: 0.88rem;
+  text-decoration: none; display: inline-flex; align-items: center; gap: 7px;
+  transition: all 0.25s;
+}
+.btn-outline-electric:hover { background: var(--el-light); border-color: var(--electric); }
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+footer { background: var(--black); border-top: 1px solid var(--dim); padding: 60px 6% 30px; }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 44px; }
+.footer-brand .logo { margin-bottom: 10px; display: block; }
+.footer-brand p { font-size: 0.84rem; color: var(--gray-400); max-width: 230px; }
+.footer-socials { display: flex; gap: 10px; margin-top: 18px; }
+.social-btn { width: 34px; height: 34px; background: var(--dim); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.82rem; text-decoration: none; color: var(--gray-400); transition: all 0.2s; }
+.social-btn:hover { background: var(--electric); color: #fff; transform: translateY(-2px); }
+.footer-col h5 { font-family: var(--font-d); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-600); margin-bottom: 16px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.footer-col a { color: var(--gray-400); text-decoration: none; font-size: 0.84rem; transition: color 0.2s; }
+.footer-col a:hover { color: #fff; }
+.footer-bottom { padding-top: 22px; border-top: 1px solid var(--dim); display: flex; justify-content: space-between; font-size: 0.76rem; color: var(--gray-600); }
+
+/* ── REVEAL ──────────────────────────────────────────────── */
+.reveal { opacity:0; transform:translateY(26px); transition:opacity 0.65s ease,transform 0.65s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.rd1{transition-delay:.1s} .rd2{transition-delay:.2s} .rd3{transition-delay:.3s}
+
+/* ── MOBILE ──────────────────────────────────────────────── */
+@media(max-width:1000px) {
+  .nav-links{display:none} .nav-ham{display:flex}
+  .story-inner{grid-template-columns:1fr;gap:48px}
+  .diff-inner{grid-template-columns:1fr}
+  .diff-visual{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:12px;position:static}
+  .dc-1,.dc-2,.dc-3,.dc-4{position:static;top:auto;left:auto;right:auto;bottom:auto}
+  .values-grid{grid-template-columns:1fr 1fr}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .approach-grid{grid-template-columns:1fr 1fr;gap:28px}
+  .approach-grid::before{display:none}
+  .results-strip{grid-template-columns:1fr 1fr}
+  .rs-cell:nth-child(2){border-right:none}
+  .rs-cell:nth-child(3){border-top:1px solid var(--dim)}
+  .founder-inner{grid-template-columns:1fr}
+  .founder-card{position:static;max-width:360px}
+  .dallas-section{grid-template-columns:1fr;gap:48px}
+  .testi-row{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px) {
+  :root{--urgency-h:36px}
+  .values-grid{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr}
+  .approach-grid{grid-template-columns:1fr}
+  .results-strip{grid-template-columns:1fr 1fr}
+  .testi-row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:8px}
+  .cta-btns{flex-direction:column;align-items:center}
+  .diff-visual{grid-template-columns:1fr}
+  .ub-sep:nth-child(6),.ub-sep:nth-child(6)~*{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- URGENCY BAR -->
+<div class="urgency-bar">
+  <span class="ub-dot"></span>
+  <span>Only <strong>3 client slots</strong> available this month</span>
+  <span class="ub-sep">·</span>
+  <span>Dallas-based · Globally executed</span>
+  <span class="ub-sep">·</span>
+  <span>Avg. 3.8× ROI</span>
+  <span class="ub-sep">·</span>
+  <a class="ub-link" href="/funnels/free-seo-audit/">Claim your spot →</a>
+</div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="/" class="logo" aria-label="CyberMagnet — Home" style="display:inline-flex;align-items:center;text-decoration:none;line-height:1">
+    <svg width="220" height="44" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <text x="100" y="17" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="2">CYBER</text>
+      <circle cx="6" cy="21" r="2" fill="#FF7A35"/>
+      <line x1="8" y1="21" x2="192" y2="21" stroke="#FF7A35" stroke-width="1.5"/>
+      <circle cx="194" cy="21" r="2" fill="#FF7A35"/>
+      <text x="100" y="36" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#FF7A35" text-anchor="middle" letter-spacing="2">MAGNET</text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/services/">Services</a></li>
+    <li><a href="/portfolio/">Portfolio</a></li>
+    <li><a href="/about/" class="active">About</a></li>
+    <li><a href="/blog/">Blog</a></li>
+  </ul>
+  <a href="/funnels/free-seo-audit/" class="nav-cta">Free SEO Audit</a>
+  <div class="nav-ham"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════════ -->
+<section class="page-hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-grid"></div>
+  <div class="hero-orb"></div>
+  <div class="hero-orb-o"></div>
+  <div class="hero-content">
+    <div class="breadcrumb"><a href="/">Home</a><span>›</span><span>About</span></div>
+    <div class="hero-label">Dallas, Texas · Digital Growth Agency</div>
+    <h1 class="hero-h1">
+      We're the Agency<br>
+      Built for <span class="acc-b">Businesses</span><br>
+      Like <span class="acc-o">Yours.</span>
+    </h1>
+    <p class="hero-sub">
+      <strong>CyberMagnet was created with one purpose:</strong> to give local and small businesses access to the same quality of digital strategy that enterprise brands take for granted — without the enterprise price tag or the corporate runaround.
+    </p>
+    <div class="dallas-badge">
+      <span class="db-icon">🏙️</span>
+      <div class="db-text">
+        <strong>Based in Dallas, Texas</strong>
+        <span>Local roots. Global-standard execution.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     RESULTS STRIP
+══════════════════════════════════════════════════════════ -->
+<div class="results-strip">
+  <div class="rs-cell reveal"><div class="rs-num">50<span>+</span></div><div class="rs-label">Businesses Helped</div><div class="rs-sub">And growing</div></div>
+  <div class="rs-cell reveal rd1"><div class="rs-num">3.8<span>×</span></div><div class="rs-label">Average ROI Delivered</div><div class="rs-sub">Across all services</div></div>
+  <div class="rs-cell reveal rd2"><div class="rs-num">97<span>%</span></div><div class="rs-label">Client Retention Rate</div><div class="rs-sub">We earn long-term trust</div></div>
+  <div class="rs-cell reveal rd3"><div class="rs-num">$8<span>M+</span></div><div class="rs-label">Revenue Generated</div><div class="rs-sub">For our clients</div></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     THE STORY
+══════════════════════════════════════════════════════════ -->
+<section class="sec-pad bg-deep" id="story">
+  <div class="story-inner">
+
+    <div class="story-text reveal">
+      <div class="sec-label">Our Story</div>
+      <h2 class="sec-h2">Why CyberMagnet<br>Exists.</h2>
+      <div class="sec-body">
+        <p>Walk down any main street in Dallas and you'll find something that bothers us: brilliant businesses — family-owned shops, trades who've worked their craft for decades, service providers who genuinely care — being outranked and outspent by competitors with deeper pockets and bigger agencies.</p>
+        <p><strong>That's the problem we set out to solve.</strong></p>
+        <p>CyberMagnet was founded on a simple but powerful belief: that every business, regardless of size or budget, deserves a strong digital presence. Not a templated website that nobody finds. Not a logo knocked up in ten minutes. A real, strategic digital foundation built to attract the right customers, convert them, and keep them coming back.</p>
+        <p>We combine the strategic depth of a large agency with the personal attention of a local partner — and we price our work so that growing businesses can afford it without it feeling like a gamble.</p>
+        <p><strong>Dallas is our home. Growth is our mission.</strong> And we take both seriously.</p>
+      </div>
+    </div>
+
+    <div class="story-timeline reveal rd1">
+      <div class="timeline-item">
+        <div class="tl-dot">🌱</div>
+        <div class="tl-content">
+          <div class="tl-year">The Problem</div>
+          <div class="tl-title">Local Businesses Were Being Left Behind</div>
+          <div class="tl-desc">Small businesses were losing online visibility to competitors with bigger agencies and bigger budgets — not because their products were worse, but because their digital presence was invisible.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-dot">💡</div>
+        <div class="tl-content">
+          <div class="tl-year">The Idea</div>
+          <div class="tl-title">Premium Strategy, Accessible Pricing</div>
+          <div class="tl-desc">We asked: what if you could get enterprise-level digital marketing — real SEO, real branding, real funnels — without the enterprise price tag or the agency bureaucracy? CyberMagnet was the answer.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-dot">🚀</div>
+        <div class="tl-content">
+          <div class="tl-year">The Launch</div>
+          <div class="tl-title">CyberMagnet Goes Live</div>
+          <div class="tl-desc">Built in Dallas, serving ambitious local businesses with a full-stack growth system: web design, SEO, branding, funnels, social media, and AI automation — under one roof, with one team that actually cares.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-dot">⚡</div>
+        <div class="tl-content">
+          <div class="tl-year">Today & Beyond</div>
+          <div class="tl-title">50+ Businesses Transformed</div>
+          <div class="tl-desc">With clients across Dallas and beyond, CyberMagnet continues to grow its roster of businesses that have levelled up their digital presence — and the real results that followed.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     PULL QUOTE
+══════════════════════════════════════════════════════════ -->
+<div class="pull-quote-section reveal">
+  <div class="pull-quote">
+    "Every business deserves to be found by the customers who need them most. <em>That's not a luxury — that's the baseline.</em> We're here to make it happen."
+  </div>
+  <div class="pull-quote-attr">— The CyberMagnet Mission · <span>Dallas, Texas</span></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     VALUES
+══════════════════════════════════════════════════════════ -->
+<section class="sec-pad bg-black" id="values">
+  <div class="reveal" style="text-align:center;margin-bottom:60px">
+    <div class="sec-label" style="justify-content:center;display:flex">What We Stand For</div>
+    <h2 class="sec-h2" style="text-align:center">The Principles Behind <span>Everything We Build.</span></h2>
+    <p style="font-size:0.96rem;color:var(--gray-400);max-width:540px;margin:0 auto;line-height:1.72">We don't just build websites and run campaigns. We build relationships grounded in honesty, quality, and a genuine commitment to the businesses we serve.</p>
+  </div>
+
+  <div class="values-grid">
+    <div class="value-card reveal">
+      <div class="vc-icon blue">🔍</div>
+      <div class="vc-title">Radical Transparency</div>
+      <div class="vc-desc">You'll always know exactly what we're doing, why we're doing it, and how it's performing. No black boxes, no vanity metrics, no smoke and mirrors. Real-time dashboards, honest timelines, and straight answers.</div>
+    </div>
+    <div class="value-card reveal rd1">
+      <div class="vc-icon orange">🤝</div>
+      <div class="vc-title">Ethical Marketing</div>
+      <div class="vc-desc">We build strategies that respect your audience, follow platform guidelines, and create lasting competitive advantages — not quick wins that evaporate. Marketing that you can be proud of.</div>
+    </div>
+    <div class="value-card reveal rd2">
+      <div class="vc-icon blue">🏙️</div>
+      <div class="vc-title">Community Impact</div>
+      <div class="vc-desc">We're Dallas-rooted and community-focused. When local businesses grow, communities thrive. Every client we help is a local economy strengthened, a team expanded, a family supported.</div>
+    </div>
+    <div class="value-card reveal">
+      <div class="vc-icon orange">✨</div>
+      <div class="vc-title">Uncompromising Design Quality</div>
+      <div class="vc-desc">Design isn't decoration — it's the first thing your market judges you on. We hold our work to a premium standard on every engagement, regardless of tier, because your brand deserves nothing less.</div>
+    </div>
+    <div class="value-card reveal rd1">
+      <div class="vc-icon blue">📈</div>
+      <div class="vc-title">Conversion-First Strategy</div>
+      <div class="vc-desc">Every decision we make is anchored to one question: does this move the business forward? Vanity metrics don't pay bills. We focus relentlessly on the outcomes that actually matter to your bottom line.</div>
+    </div>
+    <div class="value-card reveal rd2">
+      <div class="vc-icon orange">🌱</div>
+      <div class="vc-title">Long-Term Partnerships</div>
+      <div class="vc-desc">We're not a transaction — we're a partner. Our 97% retention rate reflects what happens when you treat clients like collaborators rather than contracts. We grow when you grow. That alignment matters.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     WHAT MAKES US DIFFERENT
+══════════════════════════════════════════════════════════ -->
+<section class="sec-pad bg-deep" id="difference">
+  <div class="diff-inner">
+    <div class="diff-visual reveal">
+      <div class="diff-card dc-1">
+        <div class="dc-icon">⚡</div>
+        <div class="dc-label">Premium Design, Accessible Pricing</div>
+        <div class="dc-desc">Agency-quality execution without the agency markup. You get the same calibre of work — without the six-figure retainer.</div>
+      </div>
+      <div class="diff-card dc-2">
+        <div class="dc-icon">🎯</div>
+        <div class="dc-label">Tailored to Your Business</div>
+        <div class="dc-desc">No copy-paste strategies. Every engagement starts with understanding your market, your goals, and your customers — then building around them.</div>
+      </div>
+      <div class="diff-card dc-3">
+        <div class="dc-icon">🤖</div>
+        <div class="dc-label">AI-Powered Efficiency</div>
+        <div class="dc-desc">We deploy AI tools and automation systems that do the work of a full-time team — qualifying leads, nurturing prospects, and reporting results automatically.</div>
+      </div>
+      <div class="diff-card dc-4">
+        <div class="dc-icon">🏙️</div>
+        <div class="dc-label">Local Roots, Global Execution</div>
+        <div class="dc-desc">Dallas-based, globally benchmarked. We hold our work to the standard of the best agencies in the world — and price it for the businesses that make up the backbone of our city.</div>
+      </div>
+    </div>
+
+    <div class="reveal rd1">
+      <div class="sec-label">What Makes Us Different</div>
+      <h2 class="sec-h2">We're Not Your<br>Typical Agency.</h2>
+      <p style="font-size:0.96rem;color:var(--gray-400);line-height:1.78;margin-bottom:40px;max-width:500px">Most agencies talk about strategy. We deliver it — in writing, in data, and in results you can trace directly to your pipeline. Here's what sets us apart.</p>
+
+      <div class="diff-list">
+        <div class="diff-item reveal">
+          <div class="di-num">01</div>
+          <div class="di-content">
+            <h4>Funnel-Optimised Websites, Not Just Brochures</h4>
+            <p>Every site we build is engineered to convert — with clear customer journeys, strategic CTA placement, and SEO foundations built in from day one. Your website should be your best salesperson.</p>
+          </div>
+        </div>
+        <div class="diff-item reveal rd1">
+          <div class="di-num">02</div>
+          <div class="di-content">
+            <h4>Cohesive Identity Systems</h4>
+            <p>Brand consistency compounds trust. We build identity systems that work across every touchpoint — web, social, print, and beyond — so your market knows exactly who you are wherever they encounter you.</p>
+          </div>
+        </div>
+        <div class="diff-item reveal rd2">
+          <div class="di-num">03</div>
+          <div class="di-content">
+            <h4>Integrated Growth Stack</h4>
+            <p>SEO, branding, social media, funnels, AI automation — we offer everything under one roof. When these disciplines work together as one system, the compounding effect is exponential.</p>
+          </div>
+        </div>
+        <div class="diff-item reveal">
+          <div class="di-num">04</div>
+          <div class="di-content">
+            <h4>You Own Everything We Build</h4>
+            <p>Your website, your brand assets, your data. We don't hold anything hostage. When you work with CyberMagnet, every deliverable is yours — permanently. No lock-in, no exit fees.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     HOW WE HELP (SERVICES, BENEFIT-DRIVEN)
+══════════════════════════════════════════════════════════ -->
+<section class="sec-pad bg-black" id="services">
+  <div class="reveal" style="margin-bottom:56px">
+    <div class="sec-label">How We Help You Grow</div>
+    <h2 class="sec-h2">Six Ways We Move <span>Your Business Forward.</span></h2>
+    <p class="sec-body" style="max-width:580px">Each service we offer is designed to solve a specific growth problem. Together, they form a complete digital growth engine. Here's what each one does for your business.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="svc-benefit-card reveal">
+      <span class="sbc-icon">🌐</span>
+      <div class="sbc-title">Web Design & Development</div>
+      <div class="sbc-desc">A fast, modern, mobile-ready website that makes a premium first impression and converts visitors into enquiries. Built to rank on Google and designed to close.</div>
+      <div class="sbc-benefit">More enquiries from your website</div>
+    </div>
+    <div class="svc-benefit-card reveal rd1">
+      <span class="sbc-icon">🎨</span>
+      <div class="sbc-title">Branding & Identity</div>
+      <div class="sbc-desc">A complete visual identity system — logo, colours, typography, and brand guidelines — that positions you as the premium choice in your market before you say a single word.</div>
+      <div class="sbc-benefit">Command higher prices and better clients</div>
+    </div>
+    <div class="svc-benefit-card reveal rd2">
+      <span class="sbc-icon">🔍</span>
+      <div class="sbc-title">SEO & Lead Generation</div>
+      <div class="sbc-desc">Get found by the customers who are actively searching for what you offer. Technical SEO, content strategy, and link building that compounds your visibility month after month.</div>
+      <div class="sbc-benefit">Consistent organic leads without ad spend</div>
+    </div>
+    <div class="svc-benefit-card reveal">
+      <span class="sbc-icon">📱</span>
+      <div class="sbc-title">Social Media & Advertising</div>
+      <div class="sbc-desc">Consistent, on-brand content that builds your audience and a paid strategy that turns that audience into paying customers. Done-for-you, managed to perform.</div>
+      <div class="sbc-benefit">Audience growth that translates to revenue</div>
+    </div>
+    <div class="svc-benefit-card reveal rd1">
+      <span class="sbc-icon">🤖</span>
+      <div class="sbc-title">AI Automation Systems</div>
+      <div class="sbc-desc">Intelligent workflows that qualify leads, nurture prospects, and respond to enquiries automatically — 24/7. Your business keeps running even when you're not at your desk.</div>
+      <div class="sbc-benefit">More done with less overhead</div>
+    </div>
+    <div class="svc-benefit-card reveal rd2">
+      <span class="sbc-icon">⚡</span>
+      <div class="sbc-title">Funnels & Conversion Optimisation</div>
+      <div class="sbc-desc">End-to-end conversion systems designed around your buyer's journey. From cold lead to committed client — every step engineered to reduce friction and increase conversions.</div>
+      <div class="sbc-benefit">Higher conversion rates from existing traffic</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:44px" class="reveal">
+    <a href="/services/" class="btn-outline-electric">Explore All Services & Pricing →</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     THE APPROACH
+══════════════════════════════════════════════════════════ -->
+<section class="sec-pad bg-deep" id="approach">
+  <div class="reveal" style="text-align:center;margin-bottom:72px">
+    <div class="sec-label" style="justify-content:center;display:flex">Our Process</div>
+    <h2 class="sec-h2" style="text-align:center">The CyberMagnet <span>Approach.</span></h2>
+    <p style="font-size:0.96rem;color:var(--gray-400);max-width:540px;margin:0 auto;line-height:1.72">A clear, transparent process from first call to full scale — no surprises, no guesswork, and no deliverables that don't serve your goals.</p>
+  </div>
+
+  <div class="approach-grid">
+    <div class="approach-step reveal">
+      <div class="ap-circle">🔬<div class="ap-num">01</div></div>
+      <div class="ap-title">Discovery & Consultation</div>
+      <div class="ap-desc">We start by listening. Understanding your business, your customers, your market, and your goals before we recommend anything.</div>
+    </div>
+    <div class="approach-step reveal rd1">
+      <div class="ap-circle">📐<div class="ap-num">02</div></div>
+      <div class="ap-title">Audit & Strategy</div>
+      <div class="ap-desc">A thorough review of your current digital position — what's working, what isn't, and where your highest-leverage opportunities lie.</div>
+    </div>
+    <div class="approach-step reveal rd2">
+      <div class="ap-circle">⚡<div class="ap-num">03</div></div>
+      <div class="ap-title">Design & Development</div>
+      <div class="ap-desc">Rapid, high-quality execution. Websites built, brands designed, campaigns launched, and systems deployed — with speed and precision.</div>
+    </div>
+    <div class="approach-step reveal">
+      <div class="ap-circle">🚀<div class="ap-num">04</div></div>
+      <div class="ap-title">Optimise & Launch</div>
+      <div class="ap-desc">Before anything goes live, we test, refine, and optimise. Then we launch with a clear plan for tracking and iterating on performance.</div>
+    </div>
+    <div class="approach-step reveal rd1">
+      <div class="ap-circle">📈<div class="ap-num">05</div></div>
+      <div class="ap-title">Ongoing Growth Support</div>
+      <div class="ap-desc">The work doesn't stop at launch. We monitor, report, and continuously improve — turning initial results into compounding, long-term growth.</div>
+    </div>
+  </div>
+
+  <div class="philosophy-block reveal" style="margin-top:60px">
+    <div class="pb-quote">"CyberMagnet blends creativity, strategy, and technology into one system. <em>We don't just make things look good</em> — we make them work."</div>
+    <div class="pb-sub">Our approach is built on three pillars: bold creative that commands attention, data-driven strategy that sets direction, and intelligent technology that scales execution. When these three work together, growth becomes inevitable.</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     DALLAS ROOTS
+══════════════════════════════════════════════════════════ -->
+<div class="dallas-section reveal">
+  <div class="dallas-visual">
+    <span class="dallas-skyline">🏙️</span>
+    <div class="dallas-stat-row">
+      <div class="ds-item">
+        <div class="ds-val">DFW<span>+</span></div>
+        <div class="ds-label">Primary Service Area</div>
+      </div>
+      <div class="ds-item">
+        <div class="ds-val">15<span>+</span></div>
+        <div class="ds-label">Industries Served</div>
+      </div>
+    </div>
+    <div class="dallas-stat-row">
+      <div class="ds-item">
+        <div class="ds-val">50<span>+</span></div>
+        <div class="ds-label">Local Businesses Helped</div>
+      </div>
+      <div class="ds-item">
+        <div class="ds-val">$8<span>M+</span></div>
+        <div class="ds-label">Revenue Generated</div>
+      </div>
+    </div>
+    <div class="dallas-tagline">"Dallas businesses deserve more than a website. They deserve a <em>digital presence that wins.</em>"</div>
+  </div>
+  <div>
+    <div class="sec-label reveal">Dallas Roots</div>
+    <h2 class="sec-h2 reveal">Local Presence.<br><span>Global-Level</span> Execution.</h2>
+    <div class="sec-body reveal">
+      <p>CyberMagnet was born in Dallas and built for businesses that call the DFW area home. We understand the local market — the competitive landscape, the customer expectations, and the opportunities that exist for businesses willing to invest in their digital presence.</p>
+      <p>But our standards aren't local. We benchmark our work against the best agencies in the world, which means every client — regardless of size — gets strategy and execution that would hold up on any stage.</p>
+      <p><strong>We're your neighbours, your supporters, and your growth partners.</strong> When your business wins, the whole community wins. That's not just messaging — that's the reason this agency exists.</p>
+    </div>
+    <div style="margin-top:28px" class="reveal rd1">
+      <a href="/contact/" class="btn-primary" style="display:inline-flex">Work with a Local Team ↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     FOUNDER
+══════════════════════════════════════════════════════════ -->
+<section class="sec-pad bg-black" id="founder">
+  <div class="founder-inner">
+
+    <!-- Founder Card -->
+    <div class="founder-card reveal">
+      <div class="founder-avatar">
+        <img src="data:image/jpeg;base64,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" alt="CyberMagnet Founder" loading="lazy">
+      </div>
+      <div class="founder-info">
+        <div class="founder-name">The Founder</div>
+        <div class="founder-title">Digital Growth Strategist & CEO</div>
+        <div class="founder-chips">
+          <span class="f-chip">SEO</span>
+          <span class="f-chip">Branding</span>
+          <span class="f-chip o">Funnels</span>
+          <span class="f-chip">AI Automation</span>
+          <span class="f-chip o">Paid Ads</span>
+          <span class="f-chip">Web Strategy</span>
+        </div>
+        <div class="founder-location">
+          <span>📍</span>
+          <span>Dallas, Texas</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bio content -->
+    <div class="founder-bio">
+      <div class="sec-label reveal">Meet the Founder</div>
+      <h2 class="sec-h2 reveal">Built by Someone<br>Who Gets It.</h2>
+
+      <div class="bio-block reveal">
+        <h4>The Background</h4>
+        <p>The founder of CyberMagnet brings a decade of hands-on experience across digital marketing's most impactful disciplines — <strong>SEO, conversion funnels, brand strategy, paid advertising, and AI-powered automation</strong>. Not as a specialist siloed in one lane, but as someone who has led full-stack digital campaigns from first touchpoint to closed deal.</p>
+        <p>Before founding CyberMagnet, they worked across a range of industries — from local trades and service businesses to SaaS companies and e-commerce brands — developing a rare ability to spot the exact gap between where a business is and where it could be.</p>
+      </div>
+
+      <div class="bio-block reveal">
+        <h4>Why CyberMagnet</h4>
+        <p>The frustration was always the same: brilliant businesses being underserved by agencies that treated them as small fish in a big pond. <strong>Too much process. Too little results. Too many excuses.</strong></p>
+        <p>CyberMagnet was the answer — an agency with the strategic depth to compete at the highest level, but built around the kind of client relationship where you actually know who's working on your account and why every decision gets made.</p>
+      </div>
+
+      <div class="bio-block reveal">
+        <h4>The Philosophy</h4>
+        <p>Growth is a system. Good design builds credibility. Smart SEO creates compounding leverage. A well-built funnel turns traffic into revenue. AI automation scales what works. <strong>When these elements connect, a business transforms.</strong></p>
+        <p>That's not theory — it's the blueprint behind every successful client engagement CyberMagnet has run. The goal was never to be the biggest agency. It was to be the most effective one, for the businesses that needed it most.</p>
+      </div>
+
+      <div class="vision-card reveal">
+        <h4>🔭 The Vision for CyberMagnet</h4>
+        <p>To be the most trusted digital growth partner for local businesses in Dallas and beyond — the agency that business owners recommend to their peers because the results spoke for themselves, and the partnership felt like it was built for them. A future where every local business has the digital infrastructure to compete, grow, and thrive on their own terms.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════════════════════════ -->
+<section class="sec-pad bg-deep" id="testimonials">
+  <div class="reveal" style="margin-bottom:52px">
+    <div class="sec-label">Client Voices</div>
+    <h2 class="sec-h2">Don't Take Our Word For It.</h2>
+    <p class="sec-body">The relationships we've built — and the results those relationships produced — speak more honestly than anything we could say about ourselves.</p>
+  </div>
+
+  <div class="testi-row">
+    <div class="testi-card reveal">
+      <div class="tc-stars">★★★★★</div>
+      <p class="tc-text">"What sets CyberMagnet apart is that they actually understand our business. They didn't pitch us a template — they built a strategy around our specific goals. The results have been undeniable."</p>
+      <div class="tc-author">
+        <div class="tc-av" style="background:linear-gradient(135deg,#007bff,#1b3b6f)">JM</div>
+        <div><div class="tc-name">James Mitchell</div><div class="tc-role">CEO, StellarShop · Dallas, TX</div></div>
+      </div>
+    </div>
+    <div class="testi-card reveal rd1">
+      <div class="tc-stars">★★★★★</div>
+      <p class="tc-text">"Ethical, transparent, and genuinely invested in our success. I've worked with three agencies before CyberMagnet — none of them made me feel like a priority the way this team does."</p>
+      <div class="tc-author">
+        <div class="tc-av" style="background:linear-gradient(135deg,#ff7a00,#cc5500)">SR</div>
+        <div><div class="tc-name">Sarah Reyes</div><div class="tc-role">Founder, Axiom SaaS</div></div>
+      </div>
+    </div>
+    <div class="testi-card reveal rd2">
+      <div class="tc-stars">★★★★★</div>
+      <p class="tc-text">"We went from invisible on Google to ranking on page one for our three most important keywords in under 90 days. I didn't think that was possible. CyberMagnet made it look straightforward."</p>
+      <div class="tc-author">
+        <div class="tc-av" style="background:linear-gradient(135deg,#00c864,#007840)">TK</div>
+        <div><div class="tc-name">Tom Kellerman</div><div class="tc-role">Director, CoreCoach · Dallas, TX</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     FINAL CTA
+══════════════════════════════════════════════════════════ -->
+<div class="cta-banner">
+  <h2 class="reveal">
+    Ready to Work with an Agency<br>
+    <span style="color:var(--electric)">That Actually Cares?</span>
+  </h2>
+  <p class="reveal">
+    Book a free strategy call with our team. We'll review your current digital presence, identify your highest-leverage growth opportunities, and give you a clear roadmap — no pitch, no pressure, no obligation.
+  </p>
+  <div class="cta-btns reveal">
+    <a href="/funnels/free-seo-audit/" class="btn-primary">Get My Free SEO Audit ↗</a>
+    <a href="/services/" class="btn-secondary">Explore Our Services →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="logo" aria-label="CyberMagnet — Home" style="display:inline-flex;align-items:center;text-decoration:none;line-height:1;margin-bottom:10px">
+      <svg width="200" height="40" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <text x="100" y="17" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="2">CYBER</text>
+        <circle cx="6" cy="21" r="2" fill="#FF7A35"/>
+        <line x1="8" y1="21" x2="192" y2="21" stroke="#FF7A35" stroke-width="1.5"/>
+        <circle cx="194" cy="21" r="2" fill="#FF7A35"/>
+        <text x="100" y="36" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#FF7A35" text-anchor="middle" letter-spacing="2">MAGNET</text>
+      </svg>
+    </a>
+      <p>Premium digital marketing for growth-focused local businesses. Based in Dallas, TX.</p>
+      <div class="footer-socials">
+        <a href="https://www.tiktok.com/@cybermagnetms" class="social-btn" aria-label="TikTok">♪</a>
+        <a href="https://www.linkedin.com/company/cybermagnet-marketing-solutions/" class="social-btn" aria-label="LinkedIn">in</a>
+        <a href="https://www.youtube.com/@cybermagnetms" class="social-btn" aria-label="YouTube">▶</a>
+        <a href="https://www.instagram.com/cybermagnetms/" class="social-btn" aria-label="Instagram">◎</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>About</h5>
+      <ul>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#values">Our Values</a></li>
+        <li><a href="#difference">Why CyberMagnet</a></li>
+        <li><a href="#founder">Meet the Founder</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="/services/seo/">SEO & Visibility</a></li>
+        <li><a href="/services/website-design/">Web Design</a></li>
+        <li><a href="/services/branding-packages/">Branding</a></li>
+        <li><a href="/services/funnel-building/">Funnel Building</a></li>
+        <li><a href="/services/">All Services</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Get Started</h5>
+      <ul>
+        <li><a href="/funnels/free-seo-audit/">Free SEO Audit</a></li>
+        <li><a href="/contact/">Book Strategy Call</a></li>
+        <li><a href="/portfolio/">View Portfolio</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#91f9f4fdfdfed1f2e8f3f4e3fcf0f6fff4e5bffff4e5"><span class="__cf_email__" data-cfemail="543c3138383b14372d3631263935333a31207a3a3120">[email&#160;protected]</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 CyberMagnet. All rights reserved. · Dallas, Texas</span>
+    <span>Privacy Policy · Terms of Service</span>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ── NAV SCROLL ── */
+const nav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+
+/* ── CANVAS PARTICLES ── */
+const canvas = document.getElementById('hero-canvas');
+const ctx    = canvas.getContext('2d');
+let W, H, pts = [];
+function resize() {
+  W = canvas.width  = canvas.offsetWidth;
+  H = canvas.height = canvas.offsetHeight;
+  pts = [];
+  const n = Math.min(Math.floor(W * H / 13000), 70);
+  for (let i = 0; i < n; i++)
+    pts.push({ x: Math.random()*W, y: Math.random()*H, r: Math.random()*1.3+0.3, vx:(Math.random()-.5)*.2, vy:(Math.random()-.5)*.2, a:Math.random()*.4+.07 });
+}
+function draw() {
+  ctx.clearRect(0,0,W,H);
+  for (let i=0;i<pts.length;i++) for (let j=i+1;j<pts.length;j++) {
+    const dx=pts[i].x-pts[j].x, dy=pts[i].y-pts[j].y, d=Math.hypot(dx,dy);
+    if (d<115) { ctx.beginPath(); ctx.strokeStyle=`rgba(0,123,255,${(1-d/115)*.08})`; ctx.lineWidth=.7; ctx.moveTo(pts[i].x,pts[i].y); ctx.lineTo(pts[j].x,pts[j].y); ctx.stroke(); }
+  }
+  for (const p of pts) {
+    ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle=`rgba(0,123,255,${p.a})`; ctx.fill();
+    p.x+=p.vx; p.y+=p.vy;
+    if(p.x<0||p.x>W) p.vx*=-1;
+    if(p.y<0||p.y>H) p.vy*=-1;
+  }
+  requestAnimationFrame(draw);
+}
+window.addEventListener('resize', resize); resize(); draw();
+
+/* ── SCROLL REVEAL ── */
+const revEls = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.07, rootMargin: '0px 0px -24px 0px' });
+revEls.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

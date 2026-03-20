@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Business Profile Optimisation — CyberMagnet</title>
+<meta name="description" content="Dominate the local map pack and get found by ready-to-buy customers. CyberMagnet delivers professional google business profile optimisation services with transparent pricing and measurable results.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black:#050810; --deep-navy:#0a1628; --navy:#0a2540; --mid-blue:#1b3b6f;
+  --electric:#007bff; --orange:#ff7a00; --orange-hot:#ff9500;
+  --white:#fff; --off-white:#dce8f5; --gray-300:#aabdd0; --gray-400:#8899aa; --gray-600:#445566;
+  --dim:rgba(255,255,255,0.06);
+  --accent:#007bff;
+  --accent-glow:rgba(0,123,255,0.25);
+  --accent-bg:rgba(0,123,255,0.08);
+  --font-d:'Syne',sans-serif; --font-b:'DM Sans',sans-serif;
+  --sp:clamp(72px,9vw,120px); --urgency-h:44px; --nav-h:68px;
+  --or-glow:rgba(255,122,0,0.32);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--font-b);font-weight:300;line-height:1.7;overflow-x:hidden}
+
+/* URGENCY BAR */
+.urgency-bar{
+  position:fixed;top:0;left:0;right:0;z-index:300;height:var(--urgency-h);
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  background:linear-gradient(90deg,#cc5f00,var(--orange),#e07000,var(--orange),#cc5f00);
+  background-size:300% 100%;animation:urg-shift 5s ease-in-out infinite;
+  font-family:var(--font-b);font-size:0.8rem;font-weight:500;color:#fff;
+  letter-spacing:0.02em;padding:0 5%;overflow:hidden;
+}
+.urgency-bar::before{content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.07) 50%,transparent);
+  animation:urg-sheen 3.5s ease-in-out infinite;pointer-events:none}
+@keyframes urg-shift{0%,100%{background-position:0%}50%{background-position:100%}}
+@keyframes urg-sheen{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.ub-dot{width:7px;height:7px;background:rgba(255,255,255,0.9);border-radius:50%;flex-shrink:0;animation:ub-p 1.8s ease-in-out infinite}
+@keyframes ub-p{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.35;transform:scale(0.65)}}
+.ub-sep{color:rgba(255,255,255,0.4);margin:0 10px;font-size:0.65rem}
+.ub-link{color:#fff;text-decoration:underline;text-underline-offset:2px;font-weight:600;white-space:nowrap}
+
+/* NAV */
+nav{
+  position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 6%;height:var(--nav-h);
+  backdrop-filter:blur(22px) saturate(1.4);
+  background:rgba(5,8,16,0.72);
+  border-bottom:1px solid rgba(0,123,255,0.1);
+  transition:background 0.35s,box-shadow 0.35s;
+}
+nav.scrolled{background:rgba(5,8,16,0.96);box-shadow:0 2px 40px rgba(0,0,0,0.5)}
+.logo{font-family:var(--font-d);font-weight:800;font-size:1.4rem;letter-spacing:-0.02em;color:#fff;text-decoration:none}
+.logo span{color:var(--electric)}
+.nav-links{display:flex;gap:2.4rem;list-style:none}
+.nav-links a{color:var(--gray-400);text-decoration:none;font-size:0.84rem;letter-spacing:0.05em;text-transform:uppercase;font-weight:400;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-cta{background:var(--orange);color:#fff;border:none;padding:9px 22px;border-radius:6px;font-family:var(--font-b);font-size:0.84rem;font-weight:500;cursor:pointer;text-decoration:none;transition:background 0.2s,transform 0.2s,box-shadow 0.2s}
+.nav-cta:hover{background:var(--orange-hot);transform:translateY(-1px);box-shadow:0 4px 18px var(--or-glow)}
+.nav-ham{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.nav-ham span{width:22px;height:2px;background:#fff;border-radius:2px}
+
+/* HERO */
+.page-hero{
+  position:relative;overflow:hidden;
+  padding:calc(var(--urgency-h) + var(--nav-h) + 64px) 6% 0;
+  min-height:44vh;display:flex;flex-direction:column;justify-content:flex-end;
+}
+#hero-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero-grid{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(0,123,255,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,123,255,0.035) 1px,transparent 1px);
+  background-size:56px 56px;
+}
+.hero-orb{
+  position:absolute;right:4%;top:50%;transform:translateY(-50%);
+  width:480px;height:480px;border-radius:50%;
+  background:radial-gradient(circle,var(--accent-bg) 0%,transparent 68%);
+  animation:orb-b 5s ease-in-out infinite;pointer-events:none;
+}
+@keyframes orb-b{0%,100%{opacity:0.5;transform:translateY(-50%) scale(1)}50%{opacity:1;transform:translateY(-50%) scale(1.08)}}
+.hero-content{position:relative;z-index:2;max-width:800px;padding-bottom:60px}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.76rem;color:var(--gray-600);margin-bottom:20px;animation:fade-up 0.6s ease both}
+.breadcrumb a{color:var(--gray-600);text-decoration:none;transition:color 0.2s}
+.breadcrumb a:hover{color:var(--gray-400)}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--accent-bg);border:1px solid rgba(0,0,0,0.1);
+  border-color:color-mix(in srgb,var(--accent) 30%,transparent);
+  border-radius:30px;padding:6px 16px;
+  font-size:0.73rem;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+  animation:fade-up 0.6s ease both;
+}
+.hero-badge::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
+.hero-icon{font-size:2.8rem;margin-bottom:16px;display:block;animation:fade-up 0.5s ease both}
+.hero-h1{
+  font-family:var(--font-d);
+  font-size:clamp(2.4rem,5vw,4.6rem);
+  font-weight:800;line-height:1.05;letter-spacing:-0.03em;
+  margin-bottom:18px;
+  animation:fade-up 0.6s 0.08s ease both;
+}
+.hero-h1 .acc{color:var(--accent)}
+.hero-tagline{font-size:clamp(1rem,1.8vw,1.2rem);color:var(--gray-400);max-width:580px;line-height:1.72;animation:fade-up 0.6s 0.16s ease both}
+@keyframes fade-up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+/* INTRO */
+.intro-section{background:var(--deep-navy);border-top:1px solid rgba(0,123,255,0.1);padding:var(--sp) 6%}
+.intro-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;max-width:1200px;margin:0 auto}
+.intro-label{display:flex;align-items:center;gap:10px;font-size:0.73rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.intro-label::before{content:'';width:20px;height:1px;background:var(--accent)}
+.intro-h2{font-family:var(--font-d);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin-bottom:16px}
+.intro-body{font-size:0.96rem;color:var(--gray-400);line-height:1.78;}
+.intro-right{display:flex;flex-direction:column;gap:20px;padding-top:8px}
+.info-card{
+  background:rgba(255,255,255,0.025);border:1px solid var(--dim);border-radius:14px;
+  padding:24px 22px;
+}
+.info-card h4{font-family:var(--font-d);font-size:0.95rem;font-weight:700;margin-bottom:10px;color:var(--off-white)}
+.info-card p{font-size:0.86rem;color:var(--gray-400);line-height:1.65}
+.info-card.accent-card{background:var(--accent-bg);border-color:color-mix(in srgb,var(--accent) 25%,transparent)}
+
+/* PRICING */
+.pricing-section{background:var(--black);padding:var(--sp) 6%}
+.pricing-header{text-align:center;margin-bottom:56px}
+.sec-label{display:inline-flex;align-items:center;gap:10px;font-size:0.73rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.sec-label::before{content:'';width:20px;height:1px;background:var(--accent)}
+.sec-label-c{display:flex;justify-content:center}
+.sec-label-c .sec-label::after{content:'';width:20px;height:1px;background:var(--accent)}
+.sec-h2{font-family:var(--font-d);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin-bottom:10px}
+.sec-sub{font-size:0.95rem;color:var(--gray-400);max-width:520px;margin:0 auto}
+
+.tiers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1100px;margin:0 auto}
+.tier-card{
+  background:rgba(255,255,255,0.025);border:1px solid var(--dim);
+  border-radius:20px;padding:36px 30px;
+  display:flex;flex-direction:column;position:relative;overflow:hidden;
+  transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s;
+}
+.tier-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  opacity:0;transition:opacity 0.3s;
+}
+.tier-card:hover{transform:translateY(-6px);border-color:color-mix(in srgb,var(--accent) 30%,transparent);box-shadow:0 24px 60px rgba(0,0,0,0.4)}
+.tier-card:hover::before{opacity:1}
+.tier-card.featured{background:var(--accent-bg);border-color:color-mix(in srgb,var(--accent) 35%,transparent)}
+.tier-card.featured::before{opacity:1}
+.tier-badge{
+  position:absolute;top:16px;right:16px;
+  background:var(--accent);color:#fff;
+  font-size:0.65rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
+  padding:4px 12px;border-radius:20px;
+}
+.tier-name{font-family:var(--font-d);font-size:1rem;font-weight:700;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px}
+.tier-price{font-family:var(--font-d);font-size:2rem;font-weight:800;color:#fff;line-height:1;margin-bottom:4px}
+.tier-period{font-size:0.9rem;color:var(--gray-400);font-weight:300}
+.tier-desc{font-size:0.85rem;color:var(--gray-400);line-height:1.65;margin:14px 0 20px;padding-top:14px;border-top:1px solid var(--dim)}
+.tier-features{list-style:none;display:flex;flex-direction:column;gap:10px;flex:1;margin-bottom:28px}
+.tier-item{display:flex;align-items:flex-start;gap:10px;font-size:0.85rem;color:var(--gray-300);line-height:1.5}
+.ti-check{color:var(--accent);font-size:0.75rem;flex-shrink:0;margin-top:2px;font-weight:600}
+.tier-cta{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 24px;border-radius:8px;font-family:var(--font-b);
+  font-size:0.9rem;font-weight:500;text-decoration:none;cursor:pointer;
+  transition:all 0.25s;
+}
+.tier-cta-primary{
+  position:relative;overflow:hidden;
+  background:var(--orange);color:#fff;border:none;
+  animation:cta-pulse 3s ease-in-out infinite;
+}
+.tier-cta-primary::before{
+  content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.18),transparent);
+  animation:sheen 3s ease-in-out infinite;pointer-events:none;
+}
+@keyframes sheen{0%,65%,100%{left:-100%}38%{left:140%}}
+@keyframes cta-pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,122,0,0.4)}50%{box-shadow:0 0 0 14px rgba(255,122,0,0)}}
+.tier-cta-primary:hover{background:var(--orange-hot);transform:translateY(-2px);box-shadow:0 10px 32px var(--or-glow);animation:none}
+.tier-cta-secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.18)}
+.tier-cta-secondary:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+
+/* CTA BANNER */
+.cta-banner{
+  background:linear-gradient(135deg,var(--navy) 0%,#0d1f3c 100%);
+  border-top:1px solid rgba(0,123,255,0.18);
+  text-align:center;padding:var(--sp) 6%;position:relative;overflow:hidden;
+}
+.cta-banner::before{
+  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:700px;height:350px;
+  background:radial-gradient(ellipse,rgba(0,123,255,0.08) 0%,transparent 68%);
+  pointer-events:none;
+}
+.cta-banner h2{font-family:var(--font-d);font-size:clamp(1.8rem,3.8vw,3.2rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:12px;position:relative}
+.cta-banner p{color:var(--gray-400);max-width:480px;margin:0 auto 34px;position:relative}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-primary{
+  position:relative;overflow:hidden;background:var(--orange);color:#fff;
+  border:none;padding:14px 34px;border-radius:8px;
+  font-family:var(--font-b);font-size:0.95rem;font-weight:500;
+  cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+  transition:background 0.25s,transform 0.25s,box-shadow 0.25s;
+  animation:cta-pulse 3s ease-in-out infinite;
+}
+.btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.18),transparent);animation:sheen 3s ease-in-out infinite;pointer-events:none}
+.btn-primary:hover{background:var(--orange-hot);transform:translateY(-2px);box-shadow:0 10px 32px var(--or-glow);animation:none}
+.btn-secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.18);padding:14px 32px;border-radius:8px;font-family:var(--font-b);font-size:0.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s}
+.btn-secondary:hover{border-color:var(--electric);color:var(--electric);transform:translateY(-2px)}
+
+/* FOOTER */
+footer{background:var(--black);border-top:1px solid var(--dim);padding:60px 6% 30px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:44px}
+.footer-brand .logo{margin-bottom:10px;display:block}
+.footer-brand p{font-size:0.84rem;color:var(--gray-400);max-width:230px}
+.footer-socials{display:flex;gap:10px;margin-top:18px}
+.social-btn{width:34px;height:34px;background:var(--dim);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.82rem;text-decoration:none;color:var(--gray-400);transition:all 0.2s}
+.social-btn:hover{background:var(--electric);color:#fff;transform:translateY(-2px)}
+.footer-col h5{font-family:var(--font-d);font-size:0.74rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-600);margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-col a{color:var(--gray-400);text-decoration:none;font-size:0.84rem;transition:color 0.2s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{padding-top:22px;border-top:1px solid var(--dim);display:flex;justify-content:space-between;font-size:0.76rem;color:var(--gray-600)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity 0.65s ease,transform 0.65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:0.1s}.rd2{transition-delay:0.2s}
+
+/* MOBILE */
+@media(max-width:900px){
+  .nav-links{display:none}.nav-ham{display:flex}
+  .intro-inner{grid-template-columns:1fr;gap:40px}
+  .tiers-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  :root{--urgency-h:36px}
+  .urgency-bar{font-size:0.7rem}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:8px}
+  .cta-btns{flex-direction:column;align-items:center}
+  .ub-sep:nth-child(6),.ub-sep:nth-child(6)~*{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="urgency-bar">
+  <span class="ub-dot"></span>
+  <span>Only <strong>3 client slots</strong> available this month</span>
+  <span class="ub-sep">·</span>
+  <span>50+ businesses served</span>
+  <span class="ub-sep">·</span>
+  <span>Avg. 3.8× ROI</span>
+  <span class="ub-sep">·</span>
+  <a class="ub-link" href="/funnels/free-seo-audit/">Claim your spot →</a>
+</div>
+
+<nav id="main-nav">
+  <a href="/" class="logo" aria-label="CyberMagnet — Home" style="display:inline-flex;align-items:center;text-decoration:none;line-height:1">
+    <svg width="220" height="44" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <text x="100" y="17" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="2">CYBER</text>
+      <circle cx="6" cy="21" r="2" fill="#FF7A35"/>
+      <line x1="8" y1="21" x2="192" y2="21" stroke="#FF7A35" stroke-width="1.5"/>
+      <circle cx="194" cy="21" r="2" fill="#FF7A35"/>
+      <text x="100" y="36" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#FF7A35" text-anchor="middle" letter-spacing="2">MAGNET</text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/services/" class="active">Services</a></li>
+    <li><a href="/portfolio/">Portfolio</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/blog/">Blog</a></li>
+  </ul>
+  <a href="/funnels/free-seo-audit/" class="nav-cta">Free SEO Audit</a>
+  <div class="nav-ham"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="page-hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-grid"></div>
+  <div class="hero-orb"></div>
+  <div class="hero-content">
+    <div class="breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      <a href="/services/">Services</a><span>›</span>
+      <span>Google Business Profile Optimisation</span>
+    </div>
+    <span class="hero-icon">📍</span>
+    <div class="hero-badge">Google Business Profile Optimisation</div>
+    <h1 class="hero-h1">Dominate the local map pack and get found by ready-to-buy customers.</h1>
+    <p class="hero-tagline">Professional google business profile optimisation — delivered with transparent pricing, measurable results, and no long-term lock-in.</p>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="intro-inner">
+    <div class="intro-left reveal">
+      <div class="intro-label">What We Do</div>
+      <h2 class="intro-h2">The CyberMagnet Approach</h2>
+      <p class="intro-body">When someone searches for a service in your area, Google Business Profile is what determines whether they find you — or your competitor. A fully optimised profile with consistent information, quality photos, regular posts, and strong reviews dramatically increases your visibility in local search and on Google Maps. CyberMagnet's GBP optimisation service ensures your profile is working as hard as possible to win local customers.</p>
+    </div>
+    <div class="intro-right">
+      <div class="info-card accent-card reveal rd1">
+        <h4>Who This Is For</h4>
+        <p>Any local service business with a physical location or service area. Particularly high-impact for trades, clinics, restaurants, law firms, real estate agents, and any business that depends on local foot traffic or local search enquiries.</p>
+      </div>
+      <div class="info-card reveal rd2">
+        <h4>Why CyberMagnet</h4>
+        <p>Most businesses set up their Google profile and forget about it. We treat your GBP as a live marketing asset — continuously updated, actively managed, and structured for maximum local visibility.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing-section" id="pricing">
+  <div class="pricing-header reveal">
+    <div class="sec-label-c"><div class="sec-label">Pricing</div></div>
+    <h2 class="sec-h2">Choose Your Tier</h2>
+    <p class="sec-sub">Every tier includes professional delivery, transparent communication, and no hidden fees. Upgrade or change at any time.</p>
+  </div>
+  <div class="tiers-grid reveal rd1">
+    
+    <div class="tier-card ">
+      <div class="tier-header">
+        
+        <div class="tier-name">Starter</div>
+        <div class="tier-price">$200</div>
+        <p class="tier-desc">A clean, complete profile that makes a strong first impression and ranks for your core terms.</p>
+      </div>
+      <ul class="tier-features"><li class="tier-item"><span class="ti-check">✓</span><span>Profile setup or full cleanup</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>Basic keyword optimisation in description and categories</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>5 professional photos uploaded</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>NAP (Name, Address, Phone) consistency check</span></li></ul>
+      <a href="/contact/" class="tier-cta tier-cta-secondary">
+        Get Started →
+      </a>
+    </div>
+    <div class="tier-card featured">
+      <div class="tier-header">
+        <span class="tier-badge">Popular</span>
+        <div class="tier-name">Growth</div>
+        <div class="tier-price">$400</div>
+        <p class="tier-desc">An actively managed profile with richer content and weekly posting for ongoing visibility.</p>
+      </div>
+      <ul class="tier-features"><li class="tier-item"><span class="ti-check">✓</span><span>Category refinement and attribute optimisation</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>15 professional photos uploaded</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>Weekly Google Post published</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>Q&A section optimised</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>Monthly performance summary</span></li></ul>
+      <a href="/contact/" class="tier-cta tier-cta-primary">
+        Get Started ↗
+      </a>
+    </div>
+    <div class="tier-card ">
+      <div class="tier-header">
+        
+        <div class="tier-name">Premium</div>
+        <div class="tier-price">$800</div>
+        <p class="tier-desc">Full ongoing GBP management — your profile treated as a live marketing channel.</p>
+      </div>
+      <ul class="tier-features"><li class="tier-item"><span class="ti-check">✓</span><span>4 Google Posts per month</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>Review response templates and management</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>Photo refresh and seasonal updates</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>Keyword monitoring and ranking report</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>Monthly performance report with insights</span></li></ul>
+      <a href="/contact/" class="tier-cta tier-cta-secondary">
+        Get Started →
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="cta-banner">
+  <h2 class="reveal">Not sure which tier is right for you?</h2>
+  <p class="reveal">Book a free strategy call. We'll review your situation and recommend exactly what you need — no upselling, no pressure.</p>
+  <div class="cta-btns reveal">
+    <a href="/contact/" class="btn-primary">Book Free Strategy Call ↗</a>
+    <a href="/services/" class="btn-secondary">← All Services</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="logo" aria-label="CyberMagnet — Home" style="display:inline-flex;align-items:center;text-decoration:none;line-height:1;margin-bottom:10px">
+      <svg width="200" height="40" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <text x="100" y="17" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="2">CYBER</text>
+        <circle cx="6" cy="21" r="2" fill="#FF7A35"/>
+        <line x1="8" y1="21" x2="192" y2="21" stroke="#FF7A35" stroke-width="1.5"/>
+        <circle cx="194" cy="21" r="2" fill="#FF7A35"/>
+        <text x="100" y="36" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#FF7A35" text-anchor="middle" letter-spacing="2">MAGNET</text>
+      </svg>
+    </a>
+      <p>Premium digital marketing for growth-focused local businesses.</p>
+      <div class="footer-socials">
+        <a href="#" class="social-btn">♪</a>
+        <a href="#" class="social-btn">in</a>
+        <a href="#" class="social-btn">▶</a>
+        <a href="#" class="social-btn">◎</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="/services/seo/">SEO</a></li>
+        <li><a href="/services/website-design/">Web Design</a></li>
+        <li><a href="/services/funnels/">Funnels</a></li>
+        <li><a href="/services/social-media-management/">Social Media</a></li>
+        <li><a href="/services/branding-packages/">Branding</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="/about/">About</a></li>
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/case-studies/">Case Studies</a></li>
+        <li><a href="/blog/">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="/cdn-cgi/l/email-protection#eb838e878784ab8892898e99868a8c858e9fc5858e9f"><span class="__cf_email__" data-cfemail="caa2afa6a6a58aa9b3a8afb8a7abada4afbee4a4afbe">[email&#160;protected]</span></a></li>
+        <li><a href="/funnels/free-seo-audit/">Free SEO Audit</a></li>
+        <li><a href="/contact/">Strategy Call</a></li>
+        <li><a href="/partner/">Partner Program</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 CyberMagnet. All rights reserved.</span>
+    <span>Privacy Policy · Terms of Service</span>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const nav=document.getElementById('main-nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
+const canvas=document.getElementById('hero-canvas');
+const ctx=canvas.getContext('2d');
+let W,H,pts=[];
+function resize(){W=canvas.width=canvas.offsetWidth;H=canvas.height=canvas.offsetHeight;pts=[];const n=Math.min(Math.floor(W*H/14000),60);for(let i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.2+0.3,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,a:Math.random()*.4+.07});}
+function draw(){ctx.clearRect(0,0,W,H);for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<110){ctx.beginPath();ctx.strokeStyle=`rgba(0,123,255,${(1-d/110)*.08})`;ctx.lineWidth=.7;ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.stroke();}}
+for(const p of pts){ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(0,123,255,${p.a})`;ctx.fill();p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;}requestAnimationFrame(draw);}
+window.addEventListener('resize',resize);resize();draw();
+const revEls=document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.07, rootMargin: '0px 0px -24px 0px' });
+revEls.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

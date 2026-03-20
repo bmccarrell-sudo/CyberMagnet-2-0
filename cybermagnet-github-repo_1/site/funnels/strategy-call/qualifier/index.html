@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Your Free Strategy Call — CyberMagnet | Dallas Digital Marketing</title>
+<meta name="description" content="Tell us about your business in 60 seconds. We'll match you with the right growth strategy and confirm your free strategy call — personalised before you even speak to us.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#050810;--deep-navy:#0a1628;--navy:#0a2540;--mid-blue:#1b3b6f;
+  --electric:#007bff;--el-glow:rgba(0,123,255,0.28);--el-light:rgba(0,123,255,0.08);
+  --orange:#ff7a00;--orange-hot:#ff9500;--or-glow:rgba(255,122,0,0.35);--or-light:rgba(255,122,0,0.08);
+  --white:#ffffff;--off-white:#dce8f5;--gray-300:#aabdd0;--gray-400:#8899aa;--gray-600:#445566;
+  --dim:rgba(255,255,255,0.06);--success:#00c864;--warn:#f59e0b;
+  --font-d:'Syne',sans-serif;--font-b:'DM Sans',sans-serif;
+  --urgency-h:44px;--nav-h:68px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--font-b);font-weight:300;line-height:1.7;overflow-x:hidden}
+
+/* URGENCY BAR */
+.urgency-bar{position:fixed;top:0;left:0;right:0;z-index:300;height:var(--urgency-h);display:flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(90deg,#cc5f00,var(--orange),#e07000,var(--orange),#cc5f00);background-size:300% 100%;animation:urg-shift 5s ease-in-out infinite;font-size:0.8rem;font-weight:500;color:#fff;padding:0 5%;overflow:hidden}
+.urgency-bar::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.07) 50%,transparent);animation:urg-sheen 3.5s ease-in-out infinite;pointer-events:none}
+@keyframes urg-shift{0%,100%{background-position:0%}50%{background-position:100%}}
+@keyframes urg-sheen{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.ub-dot{width:7px;height:7px;background:rgba(255,255,255,0.9);border-radius:50%;flex-shrink:0;animation:ub-p 1.8s ease-in-out infinite}
+@keyframes ub-p{0%,100%{opacity:1}50%{opacity:0.3}}
+.ub-sep{color:rgba(255,255,255,0.4);margin:0 10px;font-size:0.65rem}
+
+/* NAV */
+nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:var(--nav-h);backdrop-filter:blur(22px);background:rgba(5,8,16,0.85);border-bottom:1px solid rgba(0,123,255,0.1)}
+.logo{font-family:var(--font-d);font-weight:800;font-size:1.4rem;letter-spacing:-0.02em;color:#fff;text-decoration:none}
+.logo span{color:var(--electric)}
+.nav-back{font-size:0.82rem;color:var(--gray-400);text-decoration:none;display:flex;align-items:center;gap:6px;transition:color 0.2s}
+.nav-back:hover{color:#fff}
+
+/* LAYOUT */
+.page-wrap{padding:calc(var(--urgency-h) + var(--nav-h) + 40px) 6% 80px;max-width:1100px;margin:0 auto}
+.page-grid{display:grid;grid-template-columns:1fr 400px;gap:56px;align-items:start}
+
+/* LEFT PANEL */
+.left-panel{}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.76rem;color:var(--gray-600);margin-bottom:20px;flex-wrap:wrap}
+.breadcrumb a{color:var(--gray-600);text-decoration:none;transition:color 0.2s}
+.breadcrumb a:hover{color:var(--gray-400)}
+.page-kicker{display:inline-flex;align-items:center;gap:9px;background:var(--el-light);border:1px solid rgba(0,123,255,0.22);border-radius:30px;padding:6px 16px;font-size:0.73rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--electric);margin-bottom:20px}
+.page-kicker::before{content:'';width:6px;height:6px;background:var(--success);border-radius:50%;animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
+.page-h1{font-family:var(--font-d);font-size:clamp(2rem,4vw,3.2rem);font-weight:800;line-height:1.06;letter-spacing:-0.03em;margin-bottom:16px}
+.page-h1 .b{color:var(--electric)}.page-h1 .o{color:var(--orange)}
+.page-sub{font-size:1rem;color:var(--gray-400);line-height:1.75;margin-bottom:28px;max-width:500px}
+.page-sub strong{color:var(--off-white);font-weight:400}
+
+/* WHAT HAPPENS NEXT */
+.what-next{display:flex;flex-direction:column;gap:0;margin-bottom:36px}
+.wn-item{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--dim)}
+.wn-item:last-child{border-bottom:none;padding-bottom:0}
+.wn-dot{width:32px;height:32px;border-radius:50%;background:var(--el-light);border:1.5px solid rgba(0,123,255,0.3);display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-size:0.72rem;font-weight:800;color:var(--electric);flex-shrink:0;margin-top:2px}
+.wn-title{font-family:var(--font-d);font-size:0.9rem;font-weight:700;color:var(--off-white);margin-bottom:3px}
+.wn-desc{font-size:0.82rem;color:var(--gray-400);line-height:1.55}
+
+/* TRUST SIGNALS */
+.trust-row{display:flex;flex-direction:column;gap:10px}
+.tr-item{display:flex;align-items:center;gap:10px;font-size:0.82rem;color:var(--gray-400)}
+.tr-icon{font-size:1rem;flex-shrink:0}
+
+/* QUALIFIER FORM CARD */
+.form-card{background:var(--deep-navy);border:1px solid rgba(0,123,255,0.2);border-radius:20px;overflow:hidden;position:relative;position:sticky;top:calc(var(--urgency-h) + var(--nav-h) + 24px)}
+.form-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--electric),var(--orange));z-index:1}
+
+/* PROGRESS BAR */
+.progress-wrap{padding:20px 24px 0;position:relative;z-index:1}
+.progress-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.pl-text{font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gray-400);font-weight:600}
+.pl-step{font-family:var(--font-d);font-size:0.72rem;font-weight:700;color:var(--electric)}
+.progress-track{height:4px;background:rgba(255,255,255,0.08);border-radius:2px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--electric),var(--orange));border-radius:2px;transition:width 0.5s ease;width:20%}
+
+/* STEP PANELS */
+.steps-wrap{padding:22px 24px 0}
+.step-panel{display:none}
+.step-panel.active{display:block;animation:step-in 0.35s ease both}
+@keyframes step-in{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:translateX(0)}}
+.step-q{font-family:var(--font-d);font-size:1rem;font-weight:800;color:#fff;line-height:1.3;margin-bottom:6px}
+.step-hint{font-size:0.78rem;color:var(--gray-300);margin-bottom:16px}
+
+/* OPTION BUTTONS */
+.options-grid{display:flex;flex-direction:column;gap:8px}
+.options-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.opt-btn{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:11px 14px;text-align:left;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:10px;font-family:var(--font-b);font-size:0.85rem;color:var(--gray-300);width:100%}
+.opt-btn:hover{border-color:rgba(0,123,255,0.35);background:var(--el-light);color:var(--off-white)}
+.opt-btn.selected{border-color:var(--electric);background:var(--el-light);color:#fff}
+.opt-btn.selected .ob-radio{background:var(--electric);border-color:var(--electric)}
+.opt-btn.selected .ob-radio::after{opacity:1}
+.ob-radio{width:16px;height:16px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.2);flex-shrink:0;position:relative;transition:all 0.2s}
+.ob-radio::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:6px;height:6px;border-radius:50%;background:#fff;opacity:0;transition:opacity 0.2s}
+.ob-icon{font-size:1rem;flex-shrink:0}
+.ob-label{flex:1}
+.ob-sub{font-size:0.72rem;color:var(--gray-400);display:block;margin-top:1px}
+
+/* TEXT INPUT */
+.form-input{width:100%;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:11px 14px;font-family:var(--font-b);font-size:0.88rem;color:#fff;outline:none;transition:all 0.25s}
+.form-input::placeholder{color:var(--gray-600)}
+.form-input:focus{border-color:var(--electric);background:var(--el-light);box-shadow:0 0 0 3px rgba(0,123,255,0.1)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-label{font-size:0.72rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--gray-400)}
+
+/* HOT LEAD FLASH */
+.hot-indicator{display:none;background:linear-gradient(135deg,rgba(0,200,100,0.1),rgba(0,200,100,0.04));border:1px solid rgba(0,200,100,0.25);border-radius:8px;padding:10px 14px;margin-top:12px;font-size:0.78rem;color:var(--success);align-items:center;gap:8px}
+.hot-indicator.show{display:flex;animation:fade-in 0.4s ease both}
+@keyframes fade-in{from{opacity:0}to{opacity:1}}
+.hi-dot{width:7px;height:7px;border-radius:50%;background:var(--success);flex-shrink:0;animation:blink 1.2s ease-in-out infinite}
+
+/* NAV BUTTONS */
+.form-nav{display:flex;gap:10px;padding:18px 24px 22px;align-items:center}
+.btn-next{flex:1;background:var(--orange);color:#fff;border:none;padding:13px 20px;border-radius:8px;font-family:var(--font-d);font-size:0.9rem;font-weight:700;cursor:pointer;transition:all 0.25s;display:flex;align-items:center;justify-content:center;gap:7px;position:relative;overflow:hidden;animation:cta-pulse 3s ease-in-out infinite}
+.btn-next::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.15),transparent);animation:sheen 3s ease-in-out infinite;pointer-events:none}
+@keyframes sheen{0%,65%,100%{left:-100%}38%{left:140%}}
+@keyframes cta-pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,122,0,0.4)}50%{box-shadow:0 0 0 10px rgba(255,122,0,0)}}
+.btn-next:hover{background:var(--orange-hot);transform:translateY(-1px);animation:none}
+.btn-next:disabled{background:var(--gray-600);cursor:not-allowed;animation:none;transform:none}
+.btn-back{width:36px;height:44px;background:rgba(255,255,255,0.04);border:1px solid var(--dim);border-radius:8px;cursor:pointer;color:var(--gray-400);font-size:0.9rem;transition:all 0.2s;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.btn-back:hover{background:var(--el-light);border-color:rgba(0,123,255,0.25);color:#fff}
+.btn-back.hidden{visibility:hidden}
+
+/* SCORE DISPLAY inside form */
+.score-meter{padding:0 24px 16px}
+.sm-inner{background:rgba(255,255,255,0.025);border:1px solid var(--dim);border-radius:10px;padding:14px}
+.sm-label{font-size:0.7rem;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px}
+.sm-bar{height:6px;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden;margin-bottom:6px}
+.sm-fill{height:100%;background:linear-gradient(90deg,var(--electric),var(--success));border-radius:3px;transition:width 0.6s ease;width:0%}
+.sm-text{font-family:var(--font-d);font-size:0.8rem;font-weight:700;color:#fff}
+
+/* SUCCESS STATE */
+.success-panel{display:none;padding:28px 24px;text-align:center;animation:step-in 0.4s ease both}
+.sp-icon{font-size:3rem;margin-bottom:14px}
+.sp-tag{display:inline-flex;align-items:center;gap:6px;padding:4px 14px;border-radius:20px;font-size:0.72rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:14px}
+.sp-hot{background:rgba(0,200,100,0.1);border:1px solid rgba(0,200,100,0.3);color:var(--success)}
+.sp-warm{background:var(--or-light);border:1px solid rgba(255,122,0,0.3);color:var(--orange)}
+.sp-cold{background:var(--el-light);border:1px solid rgba(0,123,255,0.25);color:var(--electric)}
+.sp-h2{font-family:var(--font-d);font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:10px;line-height:1.2}
+.sp-body{font-size:0.85rem;color:var(--gray-400);line-height:1.65;margin-bottom:20px}
+.btn-calendly{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--orange);color:#fff;border:none;padding:14px 20px;border-radius:8px;font-family:var(--font-d);font-size:0.9rem;font-weight:700;cursor:pointer;text-decoration:none;width:100%;transition:all 0.25s;animation:cta-pulse 3s ease-in-out infinite}
+.btn-calendly:hover{background:var(--orange-hot);animation:none}
+.sp-micro{font-size:0.74rem;color:var(--gray-600);margin-top:10px;text-align:center}
+.sp-summary{background:rgba(255,255,255,0.025);border:1px solid var(--dim);border-radius:10px;padding:14px;margin-bottom:16px;text-align:left}
+.sum-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--dim);font-size:0.78rem}
+.sum-row:last-child{border-bottom:none}
+.sum-label{color:var(--gray-600)}
+.sum-val{color:var(--off-white);font-weight:500;text-align:right;max-width:60%}
+
+/* MOBILE */
+@media(max-width:900px){
+  .page-grid{grid-template-columns:1fr;gap:36px}
+  .form-card{position:static}
+  .form-row{grid-template-columns:1fr}
+  .options-grid-2{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  :root{--urgency-h:36px}
+  .page-wrap{padding:calc(var(--urgency-h) + var(--nav-h) + 24px) 5% 60px}
+}
+</style>
+</head>
+<body>
+
+<!-- URGENCY BAR -->
+<div class="urgency-bar">
+  <span class="ub-dot"></span>
+  <span>Only <strong>3 client slots</strong> available this month</span>
+  <span class="ub-sep">·</span>
+  <span>Takes 60 seconds · Personalised before you even call</span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="logo" aria-label="CyberMagnet — Home" style="display:inline-flex;align-items:center;text-decoration:none;line-height:1">
+    <svg width="220" height="44" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <text x="100" y="17" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="2">CYBER</text>
+      <circle cx="6" cy="21" r="2" fill="#FF7A35"/>
+      <line x1="8" y1="21" x2="192" y2="21" stroke="#FF7A35" stroke-width="1.5"/>
+      <circle cx="194" cy="21" r="2" fill="#FF7A35"/>
+      <text x="100" y="36" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#FF7A35" text-anchor="middle" letter-spacing="2">MAGNET</text>
+    </svg>
+  </a>
+  <a href="/systems/" class="nav-back">← Back to Systems</a>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════
+     MAIN LAYOUT
+══════════════════════════════════════════════════════ -->
+<div class="page-wrap">
+  <div class="page-grid">
+
+    <!-- LEFT: CONTEXT -->
+    <div class="left-panel">
+      <div class="breadcrumb">
+        <a href="/">Home</a><span>›</span>
+        <a href="/funnels/">Funnels</a><span>›</span>
+        <span>Strategy Call</span>
+      </div>
+      <div class="page-kicker">Free · 30 Minutes · No Obligation</div>
+      <h1 class="page-h1">
+        Tell Us About Your Business.<br>
+        We'll Come <span class="b">Prepared</span><br>
+        to <span class="o">Actually Help.</span>
+      </h1>
+      <p class="page-sub">
+        <strong>Answer 5 quick questions</strong> and we'll personalise your strategy call before it starts — matching you with the right recommendations, preparing specific insights for your industry, and ensuring 30 minutes delivers maximum value.
+      </p>
+
+      <div class="what-next">
+        <div class="wn-item">
+          <div class="wn-dot">1</div>
+          <div>
+            <div class="wn-title">Answer 5 questions — 60 seconds</div>
+            <div class="wn-desc">Tell us about your business type, biggest challenge, and where you're at. No essay required — all multiple choice.</div>
+          </div>
+        </div>
+        <div class="wn-item">
+          <div class="wn-dot">2</div>
+          <div>
+            <div class="wn-title">We review before the call</div>
+            <div class="wn-desc">Your answers go to our team. We'll come prepared with relevant case studies, specific recommendations, and a pre-built outline for your call.</div>
+          </div>
+        </div>
+        <div class="wn-item">
+          <div class="wn-dot">3</div>
+          <div>
+            <div class="wn-title">Pick your time slot</div>
+            <div class="wn-desc">After you answer, you'll select a time that works for you. Confirmation and a short preparation note arrive in your inbox immediately.</div>
+          </div>
+        </div>
+        <div class="wn-item">
+          <div class="wn-dot">4</div>
+          <div>
+            <div class="wn-title">30 minutes of focused strategy</div>
+            <div class="wn-desc">A clear diagnosis of your digital gaps, a prioritised action plan, and honest recommendations — whether you work with us or not.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="trust-row">
+        <div class="tr-item"><span class="tr-icon">🛡️</span>Zero pitch pressure — if we're not the right fit, we'll tell you</div>
+        <div class="tr-item"><span class="tr-icon">🗓️</span>Available Mon–Fri, 10am–4pm CT · Dallas, Texas</div>
+        <div class="tr-item"><span class="tr-icon">📞</span>(214) 412-0861 · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4e3e3c21242b2d3a3d0e2d372c2b3c232f29202b3a60202b3a">[email&#160;protected]</a></div>
+        <div class="tr-item"><span class="tr-icon">⭐</span>97% of clients rate the strategy call as immediately valuable</div>
+      </div>
+    </div>
+
+    <!-- RIGHT: QUALIFIER FORM -->
+    <div class="form-card" id="form-card">
+
+      <!-- PROGRESS -->
+      <div class="progress-wrap">
+        <div class="progress-label">
+          <span class="pl-text">Qualifying your call</span>
+          <span class="pl-step" id="step-label">Step 1 of 5</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- SCORE METER (hidden until step 4) -->
+      <div class="score-meter" id="score-meter" style="display:none;padding-top:14px">
+        <div class="sm-inner">
+          <div class="sm-label">Lead quality score</div>
+          <div class="sm-bar"><div class="sm-fill" id="score-fill"></div></div>
+          <div class="sm-text" id="score-text">Calculating...</div>
+        </div>
+      </div>
+
+      <div class="steps-wrap">
+
+        <!-- STEP 1 — Business Type -->
+        <div class="step-panel active" id="step-1">
+          <div class="step-q">What type of business do you run?</div>
+          <div class="step-hint">This helps us prepare industry-specific recommendations for your call.</div>
+          <div class="options-grid">
+            <button class="opt-btn" data-step="1" data-val="local-service" data-score="2">
+              <div class="ob-radio"></div>
+              <span class="ob-icon">🔧</span>
+              <div class="ob-label">Local service business<span class="ob-sub">Trades, home services, contractors</span></div>
+            </button>
+            <button class="opt-btn" data-step="1" data-val="professional" data-score="2">
+              <div class="ob-radio"></div>
+              <span class="ob-icon">⚖️</span>
+              <div class="ob-label">Professional services<span class="ob-sub">Legal, financial, medical, consulting</span></div>
+            </button>
+            <button class="opt-btn" data-step="1" data-val="retail-hospitality" data-score="1">
+              <div class="ob-radio"></div>
+              <span class="ob-icon">🍽️</span>
+              <div class="ob-label">Retail or hospitality<span class="ob-sub">Restaurant, shop, venue</span></div>
+            </button>
+            <button class="opt-btn" data-step="1" data-val="agency-consultant" data-score="2">
+              <div class="ob-radio"></div>
+              <span class="ob-icon">📱</span>
+              <div class="ob-label">Agency or consultant<span class="ob-sub">Marketing, coaching, B2B services</span></div>
+            </button>
+            <button class="opt-btn" data-step="1" data-val="ecommerce" data-score="1">
+              <div class="ob-radio"></div>
+              <span class="ob-icon">🛒</span>
+              <div class="ob-label">E-commerce or product<span class="ob-sub">Online store, physical products</span></div>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 2 — Biggest Challenge -->
+        <div class="step-panel" id="step-2">
+          <div class="step-q">What's your biggest digital growth challenge right now?</div>
+          <div class="step-hint">Select the one that's causing the most friction in your business today.</div>
+          <div class="options-grid">
+            <button class="opt-btn" data-step="2" data-val="not-found" data-score="2">
+              <div class="ob-radio"></div>
+              <span class="ob-icon">🔍</span>
+              <div class="ob-label">Not being found on Google<span class="ob-sub">Low search visibility and traffic</span></div>
+            </button>
+            <button class="opt-btn" data-step="2" data-val="traffic-no-leads" data-score="2">
+              <div class="ob-radio"></div>
+              <span class="ob-icon">🌐</span>
+              <div class="ob-label">Traffic but no leads<span class="ob-sub">Website isn't converting visitors</span></div>
+            </button>
+            <button class="opt-btn" data-step="2" data-val="inconsistent-leads" data-score="2">
+              <div class="ob-radio"></div>
+              <span class="ob-icon">📉</span>
+              <div class="ob-label">Inconsistent lead flow<span class="ob-sub">Feast-or-famine pipeline cycles</span></div>
+            </button>
+            <button class="opt-btn" data-step="2" data-val="missed-calls" data-score="3">
+              <div class="ob-radio"></div>
+              <span class="ob-icon">📞</span>
+              <div class="ob-label">Missed calls and slow follow-up<span class="ob-sub">Leads going cold before I respond</span></div>
+            </button>
+            <button class="opt-btn" data-step="2" data-val="brand-weak" data-score="1">
+              <div class="ob-radio"></div>
+              <span class="ob-icon">🎨</span>
+              <div class="ob-label">Weak brand and online presence<span class="ob-sub">Looking unprofessional compared to competitors</span></div>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 3 — Timeline / Urgency -->
+        <div class="step-panel" id="step-3">
+          <div class="step-q">How soon are you looking to make a change?</div>
+          <div class="step-hint">This tells us how to prioritise your strategy call recommendations.</div>
+          <div class="options-grid">
+            <button class="opt-btn" data-step="3" data-val="asap" data-score="3">
+              <div class="ob-radio"></div>
+              <span class="ob-icon">🔥</span>
+              <div class="ob-label">As soon as possible<span class="ob-sub">I need to fix this now — it's costing me business</span></div>
+            </button>
+            <button class="opt-btn" data-step="3" data-val="30-days" data-score="2">
+              <div class="ob-radio"></div>
+              <span class="ob-icon">📅</span>
+              <div class="ob-label">Within the next 30 days<span class="ob-sub">Actively evaluating options right now</span></div>
+            </button>
+            <button class="opt-btn" data-step="3" data-val="90-days" data-score="1">
+              <div class="ob-radio"></div>
+              <span class="ob-icon">🗓️</span>
+              <div class="ob-label">In the next 2–3 months<span class="ob-sub">Planning ahead, not in crisis mode</span></div>
+            </button>
+            <button class="opt-btn" data-step="3" data-val="exploring" data-score="0">
+              <div class="ob-radio"></div>
+              <span class="ob-icon">🔎</span>
+              <div class="ob-label">Just exploring options<span class="ob-sub">No specific timeline yet</span></div>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 4 — Budget -->
+        <div class="step-panel" id="step-4">
+          <div class="step-q">What budget are you working with for digital marketing?</div>
+          <div class="step-hint">Helps us recommend the right tier and approach for your situation. No judgment — all options are serviceable.</div>
+          <div class="options-grid">
+            <button class="opt-btn" data-step="4" data-val="under-300" data-score="0">
+              <div class="ob-radio"></div>
+              <div class="ob-label">Under $300 one-time<span class="ob-sub">Looking for starter solutions</span></div>
+            </button>
+            <button class="opt-btn" data-step="4" data-val="300-600" data-score="1">
+              <div class="ob-radio"></div>
+              <div class="ob-label">$300–$600 one-time<span class="ob-sub">Ready to invest in foundational setup</span></div>
+            </button>
+            <button class="opt-btn" data-step="4" data-val="600-1200" data-score="2">
+              <div class="ob-radio"></div>
+              <div class="ob-label">$600–$1,200 setup<span class="ob-sub">Serious about a complete system</span></div>
+            </button>
+            <button class="opt-btn" data-step="4" data-val="1200-plus" data-score="3">
+              <div class="ob-radio"></div>
+              <div class="ob-label">$1,200+ setup / monthly retainer<span class="ob-sub">Ready for full done-for-you management</span></div>
+            </button>
+          </div>
+          <div class="hot-indicator" id="hot-flash">
+            <div class="hi-dot"></div>
+            Based on your answers so far, you qualify for our priority call slots.
+          </div>
+        </div>
+
+        <!-- STEP 5 — Contact Details -->
+        <div class="step-panel" id="step-5">
+          <div class="step-q">Where should we send your call confirmation?</div>
+          <div class="step-hint">We'll review your answers before the call and come prepared with personalised recommendations.</div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="f-fname">First name</label>
+                <input type="text" id="f-fname" class="form-input" placeholder="Michael" required autocomplete="given-name">
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="f-lname">Last name</label>
+                <input type="text" id="f-lname" class="form-input" placeholder="Torres" autocomplete="family-name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-email">Email address</label>
+              <input type="email" id="f-email" class="form-input" placeholder="you@yourbusiness.com" required autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-phone">Phone number <span style="color:var(--gray-600);font-weight:300">(optional — for SMS confirmation)</span></label>
+              <input type="tel" id="f-phone" class="form-input" placeholder="(214) 000-0000" autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="f-biz">Business name</label>
+              <input type="text" id="f-biz" class="form-input" placeholder="Your Business Name" autocomplete="organization">
+            </div>
+          </div>
+          <div style="font-size:0.72rem;color:var(--gray-600);margin-top:10px">🔒 Your information is secure. We'll only use it to prepare for and confirm your call.</div>
+        </div>
+
+      </div><!-- /steps-wrap -->
+
+      <!-- NAV BUTTONS -->
+      <div class="form-nav" id="form-nav">
+        <button class="btn-back hidden" id="btn-back">←</button>
+        <button class="btn-next" id="btn-next" disabled>Select an option →</button>
+      </div>
+
+      <!-- SUCCESS PANEL -->
+      <div class="success-panel" id="success-panel">
+        <div class="sp-icon" id="sp-icon">🎯</div>
+        <div class="sp-tag" id="sp-tag"></div>
+        <div class="sp-h2" id="sp-h2">You're a strong fit — let's talk.</div>
+        <div class="sp-summary" id="sp-summary"></div>
+        <div class="sp-body" id="sp-body"></div>
+
+        <!-- Calendly embed placeholder -->
+        <div class="calendly-inline-widget" data-url="https://calendly.com/bmccarrell-cybermagnet/strategy-call" style="min-width:280px;height:420px;border-radius:10px;overflow:hidden"></div>
+        <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="https://asset.calendly.com/assets/external/widget.js" async></script>
+
+        <div class="sp-micro">All times shown in Central Time (Dallas, TX)</div>
+      </div>
+
+    </div><!-- /form-card -->
+
+  </div><!-- /page-grid -->
+</div><!-- /page-wrap -->
+
+<script>
+/* ══════════════════════════════════════════════════════
+   QUALIFIER FORM LOGIC
+══════════════════════════════════════════════════════ */
+
+const TOTAL_STEPS = 5;
+let currentStep = 1;
+let totalScore = 0;
+let answers = {};
+
+// DOM refs
+const progressFill = document.getElementById('progress-fill');
+const stepLabel    = document.getElementById('step-label');
+const btnNext      = document.getElementById('btn-next');
+const btnBack      = document.getElementById('btn-back');
+const formNav      = document.getElementById('form-nav');
+const scoreMeter   = document.getElementById('score-meter');
+const scoreFill    = document.getElementById('score-fill');
+const scoreText    = document.getElementById('score-text');
+const hotFlash     = document.getElementById('hot-flash');
+const successPanel = document.getElementById('success-panel');
+
+// Update progress bar
+function updateProgress() {
+  const pct = (currentStep / TOTAL_STEPS) * 100;
+  progressFill.style.width = pct + '%';
+  stepLabel.textContent = `Step ${currentStep} of ${TOTAL_STEPS}`;
+}
+
+// Show/hide steps
+function showStep(n) {
+  document.querySelectorAll('.step-panel').forEach(p => p.classList.remove('active'));
+  const panel = document.getElementById('step-' + n);
+  if (panel) panel.classList.add('active');
+
+  // Back button
+  btnBack.classList.toggle('hidden', n === 1);
+
+  // Score meter after step 3
+  if (n >= 4) {
+    scoreMeter.style.display = 'block';
+    scoreMeter.style.paddingTop = '14px';
+    updateScoreMeter();
+  } else {
+    scoreMeter.style.display = 'none';
+  }
+
+  // Hot lead flash on step 4 if score is high
+  if (n === 4) {
+    if (totalScore >= 6) hotFlash.classList.add('show');
+    else hotFlash.classList.remove('show');
+  } else {
+    hotFlash.classList.remove('show');
+  }
+
+  // On step 5 — check contact fields
+  if (n === 5) {
+    btnNext.textContent = 'Complete & Book My Call →';
+    checkContactFields();
+  } else {
+    const selected = document.querySelector(`[data-step="${n}"].selected`);
+    btnNext.disabled = !selected;
+    btnNext.textContent = n < TOTAL_STEPS - 1 ? 'Next →' : 'Almost there →';
+  }
+
+  updateProgress();
+}
+
+// Option button clicks (steps 1–4)
+document.querySelectorAll('.opt-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const step = btn.dataset.step;
+    // Deselect siblings
+    document.querySelectorAll(`[data-step="${step}"]`).forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+
+    const score = parseInt(btn.dataset.score || 0);
+    const val   = btn.dataset.val;
+
+    // Update running score (replace previous answer for this step)
+    if (answers[step]) totalScore -= answers[step].score;
+    answers[step] = { val, score };
+    totalScore += score;
+
+    btnNext.disabled = false;
+    if (currentStep < TOTAL_STEPS - 1) {
+      btnNext.textContent = 'Next →';
+    } else {
+      btnNext.textContent = 'Almost there →';
+    }
+  });
+});
+
+// Contact field validation
+function checkContactFields() {
+  const cfName = document.getElementById('f-fname').value.trim();
+  const cfEmail = document.getElementById('f-email').value.trim();
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cfEmail);
+  btnNext.disabled = !(cfName && emailOk);
+  btnNext.textContent = 'Complete & Book My Call →';
+}
+
+['f-fname','f-lname','f-email','f-phone','f-biz'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) el.addEventListener('input', () => { if (currentStep === 5) checkContactFields(); });
+});
+
+// Score meter update
+function updateScoreMeter() {
+  const maxScore = 10; // 3+3+3+3 for hot answers across first 4 questions
+  const scorePct = Math.min((totalScore / maxScore) * 100, 100);
+  scoreFill.style.width = scorePct + '%';
+  if (totalScore >= 9) {
+    scoreText.textContent = 'Priority lead — highest match';
+    scoreText.style.color = 'var(--success)';
+  } else if (totalScore >= 6) {
+    scoreText.textContent = 'Strong fit — well-qualified';
+    scoreText.style.color = 'var(--electric)';
+  } else if (totalScore >= 3) {
+    scoreText.textContent = 'Good fit — solid foundation';
+    scoreText.style.color = 'var(--orange)';
+  } else {
+    scoreText.textContent = 'Exploratory — we can still help';
+    scoreText.style.color = 'var(--gray-400)';
+  }
+}
+
+// NEXT button
+btnNext.addEventListener('click', () => {
+  if (currentStep < TOTAL_STEPS) {
+    currentStep++;
+    showStep(currentStep);
+  } else {
+    submitForm();
+  }
+});
+
+// BACK button
+btnBack.addEventListener('click', () => {
+  if (currentStep > 1) {
+    currentStep--;
+    showStep(currentStep);
+  }
+});
+
+// Submit & show result
+function submitForm() {
+  const sfName = document.getElementById('f-fname').value.trim();
+  const sfEmail = document.getElementById('f-email').value.trim();
+  const sfPhone = document.getElementById('f-phone').value.trim();
+  const sfBiz   = document.getElementById('f-biz').value.trim();
+
+  // Determine lead tier
+  let tier, tagClass, icon, h2, body;
+  if (totalScore >= 9) {
+    tier = 'HOT LEAD — Priority';
+    tagClass = 'sp-hot';
+    icon = '🔥';
+    h2 = `You're a priority match, ${sfName}. Let's talk.`;
+    body = `Based on your answers, you're exactly the kind of business we can deliver the fastest, highest-impact results for. Your call slot is being held — book your preferred time below and we'll come prepared with a custom strategy outline for your specific situation.`;
+  } else if (totalScore >= 6) {
+    tier = 'WARM LEAD — Strong Fit';
+    tagClass = 'sp-warm';
+    icon = '⭐';
+    h2 = `Great fit, ${sfName} — here's what to expect.`;
+    body = `Your answers show clear alignment with the systems we specialise in. We'll review your situation before the call and prepare specific recommendations for your business type and challenge. Book your time below.`;
+  } else if (totalScore >= 3) {
+    tier = 'QUALIFIED — Good Fit';
+    tagClass = 'sp-cold';
+    icon = '👍';
+    h2 = `We can help, ${sfName}. Let's find the right fit.`;
+    body = `Based on your timeline and situation, we'll focus the strategy call on identifying the most efficient starting point for your business — whether that's a digital product, a micro-system, or a full done-for-you solution.`;
+  } else {
+    tier = 'EXPLORATORY';
+    tagClass = 'sp-cold';
+    icon = '💡';
+    h2 = `Let's map out your options, ${sfName}.`;
+    body = `You're earlier in the process than most of our clients — which is fine. The strategy call will help you understand what's available and what would make the most sense when the timing is right.`;
+  }
+
+  // Build summary
+  const labelMap = {
+    'local-service':'Local service business','professional':'Professional services',
+    'retail-hospitality':'Retail / hospitality','agency-consultant':'Agency / consultant','ecommerce':'E-commerce',
+    'not-found':'Not being found on Google','traffic-no-leads':'Traffic but no leads',
+    'inconsistent-leads':'Inconsistent lead flow','missed-calls':'Missed calls / slow follow-up','brand-weak':'Weak brand presence',
+    'asap':'As soon as possible','30-days':'Within 30 days','90-days':'2–3 months','exploring':'Just exploring',
+    'under-300':'Under $300','300-600':'$300–$600','600-1200':'$600–$1,200','1200-plus':'$1,200+'
+  };
+
+  let summaryHtml = '';
+  if (answers['1']) summaryHtml += `<div class="sum-row"><span class="sum-label">Business type</span><span class="sum-val">${labelMap[answers['1'].val]||answers['1'].val}</span></div>`;
+  if (answers['2']) summaryHtml += `<div class="sum-row"><span class="sum-label">Main challenge</span><span class="sum-val">${labelMap[answers['2'].val]||answers['2'].val}</span></div>`;
+  if (answers['3']) summaryHtml += `<div class="sum-row"><span class="sum-label">Timeline</span><span class="sum-val">${labelMap[answers['3'].val]||answers['3'].val}</span></div>`;
+  if (answers['4']) summaryHtml += `<div class="sum-row"><span class="sum-label">Budget range</span><span class="sum-val">${labelMap[answers['4'].val]||answers['4'].val}</span></div>`;
+  if (sfBiz)          summaryHtml += `<div class="sum-row"><span class="sum-label">Business</span><span class="sum-val">${biz}</span></div>`;
+
+  document.getElementById('sp-icon').textContent = icon;
+  document.getElementById('sp-tag').textContent = tier;
+  document.getElementById('sp-tag').className = `sp-tag ${tagClass}`;
+  document.getElementById('sp-h2').textContent = h2;
+  document.getElementById('sp-body').textContent = body;
+  document.getElementById('sp-summary').innerHTML = summaryHtml;
+
+  // Hide form, show success
+  document.querySelectorAll('.step-panel').forEach(p => p.style.display = 'none');
+  document.querySelector('.steps-wrap').style.display = 'none';
+  formNav.style.display = 'none';
+  scoreMeter.style.display = 'none';
+  progressFill.closest('.progress-wrap').style.display = 'none';
+  successPanel.style.display = 'block';
+
+  /*
+   * ── INTEGRATION POINT ─────────────────────────────────────
+   * Send lead data to your CRM / automation:
+   *
+   * fetch('/api/lead', {
+   *   method: 'POST',
+   *   headers: { 'Content-Type': 'application/json' },
+   *   body: JSON.stringify({
+   *     name: fname, email, phone, business: biz,
+   *     score: totalScore, tier,
+   *     answers, tags: getAutomationTags()
+   *   })
+   * });
+   *
+   * GoHighLevel webhook:
+   * fetch('YOUR_GHL_WEBHOOK_URL', { method:'POST', body: JSON.stringify({...}) });
+   * ─────────────────────────────────────────────────────────
+   */
+}
+
+// Automation tag generator (for CRM integration)
+function getAutomationTags() {
+  const tags = [];
+  if (totalScore >= 9) tags.push('hot-lead', 'priority-call');
+  else if (totalScore >= 6) tags.push('warm-lead', 'standard-call');
+  else if (totalScore >= 3) tags.push('qualified-lead', 'nurture-first');
+  else tags.push('cold-lead', 'long-nurture');
+
+  if (answers['3']?.val === 'asap') tags.push('urgent');
+  if (answers['4']?.val === '1200-plus') tags.push('high-budget');
+  if (answers['2']?.val === 'missed-calls') tags.push('ai-receptionist-fit');
+  if (answers['2']?.val === 'not-found') tags.push('seo-fit');
+    if (answers['2']?.val === 'traffic-no-leads') tags.push('cro-fit');
+  if (answers['1']?.val === 'local-service') tags.push('segment-local-service');
+  if (answers['1']?.val === 'professional') tags.push('segment-professional');
+  return tags;
+}
+
+// Initialize
+updateProgress();
+</script>
+</body>
+</html>

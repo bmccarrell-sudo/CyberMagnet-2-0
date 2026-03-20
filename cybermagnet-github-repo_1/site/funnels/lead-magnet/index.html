@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Download: The Local Business Digital Presence Checklist | CyberMagnet</title>
+<meta name="description" content="Score your local business across 27 checkpoints — Google Business Profile, website, social media, and content visibility. Free instant download from CyberMagnet.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black:      #050810;
+  --deep-navy:  #0a1628;
+  --navy:       #0a2540;
+  --electric:   #007bff;
+  --el-glow:    rgba(0,123,255,0.28);
+  --el-light:   rgba(0,123,255,0.08);
+  --orange:     #ff7a00;
+  --or-glow:    rgba(255,122,0,0.35);
+  --or-light:   rgba(255,122,0,0.08);
+  --white:      #ffffff;
+  --off-white:  #dce8f5;
+  --gray-300:   #aabdd0;
+  --gray-400:   #8899aa;
+  --gray-600:   #445566;
+  --dim:        rgba(255,255,255,0.06);
+  --success:    #00c864;
+  --font-d:     'Syne', sans-serif;
+  --font-b:     'DM Sans', sans-serif;
+  --sp:         clamp(64px,8vw,104px);
+  --urgency-h:  44px;
+  --nav-h:      68px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--font-b);font-weight:300;line-height:1.7;overflow-x:hidden}
+
+/* URGENCY BAR */
+.urgency-bar{position:fixed;top:0;left:0;right:0;z-index:300;height:var(--urgency-h);display:flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(90deg,#cc5f00,var(--orange),#e07000,var(--orange),#cc5f00);background-size:300% 100%;animation:urg-shift 5s ease-in-out infinite;font-size:0.8rem;font-weight:500;color:#fff;padding:0 5%;overflow:hidden}
+.urgency-bar::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.07) 50%,transparent);animation:urg-sheen 3.5s ease-in-out infinite;pointer-events:none}
+@keyframes urg-shift{0%,100%{background-position:0%}50%{background-position:100%}}
+@keyframes urg-sheen{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.ub-dot{width:7px;height:7px;background:rgba(255,255,255,0.9);border-radius:50%;flex-shrink:0;animation:ub-p 1.8s ease-in-out infinite}
+@keyframes ub-p{0%,100%{opacity:1}50%{opacity:0.3}}
+.ub-sep{color:rgba(255,255,255,0.4);margin:0 10px;font-size:0.65rem}
+.ub-link{color:#fff;text-decoration:underline;text-underline-offset:2px;font-weight:600;white-space:nowrap}
+
+/* MINIMAL NAV — funnel style, no distractions */
+nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:var(--nav-h);backdrop-filter:blur(22px);background:rgba(5,8,16,0.85);border-bottom:1px solid rgba(0,123,255,0.1)}
+.logo{font-family:var(--font-d);font-weight:800;font-size:1.4rem;letter-spacing:-0.02em;color:#fff;text-decoration:none}
+.logo span{color:var(--electric)}
+.nav-cta-sm{font-size:0.82rem;color:var(--gray-400);text-decoration:none;transition:color 0.2s}
+.nav-cta-sm:hover{color:#fff}
+
+/* SHARED */
+.sec-pad{padding:var(--sp) 6%}
+.bg-deep{background:var(--deep-navy)}
+.bg-black{background:var(--black)}
+.max-w{max-width:1060px;margin:0 auto}
+.max-w-sm{max-width:720px;margin:0 auto}
+.sec-label{display:inline-flex;align-items:center;gap:10px;font-size:0.73rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--electric);margin-bottom:12px}
+.sec-label::before{content:'';width:20px;height:1px;background:var(--electric)}
+.sec-label.center{justify-content:center;display:flex}
+.sec-label.center::before,.sec-label.center::after{content:'';flex:1;max-width:24px;height:1px;background:var(--electric)}
+.sec-h2{font-family:var(--font-d);font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-0.025em;line-height:1.08;margin-bottom:14px}
+.sec-h2 .b{color:var(--electric)}.sec-h2 .o{color:var(--orange)}
+@keyframes fade-up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes sheen{0%,65%,100%{left:-100%}38%{left:140%}}
+@keyframes cta-pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,122,0,0.4)}50%{box-shadow:0 0 0 14px rgba(255,122,0,0)}}
+
+/* BUTTONS */
+.btn-primary{position:relative;overflow:hidden;background:var(--orange);color:#fff;border:none;padding:16px 36px;border-radius:8px;font-family:var(--font-d);font-size:1rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:all 0.25s;animation:cta-pulse 3s ease-in-out infinite;width:100%}
+.btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.18),transparent);animation:sheen 3s ease-in-out infinite;pointer-events:none}
+.btn-primary:hover{background:#ff9500;transform:translateY(-2px);box-shadow:0 10px 32px var(--or-glow);animation:none}
+.btn-secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.2);padding:14px 30px;border-radius:8px;font-family:var(--font-b);font-size:0.94rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s;justify-content:center}
+.btn-secondary:hover{border-color:var(--electric);color:var(--electric)}
+
+/* HERO */
+.page-hero{position:relative;overflow:hidden;padding:calc(var(--urgency-h) + var(--nav-h) + 60px) 6% 72px;background:var(--deep-navy)}
+.hero-bg-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(0,123,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,123,255,0.04) 1px,transparent 1px);background-size:52px 52px}
+.hero-orb{position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(0,123,255,0.08) 0%,transparent 68%);pointer-events:none}
+.hero-inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:center;position:relative;z-index:1}
+
+/* PDF MOCKUP */
+.pdf-mockup{position:relative;animation:fade-up 0.7s 0.15s ease both}
+.pdf-card{background:linear-gradient(145deg,#0a2540,#061828);border:1px solid rgba(0,123,255,0.2);border-radius:16px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.5);position:relative}
+.pdf-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--electric),var(--orange))}
+.pdf-header{padding:24px 26px 18px;border-bottom:1px solid rgba(0,123,255,0.1)}
+.pdf-logo-row{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+.pdf-logo-dot{width:8px;height:8px;border-radius:50%;background:var(--electric)}
+.pdf-logo-text{font-family:var(--font-d);font-size:0.75rem;font-weight:700;color:var(--electric);letter-spacing:0.1em;text-transform:uppercase}
+.pdf-title{font-family:var(--font-d);font-size:1rem;font-weight:800;color:#fff;line-height:1.25;margin-bottom:6px}
+.pdf-subtitle{font-size:0.72rem;color:var(--gray-400)}
+.pdf-body{padding:18px 26px 22px}
+.pdf-section{margin-bottom:16px}
+.pdf-sec-label{font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--electric);margin-bottom:8px}
+.pdf-item{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+.pdf-item:last-child{border-bottom:none}
+.pdf-check{width:14px;height:14px;border:1.5px solid rgba(0,123,255,0.4);border-radius:3px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:0.55rem;color:var(--electric)}
+.pdf-item-text{font-size:0.72rem;color:var(--gray-300)}
+.pdf-score-bar{background:rgba(0,123,255,0.06);border:1px solid rgba(0,123,255,0.15);border-radius:8px;padding:12px 14px}
+.pdf-score-label{font-size:0.65rem;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px}
+.pdf-score-track{height:6px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden;margin-bottom:4px}
+.pdf-score-fill{height:100%;width:65%;background:linear-gradient(90deg,var(--electric),var(--orange));border-radius:3px}
+.pdf-score-num{font-family:var(--font-d);font-size:0.8rem;font-weight:800;color:#fff}
+.pdf-badge{position:absolute;top:12px;right:12px;background:linear-gradient(135deg,var(--orange),#e06500);color:#fff;padding:4px 10px;border-radius:20px;font-size:0.62rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase}
+.pdf-pages-badge{position:absolute;bottom:14px;right:14px;font-size:0.65rem;color:var(--gray-600)}
+
+/* Hero text */
+.hero-text{animation:fade-up 0.7s ease both}
+.hero-label{display:inline-flex;align-items:center;gap:9px;background:var(--el-light);border:1px solid rgba(0,123,255,0.22);border-radius:30px;padding:6px 16px;font-size:0.73rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--electric);margin-bottom:22px}
+.hero-label::before{content:'';width:6px;height:6px;background:var(--success);border-radius:50%;animation:live-blink 1.6s ease-in-out infinite}
+@keyframes live-blink{0%,100%{opacity:1}50%{opacity:0.2}}
+.hero-h1{font-family:var(--font-d);font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:18px}
+.hero-h1 .b{color:var(--electric)}.hero-h1 .o{color:var(--orange)}
+.hero-sub{font-size:1.02rem;color:var(--gray-400);line-height:1.75;margin-bottom:28px}
+.hero-sub strong{color:var(--off-white);font-weight:400}
+.hero-bullets{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:32px}
+.hb-item{display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;color:var(--gray-300)}
+.hb-check{color:var(--success);font-weight:700;flex-shrink:0;font-size:0.8rem;margin-top:2px}
+.hero-form{background:rgba(255,255,255,0.04);border:1px solid rgba(0,123,255,0.15);border-radius:14px;padding:24px}
+.hf-label{font-size:0.72rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--gray-400);margin-bottom:6px;display:block}
+.hf-input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 15px;font-family:var(--font-b);font-size:0.9rem;color:#fff;outline:none;transition:all 0.25s;margin-bottom:10px}
+.hf-input::placeholder{color:var(--gray-600)}
+.hf-input:focus{border-color:var(--electric);background:var(--el-light);box-shadow:0 0 0 3px rgba(0,123,255,0.1)}
+.hf-privacy{font-size:0.72rem;color:var(--gray-600);text-align:center;margin-top:10px}
+.hf-privacy span{color:var(--gray-400)}
+.hero-reassurance{display:flex;align-items:center;gap:8px;font-size:0.8rem;color:var(--gray-400);margin-top:12px;justify-content:center}
+.hr-dot{width:5px;height:5px;border-radius:50%;background:var(--success)}
+
+/* WHAT'S INSIDE */
+.inside-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:48px}
+.inside-card{background:rgba(255,255,255,0.025);border:1px solid var(--dim);border-radius:16px;padding:26px 24px;transition:all 0.3s;position:relative;overflow:hidden}
+.inside-card:hover{border-color:rgba(0,123,255,0.2);transform:translateY(-3px);box-shadow:0 14px 40px rgba(0,0,0,0.3)}
+.inside-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--electric),transparent);opacity:0;transition:opacity 0.3s}
+.inside-card:hover::before{opacity:1}
+.ic-num{font-family:var(--font-d);font-size:2.4rem;font-weight:800;color:rgba(0,123,255,0.1);line-height:1;margin-bottom:10px;transition:color 0.3s}
+.inside-card:hover .ic-num{color:rgba(0,123,255,0.25)}
+.ic-title{font-family:var(--font-d);font-size:1rem;font-weight:700;color:var(--off-white);margin-bottom:8px}
+.ic-desc{font-size:0.84rem;color:var(--gray-400);line-height:1.65;margin-bottom:12px}
+.ic-items{list-style:none;display:flex;flex-direction:column;gap:5px}
+.ic-items li{font-size:0.78rem;color:var(--gray-300);display:flex;align-items:flex-start;gap:7px}
+.ic-items li::before{content:'→';color:var(--electric);font-size:0.7rem;flex-shrink:0;margin-top:2px}
+.ic-count{display:inline-flex;align-items:center;gap:5px;margin-top:12px;padding:3px 10px;background:var(--el-light);border:1px solid rgba(0,123,255,0.2);border-radius:20px;font-size:0.68rem;font-weight:600;color:var(--electric)}
+
+/* SCORECARD PREVIEW */
+.score-preview{background:linear-gradient(145deg,var(--navy),var(--deep-navy));border:1px solid rgba(0,123,255,0.2);border-radius:20px;padding:36px;margin-top:48px;position:relative;overflow:hidden}
+.score-preview::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--electric),var(--orange))}
+.sp-inner{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.sp-bands{display:flex;flex-direction:column;gap:12px}
+.sp-band{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:10px;transition:all 0.2s}
+.sp-band:hover{transform:translateX(4px)}
+.spb-red{background:rgba(255,60,60,0.06);border:1px solid rgba(255,60,60,0.15)}
+.spb-amber{background:rgba(255,122,0,0.06);border:1px solid rgba(255,122,0,0.15)}
+.spb-green{background:rgba(0,200,100,0.06);border:1px solid rgba(0,200,100,0.15)}
+.spb-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.spb-red .spb-dot{background:#ff3c3c}
+.spb-amber .spb-dot{background:var(--orange)}
+.spb-green .spb-dot{background:var(--success)}
+.spb-range{font-family:var(--font-d);font-size:0.88rem;font-weight:700;color:#fff;min-width:44px}
+.spb-label{font-size:0.82rem;color:var(--gray-400)}
+
+/* WHO IT'S FOR */
+.who-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:36px}
+.who-item{display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(255,255,255,0.025);border:1px solid var(--dim);border-radius:10px;font-size:0.88rem;color:var(--gray-300);transition:all 0.2s}
+.who-item:hover{border-color:rgba(0,123,255,0.2);background:var(--el-light);color:var(--off-white)}
+.who-icon{font-size:1.1rem;flex-shrink:0}
+
+/* WHY IT MATTERS */
+.why-inner{max-width:760px;margin:0 auto;text-align:center}
+.why-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:40px 0}
+.ws-cell{background:rgba(255,255,255,0.025);border:1px solid var(--dim);border-radius:14px;padding:24px 16px;text-align:center}
+.ws-val{font-family:var(--font-d);font-size:1.8rem;font-weight:800;color:var(--electric);margin-bottom:6px}
+.ws-label{font-size:0.78rem;color:var(--gray-400);line-height:1.4}
+
+/* OPT-IN SECTION */
+.optin-section{padding:var(--sp) 6%;background:linear-gradient(135deg,var(--navy) 0%,#0d1f3c 100%);border-top:1px solid rgba(0,123,255,0.18);border-bottom:1px solid rgba(0,123,255,0.18);position:relative;overflow:hidden}
+.optin-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(0,123,255,0.08) 0%,transparent 65%);pointer-events:none}
+.optin-inner{max-width:560px;margin:0 auto;text-align:center;position:relative;z-index:1}
+.optin-h2{font-family:var(--font-d);font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-0.025em;margin-bottom:12px}
+.optin-sub{font-size:0.97rem;color:var(--gray-400);line-height:1.72;margin-bottom:28px}
+.optin-form{background:rgba(5,8,16,0.6);border:1px solid rgba(0,123,255,0.2);border-radius:16px;padding:28px}
+
+/* FOOTER */
+footer{background:var(--black);border-top:1px solid var(--dim);padding:44px 6% 24px;text-align:center}
+.footer-logo{font-family:var(--font-d);font-weight:800;font-size:1.2rem;color:#fff;text-decoration:none;display:inline-block;margin-bottom:10px}
+.footer-logo span{color:var(--electric)}
+.footer-tagline{font-size:0.82rem;color:var(--gray-600);margin-bottom:20px}
+.footer-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+.footer-links a{color:var(--gray-600);text-decoration:none;font-size:0.78rem;transition:color 0.2s}
+.footer-links a:hover{color:var(--gray-300)}
+.footer-copy{font-size:0.74rem;color:var(--gray-600)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}
+
+/* MOBILE */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr}
+  .pdf-mockup{order:-1;max-width:400px;margin:0 auto}
+  .inside-grid{grid-template-columns:1fr}
+  .sp-inner{grid-template-columns:1fr}
+  .who-list{grid-template-columns:1fr}
+  .why-stats{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  :root{--urgency-h:36px}
+  .why-stats{grid-template-columns:1fr}
+  .ub-sep:nth-child(6),.ub-sep:nth-child(6)~*{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- URGENCY BAR -->
+<div class="urgency-bar">
+  <span class="ub-dot"></span>
+  <span>Free instant download · No spam ever</span>
+  <span class="ub-sep">·</span>
+  <span>Used by 50+ Dallas business owners</span>
+  <span class="ub-sep">·</span>
+  <a class="ub-link" href="#optin">Get Your Free Checklist →</a>
+</div>
+
+<!-- NAV — minimal, no distractions -->
+<nav>
+  <a href="/" class="logo" aria-label="CyberMagnet — Home" style="display:inline-flex;align-items:center;text-decoration:none;line-height:1">
+    <svg width="220" height="44" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <text x="100" y="17" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="2">CYBER</text>
+      <circle cx="6" cy="21" r="2" fill="#FF7A35"/>
+      <line x1="8" y1="21" x2="192" y2="21" stroke="#FF7A35" stroke-width="1.5"/>
+      <circle cx="194" cy="21" r="2" fill="#FF7A35"/>
+      <text x="100" y="36" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#FF7A35" text-anchor="middle" letter-spacing="2">MAGNET</text>
+    </svg>
+  </a>
+  <a href="/funnels/strategy-call/" class="nav-cta-sm">Already have it? Book a strategy call →</a>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════ -->
+<section class="page-hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-orb"></div>
+  <div class="hero-inner">
+
+    <!-- LEFT: TEXT + FORM -->
+    <div class="hero-text">
+      <div class="hero-label">Free Resource · Instant Download</div>
+      <h1 class="hero-h1">
+        Find Out Exactly Where<br>
+        Your Local Business is <span class="b">Invisible</span><br>
+        Online — <span class="o">In 5 Minutes.</span>
+      </h1>
+      <p class="hero-sub">
+        <strong>The Local Business Digital Presence Checklist</strong> gives you 27 specific checkpoints across your Google Business Profile, website, social media, and content visibility — plus a score that tells you exactly what to fix first.
+      </p>
+      <ul class="hero-bullets">
+        <li><span class="hb-check">✓</span>Instantly know your score across 4 critical visibility categories</li>
+        <li><span class="hb-check">✓</span>Identify the gaps your competitors are exploiting right now</li>
+        <li><span class="hb-check">✓</span>Get a prioritised action list — not just a list of problems</li>
+        <li><span class="hb-check">✓</span>Takes 5 minutes to complete, delivers months of direction</li>
+      </ul>
+
+      <div class="hero-form" id="optin-hero">
+        <form novalidate id="hero-form">
+          <label class="hf-label" for="h-name">Your First Name</label>
+          <input type="text" id="h-name" class="hf-input" placeholder="e.g. Michael" required autocomplete="given-name">
+          <label class="hf-label" for="h-email">Your Email Address</label>
+          <input type="email" id="h-email" class="hf-input" placeholder="you@yourbusiness.com" required autocomplete="email">
+          <button type="submit" class="btn-primary">📋 Send Me the Free Checklist →</button>
+          <div class="hf-privacy">🔒 <span>We never share your email. Unsubscribe any time.</span></div>
+        </form>
+      </div>
+      <div class="hero-reassurance">
+        <span class="hr-dot"></span>Instant PDF download after sign-up
+        <span class="hr-dot"></span>No credit card
+        <span class="hr-dot"></span>No spam
+      </div>
+    </div>
+
+    <!-- RIGHT: PDF MOCKUP -->
+    <div class="pdf-mockup">
+      <div class="pdf-card">
+        <span class="pdf-badge">Free PDF</span>
+        <div class="pdf-header">
+          <div class="pdf-logo-row">
+            <div class="pdf-logo-dot"></div>
+            <div class="pdf-logo-text">CyberMagnet</div>
+          </div>
+          <div class="pdf-title">The Local Business<br>Digital Presence Checklist</div>
+          <div class="pdf-subtitle">27 checkpoints · 4 categories · Instant scoring</div>
+        </div>
+        <div class="pdf-body">
+          <div class="pdf-section">
+            <div class="pdf-sec-label">Google Business Profile</div>
+            <div class="pdf-item"><div class="pdf-check">✓</div><div class="pdf-item-text">GBP claimed and verified</div></div>
+            <div class="pdf-item"><div class="pdf-check">✓</div><div class="pdf-item-text">Business category correct</div></div>
+            <div class="pdf-item"><div class="pdf-check"></div><div class="pdf-item-text">Photos updated (10+ images)</div></div>
+            <div class="pdf-item"><div class="pdf-check"></div><div class="pdf-item-text">Reviews responded to</div></div>
+          </div>
+          <div class="pdf-section">
+            <div class="pdf-sec-label">Website Health</div>
+            <div class="pdf-item"><div class="pdf-check">✓</div><div class="pdf-item-text">Loads under 3 seconds</div></div>
+            <div class="pdf-item"><div class="pdf-check"></div><div class="pdf-item-text">Mobile-first design</div></div>
+          </div>
+          <div class="pdf-score-bar">
+            <div class="pdf-score-label">Your Digital Presence Score</div>
+            <div class="pdf-score-track"><div class="pdf-score-fill"></div></div>
+            <div class="pdf-score-num">17 / 27 — On the right track</div>
+          </div>
+        </div>
+        <div class="pdf-pages-badge">2-page PDF</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     WHAT'S INSIDE
+══════════════════════════════════════════════════════ -->
+<section class="sec-pad bg-black" id="inside">
+  <div class="max-w">
+    <div class="reveal" style="text-align:center">
+      <div class="sec-label center">What's Inside</div>
+      <h2 class="sec-h2" style="text-align:center">Four Sections. 27 Checkpoints. <span class="b">Complete Clarity.</span></h2>
+      <p style="font-size:0.97rem;color:var(--gray-400);max-width:580px;margin:0 auto;line-height:1.75">Every section covers a different layer of your digital presence — from the way Google sees your business to how potential customers experience your website for the first time.</p>
+    </div>
+    <div class="inside-grid">
+
+      <div class="inside-card reveal">
+        <div class="ic-num">01</div>
+        <div class="ic-title">Google Business Profile</div>
+        <div class="ic-desc">The single most impactful local visibility asset most businesses have and most underuse. Seven checkpoints that determine whether you show up — or don't.</div>
+        <ul class="ic-items">
+          <li>Claimed and verified status</li>
+          <li>Category accuracy and completeness</li>
+          <li>Photo volume and recency</li>
+          <li>Review response consistency</li>
+          <li>Service and product listings</li>
+        </ul>
+        <div class="ic-count">7 checkpoints</div>
+      </div>
+
+      <div class="inside-card reveal rd1">
+        <div class="ic-num">02</div>
+        <div class="ic-title">Website Performance</div>
+        <div class="ic-desc">Your website is your 24/7 salesperson. These seven checks identify the most common conversion killers — speed, mobile experience, and CTA clarity.</div>
+        <ul class="ic-items">
+          <li>Page speed and Core Web Vitals</li>
+          <li>Mobile responsiveness</li>
+          <li>Clear value proposition above the fold</li>
+          <li>Contact information accessibility</li>
+          <li>Trust signals and social proof</li>
+        </ul>
+        <div class="ic-count">7 checkpoints</div>
+      </div>
+
+      <div class="inside-card reveal">
+        <div class="ic-num">03</div>
+        <div class="ic-title">Social Media & Directories</div>
+        <div class="ic-desc">Inconsistent information across directories actively hurts your local rankings. Seven checks for consistency, completeness, and active presence.</div>
+        <ul class="ic-items">
+          <li>NAP consistency across platforms</li>
+          <li>Active social media presence</li>
+          <li>Directory listing completeness</li>
+          <li>Review platform coverage</li>
+          <li>Engagement activity</li>
+        </ul>
+        <div class="ic-count">7 checkpoints</div>
+      </div>
+
+      <div class="inside-card reveal rd1">
+        <div class="ic-num">04</div>
+        <div class="ic-title">Content & Visibility</div>
+        <div class="ic-desc">Content is how Google understands your business and how customers find you before they're ready to buy. Six checks covering the content signals that matter most.</div>
+        <ul class="ic-items">
+          <li>Blog or educational content presence</li>
+          <li>Keyword targeting on service pages</li>
+          <li>Local area content signals</li>
+          <li>Video content presence</li>
+          <li>Lead capture strategy</li>
+        </ul>
+        <div class="ic-count">6 checkpoints</div>
+      </div>
+
+    </div>
+
+    <!-- SCORECARD PREVIEW -->
+    <div class="score-preview reveal rd2">
+      <div class="sp-inner">
+        <div>
+          <div style="font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--electric);font-weight:700;margin-bottom:12px">◆ Built-In Scoring System</div>
+          <h3 style="font-family:var(--font-d);font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:12px;line-height:1.2">Your Score Tells You Exactly<br>What to Do Next.</h3>
+          <p style="font-size:0.86rem;color:var(--gray-400);line-height:1.68;max-width:380px">The checklist includes a built-in scoring table. Tick every box you can honestly check — your total score drops you into one of three bands, each with a specific recommended action plan.</p>
+        </div>
+        <div class="sp-bands">
+          <div class="sp-band spb-red">
+            <div class="spb-dot"></div>
+            <div class="spb-range">0–10</div>
+            <div class="spb-label">Needs foundational work — start with GBP and website speed</div>
+          </div>
+          <div class="sp-band spb-amber">
+            <div class="spb-dot"></div>
+            <div class="spb-range">11–18</div>
+            <div class="spb-label">On the right track — focus on consistency and content gaps</div>
+          </div>
+          <div class="sp-band spb-green">
+            <div class="spb-dot"></div>
+            <div class="spb-range">19–27</div>
+            <div class="spb-label">Strong digital presence — time to amplify and compete aggressively</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     WHO IT'S FOR
+══════════════════════════════════════════════════════ -->
+<section class="sec-pad bg-deep">
+  <div class="max-w">
+    <div class="reveal">
+      <div class="sec-label">Who This Is For</div>
+      <h2 class="sec-h2">If You Run a Local Business <span class="b">and Want More Customers,</span> This Is For You.</h2>
+      <p style="font-size:0.97rem;color:var(--gray-400);max-width:600px;line-height:1.75;margin-bottom:0">You don't need to be technical, you don't need an agency on retainer, and you don't need to spend hours on this. You just need to know where you stand.</p>
+    </div>
+    <div class="who-list">
+      <div class="who-item reveal"><span class="who-icon">🔧</span>Home service businesses — plumbing, HVAC, electrical, roofing</div>
+      <div class="who-item reveal rd1"><span class="who-icon">🏥</span>Medical, dental, and aesthetics practices</div>
+      <div class="who-item reveal rd2"><span class="who-icon">⚖️</span>Legal, financial, and professional service firms</div>
+      <div class="who-item reveal"><span class="who-icon">🍽️</span>Restaurants, cafes, and hospitality businesses</div>
+      <div class="who-item reveal rd1"><span class="who-icon">🏠</span>Real estate agents and property professionals</div>
+      <div class="who-item reveal rd2"><span class="who-icon">🎯</span>Any local business that wants to be found and chosen online</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     WHY IT MATTERS
+══════════════════════════════════════════════════════ -->
+<section class="sec-pad bg-black">
+  <div class="why-inner max-w-sm reveal">
+    <div class="sec-label center">Why This Matters Now</div>
+    <h2 class="sec-h2" style="text-align:center">Your Competitors Are Already <span class="o">Doing This.</span></h2>
+    <p style="font-size:0.97rem;color:var(--gray-400);line-height:1.78;text-align:center">The businesses ranking above you in local search didn't get there by accident. They have complete GBP profiles, fast mobile websites, consistent directory listings, and regular content — because someone sat down, audited their presence, and fixed the gaps. This checklist is that audit, free, in five minutes.</p>
+    <div class="why-stats">
+      <div class="ws-cell reveal">
+        <div class="ws-val">75%</div>
+        <div class="ws-label">of users never scroll past page one of Google</div>
+      </div>
+      <div class="ws-cell reveal rd1">
+        <div class="ws-val">93%</div>
+        <div class="ws-label">of consumers read reviews before choosing a local business</div>
+      </div>
+      <div class="ws-cell reveal rd2">
+        <div class="ws-val">3 sec</div>
+        <div class="ws-label">is all a visitor gives your website before forming a first impression</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     OPT-IN SECTION
+══════════════════════════════════════════════════════ -->
+<section class="optin-section" id="optin">
+  <div class="optin-inner">
+    <div class="sec-label center reveal">Free Download</div>
+    <h2 class="optin-h2 reveal">Get Your Free Checklist <span style="color:var(--electric)">Right Now.</span></h2>
+    <p class="optin-sub reveal">Enter your name and email below — we'll send you the PDF immediately. No spam. No pitch. Just the checklist.</p>
+    <div class="optin-form reveal rd1">
+      <form novalidate id="optin-form">
+        <label class="hf-label" for="o-name">First Name</label>
+        <input type="text" id="o-name" class="hf-input" placeholder="Your first name" required autocomplete="given-name">
+        <label class="hf-label" for="o-email">Email Address</label>
+        <input type="email" id="o-email" class="hf-input" placeholder="your@email.com" required autocomplete="email">
+        <button type="submit" class="btn-primary">📋 Send Me the Free Checklist →</button>
+        <div class="hf-privacy" style="margin-top:12px">🔒 <span>No spam, ever. Unsubscribe in one click, any time.</span></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════
+     FOOTER CTA
+══════════════════════════════════════════════════════ -->
+<footer>
+  <a href="/" class="footer-logo">Cyber<span>Magnet</span></a>
+  <p class="footer-tagline">Premium digital marketing and automation systems · Dallas, Texas</p>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/services/">Services</a>
+    <a href="/systems/">Systems</a>
+    <a href="/funnels/strategy-call/">Strategy Call</a>
+    <a href="/contact/">Contact</a>
+    <a href="/privacy/">Privacy Policy</a>
+  </div>
+  <p style="font-size:0.82rem;color:var(--gray-600);margin-bottom:12px;max-width:480px;margin-left:auto;margin-right:auto">
+    Not ready to download yet? Book a free 30-minute strategy call and we'll run the audit with you live —<br>
+    <a href="/funnels/strategy-call/" style="color:var(--electric);text-decoration:none">and hand you a personalised action plan. →</a>
+  </p>
+  <p class="footer-copy">© 2025 CyberMagnet. All rights reserved.</p>
+</footer>
+
+<script>
+/* FORM HANDLING */
+function handleForm(form) {
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const nameInput = form.querySelector('input[type="text"]');
+    const emailInput = form.querySelector('input[type="email"]');
+    const name = nameInput ? nameInput.value.trim() : '';
+    const email = emailInput ? emailInput.value.trim() : '';
+    let valid = true;
+
+    if (!name) { nameInput.style.borderColor = 'rgba(255,60,60,0.5)'; valid = false; }
+    else { nameInput.style.borderColor = ''; }
+
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      emailInput.style.borderColor = 'rgba(255,60,60,0.5)'; valid = false;
+    } else { emailInput.style.borderColor = ''; }
+
+    if (!valid) return;
+
+    /* ── INTEGRATION POINT ──────────────────────────────────────
+       Replace with your email provider:
+       Option A — Web3Forms (free):
+         fetch('https://api.web3forms.com/submit', {
+           method:'POST', headers:{'Content-Type':'application/json'},
+           body: JSON.stringify({ access_key:'YOUR_KEY', name, email,
+             subject:'New lead magnet download' })
+         });
+       Option B — GoHighLevel webhook
+       Option C — Mailchimp / ConvertKit embed
+    ─────────────────────────────────────────────────────────── */
+
+    const btn = form.querySelector('button');
+    btn.textContent = '✓ On its way — check your inbox!';
+    btn.style.background = 'var(--success)';
+    btn.style.animation = 'none';
+    form.querySelectorAll('input').forEach(i => i.disabled = true);
+  });
+}
+
+handleForm(document.getElementById('hero-form'));
+handleForm(document.getElementById('optin-form'));
+
+/* SCROLL REVEAL */
+const revEls = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.07, rootMargin: '0px 0px -24px 0px' });
+revEls.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

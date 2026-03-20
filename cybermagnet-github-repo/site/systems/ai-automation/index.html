@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Automation System — AI Chatbot + AI Receptionist + CRM + Lead Nurture — CyberMagnet</title>
+<meta name="description" content="CyberMagnet's AI Automation System deploys intelligent chatbots, AI phone receptionist, CRM automation, and multi-step nurture sequences — so your business runs and converts 24/7.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#050810;--deep-navy:#0a1628;--navy:#0a2540;--mid-blue:#1b3b6f;
+  --electric:#007bff;--el-glow:rgba(0,123,255,0.28);--el-light:rgba(0,123,255,0.08);
+  --orange:#ff7a00;--orange-hot:#ff9500;--or-glow:rgba(255,122,0,0.35);--or-light:rgba(255,122,0,0.08);
+  --white:#ffffff;--off-white:#dce8f5;--gray-300:#aabdd0;--gray-400:#8899aa;--gray-600:#445566;
+  --dim:rgba(255,255,255,0.06);--success:#00c864;
+  --font-d:'Syne',sans-serif;--font-b:'DM Sans',sans-serif;
+  --sp:clamp(72px,9vw,120px);--urgency-h:44px;--nav-h:68px;
+  --accent:#00b4dc;--accent-glow:rgba(0,180,220,0.08);--accent-light:rgba(0,180,220,0.07);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--font-b);font-weight:300;line-height:1.7;overflow-x:hidden}
+.urgency-bar{position:fixed;top:0;left:0;right:0;z-index:300;height:var(--urgency-h);display:flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(90deg,#cc5f00,var(--orange),#e07000,var(--orange),#cc5f00);background-size:300% 100%;animation:urg-shift 5s ease-in-out infinite;font-size:0.8rem;font-weight:500;color:#fff;padding:0 5%;overflow:hidden}
+.urgency-bar::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.07) 50%,transparent);animation:urg-sheen 3.5s ease-in-out infinite;pointer-events:none}
+@keyframes urg-shift{0%,100%{background-position:0%}50%{background-position:100%}}
+@keyframes urg-sheen{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.ub-dot{width:7px;height:7px;background:rgba(255,255,255,0.9);border-radius:50%;flex-shrink:0;animation:ub-p 1.8s ease-in-out infinite}
+@keyframes ub-p{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.35;transform:scale(0.65)}}
+.ub-sep{color:rgba(255,255,255,0.4);margin:0 10px;font-size:0.65rem}
+.ub-link{color:#fff;text-decoration:underline;text-underline-offset:2px;font-weight:600;white-space:nowrap}
+nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:var(--nav-h);backdrop-filter:blur(22px) saturate(1.4);background:rgba(5,8,16,0.72);border-bottom:1px solid rgba(0,123,255,0.1);transition:background 0.35s,box-shadow 0.35s}
+nav.scrolled{background:rgba(5,8,16,0.96);box-shadow:0 2px 40px rgba(0,0,0,0.5)}
+.logo{font-family:var(--font-d);font-weight:800;font-size:1.4rem;letter-spacing:-0.02em;color:#fff;text-decoration:none}
+.logo span{color:var(--electric)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--gray-400);text-decoration:none;font-size:0.84rem;letter-spacing:0.05em;text-transform:uppercase;font-weight:400;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-cta{background:var(--orange);color:#fff;border:none;padding:9px 22px;border-radius:6px;font-family:var(--font-b);font-size:0.84rem;font-weight:500;cursor:pointer;text-decoration:none;transition:all 0.2s}
+.nav-cta:hover{background:var(--orange-hot);transform:translateY(-1px);box-shadow:0 4px 18px var(--or-glow)}
+.nav-ham{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.nav-ham span{width:22px;height:2px;background:#fff;border-radius:2px}
+.sec-pad{padding:var(--sp) 6%}
+.bg-deep{background:var(--deep-navy)}
+.bg-black{background:var(--black)}
+.max-w{max-width:1100px;margin:0 auto}
+.sec-label{display:inline-flex;align-items:center;gap:10px;font-size:0.73rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.sec-label::before{content:'';width:20px;height:1px;background:var(--accent)}
+.sec-label.center-lbl{justify-content:center;display:flex}
+.sec-label.center-lbl::before,.sec-label.center-lbl::after{content:'';flex:1;max-width:24px;height:1px;background:var(--accent)}
+.sec-label.o{color:var(--orange)}
+.sec-label.o::before{background:var(--orange)}
+.sec-h2{font-family:var(--font-d);font-size:clamp(2rem,3.8vw,3rem);font-weight:800;letter-spacing:-0.025em;line-height:1.08;margin-bottom:14px}
+.sec-h2 .b{color:var(--accent)}
+.sec-h2 .o{color:var(--orange)}
+.sec-body{font-size:0.97rem;color:var(--gray-400);line-height:1.8;max-width:640px}
+.sec-body strong{color:var(--off-white);font-weight:500}
+.sec-body p+p{margin-top:14px}
+@keyframes fade-up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
+@keyframes orb-b{0%,100%{opacity:0.5;transform:translateY(-50%) scale(1)}50%{opacity:1;transform:translateY(-50%) scale(1.07)}}
+@keyframes sheen{0%,65%,100%{left:-100%}38%{left:140%}}
+@keyframes cta-pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,122,0,0.4)}50%{box-shadow:0 0 0 14px rgba(255,122,0,0)}}
+.page-hero{position:relative;overflow:hidden;min-height:72vh;display:flex;flex-direction:column;justify-content:flex-end;padding:calc(var(--urgency-h) + var(--nav-h) + 56px) 6% 72px}
+#hero-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(0,123,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,123,255,0.03) 1px,transparent 1px);background-size:56px 56px}
+.hero-orb{position:absolute;right:2%;top:45%;transform:translateY(-50%);width:580px;height:580px;border-radius:50%;background:radial-gradient(circle,var(--accent-glow) 0%,transparent 68%);animation:orb-b 5s ease-in-out infinite;pointer-events:none}
+.hero-orb-o{position:absolute;left:5%;bottom:-40px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,122,0,0.05) 0%,transparent 70%);animation:orb-b 5s -2.5s ease-in-out infinite;pointer-events:none}
+.hero-content{position:relative;z-index:2;max-width:860px;animation:fade-up 0.7s ease both}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.76rem;color:var(--gray-600);margin-bottom:20px;flex-wrap:wrap}
+.breadcrumb a{color:var(--gray-600);text-decoration:none;transition:color 0.2s}
+.breadcrumb a:hover{color:var(--gray-400)}
+.hero-kicker{display:inline-flex;align-items:center;gap:9px;background:var(--accent-light);border:1px solid rgba(0,0,0,0.1);border-color:rgba(0,180,220,0.25);border-radius:30px;padding:6px 16px;font-size:0.73rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:22px}
+.hero-kicker::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:blink 1.6s ease-in-out infinite}
+.hero-h1{font-family:var(--font-d);font-size:clamp(2.6rem,5.5vw,5rem);font-weight:800;line-height:1.03;letter-spacing:-0.03em;margin-bottom:20px}
+.hero-h1 .b{color:var(--accent)}
+.hero-h1 .o{color:var(--orange)}
+.hero-sub{font-size:clamp(1rem,1.8vw,1.15rem);color:var(--gray-400);max-width:660px;line-height:1.75;margin-bottom:36px}
+.hero-sub strong{color:var(--off-white);font-weight:400}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:52px}
+.trust-strip{display:flex;gap:28px;flex-wrap:wrap;padding-top:36px;border-top:1px solid var(--dim)}
+.ts-item{display:flex;align-items:center;gap:8px;font-size:0.8rem;color:var(--gray-400)}
+.ts-dot{width:6px;height:6px;border-radius:50%;background:var(--success);flex-shrink:0;box-shadow:0 0 8px rgba(0,200,100,0.4)}
+.btn-primary{position:relative;overflow:hidden;background:var(--orange);color:#fff;border:none;padding:15px 32px;border-radius:8px;font-family:var(--font-d);font-size:0.96rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s;animation:cta-pulse 3s ease-in-out infinite}
+.btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.18),transparent);animation:sheen 3s ease-in-out infinite;pointer-events:none}
+.btn-primary:hover{background:var(--orange-hot);transform:translateY(-2px);box-shadow:0 10px 32px var(--or-glow);animation:none}
+.btn-secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.18);padding:15px 28px;border-radius:8px;font-family:var(--font-b);font-size:0.96rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.btn-outline-accent{background:var(--accent-light);color:var(--accent);border:1px solid var(--accent-light);border-color:rgba(0,180,220,0.25);padding:11px 22px;border-radius:7px;font-family:var(--font-d);font-size:0.86rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:7px;transition:all 0.2s}
+.btn-outline-accent:hover{background:var(--accent);color:#fff}
+.overview-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+.overview-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.os-cell{background:rgba(255,255,255,0.025);border:1px solid var(--dim);border-radius:14px;padding:22px 20px;text-align:center;transition:all 0.25s}
+.os-cell:hover{border-color:var(--accent-light);background:var(--accent-light)}
+.os-val{font-family:var(--font-d);font-size:1.6rem;font-weight:800;color:#fff;line-height:1;margin-bottom:5px}
+.os-val span{color:var(--accent)}
+.os-label{font-size:0.72rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.06em}
+.included-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px}
+.inc-card{background:rgba(255,255,255,0.025);border:1px solid var(--dim);border-radius:14px;padding:24px 20px;transition:all 0.3s}
+.inc-card:hover{border-color:var(--accent-light);transform:translateY(-4px);box-shadow:0 14px 40px rgba(0,0,0,0.3)}
+.inc-card:hover{border-color:rgba(0,180,220,0.25)}
+.inc-icon{font-size:1.8rem;margin-bottom:12px}
+.inc-title{font-family:var(--font-d);font-size:0.92rem;font-weight:700;color:var(--off-white);margin-bottom:6px}
+.inc-desc{font-size:0.8rem;color:var(--gray-400);line-height:1.6}
+.tiers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.tier-card{background:rgba(255,255,255,0.025);border:1px solid var(--dim);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:all 0.3s;position:relative}
+.tier-card:hover{transform:translateY(-5px);box-shadow:0 24px 60px rgba(0,0,0,0.4)}
+.tier-card.featured{background:linear-gradient(145deg,var(--navy),var(--deep-navy));border-color:rgba(0,180,220,0.25)}
+.tier-card.featured::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--orange))}
+.tier-header{padding:26px 24px 20px}
+.tier-name{font-size:0.72rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:8px}
+.t-starter .tier-name{color:var(--accent)}
+.t-growth  .tier-name{color:var(--orange)}
+.t-premium .tier-name{color:var(--success)}
+.tier-price-block{margin-bottom:12px}
+.tier-setup{font-family:var(--font-d);font-size:1.6rem;font-weight:800;color:#fff;line-height:1;margin-bottom:4px}
+.tier-setup .curr{font-size:1rem;font-weight:400;color:var(--gray-400);vertical-align:super}
+.tier-setup-label{font-size:0.7rem;color:var(--gray-600);letter-spacing:0.04em}
+.tier-retainer{font-size:0.8rem;color:var(--gray-400);margin-top:6px}
+.tier-retainer strong{color:var(--gray-300);font-weight:500}
+.tier-retainer .opt{font-size:0.72rem;color:var(--gray-600)}
+.tier-tagline{font-size:0.84rem;color:var(--gray-400);line-height:1.55}
+.tier-divider{height:1px;background:var(--dim);margin:0 24px}
+.tier-deliverables{list-style:none;padding:20px 24px;flex:1;display:flex;flex-direction:column;gap:8px}
+.tier-deliverables li{font-size:0.84rem;color:var(--gray-300);display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+.tier-deliverables li::before{content:'✓';font-size:0.72rem;font-weight:700;flex-shrink:0;margin-top:2px}
+.t-starter .tier-deliverables li::before{color:var(--accent)}
+.t-growth  .tier-deliverables li::before{color:var(--orange)}
+.t-premium .tier-deliverables li::before{color:var(--success)}
+.tier-footer{padding:20px 24px 24px}
+.comp-wrap{overflow-x:auto;margin-top:52px}
+.comp-table{width:100%;border-collapse:collapse;font-size:0.86rem}
+.comp-table th{padding:13px 18px;text-align:left;border-bottom:2px solid var(--dim);font-family:var(--font-d);font-size:0.76rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase}
+.comp-table th:first-child{color:var(--gray-600);width:200px}
+.th-s{color:var(--accent)}
+.th-g{color:var(--orange)}
+.th-p{color:var(--success)}
+.comp-table td{padding:13px 18px;border-bottom:1px solid var(--dim);color:var(--gray-300);line-height:1.4;vertical-align:top}
+.comp-table td:first-child{font-size:0.82rem;color:var(--gray-400);font-weight:500}
+.comp-table tr:last-child td{border-bottom:none}
+.comp-table tr:hover td{background:rgba(255,255,255,0.015)}
+.c-yes{color:var(--success);font-weight:600}
+.c-no{color:var(--gray-600)}
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.industries-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.industries-list li{display:flex;align-items:center;gap:12px;padding:13px 16px;background:rgba(255,255,255,0.025);border:1px solid var(--dim);border-radius:10px;font-size:0.88rem;color:var(--gray-300);transition:all 0.2s}
+.industries-list li:hover{border-color:rgba(0,180,220,0.25);background:var(--accent-light);color:var(--off-white)}
+.ind-icon{font-size:1.1rem;flex-shrink:0}
+.pain-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+.pain-item{display:flex;gap:14px}
+.pi-num{font-family:var(--font-d);font-size:0.72rem;font-weight:800;color:var(--accent);width:26px;height:26px;border-radius:50%;border:1.5px solid rgba(0,180,220,0.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;transition:all 0.25s}
+.pain-item:hover .pi-num{background:var(--accent);color:#fff;border-color:var(--accent)}
+.pi-content h4{font-family:var(--font-d);font-size:0.9rem;font-weight:700;color:var(--off-white);margin-bottom:4px}
+.pi-content p{font-size:0.83rem;color:var(--gray-400);line-height:1.6}
+.results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(255,255,255,0.04);border-radius:18px;overflow:hidden;margin-top:52px}
+.result-cell{background:var(--deep-navy);padding:36px 24px;text-align:center;transition:background 0.25s;position:relative;overflow:hidden}
+.result-cell:hover{background:rgba(0,180,220,0.07)}
+.result-cell::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0;transition:opacity 0.3s}
+.result-cell:hover::before{opacity:1}
+.rc-icon{font-size:2rem;margin-bottom:14px;display:block}
+.rc-title{font-family:var(--font-d);font-size:0.95rem;font-weight:700;color:var(--off-white);margin-bottom:6px}
+.rc-desc{font-size:0.8rem;color:var(--gray-400);line-height:1.55}
+.process-timeline{display:flex;flex-direction:column;gap:0;margin-top:52px;max-width:700px}
+.pt-item{display:flex;gap:22px;padding-bottom:36px;position:relative}
+.pt-item:last-child{padding-bottom:0}
+.pt-item::before{content:'';position:absolute;left:19px;top:40px;bottom:0;width:1px;background:linear-gradient(to bottom,rgba(0,180,220,0.25),transparent)}
+.pt-item:last-child::before{display:none}
+.pt-dot{width:40px;height:40px;border-radius:50%;background:var(--deep-navy);border:2px solid rgba(0,180,220,0.25);display:flex;align-items:center;justify-content:center;font-size:0.9rem;flex-shrink:0;position:relative;z-index:1;transition:all 0.3s}
+.pt-item:hover .pt-dot{background:var(--accent);border-color:var(--accent);box-shadow:0 0 24px var(--accent-glow)}
+.pt-step{font-size:0.68rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+.pt-title{font-family:var(--font-d);font-size:1rem;font-weight:700;color:var(--off-white);margin-bottom:6px}
+.pt-desc{font-size:0.86rem;color:var(--gray-400);line-height:1.65}
+.cta-section{padding:var(--sp) 6%;background:linear-gradient(135deg,var(--navy) 0%,#0d1f3c 100%);border-top:1px solid rgba(0,180,220,0.25);text-align:center;position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:400px;background:radial-gradient(ellipse,var(--accent-glow) 0%,transparent 68%);pointer-events:none}
+.cta-h2{font-family:var(--font-d);font-size:clamp(2rem,4vw,3.4rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:14px;position:relative}
+.cta-sub{color:var(--gray-400);max-width:500px;margin:0 auto 36px;position:relative;font-size:1rem;line-height:1.7}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+footer{background:var(--black);border-top:1px solid var(--dim);padding:60px 6% 30px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:44px}
+.footer-brand .logo{margin-bottom:10px;display:block}
+.footer-brand p{font-size:0.84rem;color:var(--gray-400);max-width:230px}
+.footer-socials{display:flex;gap:10px;margin-top:18px}
+.social-btn{width:34px;height:34px;background:var(--dim);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.82rem;text-decoration:none;color:var(--gray-400);transition:all 0.2s}
+.social-btn:hover{background:var(--electric);color:#fff;transform:translateY(-2px)}
+.footer-col h5{font-family:var(--font-d);font-size:0.74rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-600);margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-col a{color:var(--gray-400);text-decoration:none;font-size:0.84rem;transition:color 0.2s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{padding-top:22px;border-top:1px solid var(--dim);display:flex;justify-content:space-between;font-size:0.76rem;color:var(--gray-600)}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity 0.65s ease,transform 0.65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}
+@media(max-width:1000px){
+  .nav-links{display:none}.nav-ham{display:flex}
+  .overview-inner{grid-template-columns:1fr;gap:48px}
+  .included-grid{grid-template-columns:1fr 1fr}
+  .tiers-grid{grid-template-columns:1fr}
+  .who-grid{grid-template-columns:1fr;gap:40px}
+  .results-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  :root{--urgency-h:36px}
+  .included-grid{grid-template-columns:1fr}
+  .results-grid{grid-template-columns:1fr 1fr}
+  .overview-stats{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:8px}
+  .hero-ctas,.cta-btns{flex-direction:column;align-items:flex-start}
+  .cta-btns{align-items:center}
+  .ub-sep:nth-child(6),.ub-sep:nth-child(6)~*{display:none}
+}
+</style>
+</head>
+<body>
+<div class="urgency-bar">
+  <span class="ub-dot"></span>
+  <span>Only <strong>3 client slots</strong> available this month</span>
+  <span class="ub-sep">·</span>
+  <span>AI systems live within 7–10 business days</span>
+  <span class="ub-sep">·</span>
+  <a class="ub-link" href="/funnels/strategy-call/">Book a Strategy Call →</a>
+</div>
+<nav id="main-nav">
+  <a href="/" class="logo" aria-label="CyberMagnet — Home" style="display:inline-flex;align-items:center;text-decoration:none;line-height:1">
+    <svg width="180" height="36" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <text x="100" y="17" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="2">CYBER</text>
+      <circle cx="6" cy="21" r="2" fill="#FF7A35"/>
+      <line x1="8" y1="21" x2="192" y2="21" stroke="#FF7A35" stroke-width="1.5"/>
+      <circle cx="194" cy="21" r="2" fill="#FF7A35"/>
+      <text x="100" y="36" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#FF7A35" text-anchor="middle" letter-spacing="2">MAGNET</text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/services/">Services</a></li>
+    <li><a href="/systems/" class="active">Systems</a></li>
+    <li><a href="/portfolio/">Portfolio</a></li>
+    <li><a href="/about/">About</a></li>
+  </ul>
+  <a href="/funnels/free-seo-audit/" class="nav-cta">Free Audit</a>
+  <div class="nav-ham"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="page-hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-grid"></div>
+  <div class="hero-orb"></div>
+  <div class="hero-orb-o"></div>
+  <div class="hero-content">
+    <div class="breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      <a href="/systems/">Systems</a><span>›</span>
+      <span>AI Automation System</span>
+    </div>
+    <div class="hero-kicker">High-Ticket System · AI-Powered</div>
+    <h1 class="hero-h1">Your Business Running <span class="b">Intelligently.</span><br>Your Leads Converted <span class="o">Automatically.</span></h1>
+    <p class="hero-sub"><strong>AI chatbot, AI phone receptionist, CRM automation, and multi-step nurture sequences — all built and configured by CyberMagnet.</strong> Your business qualifies, responds to, and follows up with leads 24 hours a day — without you doing anything.</p>
+    <div class="hero-ctas">
+      <a href="/funnels/strategy-call/" class="btn-primary">📅 Book Your Strategy Call</a>
+      <a href="/funnels/free-seo-audit/" class="btn-secondary">🔍 Get a Free Audit →</a>
+    </div>
+    <div class="trust-strip">
+      <div class="ts-item"><span class="ts-dot"></span>AI systems live in 7–10 days</div><div class="ts-item"><span class="ts-dot"></span>Starter · Growth · Premium tiers</div><div class="ts-item"><span class="ts-dot"></span>Optional monthly management</div><div class="ts-item"><span class="ts-dot"></span>24/7 lead response from day one</div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-pad bg-deep" id="overview">
+  <div class="max-w">
+    <div class="overview-inner">
+      <div class="reveal">
+        <div class="sec-label">What Is This System?</div>
+        <h2 class="sec-h2">An Intelligent System That <span class="b">Never Sleeps, Never Misses a Lead.</span></h2>
+        <div class="sec-body"><p>Most businesses lose leads not because their offer isn't good, but because their response time is. Studies consistently show that the probability of converting a lead drops by over 80% if you wait more than 5 minutes to respond. Most businesses take hours — or never respond at all.</p>
+        <p><strong>The AI Automation System eliminates this problem entirely.</strong> We deploy a custom-trained AI chatbot on your website, an AI phone receptionist that handles inbound calls around the clock, and automated CRM workflows that capture, qualify, and follow up with every lead — without you lifting a finger.</p>
+        <p>This system is built for service businesses, agencies, professional services, and any company that generates leads online or by phone and wants to convert more of them without increasing headcount.</p></div>
+        <div style="margin-top:28px">
+          <a href="#tiers" class="btn-outline-accent">View Pricing &amp; Tiers ↓</a>
+        </div>
+      </div>
+      <div class="reveal rd1">
+        <div class="overview-stats">
+          <div class="os-cell"><div class="os-val">5<span>min</span></div><div class="os-label">Avg. lead response time</div></div><div class="os-cell"><div class="os-val">24<span>/7</span></div><div class="os-label">AI receptionist uptime</div></div><div class="os-cell"><div class="os-val">20<span>+</span></div><div class="os-label">Premium: Zapier workflows</div></div><div class="os-cell"><div class="os-val">7<span>–10 days</span></div><div class="os-label">Setup timeframe</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-pad bg-black" id="included">
+  <div class="max-w">
+    <div class="reveal">
+      <div class="sec-label">Core Components</div>
+      <h2 class="sec-h2">Everything <span class="b">Inside the System.</span></h2>
+      <p class="sec-body">Five intelligent components that work together to capture, qualify, nurture, and convert leads — completely automatically.</p>
+    </div>
+    <div class="included-grid">
+      <div class="inc-card reveal">
+        <div class="inc-icon">🤖</div>
+        <div class="inc-title">AI Website Chatbot</div>
+        <div class="inc-desc">A custom-trained AI chatbot on your website that answers questions, qualifies visitor intent, captures contact details, and routes hot leads directly to your calendar or CRM.</div>
+      </div>
+      <div class="inc-card reveal rd1">
+        <div class="inc-icon">📞</div>
+        <div class="inc-title">AI Phone Receptionist</div>
+        <div class="inc-desc">A 24/7 AI phone receptionist that answers calls, handles FAQs, qualifies callers against your criteria, books appointments, and sends SMS confirmations — even at 2am.</div>
+      </div>
+      <div class="inc-card reveal rd2">
+        <div class="inc-icon">🗂️</div>
+        <div class="inc-title">CRM Automation</div>
+        <div class="inc-desc">A fully automated CRM that captures every lead from every source, applies the correct tags and pipeline stage, triggers follow-up sequences, and notifies your team when action is required.</div>
+      </div>
+      <div class="inc-card reveal">
+        <div class="inc-icon">⚡</div>
+        <div class="inc-title">Multi-Step Nurture Sequences</div>
+        <div class="inc-desc">Automated email and SMS sequences that engage new leads immediately, re-engage cold ones, and move every prospect through your pipeline — from first touch to booked appointment.</div>
+      </div>
+      <div class="inc-card reveal rd1">
+        <div class="inc-icon">🔗</div>
+        <div class="inc-title">Zapier Integration Stack</div>
+        <div class="inc-desc">Connected workflows between your website, CRM, calendar, email, and SMS platforms — so data flows automatically and no manual data entry is ever required.</div>
+      </div>
+      <div class="inc-card reveal rd2">
+        <div class="inc-icon">📊</div>
+        <div class="inc-title">Automation Reporting</div>
+        <div class="inc-desc">Clear reporting on chatbot interactions, call handling, CRM pipeline health, sequence performance, and lead conversion rates — so you know exactly what the AI is doing and how well it's working.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-pad bg-deep" id="tiers">
+  <div class="max-w">
+    <div class="reveal" style="text-align:center;margin-bottom:0">
+      <div class="sec-label center-lbl">Pricing &amp; Tiers</div>
+      <h2 class="sec-h2" style="text-align:center">Choose Your <span class="b">Growth Level.</span></h2>
+      <p class="sec-body" style="margin:0 auto;text-align:center">All tiers include a one-time setup fee to build, configure, and train your AI systems. The optional monthly retainer covers ongoing optimisation, retraining, CRM hygiene, and performance management.</p>
+    </div>
+    <div class="tiers-grid">
+      <!-- STARTER -->
+      <div class="tier-card t-starter reveal">
+        <div class="tier-header">
+          <div class="tier-name">Starter</div>
+          <div class="tier-price-block">
+            <div class="tier-setup"><span class="curr">$</span>300</div>
+            <div class="tier-setup-label">one-time setup fee</div>
+            <div class="tier-retainer">+ <strong>$100/mo</strong> retainer <span class="opt">(optional)</span></div>
+          </div>
+          <div class="tier-tagline">For businesses deploying AI for the first time — a chatbot, basic AI receptionist, and automated CRM entry to stop losing leads.</div>
+        </div>
+        <div class="tier-divider"></div>
+        <ul class="tier-deliverables">
+            <li>AI website chatbot — FAQ answering, lead capture, basic qualification</li>
+            <li>AI Phone Receptionist — call answering and lead qualification (business hours)</li>
+            <li>CRM setup — automated lead entry, basic pipeline</li>
+            <li>5-step email nurture sequence</li>
+            <li>Basic lead notification to your team (email alert)</li>
+            <li>Monthly automation performance report</li>
+        </ul>
+        <div class="tier-footer">
+          <a href="/funnels/strategy-call/" class="btn-primary" style="width:100%;justify-content:center">Get Started — Starter</a>
+        </div>
+      </div>
+      <!-- GROWTH -->
+      <div class="tier-card t-growth featured reveal rd1">
+        <div class="tier-header">
+          <div class="tier-name">Growth</div>
+          <div class="tier-price-block">
+            <div class="tier-setup"><span class="curr">$</span>600</div>
+            <div class="tier-setup-label">one-time setup fee</div>
+            <div class="tier-retainer">+ <strong>$200/mo</strong> retainer <span class="opt">(optional)</span></div>
+          </div>
+          <div class="tier-tagline">For businesses ready to automate their full lead funnel — advanced AI qualification, omnichannel follow-up, and deal pipeline management.</div>
+        </div>
+        <div class="tier-divider"></div>
+        <ul class="tier-deliverables">
+            <li>Advanced AI chatbot — qualify, book appointments, route leads</li>
+            <li>AI Receptionist — full 24/7 call handling + SMS alerts to your team</li>
+            <li>CRM buildout — deal pipeline, auto-tagging, stage-based triggers</li>
+            <li>10-step omnichannel nurture sequence (email + SMS)</li>
+            <li>Lead scoring + priority routing for hot leads</li>
+            <li>Zapier integration stack (up to 10 workflows)</li>
+            <li>Monthly optimisation call + bi-monthly reporting</li>
+        </ul>
+        <div class="tier-footer">
+          <a href="/funnels/strategy-call/" class="btn-primary" style="width:100%;justify-content:center">Get Started — Growth</a>
+        </div>
+      </div>
+      <!-- PREMIUM -->
+      <div class="tier-card t-premium reveal rd2">
+        <div class="tier-header">
+          <div class="tier-name">Premium</div>
+          <div class="tier-price-block">
+            <div class="tier-setup"><span class="curr">$</span>1,200</div>
+            <div class="tier-setup-label">one-time setup fee</div>
+            <div class="tier-retainer">+ <strong>$300/mo</strong> retainer <span class="opt">(optional)</span></div>
+          </div>
+          <div class="tier-tagline">A fully custom AI stack trained on your business — unlimited workflows, voice clone, and a dedicated AI strategist managing everything.</div>
+        </div>
+        <div class="tier-divider"></div>
+        <ul class="tier-deliverables">
+            <li>Custom AI agent trained on your full business knowledge base</li>
+            <li>AI Receptionist — 24/7 booking, SMS follow-up + AI voice clone capability</li>
+            <li>Advanced CRM automation — unlimited pipeline stages + Zapier stack</li>
+            <li>20-step full-funnel automation (email + SMS + ringless voicemail)</li>
+            <li>Advanced lead scoring + automated callback triggers</li>
+            <li>Unlimited Zapier workflows + API integrations</li>
+            <li>Dedicated AI strategist + monthly strategic reviews</li>
+            <li>Full analytics dashboard — lead source, conversion rate, cost-per-lead</li>
+        </ul>
+        <div class="tier-footer">
+          <a href="/funnels/strategy-call/" class="btn-primary" style="width:100%;justify-content:center">Get Started — Premium</a>
+        </div>
+      </div></div>
+    <div class="reveal" style="margin-top:24px;padding:18px 24px;background:var(--accent-light);border:1px solid rgba(0,180,220,0.25);border-radius:12px;font-size:0.86rem;color:var(--gray-400);max-width:760px;margin-left:auto;margin-right:auto">
+      <strong style="color:var(--off-white)">About the optional retainer:</strong> The setup fee builds and configures your entire AI system. The monthly retainer keeps CyberMagnet actively retraining your AI on new information, optimising sequences, maintaining CRM hygiene, and reporting on performance. All AI systems, workflows, and data are yours to keep regardless.
+    </div>
+  </div>
+</section>
+
+<section class="sec-pad bg-black" id="compare">
+  <div class="max-w">
+    <div class="reveal">
+      <div class="sec-label">Side-By-Side</div>
+      <h2 class="sec-h2">Tier <span class="b">Comparison.</span></h2>
+      <p class="sec-body">Every tier automates more of your lead funnel. Start with the essentials and scale as your volume grows.</p>
+    </div>
+    <div class="comp-wrap reveal rd1">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="th-s">Starter · $300</th>
+            <th class="th-g">Growth · $600</th>
+            <th class="th-p">Premium · $1,200</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AI website chatbot</td>
+            <td>Basic FAQ + lead capture</td>
+            <td><span class="c-yes">✓</span> Qualify + book + route</td>
+            <td><span class="c-yes">✓</span> Custom-trained AI agent</td>
+          </tr>
+          <tr>
+            <td>AI Phone Receptionist</td>
+            <td>Business hours, basic</td>
+            <td><span class="c-yes">✓</span> 24/7 + SMS alerts</td>
+            <td><span class="c-yes">✓</span> 24/7 + voice clone</td>
+          </tr>
+          <tr>
+            <td>CRM automation</td>
+            <td>Basic pipeline + entry</td>
+            <td><span class="c-yes">✓</span> Full pipeline + triggers</td>
+            <td><span class="c-yes">✓</span> Advanced + API integrations</td>
+          </tr>
+          <tr>
+            <td>Nurture sequence</td>
+            <td>5-step email</td>
+            <td>10-step email + SMS</td>
+            <td>20-step email + SMS + voicemail</td>
+          </tr>
+          <tr>
+            <td>Lead scoring</td>
+            <td><span class="c-no">—</span></td>
+            <td><span class="c-yes">✓</span> Priority routing</td>
+            <td><span class="c-yes">✓</span> Auto callback triggers</td>
+          </tr>
+          <tr>
+            <td>Zapier workflows</td>
+            <td><span class="c-no">—</span></td>
+            <td>Up to 10 workflows</td>
+            <td><span class="c-yes">✓</span> Unlimited</td>
+          </tr>
+          <tr>
+            <td>Voice clone capability</td>
+            <td><span class="c-no">—</span></td>
+            <td><span class="c-no">—</span></td>
+            <td><span class="c-yes">✓</span> Included</td>
+          </tr>
+          <tr>
+            <td>Dedicated AI strategist</td>
+            <td><span class="c-no">—</span></td>
+            <td><span class="c-no">—</span></td>
+            <td><span class="c-yes">✓</span> Monthly reviews</td>
+          </tr>
+          <tr>
+            <td>Reporting</td>
+            <td>Monthly</td>
+            <td>Bi-monthly</td>
+            <td><span class="c-yes">✓</span> Real-time dashboard</td>
+          </tr>
+          <tr>
+            <td>Optional retainer</td>
+            <td>$100/mo</td>
+            <td>$100/mo</td>
+            <td>$100/mo</td>
+          </tr>
+          <tr>
+            <td>Setup timeframe</td>
+            <td>5–7 days</td>
+            <td>7–10 days</td>
+            <td>10–14 days</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="sec-pad bg-deep" id="who">
+  <div class="max-w">
+    <div class="who-grid">
+      <div class="reveal">
+        <div class="sec-label">Ideal For</div>
+        <h2 class="sec-h2">Is This System <span class="b">Right for You?</span></h2>
+        <p class="sec-body" style="margin-bottom:28px">Built for businesses that generate leads online or by phone and want to convert more of them — without hiring more people or working more hours.</p>
+        <ul class="industries-list">
+          <li><span class="ind-icon">📞</span>Service businesses — any business that takes inbound enquiries or bookings</li>
+          <li><span class="ind-icon">🏥</span>Medical, dental, and aesthetics clinics with high call volume</li>
+          <li><span class="ind-icon">⚖️</span>Legal and financial firms handling sensitive inbound queries</li>
+          <li><span class="ind-icon">🏠</span>Real estate agents managing multiple concurrent leads</li>
+          <li><span class="ind-icon">📱</span>Marketing agencies and consultants with online lead generation</li>
+          <li><span class="ind-icon">🏗️</span>Contractors and home services businesses with evening/weekend calls</li>
+          <li><span class="ind-icon">🛒</span>E-commerce and product businesses with customer service volume</li>        </ul>
+      </div>
+      <div class="reveal rd1">
+        <div class="sec-label o">Problems We Solve</div>
+        <h2 class="sec-h2" style="font-size:clamp(1.6rem,2.8vw,2.2rem)">The Pain Points <span class="o">This Fixes.</span></h2>
+        <div class="pain-list" style="margin-top:24px">
+          <div class="pain-item">
+            <div class="pi-num">1</div>
+            <div class="pi-content">
+              <h4>Leads going cold before you respond</h4>
+              <p>The window to convert a fresh lead is measured in minutes, not hours. AI responds in seconds — qualifying and booking before the prospect considers a competitor.</p>
+            </div>
+          </div>
+          <div class="pain-item">
+            <div class="pi-num">2</div>
+            <div class="pi-content">
+              <h4>Missed calls costing you business</h4>
+              <p>Every unanswered call after hours or during a job is a potential client lost. The AI receptionist answers every call, every time, and books or qualifies while you're unavailable.</p>
+            </div>
+          </div>
+          <div class="pain-item">
+            <div class="pi-num">3</div>
+            <div class="pi-content">
+              <h4>Manual CRM entry wasting hours</h4>
+              <p>Entering leads into a CRM manually is slow, inconsistent, and error-prone. Every lead from every source enters your pipeline automatically with the correct tags and stage.</p>
+            </div>
+          </div>
+          <div class="pain-item">
+            <div class="pi-num">4</div>
+            <div class="pi-content">
+              <h4>Follow-up sequences that never get sent</h4>
+              <p>Most businesses intend to follow up more consistently than they do. Automated sequences send the right message at the right time — every time, without human intervention.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-pad bg-black" id="results">
+  <div class="max-w">
+    <div class="reveal" style="text-align:center;margin-bottom:0">
+      <div class="sec-label center-lbl">What to Expect</div>
+      <h2 class="sec-h2" style="text-align:center">The Outcomes This <span class="b">System Delivers.</span></h2>
+      <p class="sec-body" style="margin:0 auto;text-align:center">When AI handles your lead capture, qualification, and follow-up, the impact is felt across your entire revenue operation.</p>
+    </div>
+    <div class="results-grid">
+      <div class="result-cell reveal">
+        <span class="rc-icon">⚡</span>
+        <div class="rc-title">5-Minute Lead Response</div>
+        <div class="rc-desc">Every new lead receives an immediate, personalised response — dramatically increasing the probability of conversion before the prospect moves on.</div>
+      </div>
+      <div class="result-cell reveal rd1">
+        <span class="rc-icon">📞</span>
+        <div class="rc-title">Zero Missed Calls</div>
+        <div class="rc-desc">The AI receptionist answers every call regardless of when it comes in — nights, weekends, and during jobs included.</div>
+      </div>
+      <div class="result-cell reveal rd2">
+        <span class="rc-icon">🔄</span>
+        <div class="rc-title">Consistent Follow-Up</div>
+        <div class="rc-desc">Multi-step sequences follow every lead until they convert, opt out, or are disqualified — nothing falls through the cracks.</div>
+      </div>
+      <div class="result-cell reveal">
+        <span class="rc-icon">🗂️</span>
+        <div class="rc-title">Clean, Accurate CRM</div>
+        <div class="rc-desc">Every lead enters your pipeline automatically with the correct tags, stage, and contact details — no manual entry required.</div>
+      </div>
+      <div class="result-cell reveal rd1">
+        <span class="rc-icon">💰</span>
+        <div class="rc-title">More Revenue From Existing Traffic</div>
+        <div class="rc-desc">Converting a higher percentage of your existing leads doesn't require more marketing spend — just faster, smarter responses.</div>
+      </div>
+      <div class="result-cell reveal rd2">
+        <span class="rc-icon">🕐</span>
+        <div class="rc-title">Hours Saved Every Week</div>
+        <div class="rc-desc">Stop manually qualifying callers, entering leads, and sending follow-up emails. The system handles all of it.</div>
+      </div>
+      <div class="result-cell reveal">
+        <span class="rc-icon">📊</span>
+        <div class="rc-title">Full Funnel Visibility</div>
+        <div class="rc-desc">Know exactly how many leads you have, where they're coming from, what stage they're in, and what your conversion rate is — in real time.</div>
+      </div>
+      <div class="result-cell reveal rd1">
+        <span class="rc-icon">📈</span>
+        <div class="rc-title">Scale Without Hiring</div>
+        <div class="rc-desc">Handle 10x the lead volume without adding a single person to your team — the AI scales with your growth automatically.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec-pad bg-deep" id="process">
+  <div class="max-w">
+    <div class="reveal" style="margin-bottom:0">
+      <div class="sec-label">The Process</div>
+      <h2 class="sec-h2">From Kickoff to <span class="b">First AI Response</span> in Under 10 Days.</h2>
+      <p class="sec-body">A straightforward setup process — we do the heavy lifting, you review and approve, and your AI system goes live ready to convert.</p>
+    </div>
+    <div class="process-timeline">
+      <div class="pt-item reveal">
+        <div class="pt-dot">●</div>
+        <div>
+          <div class="pt-step">Day 1–2</div>
+          <div class="pt-title">Strategy & Discovery Call</div>
+          <div class="pt-desc">We learn your business, services, common customer questions, qualification criteria, and CRM preferences. We confirm your integrations and set up access.</div>
+        </div>
+      </div>
+      <div class="pt-item reveal">
+        <div class="pt-dot">●</div>
+        <div>
+          <div class="pt-step">Day 2–5</div>
+          <div class="pt-title">AI Training & Configuration</div>
+          <div class="pt-desc">Your chatbot and AI receptionist are configured and trained on your business knowledge base, FAQs, service offerings, and booking criteria.</div>
+        </div>
+      </div>
+      <div class="pt-item reveal">
+        <div class="pt-dot">●</div>
+        <div>
+          <div class="pt-step">Day 4–7</div>
+          <div class="pt-title">CRM & Automation Buildout</div>
+          <div class="pt-desc">Your CRM pipeline is built, automation triggers are configured, and nurture sequences are written and loaded. Zapier workflows are connected and tested.</div>
+        </div>
+      </div>
+      <div class="pt-item reveal">
+        <div class="pt-dot">●</div>
+        <div>
+          <div class="pt-step">Day 7–10</div>
+          <div class="pt-title">Testing & Launch</div>
+          <div class="pt-desc">All components are tested end-to-end — chatbot conversations, call handling, CRM entries, and sequence triggers. Once approved, your AI system goes live.</div>
+        </div>
+      </div>
+      <div class="pt-item reveal">
+        <div class="pt-dot">●</div>
+        <div>
+          <div class="pt-step">Ongoing</div>
+          <div class="pt-title">Retraining & Optimisation</div>
+          <div class="pt-desc">With the optional retainer, CyberMagnet monitors performance, retrains the AI on new information, optimises sequences, and reports monthly on results.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <h2 class="cta-h2 reveal">Ready to Put Your Lead <span style="color:#00b4dc">Conversion on Autopilot?</span></h2>
+  <p class="cta-sub reveal">Book a free strategy call and we'll show you exactly how many leads your business is currently losing to slow response times — and how an AI system would change that.</p>
+  <div class="cta-btns reveal">
+    <a href="/funnels/strategy-call/" class="btn-primary">📅 Book My Strategy Call</a>
+    <a href="/funnels/free-seo-audit/" class="btn-secondary">🔍 Get a Free Website Audit →</a>
+  </div>
+  <div class="reveal" style="margin-top:18px">
+    <a href="/systems/" style="color:var(--accent);text-decoration:none;font-size:0.82rem">← Explore All High-Ticket Systems</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="logo" aria-label="CyberMagnet — Home" style="display:inline-flex;align-items:center;text-decoration:none;line-height:1;margin-bottom:10px">
+      <svg width="160" height="32" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <text x="100" y="17" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="2">CYBER</text>
+        <circle cx="6" cy="21" r="2" fill="#FF7A35"/>
+        <line x1="8" y1="21" x2="192" y2="21" stroke="#FF7A35" stroke-width="1.5"/>
+        <circle cx="194" cy="21" r="2" fill="#FF7A35"/>
+        <text x="100" y="36" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#FF7A35" text-anchor="middle" letter-spacing="2">MAGNET</text>
+      </svg>
+    </a>
+      <p>Premium digital marketing and automation systems. Based in Dallas, TX.</p>
+      <div class="footer-socials">
+        <a href="#" class="social-btn">♪</a><a href="#" class="social-btn">in</a>
+        <a href="#" class="social-btn">▶</a><a href="#" class="social-btn">◎</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>High-Ticket Systems</h5>
+      <ul>
+        <li><a href="/systems/appointment-system/">Appointment System</a></li>
+        <li><a href="/systems/local-business-system/" >Local Business System</a></li>
+        <li><a href="/systems/ai-automation-system/" style="color:var(--accent)">AI Automation System</a></li>
+        <li><a href="/systems/content-repurposing-system/" >Content Repurposing</a></li>
+        <li><a href="/systems/">All Systems →</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Micro-Systems</h5>
+      <ul>
+        <li><a href="/systems/micro/website-audit/">Website Audit</a></li>
+        <li><a href="/systems/micro/social-media-audit/">Social Media Audit</a></li>
+        <li><a href="/systems/micro/competitor-analysis/">Competitor Analysis</a></li>
+        <li><a href="/systems/micro/graphic-bundle/">Graphic Bundle</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Get Started</h5>
+      <ul>
+        <li><a href="/funnels/strategy-call/">Strategy Call</a></li>
+        <li><a href="/funnels/free-seo-audit/">Free Audit</a></li>
+        <li><a href="/systems/digital-products/">Digital Products</a></li>
+        <li><a href="/contact/">Contact Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 CyberMagnet. All rights reserved. · Dallas, Texas</span>
+    <span>Privacy Policy · Terms of Service</span>
+  </div>
+</footer>
+<script>
+const nav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+const canvas = document.getElementById('hero-canvas');
+const ctx = canvas.getContext('2d');
+let W, H, pts = [];
+function resize() {
+  W = canvas.width = canvas.offsetWidth;
+  H = canvas.height = canvas.offsetHeight;
+  pts = [];
+  const n = Math.min(Math.floor(W * H / 13000), 65);
+  for (let i = 0; i < n; i++)
+    pts.push({ x:Math.random()*W, y:Math.random()*H, r:Math.random()*1.3+0.3, vx:(Math.random()-.5)*.2, vy:(Math.random()-.5)*.2, a:Math.random()*.4+.07 });
+}
+function draw() {
+  ctx.clearRect(0,0,W,H);
+  for (let i=0;i<pts.length;i++) for (let j=i+1;j<pts.length;j++) {
+    const dx=pts[i].x-pts[j].x, dy=pts[i].y-pts[j].y, d=Math.hypot(dx,dy);
+    if(d<115){ctx.beginPath();ctx.strokeStyle=`rgba(0,123,255,${(1-d/115)*.08})`;ctx.lineWidth=.7;ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.stroke();}
+  }
+  for(const p of pts){
+    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(0,123,255,${p.a})`;ctx.fill();
+    p.x+=p.vx; p.y+=p.vy;
+    if(p.x<0||p.x>W)p.vx*=-1; if(p.y<0||p.y>H)p.vy*=-1;
+  }
+  requestAnimationFrame(draw);
+}
+window.addEventListener('resize', resize); resize(); draw();
+const revEls = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.07, rootMargin: '0px 0px -24px 0px' });
+revEls.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

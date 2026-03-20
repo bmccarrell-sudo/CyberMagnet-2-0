@@ -1,0 +1,1879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio & Results — CyberMagnet | Dramatic Transformations. Measurable Impact.</title>
+<meta name="description" content="See what happens when outdated, underperforming brands get the CyberMagnet treatment. Drag the sliders. Study the contrast. Then imagine your brand here.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+
+/* ============================================================
+   CYBERMAGNET — PORTFOLIO V2
+   Dramatic contrast · Interactive sliders · Shake animations
+   Pulsing placeholders · Auto-scroll carousels
+   ============================================================ */
+
+:root {
+  --black:       #050810;
+  --deep-navy:   #0a1628;
+  --navy:        #0a2540;
+  --mid-blue:    #1b3b6f;
+  --electric:    #007bff;
+  --el-glow:     rgba(0,123,255,0.3);
+  --el-light:    rgba(0,123,255,0.08);
+  --orange:      #ff7a00;
+  --orange-hot:  #ff9500;
+  --or-glow:     rgba(255,122,0,0.35);
+  --or-light:    rgba(255,122,0,0.08);
+  --white:       #ffffff;
+  --off-white:   #dce8f5;
+  --gray-300:    #aabdd0;
+  --gray-400:    #8899aa;
+  --gray-600:    #445566;
+  --dim:         rgba(255,255,255,0.06);
+  --bad-bg:      #1a1200;
+  --bad-red:     #8b0000;
+  --bad-purple:  #2d0050;
+  --success:     #00c864;
+  --font-d:      'Syne', sans-serif;
+  --font-b:      'DM Sans', sans-serif;
+  --font-hero:   'Bebas Neue', cursive;
+  --sp:          clamp(72px, 9vw, 120px);
+  --urgency-h:   44px;
+  --nav-h:       68px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-b);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ── URGENCY BAR ─────────────────────────────────────────── */
+.urgency-bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+  height: var(--urgency-h);
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  background: linear-gradient(90deg, #cc5f00, var(--orange), #e07000, var(--orange), #cc5f00);
+  background-size: 300% 100%;
+  animation: urg-shift 5s ease-in-out infinite;
+  font-size: 0.8rem; font-weight: 500; color: #fff;
+  padding: 0 5%; overflow: hidden;
+}
+.urgency-bar::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg,transparent,rgba(255,255,255,0.07) 50%,transparent); animation: urg-sheen 3.5s ease-in-out infinite; pointer-events: none; }
+@keyframes urg-shift { 0%,100%{background-position:0%} 50%{background-position:100%} }
+@keyframes urg-sheen { 0%{transform:translateX(-100%)} 100%{transform:translateX(100%)} }
+.ub-dot { width:7px; height:7px; background:rgba(255,255,255,0.9); border-radius:50%; flex-shrink:0; animation:ub-p 1.8s ease-in-out infinite; }
+@keyframes ub-p { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.35;transform:scale(0.65)} }
+.ub-sep { color:rgba(255,255,255,0.4); margin:0 10px; font-size:0.65rem; }
+.ub-link { color:#fff; text-decoration:underline; text-underline-offset:2px; font-weight:600; }
+
+/* ── NAV ──────────────────────────────────────────────────── */
+nav {
+  position: fixed; top: var(--urgency-h); left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 6%; height: var(--nav-h);
+  backdrop-filter: blur(22px) saturate(1.4);
+  background: rgba(5,8,16,0.72);
+  border-bottom: 1px solid rgba(0,123,255,0.1);
+  transition: background 0.35s, box-shadow 0.35s;
+}
+nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,0.5); }
+.logo { font-family: var(--font-d); font-weight: 800; font-size: 1.4rem; letter-spacing: -0.02em; color: #fff; text-decoration: none; }
+.logo span { color: var(--electric); }
+.nav-links { display: flex; gap: 2.4rem; list-style: none; }
+.nav-links a { color: var(--gray-400); text-decoration: none; font-size: 0.84rem; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 400; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: #fff; }
+.nav-cta { background: var(--orange); color: #fff; border: none; padding: 9px 22px; border-radius: 6px; font-family: var(--font-b); font-size: 0.84rem; font-weight: 500; cursor: pointer; text-decoration: none; transition: all 0.2s; }
+.nav-cta:hover { background: var(--orange-hot); transform: translateY(-1px); box-shadow: 0 4px 18px var(--or-glow); }
+.nav-ham { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.nav-ham span { width: 22px; height: 2px; background: #fff; border-radius: 2px; }
+
+/* ── HERO ─────────────────────────────────────────────────── */
+.page-hero {
+  position: relative; overflow: hidden;
+  min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: calc(var(--urgency-h) + var(--nav-h) + 40px) 6% 80px;
+}
+
+#hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+
+.hero-grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: linear-gradient(rgba(0,123,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,123,255,0.03) 1px, transparent 1px);
+  background-size: 52px 52px;
+}
+
+/* Parallax orbs */
+.hero-orb { position: absolute; border-radius: 50%; pointer-events: none; }
+.orb-1 {
+  width: 700px; height: 700px; right: -100px; top: 50%; transform: translateY(-50%);
+  background: radial-gradient(circle, rgba(0,123,255,0.1) 0%, transparent 65%);
+  animation: orb-drift 8s ease-in-out infinite;
+}
+.orb-2 {
+  width: 400px; height: 400px; left: -80px; bottom: 5%;
+  background: radial-gradient(circle, rgba(255,122,0,0.07) 0%, transparent 70%);
+  animation: orb-drift 8s -4s ease-in-out infinite;
+}
+@keyframes orb-drift { 0%,100%{transform:translateY(-50%) scale(1)} 50%{transform:translateY(-50%) scale(1.06)} }
+
+.hero-content { position: relative; z-index: 2; max-width: 900px; }
+
+.hero-kicker {
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--el-light); border: 1px solid rgba(0,123,255,0.25);
+  border-radius: 30px; padding: 7px 18px;
+  font-size: 0.73rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--electric);
+  margin-bottom: 28px;
+  animation: fade-up 0.7s ease both;
+}
+.hero-kicker::before { content:''; width:6px; height:6px; background:var(--electric); border-radius:50%; animation:blink 1.6s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
+
+/* MEGA HEADLINE using Bebas */
+.hero-h1 {
+  font-family: var(--font-hero);
+  font-size: clamp(4rem, 10vw, 9.5rem);
+  line-height: 0.92; letter-spacing: 0.02em;
+  margin-bottom: 28px;
+  animation: fade-up 0.7s 0.08s ease both;
+}
+.hero-h1 .line-blue  { color: var(--electric); display: block; }
+.hero-h1 .line-white { color: #fff; display: block; }
+.hero-h1 .line-orange{ color: var(--orange); display: block; }
+.hero-h1 .line-stroke {
+  display: block;
+  -webkit-text-stroke: 2px #fff;
+  color: transparent;
+}
+
+.hero-sub {
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  color: var(--gray-400); max-width: 680px;
+  line-height: 1.72; margin-bottom: 44px;
+  animation: fade-up 0.7s 0.16s ease both;
+}
+.hero-sub strong { color: var(--off-white); font-weight: 400; }
+
+/* DUAL CTA */
+.hero-ctas {
+  display: flex; gap: 14px; flex-wrap: wrap;
+  animation: fade-up 0.7s 0.24s ease both;
+}
+
+.btn-fire {
+  position: relative; overflow: hidden;
+  background: var(--orange); color: #fff;
+  border: none; padding: 16px 36px; border-radius: 8px;
+  font-family: var(--font-b); font-size: 1rem; font-weight: 500;
+  cursor: pointer; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 10px;
+  transition: all 0.25s;
+  animation: cta-pulse 3s ease-in-out infinite;
+  box-shadow: 0 0 0 0 var(--or-glow);
+}
+.btn-fire::before { content:''; position:absolute; top:0; left:-100%; width:60%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent); animation:sheen 3s ease-in-out infinite; pointer-events:none; }
+@keyframes sheen { 0%,65%,100%{left:-100%} 38%{left:140%} }
+@keyframes cta-pulse { 0%,100%{box-shadow:0 0 0 0 rgba(255,122,0,0.4)} 50%{box-shadow:0 0 0 16px rgba(255,122,0,0)} }
+.btn-fire:hover { background: var(--orange-hot); transform: translateY(-3px); box-shadow: 0 12px 36px var(--or-glow); animation: none; }
+
+.btn-glass {
+  background: rgba(255,255,255,0.05); color: #fff;
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 16px 32px; border-radius: 8px;
+  font-family: var(--font-b); font-size: 1rem;
+  text-decoration: none; backdrop-filter: blur(8px);
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: all 0.25s;
+}
+.btn-glass:hover { border-color: var(--electric); color: var(--electric); transform: translateY(-2px); }
+
+/* HERO STATS */
+.hero-stats {
+  display: flex; gap: 48px; margin-top: 60px; flex-wrap: wrap;
+  padding-top: 40px; border-top: 1px solid var(--dim);
+  animation: fade-up 0.7s 0.36s ease both;
+}
+.hs { }
+.hs-val { font-family: var(--font-hero); font-size: 3rem; color: #fff; line-height: 1; letter-spacing: 0.02em; }
+.hs-val span { color: var(--electric); }
+.hs-val span.o { color: var(--orange); }
+.hs-label { font-size: 0.76rem; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.07em; margin-top: 4px; }
+
+@keyframes fade-up { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+
+/* ── SECTION SHARED ──────────────────────────────────────── */
+.sec-pad { padding: var(--sp) 6%; }
+.bg-deep  { background: var(--deep-navy); }
+.bg-black { background: var(--black); }
+.bg-navy  { background: linear-gradient(135deg, var(--navy) 0%, #0d1f3c 100%); }
+
+.sec-label {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 0.73rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--electric);
+  margin-bottom: 12px;
+}
+.sec-label::before { content:''; width:20px; height:1px; background:var(--electric); }
+.sec-label.o { color: var(--orange); }
+.sec-label.o::before { background: var(--orange); }
+
+.sec-h2 {
+  font-family: var(--font-d);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800; line-height: 1.08; letter-spacing: -0.025em;
+  margin-bottom: 14px;
+}
+.sec-h2 span { color: var(--electric); }
+.sec-h2 span.o { color: var(--orange); }
+.sec-sub { font-size: 0.96rem; color: var(--gray-400); max-width: 560px; line-height: 1.72; }
+
+/* ── TRANSFORMATION COUNTER BANNER ──────────────────────── */
+.transform-banner {
+  background: var(--deep-navy);
+  border-top: 1px solid rgba(0,123,255,0.12);
+  border-bottom: 1px solid rgba(0,123,255,0.12);
+  padding: 0 6%;
+  display: grid; grid-template-columns: repeat(5, 1fr);
+}
+.tb-stat {
+  padding: 32px 0; text-align: center;
+  border-right: 1px solid var(--dim);
+  transition: background 0.2s;
+  position: relative;
+}
+.tb-stat:last-child { border-right: none; }
+.tb-stat:hover { background: rgba(0,123,255,0.04); }
+.tb-stat::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--electric),transparent); opacity:0; transition:opacity 0.3s; }
+.tb-stat:hover::before { opacity:1; }
+.tb-num { font-family: var(--font-hero); font-size: 2.8rem; letter-spacing: 0.02em; color: #fff; line-height: 1; }
+.tb-num span { color: var(--electric); }
+.tb-lbl { font-size: 0.72rem; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px; }
+
+/* ══════════════════════════════════════════════════════════
+   WEBSITE BEFORE/AFTER SLIDERS
+══════════════════════════════════════════════════════════ */
+
+/* Slider containers */
+.slider-stack { display: flex; flex-direction: column; gap: 52px; }
+
+.transform-block { }
+
+.tb-header {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-bottom: 28px; flex-wrap: wrap; gap: 12px;
+}
+.tb-client { }
+.tb-client-tag { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--electric); margin-bottom: 6px; }
+.tb-client-name { font-family: var(--font-d); font-size: 1.5rem; font-weight: 800; line-height: 1.1; }
+.tb-client-sub { font-size: 0.88rem; color: var(--gray-400); margin-top: 4px; }
+.tb-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip { padding: 5px 14px; border-radius: 20px; font-size: 0.72rem; font-weight: 600; }
+.chip-good { background: rgba(0,200,100,0.1); border: 1px solid rgba(0,200,100,0.25); color: var(--success); }
+.chip-blue { background: var(--el-light); border: 1px solid rgba(0,123,255,0.2); color: var(--electric); }
+.chip-orange { background: var(--or-light); border: 1px solid rgba(255,122,0,0.2); color: var(--orange); }
+
+/* THE SLIDER */
+.ba-wrap {
+  position: relative;
+  border-radius: 20px; overflow: hidden;
+  height: 380px;
+  cursor: col-resize;
+  user-select: none; -webkit-user-select: none;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+}
+
+/* BEFORE side */
+.ba-before {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+}
+
+/* "Shake" animation on load for before side */
+@keyframes before-shake {
+  0%,100%{ transform:translateX(0) }
+  15%    { transform:translateX(-3px) }
+  30%    { transform:translateX(3px) }
+  45%    { transform:translateX(-2px) }
+  60%    { transform:translateX(2px) }
+  75%    { transform:translateX(-1px) }
+}
+.ba-before .before-inner {
+  width: 100%; height: 100%;
+  animation: before-shake 0.8s 1.5s ease both;
+}
+
+/* AFTER side — sits on top, clipped from the LEFT so Before shows through on left */
+.ba-after {
+  position: absolute; inset: 0;
+  clip-path: inset(0 0 0 50%);
+}
+
+/* SLIDER HANDLE */
+.ba-handle {
+  position: absolute; top: 0; bottom: 0; left: 50%;
+  width: 4px; background: var(--white);
+  transform: translateX(-50%); z-index: 20;
+  box-shadow: 0 0 24px rgba(255,255,255,0.5);
+  pointer-events: none;
+}
+.ba-knob {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px; height: 44px;
+  background: #fff; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; color: var(--black);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  font-weight: 700; letter-spacing: -1px;
+}
+
+.ba-tag {
+  position: absolute; top: 16px; z-index: 15;
+  padding: 5px 14px; border-radius: 6px;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+}
+.ba-tag-before { left: 16px; background: rgba(180,0,0,0.8); color: #fff; }
+.ba-tag-after  { right: 16px; background: rgba(0,180,80,0.8); color: #fff; }
+
+/* ── BEFORE MOCKUPS (intentionally bad) ─────────────────── */
+.mock-bad {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  font-family: 'Times New Roman', serif;
+  overflow: hidden;
+}
+
+/* Bad nav — chaotic */
+.bad-nav {
+  display: flex; align-items: center; padding: 8px 12px; gap: 8px;
+  background: #8b0000; border-bottom: 3px solid #ffff00;
+}
+.bad-nav-logo {
+  font-family: Comic Sans MS, cursive;
+  font-size: 1rem; color: #ffff00; font-weight: 700;
+  text-shadow: 1px 1px 0 #ff0000;
+}
+.bad-nav-links { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+.bad-nav-links span {
+  font-family: Arial, sans-serif; font-size: 0.6rem; color: #cccccc;
+  background: #5a0000; padding: 2px 6px; border-radius: 2px;
+}
+
+/* Bad hero — cluttered */
+.bad-hero {
+  flex: 0 0 140px; position: relative; overflow: hidden;
+  background: linear-gradient(135deg, #1a0000, #2d0050, #003300);
+  display: flex; flex-direction: column; align-items: flex-start;
+  justify-content: center; padding: 12px;
+}
+.bad-hero-title {
+  font-family: Impact, sans-serif; font-size: 1.5rem;
+  color: #ff0000; text-shadow: 2px 2px 0 #000;
+  line-height: 1; margin-bottom: 6px;
+  transform: rotate(-2deg);
+  display: inline-block;
+}
+.bad-hero-sub {
+  font-family: Comic Sans MS, cursive; font-size: 0.62rem;
+  color: #ffff00; margin-bottom: 8px; line-height: 1.3; max-width: 55%;
+}
+.bad-hero-cta {
+  display: inline-block;
+  background: #ff0000; color: #ffff00;
+  font-family: Arial Black, sans-serif; font-size: 0.58rem; font-weight: 900;
+  padding: 4px 10px; border-radius: 20px; border: 2px solid #ffff00;
+  text-transform: uppercase; text-decoration: blink;
+  box-shadow: 0 0 8px #ff0000;
+}
+.bad-hero-img {
+  position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+  width: 80px; height: 70px; background: #333;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.55rem; color: #666; text-align: center; border: 1px solid #555;
+  opacity: 0.7;
+}
+.bad-marquee {
+  background: #000080; color: #00ff00;
+  font-family: Courier, monospace; font-size: 0.6rem;
+  padding: 4px 8px; overflow: hidden;
+  white-space: nowrap;
+  animation: marquee-scroll 8s linear infinite;
+}
+@keyframes marquee-scroll { from{text-indent:100%} to{text-indent:-200%} }
+
+/* Bad body */
+.bad-body {
+  flex: 1; background: #f0e68c; padding: 8px 10px; overflow: hidden;
+  display: flex; gap: 6px;
+}
+.bad-body-main { flex: 2; }
+.bad-wall-of-text {
+  font-family: Times New Roman, serif; font-size: 0.55rem; color: #333;
+  line-height: 1.3; margin-bottom: 6px;
+}
+.bad-body-side { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.bad-ad { background: #ff69b4; border: 2px dashed #ff0000; padding: 4px; text-align: center; font-size: 0.5rem; color: #000; font-family: Arial Black, sans-serif; }
+.bad-counter { background: #000080; color: #00ff00; font-family: Courier, monospace; font-size: 0.5rem; padding: 4px; text-align: center; border: 1px solid #00ff00; }
+
+/* Bad footer */
+.bad-footer {
+  background: #1a1a1a; padding: 6px 10px;
+  font-family: Arial, sans-serif; font-size: 0.5rem; color: #666;
+  border-top: 3px solid #ff0000;
+  display: flex; justify-content: space-between;
+}
+
+/* ── AFTER MOCKUPS (premium CyberMagnet) ─────────────────── */
+.mock-good {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  background: var(--black); overflow: hidden;
+}
+
+/* Good nav */
+.good-nav {
+  display: flex; align-items: center; padding: 0 20px; height: 44px;
+  background: rgba(5,8,16,0.95);
+  border-bottom: 1px solid rgba(0,123,255,0.15);
+  backdrop-filter: blur(12px);
+  flex-shrink: 0;
+}
+.good-nav-logo { font-family: var(--font-d); font-size: 0.85rem; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
+.good-nav-logo em { color: var(--electric); font-style: normal; }
+.good-nav-links { display: flex; gap: 12px; margin: 0 auto; }
+.good-nav-links span { font-size: 0.55rem; color: var(--gray-400); letter-spacing: 0.06em; text-transform: uppercase; }
+.good-nav-cta { background: var(--orange); color: #fff; font-size: 0.55rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; letter-spacing: 0.04em; flex-shrink: 0; }
+
+/* Good hero */
+.good-hero {
+  flex: 0 0 180px; position: relative;
+  background: linear-gradient(135deg, #050810 0%, var(--navy) 100%);
+  display: flex; flex-direction: column; justify-content: center; padding: 20px;
+  overflow: hidden;
+}
+.good-hero::before {
+  content: ''; position: absolute; right: -40px; top: 50%; transform: translateY(-50%);
+  width: 200px; height: 200px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,123,255,0.15) 0%, transparent 70%);
+}
+.good-hero-kicker { font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--electric); margin-bottom: 6px; font-weight: 600; }
+.good-hero-h1 { font-family: var(--font-d); font-size: 1.1rem; font-weight: 800; color: #fff; line-height: 1.1; margin-bottom: 6px; letter-spacing: -0.02em; }
+.good-hero-sub { font-size: 0.58rem; color: var(--gray-400); line-height: 1.5; margin-bottom: 10px; max-width: 65%; }
+.good-hero-ctas { display: flex; gap: 6px; }
+.ghc-primary { background: var(--orange); color: #fff; font-size: 0.55rem; font-weight: 700; padding: 5px 12px; border-radius: 4px; }
+.ghc-secondary { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.2); font-size: 0.55rem; padding: 5px 10px; border-radius: 4px; }
+.good-hero-stat { position: absolute; right: 16px; bottom: 16px; background: rgba(255,255,255,0.04); border: 1px solid rgba(0,123,255,0.2); border-radius: 8px; padding: 8px 12px; }
+.ghs-num { font-family: var(--font-d); font-size: 1rem; font-weight: 800; color: var(--electric); }
+.ghs-label { font-size: 0.48rem; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* Good body */
+.good-body { flex: 1; background: var(--deep-navy); padding: 12px 16px; overflow: hidden; display: flex; flex-direction: column; gap: 8px; }
+.good-services { display: grid; grid-template-columns: repeat(3,1fr); gap: 6px; }
+.good-svc { background: rgba(255,255,255,0.03); border: 1px solid rgba(0,123,255,0.12); border-radius: 6px; padding: 8px; }
+.gsvc-icon { font-size: 0.8rem; margin-bottom: 4px; }
+.gsvc-title { font-family: var(--font-d); font-size: 0.58rem; font-weight: 700; color: #fff; margin-bottom: 2px; }
+.gsvc-bar { height: 3px; background: rgba(0,123,255,0.15); border-radius: 2px; overflow: hidden; }
+.gsvc-fill { height: 100%; background: var(--electric); border-radius: 2px; }
+.good-row { height: 5px; background: rgba(255,255,255,0.05); border-radius: 3px; }
+
+/* Good footer */
+.good-footer {
+  background: var(--black); padding: 8px 16px;
+  border-top: 1px solid var(--dim);
+  display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;
+}
+.gf-logo { font-family: var(--font-d); font-size: 0.65rem; font-weight: 800; color: #fff; }
+.gf-logo em { color: var(--electric); font-style: normal; }
+.gf-links { display: flex; gap: 8px; }
+.gf-links span { font-size: 0.48rem; color: var(--gray-600); }
+
+/* Comparison details below slider */
+.ba-details {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px; margin-top: 20px;
+}
+.bad-side, .good-side { padding: 18px 20px; border-radius: 12px; }
+.bad-side  { background: rgba(139,0,0,0.08); border: 1px solid rgba(139,0,0,0.2); }
+.good-side { background: rgba(0,200,100,0.05); border: 1px solid rgba(0,200,100,0.2); }
+.side-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
+.bad-side .side-label  { color: #ff5555; }
+.good-side .side-label { color: var(--success); }
+.side-items { display: flex; flex-direction: column; gap: 6px; }
+.side-item { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; color: var(--gray-300); }
+.si-icon-bad  { color: #ff5555; font-size: 0.8rem; }
+.si-icon-good { color: var(--success); font-size: 0.8rem; }
+
+/* ══════════════════════════════════════════════════════════
+   BRAND DESIGN CAROUSEL
+══════════════════════════════════════════════════════════ */
+.carousel-wrap { position: relative; overflow: hidden; }
+
+.carousel-track {
+  display: flex; gap: 22px;
+  transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+
+.brand-card {
+  flex: 0 0 calc(33.333% - 15px);
+  min-width: 280px;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid var(--dim); border-radius: 20px;
+  overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.brand-card:hover { border-color: rgba(0,123,255,0.3); transform: translateY(-6px); }
+
+.brand-card-visual {
+  height: 200px; position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+/* Split left/right inside brand card */
+.brand-split { width: 100%; height: 100%; display: flex; }
+.brand-before-half {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, #1a1200, #2d0050);
+  position: relative;
+}
+.brand-after-half {
+  flex: 1; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--navy), var(--deep-navy));
+  position: relative;
+}
+.brand-split-line { width: 2px; background: rgba(255,255,255,0.2); position: relative; z-index: 2; align-self: stretch; }
+
+.half-label {
+  position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+  font-size: 0.58rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 2px 8px; border-radius: 4px;
+}
+.hl-bad  { background: rgba(139,0,0,0.7); color: #ffaaaa; }
+.hl-good { background: rgba(0,200,100,0.15); color: var(--success); }
+
+/* Old logo styles */
+.logo-bad-1 { font-family: Comic Sans MS, cursive; font-size: 0.85rem; color: #ffff00; text-shadow: 1px 1px 0 #f00; text-align: center; padding: 10px; }
+.logo-bad-2 { font-family: Times New Roman, serif; font-size: 0.9rem; color: #888; font-style: italic; text-align: center; line-height: 1.2; padding: 10px; }
+.logo-bad-3 { font-family: Impact, sans-serif; font-size: 1rem; color: #cc0000; letter-spacing: 0.1em; text-align: center; padding: 10px; transform: skewX(-5deg); display: inline-block; }
+.logo-bad-4 { font-family: Arial, sans-serif; font-size: 0.75rem; color: #aaa; background: #333; padding: 8px; border: 2px solid #555; text-align: center; }
+.logo-bad-5 { font-family: Courier, monospace; font-size: 0.7rem; color: #0f0; background: #000; padding: 8px; text-align: center; border: 1px solid #0f0; }
+.logo-bad-6 { font-family: Georgia, serif; font-size: 0.8rem; color: #aa8800; text-align: center; padding: 10px; background: #ffffcc; width: 100%; }
+
+/* New logo styles */
+.logo-new-1 { text-align: center; }
+.logo-new-1 .lmark { font-family: var(--font-d); font-size: 1.5rem; font-weight: 800; color: #fff; letter-spacing: -0.03em; line-height: 1; }
+.logo-new-1 .lmark em { color: var(--electric); font-style: normal; }
+.logo-new-1 .ltag { font-size: 0.48rem; letter-spacing: 0.25em; color: var(--gray-400); text-transform: uppercase; margin-top: 4px; display: block; }
+
+.logo-new-2 { text-align: center; }
+.logo-new-2 .lmark { font-family: var(--font-d); font-size: 1.3rem; font-weight: 800; color: var(--orange); letter-spacing: 0.05em; line-height: 1; }
+.logo-new-2 .lsub { font-size: 0.45rem; letter-spacing: 0.3em; color: rgba(255,255,255,0.4); text-transform: uppercase; }
+
+.logo-new-3 { display: flex; align-items: center; gap: 8px; }
+.ln3-mark { width: 32px; height: 32px; background: linear-gradient(135deg, var(--electric), var(--mid-blue)); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: var(--font-d); font-weight: 800; font-size: 0.9rem; color: #fff; }
+.ln3-text { font-family: var(--font-d); font-size: 0.85rem; font-weight: 800; color: #fff; letter-spacing: -0.02em; line-height: 1.1; }
+.ln3-text small { display: block; font-size: 0.42rem; color: var(--gray-400); letter-spacing: 0.2em; text-transform: uppercase; font-weight: 300; }
+
+.logo-new-4 { text-align: center; }
+.ln4-ring { width: 40px; height: 40px; border-radius: 50%; border: 2px solid var(--electric); display: flex; align-items: center; justify-content: center; margin: 0 auto 6px; font-family: var(--font-d); font-weight: 800; color: var(--electric); font-size: 0.9rem; }
+.ln4-name { font-family: var(--font-d); font-size: 0.75rem; font-weight: 800; color: #fff; letter-spacing: 0.1em; }
+
+.logo-new-5 { text-align: center; }
+.ln5-bar { width: 36px; height: 4px; background: linear-gradient(90deg,var(--electric),var(--orange)); border-radius: 2px; margin: 0 auto 8px; }
+.ln5-name { font-family: var(--font-d); font-size: 0.9rem; font-weight: 800; color: #fff; letter-spacing: -0.01em; line-height: 1; }
+.ln5-tag { font-size: 0.45rem; color: var(--gray-400); letter-spacing: 0.2em; text-transform: uppercase; margin-top: 3px; }
+
+.logo-new-6 { text-align: center; }
+.ln6-name { font-family: var(--font-d); font-size: 1.1rem; font-weight: 800; color: #fff; letter-spacing: 0.06em; }
+.ln6-name span { color: var(--orange); }
+.ln6-tag { font-size: 0.45rem; color: var(--gray-400); letter-spacing: 0.3em; text-transform: uppercase; margin-top: 4px; }
+
+.brand-card-body { padding: 18px 20px; }
+.brand-card-name { font-family: var(--font-d); font-size: 0.95rem; font-weight: 800; margin-bottom: 4px; }
+.brand-card-industry { font-size: 0.72rem; color: var(--gray-400); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; }
+.brand-change { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
+.bc-row { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: var(--gray-300); }
+.bc-icon { font-size: 0.7rem; width: 14px; }
+.brand-result-chip { display: inline-flex; align-items: center; gap: 6px; background: rgba(0,200,100,0.08); border: 1px solid rgba(0,200,100,0.2); border-radius: 20px; padding: 4px 12px; font-size: 0.72rem; font-weight: 600; color: var(--success); }
+
+/* Carousel controls */
+.carousel-controls { display: flex; gap: 12px; margin-top: 24px; align-items: center; justify-content: flex-end; }
+.carousel-btn {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--dim); border: 1px solid rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: var(--gray-400);
+  transition: all 0.2s; font-size: 1rem;
+}
+.carousel-btn:hover { background: var(--electric); border-color: var(--electric); color: #fff; }
+.carousel-dots { display: flex; gap: 6px; }
+.cdot { width: 6px; height: 6px; border-radius: 50%; background: var(--dim); transition: all 0.3s; cursor: pointer; }
+.cdot.active { background: var(--electric); width: 18px; border-radius: 3px; }
+
+/* ══════════════════════════════════════════════════════════
+   SOCIAL MEDIA CARDS
+══════════════════════════════════════════════════════════ */
+.social-compare-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
+
+.sc-pair { }
+.sc-pair-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.sc-pair-name { font-family: var(--font-d); font-size: 0.95rem; font-weight: 700; }
+.sc-lift { background: rgba(0,200,100,0.1); border: 1px solid rgba(0,200,100,0.2); border-radius: 20px; padding: 3px 10px; font-size: 0.7rem; font-weight: 700; color: var(--success); }
+
+/* Toggle switch */
+.sc-toggle { display: flex; background: rgba(255,255,255,0.04); border: 1px solid var(--dim); border-radius: 8px; overflow: hidden; margin-bottom: 12px; }
+.sc-toggle-btn {
+  flex: 1; padding: 8px; text-align: center;
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+  cursor: pointer; transition: all 0.25s; background: none; border: none;
+  color: var(--gray-400);
+}
+.sc-toggle-btn.active-bad  { background: rgba(139,0,0,0.2); color: #ff7777; }
+.sc-toggle-btn.active-good { background: rgba(0,123,255,0.15); color: var(--electric); }
+
+/* Post mockup */
+.sc-post { border-radius: 12px; overflow: hidden; border: 1px solid var(--dim); }
+.sc-post-inner { padding: 12px; }
+.sc-post-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.sc-avatar { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; flex-shrink: 0; }
+.sc-handle { font-size: 0.78rem; font-weight: 600; }
+.sc-time { font-size: 0.66rem; color: var(--gray-600); margin-left: auto; }
+
+/* Bad post image */
+.sc-img-bad {
+  width: 100%; aspect-ratio: 1/1; border-radius: 8px; margin-bottom: 8px;
+  background: #1a1200; overflow: hidden;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 4px; padding: 12px;
+}
+.sib-clip { font-size: 1.4rem; opacity: 0.4; }
+.sib-text { font-family: Arial Black, sans-serif; font-size: 0.65rem; color: #888; text-transform: uppercase; letter-spacing: 0.05em; text-align: center; }
+.sib-sub { font-family: Comic Sans MS, cursive; font-size: 0.55rem; color: #555; }
+.sib-tagline { font-size: 0.5rem; color: #444; font-family: Times New Roman, serif; font-style: italic; }
+
+/* Good post image */
+.sc-img-good {
+  width: 100%; aspect-ratio: 1/1; border-radius: 8px; margin-bottom: 8px;
+  overflow: hidden; position: relative;
+}
+.sig-inner { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; padding: 12px; }
+.sig-eyebrow { font-size: 0.55rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--orange); font-weight: 600; margin-bottom: 4px; }
+.sig-headline { font-family: var(--font-d); font-size: 0.82rem; font-weight: 800; color: #fff; line-height: 1.2; margin-bottom: 8px; }
+.sig-cta { background: var(--orange); color: #fff; font-size: 0.55rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; letter-spacing: 0.04em; display: inline-block; }
+
+/* Caption */
+.sc-caption { font-size: 0.76rem; line-height: 1.5; margin-bottom: 10px; }
+.sc-caption.bad-cap { color: var(--gray-600); font-style: italic; }
+.sc-caption.good-cap { color: var(--gray-300); }
+
+/* Metrics row */
+.sc-metrics { display: flex; gap: 12px; padding-top: 8px; border-top: 1px solid var(--dim); }
+.sc-metric { display: flex; align-items: center; gap: 4px; font-size: 0.72rem; }
+.sc-metric-icon { font-size: 0.76rem; }
+.sc-metric-val { font-weight: 500; }
+.sc-metric-val.good-val { color: var(--success); }
+.sc-metric-change { font-size: 0.62rem; background: rgba(0,200,100,0.1); color: var(--success); padding: 1px 5px; border-radius: 8px; }
+
+/* ══════════════════════════════════════════════════════════
+   ANIMATED RESULTS
+══════════════════════════════════════════════════════════ */
+.results-wall {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 2px; background: rgba(255,255,255,0.04);
+  border-radius: 20px; overflow: hidden;
+  max-width: 1100px; margin: 60px auto 0;
+}
+.rw-cell {
+  background: var(--navy);
+  padding: 44px 28px; text-align: center;
+  transition: background 0.25s;
+  position: relative; overflow: hidden;
+}
+.rw-cell:hover { background: rgba(0,123,255,0.08); }
+.rw-cell::before { content:''; position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--electric),transparent);opacity:0;transition:opacity 0.3s; }
+.rw-cell:hover::before { opacity:1; }
+.rw-num { font-family: var(--font-hero); font-size: clamp(2.8rem,4vw,4rem); letter-spacing:0.02em; line-height:1; color:#fff; margin-bottom:6px; }
+.rw-num .counter { color: var(--electric); }
+.rw-num .unit { font-size: 0.55em; }
+.rw-desc { font-size: 0.84rem; color: var(--gray-400); line-height: 1.5; }
+.rw-cat { font-size: 0.66rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 6px; }
+
+/* ══════════════════════════════════════════════════════════
+   PULSING PLACEHOLDER SECTION
+══════════════════════════════════════════════════════════ */
+.placeholder-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+
+.ph-card {
+  border: 2px dashed rgba(0,123,255,0.25);
+  border-radius: 20px; min-height: 280px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 40px 28px;
+  position: relative; overflow: hidden; cursor: pointer;
+  transition: border-color 0.3s, background 0.3s;
+  animation: pulse-border 3s ease-in-out infinite;
+}
+.ph-card:nth-child(2) { animation-delay: 1s; }
+.ph-card:nth-child(3) { animation-delay: 2s; }
+
+@keyframes pulse-border {
+  0%,100% { border-color: rgba(0,123,255,0.2); box-shadow: 0 0 0 0 rgba(0,123,255,0); }
+  50%      { border-color: rgba(0,123,255,0.5); box-shadow: 0 0 0 6px rgba(0,123,255,0); }
+}
+
+/* Hover overlay */
+.ph-card::after {
+  content: 'Submit Your Project →';
+  position: absolute; left: 0; right: 0;
+  top: 34%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-d); font-size: 1rem; font-weight: 700; color: var(--electric);
+  opacity: 0; transition: opacity 0.3s;
+  pointer-events: none;
+}
+.ph-card:hover::after { opacity: 1; }
+.ph-card:hover { border-color: var(--electric); background: rgba(0,123,255,0.1); }
+
+.ph-card:hover .ph-icon { opacity: 0; }
+.ph-card:hover .ph-title,
+.ph-card:hover .ph-desc { opacity: 0.15; transition: opacity 0.3s; }
+
+.ph-badge { position: absolute; top: 14px; right: 14px; background: var(--el-light); border: 1px solid rgba(0,123,255,0.25); border-radius: 20px; padding: 3px 10px; font-size: 0.62rem; color: var(--electric); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+.ph-icon { font-size: 2.8rem; opacity: 0.35; margin-bottom: 14px; transition: opacity 0.3s; }
+.ph-title { font-family: var(--font-d); font-size: 1rem; font-weight: 700; color: var(--gray-400); margin-bottom: 8px; transition: opacity 0.3s; }
+.ph-desc { font-size: 0.82rem; color: var(--gray-600); line-height: 1.55; max-width: 200px; transition: opacity 0.3s; }
+
+/* Placeholder row 2 */
+.ph-row2 {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 22px;
+  margin-top: 22px; max-width: 800px; margin-left: auto; margin-right: auto;
+}
+
+/* Owner note */
+.owner-note {
+  margin-top: 40px; max-width: 840px; margin-left: auto; margin-right: auto;
+  padding: 24px 28px; background: rgba(255,122,0,0.05); border: 1px solid rgba(255,122,0,0.2); border-radius: 14px;
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.on-icon { font-size: 1.4rem; flex-shrink: 0; }
+.on-title { font-family: var(--font-d); font-size: 0.95rem; font-weight: 700; color: var(--orange); margin-bottom: 5px; }
+.on-text { font-size: 0.84rem; color: var(--gray-400); line-height: 1.65; }
+.on-text code { background: rgba(255,255,255,0.07); padding: 1px 6px; border-radius: 3px; font-size: 0.78rem; color: var(--off-white); }
+
+/* ══════════════════════════════════════════════════════════
+   FINAL CTA
+══════════════════════════════════════════════════════════ */
+.mega-cta {
+  text-align: center; padding: var(--sp) 6%;
+  background: linear-gradient(135deg, var(--navy) 0%, #0d1f3c 100%);
+  border-top: 1px solid rgba(0,123,255,0.2);
+  position: relative; overflow: hidden;
+}
+.mega-cta::before { content:''; position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:900px;height:450px;background:radial-gradient(ellipse,rgba(0,123,255,0.07) 0%,transparent 65%);pointer-events:none; }
+.mega-cta-h { font-family: var(--font-hero); font-size: clamp(3rem, 7vw, 7rem); line-height: 0.92; letter-spacing: 0.02em; margin-bottom: 20px; position: relative; }
+.mega-cta-h span { color: var(--electric); }
+.mega-cta-h em { color: var(--orange); font-style: normal; display: block; }
+.mega-cta-sub { font-size: 1.05rem; color: var(--gray-400); max-width: 560px; margin: 0 auto 40px; position: relative; }
+.mega-cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; position: relative; }
+.mega-cta-micro { margin-top: 20px; font-size: 0.84rem; color: var(--off-white); font-weight: 400; position: relative; letter-spacing: 0.02em; }
+.mega-cta-micro span { color: var(--orange); font-weight: 600; }
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+footer { background: var(--black); border-top: 1px solid var(--dim); padding: 60px 6% 30px; }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 44px; }
+.footer-brand .logo { margin-bottom: 10px; display: block; }
+.footer-brand p { font-size: 0.84rem; color: var(--gray-400); max-width: 230px; }
+.footer-socials { display: flex; gap: 10px; margin-top: 18px; }
+.social-btn { width: 34px; height: 34px; background: var(--dim); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 0.82rem; text-decoration: none; color: var(--gray-400); transition: all 0.2s; }
+.social-btn:hover { background: var(--electric); color: #fff; transform: translateY(-2px); }
+.footer-col h5 { font-family: var(--font-d); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray-600); margin-bottom: 16px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.footer-col a { color: var(--gray-400); text-decoration: none; font-size: 0.84rem; transition: color 0.2s; }
+.footer-col a:hover { color: #fff; }
+.footer-bottom { padding-top: 22px; border-top: 1px solid var(--dim); display: flex; justify-content: space-between; font-size: 0.76rem; color: var(--gray-600); }
+
+/* ── REVEAL ──────────────────────────────────────────────── */
+.reveal { opacity:0; transform:translateY(26px); transition:opacity 0.65s ease,transform 0.65s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.rd1{transition-delay:.1s} .rd2{transition-delay:.2s} .rd3{transition-delay:.3s}
+
+/* ── MOBILE ──────────────────────────────────────────────── */
+@media(max-width:1000px){
+  .nav-links{display:none}.nav-ham{display:flex}
+  .transform-banner{grid-template-columns:1fr 1fr 1fr}
+  .tb-stat:nth-child(4){border-top:1px solid var(--dim)}
+  .tb-stat:nth-child(3){border-right:none}
+  .ba-details{grid-template-columns:1fr}
+  .social-compare-grid{grid-template-columns:1fr 1fr}
+  .results-wall{grid-template-columns:1fr 1fr}
+  .placeholder-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .brand-card{flex:0 0 calc(50% - 11px)}
+}
+@media(max-width:640px){
+  :root{--urgency-h:36px}
+  .transform-banner{grid-template-columns:1fr 1fr}
+  .tb-stat:nth-child(5){border-top:1px solid var(--dim);border-right:none}
+  .social-compare-grid{grid-template-columns:1fr}
+  .placeholder-grid{grid-template-columns:1fr}
+  .ph-row2{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:8px}
+  .mega-cta-btns{flex-direction:column;align-items:center}
+  .hero-stats{gap:28px}
+  .ba-wrap{height:300px}
+  .brand-card{flex:0 0 calc(100% - 0px)}
+  .ba-details{grid-template-columns:1fr}
+  .ub-sep:nth-child(6),.ub-sep:nth-child(6)~*{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- URGENCY BAR -->
+<div class="urgency-bar">
+  <span class="ub-dot"></span>
+  <span>Only <strong>3 client slots</strong> left this month</span>
+  <span class="ub-sep">·</span>
+  <span>50+ businesses transformed</span>
+  <span class="ub-sep">·</span>
+  <span>Avg. 3.8× ROI</span>
+  <span class="ub-sep">·</span>
+  <a class="ub-link" href="/funnels/free-seo-audit/">Claim your spot →</a>
+</div>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <a href="/" class="logo" aria-label="CyberMagnet — Home" style="display:inline-flex;align-items:center;text-decoration:none;line-height:1">
+    <svg width="180" height="36" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <text x="100" y="17" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="2">CYBER</text>
+      <circle cx="6" cy="21" r="2" fill="#FF7A35"/>
+      <line x1="8" y1="21" x2="192" y2="21" stroke="#FF7A35" stroke-width="1.5"/>
+      <circle cx="194" cy="21" r="2" fill="#FF7A35"/>
+      <text x="100" y="36" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#FF7A35" text-anchor="middle" letter-spacing="2">MAGNET</text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/services/">Services</a></li>
+    <li><a href="/portfolio/" class="active">Portfolio</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/blog/">Blog</a></li>
+  </ul>
+  <a href="/funnels/free-seo-audit/" class="nav-cta">Free SEO Audit</a>
+  <div class="nav-ham"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════════ -->
+<section class="page-hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-grid"></div>
+  <div class="hero-orb orb-1"></div>
+  <div class="hero-orb orb-2"></div>
+
+  <div class="hero-content">
+    <div class="hero-kicker">Real Work. Dramatic Results. Zero Fluff.</div>
+    <h1 class="hero-h1">
+      <span class="line-stroke">BEFORE</span>
+      <span class="line-white">LOOKS</span>
+      <span class="line-orange">NOTHING</span>
+      <span class="line-blue">LIKE AFTER.</span>
+    </h1>
+    <p class="hero-sub">
+      <strong>Drag the sliders. Study the contrast. Then imagine your brand here.</strong><br>
+      Every example below is what happens when an outdated, underperforming business gets the full CyberMagnet treatment — new identity, new strategy, new results.
+    </p>
+    <div class="hero-ctas">
+      <a href="/funnels/free-seo-audit/" class="btn-fire">🚀 Get My Free Transformation Audit</a>
+      <a href="#websites" class="btn-glass">See the Transformations ↓</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hs"><div class="hs-val">50<span>+</span></div><div class="hs-label">Brands Transformed</div></div>
+      <div class="hs"><div class="hs-val">97<span>%</span></div><div class="hs-label">Retention Rate</div></div>
+      <div class="hs"><div class="hs-val">3.8<span class="o">×</span></div><div class="hs-label">Average ROI</div></div>
+      <div class="hs"><div class="hs-val">$8<span>M+</span></div><div class="hs-label">Revenue Generated</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BANNER -->
+<div class="transform-banner">
+  <div class="tb-stat reveal"><div class="tb-num">+<span>285</span>%</div><div class="tb-lbl">Avg. Traffic Increase</div></div>
+  <div class="tb-stat reveal rd1"><div class="tb-num">+<span>68</span>%</div><div class="tb-lbl">More Leads Post-Redesign</div></div>
+  <div class="tb-stat reveal rd2"><div class="tb-num">+<span>312</span>%</div><div class="tb-lbl">Social Engagement Lift</div></div>
+  <div class="tb-stat reveal"><div class="tb-num">+<span>60</span>%</div><div class="tb-lbl">Perceived Brand Value</div></div>
+  <div class="tb-stat reveal rd1"><div class="tb-num"><span>6×</span></div><div class="tb-lbl">Avg. Load Speed Improvement</div></div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 1 — WEBSITE BEFORE/AFTER SLIDERS
+══════════════════════════════════════════════════════════ -->
+<section class="sec-pad bg-deep" id="websites">
+  <div class="reveal" style="margin-bottom:48px">
+    <div class="sec-label">Website Transformations</div>
+    <h2 class="sec-h2">Drag the Handle. <span>Feel the Difference.</span></h2>
+    <p class="sec-sub">Each "Before" is intentionally bad — because that's what most business websites actually look like. The "After" is what your competitors will fear.</p>
+  </div>
+
+  <div class="slider-stack">
+
+    <!-- ── TRANSFORMATION 1: MIKE'S AUTO REPAIR ── -->
+    <div class="transform-block reveal">
+      <div class="tb-header">
+        <div class="tb-client">
+          <div class="tb-client-tag">🔧 Auto Repair · Local Service Business</div>
+          <div class="tb-client-name">Mike's Auto Repair</div>
+          <div class="tb-client-sub">Family-run garage, 22 years in business — but invisible online</div>
+        </div>
+        <div class="tb-chips">
+          <span class="chip chip-good">+340% Organic Traffic</span>
+          <span class="chip chip-blue">Page 1 Google</span>
+          <span class="chip chip-orange">+89% Call Volume</span>
+        </div>
+      </div>
+
+      <div class="ba-wrap" data-slider>
+        <!-- BEFORE: bad auto repair site -->
+        <div class="ba-before">
+          <div class="before-inner">
+            <div class="mock-bad">
+              <div class="bad-nav">
+                <div class="bad-nav-logo">MIKE'S AUTO REPAIR!!!!</div>
+                <div class="bad-nav-links">
+                  <span>HOME</span><span>ABOUT</span><span>SERVICES</span><span>GALLERY</span><span>CONTACT US</span>
+                </div>
+              </div>
+              <div class="bad-marquee">★★★ BEST PRICES IN TOWN ★★★ CALL NOW: 555-0192 ★★★ WE FIX ALL MAKES AND MODELS ★★★ OPEN 7 DAYS A WEEK ★★★</div>
+              <div class="bad-hero" style="background:linear-gradient(135deg,#1a0000,#330000,#1a1200)">
+                <div class="bad-hero-title">WE FIX CARS!!</div>
+                <div class="bad-hero-sub">Cheep prices!! Best mechanic in town since 2001. Call us now before it is to late!!</div>
+                <div class="bad-hero-cta">★ CLICK HERE NOW ★</div>
+                <div class="bad-hero-img">BROKEN<br>IMAGE<br>❌</div>
+              </div>
+              <div class="bad-body">
+                <div class="bad-body-main">
+                  <div class="bad-wall-of-text">Welcome to Mikes Auto Repair were we have been servineg the community for over 20 years. We offer all types of auto repair services including oil changes breaks tires alignments engines transmissions and much more. We are a family owned business and we take pride in our work. We use only the best parts and our mechanics are all certified. You can trust us with your vehicle because we have been doing this for a long time and we know what we are doing. Call us today to schedule your appointment or just drop by we are always happy to help you out no matter what kind of car you drive weather it is a Ford or Chevy or Toyota or Honda or any other make we can fix it for you.</div>
+                  <div class="bad-wall-of-text" style="margin-top:4px;font-size:0.48rem;color:#555">SERVICES: Oil Change, Brake Repair, Tire Rotation, Engine Repair, Transmission, Exhaust, AC Service, Battery, Alignment, Suspension, Diagnostics, Electrical...</div>
+                </div>
+                <div class="bad-body-side">
+                  <div class="bad-ad">🚨 SPECIAL OFFER! $10 OFF YOUR NEXT OIL CHANGE! CALL NOW! LIMITED TIME!</div>
+                  <div class="bad-counter">👁 Visitors: 00847<br>⭐ Est. 2001</div>
+                  <div class="bad-ad" style="background:#0000ff;color:#fff;border-color:#00ff00;font-size:0.45rem">CLICK HERE FOR DEALS!</div>
+                </div>
+              </div>
+              <div class="bad-footer"><span>© Mike's Auto Repair | All Rights Reserved | Designed by Mike's son</span><span>Last Updated: 2018</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AFTER: premium auto repair site -->
+        <div class="ba-after">
+          <div class="mock-good">
+            <div class="good-nav">
+              <div class="good-nav-logo">MIKE'S <em>AUTO</em></div>
+              <div class="good-nav-links"><span>Services</span><span>About</span><span>Reviews</span></div>
+              <div class="good-nav-cta">Book Online</div>
+            </div>
+            <div class="good-hero" style="background:linear-gradient(135deg,#050810,#0a1a28)">
+              <div class="good-hero-kicker">Family-Run · 22 Years · 5-Star Rated</div>
+              <div class="good-hero-h1">Your Car Deserves<br>Expert Hands</div>
+              <div class="good-hero-sub">Fast diagnostics, honest pricing, and repairs done right the first time. Serving the area since 2001.</div>
+              <div class="good-hero-ctas">
+                <div class="ghc-primary">Book Service ↗</div>
+                <div class="ghc-secondary">View Services</div>
+              </div>
+              <div class="good-hero-stat"><div class="ghs-num">4.9★</div><div class="ghs-label">280+ Google Reviews</div></div>
+            </div>
+            <div class="good-body">
+              <div class="good-services">
+                <div class="good-svc"><div class="gsvc-icon">🛞</div><div class="gsvc-title">Tyres & Brakes</div><div class="gsvc-bar"><div class="gsvc-fill" style="width:90%"></div></div></div>
+                <div class="good-svc"><div class="gsvc-icon">⚙️</div><div class="gsvc-title">Engine & Transmission</div><div class="gsvc-bar"><div class="gsvc-fill" style="width:75%"></div></div></div>
+                <div class="good-svc"><div class="gsvc-icon">🔌</div><div class="gsvc-title">Diagnostics</div><div class="gsvc-bar"><div class="gsvc-fill" style="width:85%"></div></div></div>
+              </div>
+              <div class="good-row" style="width:80%"></div>
+              <div class="good-row" style="width:60%"></div>
+            </div>
+            <div class="good-footer"><div class="gf-logo">MIKE'S <em>AUTO</em></div><div class="gf-links"><span>Services</span><span>Contact</span><span>Reviews</span></div></div>
+          </div>
+        </div>
+
+        <div class="ba-tag ba-tag-before">Before</div>
+        <div class="ba-tag ba-tag-after">After</div>
+        <div class="ba-handle" style="left:50%"><div class="ba-knob">⟺</div></div>
+      </div>
+
+      <div class="ba-details">
+        <div class="bad-side">
+          <div class="side-label">✗ The Problems</div>
+          <div class="side-items">
+            <div class="side-item"><span class="si-icon-bad">✗</span>Comic Sans logo with multiple exclamation marks</div>
+            <div class="side-item"><span class="si-icon-bad">✗</span>Scrolling marquee text (last used in 1998)</div>
+            <div class="side-item"><span class="si-icon-bad">✗</span>Blood-red background with yellow text — unreadable</div>
+            <div class="side-item"><span class="si-icon-bad">✗</span>500-word wall of misspelled text, no paragraphs</div>
+            <div class="side-item"><span class="si-icon-bad">✗</span>Broken image placeholder visible</div>
+            <div class="side-item"><span class="si-icon-bad">✗</span>8.7s load time · Zero mobile optimisation</div>
+          </div>
+        </div>
+        <div class="good-side">
+          <div class="side-label">✓ The Transformation</div>
+          <div class="side-items">
+            <div class="side-item"><span class="si-icon-good">✓</span>Clean authority brand: professional name treatment</div>
+            <div class="side-item"><span class="si-icon-good">✓</span>Trust-first hero with 5-star rating prominently placed</div>
+            <div class="side-item"><span class="si-icon-good">✓</span>Clear CTA above the fold — Book Service button</div>
+            <div class="side-item"><span class="si-icon-good">✓</span>Service grid: scannable, visual, conversion-focused</div>
+            <div class="side-item"><span class="si-icon-good">✓</span>1.1s load time · 100% mobile responsive</div>
+            <div class="side-item"><span class="si-icon-good">✓</span>SEO-ready structure — ranking locally within 60 days</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── TRANSFORMATION 2: GOLDEN LOTUS SPA ── -->
+    <div class="transform-block reveal">
+      <div class="tb-header">
+        <div class="tb-client">
+          <div class="tb-client-tag">💆 Beauty & Wellness · Medical Spa</div>
+          <div class="tb-client-name">Golden Lotus Day Spa</div>
+          <div class="tb-client-sub">Premium treatments, discount-brand website — losing bookings to a lesser competitor</div>
+        </div>
+        <div class="tb-chips">
+          <span class="chip chip-good">+112% Online Bookings</span>
+          <span class="chip chip-blue">+60% Avg. Ticket Value</span>
+          <span class="chip chip-orange">4.9★ Google Rating</span>
+        </div>
+      </div>
+
+      <div class="ba-wrap" data-slider>
+        <div class="ba-before">
+          <div class="before-inner">
+            <div class="mock-bad" style="background:#ffffcc">
+              <div class="bad-nav" style="background:#cc99ff;border-bottom:2px solid #ff99cc">
+                <div class="bad-nav-logo" style="color:#ff00ff;font-family:Georgia,serif;font-style:italic">Golden Lotus Spa ~*~</div>
+                <div class="bad-nav-links">
+                  <span style="background:#ff99cc;color:#9900ff">home</span>
+                  <span style="background:#ff99cc;color:#9900ff">services</span>
+                  <span style="background:#ff99cc;color:#9900ff">about us</span>
+                  <span style="background:#ff99cc;color:#9900ff">gallery</span>
+                  <span style="background:#ff99cc;color:#9900ff">book now!</span>
+                </div>
+              </div>
+              <div class="bad-hero" style="background:linear-gradient(135deg,#ffccff,#cc99ff,#ff99cc);height:130px">
+                <div class="bad-hero-title" style="font-family:Georgia,serif;color:#9900ff;font-style:italic;text-shadow:1px 1px 0 #ff00ff">Relax and Rejuvinate!</div>
+                <div class="bad-hero-sub" style="font-family:Comic Sans MS,cursive;color:#660066">We offer the best spa treatments at reasonable prices! Come visit us today!!</div>
+                <div class="bad-hero-cta" style="background:#ff00ff;border-color:#9900ff">BOOK NOW!!</div>
+                <div class="bad-hero-img" style="background:#ffccff;color:#cc99ff;border-color:#ff99cc">STOCK<br>PHOTO<br>HERE</div>
+              </div>
+              <div class="bad-body" style="background:#fff0ff">
+                <div class="bad-body-main">
+                  <div class="bad-wall-of-text" style="color:#660066">Welcome to the Golden Lotus Day Spa were relaxation meets rejuvination! We offer a wide variety of treatments including massages, facials, manicures, pedicures, waxing, and much more. Our experienced therapists are dedicated to providing you with the best possible experience. We use only the highest quality products to ensure that you leave feeling refreshed and revitalized. Whether your looking for a quick lunch-time treatment or a full day of pampering we have something for everyone! Our spa is located in a convenient location with plenty of parking available. We are open 7 days a week from 9am to 8pm. Book your appointment today and experience the Golden Lotus difference!</div>
+                </div>
+                <div class="bad-body-side">
+                  <div class="bad-ad" style="background:#ff99cc;border-color:#ff00ff;color:#660066">💅 NAILS + MASSAGE COMBO ONLY $89.99 THIS WEEK ONLY!!</div>
+                  <div class="bad-ad" style="background:#cc99ff;border-color:#9900ff;font-size:0.45rem;color:#fff">Follow us on Facebook<br>@goldenlotusspa2019</div>
+                </div>
+              </div>
+              <div class="bad-footer" style="background:#cc99ff;color:#660066;border-top-color:#ff99cc"><span>© Golden Lotus Spa 2019 | All rights reserved</span><span>Call: 555-LOTUS</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="ba-after">
+          <div class="mock-good">
+            <div class="good-nav" style="background:rgba(10,5,15,0.95);border-color:rgba(255,122,0,0.15)">
+              <div class="good-nav-logo" style="color:#fff;font-family:var(--font-d)">GOLDEN <em style="color:var(--orange)">LOTUS</em></div>
+              <div class="good-nav-links"><span>Treatments</span><span>About</span><span>Reviews</span></div>
+              <div class="good-nav-cta" style="background:var(--orange)">Book Now</div>
+            </div>
+            <div class="good-hero" style="background:linear-gradient(135deg,#0a0510,#1a0a20)">
+              <div class="good-hero-kicker" style="color:var(--orange)">Luxury Spa Experience · Award-Winning Therapists</div>
+              <div class="good-hero-h1">Where Every Visit<br>Is a Transformation</div>
+              <div class="good-hero-sub">Bespoke treatments, premium products, and an environment designed for total restoration. You deserve this.</div>
+              <div class="good-hero-ctas">
+                <div class="ghc-primary" style="background:var(--orange)">Book Your Treatment ↗</div>
+                <div class="ghc-secondary">View All Services</div>
+              </div>
+              <div class="good-hero-stat" style="border-color:rgba(255,122,0,0.25)"><div class="ghs-num" style="color:var(--orange)">4.9★</div><div class="ghs-label">180+ Reviews</div></div>
+            </div>
+            <div class="good-body">
+              <div class="good-services">
+                <div class="good-svc" style="border-color:rgba(255,122,0,0.12)"><div class="gsvc-icon">🧖</div><div class="gsvc-title">Signature Facials</div><div class="gsvc-bar"><div class="gsvc-fill" style="width:92%;background:var(--orange)"></div></div></div>
+                <div class="good-svc" style="border-color:rgba(255,122,0,0.12)"><div class="gsvc-icon">💆</div><div class="gsvc-title">Deep Tissue Massage</div><div class="gsvc-bar"><div class="gsvc-fill" style="width:88%;background:var(--orange)"></div></div></div>
+                <div class="good-svc" style="border-color:rgba(255,122,0,0.12)"><div class="gsvc-icon">💅</div><div class="gsvc-title">Luxury Nail Studio</div><div class="gsvc-bar"><div class="gsvc-fill" style="width:80%;background:var(--orange)"></div></div></div>
+              </div>
+              <div class="good-row" style="width:70%"></div>
+              <div class="good-row" style="width:50%"></div>
+            </div>
+            <div class="good-footer"><div class="gf-logo">GOLDEN <em style="color:var(--orange)">LOTUS</em></div><div class="gf-links"><span>Treatments</span><span>Book</span><span>Gift Cards</span></div></div>
+          </div>
+        </div>
+        <div class="ba-tag ba-tag-before">Before</div>
+        <div class="ba-tag ba-tag-after">After</div>
+        <div class="ba-handle" style="left:50%"><div class="ba-knob">⟺</div></div>
+      </div>
+
+      <div class="ba-details">
+        <div class="bad-side">
+          <div class="side-label">✗ The Problems</div>
+          <div class="side-items">
+            <div class="side-item"><span class="si-icon-bad">✗</span>Hot pink + purple palette — screams cheap, not luxury</div>
+            <div class="side-item"><span class="si-icon-bad">✗</span>Comic Sans and Georgia fonts — completely at odds</div>
+            <div class="side-item"><span class="si-icon-bad">✗</span>Italic tilde decorations in the logo (~*~)</div>
+            <div class="side-item"><span class="si-icon-bad">✗</span>Stock photo placeholder still in production</div>
+            <div class="side-item"><span class="si-icon-bad">✗</span>No social proof above the fold</div>
+            <div class="side-item"><span class="si-icon-bad">✗</span>Discount-first messaging devaluing premium treatments</div>
+          </div>
+        </div>
+        <div class="good-side">
+          <div class="side-label">✓ The Transformation</div>
+          <div class="side-items">
+            <div class="side-item"><span class="si-icon-good">✓</span>Deep, moody luxury palette — commands premium positioning</div>
+            <div class="side-item"><span class="si-icon-good">✓</span>Aspirational copy: "Where Every Visit is a Transformation"</div>
+            <div class="side-item"><span class="si-icon-good">✓</span>4.9★ rating prominently featured for instant trust</div>
+            <div class="side-item"><span class="si-icon-good">✓</span>Service cards with visual hierarchy and engagement cues</div>
+            <div class="side-item"><span class="si-icon-good">✓</span>Orange accent colour for warmth without cheapness</div>
+            <div class="side-item"><span class="si-icon-good">✓</span>+112% online bookings · Average ticket value up 60%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── TRANSFORMATION 3: CAPITAL LAW GROUP ── -->
+    <div class="transform-block reveal">
+      <div class="tb-header">
+        <div class="tb-client">
+          <div class="tb-client-tag">⚖️ Legal Services · Personal Injury Law</div>
+          <div class="tb-client-name">Capital Law Group</div>
+          <div class="tb-client-sub">Experienced attorneys, zero digital credibility — website looked like it was built in 2009</div>
+        </div>
+        <div class="tb-chips">
+          <span class="chip chip-good">+220% Case Enquiries</span>
+          <span class="chip chip-blue">Page 1 · 14 Keywords</span>
+          <span class="chip chip-orange">+74% Form Completions</span>
+        </div>
+      </div>
+
+      <div class="ba-wrap" data-slider>
+        <div class="ba-before">
+          <div class="before-inner">
+            <div class="mock-bad" style="background:#e8e8e8">
+              <div class="bad-nav" style="background:#003366;border-bottom:3px solid #cc9900">
+                <div class="bad-nav-logo" style="font-family:Times New Roman,serif;color:#cc9900;font-size:0.85rem;font-style:italic">The Law Offices of Capital Law Group, Attorneys at Law</div>
+                <div class="bad-nav-links">
+                  <span style="background:#004488;color:#fff">Home</span>
+                  <span style="background:#004488;color:#fff">Practice Areas</span>
+                  <span style="background:#004488;color:#fff">Our Lawyers</span>
+                  <span style="background:#004488;color:#fff">FAQ</span>
+                  <span style="background:#cc0000;color:#fff">FREE CONSULTATION!!!</span>
+                </div>
+              </div>
+              <div class="bad-hero" style="background:linear-gradient(#003366,#001a33);height:110px">
+                <div class="bad-hero-title" style="font-family:Times New Roman,serif;font-size:1.1rem;color:#cc9900;font-style:italic;text-shadow:none">Experienced. Dedicated. Results.</div>
+                <div class="bad-hero-sub" style="font-family:Arial,sans-serif;font-size:0.58rem;color:#aaaacc;line-height:1.4">Capital Law Group has been representing clients in personal injury, auto accidents, and workers comp cases for over 15 years. Contact us today for a FREE consultation to discuss your case.</div>
+                <div class="bad-hero-cta" style="background:#cc0000;border:2px solid #ff6600;font-family:Arial Black,sans-serif">CALL NOW: 1-800-CAPITAL</div>
+              </div>
+              <div class="bad-body" style="background:#f0f0f0">
+                <div class="bad-body-main">
+                  <div class="bad-wall-of-text" style="color:#000;font-family:Times New Roman,serif;font-size:0.58rem">If you have been injured in an accident you need an experienced attorney on your side. Capital Law Group has been representing injured victims for over 15 years. We have recovered millions of dollars for our clients and we fight aggressively to get you the compensation you deserve. Our attorneys handle all types of personal injury cases including auto accidents slip and fall workplace injuries medical malpractice wrongful death and more. We work on a contingency fee basis meaning you pay nothing unless we win your case. Call us today or fill out the form below to schedule your free no obligation consultation. Don't wait because there are deadlines for filing claims and you could lose your right to compensation if you don't act quickly.</div>
+                </div>
+                <div class="bad-body-side">
+                  <div class="bad-ad" style="background:#cc0000;color:#fff;border-color:#ff6600;font-family:Arial Black,sans-serif;font-size:0.5rem">YOU MAY BE OWED $$$! CALL NOW! FREE CASE REVIEW!</div>
+                  <div style="background:#003366;padding:4px;font-size:0.48rem;color:#cc9900;border:1px solid #cc9900;font-family:Times New Roman,serif;text-align:center;margin-top:4px">⚖️ Licensed in 3 States<br>BBB A+ Rating</div>
+                </div>
+              </div>
+              <div class="bad-footer" style="background:#003366;color:#aaaacc;border-top-color:#cc9900"><span>© 2009-2024 Capital Law Group, Attorneys at Law. All Rights Reserved. This website is for informational purposes only and does not constitute legal advice.</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="ba-after">
+          <div class="mock-good">
+            <div class="good-nav" style="background:rgba(5,5,15,0.97);border-color:rgba(0,123,255,0.2)">
+              <div class="good-nav-logo" style="font-family:var(--font-d);color:#fff;letter-spacing:0.04em">CAPITAL <em style="color:var(--electric)">LAW</em></div>
+              <div class="good-nav-links"><span>Practice Areas</span><span>Attorneys</span><span>Results</span></div>
+              <div class="good-nav-cta">Free Consultation</div>
+            </div>
+            <div class="good-hero" style="background:linear-gradient(150deg,#040812,#0a1628)">
+              <div class="good-hero-kicker" style="color:var(--electric)">15 Years · $47M+ Recovered · No Fee Unless We Win</div>
+              <div class="good-hero-h1">When Results<br>Matter Most</div>
+              <div class="good-hero-sub">Capital Law Group fights for maximum compensation for injured victims. Aggressive representation. Proven outcomes.</div>
+              <div class="good-hero-ctas">
+                <div class="ghc-primary">Get Free Case Review ↗</div>
+                <div class="ghc-secondary">View Case Results</div>
+              </div>
+              <div class="good-hero-stat"><div class="ghs-num" style="color:var(--electric)">$47M+</div><div class="ghs-label">Recovered for Clients</div></div>
+            </div>
+            <div class="good-body">
+              <div class="good-services">
+                <div class="good-svc"><div class="gsvc-icon">🚗</div><div class="gsvc-title">Auto Accidents</div><div class="gsvc-bar"><div class="gsvc-fill" style="width:95%"></div></div></div>
+                <div class="good-svc"><div class="gsvc-icon">🏥</div><div class="gsvc-title">Personal Injury</div><div class="gsvc-bar"><div class="gsvc-fill" style="width:88%"></div></div></div>
+                <div class="good-svc"><div class="gsvc-icon">⚖️</div><div class="gsvc-title">Workers Comp</div><div class="gsvc-bar"><div class="gsvc-fill" style="width:80%"></div></div></div>
+              </div>
+              <div class="good-row" style="width:85%"></div>
+              <div class="good-row" style="width:65%"></div>
+            </div>
+            <div class="good-footer"><div class="gf-logo">CAPITAL <em style="color:var(--electric)">LAW</em></div><div class="gf-links"><span>Results</span><span>Attorneys</span><span>Contact</span></div></div>
+          </div>
+        </div>
+        <div class="ba-tag ba-tag-before">Before</div>
+        <div class="ba-tag ba-tag-after">After</div>
+        <div class="ba-handle" style="left:50%"><div class="ba-knob">⟺</div></div>
+      </div>
+
+      <div class="ba-details">
+        <div class="bad-side">
+          <div class="side-label">✗ The Problems</div>
+          <div class="side-items">
+            <div class="side-item"><span class="si-icon-bad">✗</span>2009-era navy + gold — screams dated, not authoritative</div>
+            <div class="side-item"><span class="si-icon-bad">✗</span>Times New Roman everywhere — zero brand distinction</div>
+            <div class="side-item"><span class="si-icon-bad">✗</span>"YOU MAY BE OWED $$$!" — predatory, not professional</div>
+            <div class="side-item"><span class="si-icon-bad">✗</span>No credibility metrics above the fold</div>
+            <div class="side-item"><span class="si-icon-bad">✗</span>Copyright says 2009 — implies abandonment</div>
+          </div>
+        </div>
+        <div class="good-side">
+          <div class="side-label">✓ The Transformation</div>
+          <div class="side-items">
+            <div class="side-item"><span class="si-icon-good">✓</span>Dark authority aesthetic — instantly conveys gravitas</div>
+            <div class="side-item"><span class="si-icon-good">✓</span>"$47M+ Recovered" as hero stat — undeniable proof</div>
+            <div class="side-item"><span class="si-icon-good">✓</span>Outcome-focused headline: "When Results Matter Most"</div>
+            <div class="side-item"><span class="si-icon-good">✓</span>Practice area cards replace walls of text</div>
+            <div class="side-item"><span class="si-icon-good">✓</span>+220% case enquiries · +74% form completions</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /slider-stack -->
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 2 — BRAND DESIGN CAROUSEL
+══════════════════════════════════════════════════════════ -->
+<section class="sec-pad bg-black" id="branding">
+  <div class="reveal" style="margin-bottom:48px">
+    <div class="sec-label o">Brand & Logo Design</div>
+    <h2 class="sec-h2">From Embarrassing <span class="o">to Undeniable.</span></h2>
+    <p class="sec-sub">Six logo redesigns that changed how clients are perceived — and what they can charge. Scroll through and feel the contrast.</p>
+  </div>
+
+  <div class="carousel-wrap reveal">
+    <div class="carousel-track" id="brand-carousel">
+
+      <!-- CARD 1 -->
+      <div class="brand-card">
+        <div class="brand-card-visual">
+          <div class="brand-split">
+            <div class="brand-before-half">
+              <div class="half-label hl-bad">Before</div>
+              <div class="logo-bad-1">🏠 SAFE HOME<br>REALTY!!</div>
+            </div>
+            <div class="brand-split-line"></div>
+            <div class="brand-after-half">
+              <div class="half-label hl-good">After</div>
+              <div class="logo-new-1"><div class="lmark">SAFE<em>HOME</em></div><div class="ltag">Realty Group</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="brand-card-body">
+          <div class="brand-card-name">SafeHome Realty</div>
+          <div class="brand-card-industry">Real Estate · Residential</div>
+          <div class="brand-change">
+            <div class="bc-row"><span class="bc-icon">✗</span>Comic Sans + house emoji as full logo</div>
+            <div class="bc-row"><span class="bc-icon">✓</span>Bold Syne wordmark with electric accent</div>
+          </div>
+          <div class="brand-result-chip">+55% Listing Enquiries</div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="brand-card">
+        <div class="brand-card-visual">
+          <div class="brand-split">
+            <div class="brand-before-half">
+              <div class="half-label hl-bad">Before</div>
+              <div class="logo-bad-2">*~* Solace<br>Wellness Studio *~*<br><small>relax. restore. renew.</small></div>
+            </div>
+            <div class="brand-split-line"></div>
+            <div class="brand-after-half">
+              <div class="half-label hl-good">After</div>
+              <div class="logo-new-2"><div class="lmark">SOLACE</div><div class="lsub">Wellness Studio</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="brand-card-body">
+          <div class="brand-card-name">Solace Wellness</div>
+          <div class="brand-card-industry">Health & Beauty · Day Spa</div>
+          <div class="brand-change">
+            <div class="bc-row"><span class="bc-icon">✗</span>Tilde decorations, Georgia italic, no hierarchy</div>
+            <div class="bc-row"><span class="bc-icon">✓</span>Bold display type, warm orange — aspirational feel</div>
+          </div>
+          <div class="brand-result-chip">+60% Perceived Value</div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="brand-card">
+        <div class="brand-card-visual">
+          <div class="brand-split">
+            <div class="brand-before-half">
+              <div class="half-label hl-bad">Before</div>
+              <div class="logo-bad-3">APEX<br>FITNESS</div>
+            </div>
+            <div class="brand-split-line"></div>
+            <div class="brand-after-half">
+              <div class="half-label hl-good">After</div>
+              <div class="logo-new-3">
+                <div class="ln3-mark">A</div>
+                <div class="ln3-text">APEX<small>Fitness & Performance</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="brand-card-body">
+          <div class="brand-card-name">Apex Fitness</div>
+          <div class="brand-card-industry">Health & Fitness · Gym</div>
+          <div class="brand-change">
+            <div class="bc-row"><span class="bc-icon">✗</span>Impact italic in red — identical to 1,000 gyms</div>
+            <div class="bc-row"><span class="bc-icon">✓</span>Geometric mark + systematic wordmark</div>
+          </div>
+          <div class="brand-result-chip">+90% Membership Signups</div>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="brand-card">
+        <div class="brand-card-visual">
+          <div class="brand-split">
+            <div class="brand-before-half">
+              <div class="half-label hl-bad">Before</div>
+              <div class="logo-bad-4">📋 NEXCORE TECH<br><small>IT Solutions & Support<br>Est. 2014</small></div>
+            </div>
+            <div class="brand-split-line"></div>
+            <div class="brand-after-half">
+              <div class="half-label hl-good">After</div>
+              <div class="logo-new-4"><div class="ln4-ring">NX</div><div class="ln4-name">NEXCORE</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="brand-card-body">
+          <div class="brand-card-name">NexCore Technology</div>
+          <div class="brand-card-industry">B2B · IT Services</div>
+          <div class="brand-change">
+            <div class="bc-row"><span class="bc-icon">✗</span>Grey box + clipboard emoji + Arial font</div>
+            <div class="bc-row"><span class="bc-icon">✓</span>Precision ring mark — technology meets trust</div>
+          </div>
+          <div class="brand-result-chip">+52% B2B Enquiries</div>
+        </div>
+      </div>
+
+      <!-- CARD 5 -->
+      <div class="brand-card">
+        <div class="brand-card-visual">
+          <div class="brand-split">
+            <div class="brand-before-half">
+              <div class="half-label hl-bad">Before</div>
+              <div class="logo-bad-5">> FOUNDERS_TABLE<br>&lt;restaurant/&gt;<br>[ established 2018 ]</div>
+            </div>
+            <div class="brand-split-line"></div>
+            <div class="brand-after-half">
+              <div class="half-label hl-good">After</div>
+              <div class="logo-new-5"><div class="ln5-bar"></div><div class="ln5-name">FOUNDERS</div><div class="ln5-tag">Table · Restaurant & Bar</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="brand-card-body">
+          <div class="brand-card-name">The Founders Table</div>
+          <div class="brand-card-industry">Hospitality · Restaurant</div>
+          <div class="brand-change">
+            <div class="bc-row"><span class="bc-icon">✗</span>Courier monospace with HTML tags — baffling choice</div>
+            <div class="bc-row"><span class="bc-icon">✓</span>Editorial rule mark — sophisticated, memorable</div>
+          </div>
+          <div class="brand-result-chip">+75% Social Engagement</div>
+        </div>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="brand-card">
+        <div class="brand-card-visual">
+          <div class="brand-split">
+            <div class="brand-before-half">
+              <div class="half-label hl-bad">Before</div>
+              <div class="logo-bad-6">⚜️ Meridian<br>REALTY Partners<br><small style="font-size:0.45rem;color:#886600">Your Trusted Real Estate Professionals Since 1997</small></div>
+            </div>
+            <div class="brand-split-line"></div>
+            <div class="brand-after-half">
+              <div class="half-label hl-good">After</div>
+              <div class="logo-new-6"><div class="ln6-name">MERI<span>DIAN</span></div><div class="ln6-tag">Realty Partners</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="brand-card-body">
+          <div class="brand-card-name">Meridian Realty Partners</div>
+          <div class="brand-card-industry">Real Estate · Luxury Sales</div>
+          <div class="brand-change">
+            <div class="bc-row"><span class="bc-icon">✗</span>Gold fleur-de-lis on cream — generic luxury cliché</div>
+            <div class="bc-row"><span class="bc-icon">✓</span>Split-colour wordmark — bold, modern, ownable</div>
+          </div>
+          <div class="brand-result-chip">+55% Listing Enquiries</div>
+        </div>
+      </div>
+
+    </div><!-- /carousel-track -->
+  </div>
+
+  <div class="carousel-controls reveal">
+    <div class="carousel-dots" id="brand-dots">
+      <div class="cdot active"></div>
+      <div class="cdot"></div>
+      <div class="cdot"></div>
+      <div class="cdot"></div>
+    </div>
+    <div class="carousel-btn" id="brand-prev">←</div>
+    <div class="carousel-btn" id="brand-next">→</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 3 — SOCIAL MEDIA UPGRADES
+══════════════════════════════════════════════════════════ -->
+<section class="sec-pad bg-deep" id="social">
+  <div class="reveal" style="margin-bottom:48px">
+    <div class="sec-label">Social Media Upgrades</div>
+    <h2 class="sec-h2">Posts That Get Ignored → <span>Content That Converts.</span></h2>
+    <p class="sec-sub">Toggle between Before and After on each card to see the design, copy, and engagement transformation.</p>
+  </div>
+
+  <div class="social-compare-grid">
+
+    <!-- SOCIAL 1 -->
+    <div class="sc-pair reveal">
+      <div class="sc-pair-header">
+        <div class="sc-pair-name">🔧 Harborview Plumbing</div>
+        <div class="sc-lift">+5,250% Engagement</div>
+      </div>
+      <div class="sc-toggle">
+        <button class="sc-toggle-btn active-bad" data-target="sp1" data-state="bad">✗ Before</button>
+        <button class="sc-toggle-btn" data-target="sp1" data-state="good">✓ After</button>
+      </div>
+      <div class="sc-post" id="sp1">
+        <div class="sc-post-inner sc-bad-inner">
+          <div class="sc-post-header">
+            <div class="sc-avatar" style="background:#2a2a4a">🔧</div>
+            <span class="sc-handle">harborview_plumbing</span>
+            <span class="sc-time">5d ago</span>
+          </div>
+          <div class="sc-img-bad">
+            <div class="sib-clip">🔧</div>
+            <div class="sib-text">Harborview Plumbing Services</div>
+            <div class="sib-sub">We Fix Your Plumbing Problems!!</div>
+            <div class="sib-tagline">"Quality Service at Affordable Prices"</div>
+          </div>
+          <div class="sc-caption bad-cap">"We do plumbing! Call us for all your plumbing needs. We're the best in town! 😊 #plumbing #plumber #fixingleaks"</div>
+          <div class="sc-metrics">
+            <div class="sc-metric"><span class="sc-metric-icon">❤️</span><span class="sc-metric-val">3</span></div>
+            <div class="sc-metric"><span class="sc-metric-icon">💬</span><span class="sc-metric-val">0</span></div>
+            <div class="sc-metric"><span class="sc-metric-icon">↗️</span><span class="sc-metric-val">1</span></div>
+          </div>
+        </div>
+        <div class="sc-post-inner sc-good-inner" style="display:none">
+          <div class="sc-post-header">
+            <div class="sc-avatar" style="background:var(--el-light);border:1px solid rgba(0,123,255,0.3)">🔧</div>
+            <span class="sc-handle">harborview_plumbing</span>
+            <span class="sc-time">Just posted</span>
+          </div>
+          <div class="sc-img-good">
+            <div class="sig-inner" style="background:linear-gradient(160deg,#0a1628,#1b3b6f)">
+              <div class="sig-eyebrow">Emergency tip</div>
+              <div class="sig-headline">That dripping tap is costing you $300/year in wasted water.</div>
+              <div class="sig-cta">Book a Fix Today →</div>
+            </div>
+          </div>
+          <div class="sc-caption good-cap">Most homeowners ignore a dripping tap. But at 10 drops/minute, that's 500L of water per month — and $300+ on your annual bill. We fix most leaks same-day. Comment "FIX" and we'll message you our availability 👇</div>
+          <div class="sc-metrics">
+            <div class="sc-metric"><span class="sc-metric-icon">❤️</span><span class="sc-metric-val good-val">161</span><span class="sc-metric-change">+5,233%</span></div>
+            <div class="sc-metric"><span class="sc-metric-icon">💬</span><span class="sc-metric-val good-val">42</span></div>
+            <div class="sc-metric"><span class="sc-metric-icon">↗️</span><span class="sc-metric-val good-val">87</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOCIAL 2 -->
+    <div class="sc-pair reveal rd1">
+      <div class="sc-pair-header">
+        <div class="sc-pair-name">💆 Solace Wellness</div>
+        <div class="sc-lift">+7,100% Engagement</div>
+      </div>
+      <div class="sc-toggle">
+        <button class="sc-toggle-btn active-bad" data-target="sp2" data-state="bad">✗ Before</button>
+        <button class="sc-toggle-btn" data-target="sp2" data-state="good">✓ After</button>
+      </div>
+      <div class="sc-post" id="sp2">
+        <div class="sc-post-inner sc-bad-inner">
+          <div class="sc-post-header">
+            <div class="sc-avatar" style="background:#ffccff">💆</div>
+            <span class="sc-handle">solace_wellness_studio</span>
+            <span class="sc-time">1w ago</span>
+          </div>
+          <div class="sc-img-bad" style="background:#ffffcc">
+            <div class="sib-clip">🌸</div>
+            <div class="sib-text" style="font-family:Comic Sans MS,cursive;color:#9900ff">Wednesday Special!</div>
+            <div class="sib-sub" style="font-family:Georgia,serif;color:#660066;font-style:italic">Massage + Facial Only $79!</div>
+            <div class="sib-tagline" style="color:#999">Call to Book Today!</div>
+          </div>
+          <div class="sc-caption bad-cap">"Happy Wednesday!! 🌸🌸 Don't forget to treat yourself!! Come in for a massage today!! We have great deals!! Call us!! 😊😊 #spa #massage #wellness #selfcare #relax"</div>
+          <div class="sc-metrics">
+            <div class="sc-metric"><span class="sc-metric-icon">❤️</span><span class="sc-metric-val">7</span></div>
+            <div class="sc-metric"><span class="sc-metric-icon">💬</span><span class="sc-metric-val">1</span></div>
+            <div class="sc-metric"><span class="sc-metric-icon">↗️</span><span class="sc-metric-val">0</span></div>
+          </div>
+        </div>
+        <div class="sc-post-inner sc-good-inner" style="display:none">
+          <div class="sc-post-header">
+            <div class="sc-avatar" style="background:var(--or-light);border:1px solid rgba(255,122,0,0.3)">💆</div>
+            <span class="sc-handle">solace_wellness_studio</span>
+            <span class="sc-time">Just posted</span>
+          </div>
+          <div class="sc-img-good">
+            <div class="sig-inner" style="background:linear-gradient(160deg,#0a0510,#1a0a20)">
+              <div class="sig-eyebrow" style="color:var(--orange)">Client Story</div>
+              <div class="sig-headline">"I walked in tense. I walked out feeling like a different person."</div>
+              <div class="sig-cta" style="background:var(--orange)">Book Your Escape →</div>
+            </div>
+          </div>
+          <div class="sc-caption good-cap">That's what Maria said after her first 90-minute deep tissue massage with us. She's been coming back every month for two years. We have 2 appointments available this week. Drop "ESCAPE" in the comments and we'll reach out 🙏</div>
+          <div class="sc-metrics">
+            <div class="sc-metric"><span class="sc-metric-icon">❤️</span><span class="sc-metric-val good-val">504</span><span class="sc-metric-change">+7,100%</span></div>
+            <div class="sc-metric"><span class="sc-metric-icon">💬</span><span class="sc-metric-val good-val">89</span></div>
+            <div class="sc-metric"><span class="sc-metric-icon">↗️</span><span class="sc-metric-val good-val">201</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SOCIAL 3 -->
+    <div class="sc-pair reveal rd2">
+      <div class="sc-pair-header">
+        <div class="sc-pair-name">🎯 Elite Business Coach</div>
+        <div class="sc-lift">+1400% Engagement</div>
+      </div>
+      <div class="sc-toggle">
+        <button class="sc-toggle-btn active-bad" data-target="sp3" data-state="bad">✗ Before</button>
+        <button class="sc-toggle-btn" data-target="sp3" data-state="good">✓ After</button>
+      </div>
+      <div class="sc-post" id="sp3">
+        <div class="sc-post-inner sc-bad-inner">
+          <div class="sc-post-header">
+            <div class="sc-avatar" style="background:#2a2a4a">🎯</div>
+            <span class="sc-handle">businesscoach_james_m</span>
+            <span class="sc-time">2w ago</span>
+          </div>
+          <div class="sc-img-bad">
+            <div class="sib-clip">💼</div>
+            <div class="sib-text">Motivational Monday</div>
+            <div class="sib-sub" style="font-family:Comic Sans MS,cursive">With James M. Business Coach</div>
+            <div class="sib-tagline">"Success is a journey not a destination"</div>
+          </div>
+          <div class="sc-caption bad-cap">"Success comes to those who work hard and never give up. Believe in yourself and your dreams! If you want to grow your business DM me. Link in bio for coaching info. #businesscoach #entrepreneur #success #motivation #mindset #hustle"</div>
+          <div class="sc-metrics">
+            <div class="sc-metric"><span class="sc-metric-icon">❤️</span><span class="sc-metric-val">9</span></div>
+            <div class="sc-metric"><span class="sc-metric-icon">💬</span><span class="sc-metric-val">1</span></div>
+            <div class="sc-metric"><span class="sc-metric-icon">↗️</span><span class="sc-metric-val">0</span></div>
+          </div>
+        </div>
+        <div class="sc-post-inner sc-good-inner" style="display:none">
+          <div class="sc-post-header">
+            <div class="sc-avatar" style="background:var(--or-light);border:1px solid rgba(255,122,0,0.3)">🎯</div>
+            <span class="sc-handle">businesscoach_james_m</span>
+            <span class="sc-time">Just posted</span>
+          </div>
+          <div class="sc-img-good">
+            <div class="sig-inner" style="background:linear-gradient(160deg,#1a0800,#3d1800)">
+              <div class="sig-eyebrow" style="color:var(--orange)">Real client result</div>
+              <div class="sig-headline">$4k/month to $47k/month. 11 months. Here's the exact system.</div>
+              <div class="sig-cta" style="background:var(--electric)">See the Framework →</div>
+            </div>
+          </div>
+          <div class="sc-caption good-cap">Marcus was stuck at $4k/month for 2 years. We rebuilt 3 things: his offer, his positioning, his sales process. 11 months later: $47k/month, waiting list of 14 clients. I'm sharing the framework live this Thursday. Comment "SYSTEM" to grab your free spot.</div>
+          <div class="sc-metrics">
+            <div class="sc-metric"><span class="sc-metric-icon">❤️</span><span class="sc-metric-val good-val">1,127</span><span class="sc-metric-change">+12,422%</span></div>
+            <div class="sc-metric"><span class="sc-metric-icon">💬</span><span class="sc-metric-val good-val">247</span></div>
+            <div class="sc-metric"><span class="sc-metric-icon">↗️</span><span class="sc-metric-val good-val">389</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 4 — ANIMATED RESULTS
+══════════════════════════════════════════════════════════ -->
+<section class="sec-pad bg-navy" id="results">
+  <div class="reveal" style="text-align:center;margin-bottom:0">
+    <div class="sec-label" style="justify-content:center;display:flex">Portfolio Impact</div>
+    <h2 class="sec-h2" style="text-align:center">The Numbers Don't Lie.</h2>
+    <p class="sec-sub" style="margin:0 auto">Average outcomes across all CyberMagnet client engagements — measured, reported, and verified.</p>
+  </div>
+  <div class="results-wall reveal rd1">
+    <div class="rw-cell"><div class="rw-num">+<span class="counter" data-target="285">0</span><span class="unit">%</span></div><div class="rw-desc">Average organic traffic growth</div><div class="rw-cat">SEO clients</div></div>
+    <div class="rw-cell"><div class="rw-num">+<span class="counter" data-target="68">0</span><span class="unit">%</span></div><div class="rw-desc">Lead volume increase post-redesign</div><div class="rw-cat">Web design clients</div></div>
+    <div class="rw-cell"><div class="rw-num">+<span class="counter" data-target="312">0</span><span class="unit">%</span></div><div class="rw-desc">Social media engagement lift</div><div class="rw-cat">Social media clients</div></div>
+    <div class="rw-cell"><div class="rw-num">6<span class="unit">×</span></div><div class="rw-desc">Average page speed improvement</div><div class="rw-cat">All redesign clients</div></div>
+    <div class="rw-cell"><div class="rw-num">+<span class="counter" data-target="60">0</span><span class="unit">%</span></div><div class="rw-desc">Increase in perceived brand value</div><div class="rw-cat">Branding clients</div></div>
+    <div class="rw-cell"><div class="rw-num">+<span class="counter" data-target="220">0</span><span class="unit">%</span></div><div class="rw-desc">Average case/enquiry volume increase</div><div class="rw-cat">Professional services</div></div>
+    <div class="rw-cell"><div class="rw-num"><span class="counter" data-target="97">0</span><span class="unit">%</span></div><div class="rw-desc">Client retention rate</div><div class="rw-cat">All services</div></div>
+    <div class="rw-cell"><div class="rw-num">$<span class="counter" data-target="42">0</span><span class="unit">M+</span></div><div class="rw-desc">Revenue generated for clients</div><div class="rw-cat">Portfolio total</div></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 5 — PULSING PLACEHOLDERS
+══════════════════════════════════════════════════════════ -->
+<section class="sec-pad bg-black" id="your-project">
+  <div class="reveal" style="text-align:center;margin-bottom:48px">
+    <div class="sec-label" style="justify-content:center;display:flex">Your Turn</div>
+    <h2 class="sec-h2" style="text-align:center">Your Transformation <span>Goes Here.</span></h2>
+    <p class="sec-sub" style="margin:0 auto">These slots are reserved for real client work. Submit your project for a free audit — hover a card to see what happens next.</p>
+  </div>
+
+  <div class="placeholder-grid">
+    <div class="ph-card reveal" onclick="window.location.href='/funnels/free-seo-audit/'">
+      <div class="ph-badge">Your Slot</div>
+      <div class="ph-icon">🌐</div>
+      <div class="ph-title">Your Website Here</div>
+      <div class="ph-desc">Submit your site for a free audit and see what a real transformation looks like.</div>
+    </div>
+    <div class="ph-card reveal rd1" onclick="window.location.href='/contact/'">
+      <div class="ph-badge">Your Slot</div>
+      <div class="ph-icon">🎨</div>
+      <div class="ph-title">Your Brand Refresh Here</div>
+      <div class="ph-desc">Is your logo doing your business justice? Let's find out — for free.</div>
+    </div>
+    <div class="ph-card reveal rd2" onclick="window.location.href='/contact/'">
+      <div class="ph-badge">Your Slot</div>
+      <div class="ph-icon">📱</div>
+      <div class="ph-title">Your Social Upgrade Here</div>
+      <div class="ph-desc">Low engagement? Generic posts? Let us build you a strategy that actually works.</div>
+    </div>
+  </div>
+
+  <div class="ph-row2">
+    <div class="ph-card reveal" onclick="window.location.href='/contact/'" style="animation-delay:0.5s">
+      <div class="ph-badge">Your Slot</div>
+      <div class="ph-icon">⚡</div>
+      <div class="ph-title">Your Funnel Results Here</div>
+      <div class="ph-desc">No funnel or one that isn't converting? We'll map out your system free.</div>
+    </div>
+    <div class="ph-card reveal rd1" onclick="window.location.href='/funnels/free-seo-audit/'" style="animation-delay:1.5s">
+      <div class="ph-badge">Start Here</div>
+      <div class="ph-icon">🚀</div>
+      <div class="ph-title">Free Transformation Audit</div>
+      <div class="ph-desc">Not sure where to start? A free audit reveals your fastest path to results.</div>
+    </div>
+  </div>
+
+  <div class="owner-note reveal" style="margin-top:40px">
+    <div class="on-icon">📌</div>
+    <div>
+      <div class="on-title">Owner Note — Replacing Placeholders with Real Client Work</div>
+      <div class="on-text">
+        As real client projects are completed, replace each <code>.ph-card</code> with a live <code>.transform-block</code> (for website sliders), <code>.brand-card</code> (for logo work), or <code>.sc-pair</code> (for social media upgrades). Each component is self-contained — just drop in your real screenshots, client name, industry, and result chips. The slider component accepts any image as the before/after visual via an <code>&lt;img&gt;</code> tag replacing the <code>.mock-bad</code> / <code>.mock-good</code> divs.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════
+     MEGA CTA
+══════════════════════════════════════════════════════════ -->
+<div class="mega-cta">
+  <h2 class="mega-cta-h reveal">
+    STOP LOOKING
+    <span>LIKE EVERY</span>
+    <em>OTHER BUSINESS.</em>
+  </h2>
+  <p class="mega-cta-sub reveal">You've seen what a real transformation looks like. Now it's your turn. Book a free strategy call — walk away with a clear picture of what your brand could become.</p>
+  <div class="mega-cta-btns reveal">
+    <a href="/funnels/free-seo-audit/" class="btn-fire">🚀 Get My Free Transformation Audit</a>
+    <a href="/contact/" class="btn-glass">Book Strategy Call →</a>
+  </div>
+  <div class="mega-cta-micro reveal">⚡ 48-hour response · No contracts · <span>100% free, zero obligation</span></div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="logo" aria-label="CyberMagnet — Home" style="display:inline-flex;align-items:center;text-decoration:none;line-height:1;margin-bottom:10px">
+      <svg width="160" height="32" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <text x="100" y="17" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="2">CYBER</text>
+        <circle cx="6" cy="21" r="2" fill="#FF7A35"/>
+        <line x1="8" y1="21" x2="192" y2="21" stroke="#FF7A35" stroke-width="1.5"/>
+        <circle cx="194" cy="21" r="2" fill="#FF7A35"/>
+        <text x="100" y="36" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#FF7A35" text-anchor="middle" letter-spacing="2">MAGNET</text>
+      </svg>
+    </a>
+      <p>Premium digital marketing for growth-focused local businesses.</p>
+      <div class="footer-socials">
+        <a href="#" class="social-btn">♪</a><a href="#" class="social-btn">in</a>
+        <a href="#" class="social-btn">▶</a><a href="#" class="social-btn">◎</a>
+      </div>
+    </div>
+    <div class="footer-col"><h5>Portfolio</h5><ul><li><a href="#websites">Website Redesigns</a></li><li><a href="#branding">Brand & Logo</a></li><li><a href="#social">Social Media</a></li><li><a href="#results">Results</a></li></ul></div>
+    <div class="footer-col"><h5>Services</h5><ul><li><a href="/services/seo/">SEO</a></li><li><a href="/services/website-design/">Web Design</a></li><li><a href="/services/branding-packages/">Branding</a></li><li><a href="/services/social-media-management/">Social Media</a></li></ul></div>
+    <div class="footer-col"><h5>Get Started</h5><ul><li><a href="/funnels/free-seo-audit/">Free SEO Audit</a></li><li><a href="/contact/">Strategy Call</a></li><li><a href="/services/">All Services</a></li><li><a href="/about/">About Us</a></li></ul></div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 CyberMagnet. All rights reserved.</span>
+    <span>Privacy Policy · Terms of Service</span>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════════════════════ -->
+<script>
+/* ── NAV ── */
+const nav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 40));
+
+/* ── PARTICLES ── */
+const canvas = document.getElementById('hero-canvas');
+const ctx = canvas.getContext('2d');
+let W, H, pts = [];
+function resize() {
+  W = canvas.width = canvas.offsetWidth;
+  H = canvas.height = canvas.offsetHeight;
+  pts = [];
+  const n = Math.min(Math.floor(W * H / 13000), 70);
+  for (let i = 0; i < n; i++)
+    pts.push({ x: Math.random()*W, y: Math.random()*H, r: Math.random()*1.3+0.3, vx:(Math.random()-.5)*.22, vy:(Math.random()-.5)*.22, a:Math.random()*.4+.07 });
+}
+function draw() {
+  ctx.clearRect(0,0,W,H);
+  for (let i=0;i<pts.length;i++) for (let j=i+1;j<pts.length;j++) {
+    const dx=pts[i].x-pts[j].x, dy=pts[i].y-pts[j].y, d=Math.hypot(dx,dy);
+    if(d<115){ ctx.beginPath(); ctx.strokeStyle=`rgba(0,123,255,${(1-d/115)*.09})`; ctx.lineWidth=.7; ctx.moveTo(pts[i].x,pts[i].y); ctx.lineTo(pts[j].x,pts[j].y); ctx.stroke(); }
+  }
+  for (const p of pts) {
+    ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle=`rgba(0,123,255,${p.a})`; ctx.fill();
+    p.x+=p.vx; p.y+=p.vy;
+    if(p.x<0||p.x>W) p.vx*=-1;
+    if(p.y<0||p.y>H) p.vy*=-1;
+  }
+  requestAnimationFrame(draw);
+}
+window.addEventListener('resize', resize); resize(); draw();
+
+/* ── BEFORE/AFTER SLIDERS ── */
+document.querySelectorAll('[data-slider]').forEach(wrap => {
+  const after  = wrap.querySelector('.ba-after');
+  const handle = wrap.querySelector('.ba-handle');
+  let dragging = false;
+
+  function setPos(x) {
+    const r = wrap.getBoundingClientRect();
+    const pct = Math.max(2, Math.min(98, (x - r.left) / r.width * 100));
+    // After clips from the left — left edge of clip = pct, so After shows on right
+    after.style.clipPath = `inset(0 0 0 ${pct}%)`;
+    handle.style.left = pct + '%';
+  }
+  // init at 50% — After visible on right half
+  after.style.clipPath = 'inset(0 0 0 50%)';
+
+  wrap.addEventListener('mousedown',  e => { dragging = true; setPos(e.clientX); e.preventDefault(); });
+  wrap.addEventListener('touchstart', e => { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
+  window.addEventListener('mousemove',  e => { if (dragging) setPos(e.clientX); });
+  window.addEventListener('touchmove',  e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+  window.addEventListener('mouseup',  () => dragging = false);
+  window.addEventListener('touchend', () => dragging = false);
+});
+
+/* ── BRAND CAROUSEL ── */
+const track = document.getElementById('brand-carousel');
+const dots  = document.querySelectorAll('#brand-dots .cdot');
+let carouselPos = 0;
+const CARD_W = () => {
+  const card = track.querySelector('.brand-card');
+  return card ? card.offsetWidth + 22 : 302;
+};
+const MAX_POS = () => Math.max(0, 6 - Math.floor(track.parentElement.offsetWidth / CARD_W()));
+
+function setCarousel(pos) {
+  carouselPos = Math.max(0, Math.min(MAX_POS(), pos));
+  track.style.transform = `translateX(-${carouselPos * CARD_W()}px)`;
+  dots.forEach((d, i) => d.classList.toggle('active', i === carouselPos));
+}
+
+document.getElementById('brand-next').addEventListener('click', () => setCarousel(carouselPos + 1));
+document.getElementById('brand-prev').addEventListener('click', () => setCarousel(carouselPos - 1));
+dots.forEach((d, i) => d.addEventListener('click', () => setCarousel(i)));
+
+// Auto-advance
+let autoCarousel = setInterval(() => setCarousel(carouselPos >= MAX_POS() ? 0 : carouselPos + 1), 4000);
+track.addEventListener('mouseenter', () => clearInterval(autoCarousel));
+track.addEventListener('mouseleave', () => {
+  clearInterval(autoCarousel);
+  autoCarousel = setInterval(() => setCarousel(carouselPos >= MAX_POS() ? 0 : carouselPos + 1), 4000);
+});
+
+/* ── SOCIAL MEDIA TOGGLES ── */
+document.querySelectorAll('.sc-toggle').forEach(toggle => {
+  const btns = toggle.querySelectorAll('.sc-toggle-btn');
+  const target = document.getElementById(btns[0].dataset.target);
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => { b.classList.remove('active-bad', 'active-good'); });
+      if (btn.dataset.state === 'bad') {
+        btn.classList.add('active-bad');
+        target.querySelector('.sc-bad-inner').style.display  = 'block';
+        target.querySelector('.sc-good-inner').style.display = 'none';
+      } else {
+        btn.classList.add('active-good');
+        target.querySelector('.sc-bad-inner').style.display  = 'none';
+        target.querySelector('.sc-good-inner').style.display = 'block';
+      }
+    });
+  });
+});
+
+/* ── ANIMATED COUNTERS ── */
+function animCount(el) {
+  const t = parseInt(el.dataset.target);
+  const dur = 2000;
+  const start = performance.now();
+  (function step(now) {
+    const p = Math.min((now - start) / dur, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.round(t * ease);
+    if (p < 1) requestAnimationFrame(step);
+    else el.textContent = t;
+  })(start);
+}
+const cObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.counter').forEach(animCount);
+      cObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+document.querySelectorAll('.results-wall').forEach(el => cObs.observe(el));
+
+/* ── SCROLL REVEAL ── */
+const revEls = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.07, rootMargin: '0px 0px -24px 0px' });
+revEls.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cold Calling & Appointment Setting — CyberMagnet</title>
+<meta name="description" content="Turn cold outreach into a booked-out calendar. CyberMagnet delivers professional cold calling & appointment setting services with transparent pricing and measurable results.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black:#050810; --deep-navy:#0a1628; --navy:#0a2540; --mid-blue:#1b3b6f;
+  --electric:#007bff; --orange:#ff7a00; --orange-hot:#ff9500;
+  --white:#fff; --off-white:#dce8f5; --gray-300:#aabdd0; --gray-400:#8899aa; --gray-600:#445566;
+  --dim:rgba(255,255,255,0.06);
+  --accent:#007bff;
+  --accent-glow:rgba(0,123,255,0.25);
+  --accent-bg:rgba(0,123,255,0.08);
+  --font-d:'Syne',sans-serif; --font-b:'DM Sans',sans-serif;
+  --sp:clamp(72px,9vw,120px); --urgency-h:44px; --nav-h:68px;
+  --or-glow:rgba(255,122,0,0.32);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--font-b);font-weight:300;line-height:1.7;overflow-x:hidden}
+
+/* URGENCY BAR */
+.urgency-bar{
+  position:fixed;top:0;left:0;right:0;z-index:300;height:var(--urgency-h);
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  background:linear-gradient(90deg,#cc5f00,var(--orange),#e07000,var(--orange),#cc5f00);
+  background-size:300% 100%;animation:urg-shift 5s ease-in-out infinite;
+  font-family:var(--font-b);font-size:0.8rem;font-weight:500;color:#fff;
+  letter-spacing:0.02em;padding:0 5%;overflow:hidden;
+}
+.urgency-bar::before{content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.07) 50%,transparent);
+  animation:urg-sheen 3.5s ease-in-out infinite;pointer-events:none}
+@keyframes urg-shift{0%,100%{background-position:0%}50%{background-position:100%}}
+@keyframes urg-sheen{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.ub-dot{width:7px;height:7px;background:rgba(255,255,255,0.9);border-radius:50%;flex-shrink:0;animation:ub-p 1.8s ease-in-out infinite}
+@keyframes ub-p{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.35;transform:scale(0.65)}}
+.ub-sep{color:rgba(255,255,255,0.4);margin:0 10px;font-size:0.65rem}
+.ub-link{color:#fff;text-decoration:underline;text-underline-offset:2px;font-weight:600;white-space:nowrap}
+
+/* NAV */
+nav{
+  position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 6%;height:var(--nav-h);
+  backdrop-filter:blur(22px) saturate(1.4);
+  background:rgba(5,8,16,0.72);
+  border-bottom:1px solid rgba(0,123,255,0.1);
+  transition:background 0.35s,box-shadow 0.35s;
+}
+nav.scrolled{background:rgba(5,8,16,0.96);box-shadow:0 2px 40px rgba(0,0,0,0.5)}
+.logo{font-family:var(--font-d);font-weight:800;font-size:1.4rem;letter-spacing:-0.02em;color:#fff;text-decoration:none}
+.logo span{color:var(--electric)}
+.nav-links{display:flex;gap:2.4rem;list-style:none}
+.nav-links a{color:var(--gray-400);text-decoration:none;font-size:0.84rem;letter-spacing:0.05em;text-transform:uppercase;font-weight:400;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-cta{background:var(--orange);color:#fff;border:none;padding:9px 22px;border-radius:6px;font-family:var(--font-b);font-size:0.84rem;font-weight:500;cursor:pointer;text-decoration:none;transition:background 0.2s,transform 0.2s,box-shadow 0.2s}
+.nav-cta:hover{background:var(--orange-hot);transform:translateY(-1px);box-shadow:0 4px 18px var(--or-glow)}
+.nav-ham{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.nav-ham span{width:22px;height:2px;background:#fff;border-radius:2px}
+
+/* HERO */
+.page-hero{
+  position:relative;overflow:hidden;
+  padding:calc(var(--urgency-h) + var(--nav-h) + 64px) 6% 0;
+  min-height:44vh;display:flex;flex-direction:column;justify-content:flex-end;
+}
+#hero-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero-grid{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(rgba(0,123,255,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,123,255,0.035) 1px,transparent 1px);
+  background-size:56px 56px;
+}
+.hero-orb{
+  position:absolute;right:4%;top:50%;transform:translateY(-50%);
+  width:480px;height:480px;border-radius:50%;
+  background:radial-gradient(circle,var(--accent-bg) 0%,transparent 68%);
+  animation:orb-b 5s ease-in-out infinite;pointer-events:none;
+}
+@keyframes orb-b{0%,100%{opacity:0.5;transform:translateY(-50%) scale(1)}50%{opacity:1;transform:translateY(-50%) scale(1.08)}}
+.hero-content{position:relative;z-index:2;max-width:800px;padding-bottom:60px}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.76rem;color:var(--gray-600);margin-bottom:20px;animation:fade-up 0.6s ease both}
+.breadcrumb a{color:var(--gray-600);text-decoration:none;transition:color 0.2s}
+.breadcrumb a:hover{color:var(--gray-400)}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--accent-bg);border:1px solid rgba(0,0,0,0.1);
+  border-color:color-mix(in srgb,var(--accent) 30%,transparent);
+  border-radius:30px;padding:6px 16px;
+  font-size:0.73rem;letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;
+  animation:fade-up 0.6s ease both;
+}
+.hero-badge::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
+.hero-icon{font-size:2.8rem;margin-bottom:16px;display:block;animation:fade-up 0.5s ease both}
+.hero-h1{
+  font-family:var(--font-d);
+  font-size:clamp(2.4rem,5vw,4.6rem);
+  font-weight:800;line-height:1.05;letter-spacing:-0.03em;
+  margin-bottom:18px;
+  animation:fade-up 0.6s 0.08s ease both;
+}
+.hero-h1 .acc{color:var(--accent)}
+.hero-tagline{font-size:clamp(1rem,1.8vw,1.2rem);color:var(--gray-400);max-width:580px;line-height:1.72;animation:fade-up 0.6s 0.16s ease both}
+@keyframes fade-up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+/* INTRO */
+.intro-section{background:var(--deep-navy);border-top:1px solid rgba(0,123,255,0.1);padding:var(--sp) 6%}
+.intro-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;max-width:1200px;margin:0 auto}
+.intro-label{display:flex;align-items:center;gap:10px;font-size:0.73rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.intro-label::before{content:'';width:20px;height:1px;background:var(--accent)}
+.intro-h2{font-family:var(--font-d);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin-bottom:16px}
+.intro-body{font-size:0.96rem;color:var(--gray-400);line-height:1.78;}
+.intro-right{display:flex;flex-direction:column;gap:20px;padding-top:8px}
+.info-card{
+  background:rgba(255,255,255,0.025);border:1px solid var(--dim);border-radius:14px;
+  padding:24px 22px;
+}
+.info-card h4{font-family:var(--font-d);font-size:0.95rem;font-weight:700;margin-bottom:10px;color:var(--off-white)}
+.info-card p{font-size:0.86rem;color:var(--gray-400);line-height:1.65}
+.info-card.accent-card{background:var(--accent-bg);border-color:color-mix(in srgb,var(--accent) 25%,transparent)}
+
+/* PRICING */
+.pricing-section{background:var(--black);padding:var(--sp) 6%}
+.pricing-header{text-align:center;margin-bottom:56px}
+.sec-label{display:inline-flex;align-items:center;gap:10px;font-size:0.73rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.sec-label::before{content:'';width:20px;height:1px;background:var(--accent)}
+.sec-label-c{display:flex;justify-content:center}
+.sec-label-c .sec-label::after{content:'';width:20px;height:1px;background:var(--accent)}
+.sec-h2{font-family:var(--font-d);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-0.025em;line-height:1.1;margin-bottom:10px}
+.sec-sub{font-size:0.95rem;color:var(--gray-400);max-width:520px;margin:0 auto}
+
+.tiers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1100px;margin:0 auto}
+.tier-card{
+  background:rgba(255,255,255,0.025);border:1px solid var(--dim);
+  border-radius:20px;padding:36px 30px;
+  display:flex;flex-direction:column;position:relative;overflow:hidden;
+  transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s;
+}
+.tier-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--accent),transparent);
+  opacity:0;transition:opacity 0.3s;
+}
+.tier-card:hover{transform:translateY(-6px);border-color:color-mix(in srgb,var(--accent) 30%,transparent);box-shadow:0 24px 60px rgba(0,0,0,0.4)}
+.tier-card:hover::before{opacity:1}
+.tier-card.featured{background:var(--accent-bg);border-color:color-mix(in srgb,var(--accent) 35%,transparent)}
+.tier-card.featured::before{opacity:1}
+.tier-badge{
+  position:absolute;top:16px;right:16px;
+  background:var(--accent);color:#fff;
+  font-size:0.65rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
+  padding:4px 12px;border-radius:20px;
+}
+.tier-name{font-family:var(--font-d);font-size:1rem;font-weight:700;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:10px}
+.tier-price{font-family:var(--font-d);font-size:2rem;font-weight:800;color:#fff;line-height:1;margin-bottom:4px}
+.tier-period{font-size:0.9rem;color:var(--gray-400);font-weight:300}
+.tier-desc{font-size:0.85rem;color:var(--gray-400);line-height:1.65;margin:14px 0 20px;padding-top:14px;border-top:1px solid var(--dim)}
+.tier-features{list-style:none;display:flex;flex-direction:column;gap:10px;flex:1;margin-bottom:28px}
+.tier-item{display:flex;align-items:flex-start;gap:10px;font-size:0.85rem;color:var(--gray-300);line-height:1.5}
+.ti-check{color:var(--accent);font-size:0.75rem;flex-shrink:0;margin-top:2px;font-weight:600}
+.tier-cta{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 24px;border-radius:8px;font-family:var(--font-b);
+  font-size:0.9rem;font-weight:500;text-decoration:none;cursor:pointer;
+  transition:all 0.25s;
+}
+.tier-cta-primary{
+  position:relative;overflow:hidden;
+  background:var(--orange);color:#fff;border:none;
+  animation:cta-pulse 3s ease-in-out infinite;
+}
+.tier-cta-primary::before{
+  content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.18),transparent);
+  animation:sheen 3s ease-in-out infinite;pointer-events:none;
+}
+@keyframes sheen{0%,65%,100%{left:-100%}38%{left:140%}}
+@keyframes cta-pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,122,0,0.4)}50%{box-shadow:0 0 0 14px rgba(255,122,0,0)}}
+.tier-cta-primary:hover{background:var(--orange-hot);transform:translateY(-2px);box-shadow:0 10px 32px var(--or-glow);animation:none}
+.tier-cta-secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.18)}
+.tier-cta-secondary:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+
+/* CTA BANNER */
+.cta-banner{
+  background:linear-gradient(135deg,var(--navy) 0%,#0d1f3c 100%);
+  border-top:1px solid rgba(0,123,255,0.18);
+  text-align:center;padding:var(--sp) 6%;position:relative;overflow:hidden;
+}
+.cta-banner::before{
+  content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:700px;height:350px;
+  background:radial-gradient(ellipse,rgba(0,123,255,0.08) 0%,transparent 68%);
+  pointer-events:none;
+}
+.cta-banner h2{font-family:var(--font-d);font-size:clamp(1.8rem,3.8vw,3.2rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:12px;position:relative}
+.cta-banner p{color:var(--gray-400);max-width:480px;margin:0 auto 34px;position:relative}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-primary{
+  position:relative;overflow:hidden;background:var(--orange);color:#fff;
+  border:none;padding:14px 34px;border-radius:8px;
+  font-family:var(--font-b);font-size:0.95rem;font-weight:500;
+  cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+  transition:background 0.25s,transform 0.25s,box-shadow 0.25s;
+  animation:cta-pulse 3s ease-in-out infinite;
+}
+.btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.18),transparent);animation:sheen 3s ease-in-out infinite;pointer-events:none}
+.btn-primary:hover{background:var(--orange-hot);transform:translateY(-2px);box-shadow:0 10px 32px var(--or-glow);animation:none}
+.btn-secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.18);padding:14px 32px;border-radius:8px;font-family:var(--font-b);font-size:0.95rem;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all 0.25s}
+.btn-secondary:hover{border-color:var(--electric);color:var(--electric);transform:translateY(-2px)}
+
+/* FOOTER */
+footer{background:var(--black);border-top:1px solid var(--dim);padding:60px 6% 30px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:44px}
+.footer-brand .logo{margin-bottom:10px;display:block}
+.footer-brand p{font-size:0.84rem;color:var(--gray-400);max-width:230px}
+.footer-socials{display:flex;gap:10px;margin-top:18px}
+.social-btn{width:34px;height:34px;background:var(--dim);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.82rem;text-decoration:none;color:var(--gray-400);transition:all 0.2s}
+.social-btn:hover{background:var(--electric);color:#fff;transform:translateY(-2px)}
+.footer-col h5{font-family:var(--font-d);font-size:0.74rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-600);margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-col a{color:var(--gray-400);text-decoration:none;font-size:0.84rem;transition:color 0.2s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{padding-top:22px;border-top:1px solid var(--dim);display:flex;justify-content:space-between;font-size:0.76rem;color:var(--gray-600)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity 0.65s ease,transform 0.65s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.rd1{transition-delay:0.1s}.rd2{transition-delay:0.2s}
+
+/* MOBILE */
+@media(max-width:900px){
+  .nav-links{display:none}.nav-ham{display:flex}
+  .intro-inner{grid-template-columns:1fr;gap:40px}
+  .tiers-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  :root{--urgency-h:36px}
+  .urgency-bar{font-size:0.7rem}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:8px}
+  .cta-btns{flex-direction:column;align-items:center}
+  .ub-sep:nth-child(6),.ub-sep:nth-child(6)~*{display:none}
+}
+
+/* ── GLOBAL NAV DROPDOWNS ── */
+.nav-item{position:relative}
+.nav-item>a{display:inline-flex;align-items:center;gap:3px}
+.nav-arrow{font-size:0.5rem;opacity:0.45;margin-left:1px;transition:opacity 0.2s,transform 0.2s}
+.nav-item:hover .nav-arrow{opacity:1;transform:rotate(180deg)}
+.nav-item:hover .nav-drop{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.nav-drop{
+  position:absolute;top:calc(100% + 12px);left:50%;
+  transform:translateX(-50%) translateY(-8px);
+  background:rgba(5,8,16,0.98);
+  border:1px solid rgba(0,123,255,0.18);
+  border-radius:14px;padding:8px;
+  opacity:0;visibility:hidden;
+  transition:opacity 0.18s,transform 0.18s,visibility 0.18s;
+  z-index:300;
+  backdrop-filter:blur(24px);
+  box-shadow:0 24px 48px rgba(0,0,0,0.55);
+  min-width:210px;
+}
+.nav-drop::before{
+  content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);
+  width:12px;height:12px;
+  background:rgba(5,8,16,0.98);
+  border-top:1px solid rgba(0,123,255,0.18);
+  border-left:1px solid rgba(0,123,255,0.18);
+  clip-path:polygon(0 0,100% 0,0 100%);
+  transform:translateX(-50%) rotate(45deg);
+}
+.drop-section{padding:4px 0}
+.drop-section+.drop-section{border-top:1px solid rgba(255,255,255,0.05);margin-top:4px;padding-top:8px}
+.drop-label{font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(68,85,102,0.8);padding:2px 10px 6px;font-weight:700;font-family:var(--font-d,'Syne',sans-serif)}
+.drop-link{display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:8px;text-decoration:none;color:rgba(136,153,170,0.9);font-size:0.79rem;transition:all 0.14s;white-space:nowrap}
+.drop-link:hover{background:rgba(0,123,255,0.08);color:#fff}
+.drop-link .di{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.78rem;flex-shrink:0}
+.drop-link .dt{display:flex;flex-direction:column;gap:1px}
+.drop-link .dt span{font-size:0.65rem;color:rgba(68,85,102,0.7);font-weight:400}
+/* wide services dropdown */
+.nav-drop-wide{min-width:420px;left:0;transform:translateY(-8px)}
+.nav-item:hover .nav-drop-wide{transform:translateY(0)}
+.nav-drop-wide::before{left:50px}
+.drop-cols{display:grid;grid-template-columns:1fr 1fr;gap:0 8px}
+
+
+/* ── STANDARD FOOTER ── */
+footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,255,0.06); padding: 64px 6% 28px; }
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 52px; }
+.footer-brand p { font-size: 0.84rem; color: #8899aa; max-width: 220px; line-height: 1.65; margin-top: 12px; }
+.footer-socials { display: flex; gap: 10px; margin-top: 20px; }
+.footer-social-btn { width: 36px; height: 36px; background: rgba(255,255,255,0.06); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 0.84rem; text-decoration: none; color: #8899aa; transition: all 0.2s; }
+.footer-social-btn:hover { background: #007bff; color: #fff; transform: translateY(-2px); }
+.footer-col h5 { font-family: var(--font-d, 'Syne', sans-serif); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #445566; margin-bottom: 16px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.footer-col a { color: #8899aa; text-decoration: none; font-size: 0.84rem; transition: color 0.2s; }
+.footer-col a:hover { color: #fff; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 22px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 0.76rem; color: #445566; }
+.footer-bottom a { color: #445566; text-decoration: none; transition: color 0.2s; }
+.footer-bottom a:hover { color: #8899aa; }
+@media(max-width:1000px) { .footer-grid { grid-template-columns: 1fr 1fr 1fr; } }
+@media(max-width:640px) { .footer-grid { grid-template-columns: 1fr 1fr; } .footer-bottom { flex-direction: column; gap: 8px; } }
+
+
+/* ── SERVICE QUALIFIER QUIZ ── */
+.svc-quiz-btn{width:100%;margin-top:12px;padding:12px 16px;background:transparent;border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#8899aa;font-size:0.84rem;font-family:inherit;cursor:pointer;transition:all 0.18s;display:flex;align-items:center;justify-content:center;gap:8px}
+.svc-quiz-btn:hover{border-color:rgba(0,123,255,0.35);color:#007bff}
+.sqo{position:fixed;inset:0;background:rgba(0,0,0,0.78);backdrop-filter:blur(8px);z-index:9000;display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;visibility:hidden;transition:opacity 0.22s,visibility 0.22s}
+.sqo.open{opacity:1;visibility:visible}
+.sqm{background:#080f1e;border:1px solid rgba(0,123,255,0.2);border-radius:18px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;position:relative;animation:sqin 0.25s cubic-bezier(0.34,1.56,0.64,1) both}
+@keyframes sqin{from{transform:translateY(24px) scale(0.97);opacity:0}to{transform:none;opacity:1}}
+.sq-x{position:absolute;top:14px;right:14px;width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);color:#8899aa;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all 0.15s;z-index:2}
+.sq-x:hover{background:rgba(255,85,85,0.15);color:#ff5555}
+.sq-head{padding:24px 24px 0}
+.sq-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(0,123,255,0.08);border:1px solid rgba(0,123,255,0.18);border-radius:20px;padding:4px 12px;font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#007bff;margin-bottom:10px}
+.sq-title{font-family:var(--font-d,sans-serif);font-size:1.1rem;font-weight:800;color:#fff;line-height:1.2;margin-bottom:5px}
+.sq-sub{font-size:0.82rem;color:#8899aa;line-height:1.55}
+.sq-prog{padding:14px 24px 0;display:flex;align-items:center;gap:10px}
+.sq-track{flex:1;height:3px;background:rgba(255,255,255,0.06);border-radius:2px;overflow:hidden}
+.sq-fill{height:100%;background:linear-gradient(90deg,#007bff,#00b4dc);border-radius:2px;transition:width 0.35s}
+.sq-lbl{font-size:0.68rem;color:#445566;white-space:nowrap}
+.sq-body{padding:18px 24px 24px}
+.sq-q{font-family:var(--font-d,sans-serif);font-size:0.95rem;font-weight:700;color:#dce8f5;margin-bottom:14px;line-height:1.35}
+.sq-opts{display:flex;flex-direction:column;gap:7px;margin-bottom:18px}
+.sq-opt{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);border-radius:9px;padding:11px 14px;cursor:pointer;transition:all 0.13s;display:flex;align-items:flex-start;gap:10px}
+.sq-opt:hover{border-color:rgba(0,123,255,0.3);background:rgba(0,123,255,0.05)}
+.sq-opt.sel{border-color:rgba(0,123,255,0.5);background:rgba(0,123,255,0.09)}
+.sq-radio{width:16px;height:16px;border-radius:50%;border:2px solid rgba(255,255,255,0.2);flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all 0.13s}
+.sq-opt.sel .sq-radio{border-color:#007bff;background:#007bff}
+.sq-dot{width:5px;height:5px;border-radius:50%;background:#fff}
+.sq-ot{font-size:0.85rem;color:#aabdd0;line-height:1.4}
+.sq-nav{display:flex;gap:8px;justify-content:space-between;align-items:center}
+.sq-back{background:transparent;border:1px solid rgba(255,255,255,0.1);color:#8899aa;padding:9px 18px;border-radius:7px;font-size:0.82rem;cursor:pointer}
+.sq-back:hover{border-color:rgba(255,255,255,0.2);color:#dce8f5}
+.sq-next{background:#007bff;color:#fff;border:none;padding:9px 22px;border-radius:7px;font-size:0.82rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:5px}
+.sq-next:hover{background:#0066e0;transform:translateY(-1px)}
+.sq-next:disabled{opacity:0.3;cursor:not-allowed;transform:none}
+.sq-res{text-align:center;padding:4px 0}
+.sq-icon{font-size:2.4rem;margin-bottom:12px}
+.sq-fit{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:20px;font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px}
+.fit-g{background:rgba(0,200,100,0.1);border:1px solid rgba(0,200,100,0.25);color:#00c864}
+.fit-m{background:rgba(255,122,0,0.08);border:1px solid rgba(255,122,0,0.2);color:#ff7a00}
+.fit-c{background:rgba(0,123,255,0.08);border:1px solid rgba(0,123,255,0.2);color:#007bff}
+.sq-rtitle{font-family:var(--font-d,sans-serif);font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:7px;line-height:1.2}
+.sq-rdesc{font-size:0.85rem;color:#8899aa;line-height:1.6;margin-bottom:18px}
+.sq-sum{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:9px;padding:12px 14px;margin-bottom:18px;text-align:left}
+.sq-sum h4{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#445566;margin-bottom:8px}
+.sq-ar{display:flex;gap:6px;margin-bottom:5px;font-size:0.79rem}
+.sq-aq{color:#445566;flex-shrink:0}
+.sq-aa{color:#8899aa}
+.sq-igrp{display:flex;flex-direction:column;gap:7px;margin-bottom:18px;text-align:left}
+.sq-igrp label{font-size:0.78rem;color:#8899aa}
+.sq-inp{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:7px;padding:10px 13px;color:#dce8f5;font-size:0.86rem;font-family:inherit;width:100%;outline:none;transition:border-color 0.13s}
+.sq-inp:focus{border-color:rgba(0,123,255,0.4)}
+.sq-inp::placeholder{color:#445566}
+.sq-rctas{display:flex;gap:9px;justify-content:center;flex-wrap:wrap}
+.sq-cta1{background:#ff7a00;color:#fff;border:none;padding:11px 22px;border-radius:7px;font-size:0.85rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:all 0.18s}
+.sq-cta1:hover{background:#ff9500;transform:translateY(-2px)}
+.sq-cta2{background:transparent;border:1px solid rgba(255,255,255,0.1);color:#8899aa;padding:11px 18px;border-radius:7px;font-size:0.82rem;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:5px}
+.sq-cta2:hover{border-color:rgba(0,123,255,0.3);color:#007bff}
+</style>
+</head>
+<body>
+
+<div class="urgency-bar">
+  <span class="ub-dot"></span>
+  <span>Only <strong>3 client slots</strong> available this month</span>
+  <span class="ub-sep">·</span>
+  <span>50+ businesses served</span>
+  <span class="ub-sep">·</span>
+  <span>Avg. 3.8× ROI</span>
+  <span class="ub-sep">·</span>
+  <a class="ub-link" href="/funnels/free-seo-audit/">Claim your spot →</a>
+</div>
+
+<nav id="main-nav">
+  <a href="/" class="logo" aria-label="CyberMagnet — Home" style="display:inline-flex;align-items:center;text-decoration:none;line-height:1">
+    <svg width="220" height="44" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <text x="100" y="17" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="2">CYBER</text>
+      <circle cx="6" cy="21" r="2" fill="#FF7A35"/>
+      <line x1="8" y1="21" x2="192" y2="21" stroke="#FF7A35" stroke-width="1.5"/>
+      <circle cx="194" cy="21" r="2" fill="#FF7A35"/>
+      <text x="100" y="36" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#FF7A35" text-anchor="middle" letter-spacing="2">MAGNET</text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+
+    <!-- SERVICES dropdown (wide 2-col) -->
+    <li class="nav-item">
+      <a href="/services/" class="active">Services <span class="nav-arrow">&#9660;</span></a>
+      <div class="nav-drop nav-drop-wide">
+        <div class="drop-cols">
+          <div class="drop-section">
+            <div class="drop-label">Marketing</div>
+            <a class="drop-link" href="/services/seo/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128269;</div><div class="dt">SEO &amp; Visibility<span>Get found on Google</span></div></a>
+            <a class="drop-link" href="/services/google-business-profile/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128205;</div><div class="dt">Google Business Profile<span>Dominate local search</span></div></a>
+            <a class="drop-link" href="/services/social-media-management/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128241;</div><div class="dt">Social Media<span>Content that converts</span></div></a>
+            <a class="drop-link" href="/services/social-media-advertising/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128202;</div><div class="dt">Paid Advertising<span>Meta &amp; Google Ads</span></div></a>
+            <a class="drop-link" href="/services/email-marketing/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128140;</div><div class="dt">Email Marketing<span>Nurture &amp; retain</span></div></a>
+            <a class="drop-link" href="/services/cold-calling/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128222;</div><div class="dt">Cold Calling<span>Outbound prospecting</span></div></a>
+          </div>
+          <div class="drop-section">
+            <div class="drop-label">Creative &amp; Tech</div>
+            <a class="drop-link" href="/services/website-design/"><div class="di" style="background:rgba(255,122,0,0.1)">&#127758;</div><div class="dt">Website Design<span>High-converting sites</span></div></a>
+            <a class="drop-link" href="/services/funnel-building/"><div class="di" style="background:rgba(255,122,0,0.1)">&#127919;</div><div class="dt">Funnel Building<span>End-to-end funnels</span></div></a>
+            <a class="drop-link" href="/services/branding-packages/"><div class="di" style="background:rgba(255,122,0,0.1)">&#127775;</div><div class="dt">Branding<span>Identity &amp; strategy</span></div></a>
+            <a class="drop-link" href="/services/graphic-design/"><div class="di" style="background:rgba(255,122,0,0.1)">&#127912;</div><div class="dt">Graphic Design<span>Assets that stand out</span></div></a>
+            <a class="drop-link" href="/services/video-editing/"><div class="di" style="background:rgba(255,122,0,0.1)">&#127916;</div><div class="dt">Video Editing<span>Reels, ads &amp; more</span></div></a>
+            <a class="drop-link" href="/services/ai-phone-receptionist/"><div class="di" style="background:rgba(0,180,220,0.1)">&#129302;</div><div class="dt">AI Receptionist<span>24/7 lead capture</span></div></a>
+          </div>
+        </div>
+        <div class="drop-section" style="border-top:1px solid rgba(255,255,255,0.05);margin-top:4px;padding-top:8px;padding-bottom:2px">
+          <a class="drop-link" href="/services/" style="color:#007bff;font-weight:600"><div class="di" style="background:rgba(0,123,255,0.08)">&#9729;</div><div class="dt">View All Services <span>Full service catalogue</span></div></a>
+        </div>
+      </div>
+    </li>
+
+    <!-- SYSTEMS dropdown -->
+    <li class="nav-item">
+      <a href="/systems/">Systems <span class="nav-arrow">&#9660;</span></a>
+      <div class="nav-drop">
+        <div class="drop-section">
+          <div class="drop-label">Full Systems</div>
+          <a class="drop-link" href="/systems/appointment/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128197;</div>Appointment System</a>
+          <a class="drop-link" href="/systems/local-business/"><div class="di" style="background:rgba(255,122,0,0.1)">&#128205;</div>Local Business System</a>
+          <a class="drop-link" href="/systems/ai-automation/"><div class="di" style="background:rgba(0,180,220,0.1)">&#129302;</div>AI Automation System</a>
+          <a class="drop-link" href="/systems/content-repurposing/"><div class="di" style="background:rgba(160,80,255,0.1)">&#127908;</div>Content Repurposing</a>
+        </div>
+        <div class="drop-section">
+          <div class="drop-label">Micro-Systems</div>
+          <a class="drop-link" href="/systems/micro/social-media/"><div class="di" style="background:rgba(255,122,0,0.1)">&#128247;</div>Social Media Audit</a>
+          <a class="drop-link" href="/systems/micro/web-analytics/"><div class="di" style="background:rgba(0,123,255,0.1)">&#127760;</div>Website Audit</a>
+          <a class="drop-link" href="/systems/micro/review-automation/"><div class="di" style="background:rgba(0,200,100,0.1)">&#128269;</div>Competitor Analysis</a>
+          <a class="drop-link" href="/systems/micro/graphics/"><div class="di" style="background:rgba(160,80,255,0.1)">&#127912;</div>Quick Fix Graphics</a>
+        </div>
+        <div class="drop-section">
+          <div class="drop-label">Digital Products</div>
+          <a class="drop-link" href="/products/"><div class="di" style="background:rgba(201,168,76,0.1)">&#128230;</div>All Digital Products</a>
+        </div>
+      </div>
+    </li>
+
+    <li><a href="/portfolio/">Portfolio</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/blog/">Blog</a></li>
+  </ul>
+  <a href="/funnels/free-seo-audit/" class="nav-cta">Free SEO Audit</a>
+  <div class="nav-ham"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="page-hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-grid"></div>
+  <div class="hero-orb"></div>
+  <div class="hero-content">
+    <div class="breadcrumb">
+      <a href="/">Home</a><span>›</span>
+      <a href="/services/">Services</a><span>›</span>
+      <span>Cold Calling & Appointment Setting</span>
+    </div>
+    <span class="hero-icon">📞</span>
+    <div class="hero-badge">Cold Calling & Appointment Setting</div>
+    <h1 class="hero-h1">Turn cold outreach into a booked-out calendar.</h1>
+    <p class="hero-tagline">Professional cold calling & appointment setting — delivered with transparent pricing, measurable results, and no long-term lock-in.</p>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="intro-inner">
+    <div class="intro-left reveal">
+      <div class="intro-label">What We Do</div>
+      <h2 class="intro-h2">The CyberMagnet Approach</h2>
+      <p class="intro-body">Most businesses have a leads problem disguised as a sales problem. The truth is, a consistent pipeline of qualified appointments is the single fastest lever you can pull to accelerate revenue — and it requires skill, persistence, and a proven system. CyberMagnet's cold calling and appointment setting service puts a professional, trained caller in your corner: scripted, strategic, and focused entirely on booking meetings with the right prospects so your team can focus on closing.</p>
+    </div>
+    <div class="intro-right">
+      <div class="info-card accent-card reveal rd1">
+        <h4>Who This Is For</h4>
+        <p>Service businesses, B2B companies, consultants, coaches, and any organisation that sells via phone, video call, or in-person meetings. Ideal for businesses looking to build a predictable, repeatable pipeline without the overhead of a full-time SDR.</p>
+      </div>
+      <div class="info-card reveal rd2">
+        <h4>Why CyberMagnet</h4>
+        <p>We don't read from a generic script and hope for the best. Every campaign starts with understanding your offer, your ideal client, and your objections — then we build a calling strategy around outcomes, not activity. You get transparent reporting, honest communication, and callers who represent your brand with professionalism.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing-section" id="pricing">
+  <div class="pricing-header reveal">
+    <div class="sec-label-c"><div class="sec-label">Pricing</div></div>
+    <h2 class="sec-h2">Choose Your Tier</h2>
+    <p class="sec-sub">Every tier includes professional delivery, transparent communication, and no hidden fees. Upgrade or change at any time.</p>
+  </div>
+  <div class="tiers-grid reveal rd1">
+    
+    <div class="tier-card ">
+      <div class="tier-header">
+        
+        <div class="tier-name">Starter</div>
+        <div class="tier-price">$300</div>
+        <p class="tier-desc">Get your outreach off the ground with a focused calling campaign targeting your ideal clients.</p>
+      </div>
+      <ul class="tier-features"><li class="tier-item"><span class="ti-check">✓</span><span>100 targeted cold calls per month</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>Basic call script tailored to your offer</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>Detailed lead notes after every call</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>1 confirmed appointment per week (target)</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>Weekly summary report</span></li></ul>
+      <a href="/contact/" class="tier-cta tier-cta-secondary">
+        Get Started →
+      </a>
+    </div>
+    <div class="tier-card featured">
+      <div class="tier-header">
+        <span class="tier-badge">Popular</span>
+        <div class="tier-name">Growth</div>
+        <div class="tier-price">$600</div>
+        <p class="tier-desc">Scale your outreach with a more intensive campaign, custom scripting, and CRM-ready data.</p>
+      </div>
+      <ul class="tier-features"><li class="tier-item"><span class="ti-check">✓</span><span>250 targeted cold calls per month</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>Custom script with objection handling</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>CRM-ready lead notes and dispositions</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>2–4 confirmed appointments per week (target)</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>Weekly performance analysis</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>Priority communication channel</span></li></ul>
+      <a href="/contact/" class="tier-cta tier-cta-primary">
+        Get Started ↗
+      </a>
+    </div>
+    <div class="tier-card ">
+      <div class="tier-header">
+        
+        <div class="tier-name">Premium</div>
+        <div class="tier-price">$1,200</div>
+        <p class="tier-desc">A fully managed, high-volume appointment machine with dedicated calling, daily visibility, and strategic oversight.</p>
+      </div>
+      <ul class="tier-features"><li class="tier-item"><span class="ti-check">✓</span><span>600+ targeted cold calls per month</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>Full script with objection handling playbook</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>Multi-touch follow-up sequences</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>Dedicated caller assigned to your account</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>Daily call updates and lead status reports</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>Live KPI dashboard access</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>Monthly strategy call with your account lead</span></li>
+<li class="tier-item"><span class="ti-check">✓</span><span>Priority support</span></li></ul>
+      <a href="/contact/" class="tier-cta tier-cta-secondary">
+        Get Started →
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="cta-banner">
+  <h2 class="reveal">Not sure which tier is right for you?</h2>
+  <p class="reveal">Book a free strategy call. We'll review your situation and recommend exactly what you need — no upselling, no pressure.</p>
+  <div class="cta-btns reveal">
+    <a href="/contact/" class="btn-primary">Book Free Strategy Call ↗</a>
+  <button class="svc-quiz-btn" onclick="window['openSvcQuiz_cold-calling']()">&#9679; Is this service right for my business?</button>
+    <a href="/services/" class="btn-secondary">← All Services</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" aria-label="CyberMagnet" style="display:inline-flex;text-decoration:none;line-height:1;margin-bottom:10px">
+        <svg width="200" height="40" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <text x="100" y="17" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="2">CYBER</text>
+          <circle cx="6" cy="21" r="2" fill="#FF7A35"/>
+          <line x1="8" y1="21" x2="192" y2="21" stroke="#FF7A35" stroke-width="1.5"/>
+          <circle cx="194" cy="21" r="2" fill="#FF7A35"/>
+          <text x="100" y="36" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#FF7A35" text-anchor="middle" letter-spacing="2">MAGNET</text>
+        </svg>
+      </a>
+      <p>Premium digital marketing for growth-focused local businesses. Based in Dallas, TX.</p>
+      <div class="footer-socials">
+        <a href="https://www.tiktok.com/@cybermagnetms" class="social-btn" aria-label="TikTok">&#9834;</a>
+        <a href="https://www.linkedin.com/company/cybermagnet-marketing-solutions/" class="social-btn" aria-label="LinkedIn">in</a>
+        <a href="https://www.youtube.com/@cybermagnetms" class="social-btn" aria-label="YouTube">&#9654;</a>
+        <a href="https://www.instagram.com/cybermagnetms/" class="social-btn" aria-label="Instagram">&#9678;</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="/services/seo/">SEO &amp; Visibility</a></li>
+        <li><a href="/services/website-design/">Website Design</a></li>
+        <li><a href="/services/social-media-management/">Social Media</a></li>
+        <li><a href="/services/funnel-building/">Funnel Building</a></li>
+        <li><a href="/services/branding-packages/">Branding</a></li>
+        <li><a href="/services/">All Services</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Systems &amp; Products</h5>
+      <ul>
+        <li><a href="/systems/">All Systems</a></li>
+        <li><a href="/systems/appointment/">Appointment System</a></li>
+        <li><a href="/systems/local-business/">Local Business System</a></li>
+        <li><a href="/systems/ai-automation/">AI Automation System</a></li>
+        <li><a href="/systems/content-repurposing/">Content Repurposing</a></li>
+        <li><a href="/products/">Digital Products</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/funnels/free-seo-audit/">Free SEO Audit</a></li>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+        <li><a href="/terms/">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 CyberMagnet Marketing Solutions LLC &middot; Dallas, Texas</span>
+    <span><a href="/privacy/" style="color:inherit;text-decoration:none">Privacy Policy</a> &middot; <a href="/terms/" style="color:inherit;text-decoration:none">Terms of Service</a></span>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const nav=document.getElementById('main-nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40));
+const _canvas=document.getElementById('hero-canvas');
+if(_canvas){
+  const ctx=_canvas.getContext('2d');
+  let W,H,pts=[];
+  function resize(){W=_canvas.width=_canvas.offsetWidth;H=_canvas.height=_canvas.offsetHeight;pts=[];const n=Math.min(Math.floor(W*H/14000),60);for(let i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.2+0.3,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,a:Math.random()*.4+.07});}
+  function draw(){ctx.clearRect(0,0,W,H);for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<110){ctx.beginPath();ctx.strokeStyle=`rgba(0,123,255,${(1-d/110)*.08})`;ctx.lineWidth=.7;ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.stroke();}}for(const p of pts){ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(0,123,255,${p.a})`;ctx.fill();p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;}requestAnimationFrame(draw);}
+  window.addEventListener('resize',resize);resize();draw();
+}
+const revEls=document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.07, rootMargin: '0px 0px -24px 0px' });
+revEls.forEach(el => obs.observe(el));
+</script>
+<script>
+(function(){
+var D={k:'cold-calling',t:'Cold Calling',qs:[['Are you currently doing any outbound prospecting?',[['No — entirely reliant on inbound',3],['Occasionally but inconsistently',3],['Yes but our conversion rate is low',3],['Yes and generating results — want to scale',2]]],['What is your biggest outbound challenge?',[['Getting past the opener without sounding scripted',3],['Handling objections and rejections',3],['Getting a clear next step from every call',3],['Staying consistent and motivated',2]]],['What is your target market?',[['Local consumers — B2C services',3],['Small businesses — B2B',3],['Mid-market or enterprise',2],['Mixed audience',2]]],['Do you have a CRM to track your outbound pipeline?',[['No — just spreadsheets or nothing',3],['Yes but barely used',2],['Yes and it works well',2],['We use GoHighLevel or similar',3]]]],s:0,a:[]};
+function o(){D.s=0;D.a=[];document.getElementById('sqo-cold-calling').classList.add('open');document.body.style.overflow='hidden';r();}
+function cl(){document.getElementById('sqo-cold-calling').classList.remove('open');document.body.style.overflow='';}
+function r(){
+  var m=document.getElementById('sqm-cold-calling'),tot=D.qs.length;
+  if(D.s<tot){
+    var q=D.qs[D.s],cur=D.a[D.s],pct=Math.round(D.s/tot*100);
+    var oh='';for(var i=0;i<q[1].length;i++){var sel=cur===i?' sel':'';oh+='<div class="sq-opt'+sel+'" onclick="sqSel_cold-calling('+i+')"><div class="sq-radio">'+(cur===i?'<div class="sq-dot"></div>':'')+'</div><div class="sq-ot">'+q[1][i][0]+'</div></div>';}
+    m.innerHTML='<button class="sq-x" onclick="sqCl_cold-calling()">&#215;</button><div class="sq-head"><div class="sq-badge">&#10003; Is This Right For Me?</div><div class="sq-title">'+D.t+'</div><div class="sq-sub">4 quick questions to see if this is the right fit for your business.</div></div><div class="sq-prog"><div class="sq-track"><div class="sq-fill" style="width:'+pct+'%"></div></div><div class="sq-lbl">'+(D.s+1)+' of '+tot+'</div></div><div class="sq-body"><div class="sq-q">'+q[0]+'</div><div class="sq-opts">'+oh+'</div><div class="sq-nav">'+(D.s>0?'<button class="sq-back" onclick="sqBk_cold-calling()">&#8592; Back</button>':'<span></span>')+'<button class="sq-next" onclick="sqNx_cold-calling()"'+(cur===undefined?' disabled':'')+'>'+(D.s===tot-1?'See my result &#8594;':'Next &#8594;')+'</button></div></div>';
+  }else{
+    var sc=0;for(var i=0;i<D.a.length;i++)sc+=D.qs[i][1][D.a[i]][1];
+    var mx=D.qs.length*3,p=sc/mx;
+    var fc,fl,ic,rt,rd;
+    if(p>=0.7){fc='fit-g';fl='&#10003; Strong Fit';ic='&#127775;';rt='This service is built for where you are right now.';rd='Your answers show clear signals that Cold Calling will directly move the needle. Leave your details below and we will reach out to map out exactly how.'}
+    else if(p>=0.45){fc='fit-m';fl='&#9654; Likely a Good Fit';ic='&#128161;';rt='This looks like a solid match for your situation.';rd='Cold Calling aligns well with your goals. A quick call will confirm whether it is the right first step or if another service would get you results faster.'}
+    else{fc='fit-c';fl='Let's Talk First';ic='&#128172;';rt='We want to make sure you invest in the right thing.';rd='Your answers suggest there may be a better starting point. Book a free call and we will give you an honest recommendation with no pressure.'}
+    var sr='';for(var i=0;i<D.a.length;i++)sr+='<div class="sq-ar"><div class="sq-aq">&#10003;</div><div class="sq-aa">'+D.qs[i][1][D.a[i]][0]+'</div></div>';
+    m.innerHTML='<button class="sq-x" onclick="sqCl_cold-calling()">&#215;</button><div class="sq-head"><div class="sq-badge">&#10003; Assessment Complete</div></div><div class="sq-body"><div class="sq-res"><div class="sq-icon">'+ic+'</div><div class="sq-fit '+fc+'">'+fl+'</div><div class="sq-rtitle">'+rt+'</div><div class="sq-rdesc">'+rd+'</div><div class="sq-sum"><h4>Your Answers</h4>'+sr+'</div><div class="sq-igrp"><label>Your name</label><input class="sq-inp" id="sqn-cold-calling" type="text" placeholder="Jane Smith"><label>Your email</label><input class="sq-inp" id="sqe-cold-calling" type="email" placeholder="jane@business.com"></div><div class="sq-rctas"><button class="sq-cta1" onclick="sqSub_cold-calling()">'+(p>=0.45?'Book a Free Strategy Call &#8594;':'Get a Free Consultation &#8594;')+'</button><a class="sq-cta2" href="/funnels/strategy-call/">Talk to us</a></div></div></div>';
+  }
+}
+function sel(i){D.a[D.s]=i;var opts=document.querySelectorAll('#sqm-cold-calling .sq-opt');opts.forEach(function(e,j){e.classList.toggle('sel',j===i);e.querySelector('.sq-radio').innerHTML=j===i?'<div class="sq-dot"></div>':'';}); var b=document.querySelector('#sqm-cold-calling .sq-next');if(b)b.disabled=false;}
+function nx(){if(D.a[D.s]===undefined)return;D.s++;r();document.getElementById('sqm-cold-calling').scrollTop=0;}
+function bk(){D.s=Math.max(0,D.s-1);r();}
+function sub(){
+  var em=document.getElementById('sqe-cold-calling');
+  if(!em||!em.value){if(em)em.style.borderColor='#ff5555';return;}
+  var nm=document.getElementById('sqn-cold-calling').value||'';
+  var ans=D.a.map(function(ai,qi){return 'Q'+(qi+1)+': '+D.qs[qi][0].substring(0,55)+'... => '+D.qs[qi][1][ai][0];}).join('\n');
+  var fd=new FormData();fd.append('access_key','YOUR_WEB3FORMS_KEY');fd.append('subject','Service Quiz: Cold Calling | '+nm);fd.append('from_name','CyberMagnet');fd.append('name',nm||'Unknown');fd.append('email',em.value);fd.append('message','SERVICE: Cold Calling\n\nANSWERS:\n'+ans);
+  fetch('https://api.web3forms.com/submit',{method:'POST',body:fd}).catch(function(){});
+  document.getElementById('sqm-cold-calling').innerHTML='<div class="sq-body" style="text-align:center;padding:40px 24px"><div style="font-size:2.6rem;margin-bottom:12px">&#127881;</div><div style="font-family:var(--font-d,sans-serif);font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:8px">You are all set!</div><div style="font-size:0.84rem;color:#8899aa;line-height:1.6;margin-bottom:20px">We will be in touch at <strong style=\"color:#dce8f5\">'+em.value+'</strong> shortly.</div><div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap"><a href="/funnels/strategy-call/" class="sq-cta1">Book strategy call &#8594;</a><button class="sq-cta2" onclick="sqCl_cold-calling()">Close</button></div></div>';
+}
+window['sqSel_cold-calling']=sel;window['sqNx_cold-calling']=nx;window['sqBk_cold-calling']=bk;window['sqSub_cold-calling']=sub;window['sqCl_cold-calling']=cl;window['openSvcQuiz_cold-calling']=o;
+document.addEventListener('DOMContentLoaded',function(){var ov=document.getElementById('sqo-cold-calling');if(ov)ov.addEventListener('click',function(e){if(e.target===this)cl();});document.addEventListener('keydown',function(e){if(e.key==='Escape')cl();});}); 
+})();
+</script>
+<div class="sqo" id="sqo-cold-calling"><div class="sqm" id="sqm-cold-calling"></div></div>
+</body>
+</html>

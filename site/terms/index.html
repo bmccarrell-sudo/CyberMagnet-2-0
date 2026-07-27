@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<title>Terms &amp; Conditions | CyberMagnet</title>
+<meta name="description" content="CyberMagnet's Terms and Conditions — the rules governing use of our website and services.">
+<style>
+:root {
+  --black:      #050810;
+  --deep-navy:  #0a1628;
+  --navy:       #0a2540;
+  --electric:   #007bff;
+  --el-glow:    rgba(0,123,255,0.25);
+  --el-light:   rgba(0,123,255,0.08);
+  --orange:     #ff7a00;
+  --orange-hot: #ff9500;
+  --or-glow:    rgba(255,122,0,0.32);
+  --or-light:   rgba(255,122,0,0.08);
+  --off-white:  #dce8f5;
+  --gray-300:   #aabdd0;
+  --gray-400:   #8899aa;
+  --gray-600:   #445566;
+  --dim:        rgba(255,255,255,0.06);
+  --success:    #00c864;
+  --font-d:     'Syne', sans-serif;
+  --font-b:     'DM Sans', sans-serif;
+  --sp:         clamp(72px, 9vw, 120px);
+  --urgency-h:  44px;
+  --nav-h:      68px;
+  --max-w:      860px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:#dce8f5;font-family:var(--font-b);font-weight:300;line-height:1.8;overflow-x:hidden}
+
+/* ── URGENCY BAR ── */
+.urgency-bar{position:fixed;top:0;left:0;right:0;z-index:300;height:var(--urgency-h);display:flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(90deg,#cc5f00,var(--orange),#e07000,var(--orange),#cc5f00);background-size:300% 100%;animation:urg-shift 5s ease-in-out infinite;font-size:0.8rem;font-weight:500;color:#fff;padding:0 5%;overflow:hidden}
+.urgency-bar::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.07) 50%,transparent);animation:urg-sheen 3.5s ease-in-out infinite;pointer-events:none}
+@keyframes urg-shift{0%,100%{background-position:0%}50%{background-position:100%}}
+@keyframes urg-sheen{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+.ub-dot{width:7px;height:7px;background:rgba(255,255,255,0.9);border-radius:50%;flex-shrink:0;animation:ub-p 1.8s ease-in-out infinite}
+@keyframes ub-p{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.35;transform:scale(0.65)}}
+.ub-sep{color:rgba(255,255,255,0.4);margin:0 10px;font-size:0.65rem}
+.ub-link{color:#fff;text-decoration:underline;text-underline-offset:2px;font-weight:600;white-space:nowrap}
+
+/* ── NAV ── */
+nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:var(--nav-h);backdrop-filter:blur(22px) saturate(1.4);background:rgba(5,8,16,0.72);border-bottom:1px solid rgba(0,123,255,0.1);transition:background 0.35s,box-shadow 0.35s}
+nav.scrolled{background:rgba(5,8,16,0.96);box-shadow:0 2px 40px rgba(0,0,0,0.5)}
+.nav-links{display:flex;gap:2.4rem;list-style:none}
+.nav-links a{color:var(--gray-400);text-decoration:none;font-size:0.84rem;letter-spacing:0.05em;text-transform:uppercase;font-weight:400;transition:color 0.2s}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-cta{background:var(--orange);color:#fff;border:none;padding:9px 22px;border-radius:6px;font-family:var(--font-b);font-size:0.84rem;font-weight:500;cursor:pointer;text-decoration:none;transition:all 0.2s}
+.nav-cta:hover{background:var(--orange-hot);transform:translateY(-1px);box-shadow:0 4px 18px var(--or-glow)}
+.nav-ham{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.nav-ham span{width:22px;height:2px;background:#fff;border-radius:2px}
+
+/* ── PAGE HERO ── */
+.page-hero{position:relative;overflow:hidden;min-height:38vh;display:flex;flex-direction:column;justify-content:flex-end;padding:calc(var(--urgency-h) + var(--nav-h) + 48px) 6% 56px;background:linear-gradient(160deg,var(--black) 0%,var(--deep-navy) 100%)}
+.page-hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(0,123,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,123,255,0.03) 1px,transparent 1px);background-size:56px 56px;pointer-events:none}
+.hero-orb{position:absolute;right:8%;top:50%;transform:translateY(-50%);width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(0,123,255,0.06) 0%,transparent 68%);pointer-events:none}
+.hero-content{position:relative;z-index:2;max-width:680px}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:0.76rem;color:var(--gray-600);margin-bottom:16px}
+.breadcrumb a{color:var(--gray-600);text-decoration:none;transition:color 0.2s}
+.breadcrumb a:hover{color:var(--gray-400)}
+.hero-label{display:inline-flex;align-items:center;gap:9px;background:var(--el-light);border:1px solid rgba(0,123,255,0.2);border-radius:30px;padding:5px 14px;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--electric);margin-bottom:18px}
+.hero-h1{font-family:var(--font-d);font-size:clamp(2.4rem,5vw,4rem);font-weight:800;line-height:1.06;letter-spacing:-0.03em;margin-bottom:14px;color:#fff}
+.hero-h1 .acc{color:var(--electric)}
+.hero-sub{font-size:0.98rem;color:var(--gray-400);max-width:560px;line-height:1.72}
+.hero-meta{display:flex;gap:20px;margin-top:22px;flex-wrap:wrap}
+.hero-meta-item{font-size:0.78rem;color:var(--gray-600);display:flex;align-items:center;gap:5px}
+.hero-meta-item::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gray-600);flex-shrink:0}
+
+/* ── LEGAL CONTENT ── */
+.legal-wrap{max-width:var(--max-w);margin:0 auto;padding:clamp(52px,8vw,100px) 6%}
+.legal-toc{background:rgba(0,123,255,0.04);border:1px solid rgba(0,123,255,0.1);border-radius:12px;padding:24px 28px;margin-bottom:52px}
+.legal-toc h3{font-family:var(--font-d);font-size:0.8rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--electric);margin-bottom:14px}
+.legal-toc ol{list-style:none;display:flex;flex-direction:column;gap:6px;counter-reset:toc}
+.legal-toc li{counter-increment:toc;font-size:0.86rem;color:var(--gray-400)}
+.legal-toc li::before{content:counter(toc,decimal-leading-zero) ". ";color:var(--gray-600);font-family:var(--font-d);font-size:0.75rem;margin-right:6px}
+.legal-toc a{color:var(--gray-400);text-decoration:none;transition:color 0.2s}
+.legal-toc a:hover{color:var(--electric)}
+
+.legal-section{margin-bottom:52px;scroll-margin-top:calc(var(--urgency-h) + var(--nav-h) + 24px)}
+.section-num{display:inline-block;font-family:var(--font-d);font-size:0.7rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--electric);margin-bottom:10px;padding:3px 10px;background:var(--el-light);border:1px solid rgba(0,123,255,0.15);border-radius:20px}
+.legal-section h2{font-family:var(--font-d);font-size:clamp(1.3rem,2.5vw,1.7rem);font-weight:800;letter-spacing:-0.02em;color:#fff;margin-bottom:16px;line-height:1.2}
+.legal-section p{font-size:0.95rem;color:var(--gray-400);line-height:1.82;margin-bottom:14px}
+.legal-section p:last-child{margin-bottom:0}
+.legal-section ul,.legal-section ol{margin:12px 0 14px 0;display:flex;flex-direction:column;gap:8px}
+.legal-section ul li,.legal-section ol li{font-size:0.93rem;color:var(--gray-400);line-height:1.7;padding-left:18px;position:relative}
+.legal-section ul li::before{content:'—';position:absolute;left:0;color:var(--electric);font-weight:700}
+.legal-section ol{list-style:decimal;padding-left:20px}
+.legal-section ol li::before{display:none}
+.legal-section ol li{list-style:decimal}
+.legal-highlight{background:rgba(0,123,255,0.04);border:1px solid rgba(0,123,255,0.1);border-left:3px solid var(--electric);border-radius:0 8px 8px 0;padding:16px 20px;margin:18px 0}
+.legal-highlight p{color:var(--gray-300);margin-bottom:0}
+.legal-contact-box{background:rgba(255,122,0,0.04);border:1px solid rgba(255,122,0,0.15);border-radius:12px;padding:24px 28px;margin-top:48px}
+.legal-contact-box h3{font-family:var(--font-d);font-size:1rem;font-weight:700;color:var(--orange);margin-bottom:10px}
+.legal-contact-box p{font-size:0.88rem;color:var(--gray-400);line-height:1.7;margin-bottom:6px}
+.legal-contact-box a{color:var(--orange);text-decoration:none}
+.legal-contact-box a:hover{text-decoration:underline}
+.legal-divider{border:none;border-top:1px solid var(--dim);margin:48px 0}
+
+/* ── FOOTER ── */
+footer{background:var(--black);border-top:1px solid var(--dim);padding:60px 6% 30px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:44px}
+.footer-brand p{font-size:0.84rem;color:var(--gray-400);max-width:230px;margin-top:10px}
+.footer-socials{display:flex;gap:10px;margin-top:18px}
+.social-btn{width:34px;height:34px;background:var(--dim);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.82rem;text-decoration:none;color:var(--gray-400);transition:all 0.2s}
+.social-btn:hover{background:var(--electric);color:#fff;transform:translateY(-2px)}
+.footer-col h5{font-family:var(--font-d);font-size:0.74rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-600);margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.footer-col a{color:var(--gray-400);text-decoration:none;font-size:0.84rem;transition:color 0.2s}
+.footer-col a:hover{color:#fff}
+.footer-bottom{padding-top:22px;border-top:1px solid var(--dim);display:flex;justify-content:space-between;font-size:0.76rem;color:var(--gray-600);flex-wrap:wrap;gap:8px}
+.footer-bottom a{color:var(--gray-600);text-decoration:none;transition:color 0.2s}
+.footer-bottom a:hover{color:var(--gray-400)}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ── MOBILE ── */
+@media(max-width:900px){.nav-links{display:none}.nav-ham{display:flex}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column}}
+
+/* ── GLOBAL NAV DROPDOWNS ── */
+.nav-item{position:relative}
+.nav-item>a{display:inline-flex;align-items:center;gap:3px}
+.nav-arrow{font-size:0.5rem;opacity:0.45;margin-left:1px;transition:opacity 0.2s,transform 0.2s}
+.nav-item:hover .nav-arrow{opacity:1;transform:rotate(180deg)}
+.nav-item:hover .nav-drop{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.nav-drop{
+  position:absolute;top:calc(100% + 12px);left:50%;
+  transform:translateX(-50%) translateY(-8px);
+  background:rgba(5,8,16,0.98);
+  border:1px solid rgba(0,123,255,0.18);
+  border-radius:14px;padding:8px;
+  opacity:0;visibility:hidden;
+  transition:opacity 0.18s,transform 0.18s,visibility 0.18s;
+  z-index:300;
+  backdrop-filter:blur(24px);
+  box-shadow:0 24px 48px rgba(0,0,0,0.55);
+  min-width:210px;
+}
+.nav-drop::before{
+  content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);
+  width:12px;height:12px;
+  background:rgba(5,8,16,0.98);
+  border-top:1px solid rgba(0,123,255,0.18);
+  border-left:1px solid rgba(0,123,255,0.18);
+  clip-path:polygon(0 0,100% 0,0 100%);
+  transform:translateX(-50%) rotate(45deg);
+}
+.drop-section{padding:4px 0}
+.drop-section+.drop-section{border-top:1px solid rgba(255,255,255,0.05);margin-top:4px;padding-top:8px}
+.drop-label{font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(68,85,102,0.8);padding:2px 10px 6px;font-weight:700;font-family:var(--font-d,'Syne',sans-serif)}
+.drop-link{display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:8px;text-decoration:none;color:rgba(136,153,170,0.9);font-size:0.79rem;transition:all 0.14s;white-space:nowrap}
+.drop-link:hover{background:rgba(0,123,255,0.08);color:#fff}
+.drop-link .di{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.78rem;flex-shrink:0}
+.drop-link .dt{display:flex;flex-direction:column;gap:1px}
+.drop-link .dt span{font-size:0.65rem;color:rgba(68,85,102,0.7);font-weight:400}
+/* wide services dropdown */
+.nav-drop-wide{min-width:420px;left:0;transform:translateY(-8px)}
+.nav-item:hover .nav-drop-wide{transform:translateY(0)}
+.nav-drop-wide::before{left:50px}
+.drop-cols{display:grid;grid-template-columns:1fr 1fr;gap:0 8px}
+
+
+/* ── STANDARD FOOTER ── */
+footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,255,0.06); padding: 64px 6% 28px; }
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 52px; }
+.footer-brand p { font-size: 0.84rem; color: #8899aa; max-width: 220px; line-height: 1.65; margin-top: 12px; }
+.footer-socials { display: flex; gap: 10px; margin-top: 20px; }
+.footer-social-btn { width: 36px; height: 36px; background: rgba(255,255,255,0.06); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 0.84rem; text-decoration: none; color: #8899aa; transition: all 0.2s; }
+.footer-social-btn:hover { background: #007bff; color: #fff; transform: translateY(-2px); }
+.footer-col h5 { font-family: var(--font-d, 'Syne', sans-serif); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #445566; margin-bottom: 16px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.footer-col a { color: #8899aa; text-decoration: none; font-size: 0.84rem; transition: color 0.2s; }
+.footer-col a:hover { color: #fff; }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding-top: 22px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 0.76rem; color: #445566; }
+.footer-bottom a { color: #445566; text-decoration: none; transition: color 0.2s; }
+.footer-bottom a:hover { color: #8899aa; }
+@media(max-width:1000px) { .footer-grid { grid-template-columns: 1fr 1fr 1fr; } }
+@media(max-width:640px) { .footer-grid { grid-template-columns: 1fr 1fr; } .footer-bottom { flex-direction: column; gap: 8px; } }
+
+</style>
+</head>
+<body>
+
+<div class="urgency-bar">
+  <span class="ub-dot"></span>
+  <span>Only <strong>3 client slots</strong> available this month</span>
+  <span class="ub-sep">·</span>
+  <span>Dallas-based · Globally executed</span>
+  <span class="ub-sep">·</span>
+  <span>Avg. 3.8&times; ROI</span>
+  <span class="ub-sep">·</span>
+  <a class="ub-link" href="/funnels/free-seo-audit/">Claim your spot &rarr;</a>
+</div>
+
+<nav id="main-nav">
+  <a href="/" class="logo" aria-label="CyberMagnet — Home" style="display:inline-flex;align-items:center;text-decoration:none;line-height:1">
+    <svg width="220" height="44" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <text x="100" y="17" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="2">CYBER</text>
+      <circle cx="6" cy="21" r="2" fill="#FF7A35"/>
+      <line x1="8" y1="21" x2="192" y2="21" stroke="#FF7A35" stroke-width="1.5"/>
+      <circle cx="194" cy="21" r="2" fill="#FF7A35"/>
+      <text x="100" y="36" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#FF7A35" text-anchor="middle" letter-spacing="2">MAGNET</text>
+    </svg>
+  </a>
+  <ul class="nav-links">
+
+    <!-- SERVICES dropdown (wide 2-col) -->
+    <li class="nav-item">
+      <a href="/services/">Services <span class="nav-arrow">&#9660;</span></a>
+      <div class="nav-drop nav-drop-wide">
+        <div class="drop-cols">
+          <div class="drop-section">
+            <div class="drop-label">Marketing</div>
+            <a class="drop-link" href="/services/seo/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128269;</div><div class="dt">SEO &amp; Visibility<span>Get found on Google</span></div></a>
+            <a class="drop-link" href="/services/google-business-profile/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128205;</div><div class="dt">Google Business Profile<span>Dominate local search</span></div></a>
+            <a class="drop-link" href="/services/social-media-management/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128241;</div><div class="dt">Social Media<span>Content that converts</span></div></a>
+            <a class="drop-link" href="/services/social-media-advertising/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128202;</div><div class="dt">Paid Advertising<span>Meta &amp; Google Ads</span></div></a>
+            <a class="drop-link" href="/services/email-marketing/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128140;</div><div class="dt">Email Marketing<span>Nurture &amp; retain</span></div></a>
+            <a class="drop-link" href="/services/cold-calling/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128222;</div><div class="dt">Cold Calling<span>Outbound prospecting</span></div></a>
+          </div>
+          <div class="drop-section">
+            <div class="drop-label">Creative &amp; Tech</div>
+            <a class="drop-link" href="/services/website-design/"><div class="di" style="background:rgba(255,122,0,0.1)">&#127758;</div><div class="dt">Website Design<span>High-converting sites</span></div></a>
+            <a class="drop-link" href="/services/funnel-building/"><div class="di" style="background:rgba(255,122,0,0.1)">&#127919;</div><div class="dt">Funnel Building<span>End-to-end funnels</span></div></a>
+            <a class="drop-link" href="/services/branding-packages/"><div class="di" style="background:rgba(255,122,0,0.1)">&#127775;</div><div class="dt">Branding<span>Identity &amp; strategy</span></div></a>
+            <a class="drop-link" href="/services/graphic-design/"><div class="di" style="background:rgba(255,122,0,0.1)">&#127912;</div><div class="dt">Graphic Design<span>Assets that stand out</span></div></a>
+            <a class="drop-link" href="/services/video-editing/"><div class="di" style="background:rgba(255,122,0,0.1)">&#127916;</div><div class="dt">Video Editing<span>Reels, ads &amp; more</span></div></a>
+            <a class="drop-link" href="/services/ai-phone-receptionist/"><div class="di" style="background:rgba(0,180,220,0.1)">&#129302;</div><div class="dt">AI Receptionist<span>24/7 lead capture</span></div></a>
+          </div>
+        </div>
+        <div class="drop-section" style="border-top:1px solid rgba(255,255,255,0.05);margin-top:4px;padding-top:8px;padding-bottom:2px">
+          <a class="drop-link" href="/services/" style="color:#007bff;font-weight:600"><div class="di" style="background:rgba(0,123,255,0.08)">&#9729;</div><div class="dt">View All Services <span>Full service catalogue</span></div></a>
+        </div>
+      </div>
+    </li>
+
+    <!-- SYSTEMS dropdown -->
+    <li class="nav-item">
+      <a href="/systems/">Systems <span class="nav-arrow">&#9660;</span></a>
+      <div class="nav-drop">
+        <div class="drop-section">
+          <div class="drop-label">Full Systems</div>
+          <a class="drop-link" href="/systems/appointment/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128197;</div>Appointment System</a>
+          <a class="drop-link" href="/systems/local-business/"><div class="di" style="background:rgba(255,122,0,0.1)">&#128205;</div>Local Business System</a>
+          <a class="drop-link" href="/systems/ai-automation/"><div class="di" style="background:rgba(0,180,220,0.1)">&#129302;</div>AI Automation System</a>
+          <a class="drop-link" href="/systems/content-repurposing/"><div class="di" style="background:rgba(160,80,255,0.1)">&#127908;</div>Content Repurposing</a>
+        </div>
+        <div class="drop-section">
+          <div class="drop-label">Micro-Systems</div>
+          <a class="drop-link" href="/systems/micro/social-media/"><div class="di" style="background:rgba(255,122,0,0.1)">&#128247;</div>Social Media Audit</a>
+          <a class="drop-link" href="/systems/micro/web-analytics/"><div class="di" style="background:rgba(0,123,255,0.1)">&#127760;</div>Website Audit</a>
+          <a class="drop-link" href="/systems/micro/review-automation/"><div class="di" style="background:rgba(0,200,100,0.1)">&#128269;</div>Competitor Analysis</a>
+          <a class="drop-link" href="/systems/micro/graphics/"><div class="di" style="background:rgba(160,80,255,0.1)">&#127912;</div>Quick Fix Graphics</a>
+        </div>
+        <div class="drop-section">
+          <div class="drop-label">Digital Products</div>
+          <a class="drop-link" href="/products/"><div class="di" style="background:rgba(201,168,76,0.1)">&#128230;</div>All Digital Products</a>
+        </div>
+      </div>
+    </li>
+
+    <li><a href="/portfolio/">Portfolio</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/blog/">Blog</a></li>
+  </ul>
+  <a href="/funnels/free-seo-audit/" class="nav-cta">Free SEO Audit</a>
+  <div class="nav-ham"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="page-hero">
+  <div class="hero-orb"></div>
+  <div class="hero-content">
+    <div class="breadcrumb"><a href="/">Home</a><span>›</span><span>Terms &amp; Conditions</span></div>
+    <div class="hero-label">Legal</div>
+    <h1 class="hero-h1">Terms &amp; <span class="acc">Conditions</span></h1>
+    <p class="hero-sub">The terms governing your use of CyberMagnet's website and services. Please read carefully.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">Effective Date: January 1, 2025</div>
+      <div class="hero-meta-item">Last Updated: March 2025</div>
+      <div class="hero-meta-item">Governing Law: State of Texas</div>
+    </div>
+  </div>
+</section>
+
+<main class="legal-wrap">
+
+  <div class="legal-toc reveal">
+    <h3>Table of Contents</h3>
+    <ol>
+      <li><a href="#t1">Acceptance of Terms</a></li>
+      <li><a href="#t2">Services</a></li>
+      <li><a href="#t3">Client Responsibilities</a></li>
+      <li><a href="#t4">Payment &amp; Fees</a></li>
+      <li><a href="#t5">Intellectual Property</a></li>
+      <li><a href="#t6">Confidentiality</a></li>
+      <li><a href="#t7">Results &amp; Disclaimers</a></li>
+      <li><a href="#t8">Limitation of Liability</a></li>
+      <li><a href="#t9">Indemnification</a></li>
+      <li><a href="#t10">Termination</a></li>
+      <li><a href="#t11">Website Use</a></li>
+      <li><a href="#t12">Governing Law &amp; Disputes</a></li>
+      <li><a href="#t13">Changes to These Terms</a></li>
+      <li><a href="#t14">Contact Us</a></li>
+    </ol>
+  </div>
+
+  <div class="legal-highlight reveal">
+    <p>These Terms and Conditions (&ldquo;Terms&rdquo;) constitute a legally binding agreement between you and <strong style="color:#dce8f5">CyberMagnet Marketing Solutions LLC</strong> (&ldquo;CyberMagnet,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;). By accessing our website, requesting a consultation, or engaging our services, you agree to be bound by these Terms. If you do not agree, do not use our website or services.</p>
+  </div>
+
+  <!-- 1 -->
+  <section class="legal-section reveal" id="t1">
+    <span class="section-num">01</span>
+    <h2>Acceptance of Terms</h2>
+    <p>By accessing <strong style="color:#dce8f5">cybermagnet.net</strong> or any of its subpages, submitting a contact or enquiry form, booking a consultation, purchasing a digital product, or entering into a service agreement with CyberMagnet, you confirm that:</p>
+    <ul>
+      <li>You are at least 18 years of age, or the legal age of majority in your jurisdiction</li>
+      <li>You have the authority to enter into binding agreements on behalf of yourself or the business you represent</li>
+      <li>You have read, understood, and agree to be bound by these Terms and our Privacy Policy</li>
+    </ul>
+  </section>
+
+  <hr class="legal-divider">
+
+  <!-- 2 -->
+  <section class="legal-section reveal" id="t2">
+    <span class="section-num">02</span>
+    <h2>Services</h2>
+    <p>CyberMagnet provides digital marketing, web design, SEO, branding, content, automation, and related services (&ldquo;Services&rdquo;) to businesses. The specific scope, deliverables, timeline, and pricing of any engagement will be set out in a separate Service Agreement, Statement of Work, or Proposal (&ldquo;Service Agreement&rdquo;) provided to you.</p>
+    <p>In the event of any conflict between these Terms and a signed Service Agreement, the Service Agreement shall take precedence.</p>
+    <ul>
+      <li>We reserve the right to decline any project at our discretion</li>
+      <li>Services may be provided remotely or in person as agreed</li>
+      <li>We may engage qualified subcontractors to assist in delivering Services; we remain responsible for the quality of all deliverables</li>
+      <li>Digital products sold through our website are governed by these Terms and any product-specific terms communicated at purchase</li>
+    </ul>
+  </section>
+
+  <hr class="legal-divider">
+
+  <!-- 3 -->
+  <section class="legal-section reveal" id="t3">
+    <span class="section-num">03</span>
+    <h2>Client Responsibilities</h2>
+    <p>To enable us to deliver Services effectively, you agree to:</p>
+    <ul>
+      <li>Provide accurate, complete, and timely information, materials, access credentials, and feedback as reasonably requested</li>
+      <li>Designate an authorised point of contact with the authority to approve deliverables and provide direction</li>
+      <li>Ensure that any materials, content, images, or assets you provide to us do not infringe third-party intellectual property rights and are lawful for use in the way requested</li>
+      <li>Pay invoices in accordance with the agreed payment schedule</li>
+      <li>Notify us promptly of any changes to your business that may materially affect the scope or delivery of Services</li>
+    </ul>
+    <p>Delays caused by failure to fulfil these responsibilities may result in revised timelines, additional fees, or suspension of Services, for which CyberMagnet shall not be liable.</p>
+  </section>
+
+  <hr class="legal-divider">
+
+  <!-- 4 -->
+  <section class="legal-section reveal" id="t4">
+    <span class="section-num">04</span>
+    <h2>Payment &amp; Fees</h2>
+    <p>All fees, payment schedules, and methods will be specified in your Service Agreement or at the point of purchase.</p>
+    <ul>
+      <li><strong style="color:#dce8f5">Invoices</strong> are due within the number of days specified on the invoice (typically 7 or 14 days)</li>
+      <li><strong style="color:#dce8f5">Setup fees</strong> are generally non-refundable once work has commenced</li>
+      <li><strong style="color:#dce8f5">Monthly retainers</strong> are billed in advance and are non-refundable for the current billing period</li>
+      <li><strong style="color:#dce8f5">Late payments</strong> may incur a late fee of 1.5% per month on the outstanding balance</li>
+      <li><strong style="color:#dce8f5">Digital products</strong> are sold as-is with no refunds unless a product is materially defective or not as described</li>
+      <li>We reserve the right to suspend Services if payment is overdue by more than 14 days</li>
+      <li>All prices are in US dollars unless otherwise stated</li>
+    </ul>
+    <div class="legal-highlight">
+      <p>Chargebacks or payment disputes initiated without first contacting us to resolve the issue may result in immediate termination of Services and referral to collections.</p>
+    </div>
+  </section>
+
+  <hr class="legal-divider">
+
+  <!-- 5 -->
+  <section class="legal-section reveal" id="t5">
+    <span class="section-num">05</span>
+    <h2>Intellectual Property</h2>
+    <p><strong style="color:#dce8f5">Our pre-existing materials:</strong> All tools, methodologies, templates, frameworks, software, code libraries, and other proprietary materials developed by CyberMagnet prior to or independently of your engagement (&ldquo;Background IP&rdquo;) remain the sole property of CyberMagnet. We grant you a non-exclusive, non-transferable licence to use Background IP solely as incorporated into your deliverables.</p>
+    <p><strong style="color:#dce8f5">Client deliverables:</strong> Upon receipt of full payment for a project, CyberMagnet assigns to you all ownership rights in the custom deliverables created specifically for you (excluding Background IP, third-party assets, and stock content).</p>
+    <p><strong style="color:#dce8f5">Your materials:</strong> You retain full ownership of any content, images, data, branding, or materials you provide to us. You grant CyberMagnet a licence to use such materials solely for the purpose of delivering Services.</p>
+    <p><strong style="color:#dce8f5">Portfolio use:</strong> Unless you expressly request otherwise in writing, you grant CyberMagnet the right to display and reference completed work in our portfolio, case studies, and marketing materials.</p>
+    <ul>
+      <li>Digital products sold on our website remain the intellectual property of CyberMagnet; purchase grants you a personal, non-commercial, non-transferable licence to use the product unless otherwise specified</li>
+      <li>You may not resell, sublicense, reproduce, or distribute our digital products without written permission</li>
+    </ul>
+  </section>
+
+  <hr class="legal-divider">
+
+  <!-- 6 -->
+  <section class="legal-section reveal" id="t6">
+    <span class="section-num">06</span>
+    <h2>Confidentiality</h2>
+    <p>Both parties agree to treat as confidential any non-public business information, strategies, pricing, data, or materials disclosed during the course of an engagement (&ldquo;Confidential Information&rdquo;).</p>
+    <ul>
+      <li>Confidential Information shall not be disclosed to third parties without prior written consent, except as required by law</li>
+      <li>This obligation survives the termination of your engagement with us for a period of two (2) years</li>
+      <li>Confidentiality obligations do not apply to information that is publicly available, independently developed, or required to be disclosed by legal process</li>
+    </ul>
+  </section>
+
+  <hr class="legal-divider">
+
+  <!-- 7 -->
+  <section class="legal-section reveal" id="t7">
+    <span class="section-num">07</span>
+    <h2>Results &amp; Disclaimers</h2>
+    <p>We are committed to delivering high-quality work and genuine effort on every engagement. However:</p>
+    <div class="legal-highlight">
+      <p>Digital marketing results are inherently variable. CyberMagnet does not guarantee specific outcomes including but not limited to ranking positions, revenue figures, lead volumes, conversion rates, or return on investment. Past results described on our website or in case studies are illustrative and not a guarantee of future performance.</p>
+    </div>
+    <ul>
+      <li>Results depend on many factors outside our control, including market conditions, platform algorithm changes, client responsiveness, competition, and budget</li>
+      <li>Our website and services are provided &ldquo;as is&rdquo; without warranties of any kind, express or implied</li>
+      <li>We do not warrant that our website will be uninterrupted, error-free, or free of viruses</li>
+    </ul>
+  </section>
+
+  <hr class="legal-divider">
+
+  <!-- 8 -->
+  <section class="legal-section reveal" id="t8">
+    <span class="section-num">08</span>
+    <h2>Limitation of Liability</h2>
+    <p>To the maximum extent permitted by applicable law:</p>
+    <ul>
+      <li>CyberMagnet&rsquo;s total liability to you for any claim arising out of or related to our Services shall not exceed the total fees paid by you to CyberMagnet in the three (3) months preceding the claim</li>
+      <li>CyberMagnet shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, goodwill, or business opportunities, even if advised of the possibility of such damages</li>
+      <li>These limitations apply regardless of the legal theory under which the claim is brought</li>
+    </ul>
+  </section>
+
+  <hr class="legal-divider">
+
+  <!-- 9 -->
+  <section class="legal-section reveal" id="t9">
+    <span class="section-num">09</span>
+    <h2>Indemnification</h2>
+    <p>You agree to indemnify, defend, and hold harmless CyberMagnet, its members, employees, contractors, and agents from and against any claims, damages, losses, liabilities, costs, and expenses (including reasonable legal fees) arising from:</p>
+    <ul>
+      <li>Your breach of these Terms or any Service Agreement</li>
+      <li>Your use of our Services or website in violation of any applicable law</li>
+      <li>Any materials, content, or information you provide to us that infringes third-party rights or violates any law</li>
+      <li>Any claim by a third party arising from your business operations or the use of deliverables we provide</li>
+    </ul>
+  </section>
+
+  <hr class="legal-divider">
+
+  <!-- 10 -->
+  <section class="legal-section reveal" id="t10">
+    <span class="section-num">10</span>
+    <h2>Termination</h2>
+    <p><strong style="color:#dce8f5">By you:</strong> You may terminate an ongoing Service engagement by providing written notice as specified in your Service Agreement (typically 30 days). Fees for work completed and any non-cancellable third-party costs incurred up to the termination date remain payable.</p>
+    <p><strong style="color:#dce8f5">By us:</strong> We may suspend or terminate Services immediately if:</p>
+    <ul>
+      <li>You breach these Terms or a Service Agreement and fail to remedy the breach within 10 business days of written notice</li>
+      <li>Payment is overdue by more than 30 days</li>
+      <li>You engage in conduct that is abusive, harassing, fraudulent, or illegal</li>
+    </ul>
+    <p>Upon termination, licences granted to you for deliverables not yet fully paid for will revert to CyberMagnet until payment is received.</p>
+  </section>
+
+  <hr class="legal-divider">
+
+  <!-- 11 -->
+  <section class="legal-section reveal" id="t11">
+    <span class="section-num">11</span>
+    <h2>Website Use</h2>
+    <p>You agree not to use our website to:</p>
+    <ul>
+      <li>Engage in any unlawful, harmful, fraudulent, or deceptive activity</li>
+      <li>Transmit any viruses, malware, or other harmful code</li>
+      <li>Scrape, crawl, or harvest data from our website without express written permission</li>
+      <li>Attempt to gain unauthorised access to any part of our website or systems</li>
+      <li>Impersonate CyberMagnet or any employee or representative</li>
+    </ul>
+    <p>We reserve the right to restrict or terminate your access to our website at any time without notice.</p>
+  </section>
+
+  <hr class="legal-divider">
+
+  <!-- 12 -->
+  <section class="legal-section reveal" id="t12">
+    <span class="section-num">12</span>
+    <h2>Governing Law &amp; Disputes</h2>
+    <p>These Terms are governed by and construed in accordance with the laws of the <strong style="color:#dce8f5">State of Texas</strong>, without regard to its conflict of law principles.</p>
+    <p>Any dispute arising out of or relating to these Terms or your use of our Services shall be resolved as follows:</p>
+    <ul>
+      <li><strong style="color:#dce8f5">Informal resolution first</strong> &mdash; you agree to contact us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dab3b4bcb59ab9a3b8bfa8b7bbbdb4bfaef4b4bfae">[email&#160;protected]</a> and attempt to resolve any dispute informally before initiating formal proceedings</li>
+      <li><strong style="color:#dce8f5">Binding arbitration</strong> &mdash; if informal resolution fails within 30 days, disputes shall be submitted to binding arbitration in Dallas County, Texas, under the rules of the American Arbitration Association</li>
+      <li><strong style="color:#dce8f5">Class action waiver</strong> &mdash; you agree to resolve disputes only on an individual basis and waive the right to participate in a class action lawsuit or class-wide arbitration</li>
+      <li>Notwithstanding the above, either party may seek injunctive or other equitable relief in a court of competent jurisdiction</li>
+    </ul>
+  </section>
+
+  <hr class="legal-divider">
+
+  <!-- 13 -->
+  <section class="legal-section reveal" id="t13">
+    <span class="section-num">13</span>
+    <h2>Changes to These Terms</h2>
+    <p>We may revise these Terms at any time. Material changes will be communicated by updating the &ldquo;Last Updated&rdquo; date on this page. Continued use of our website or Services following any changes constitutes your acceptance of the revised Terms.</p>
+    <p>For ongoing service engagements, material changes to Terms that affect the commercial relationship will be communicated directly and will not apply retroactively to signed Service Agreements without your consent.</p>
+  </section>
+
+  <hr class="legal-divider">
+
+  <!-- 14 -->
+  <section class="legal-section reveal" id="t14">
+    <span class="section-num">14</span>
+    <h2>Contact Us</h2>
+    <p>Questions about these Terms? We&rsquo;re straightforward people &mdash; reach out and we&rsquo;ll give you a straight answer.</p>
+    <div class="legal-contact-box">
+      <h3>CyberMagnet Marketing Solutions LLC</h3>
+      <p><strong style="color:#dce8f5">Email:</strong> <a href="/cdn-cgi/l/email-protection#a2cbccc4cde2c1dbc0c7d0cfc3c5ccc7d68cccc7d6"><span class="__cf_email__" data-cfemail="670e09010827041e0502150a060009021349090213">[email&#160;protected]</span></a></p>
+      <p><strong style="color:#dce8f5">Phone:</strong> <a href="tel:+12144120861">(214) 412-0861</a></p>
+      <p><strong style="color:#dce8f5">Business Hours:</strong> Monday &ndash; Friday, 10:00 AM &ndash; 4:00 PM CT</p>
+      <p><strong style="color:#dce8f5">Location:</strong> Dallas, Texas, United States</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" aria-label="CyberMagnet" style="display:inline-flex;text-decoration:none;line-height:1;margin-bottom:10px">
+        <svg width="200" height="40" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <text x="100" y="17" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="2">CYBER</text>
+          <circle cx="6" cy="21" r="2" fill="#FF7A35"/>
+          <line x1="8" y1="21" x2="192" y2="21" stroke="#FF7A35" stroke-width="1.5"/>
+          <circle cx="194" cy="21" r="2" fill="#FF7A35"/>
+          <text x="100" y="36" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#FF7A35" text-anchor="middle" letter-spacing="2">MAGNET</text>
+        </svg>
+      </a>
+      <p>Premium digital marketing for growth-focused local businesses. Based in Dallas, TX.</p>
+      <div class="footer-socials">
+        <a href="https://www.tiktok.com/@cybermagnetms" class="social-btn" aria-label="TikTok">&#9834;</a>
+        <a href="https://www.linkedin.com/company/cybermagnet-marketing-solutions/" class="social-btn" aria-label="LinkedIn">in</a>
+        <a href="https://www.youtube.com/@cybermagnetms" class="social-btn" aria-label="YouTube">&#9654;</a>
+        <a href="https://www.instagram.com/cybermagnetms/" class="social-btn" aria-label="Instagram">&#9678;</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="/services/seo/">SEO &amp; Visibility</a></li>
+        <li><a href="/services/website-design/">Website Design</a></li>
+        <li><a href="/services/social-media-management/">Social Media</a></li>
+        <li><a href="/services/funnel-building/">Funnel Building</a></li>
+        <li><a href="/services/branding-packages/">Branding</a></li>
+        <li><a href="/services/">All Services</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Systems &amp; Products</h5>
+      <ul>
+        <li><a href="/systems/">All Systems</a></li>
+        <li><a href="/systems/appointment/">Appointment System</a></li>
+        <li><a href="/systems/local-business/">Local Business System</a></li>
+        <li><a href="/systems/ai-automation/">AI Automation System</a></li>
+        <li><a href="/systems/content-repurposing/">Content Repurposing</a></li>
+        <li><a href="/products/">Digital Products</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Company</h5>
+      <ul>
+        <li><a href="/portfolio/">Portfolio</a></li>
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/funnels/free-seo-audit/">Free SEO Audit</a></li>
+        <li><a href="/privacy/">Privacy Policy</a></li>
+        <li><a href="/terms/">Terms &amp; Conditions</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2025 CyberMagnet Marketing Solutions LLC &middot; Dallas, Texas</span>
+    <span><a href="/privacy/" style="color:inherit;text-decoration:none">Privacy Policy</a> &middot; <a href="/terms/" style="color:inherit;text-decoration:none">Terms of Service</a></span>
+  </div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cl
+<script>
+/* NAV SCROLL */
+const navEl = document.getElementById('main-nav');
+if(navEl) window.addEventListener('scroll', () => navEl.classList.toggle('scrolled', window.scrollY > 40));
+/* SCROLL REVEAL */
+const revEls = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.06, rootMargin:'0px 0px -20px 0px' });
+revEls.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

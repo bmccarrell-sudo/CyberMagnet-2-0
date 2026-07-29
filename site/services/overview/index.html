@@ -859,8 +859,7 @@ footer {
 .rd1{transition-delay:0.1s} .rd2{transition-delay:0.2s} .rd3{transition-delay:0.3s}
 
 /* ── MOBILE ──────────────────────────────────────────────── */
-@media(max-width:1000px){
-  .nav-links{display:none} .nav-ham{display:flex}
+ .nav-ham{display:flex}
   .tab-panel.active{grid-template-columns:1fr}
   .tab-visual{height:320px;margin-top:32px}
   .dd-inner{grid-template-columns:1fr;gap:48px}
@@ -1039,70 +1038,76 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
       <text x="110" y="42" font-family="'Montserrat','Syne',sans-serif" font-size="18" font-weight="900" fill="#D97706" text-anchor="middle" letter-spacing="2.5">MAGNET</text>
     </svg>
   </a>
-  <ul class="nav-links">
-
-    <!-- SERVICES dropdown (wide 2-col) -->
+  <ul class="nav-links" id="nav-links">
     <li class="nav-item">
-      <a href="/services/" class="active">Services <span class="nav-arrow">&#9660;</span></a>
-      <div class="nav-drop nav-drop-wide">
+      <a href="/services/" class="nav-parent">Solutions <span class="nav-arrow">&#9660;</span></a>
+      <div class="nav-drop nav-drop-wide" id="solutions-drop">
         <div class="drop-cols">
           <div class="drop-section">
-            <div class="drop-label">Marketing</div>
-            <a class="drop-link" href="/services/seo/"><div class="di" style="background:rgba(37,99,235,0.1)">&#128269;</div><div class="dt">SEO &amp; Visibility<span>Get found on Google</span></div></a>
-            <a class="drop-link" href="/services/google-business-profile/"><div class="di" style="background:rgba(37,99,235,0.1)">&#128205;</div><div class="dt">Google Business Profile<span>Dominate local search</span></div></a>
-            <a class="drop-link" href="/services/social-media-management/"><div class="di" style="background:rgba(37,99,235,0.1)">&#128241;</div><div class="dt">Social Media<span>Content that converts</span></div></a>
-            <a class="drop-link" href="/services/social-media-advertising/"><div class="di" style="background:rgba(37,99,235,0.1)">&#128202;</div><div class="dt">Paid Advertising<span>Meta &amp; Google Ads</span></div></a>
-            <a class="drop-link" href="/services/email-marketing/"><div class="di" style="background:rgba(37,99,235,0.1)">&#128140;</div><div class="dt">Email Marketing<span>Nurture &amp; retain</span></div></a>
-            <a class="drop-link" href="/services/cold-calling/"><div class="di" style="background:rgba(37,99,235,0.1)">&#128222;</div><div class="dt">Cold Calling<span>Outbound prospecting</span></div></a>
+            <div class="drop-label">AI &amp; Automation</div>
+            <a class="drop-link" href="/services/ai-phone-receptionist/"><div class="di" style="background:rgba(37,99,235,0.1)">&#129302;</div><div class="dt">AI Phone Receptionist<span>24/7 lead capture</span></div></a>
+            <a class="drop-link" href="/systems/ai-automation/"><div class="di" style="background:rgba(37,99,235,0.1)">&#9889;</div><div class="dt">AI Automation System<span>Eliminate manual tasks</span></div></a>
+            <a class="drop-link" href="/systems/appointment/"><div class="di" style="background:rgba(37,99,235,0.1)">&#128197;</div><div class="dt">Appointment System<span>Fill your calendar automatically</span></div></a>
           </div>
           <div class="drop-section">
-            <div class="drop-label">Creative &amp; Tech</div>
-            <a class="drop-link" href="/services/website-design/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127758;</div><div class="dt">Website Design<span>High-converting sites</span></div></a>
-            <a class="drop-link" href="/services/funnel-building/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127919;</div><div class="dt">Funnel Building<span>End-to-end funnels</span></div></a>
-            <a class="drop-link" href="/services/branding-packages/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127775;</div><div class="dt">Branding<span>Identity &amp; strategy</span></div></a>
-            <a class="drop-link" href="/services/graphic-design/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127912;</div><div class="dt">Graphic Design<span>Assets that stand out</span></div></a>
-            <a class="drop-link" href="/services/video-editing/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127916;</div><div class="dt">Video Editing<span>Reels, ads &amp; more</span></div></a>
-            <a class="drop-link" href="/services/ai-phone-receptionist/"><div class="di" style="background:rgba(0,180,220,0.1)">&#129302;</div><div class="dt">AI Receptionist<span>24/7 lead capture</span></div></a>
+            <div class="drop-label">Marketing &amp; Growth</div>
+            <a class="drop-link" href="/services/seo/"><div class="di" style="background:rgba(217,119,6,0.1)">&#128269;</div><div class="dt">SEO &amp; Local Dominance<span>Own your city on Google</span></div></a>
+            <a class="drop-link" href="/services/website-design/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127758;</div><div class="dt">Website Design<span>Built to convert</span></div></a>
+            <a class="drop-link" href="/services/funnel-building/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127919;</div><div class="dt">Funnel Building<span>Turn traffic into revenue</span></div></a>
+            <a class="drop-link" href="/services/social-media-advertising/"><div class="di" style="background:rgba(217,119,6,0.1)">&#128202;</div><div class="dt">Paid Advertising<span>Meta &amp; Google Ads</span></div></a>
+            <a class="drop-link" href="/services/branding-packages/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127775;</div><div class="dt">Brand Identity<span>Command premium pricing</span></div></a>
           </div>
         </div>
-        <div class="drop-section" style="border-top:1px solid rgba(255,255,255,0.05);margin-top:4px;padding-top:8px;padding-bottom:2px">
-          <a class="drop-link" href="/services/" style="color:#2563EB;font-weight:600"><div class="di" style="background:rgba(37,99,235,0.08)">&#9729;</div><div class="dt">View All Services <span>Full service catalogue</span></div></a>
+        <div style="padding:10px 16px 12px;border-top:1px solid rgba(255,255,255,0.05)">
+          <a href="/services/" style="font-size:0.78rem;color:var(--electric);font-weight:600;text-decoration:none">View all services &amp; systems →</a>
         </div>
       </div>
     </li>
-
-    <!-- SYSTEMS dropdown -->
-    <li class="nav-item">
-      <a href="/systems/">Systems <span class="nav-arrow">&#9660;</span></a>
-      <div class="nav-drop">
-        <div class="drop-section">
-          <div class="drop-label">Full Systems</div>
-          <a class="drop-link" href="/systems/appointment/"><div class="di" style="background:rgba(37,99,235,0.1)">&#128197;</div>Appointment System</a>
-          <a class="drop-link" href="/systems/local-business/"><div class="di" style="background:rgba(217,119,6,0.1)">&#128205;</div>Local Business System</a>
-          <a class="drop-link" href="/systems/ai-automation/"><div class="di" style="background:rgba(0,180,220,0.1)">&#129302;</div>AI Automation System</a>
-          <a class="drop-link" href="/systems/content-repurposing/"><div class="di" style="background:rgba(160,80,255,0.1)">&#127908;</div>Content Repurposing</a>
-        </div>
-        <div class="drop-section">
-          <div class="drop-label">Micro-Systems</div>
-          <a class="drop-link" href="/systems/micro/social-media/"><div class="di" style="background:rgba(217,119,6,0.1)">&#128247;</div>Social Media Audit</a>
-          <a class="drop-link" href="/systems/micro/web-analytics/"><div class="di" style="background:rgba(37,99,235,0.1)">&#127760;</div>Website Audit</a>
-          <a class="drop-link" href="/systems/micro/review-automation/"><div class="di" style="background:rgba(0,200,100,0.1)">&#128269;</div>Competitor Analysis</a>
-          <a class="drop-link" href="/systems/micro/graphics/"><div class="di" style="background:rgba(160,80,255,0.1)">&#127912;</div>Quick Fix Graphics</a>
-        </div>
-        <div class="drop-section">
-          <div class="drop-label">Digital Products</div>
-          <a class="drop-link" href="/products/"><div class="di" style="background:rgba(201,168,76,0.1)">&#128230;</div>All Digital Products</a>
-        </div>
-      </div>
-    </li>
-
-    <li><a href="/portfolio/">Portfolio</a></li>
+    <li><a href="/portfolio/">Results</a></li>
     <li><a href="/about/">About</a></li>
+    <li><a href="/products/">Products</a></li>
     <li><a href="/blog/">Blog</a></li>
   </ul>
-  <a href="/funnels/free-seo-audit/" class="nav-cta">Free SEO Audit</a>
-  <div class="nav-ham"><span></span><span></span><span></span></div>
+  <a href="/funnels/strategy-call/" class="nav-cta">Book a Call ↗</a>
+  <button class="nav-ham" id="nav-ham" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mob-overlay" id="mob-overlay"></div>
+<div class="mob-drawer" id="mob-drawer" aria-hidden="true">
+  <div class="mob-head">
+    <svg width="160" height="32" viewBox="0 0 220 46" xmlns="http://www.w3.org/2000/svg">
+      <text x="110" y="18" font-family="'Montserrat','Syne',sans-serif" font-size="18" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="2.5">CYBER</text>
+      <circle cx="6" cy="24" r="3" fill="#D97706"/><line x1="10" y1="24" x2="210" y2="24" stroke="#D97706" stroke-width="2"/><circle cx="214" cy="24" r="3" fill="#D97706"/>
+      <text x="110" y="42" font-family="'Montserrat','Syne',sans-serif" font-size="18" font-weight="900" fill="#D97706" text-anchor="middle" letter-spacing="2.5">MAGNET</text>
+    </svg>
+    <button class="mob-close" id="mob-close" aria-label="Close menu">&#x2715;</button>
+  </div>
+  <nav class="mob-nav">
+    <div class="mob-section-label">AI &amp; Automation</div>
+    <a href="/services/ai-phone-receptionist/" class="mob-link">&#129302; AI Phone Receptionist</a>
+    <a href="/systems/ai-automation/" class="mob-link">&#9889; AI Automation System</a>
+    <a href="/systems/appointment/" class="mob-link">&#128197; Appointment System</a>
+    <div class="mob-section-label">Marketing &amp; Growth</div>
+    <a href="/services/seo/" class="mob-link">&#128269; SEO &amp; Local Dominance</a>
+    <a href="/services/website-design/" class="mob-link">&#127758; Website Design</a>
+    <a href="/services/funnel-building/" class="mob-link">&#127919; Funnel Building</a>
+    <a href="/services/social-media-advertising/" class="mob-link">&#128202; Paid Advertising</a>
+    <a href="/services/branding-packages/" class="mob-link">&#127775; Brand Identity</a>
+    <div class="mob-divider"></div>
+    <a href="/portfolio/" class="mob-link">&#127942; Results &amp; Portfolio</a>
+    <a href="/about/" class="mob-link">&#128100; About Ben</a>
+    <a href="/products/" class="mob-link">&#128230; Digital Products</a>
+    <a href="/blog/" class="mob-link">&#128221; Blog</a>
+    <a href="/services/" class="mob-link" style="color:var(--electric)">&#9729; View All Services</a>
+  </nav>
+  <div class="mob-footer">
+    <a href="/funnels/strategy-call/" class="mob-cta">Book a Free Strategy Call ↗</a>
+    <a href="/funnels/free-seo-audit/" class="mob-cta-sec">Get a Free SEO Audit</a>
+  </div>
+</div>
 
 <!-- ── PAGE HERO ── -->
 <section class="page-hero">
@@ -1893,6 +1898,27 @@ revEls.forEach(el => obs.observe(el));
       });
     });
   }
+})();
+</script>
+<script>
+(function(){
+  var h=document.getElementById('nav-ham'),d=document.getElementById('mob-drawer'),o=document.getElementById('mob-overlay'),c=document.getElementById('mob-close');
+  if(!h||!d)return;
+  function open(){d.classList.add('open');o&&o.classList.add('open');h.classList.add('open');h.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+  function close(){d.classList.remove('open');o&&o.classList.remove('open');h.classList.remove('open');h.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+  h.addEventListener('click',function(){d.classList.contains('open')?close():open();});
+  if(c)c.addEventListener('click',close);
+  if(o)o.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  d.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+  // Desktop dropdown
+  document.querySelectorAll('.nav-item').forEach(function(item){
+    var drop=item.querySelector('.nav-drop');if(!drop)return;
+    drop.style.cssText='opacity:0;visibility:hidden;transform:translateY(-8px);pointer-events:none;transition:opacity 0.2s,transform 0.2s,visibility 0.2s';
+    var t;
+    item.addEventListener('mouseenter',function(){clearTimeout(t);drop.style.opacity='1';drop.style.visibility='visible';drop.style.transform='translateY(0)';drop.style.pointerEvents='auto';});
+    item.addEventListener('mouseleave',function(){t=setTimeout(function(){drop.style.opacity='0';drop.style.visibility='hidden';drop.style.transform='translateY(-8px)';drop.style.pointerEvents='none';},120);});
+  });
 })();
 </script>
 </body>

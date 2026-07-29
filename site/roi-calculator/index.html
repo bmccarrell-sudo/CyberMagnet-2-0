@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cold Calling & Appointment Setting — CyberMagnet</title>
-<meta name="description" content="Turn cold outreach into a booked-out calendar. CyberMagnet delivers professional cold calling & appointment setting services with transparent pricing and measurable results.">
+<title>AI Receptionist ROI Calculator | CyberMagnet</title>
+<meta name="description" content="Find out exactly how much revenue you're losing to missed calls every month — and what an AI receptionist would recover for your business.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
@@ -471,10 +471,8 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
             <a class="drop-link" href="/services/branding-packages/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127775;</div><div class="dt">Brand Identity<span>Command premium pricing</span></div></a>
           </div>
         </div>
-        <div style="padding:10px 16px 12px;border-top:1px solid rgba(255,255,255,0.05);display:flex;gap:16px;flex-wrap:wrap">
-          <a href="/services/" style="font-size:0.78rem;color:var(--electric);font-weight:600;text-decoration:none">View all services →</a>
-          <a href="/ai-systems/" style="font-size:0.78rem;color:var(--orange);font-weight:600;text-decoration:none">🤖 AI Systems overview →</a>
-          <a href="/how-we-work/" style="font-size:0.78rem;color:var(--gray-400);font-weight:600;text-decoration:none">How we work →</a>
+        <div style="padding:10px 16px 12px;border-top:1px solid rgba(255,255,255,0.05)">
+          <a href="/services/" style="font-size:0.78rem;color:var(--electric);font-weight:600;text-decoration:none">View all services &amp; systems →</a>
         </div>
       </div>
     </li>
@@ -512,10 +510,6 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
     <a href="/services/social-media-advertising/" class="mob-link">&#128202; Paid Advertising</a>
     <a href="/services/branding-packages/" class="mob-link">&#127775; Brand Identity</a>
     <div class="mob-divider"></div>
-    <a href="/ai-systems/" class="mob-link">&#129302; AI Systems Overview</a>
-    <a href="/how-we-work/" class="mob-link">&#128338; How We Work</a>
-    <a href="/roi-calculator/" class="mob-link" style="color:#34D399">&#128176; ROI Calculator</a>
-    <div class="mob-divider"></div>
     <a href="/portfolio/" class="mob-link">&#127942; Results &amp; Portfolio</a>
     <a href="/about/" class="mob-link">&#128100; About Ben</a>
     <a href="/products/" class="mob-link">&#128230; Digital Products</a>
@@ -528,116 +522,304 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
   </div>
 </div>
 
-<section class="page-hero">
+<section class="page-hero" style="min-height:auto;padding:calc(var(--nav-h) + 60px) 6% 60px">
   <canvas id="hero-canvas"></canvas>
   <div class="hero-grid"></div>
-  <div class="hero-orb"></div>
-  <div class="hero-content">
-    <div class="breadcrumb">
-      <a href="/">Home</a><span>›</span>
-      <a href="/services/">Services</a><span>›</span>
-      <span>Cold Calling & Appointment Setting</span>
-    </div>
-    <span class="hero-icon">📞</span>
-    <div class="hero-badge">Cold Calling & Appointment Setting</div>
-    <h1 class="hero-h1">Turn cold outreach into a booked-out calendar.</h1>
-    <p class="hero-tagline">Professional cold calling & appointment setting — delivered with transparent pricing, measurable results, and no long-term lock-in.</p>
+  <div class="hero-content" style="max-width:680px">
+    <span class="hero-icon">💰</span>
+    <div class="hero-badge">ROI Calculator</div>
+    <h1 class="hero-h1" style="font-size:clamp(2.2rem,5vw,3.4rem)">How much are missed calls<br>costing you <span class="acc-o">every month?</span></h1>
+    <p class="hero-tagline">Enter your numbers below. We'll show you exactly what you're losing — and what an AI receptionist would recover.</p>
   </div>
 </section>
 
-<section class="intro-section">
-  <div class="intro-inner">
-    <div class="intro-left reveal">
-      <div class="intro-label">What We Do</div>
-      <h2 class="intro-h2">The CyberMagnet Approach</h2>
-      <p class="intro-body">Most businesses have a leads problem disguised as a sales problem. The truth is, a consistent pipeline of qualified appointments is the single fastest lever you can pull to accelerate revenue — and it requires skill, persistence, and a proven system. CyberMagnet's cold calling and appointment setting service puts a professional, trained caller in your corner: scripted, strategic, and focused entirely on booking meetings with the right prospects so your team can focus on closing.</p>
-    </div>
-    <div class="intro-right">
-      <div class="info-card accent-card reveal rd1">
-        <h4>Who This Is For</h4>
-        <p>Service businesses, B2B companies, consultants, coaches, and any organisation that sells via phone, video call, or in-person meetings. Ideal for businesses looking to build a predictable, repeatable pipeline without the overhead of a full-time SDR.</p>
+
+<section style="padding:clamp(48px,7vw,80px) 6%;background:var(--black)">
+  <div style="max-width:840px;margin:0 auto">
+
+    <!-- Calculator card -->
+    <div style="background:rgba(10,20,35,0.9);border:1px solid rgba(37,99,235,0.2);border-radius:18px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,0.5)">
+
+      <!-- Tab row -->
+      <div style="display:flex;border-bottom:1px solid rgba(255,255,255,0.06)">
+        <button class="roi-tab active" data-calc="receptionist" style="flex:1;padding:16px;font-family:var(--font-d);font-size:0.84rem;font-weight:700;background:rgba(37,99,235,0.08);color:#93C5FD;border:none;border-bottom:2px solid var(--electric);cursor:pointer;transition:all 0.2s">📞 AI Receptionist ROI</button>
+        <button class="roi-tab" data-calc="seo" style="flex:1;padding:16px;font-family:var(--font-d);font-size:0.84rem;font-weight:700;background:transparent;color:var(--gray-600);border:none;border-bottom:2px solid transparent;cursor:pointer;transition:all 0.2s">🔍 SEO Revenue Impact</button>
+        <button class="roi-tab" data-calc="retainer" style="flex:1;padding:16px;font-family:var(--font-d);font-size:0.84rem;font-weight:700;background:transparent;color:var(--gray-600);border:none;border-bottom:2px solid transparent;cursor:pointer;transition:all 0.2s">📈 Retainer ROI</button>
       </div>
-      <div class="info-card reveal rd2">
-        <h4>Why CyberMagnet</h4>
-        <p>We don't read from a generic script and hope for the best. Every campaign starts with understanding your offer, your ideal client, and your objections — then we build a calling strategy around outcomes, not activity. You get transparent reporting, honest communication, and callers who represent your brand with professionalism.</p>
+
+      <!-- CALCULATOR 1: AI Receptionist -->
+      <div id="calc-receptionist" class="roi-panel" style="padding:32px">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:28px">
+
+          <div>
+            <label style="display:block;font-size:0.74rem;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px">Average job/service value ($)</label>
+            <div style="position:relative">
+              <span style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--gray-400);font-weight:600">$</span>
+              <input id="r_job_value" type="number" value="1200" min="0" step="50"
+                style="width:100%;padding:12px 12px 12px 28px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:9px;color:#fff;font-size:1.05rem;font-weight:600;outline:none;font-family:var(--font-d);transition:border-color 0.15s"
+                onfocus="this.style.borderColor='var(--electric)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'" oninput="calcReceptionist()">
+            </div>
+          </div>
+
+          <div>
+            <label style="display:block;font-size:0.74rem;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px">Estimated missed calls per month</label>
+            <input id="r_missed" type="number" value="15" min="0" step="1"
+              style="width:100%;padding:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:9px;color:#fff;font-size:1.05rem;font-weight:600;outline:none;font-family:var(--font-d);transition:border-color 0.15s"
+              onfocus="this.style.borderColor='var(--electric)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'" oninput="calcReceptionist()">
+          </div>
+
+          <div>
+            <label style="display:block;font-size:0.74rem;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px">% of callers who don't call back</label>
+            <div style="position:relative">
+              <input id="r_no_callback" type="number" value="62" min="0" max="100" step="1"
+                style="width:100%;padding:12px 28px 12px 12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:9px;color:#fff;font-size:1.05rem;font-weight:600;outline:none;font-family:var(--font-d);transition:border-color 0.15s"
+                onfocus="this.style.borderColor='var(--electric)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'" oninput="calcReceptionist()">
+              <span style="position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--gray-400);font-weight:600">%</span>
+            </div>
+            <div style="font-size:0.72rem;color:var(--gray-600);margin-top:5px">Industry average: 62%</div>
+          </div>
+
+          <div>
+            <label style="display:block;font-size:0.74rem;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px">AI receptionist capture rate</label>
+            <div style="position:relative">
+              <input id="r_capture" type="number" value="70" min="0" max="100" step="1"
+                style="width:100%;padding:12px 28px 12px 12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:9px;color:#fff;font-size:1.05rem;font-weight:600;outline:none;font-family:var(--font-d);transition:border-color 0.15s"
+                onfocus="this.style.borderColor='var(--electric)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'" oninput="calcReceptionist()">
+              <span style="position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--gray-400);font-weight:600">%</span>
+            </div>
+            <div style="font-size:0.72rem;color:var(--gray-600);margin-top:5px">Realistic for most businesses: 60–80%</div>
+          </div>
+        </div>
+
+        <!-- Results -->
+        <div style="background:linear-gradient(135deg,rgba(37,99,235,0.08),rgba(217,119,6,0.05));border:1px solid rgba(37,99,235,0.18);border-radius:12px;padding:24px">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:18px">
+            <div style="text-align:center">
+              <div style="font-size:0.7rem;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px">Monthly leads lost</div>
+              <div id="r_lost_leads" style="font-family:var(--font-d);font-size:2rem;font-weight:800;color:var(--red,#F87171)">9</div>
+            </div>
+            <div style="text-align:center;border-left:1px solid rgba(255,255,255,0.06);border-right:1px solid rgba(255,255,255,0.06)">
+              <div style="font-size:0.7rem;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px">Monthly revenue lost</div>
+              <div id="r_rev_lost" style="font-family:var(--font-d);font-size:2rem;font-weight:800;color:var(--red,#F87171)">$11,160</div>
+            </div>
+            <div style="text-align:center">
+              <div style="font-size:0.7rem;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px">AI could recover/mo</div>
+              <div id="r_recovered" style="font-family:var(--font-d);font-size:2rem;font-weight:800;color:#34D399">$7,812</div>
+            </div>
+          </div>
+          <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+            <div>
+              <div style="font-size:0.76rem;color:var(--gray-600);margin-bottom:3px">AI receptionist cost: ~$500/mo · Net monthly gain:</div>
+              <div id="r_net_gain" style="font-family:var(--font-d);font-size:1.5rem;font-weight:800;color:#34D399">$7,312/mo</div>
+            </div>
+            <a href="/funnels/strategy-call/" class="btn-primary" style="padding:11px 22px;font-size:0.86rem;white-space:nowrap">Get This Set Up →</a>
+          </div>
+        </div>
       </div>
-    </div>
+
+      <!-- CALCULATOR 2: SEO -->
+      <div id="calc-seo" class="roi-panel" style="padding:32px;display:none">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:28px">
+          <div>
+            <label style="display:block;font-size:0.74rem;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px">Monthly website visitors (current)</label>
+            <input id="s_visitors" type="number" value="300" min="0" step="10"
+              style="width:100%;padding:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:9px;color:#fff;font-size:1.05rem;font-weight:600;outline:none;font-family:var(--font-d);transition:border-color 0.15s"
+              onfocus="this.style.borderColor='var(--electric)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'" oninput="calcSeo()">
+          </div>
+          <div>
+            <label style="display:block;font-size:0.74rem;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px">Current lead conversion rate</label>
+            <div style="position:relative">
+              <input id="s_conv" type="number" value="3" min="0" max="100" step="0.5"
+                style="width:100%;padding:12px 28px 12px 12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:9px;color:#fff;font-size:1.05rem;font-weight:600;outline:none;font-family:var(--font-d);transition:border-color 0.15s"
+                onfocus="this.style.borderColor='var(--electric)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'" oninput="calcSeo()">
+              <span style="position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--gray-400);font-weight:600">%</span>
+            </div>
+          </div>
+          <div>
+            <label style="display:block;font-size:0.74rem;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px">Average value per new customer ($)</label>
+            <div style="position:relative">
+              <span style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--gray-400);font-weight:600">$</span>
+              <input id="s_value" type="number" value="1500" min="0" step="50"
+                style="width:100%;padding:12px 12px 12px 28px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:9px;color:#fff;font-size:1.05rem;font-weight:600;outline:none;font-family:var(--font-d);transition:border-color 0.15s"
+                onfocus="this.style.borderColor='var(--electric)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'" oninput="calcSeo()">
+            </div>
+          </div>
+          <div>
+            <label style="display:block;font-size:0.74rem;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px">Expected traffic increase with SEO</label>
+            <div style="position:relative">
+              <input id="s_increase" type="number" value="150" min="0" step="10"
+                style="width:100%;padding:12px 28px 12px 12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:9px;color:#fff;font-size:1.05rem;font-weight:600;outline:none;font-family:var(--font-d);transition:border-color 0.15s"
+                onfocus="this.style.borderColor='var(--electric)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'" oninput="calcSeo()">
+              <span style="position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--gray-400);font-weight:600">%</span>
+            </div>
+            <div style="font-size:0.72rem;color:var(--gray-600);margin-top:5px">Typical CyberMagnet result: 100–340% in 6 months</div>
+          </div>
+        </div>
+        <div style="background:linear-gradient(135deg,rgba(37,99,235,0.08),rgba(217,119,6,0.05));border:1px solid rgba(37,99,235,0.18);border-radius:12px;padding:24px">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:18px">
+            <div style="text-align:center">
+              <div style="font-size:0.7rem;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px">New monthly visitors</div>
+              <div id="s_new_visitors" style="font-family:var(--font-d);font-size:2rem;font-weight:800;color:#93C5FD">750</div>
+            </div>
+            <div style="text-align:center;border-left:1px solid rgba(255,255,255,0.06);border-right:1px solid rgba(255,255,255,0.06)">
+              <div style="font-size:0.7rem;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px">Additional leads/mo</div>
+              <div id="s_new_leads" style="font-family:var(--font-d);font-size:2rem;font-weight:800;color:#93C5FD">13</div>
+            </div>
+            <div style="text-align:center">
+              <div style="font-size:0.7rem;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px">Additional revenue/mo</div>
+              <div id="s_new_rev" style="font-family:var(--font-d);font-size:2rem;font-weight:800;color:#34D399">$19,500</div>
+            </div>
+          </div>
+          <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+            <div>
+              <div style="font-size:0.76rem;color:var(--gray-600);margin-bottom:3px">SEO investment: ~$1,200/mo · Monthly ROI:</div>
+              <div id="s_roi" style="font-family:var(--font-d);font-size:1.5rem;font-weight:800;color:#34D399">16.3×</div>
+            </div>
+            <a href="/funnels/strategy-call/" class="btn-primary" style="padding:11px 22px;font-size:0.86rem;white-space:nowrap">Get an SEO Audit →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CALCULATOR 3: Retainer -->
+      <div id="calc-retainer" class="roi-panel" style="padding:32px;display:none">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:28px">
+          <div>
+            <label style="display:block;font-size:0.74rem;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px">Monthly revenue (current)</label>
+            <div style="position:relative">
+              <span style="position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--gray-400);font-weight:600">$</span>
+              <input id="ret_rev" type="number" value="25000" min="0" step="1000"
+                style="width:100%;padding:12px 12px 12px 28px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:9px;color:#fff;font-size:1.05rem;font-weight:600;outline:none;font-family:var(--font-d);transition:border-color 0.15s"
+                onfocus="this.style.borderColor='var(--electric)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'" oninput="calcRetainer()">
+            </div>
+          </div>
+          <div>
+            <label style="display:block;font-size:0.74rem;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px">Retainer package</label>
+            <select id="ret_package" onchange="calcRetainer()"
+              style="width:100%;padding:12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:9px;color:#fff;font-size:1rem;font-weight:600;outline:none;font-family:var(--font-d)">
+              <option value="750">Starter — $750/mo</option>
+              <option value="1500" selected>Launch — $1,500/mo</option>
+              <option value="3500">Growth — $3,500/mo</option>
+              <option value="7500">Command — $7,500/mo</option>
+            </select>
+          </div>
+          <div style="grid-column:span 2">
+            <label style="display:block;font-size:0.74rem;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px">Expected revenue growth in 6 months</label>
+            <div style="position:relative">
+              <input id="ret_growth" type="number" value="40" min="0" max="500" step="5"
+                style="width:100%;padding:12px 28px 12px 12px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:9px;color:#fff;font-size:1.05rem;font-weight:600;outline:none;font-family:var(--font-d);transition:border-color 0.15s"
+                onfocus="this.style.borderColor='var(--electric)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'" oninput="calcRetainer()">
+              <span style="position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--gray-400);font-weight:600">%</span>
+            </div>
+            <div style="font-size:0.72rem;color:var(--gray-600);margin-top:5px">Conservative estimate for Launch/Growth: 30–60% in 6 months</div>
+          </div>
+        </div>
+        <div style="background:linear-gradient(135deg,rgba(37,99,235,0.08),rgba(217,119,6,0.05));border:1px solid rgba(37,99,235,0.18);border-radius:12px;padding:24px">
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:18px">
+            <div style="text-align:center">
+              <div style="font-size:0.7rem;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px">6-month investment</div>
+              <div id="ret_cost" style="font-family:var(--font-d);font-size:2rem;font-weight:800;color:#93C5FD">$9,000</div>
+            </div>
+            <div style="text-align:center;border-left:1px solid rgba(255,255,255,0.06);border-right:1px solid rgba(255,255,255,0.06)">
+              <div style="font-size:0.7rem;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px">New monthly revenue</div>
+              <div id="ret_new_rev" style="font-family:var(--font-d);font-size:2rem;font-weight:800;color:#93C5FD">$35,000</div>
+            </div>
+            <div style="text-align:center">
+              <div style="font-size:0.7rem;font-weight:700;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px">6-month net gain</div>
+              <div id="ret_net" style="font-family:var(--font-d);font-size:2rem;font-weight:800;color:#34D399">$51,000</div>
+            </div>
+          </div>
+          <div style="border-top:1px solid rgba(255,255,255,0.06);padding-top:16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+            <div>
+              <div style="font-size:0.76rem;color:var(--gray-600);margin-bottom:3px">6-month return on investment:</div>
+              <div id="ret_roi" style="font-family:var(--font-d);font-size:1.5rem;font-weight:800;color:#34D399">5.7× ROI</div>
+            </div>
+            <a href="/funnels/strategy-call/" class="btn-primary" style="padding:11px 22px;font-size:0.86rem;white-space:nowrap">Book a Strategy Call →</a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /calculator card -->
+
+    <!-- Disclaimer -->
+    <p style="text-align:center;font-size:0.76rem;color:var(--gray-600);margin-top:20px;line-height:1.6">
+      These projections are estimates based on industry averages and typical CyberMagnet client results. Your actual results will depend on your market, service quality, and execution. We'll give you realistic projections specific to your business on your strategy call.
+    </p>
+
   </div>
 </section>
 
-<section class="pricing-section" id="pricing">
-  <div class="pricing-header reveal">
-    <div class="sec-label-c"><div class="sec-label">Pricing</div></div>
-    <h2 class="sec-h2">Choose Your Tier</h2>
-    <p class="sec-sub">Every tier includes professional delivery, transparent communication, and no hidden fees. Upgrade or change at any time.</p>
-  </div>
-  <div class="tiers-grid reveal rd1">
-    
-    <div class="tier-card ">
-      <div class="tier-header">
-        
-        <div class="tier-name">Starter</div>
-        <div class="tier-price">$300</div>
-        <p class="tier-desc">Get your outreach off the ground with a focused calling campaign targeting your ideal clients.</p>
-      </div>
-      <ul class="tier-features"><li class="tier-item"><span class="ti-check">✓</span><span>100 targeted cold calls per month</span></li>
-<li class="tier-item"><span class="ti-check">✓</span><span>Basic call script tailored to your offer</span></li>
-<li class="tier-item"><span class="ti-check">✓</span><span>Detailed lead notes after every call</span></li>
-<li class="tier-item"><span class="ti-check">✓</span><span>1 confirmed appointment per week (target)</span></li>
-<li class="tier-item"><span class="ti-check">✓</span><span>Weekly summary report</span></li></ul>
-      <a href="/contact/" class="tier-cta tier-cta-secondary">
-        Get Started →
-      </a>
-    </div>
-    <div class="tier-card featured">
-      <div class="tier-header">
-        <span class="tier-badge">Popular</span>
-        <div class="tier-name">Growth</div>
-        <div class="tier-price">$600</div>
-        <p class="tier-desc">Scale your outreach with a more intensive campaign, custom scripting, and CRM-ready data.</p>
-      </div>
-      <ul class="tier-features"><li class="tier-item"><span class="ti-check">✓</span><span>250 targeted cold calls per month</span></li>
-<li class="tier-item"><span class="ti-check">✓</span><span>Custom script with objection handling</span></li>
-<li class="tier-item"><span class="ti-check">✓</span><span>CRM-ready lead notes and dispositions</span></li>
-<li class="tier-item"><span class="ti-check">✓</span><span>2–4 confirmed appointments per week (target)</span></li>
-<li class="tier-item"><span class="ti-check">✓</span><span>Weekly performance analysis</span></li>
-<li class="tier-item"><span class="ti-check">✓</span><span>Priority communication channel</span></li></ul>
-      <a href="/contact/" class="tier-cta tier-cta-primary">
-        Get Started ↗
-      </a>
-    </div>
-    <div class="tier-card ">
-      <div class="tier-header">
-        
-        <div class="tier-name">Premium</div>
-        <div class="tier-price">$1,200</div>
-        <p class="tier-desc">A fully managed, high-volume appointment machine with dedicated calling, daily visibility, and strategic oversight.</p>
-      </div>
-      <ul class="tier-features"><li class="tier-item"><span class="ti-check">✓</span><span>600+ targeted cold calls per month</span></li>
-<li class="tier-item"><span class="ti-check">✓</span><span>Full script with objection handling playbook</span></li>
-<li class="tier-item"><span class="ti-check">✓</span><span>Multi-touch follow-up sequences</span></li>
-<li class="tier-item"><span class="ti-check">✓</span><span>Dedicated caller assigned to your account</span></li>
-<li class="tier-item"><span class="ti-check">✓</span><span>Daily call updates and lead status reports</span></li>
-<li class="tier-item"><span class="ti-check">✓</span><span>Live KPI dashboard access</span></li>
-<li class="tier-item"><span class="ti-check">✓</span><span>Monthly strategy call with your account lead</span></li>
-<li class="tier-item"><span class="ti-check">✓</span><span>Priority support</span></li></ul>
-      <a href="/contact/" class="tier-cta tier-cta-secondary">
-        Get Started →
-      </a>
-    </div>
+<!-- ── CTA ─────────────────────────────────────────────────────────────────── -->
+<section class="cta-banner" style="text-align:center;padding:clamp(64px,8vw,96px) 6%">
+  <h2 class="reveal" style="font-family:var(--font-d);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;color:#fff;line-height:1.15;margin-bottom:14px">Want numbers specific<br><span style="color:var(--orange)">to your business?</span></h2>
+  <p class="reveal" style="font-size:0.95rem;color:var(--gray-400);max-width:460px;margin:0 auto 28px;line-height:1.75">Book a free strategy call. We'll walk through your actual numbers and show you the real opportunity — with no obligation to hire us.</p>
+  <div class="hero-ctas reveal" style="justify-content:center">
+    <a href="/funnels/strategy-call/" class="btn-primary">Book a Free Strategy Call ↗</a>
   </div>
 </section>
 
-<div class="cta-banner">
-  <h2 class="reveal">Not sure which tier is right for you?</h2>
-  <p class="reveal">Book a free strategy call. We'll review your situation and recommend exactly what you need — no upselling, no pressure.</p>
-  <div class="cta-btns reveal">
-    <a href="/contact/" class="btn-primary">Book Free Strategy Call ↗</a>
-  <button class="svc-quiz-btn" onclick="window['openSvcQuiz_cold-calling']()">&#9679; Is this service right for my business?</button>
-    <a href="/services/" class="btn-secondary">← All Services</a>
-  </div>
-</div>
+<script>
+function fmt(n){return'$'+Math.round(n).toLocaleString('en-US');}
 
+function calcReceptionist(){
+  var jv=parseFloat(document.getElementById('r_job_value').value)||0;
+  var mc=parseFloat(document.getElementById('r_missed').value)||0;
+  var ncb=parseFloat(document.getElementById('r_no_callback').value)||0;
+  var cap=parseFloat(document.getElementById('r_capture').value)||0;
+  var lost=Math.round(mc*(ncb/100));
+  var rev_lost=lost*jv;
+  var recovered=Math.round(lost*(cap/100))*jv;
+  var net=recovered-500;
+  document.getElementById('r_lost_leads').textContent=lost;
+  document.getElementById('r_rev_lost').textContent=fmt(rev_lost);
+  document.getElementById('r_recovered').textContent=fmt(recovered);
+  document.getElementById('r_net_gain').textContent=fmt(net)+'/mo';
+}
+
+function calcSeo(){
+  var v=parseFloat(document.getElementById('s_visitors').value)||0;
+  var conv=parseFloat(document.getElementById('s_conv').value)||0;
+  var val=parseFloat(document.getElementById('s_value').value)||0;
+  var inc=parseFloat(document.getElementById('s_increase').value)||0;
+  var newv=Math.round(v*(inc/100));
+  var newleads=Math.round(newv*(conv/100));
+  var newrev=newleads*val;
+  var roi=1200>0?(newrev/1200).toFixed(1)+'×':'—';
+  document.getElementById('s_new_visitors').textContent=newv.toLocaleString();
+  document.getElementById('s_new_leads').textContent=newleads;
+  document.getElementById('s_new_rev').textContent=fmt(newrev);
+  document.getElementById('s_roi').textContent=roi;
+}
+
+function calcRetainer(){
+  var rev=parseFloat(document.getElementById('ret_rev').value)||0;
+  var pkg=parseFloat(document.getElementById('ret_package').value)||1500;
+  var growth=parseFloat(document.getElementById('ret_growth').value)||0;
+  var cost6=pkg*6;
+  var newrev=Math.round(rev*(1+growth/100));
+  var addrev6=(newrev-rev)*6;
+  var net=addrev6-cost6;
+  var roi=cost6>0?((addrev6/cost6)).toFixed(1)+'× ROI':'—';
+  document.getElementById('ret_cost').textContent=fmt(cost6);
+  document.getElementById('ret_new_rev').textContent=fmt(newrev);
+  document.getElementById('ret_net').textContent=fmt(net);
+  document.getElementById('ret_roi').textContent=roi;
+}
+
+// Tab switching
+document.querySelectorAll('.roi-tab').forEach(function(tab){
+  tab.addEventListener('click',function(){
+    document.querySelectorAll('.roi-tab').forEach(function(t){
+      t.style.background='transparent';t.style.color='var(--gray-600)';t.style.borderBottom='2px solid transparent';
+    });
+    tab.style.background='rgba(37,99,235,0.08)';tab.style.color='#93C5FD';tab.style.borderBottom='2px solid var(--electric)';
+    document.querySelectorAll('.roi-panel').forEach(function(p){p.style.display='none';});
+    document.getElementById('calc-'+tab.dataset.calc).style.display='block';
+  });
+});
+
+// Init
+calcReceptionist(); calcSeo(); calcRetainer();
+</script>
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
@@ -718,43 +900,43 @@ revEls.forEach(el => obs.observe(el));
 </script>
 <script>
 (function(){
-var D={k:'cold-calling',t:'Cold Calling',qs:[['Are you currently doing any outbound prospecting?',[['No — entirely reliant on inbound',3],['Occasionally but inconsistently',3],['Yes but our conversion rate is low',3],['Yes and generating results — want to scale',2]]],['What is your biggest outbound challenge?',[['Getting past the opener without sounding scripted',3],['Handling objections and rejections',3],['Getting a clear next step from every call',3],['Staying consistent and motivated',2]]],['What is your target market?',[['Local consumers — B2C services',3],['Small businesses — B2B',3],['Mid-market or enterprise',2],['Mixed audience',2]]],['Do you have a CRM to track your outbound pipeline?',[['No — just spreadsheets or nothing',3],['Yes but barely used',2],['Yes and it works well',2],['We use GoHighLevel or similar',3]]]],s:0,a:[]};
-function o(){D.s=0;D.a=[];document.getElementById('sqo-cold-calling').classList.add('open');document.body.style.overflow='hidden';r();}
-function cl(){document.getElementById('sqo-cold-calling').classList.remove('open');document.body.style.overflow='';}
+var D={k:'seo',t:'SEO &amp; Visibility',qs:[['Where do you currently appear in Google search for your main service keywords?',[['Page 1 top 3 — but want to stay there',1],['Page 1 but not the top 3',2],['Page 2 or beyond — largely invisible',3],['I honestly don\'t know',3]]],['How does most of your new business currently come in?',[['Word of mouth only — no reliable online source',3],['A mix of referrals and some online',2],['Mostly online already',2],['Paid ads — I want organic to reduce ad spend',3]]],['Is your Google Business Profile set up and verified?',[['Yes — fully optimised with photos and reviews',1],['Yes but barely filled out',3],['Partially done — never finished',3],['No or not sure',3]]],['How long are you prepared to invest before expecting significant SEO results?',[['I need leads this week',1],['1 to 2 months',1],['3 to 6 months — realistic mindset',3],['6 months or more — building for the long term',3]]]],s:0,a:[]};
+function o(){D.s=0;D.a=[];document.getElementById('sqo-seo').classList.add('open');document.body.style.overflow='hidden';r();}
+function cl(){document.getElementById('sqo-seo').classList.remove('open');document.body.style.overflow='';}
 function r(){
-  var m=document.getElementById('sqm-cold-calling'),tot=D.qs.length;
+  var m=document.getElementById('sqm-seo'),tot=D.qs.length;
   if(D.s<tot){
     var q=D.qs[D.s],cur=D.a[D.s],pct=Math.round(D.s/tot*100);
-    var oh='';for(var i=0;i<q[1].length;i++){var sel=cur===i?' sel':'';oh+='<div class="sq-opt'+sel+'" onclick="sqSel_cold-calling('+i+')"><div class="sq-radio">'+(cur===i?'<div class="sq-dot"></div>':'')+'</div><div class="sq-ot">'+q[1][i][0]+'</div></div>';}
-    m.innerHTML='<button class="sq-x" onclick="sqCl_cold-calling()">&#215;</button><div class="sq-head"><div class="sq-badge">&#10003; Is This Right For Me?</div><div class="sq-title">'+D.t+'</div><div class="sq-sub">4 quick questions to see if this is the right fit for your business.</div></div><div class="sq-prog"><div class="sq-track"><div class="sq-fill" style="width:'+pct+'%"></div></div><div class="sq-lbl">'+(D.s+1)+' of '+tot+'</div></div><div class="sq-body"><div class="sq-q">'+q[0]+'</div><div class="sq-opts">'+oh+'</div><div class="sq-nav">'+(D.s>0?'<button class="sq-back" onclick="sqBk_cold-calling()">&#8592; Back</button>':'<span></span>')+'<button class="sq-next" onclick="sqNx_cold-calling()"'+(cur===undefined?' disabled':'')+'>'+(D.s===tot-1?'See my result &#8594;':'Next &#8594;')+'</button></div></div>';
+    var oh='';for(var i=0;i<q[1].length;i++){var sel=cur===i?' sel':'';oh+='<div class="sq-opt'+sel+'" onclick="sqSel_seo('+i+')"><div class="sq-radio">'+(cur===i?'<div class="sq-dot"></div>':'')+'</div><div class="sq-ot">'+q[1][i][0]+'</div></div>';}
+    m.innerHTML='<button class="sq-x" onclick="sqCl_seo()">&#215;</button><div class="sq-head"><div class="sq-badge">&#10003; Is This Right For Me?</div><div class="sq-title">'+D.t+'</div><div class="sq-sub">4 quick questions to see if this is the right fit for your business.</div></div><div class="sq-prog"><div class="sq-track"><div class="sq-fill" style="width:'+pct+'%"></div></div><div class="sq-lbl">'+(D.s+1)+' of '+tot+'</div></div><div class="sq-body"><div class="sq-q">'+q[0]+'</div><div class="sq-opts">'+oh+'</div><div class="sq-nav">'+(D.s>0?'<button class="sq-back" onclick="sqBk_seo()">&#8592; Back</button>':'<span></span>')+'<button class="sq-next" onclick="sqNx_seo()"'+(cur===undefined?' disabled':'')+'>'+(D.s===tot-1?'See my result &#8594;':'Next &#8594;')+'</button></div></div>';
   }else{
     var sc=0;for(var i=0;i<D.a.length;i++)sc+=D.qs[i][1][D.a[i]][1];
     var mx=D.qs.length*3,p=sc/mx;
     var fc,fl,ic,rt,rd;
-    if(p>=0.7){fc='fit-g';fl='&#10003; Strong Fit';ic='&#127775;';rt='This service is built for where you are right now.';rd='Your answers show clear signals that Cold Calling will directly move the needle. Leave your details below and we will reach out to map out exactly how.'}
-    else if(p>=0.45){fc='fit-m';fl='&#9654; Likely a Good Fit';ic='&#128161;';rt='This looks like a solid match for your situation.';rd='Cold Calling aligns well with your goals. A quick call will confirm whether it is the right first step or if another service would get you results faster.'}
+    if(p>=0.7){fc='fit-g';fl='&#10003; Strong Fit';ic='&#127775;';rt='This service is built for where you are right now.';rd='Your answers show clear signals that SEO &amp; Visibility will directly move the needle. Leave your details below and we will reach out to map out exactly how.'}
+    else if(p>=0.45){fc='fit-m';fl='&#9654; Likely a Good Fit';ic='&#128161;';rt='This looks like a solid match for your situation.';rd='SEO &amp; Visibility aligns well with your goals. A quick call will confirm whether it is the right first step or if another service would get you results faster.'}
     else{fc='fit-c';fl='Let's Talk First';ic='&#128172;';rt='We want to make sure you invest in the right thing.';rd='Your answers suggest there may be a better starting point. Book a free call and we will give you an honest recommendation with no pressure.'}
     var sr='';for(var i=0;i<D.a.length;i++)sr+='<div class="sq-ar"><div class="sq-aq">&#10003;</div><div class="sq-aa">'+D.qs[i][1][D.a[i]][0]+'</div></div>';
-    m.innerHTML='<button class="sq-x" onclick="sqCl_cold-calling()">&#215;</button><div class="sq-head"><div class="sq-badge">&#10003; Assessment Complete</div></div><div class="sq-body"><div class="sq-res"><div class="sq-icon">'+ic+'</div><div class="sq-fit '+fc+'">'+fl+'</div><div class="sq-rtitle">'+rt+'</div><div class="sq-rdesc">'+rd+'</div><div class="sq-sum"><h4>Your Answers</h4>'+sr+'</div><div class="sq-igrp"><label>Your name</label><input class="sq-inp" id="sqn-cold-calling" type="text" placeholder="Jane Smith"><label>Your email</label><input class="sq-inp" id="sqe-cold-calling" type="email" placeholder="jane@business.com"></div><div class="sq-rctas"><button class="sq-cta1" onclick="sqSub_cold-calling()">'+(p>=0.45?'Book a Free Strategy Call &#8594;':'Get a Free Consultation &#8594;')+'</button><a class="sq-cta2" href="/funnels/strategy-call/">Talk to us</a></div></div></div>';
+    m.innerHTML='<button class="sq-x" onclick="sqCl_seo()">&#215;</button><div class="sq-head"><div class="sq-badge">&#10003; Assessment Complete</div></div><div class="sq-body"><div class="sq-res"><div class="sq-icon">'+ic+'</div><div class="sq-fit '+fc+'">'+fl+'</div><div class="sq-rtitle">'+rt+'</div><div class="sq-rdesc">'+rd+'</div><div class="sq-sum"><h4>Your Answers</h4>'+sr+'</div><div class="sq-igrp"><label>Your name</label><input class="sq-inp" id="sqn-seo" type="text" placeholder="Jane Smith"><label>Your email</label><input class="sq-inp" id="sqe-seo" type="email" placeholder="jane@business.com"></div><div class="sq-rctas"><button class="sq-cta1" onclick="sqSub_seo()">'+(p>=0.45?'Book a Free Strategy Call &#8594;':'Get a Free Consultation &#8594;')+'</button><a class="sq-cta2" href="/funnels/strategy-call/">Talk to us</a></div></div></div>';
   }
 }
-function sel(i){D.a[D.s]=i;var opts=document.querySelectorAll('#sqm-cold-calling .sq-opt');opts.forEach(function(e,j){e.classList.toggle('sel',j===i);e.querySelector('.sq-radio').innerHTML=j===i?'<div class="sq-dot"></div>':'';}); var b=document.querySelector('#sqm-cold-calling .sq-next');if(b)b.disabled=false;}
-function nx(){if(D.a[D.s]===undefined)return;D.s++;r();document.getElementById('sqm-cold-calling').scrollTop=0;}
+function sel(i){D.a[D.s]=i;var opts=document.querySelectorAll('#sqm-seo .sq-opt');opts.forEach(function(e,j){e.classList.toggle('sel',j===i);e.querySelector('.sq-radio').innerHTML=j===i?'<div class="sq-dot"></div>':'';}); var b=document.querySelector('#sqm-seo .sq-next');if(b)b.disabled=false;}
+function nx(){if(D.a[D.s]===undefined)return;D.s++;r();document.getElementById('sqm-seo').scrollTop=0;}
 function bk(){D.s=Math.max(0,D.s-1);r();}
 function sub(){
-  var em=document.getElementById('sqe-cold-calling');
+  var em=document.getElementById('sqe-seo');
   if(!em||!em.value){if(em)em.style.borderColor='#ff5555';return;}
-  var nm=document.getElementById('sqn-cold-calling').value||'';
+  var nm=document.getElementById('sqn-seo').value||'';
   var ans=D.a.map(function(ai,qi){return 'Q'+(qi+1)+': '+D.qs[qi][0].substring(0,55)+'... => '+D.qs[qi][1][ai][0];}).join('\n');
-  var fd=new FormData();fd.append('access_key','YOUR_WEB3FORMS_KEY');fd.append('subject','Service Quiz: Cold Calling | '+nm);fd.append('from_name','CyberMagnet');fd.append('name',nm||'Unknown');fd.append('email',em.value);fd.append('message','SERVICE: Cold Calling\n\nANSWERS:\n'+ans);
+  var fd=new FormData();fd.append('access_key','YOUR_WEB3FORMS_KEY');fd.append('subject','Service Quiz: SEO &amp; Visibility | '+nm);fd.append('from_name','CyberMagnet');fd.append('name',nm||'Unknown');fd.append('email',em.value);fd.append('message','SERVICE: SEO &amp; Visibility\n\nANSWERS:\n'+ans);
   fetch('https://api.web3forms.com/submit',{method:'POST',body:fd}).catch(function(){});
-  document.getElementById('sqm-cold-calling').innerHTML='<div class="sq-body" style="text-align:center;padding:40px 24px"><div style="font-size:2.6rem;margin-bottom:12px">&#127881;</div><div style="font-family:var(--font-d,sans-serif);font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:8px">You are all set!</div><div style="font-size:0.84rem;color:#8899aa;line-height:1.6;margin-bottom:20px">We will be in touch at <strong style=\"color:#dce8f5\">'+em.value+'</strong> shortly.</div><div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap"><a href="/funnels/strategy-call/" class="sq-cta1">Book strategy call &#8594;</a><button class="sq-cta2" onclick="sqCl_cold-calling()">Close</button></div></div>';
+  document.getElementById('sqm-seo').innerHTML='<div class="sq-body" style="text-align:center;padding:40px 24px"><div style="font-size:2.6rem;margin-bottom:12px">&#127881;</div><div style="font-family:var(--font-d,sans-serif);font-size:1.1rem;font-weight:800;color:#fff;margin-bottom:8px">You are all set!</div><div style="font-size:0.84rem;color:#8899aa;line-height:1.6;margin-bottom:20px">We will be in touch at <strong style=\"color:#dce8f5\">'+em.value+'</strong> shortly.</div><div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap"><a href="/funnels/strategy-call/" class="sq-cta1">Book strategy call &#8594;</a><button class="sq-cta2" onclick="sqCl_seo()">Close</button></div></div>';
 }
-window['sqSel_cold-calling']=sel;window['sqNx_cold-calling']=nx;window['sqBk_cold-calling']=bk;window['sqSub_cold-calling']=sub;window['sqCl_cold-calling']=cl;window['openSvcQuiz_cold-calling']=o;
-document.addEventListener('DOMContentLoaded',function(){var ov=document.getElementById('sqo-cold-calling');if(ov)ov.addEventListener('click',function(e){if(e.target===this)cl();});document.addEventListener('keydown',function(e){if(e.key==='Escape')cl();});}); 
+window['sqSel_seo']=sel;window['sqNx_seo']=nx;window['sqBk_seo']=bk;window['sqSub_seo']=sub;window['sqCl_seo']=cl;window['openSvcQuiz_seo']=o;
+document.addEventListener('DOMContentLoaded',function(){var ov=document.getElementById('sqo-seo');if(ov)ov.addEventListener('click',function(e){if(e.target===this)cl();});document.addEventListener('keydown',function(e){if(e.key==='Escape')cl();});}); 
 })();
 </script>
-<div class="sqo" id="sqo-cold-calling"><div class="sqm" id="sqm-cold-calling"></div></div>
+<div class="sqo" id="sqo-seo"><div class="sqm" id="sqm-seo"></div></div>
 <script>
 (function(){
   function tilt(sel,max,sc){

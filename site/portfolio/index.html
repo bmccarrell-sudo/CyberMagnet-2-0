@@ -134,11 +134,11 @@ nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,
 .bg-black { background: var(--black); }
 .bg-navy  { background: var(--navy); }
 
-.sec-label { display: inline-flex; align-items: center; gap: 10px; font-size: 0.73rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--electric); margin-bottom: 12px; }
+.sec-label { color: var(--orange,#D97706); display: inline-flex; align-items: center; gap: 10px; font-size: 0.73rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--electric); margin-bottom: 12px; }
 .sec-label::before { content: ''; width: 20px; height: 1px; background: var(--electric); }
 .sec-label.o { color: var(--orange); }
 .sec-label.o::before { background: var(--orange); }
-.sec-h2 { font-family: var(--font-d); font-size: clamp(2rem, 3.8vw, 3rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.1; margin-bottom: 12px; }
+.sec-h2 { color: #fff; font-family: var(--font-d); font-size: clamp(2rem, 3.8vw, 3rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.1; margin-bottom: 12px; }
 .sec-sub { font-size: 0.96rem; color: var(--gray-400); max-width: 560px; line-height: 1.72; }
 .sec-header { margin-bottom: 60px; }
 .sec-header-center { text-align: center; }
@@ -845,8 +845,328 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
 }
 .btn-primary:hover::after,.btn-cta-primary:hover::after { left: 125%; }
 .reveal {
+  opacity: 0;
+  transform: translateY(28px);
   transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1),
               transform 0.75s cubic-bezier(0.22,1,0.36,1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+
+/* ── GOLD → COBALT GRADIENT SYSTEM ── */
+:root {
+  --grad: linear-gradient(90deg, #D97706, #2563EB);
+  --grad-r: linear-gradient(90deg, #2563EB, #D97706);
+  --grad-d: linear-gradient(135deg, #D97706, #2563EB);
+  --grad-text: linear-gradient(90deg, #F59E0B, #60A5FA);
+}
+
+/* Gradient text utility */
+.grad-text {
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gradient border glow on section labels */
+.section-label, .sec-label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Gradient underline divider */
+.grad-divider {
+  height: 2px;
+  background: var(--grad);
+  border-radius: 2px;
+  margin: 20px 0;
+}
+
+/* Gradient CTA button variant */
+.btn-grad {
+  background: var(--grad);
+  color: #fff;
+  border: none;
+  position: relative;
+  overflow: hidden;
+}
+.btn-grad::after {
+  content: '';
+  position: absolute; top: -50%; left: -75%;
+  width: 50%; height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease; pointer-events: none;
+}
+.btn-grad:hover::after { left: 125%; }
+
+/* Gradient accent border on featured/highlight cards */
+.grad-border {
+  border-image: var(--grad) 1;
+  border-style: solid;
+  border-width: 1px;
+}
+
+/* Gradient hero badge */
+.hero-badge {
+  border-color: transparent;
+  background: linear-gradient(var(--deep-navy,#0a1628), var(--deep-navy,#0a1628)) padding-box,
+              var(--grad) border-box;
+  border: 1px solid transparent;
+}
+
+/* Gradient stat number */
+.stat-num {
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gradient nav CTA */
+.nav-cta {
+  background: var(--grad) !important;
+  border: none !important;
+}
+
+/* Gradient section label dot */
+.section-label::before, .sec-label::before {
+  background: var(--grad) !important;
+}
+
+/* Gradient progress bar */
+.grad-bar {
+  background: var(--grad);
+  border-radius: 4px;
+}
+
+/* Animated gradient border on active/featured elements */
+@keyframes grad-border-shift {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+.grad-border-anim {
+  border-image: var(--grad) 1;
+  border-image-slice: 1;
+}
+
+/* Gradient glow behind hero h1 accent words */
+.acc-o {
+  background-image: var(--grad-text) !important;
+  background-size: 200% auto;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Subtle gradient line on section dividers */
+section + section::before {
+  display: none; /* keep explicit use only */
+}
+
+/* Gradient on "Most Popular" badge */
+.featured-badge, [style*="Most Popular"] {
+  background: var(--grad) !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   PORTFOLIO — BA CARD HP CLASSES (missing)
+═══════════════════════════════════════════ */
+
+/* Filter tabs */
+.port-filter-row {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-bottom: 44px;
+}
+.port-filter-btn {
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.8rem; font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: transparent;
+  color: var(--gray-400,#8899aa);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.port-filter-btn:hover {
+  border-color: rgba(217,119,6,0.4);
+  color: var(--off-white,#dce8f5);
+}
+.port-filter-btn.active {
+  background: rgba(217,119,6,0.12);
+  border-color: rgba(217,119,6,0.5);
+  color: #FCD34D;
+}
+
+/* Card wrapper */
+.ba-card-hp {
+  background: rgba(10,20,35,0.85);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+.ba-card-hp:hover {
+  border-color: rgba(37,99,235,0.25);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+  transform: translateY(-2px);
+}
+
+/* Card header */
+.ba-header-hp {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.ba-client-hp {
+  display: flex; align-items: center; gap: 12px;
+}
+.ba-avatar-hp {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; flex-shrink: 0;
+}
+.ba-name-hp {
+  font-family: var(--font-d,'Syne',sans-serif);
+  font-size: 1rem; font-weight: 800;
+  color: #fff; line-height: 1.2;
+}
+.ba-industry-hp {
+  font-size: 0.74rem; color: var(--gray-600,#445566);
+  margin-top: 2px;
+}
+.ba-chip {
+  padding: 5px 12px;
+  background: rgba(52,211,153,0.1);
+  border: 1px solid rgba(52,211,153,0.25);
+  border-radius: 20px;
+  font-size: 0.74rem; font-weight: 700;
+  color: #34D399;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Slider */
+.ba-slider-hp {
+  position: relative;
+  width: 100%; height: 220px;
+  overflow: hidden; cursor: ew-resize;
+  user-select: none; -webkit-user-select: none;
+}
+.ba-before-hp, .ba-after-hp {
+  position: absolute; inset: 0;
+  display: flex;
+}
+.ba-after-hp {
+  clip-path: inset(0 50% 0 0);
+  transition: clip-path 0ms;
+}
+.ba-handle-hp {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: linear-gradient(to bottom, #D97706, #2563EB);
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 10;
+}
+.ba-knob-hp {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #D97706, #2563EB);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem; color: #fff; font-weight: 800;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+}
+.ba-lbl {
+  position: absolute;
+  bottom: 10px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.65rem; font-weight: 700;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  pointer-events: none; z-index: 5;
+}
+.ba-lbl-b {
+  left: 10px;
+  background: rgba(0,0,0,0.6);
+  color: #aaa;
+}
+.ba-lbl-a {
+  right: 10px;
+  background: linear-gradient(90deg, #D97706, #2563EB);
+  color: #fff;
+}
+
+/* Card footer */
+.ba-footer-hp {
+  display: flex;
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  flex-wrap: wrap;
+}
+.ba-ft-meta {
+  flex: 1; min-width: 120px;
+  padding: 12px 18px;
+  border-right: 1px solid rgba(255,255,255,0.05);
+}
+.ba-ft-meta:last-child { border-right: none; }
+.ba-ft-label {
+  font-size: 0.65rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--gray-600,#445566); margin-bottom: 4px;
+}
+.ba-ft-val {
+  font-size: 0.84rem; color: var(--off-white,#dce8f5);
+  font-weight: 600;
+}
+
+/* BA card hidden state */
+.ba-card-hp.hidden { display: none; }
+
+/* BA slider JS — make handle draggable */
+.ba-slider-hp[data-slider-hp] { cursor: ew-resize; }
+
+/* Results strip below card */
+.ba-results-strip {
+  background: rgba(5,8,16,0.97);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-top: 2px solid var(--orange,#D97706);
+  padding: 16px 22px;
+  margin-bottom: 32px;
+}
+
+/* Grid layout for cards */
+.ba-cards-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── PORTFOLIO RESPONSIVE ── */
+@media (max-width: 720px) {
+  .ba-slider-hp { height: 160px; }
+  .ba-header-hp { padding: 14px 16px; }
+  .ba-footer-hp { flex-direction: column; }
+  .ba-ft-meta { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .ba-ft-meta:last-child { border-bottom: none; }
+  .hp-stat { min-width: 80px; }
+  .hero-proof-row { gap: 20px; }
+}
+@media (max-width: 480px) {
+  .ba-slider-hp { height: 130px; }
+  .ba-chip { font-size: 0.68rem; padding: 4px 10px; }
 }
 
 </style>
@@ -1431,17 +1751,29 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
       Every project in this portfolio started with a business that wanted more — more visibility, more conversions, more credibility. Explore the transformations, the strategies behind them, and the outcomes they delivered.
     </p>
     <div class="hero-proof-row">
-      <div class="hp-stat"><div class="hp-val">50<span>+</span></div><div class="hp-label">Projects Delivered</div></div>
-      <div class="hp-stat"><div class="hp-val">97<span>%</span></div><div class="hp-label">Retention Rate</div></div>
-      <div class="hp-stat"><div class="hp-val">3.8<span>×</span></div><div class="hp-label">Avg. ROI Delivered</div></div>
-      <div class="hp-stat"><div class="hp-val">$50<span>K+</span></div><div class="hp-label">Revenue Generated</div></div>
+      <div class="hp-stat"><div class="hp-val grad-text">50<span>+</span></div><div class="hp-label">Projects Delivered</div></div>
+      <div class="hp-stat"><div class="hp-val grad-text">97<span>%</span></div><div class="hp-label">Retention Rate</div></div>
+      <div class="hp-stat"><div class="hp-val grad-text">3.8<span>×</span></div><div class="hp-label">Avg. ROI Delivered</div></div>
+      <div class="hp-stat"><div class="hp-val grad-text">$50<span>K+</span></div><div class="hp-label">Revenue Generated</div></div>
     </div>
   </div>
 </section>
+<div style="height:3px;background:linear-gradient(90deg,#D97706,#2563EB);width:100%"></div>
+
 
 <!-- ══════════════════════════════════════════════════════════
      SECTION 1 — WEBSITE BEFORE / AFTER SLIDERS
 ══════════════════════════════════════════════════════════ -->
+
+<div style="padding:32px 6% 20px;background:linear-gradient(to bottom,var(--black),rgba(8,13,22,0.95));border-bottom:1px solid rgba(255,255,255,0.04)">
+  <div class="port-filter-row">
+    <button class="port-filter-btn active" data-filter="all">All Work</button>
+    <button class="port-filter-btn" data-filter="ba web">Websites &amp; Apps</button>
+    <button class="port-filter-btn" data-filter="ba">Full Transformations</button>
+    <button class="port-filter-btn" data-filter="ba seo">SEO &amp; Growth</button>
+    <button class="port-filter-btn" data-filter="ba brand">Brand Identity</button>
+  </div>
+</div>
 <section class="section-pad bg-deep" id="websites">
   <div class="sec-header reveal">
     <div class="sec-label">Website Transformations</div>
@@ -2963,12 +3295,12 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="/" aria-label="CyberMagnet" style="display:inline-flex;text-decoration:none;line-height:1;margin-bottom:10px">
-        <svg width="200" height="40" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <text x="100" y="17" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="2">CYBER</text>
-          <circle cx="6" cy="21" r="2" fill="#D97706"/>
-          <line x1="8" y1="21" x2="192" y2="21" stroke="#D97706" stroke-width="1.5"/>
-          <circle cx="194" cy="21" r="2" fill="#D97706"/>
-          <text x="100" y="36" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#D97706" text-anchor="middle" letter-spacing="2">MAGNET</text>
+        <svg width="240" height="48" viewBox="0 0 220 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <text x="110" y="18" font-family="'Montserrat','Syne',sans-serif" font-size="18" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="2.5">CYBER</text>
+          <circle cx="6" cy="24" r="3" fill="#D97706"/>
+          <line x1="10" y1="24" x2="210" y2="24" stroke="#D97706" stroke-width="2"/>
+          <circle cx="214" cy="24" r="3" fill="#D97706"/>
+          <text x="110" y="42" font-family="'Montserrat','Syne',sans-serif" font-size="18" font-weight="900" fill="#D97706" text-anchor="middle" letter-spacing="2.5">MAGNET</text>
         </svg>
       </a>
       <p>Premium digital marketing for growth-focused local businesses. Based in Dallas, TX.</p>
@@ -3155,6 +3487,63 @@ document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
     var t;
     item.addEventListener('mouseenter',function(){clearTimeout(t);drop.style.opacity='1';drop.style.visibility='visible';drop.style.transform='translateY(0)';drop.style.pointerEvents='auto';});
     item.addEventListener('mouseleave',function(){t=setTimeout(function(){drop.style.opacity='0';drop.style.visibility='hidden';drop.style.transform='translateY(-8px)';drop.style.pointerEvents='none';},120);});
+  });
+})();
+</script>
+<script>
+/* ── BA SLIDER HP ──────────────────────────────────────────────────────────── */
+(function() {
+  document.querySelectorAll('.ba-slider-hp[data-slider-hp]').forEach(function(slider) {
+    var after = slider.querySelector('.ba-after-hp');
+    var handle = slider.querySelector('.ba-handle-hp');
+    if (!after || !handle) return;
+    var dragging = false;
+
+    function setPos(clientX) {
+      var rect = slider.getBoundingClientRect();
+      var pct  = Math.max(0.05, Math.min(0.95, (clientX - rect.left) / rect.width));
+      after.style.clipPath = 'inset(0 ' + ((1-pct)*100).toFixed(1) + '% 0 0)';
+      handle.style.left    = (pct * 100).toFixed(1) + '%';
+    }
+
+    // Mouse
+    slider.addEventListener('mousedown', function(e) { dragging = true; setPos(e.clientX); });
+    document.addEventListener('mousemove', function(e) { if (dragging) setPos(e.clientX); });
+    document.addEventListener('mouseup',   function()  { dragging = false; });
+
+    // Touch
+    slider.addEventListener('touchstart', function(e) { dragging = true; setPos(e.touches[0].clientX); e.preventDefault(); }, { passive: false });
+    document.addEventListener('touchmove', function(e) { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+    document.addEventListener('touchend',  function()  { dragging = false; });
+  });
+})();
+
+/* ── PORTFOLIO FILTER ──────────────────────────────────────────────────────── */
+(function() {
+  var btns  = document.querySelectorAll('.port-filter-btn');
+  var cards = document.querySelectorAll('.ba-card-hp');
+  // Also get the results strips below each card
+  var strips = document.querySelectorAll('.ba-card-hp + div');
+
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var filter = btn.dataset.filter;
+
+      // Update active button
+      btns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      // Show/hide cards
+      cards.forEach(function(card) {
+        var cat = card.dataset.category || '';
+        var show = filter === 'all' || cat === filter || cat.indexOf(filter) > -1;
+        card.style.display = show ? '' : 'none';
+        // Find the next sibling div (results strip)
+        var next = card.nextElementSibling;
+        if (next && next.tagName !== 'DIV'.toLowerCase()) next = null;
+        if (next) next.style.display = show ? '' : 'none';
+      });
+    });
   });
 })();
 </script>

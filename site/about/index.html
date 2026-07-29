@@ -21,13 +21,13 @@
   --deep-navy:  #0a1628;
   --navy:       #0a2540;
   --mid-blue:   #1b3b6f;
-  --electric:   #007bff;
-  --el-glow:    rgba(0,123,255,0.25);
-  --el-light:   rgba(0,123,255,0.08);
-  --orange:     #ff7a00;
+  --electric:   #2563EB;
+  --el-glow:    rgba(37,99,235,0.25);
+  --el-light:   rgba(37,99,235,0.08);
+  --orange:     #D97706;
   --orange-hot: #ff9500;
-  --or-glow:    rgba(255,122,0,0.32);
-  --or-light:   rgba(255,122,0,0.08);
+  --or-glow:    rgba(217,119,6,0.32);
+  --or-light:   rgba(217,119,6,0.08);
   --white:      #ffffff;
   --off-white:  #dce8f5;
   --gray-200:   #c8d8e8;
@@ -81,7 +81,7 @@ nav {
   padding: 0 6%; height: var(--nav-h);
   backdrop-filter: blur(22px) saturate(1.4);
   background: rgba(5,8,16,0.72);
-  border-bottom: 1px solid rgba(0,123,255,0.1);
+  border-bottom: 1px solid rgba(37,99,235,0.1);
   transition: background 0.35s, box-shadow 0.35s;
 }
 nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,0.5); }
@@ -105,19 +105,19 @@ nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,
 #hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 .hero-grid {
   position: absolute; inset: 0; pointer-events: none;
-  background-image: linear-gradient(rgba(0,123,255,0.03) 1px,transparent 1px), linear-gradient(90deg,rgba(0,123,255,0.03) 1px,transparent 1px);
+  background-image: linear-gradient(rgba(37,99,235,0.03) 1px,transparent 1px), linear-gradient(90deg,rgba(37,99,235,0.03) 1px,transparent 1px);
   background-size: 56px 56px;
 }
 .hero-orb {
   position: absolute; right: 3%; top: 45%; transform: translateY(-50%);
   width: 600px; height: 600px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(0,123,255,0.09) 0%, transparent 68%);
+  background: radial-gradient(circle, rgba(37,99,235,0.09) 0%, transparent 68%);
   animation: orb-b 5s ease-in-out infinite; pointer-events: none;
 }
 .hero-orb-o {
   position: absolute; left: 10%; bottom: 0;
   width: 300px; height: 300px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,122,0,0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(217,119,6,0.05) 0%, transparent 70%);
   animation: orb-b 5s -2.5s ease-in-out infinite; pointer-events: none;
 }
 @keyframes orb-b { 0%,100%{opacity:0.5;transform:translateY(-50%) scale(1)} 50%{opacity:1;transform:translateY(-50%) scale(1.06)} }
@@ -130,7 +130,7 @@ nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,
 
 .hero-label {
   display: inline-flex; align-items: center; gap: 9px;
-  background: var(--el-light); border: 1px solid rgba(0,123,255,0.2);
+  background: var(--el-light); border: 1px solid rgba(37,99,235,0.2);
   border-radius: 30px; padding: 6px 16px;
   font-size: 0.73rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--electric);
   margin-bottom: 24px; animation: fade-up 0.6s ease both;
@@ -150,7 +150,7 @@ nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,
 
 .hero-sub {
   font-size: clamp(1rem, 1.9vw, 1.2rem);
-  color: var(--gray-400); max-width: 680px;
+  color: #B8D0E8; max-width: 680px;
   line-height: 1.72; margin-bottom: 40px;
   animation: fade-up 0.6s 0.16s ease both;
 }
@@ -217,14 +217,14 @@ nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,
 .timeline-item::before {
   content: ''; position: absolute;
   left: 19px; top: 40px; bottom: 0; width: 1px;
-  background: linear-gradient(to bottom, rgba(0,123,255,0.3), transparent);
+  background: linear-gradient(to bottom, rgba(37,99,235,0.3), transparent);
 }
 .timeline-item:last-child::before { display: none; }
 
 .tl-dot {
   width: 40px; height: 40px; flex-shrink: 0;
   border-radius: 50%;
-  background: var(--deep-navy); border: 2px solid rgba(0,123,255,0.3);
+  background: var(--deep-navy); border: 2px solid rgba(37,99,235,0.3);
   display: flex; align-items: center; justify-content: center;
   font-size: 1rem; position: relative; z-index: 1;
   transition: all 0.3s;
@@ -250,14 +250,14 @@ nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,
 .pull-quote-section {
   padding: 80px 6%;
   background: var(--navy);
-  border-top: 1px solid rgba(0,123,255,0.15);
-  border-bottom: 1px solid rgba(0,123,255,0.15);
+  border-top: 1px solid rgba(37,99,235,0.15);
+  border-bottom: 1px solid rgba(37,99,235,0.15);
   text-align: center; position: relative; overflow: hidden;
 }
 .pull-quote-section::before {
   content: '"';
   position: absolute; top: -20px; left: 50%; transform: translateX(-50%);
-  font-family: var(--font-pull); font-size: 18rem; color: rgba(0,123,255,0.04);
+  font-family: var(--font-pull); font-size: 18rem; color: rgba(37,99,235,0.04);
   line-height: 1; pointer-events: none; user-select: none;
 }
 .pull-quote {
@@ -296,14 +296,14 @@ nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,
 }
 .value-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(0,123,255,0.25);
-  box-shadow: 0 24px 60px rgba(0,0,0,0.4), 0 0 40px rgba(0,123,255,0.06);
+  border-color: rgba(37,99,235,0.25);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.4), 0 0 40px rgba(37,99,235,0.06);
 }
 .value-card:hover::before { opacity: 1; }
 
 /* Alternating orange accent for every other card */
 .value-card:nth-child(even)::before { background: linear-gradient(90deg, transparent, var(--orange), transparent); }
-.value-card:nth-child(even):hover { border-color: rgba(255,122,0,0.25); }
+.value-card:nth-child(even):hover { border-color: rgba(217,119,6,0.25); }
 
 .vc-icon {
   width: 52px; height: 52px; border-radius: 14px;
@@ -335,11 +335,11 @@ nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,
   border-radius: 16px; padding: 24px;
   transition: all 0.3s;
 }
-.diff-card:hover { border-color: rgba(0,123,255,0.3); transform: translateY(-4px); }
+.diff-card:hover { border-color: rgba(37,99,235,0.3); transform: translateY(-4px); }
 .dc-1 { top: 0;    left: 0;   right: 60px; }
-.dc-2 { top: 195px; left: 40px; right: 0;   background: var(--el-light); border-color: rgba(0,123,255,0.2); }
+.dc-2 { top: 195px; left: 40px; right: 0;   background: var(--el-light); border-color: rgba(37,99,235,0.2); }
 .dc-3 { top: 395px; left: 0;   right: 60px; }
-.dc-4 { top: 580px; left: 40px; right: 0;   background: var(--or-light); border-color: rgba(255,122,0,0.2); }
+.dc-4 { top: 580px; left: 40px; right: 0;   background: var(--or-light); border-color: rgba(217,119,6,0.2); }
 
 .dc-icon { font-size: 1.4rem; margin-bottom: 10px; }
 .dc-label { font-family: var(--font-d); font-size: 0.9rem; font-weight: 700; color: var(--off-white); margin-bottom: 5px; }
@@ -349,7 +349,7 @@ nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,
 .diff-item { display: flex; gap: 16px; }
 .di-num {
   font-family: var(--font-d); font-size: 1.8rem; font-weight: 800;
-  color: rgba(0,123,255,0.2); line-height: 1; flex-shrink: 0;
+  color: rgba(37,99,235,0.2); line-height: 1; flex-shrink: 0;
   width: 44px; text-align: right;
   transition: color 0.3s;
 }
@@ -368,7 +368,7 @@ nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,
   transition: all 0.3s;
 }
 .svc-benefit-card:hover {
-  border-color: rgba(0,123,255,0.22); transform: translateY(-4px);
+  border-color: rgba(37,99,235,0.22); transform: translateY(-4px);
   box-shadow: 0 16px 40px rgba(0,0,0,0.3);
 }
 .sbc-icon { font-size: 1.8rem; margin-bottom: 16px; display: block; }
@@ -394,7 +394,7 @@ nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,
 .approach-step { text-align: center; padding: 0 12px; }
 .ap-circle {
   width: 80px; height: 80px; border-radius: 50%; margin: 0 auto 20px;
-  background: var(--deep-navy); border: 2px solid rgba(0,123,255,0.25);
+  background: var(--deep-navy); border: 2px solid rgba(37,99,235,0.25);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   font-size: 1.4rem; position: relative; z-index: 1;
   transition: all 0.3s;
@@ -417,7 +417,7 @@ nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,
 .philosophy-block {
   max-width: 720px; margin: 60px auto 0;
   padding: 36px 40px;
-  background: var(--el-light); border: 1px solid rgba(0,123,255,0.18);
+  background: var(--el-light); border: 1px solid rgba(37,99,235,0.18);
   border-radius: 20px; text-align: center;
 }
 .pb-quote {
@@ -431,8 +431,8 @@ nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,
 .results-strip {
   display: grid; grid-template-columns: repeat(4, 1fr);
   background: var(--deep-navy);
-  border-top: 1px solid rgba(0,123,255,0.12);
-  border-bottom: 1px solid rgba(0,123,255,0.12);
+  border-top: 1px solid rgba(37,99,235,0.12);
+  border-bottom: 1px solid rgba(37,99,235,0.12);
 }
 .rs-cell {
   padding: 48px 0; text-align: center;
@@ -440,7 +440,7 @@ nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,
   transition: background 0.25s; position: relative;
 }
 .rs-cell:last-child { border-right: none; }
-.rs-cell:hover { background: rgba(0,123,255,0.04); }
+.rs-cell:hover { background: rgba(37,99,235,0.04); }
 .rs-cell::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--electric),transparent); opacity:0; transition:opacity 0.3s; }
 .rs-cell:hover::before { opacity:1; }
 .rs-num {
@@ -459,7 +459,7 @@ nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,
 }
 
 .founder-card {
-  background: var(--deep-navy); border: 1px solid rgba(0,123,255,0.15);
+  background: var(--deep-navy); border: 1px solid rgba(37,99,235,0.15);
   border-radius: 24px; overflow: hidden; position: sticky; top: 120px;
 }
 .founder-avatar {
@@ -483,9 +483,9 @@ nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,
 .founder-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
 .f-chip {
   padding: 4px 10px; border-radius: 20px; font-size: 0.68rem; font-weight: 500;
-  background: var(--el-light); border: 1px solid rgba(0,123,255,0.15); color: var(--electric);
+  background: var(--el-light); border: 1px solid rgba(37,99,235,0.15); color: var(--electric);
 }
-.f-chip.o { background: var(--or-light); border-color: rgba(255,122,0,0.15); color: var(--orange); }
+.f-chip.o { background: var(--or-light); border-color: rgba(217,119,6,0.15); color: var(--orange); }
 .founder-location {
   display: flex; align-items: center; gap: 8px;
   font-size: 0.8rem; color: var(--gray-400); padding-top: 14px;
@@ -508,7 +508,7 @@ nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,
 .bio-block p strong { color: var(--off-white); font-weight: 500; }
 
 .vision-card {
-  background: var(--or-light); border: 1px solid rgba(255,122,0,0.2);
+  background: var(--or-light); border: 1px solid rgba(217,119,6,0.2);
   border-radius: 14px; padding: 24px 26px; margin-top: 28px;
 }
 .vision-card h4 { font-family: var(--font-d); font-size: 0.9rem; font-weight: 700; color: var(--orange); margin-bottom: 10px; }
@@ -520,17 +520,17 @@ nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,
   display: grid; grid-template-columns: 1fr 1fr;
   gap: 80px; align-items: center;
   background: var(--deep-navy);
-  border-top: 1px solid rgba(0,123,255,0.1);
-  border-bottom: 1px solid rgba(0,123,255,0.1);
+  border-top: 1px solid rgba(37,99,235,0.1);
+  border-bottom: 1px solid rgba(37,99,235,0.1);
 }
 .dallas-visual {
   background: var(--navy); border-radius: 20px; padding: 40px 36px;
-  border: 1px solid rgba(0,123,255,0.15); position: relative; overflow: hidden;
+  border: 1px solid rgba(37,99,235,0.15); position: relative; overflow: hidden;
 }
 .dallas-visual::before {
   content: ''; position: absolute; bottom: -30px; right: -30px;
   width: 200px; height: 200px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(0,123,255,0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(37,99,235,0.1) 0%, transparent 70%);
 }
 .dallas-skyline { font-size: 3rem; margin-bottom: 20px; display: block; }
 .dallas-stat-row { display: flex; gap: 28px; margin-bottom: 24px; }
@@ -555,7 +555,7 @@ nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,
   border-radius: 16px; padding: 28px;
   transition: all 0.25s;
 }
-.testi-card:hover { border-color: rgba(0,123,255,0.25); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.3); }
+.testi-card:hover { border-color: rgba(37,99,235,0.25); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.3); }
 .tc-stars { color: var(--orange); font-size: 0.82rem; margin-bottom: 12px; }
 .tc-text { font-size: 0.9rem; color: var(--gray-400); line-height: 1.72; font-style: italic; margin-bottom: 20px; }
 .tc-author { display: flex; align-items: center; gap: 12px; }
@@ -566,11 +566,11 @@ nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,
 /* ── CTA BANNER ──────────────────────────────────────────── */
 .cta-banner {
   background: linear-gradient(135deg, var(--navy) 0%, #0d1f3c 100%);
-  border-top: 1px solid rgba(0,123,255,0.18);
+  border-top: 1px solid rgba(37,99,235,0.18);
   text-align: center; padding: var(--sp) 6%;
   position: relative; overflow: hidden;
 }
-.cta-banner::before { content:''; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:800px; height:400px; background:radial-gradient(ellipse,rgba(0,123,255,0.08) 0%,transparent 68%); pointer-events:none; }
+.cta-banner::before { content:''; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:800px; height:400px; background:radial-gradient(ellipse,rgba(37,99,235,0.08) 0%,transparent 68%); pointer-events:none; }
 .cta-banner h2 { font-family: var(--font-d); font-size: clamp(2rem, 4vw, 3.6rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 14px; position: relative; }
 .cta-banner p { color: var(--gray-400); max-width: 500px; margin: 0 auto 36px; position: relative; font-size: 1rem; line-height: 1.7; }
 .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
@@ -588,7 +588,7 @@ nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,
 }
 .btn-primary::before { content:''; position:absolute; top:0; left:-100%; width:60%; height:100%; background:linear-gradient(90deg,transparent,rgba(255,255,255,0.18),transparent); animation:sheen 3s ease-in-out infinite; pointer-events:none; }
 @keyframes sheen { 0%,65%,100%{left:-100%} 38%{left:140%} }
-@keyframes cta-pulse { 0%,100%{box-shadow:0 0 0 0 rgba(255,122,0,0.4)} 50%{box-shadow:0 0 0 14px rgba(255,122,0,0)} }
+@keyframes cta-pulse { 0%,100%{box-shadow:0 0 0 0 rgba(217,119,6,0.4)} 50%{box-shadow:0 0 0 14px rgba(217,119,6,0)} }
 .btn-primary:hover { background: var(--orange-hot); transform: translateY(-2px); box-shadow: 0 10px 32px var(--or-glow); animation: none; }
 
 .btn-secondary {
@@ -601,7 +601,7 @@ nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,
 .btn-secondary:hover { border-color: var(--electric); color: var(--electric); transform: translateY(-2px); }
 
 .btn-outline-electric {
-  background: transparent; color: var(--electric); border: 1px solid rgba(0,123,255,0.4);
+  background: transparent; color: var(--electric); border: 1px solid rgba(37,99,235,0.4);
   padding: 12px 26px; border-radius: 8px;
   font-family: var(--font-b); font-size: 0.88rem;
   text-decoration: none; display: inline-flex; align-items: center; gap: 7px;
@@ -672,7 +672,7 @@ footer { background: var(--black); border-top: 1px solid var(--dim); padding: 60
   position:absolute;top:calc(100% + 12px);left:50%;
   transform:translateX(-50%) translateY(-8px);
   background:rgba(5,8,16,0.98);
-  border:1px solid rgba(0,123,255,0.18);
+  border:1px solid rgba(37,99,235,0.18);
   border-radius:14px;padding:8px;
   opacity:0;visibility:hidden;
   transition:opacity 0.18s,transform 0.18s,visibility 0.18s;
@@ -685,8 +685,8 @@ footer { background: var(--black); border-top: 1px solid var(--dim); padding: 60
   content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);
   width:12px;height:12px;
   background:rgba(5,8,16,0.98);
-  border-top:1px solid rgba(0,123,255,0.18);
-  border-left:1px solid rgba(0,123,255,0.18);
+  border-top:1px solid rgba(37,99,235,0.18);
+  border-left:1px solid rgba(37,99,235,0.18);
   clip-path:polygon(0 0,100% 0,0 100%);
   transform:translateX(-50%) rotate(45deg);
 }
@@ -694,7 +694,7 @@ footer { background: var(--black); border-top: 1px solid var(--dim); padding: 60
 .drop-section+.drop-section{border-top:1px solid rgba(255,255,255,0.05);margin-top:4px;padding-top:8px}
 .drop-label{font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(68,85,102,0.8);padding:2px 10px 6px;font-weight:700;font-family:var(--font-d,'Syne',sans-serif)}
 .drop-link{display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:8px;text-decoration:none;color:rgba(136,153,170,0.9);font-size:0.79rem;transition:all 0.14s;white-space:nowrap}
-.drop-link:hover{background:rgba(0,123,255,0.08);color:#fff}
+.drop-link:hover{background:rgba(37,99,235,0.08);color:#fff}
 .drop-link .di{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.78rem;flex-shrink:0}
 .drop-link .dt{display:flex;flex-direction:column;gap:1px}
 .drop-link .dt span{font-size:0.65rem;color:rgba(68,85,102,0.7);font-weight:400}
@@ -712,7 +712,7 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
 .footer-brand p { font-size: 0.84rem; color: #8899aa; max-width: 220px; line-height: 1.65; margin-top: 12px; }
 .footer-socials { display: flex; gap: 10px; margin-top: 20px; }
 .footer-social-btn { width: 36px; height: 36px; background: rgba(255,255,255,0.06); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 0.84rem; text-decoration: none; color: #8899aa; transition: all 0.2s; }
-.footer-social-btn:hover { background: #007bff; color: #fff; transform: translateY(-2px); }
+.footer-social-btn:hover { background: #2563EB; color: #fff; transform: translateY(-2px); }
 .footer-col h5 { font-family: var(--font-d, 'Syne', sans-serif); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #445566; margin-bottom: 16px; }
 .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
 .footer-col a { color: #8899aa; text-decoration: none; font-size: 0.84rem; transition: color 0.2s; }
@@ -722,6 +722,64 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
 .footer-bottom a:hover { color: #8899aa; }
 @media(max-width:1000px) { .footer-grid { grid-template-columns: 1fr 1fr 1fr; } }
 @media(max-width:640px) { .footer-grid { grid-template-columns: 1fr 1fr; } .footer-bottom { flex-direction: column; gap: 8px; } }
+
+
+/* ── OPTION D + 3D UPGRADES ── */
+.service-card,.svc-card,.value-card,.process-step,.tier-card,[class*="price-card"] {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.service-card:hover,.svc-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(37,99,235,0.45);
+  box-shadow: 0 24px 60px rgba(37,99,235,0.16);
+}
+.acc-o {
+  background-image: linear-gradient(90deg, #D97706, #F59E0B, #D97706);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shimmer 4s linear infinite;
+}
+.acc-b {
+  background-image: linear-gradient(90deg, #2563EB, #60A5FA, #2563EB);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shimmer 4s linear infinite;
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(1.5); }
+}
+.section-label::before,.sec-label::before {
+  content: '';
+  display: inline-block;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #D97706;
+  margin-right: 8px; vertical-align: middle;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+.btn-primary,.btn-cta-primary {
+  overflow: hidden; position: relative;
+}
+.btn-primary::after,.btn-cta-primary::after {
+  content: '';
+  position: absolute; top: -50%; left: -75%;
+  width: 50%; height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease; pointer-events: none;
+}
+.btn-primary:hover::after,.btn-cta-primary:hover::after { left: 125%; }
+.reveal {
+  transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1),
+              transform 0.75s cubic-bezier(0.22,1,0.36,1);
+}
 
 </style>
 </head>
@@ -742,12 +800,12 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
 <!-- NAV -->
 <nav id="main-nav">
   <a href="/" class="logo" aria-label="CyberMagnet — Home" style="display:inline-flex;align-items:center;text-decoration:none;line-height:1">
-    <svg width="220" height="44" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <text x="100" y="17" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="2">CYBER</text>
-      <circle cx="6" cy="21" r="2" fill="#FF7A35"/>
-      <line x1="8" y1="21" x2="192" y2="21" stroke="#FF7A35" stroke-width="1.5"/>
-      <circle cx="194" cy="21" r="2" fill="#FF7A35"/>
-      <text x="100" y="36" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#FF7A35" text-anchor="middle" letter-spacing="2">MAGNET</text>
+    <svg width="240" height="48" viewBox="0 0 220 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <text x="110" y="18" font-family="'Montserrat','Syne',sans-serif" font-size="18" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="2.5">CYBER</text>
+      <circle cx="6" cy="24" r="3" fill="#D97706"/>
+      <line x1="10" y1="24" x2="210" y2="24" stroke="#D97706" stroke-width="2"/>
+      <circle cx="214" cy="24" r="3" fill="#D97706"/>
+      <text x="110" y="42" font-family="'Montserrat','Syne',sans-serif" font-size="18" font-weight="900" fill="#D97706" text-anchor="middle" letter-spacing="2.5">MAGNET</text>
     </svg>
   </a>
   <ul class="nav-links">
@@ -759,25 +817,25 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
         <div class="drop-cols">
           <div class="drop-section">
             <div class="drop-label">Marketing</div>
-            <a class="drop-link" href="/services/seo/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128269;</div><div class="dt">SEO &amp; Visibility<span>Get found on Google</span></div></a>
-            <a class="drop-link" href="/services/google-business-profile/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128205;</div><div class="dt">Google Business Profile<span>Dominate local search</span></div></a>
-            <a class="drop-link" href="/services/social-media-management/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128241;</div><div class="dt">Social Media<span>Content that converts</span></div></a>
-            <a class="drop-link" href="/services/social-media-advertising/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128202;</div><div class="dt">Paid Advertising<span>Meta &amp; Google Ads</span></div></a>
-            <a class="drop-link" href="/services/email-marketing/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128140;</div><div class="dt">Email Marketing<span>Nurture &amp; retain</span></div></a>
-            <a class="drop-link" href="/services/cold-calling/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128222;</div><div class="dt">Cold Calling<span>Outbound prospecting</span></div></a>
+            <a class="drop-link" href="/services/seo/"><div class="di" style="background:rgba(37,99,235,0.1)">&#128269;</div><div class="dt">SEO &amp; Visibility<span>Get found on Google</span></div></a>
+            <a class="drop-link" href="/services/google-business-profile/"><div class="di" style="background:rgba(37,99,235,0.1)">&#128205;</div><div class="dt">Google Business Profile<span>Dominate local search</span></div></a>
+            <a class="drop-link" href="/services/social-media-management/"><div class="di" style="background:rgba(37,99,235,0.1)">&#128241;</div><div class="dt">Social Media<span>Content that converts</span></div></a>
+            <a class="drop-link" href="/services/social-media-advertising/"><div class="di" style="background:rgba(37,99,235,0.1)">&#128202;</div><div class="dt">Paid Advertising<span>Meta &amp; Google Ads</span></div></a>
+            <a class="drop-link" href="/services/email-marketing/"><div class="di" style="background:rgba(37,99,235,0.1)">&#128140;</div><div class="dt">Email Marketing<span>Nurture &amp; retain</span></div></a>
+            <a class="drop-link" href="/services/cold-calling/"><div class="di" style="background:rgba(37,99,235,0.1)">&#128222;</div><div class="dt">Cold Calling<span>Outbound prospecting</span></div></a>
           </div>
           <div class="drop-section">
             <div class="drop-label">Creative &amp; Tech</div>
-            <a class="drop-link" href="/services/website-design/"><div class="di" style="background:rgba(255,122,0,0.1)">&#127758;</div><div class="dt">Website Design<span>High-converting sites</span></div></a>
-            <a class="drop-link" href="/services/funnel-building/"><div class="di" style="background:rgba(255,122,0,0.1)">&#127919;</div><div class="dt">Funnel Building<span>End-to-end funnels</span></div></a>
-            <a class="drop-link" href="/services/branding-packages/"><div class="di" style="background:rgba(255,122,0,0.1)">&#127775;</div><div class="dt">Branding<span>Identity &amp; strategy</span></div></a>
-            <a class="drop-link" href="/services/graphic-design/"><div class="di" style="background:rgba(255,122,0,0.1)">&#127912;</div><div class="dt">Graphic Design<span>Assets that stand out</span></div></a>
-            <a class="drop-link" href="/services/video-editing/"><div class="di" style="background:rgba(255,122,0,0.1)">&#127916;</div><div class="dt">Video Editing<span>Reels, ads &amp; more</span></div></a>
+            <a class="drop-link" href="/services/website-design/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127758;</div><div class="dt">Website Design<span>High-converting sites</span></div></a>
+            <a class="drop-link" href="/services/funnel-building/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127919;</div><div class="dt">Funnel Building<span>End-to-end funnels</span></div></a>
+            <a class="drop-link" href="/services/branding-packages/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127775;</div><div class="dt">Branding<span>Identity &amp; strategy</span></div></a>
+            <a class="drop-link" href="/services/graphic-design/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127912;</div><div class="dt">Graphic Design<span>Assets that stand out</span></div></a>
+            <a class="drop-link" href="/services/video-editing/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127916;</div><div class="dt">Video Editing<span>Reels, ads &amp; more</span></div></a>
             <a class="drop-link" href="/services/ai-phone-receptionist/"><div class="di" style="background:rgba(0,180,220,0.1)">&#129302;</div><div class="dt">AI Receptionist<span>24/7 lead capture</span></div></a>
           </div>
         </div>
         <div class="drop-section" style="border-top:1px solid rgba(255,255,255,0.05);margin-top:4px;padding-top:8px;padding-bottom:2px">
-          <a class="drop-link" href="/services/" style="color:#007bff;font-weight:600"><div class="di" style="background:rgba(0,123,255,0.08)">&#9729;</div><div class="dt">View All Services <span>Full service catalogue</span></div></a>
+          <a class="drop-link" href="/services/" style="color:#2563EB;font-weight:600"><div class="di" style="background:rgba(37,99,235,0.08)">&#9729;</div><div class="dt">View All Services <span>Full service catalogue</span></div></a>
         </div>
       </div>
     </li>
@@ -788,15 +846,15 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
       <div class="nav-drop">
         <div class="drop-section">
           <div class="drop-label">Full Systems</div>
-          <a class="drop-link" href="/systems/appointment/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128197;</div>Appointment System</a>
-          <a class="drop-link" href="/systems/local-business/"><div class="di" style="background:rgba(255,122,0,0.1)">&#128205;</div>Local Business System</a>
+          <a class="drop-link" href="/systems/appointment/"><div class="di" style="background:rgba(37,99,235,0.1)">&#128197;</div>Appointment System</a>
+          <a class="drop-link" href="/systems/local-business/"><div class="di" style="background:rgba(217,119,6,0.1)">&#128205;</div>Local Business System</a>
           <a class="drop-link" href="/systems/ai-automation/"><div class="di" style="background:rgba(0,180,220,0.1)">&#129302;</div>AI Automation System</a>
           <a class="drop-link" href="/systems/content-repurposing/"><div class="di" style="background:rgba(160,80,255,0.1)">&#127908;</div>Content Repurposing</a>
         </div>
         <div class="drop-section">
           <div class="drop-label">Micro-Systems</div>
-          <a class="drop-link" href="/systems/micro/social-media/"><div class="di" style="background:rgba(255,122,0,0.1)">&#128247;</div>Social Media Audit</a>
-          <a class="drop-link" href="/systems/micro/web-analytics/"><div class="di" style="background:rgba(0,123,255,0.1)">&#127760;</div>Website Audit</a>
+          <a class="drop-link" href="/systems/micro/social-media/"><div class="di" style="background:rgba(217,119,6,0.1)">&#128247;</div>Social Media Audit</a>
+          <a class="drop-link" href="/systems/micro/web-analytics/"><div class="di" style="background:rgba(37,99,235,0.1)">&#127760;</div>Website Audit</a>
           <a class="drop-link" href="/systems/micro/review-automation/"><div class="di" style="background:rgba(0,200,100,0.1)">&#128269;</div>Competitor Analysis</a>
           <a class="drop-link" href="/systems/micro/graphics/"><div class="di" style="background:rgba(160,80,255,0.1)">&#127912;</div>Quick Fix Graphics</a>
         </div>
@@ -831,9 +889,7 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
       Built for <span class="acc-b">Businesses</span><br>
       Like <span class="acc-o">Yours.</span>
     </h1>
-    <p class="hero-sub">
-      <strong>CyberMagnet was created with one purpose:</strong> to give local and small businesses access to the same quality of digital strategy that enterprise brands take for granted — without the enterprise price tag or the corporate runaround.
-    </p>
+    <p class="hero-sub">When you hire CyberMagnet, you're not getting handed off to a junior account manager. You're working directly with Ben — the strategist, the builder, and the person who picks up the phone when you call.</p>
     <div class="dallas-badge">
       <span class="db-icon">🏙️</span>
       <div class="db-text">
@@ -859,54 +915,89 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
 ══════════════════════════════════════════════════════════ -->
 <section class="sec-pad bg-deep" id="story">
   <div class="story-inner">
+        <div class="story-text reveal">
+          <div class="section-label" style="margin-bottom:14px">The Story</div>
+          <h2 style="font-family:var(--font-d);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:#fff;line-height:1.15;margin-bottom:20px">I built CyberMagnet because<br><span style="color:var(--orange)">good businesses were losing<br>to worse ones.</span></h2>
 
-    <div class="story-text reveal">
-      <div class="sec-label">Our Story</div>
-      <h2 class="sec-h2">Why CyberMagnet<br>Exists.</h2>
-      <div class="sec-body">
-        <p>Walk down any main street in Dallas and you'll find something that bothers us: brilliant businesses — family-owned shops, trades who've worked their craft for decades, service providers who genuinely care — being outranked and outspent by competitors with deeper pockets and bigger agencies.</p>
-        <p><strong>That's the problem we set out to solve.</strong></p>
-        <p>CyberMagnet was founded on a simple but powerful belief: that every business, regardless of size or budget, deserves a strong digital presence. Not a templated website that nobody finds. Not a logo knocked up in ten minutes. A real, strategic digital foundation built to attract the right customers, convert them, and keep them coming back.</p>
-        <p>We combine the strategic depth of a large agency with the personal attention of a local partner — and we price our work so that growing businesses can afford it without it feeling like a gamble.</p>
-        <p><strong>Dallas is our home. Growth is our mission.</strong> And we take both seriously.</p>
+          <p style="font-size:0.95rem;color:var(--gray-400);line-height:1.82;margin-bottom:18px">My name is Ben McCarrell. I'm a Dallas-based marketer, builder, and the only person you'll ever deal with at CyberMagnet. No account managers, no offshore teams, no bait-and-switch where you sign with one person and get handed to another.</p>
+
+          <p style="font-size:0.95rem;color:var(--gray-400);line-height:1.82;margin-bottom:18px">I started this agency after watching too many great local businesses — contractors, wellness providers, service companies — lose customers online to competitors who were mediocre at the actual work but had better marketing. That bothered me. It still does.</p>
+
+          <p style="font-size:0.95rem;color:var(--gray-400);line-height:1.82;margin-bottom:18px">So I built CyberMagnet around one belief: the best business should win. Not the one with the biggest ad budget. Not the one that hired the flashiest agency. The one that actually delivers for its clients.</p>
+
+          <p style="font-size:0.95rem;color:var(--gray-400);line-height:1.82;margin-bottom:28px">My edge is combining traditional marketing strategy with AI-powered systems that most Dallas agencies haven't caught up with yet. That means my clients get more done, faster, for less than what the big agencies charge — and they always know exactly what's working and why.</p>
+
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;align-items:flex-start;gap:14px;background:rgba(217,119,6,0.05);border:1px solid rgba(217,119,6,0.12);border-radius:10px;padding:16px 18px">
+              <div style="font-size:1.3rem;flex-shrink:0">📍</div>
+              <div>
+                <div style="font-weight:700;color:#fff;font-size:0.9rem;margin-bottom:3px">Dallas-based, not outsourced</div>
+                <div style="font-size:0.84rem;color:var(--gray-400);line-height:1.6">I know the Dallas market. I know which industries are underserved and which are saturated. Local knowledge is a competitive advantage I pass on to every client.</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:14px;background:rgba(37,99,235,0.05);border:1px solid rgba(37,99,235,0.12);border-radius:10px;padding:16px 18px">
+              <div style="font-size:1.3rem;flex-shrink:0">🤖</div>
+              <div>
+                <div style="font-weight:700;color:#fff;font-size:0.9rem;margin-bottom:3px">AI-powered before it was trendy</div>
+                <div style="font-size:0.84rem;color:var(--gray-400);line-height:1.6">I've been building AI automation into client workflows since before most agencies knew what a webhook was. My clients get systems, not just services.</div>
+              </div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:14px;background:rgba(0,200,100,0.04);border:1px solid rgba(0,200,100,0.12);border-radius:10px;padding:16px 18px">
+              <div style="font-size:1.3rem;flex-shrink:0">📞</div>
+              <div>
+                <div style="font-weight:700;color:#fff;font-size:0.9rem;margin-bottom:3px">You talk to the strategist, always</div>
+                <div style="font-size:0.84rem;color:var(--gray-400);line-height:1.6">Every strategy call, every report, every question — you deal with me directly. If that's the kind of relationship you want with your agency, we'll probably work well together.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-timeline reveal rd1">
+          <!-- Founder card -->
+          <div style="background:linear-gradient(160deg,rgba(37,99,235,0.08),rgba(0,0,0,0.6));border:1px solid rgba(37,99,235,0.2);border-radius:16px;padding:28px;margin-bottom:20px">
+            <div style="display:flex;align-items:center;gap:14px;margin-bottom:20px">
+              <div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--electric),var(--orange));display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:800;color:#fff;flex-shrink:0">B</div>
+              <div>
+                <div style="font-family:var(--font-d);font-weight:800;font-size:1.05rem;color:#fff">Ben McCarrell</div>
+                <div style="font-size:0.78rem;color:var(--gray-600);margin-top:2px">Founder &amp; Lead Strategist · Dallas, TX</div>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;align-items:center;gap:10px;font-size:0.84rem;color:var(--gray-400)"><span style="color:var(--electric)">✓</span> Digital Marketing Strategy</div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:0.84rem;color:var(--gray-400)"><span style="color:var(--electric)">✓</span> AI Systems &amp; Automation</div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:0.84rem;color:var(--gray-400)"><span style="color:var(--electric)">✓</span> SEO &amp; Local Search</div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:0.84rem;color:var(--gray-400)"><span style="color:var(--electric)">✓</span> Conversion Rate Optimisation</div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:0.84rem;color:var(--gray-400)"><span style="color:var(--electric)">✓</span> Funnel &amp; Web Design</div>
+            </div>
+            <div style="height:1px;background:rgba(37,99,235,0.12);margin:20px 0"></div>
+            <div style="display:flex;gap:10px">
+              <a href="tel:+12144120861" style="flex:1;text-align:center;padding:10px;background:rgba(37,99,235,0.1);border:1px solid rgba(37,99,235,0.2);border-radius:8px;color:var(--electric);font-size:0.8rem;font-weight:600;text-decoration:none">(214) 412-0861</a>
+              <a href="mailto:info@cybermagnet.net" style="flex:1;text-align:center;padding:10px;background:rgba(217,119,6,0.08);border:1px solid rgba(217,119,6,0.18);border-radius:8px;color:var(--orange);font-size:0.8rem;font-weight:600;text-decoration:none">Email Ben</a>
+            </div>
+          </div>
+
+          <!-- What clients say -->
+          <div style="background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:22px">
+            <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-600);margin-bottom:16px">What Clients Say</div>
+            <div style="display:flex;flex-direction:column;gap:16px">
+              <div style="border-left:2px solid var(--orange);padding-left:14px">
+                <p style="font-size:0.86rem;color:var(--gray-400);line-height:1.65;margin-bottom:7px;font-style:italic">"We went from page 3 to the Google 3-pack in less than 90 days. Our phone doesn't stop ringing now."</p>
+                <div style="font-size:0.76rem;font-weight:700;color:#fff">HVAC Company · Fort Worth, TX</div>
+              </div>
+              <div style="border-left:2px solid var(--electric);padding-left:14px">
+                <p style="font-size:0.86rem;color:var(--gray-400);line-height:1.65;margin-bottom:7px;font-style:italic">"Ben treats your business like it's his own. The AI receptionist alone has saved us 15 hours a week."</p>
+                <div style="font-size:0.76rem;font-weight:700;color:#fff">Med Spa · Dallas, TX</div>
+              </div>
+              <div style="border-left:2px solid var(--orange);padding-left:14px">
+                <p style="font-size:0.86rem;color:var(--gray-400);line-height:1.65;margin-bottom:7px;font-style:italic">"We'd tried 3 agencies before CyberMagnet. The difference is that Ben actually explains what he's doing and why."</p>
+                <div style="font-size:0.76rem;font-weight:700;color:#fff">Real Estate Investor · DFW</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       </div>
     </div>
-
-    <div class="story-timeline reveal rd1">
-      <div class="timeline-item">
-        <div class="tl-dot">🌱</div>
-        <div class="tl-content">
-          <div class="tl-year">The Problem</div>
-          <div class="tl-title">Local Businesses Were Being Left Behind</div>
-          <div class="tl-desc">Small businesses were losing online visibility to competitors with bigger agencies and bigger budgets — not because their products were worse, but because their digital presence was invisible.</div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="tl-dot">💡</div>
-        <div class="tl-content">
-          <div class="tl-year">The Idea</div>
-          <div class="tl-title">Premium Strategy, Accessible Pricing</div>
-          <div class="tl-desc">We asked: what if you could get enterprise-level digital marketing — real SEO, real branding, real funnels — without the enterprise price tag or the agency bureaucracy? CyberMagnet was the answer.</div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="tl-dot">🚀</div>
-        <div class="tl-content">
-          <div class="tl-year">The Launch</div>
-          <div class="tl-title">CyberMagnet Goes Live</div>
-          <div class="tl-desc">Built in Dallas, serving ambitious local businesses with a full-stack growth system: web design, SEO, branding, funnels, social media, and AI automation — under one roof, with one team that actually cares.</div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="tl-dot">⚡</div>
-        <div class="tl-content">
-          <div class="tl-year">Today & Beyond</div>
-          <div class="tl-title">50+ Businesses Transformed</div>
-          <div class="tl-desc">With clients across Dallas and beyond, CyberMagnet continues to grow its roster of businesses that have levelled up their digital presence — and the real results that followed.</div>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -1247,7 +1338,7 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
       <div class="tc-stars">★★★★★</div>
       <p class="tc-text">"What sets CyberMagnet apart is that they actually understand our business. They didn't pitch us a template — they built a strategy around our specific goals. The results have been undeniable."</p>
       <div class="tc-author">
-        <div class="tc-av" style="background:linear-gradient(135deg,#007bff,#1b3b6f)">JM</div>
+        <div class="tc-av" style="background:linear-gradient(135deg,#2563EB,#1b3b6f)">JM</div>
         <div><div class="tc-name">James Mitchell</div><div class="tc-role">CEO, StellarShop · Dallas, TX</div></div>
       </div>
     </div>
@@ -1255,7 +1346,7 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
       <div class="tc-stars">★★★★★</div>
       <p class="tc-text">"Ethical, transparent, and genuinely invested in our success. I've worked with three agencies before CyberMagnet — none of them made me feel like a priority the way this team does."</p>
       <div class="tc-author">
-        <div class="tc-av" style="background:linear-gradient(135deg,#ff7a00,#cc5500)">SR</div>
+        <div class="tc-av" style="background:linear-gradient(135deg,#D97706,#cc5500)">SR</div>
         <div><div class="tc-name">Sarah Reyes</div><div class="tc-role">Founder, Axiom SaaS</div></div>
       </div>
     </div>
@@ -1294,10 +1385,10 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
       <a href="/" aria-label="CyberMagnet" style="display:inline-flex;text-decoration:none;line-height:1;margin-bottom:10px">
         <svg width="200" height="40" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <text x="100" y="17" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="2">CYBER</text>
-          <circle cx="6" cy="21" r="2" fill="#FF7A35"/>
-          <line x1="8" y1="21" x2="192" y2="21" stroke="#FF7A35" stroke-width="1.5"/>
-          <circle cx="194" cy="21" r="2" fill="#FF7A35"/>
-          <text x="100" y="36" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#FF7A35" text-anchor="middle" letter-spacing="2">MAGNET</text>
+          <circle cx="6" cy="21" r="2" fill="#D97706"/>
+          <line x1="8" y1="21" x2="192" y2="21" stroke="#D97706" stroke-width="1.5"/>
+          <circle cx="194" cy="21" r="2" fill="#D97706"/>
+          <text x="100" y="36" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#D97706" text-anchor="middle" letter-spacing="2">MAGNET</text>
         </svg>
       </a>
       <p>Premium digital marketing for growth-focused local businesses. Based in Dallas, TX.</p>
@@ -1372,10 +1463,10 @@ function draw() {
   ctx.clearRect(0,0,W,H);
   for (let i=0;i<pts.length;i++) for (let j=i+1;j<pts.length;j++) {
     const dx=pts[i].x-pts[j].x, dy=pts[i].y-pts[j].y, d=Math.hypot(dx,dy);
-    if (d<115) { ctx.beginPath(); ctx.strokeStyle=`rgba(0,123,255,${(1-d/115)*.08})`; ctx.lineWidth=.7; ctx.moveTo(pts[i].x,pts[i].y); ctx.lineTo(pts[j].x,pts[j].y); ctx.stroke(); }
+    if (d<115) { ctx.beginPath(); ctx.strokeStyle=`rgba(37,99,235,${(1-d/115)*.08})`; ctx.lineWidth=.7; ctx.moveTo(pts[i].x,pts[i].y); ctx.lineTo(pts[j].x,pts[j].y); ctx.stroke(); }
   }
   for (const p of pts) {
-    ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle=`rgba(0,123,255,${p.a})`; ctx.fill();
+    ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fillStyle=`rgba(37,99,235,${p.a})`; ctx.fill();
     p.x+=p.vx; p.y+=p.vy;
     if(p.x<0||p.x>W) p.vx*=-1;
     if(p.y<0||p.y>H) p.vy*=-1;
@@ -1391,6 +1482,42 @@ const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
 }, { threshold: 0.07, rootMargin: '0px 0px -24px 0px' });
 revEls.forEach(el => obs.observe(el));
+</script>
+<script>
+(function(){
+  function tilt(sel,max,sc){
+    document.querySelectorAll(sel).forEach(function(c){
+      c.style.transformStyle='preserve-3d';
+      c.addEventListener('mousemove',function(e){
+        var r=c.getBoundingClientRect(),
+            x=(e.clientX-r.left)/r.width-0.5,
+            y=(e.clientY-r.top)/r.height-0.5;
+        c.style.transition='transform 0.1s ease';
+        c.style.transform='perspective(800px) rotateX('+(y*max*-1)+'deg) rotateY('+(x*max)+'deg) scale('+sc+')';
+      });
+      c.addEventListener('mouseleave',function(){
+        c.style.transition='transform 0.5s cubic-bezier(0.34,1.56,0.64,1)';
+        c.style.transform='perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
+      });
+    });
+  }
+  tilt('.service-card,.svc-card',8,1.03);
+  tilt('.value-card,.ba-stat-card',5,1.02);
+  tilt('.feature-card,.process-step',5,1.02);
+  var orb=document.querySelector('.hero-orb'),orbO=document.querySelector('.hero-orb-o');
+  if(orb||orbO){
+    var tick=false;
+    document.addEventListener('mousemove',function(e){
+      if(tick)return;tick=true;
+      requestAnimationFrame(function(){
+        var x=(e.clientX/window.innerWidth-0.5)*30,y=(e.clientY/window.innerHeight-0.5)*20;
+        if(orb)orb.style.transform='translate('+x+'px,'+y+'px)';
+        if(orbO)orbO.style.transform='translate('+(x*-0.6)+'px,'+(y*-0.6)+'px)';
+        tick=false;
+      });
+    });
+  }
+})();
 </script>
 </body>
 </html>

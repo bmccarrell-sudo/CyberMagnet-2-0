@@ -12,12 +12,12 @@
   --black:      #050810;
   --deep-navy:  #0a1628;
   --navy:       #0a2540;
-  --electric:   #007bff;
-  --el-glow:    rgba(0,123,255,0.28);
-  --el-light:   rgba(0,123,255,0.08);
-  --orange:     #ff7a00;
-  --or-glow:    rgba(255,122,0,0.35);
-  --or-light:   rgba(255,122,0,0.08);
+  --electric:   #2563EB;
+  --el-glow:    rgba(37,99,235,0.28);
+  --el-light:   rgba(37,99,235,0.08);
+  --orange:     #D97706;
+  --or-glow:    rgba(217,119,6,0.35);
+  --or-light:   rgba(217,119,6,0.08);
   --white:      #ffffff;
   --off-white:  #dce8f5;
   --gray-300:   #aabdd0;
@@ -46,7 +46,7 @@ body{background:var(--black);color:var(--white);font-family:var(--font-b);font-w
 .ub-link{color:#fff;text-decoration:underline;text-underline-offset:2px;font-weight:600;white-space:nowrap}
 
 /* MINIMAL NAV — funnel style, no distractions */
-nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:var(--nav-h);backdrop-filter:blur(22px);background:rgba(5,8,16,0.85);border-bottom:1px solid rgba(0,123,255,0.1)}
+nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:var(--nav-h);backdrop-filter:blur(22px);background:rgba(5,8,16,0.85);border-bottom:1px solid rgba(37,99,235,0.1)}
 .logo{font-family:var(--font-d);font-weight:800;font-size:1.4rem;letter-spacing:-0.02em;color:#fff;text-decoration:none}
 .logo span{color:var(--electric)}
 .nav-cta-sm{font-size:0.82rem;color:var(--gray-400);text-decoration:none;transition:color 0.2s}
@@ -66,7 +66,7 @@ nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;display:flex;
 .sec-h2 .b{color:var(--electric)}.sec-h2 .o{color:var(--orange)}
 @keyframes fade-up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 @keyframes sheen{0%,65%,100%{left:-100%}38%{left:140%}}
-@keyframes cta-pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,122,0,0.4)}50%{box-shadow:0 0 0 14px rgba(255,122,0,0)}}
+@keyframes cta-pulse{0%,100%{box-shadow:0 0 0 0 rgba(217,119,6,0.4)}50%{box-shadow:0 0 0 14px rgba(217,119,6,0)}}
 
 /* BUTTONS */
 .btn-primary{position:relative;overflow:hidden;background:var(--orange);color:#fff;border:none;padding:16px 36px;border-radius:8px;font-family:var(--font-d);font-size:1rem;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:all 0.25s;animation:cta-pulse 3s ease-in-out infinite;width:100%}
@@ -77,15 +77,15 @@ nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;display:flex;
 
 /* HERO */
 .page-hero{position:relative;overflow:hidden;padding:calc(var(--urgency-h) + var(--nav-h) + 60px) 6% 72px;background:var(--deep-navy)}
-.hero-bg-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(0,123,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,123,255,0.04) 1px,transparent 1px);background-size:52px 52px}
-.hero-orb{position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(0,123,255,0.08) 0%,transparent 68%);pointer-events:none}
+.hero-bg-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(37,99,235,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(37,99,235,0.04) 1px,transparent 1px);background-size:52px 52px}
+.hero-orb{position:absolute;right:-80px;top:50%;transform:translateY(-50%);width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,235,0.08) 0%,transparent 68%);pointer-events:none}
 .hero-inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 400px;gap:60px;align-items:center;position:relative;z-index:1}
 
 /* PDF MOCKUP */
 .pdf-mockup{position:relative;animation:fade-up 0.7s 0.15s ease both}
-.pdf-card{background:linear-gradient(145deg,#0a2540,#061828);border:1px solid rgba(0,123,255,0.2);border-radius:16px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.5);position:relative}
+.pdf-card{background:linear-gradient(145deg,#0a2540,#061828);border:1px solid rgba(37,99,235,0.2);border-radius:16px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.5);position:relative}
 .pdf-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--electric),var(--orange))}
-.pdf-header{padding:24px 26px 18px;border-bottom:1px solid rgba(0,123,255,0.1)}
+.pdf-header{padding:24px 26px 18px;border-bottom:1px solid rgba(37,99,235,0.1)}
 .pdf-logo-row{display:flex;align-items:center;gap:10px;margin-bottom:16px}
 .pdf-logo-dot{width:8px;height:8px;border-radius:50%;background:var(--electric)}
 .pdf-logo-text{font-family:var(--font-d);font-size:0.75rem;font-weight:700;color:var(--electric);letter-spacing:0.1em;text-transform:uppercase}
@@ -96,9 +96,9 @@ nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;display:flex;
 .pdf-sec-label{font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--electric);margin-bottom:8px}
 .pdf-item{display:flex;align-items:center;gap:8px;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
 .pdf-item:last-child{border-bottom:none}
-.pdf-check{width:14px;height:14px;border:1.5px solid rgba(0,123,255,0.4);border-radius:3px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:0.55rem;color:var(--electric)}
+.pdf-check{width:14px;height:14px;border:1.5px solid rgba(37,99,235,0.4);border-radius:3px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:0.55rem;color:var(--electric)}
 .pdf-item-text{font-size:0.72rem;color:var(--gray-300)}
-.pdf-score-bar{background:rgba(0,123,255,0.06);border:1px solid rgba(0,123,255,0.15);border-radius:8px;padding:12px 14px}
+.pdf-score-bar{background:rgba(37,99,235,0.06);border:1px solid rgba(37,99,235,0.15);border-radius:8px;padding:12px 14px}
 .pdf-score-label{font-size:0.65rem;color:var(--gray-600);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:6px}
 .pdf-score-track{height:6px;background:rgba(255,255,255,0.08);border-radius:3px;overflow:hidden;margin-bottom:4px}
 .pdf-score-fill{height:100%;width:65%;background:linear-gradient(90deg,var(--electric),var(--orange));border-radius:3px}
@@ -108,21 +108,21 @@ nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;display:flex;
 
 /* Hero text */
 .hero-text{animation:fade-up 0.7s ease both}
-.hero-label{display:inline-flex;align-items:center;gap:9px;background:var(--el-light);border:1px solid rgba(0,123,255,0.22);border-radius:30px;padding:6px 16px;font-size:0.73rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--electric);margin-bottom:22px}
+.hero-label{display:inline-flex;align-items:center;gap:9px;background:var(--el-light);border:1px solid rgba(37,99,235,0.22);border-radius:30px;padding:6px 16px;font-size:0.73rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--electric);margin-bottom:22px}
 .hero-label::before{content:'';width:6px;height:6px;background:var(--success);border-radius:50%;animation:live-blink 1.6s ease-in-out infinite}
 @keyframes live-blink{0%,100%{opacity:1}50%{opacity:0.2}}
 .hero-h1{font-family:var(--font-d);font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:18px}
 .hero-h1 .b{color:var(--electric)}.hero-h1 .o{color:var(--orange)}
-.hero-sub{font-size:1.02rem;color:var(--gray-400);line-height:1.75;margin-bottom:28px}
+.hero-sub{font-size:1.02rem;color:#B8D0E8;line-height:1.75;margin-bottom:28px}
 .hero-sub strong{color:var(--off-white);font-weight:400}
 .hero-bullets{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:32px}
 .hb-item{display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;color:var(--gray-300)}
 .hb-check{color:var(--success);font-weight:700;flex-shrink:0;font-size:0.8rem;margin-top:2px}
-.hero-form{background:rgba(255,255,255,0.04);border:1px solid rgba(0,123,255,0.15);border-radius:14px;padding:24px}
+.hero-form{background:rgba(255,255,255,0.04);border:1px solid rgba(37,99,235,0.15);border-radius:14px;padding:24px}
 .hf-label{font-size:0.72rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--gray-400);margin-bottom:6px;display:block}
 .hf-input{width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:12px 15px;font-family:var(--font-b);font-size:0.9rem;color:#fff;outline:none;transition:all 0.25s;margin-bottom:10px}
 .hf-input::placeholder{color:var(--gray-600)}
-.hf-input:focus{border-color:var(--electric);background:var(--el-light);box-shadow:0 0 0 3px rgba(0,123,255,0.1)}
+.hf-input:focus{border-color:var(--electric);background:var(--el-light);box-shadow:0 0 0 3px rgba(37,99,235,0.1)}
 .hf-privacy{font-size:0.72rem;color:var(--gray-600);text-align:center;margin-top:10px}
 .hf-privacy span{color:var(--gray-400)}
 .hero-reassurance{display:flex;align-items:center;gap:8px;font-size:0.8rem;color:var(--gray-400);margin-top:12px;justify-content:center}
@@ -131,27 +131,27 @@ nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;display:flex;
 /* WHAT'S INSIDE */
 .inside-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:48px}
 .inside-card{background:rgba(255,255,255,0.025);border:1px solid var(--dim);border-radius:16px;padding:26px 24px;transition:all 0.3s;position:relative;overflow:hidden}
-.inside-card:hover{border-color:rgba(0,123,255,0.2);transform:translateY(-3px);box-shadow:0 14px 40px rgba(0,0,0,0.3)}
+.inside-card:hover{border-color:rgba(37,99,235,0.2);transform:translateY(-3px);box-shadow:0 14px 40px rgba(0,0,0,0.3)}
 .inside-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--electric),transparent);opacity:0;transition:opacity 0.3s}
 .inside-card:hover::before{opacity:1}
-.ic-num{font-family:var(--font-d);font-size:2.4rem;font-weight:800;color:rgba(0,123,255,0.1);line-height:1;margin-bottom:10px;transition:color 0.3s}
-.inside-card:hover .ic-num{color:rgba(0,123,255,0.25)}
+.ic-num{font-family:var(--font-d);font-size:2.4rem;font-weight:800;color:rgba(37,99,235,0.1);line-height:1;margin-bottom:10px;transition:color 0.3s}
+.inside-card:hover .ic-num{color:rgba(37,99,235,0.25)}
 .ic-title{font-family:var(--font-d);font-size:1rem;font-weight:700;color:var(--off-white);margin-bottom:8px}
 .ic-desc{font-size:0.84rem;color:var(--gray-400);line-height:1.65;margin-bottom:12px}
 .ic-items{list-style:none;display:flex;flex-direction:column;gap:5px}
 .ic-items li{font-size:0.78rem;color:var(--gray-300);display:flex;align-items:flex-start;gap:7px}
 .ic-items li::before{content:'→';color:var(--electric);font-size:0.7rem;flex-shrink:0;margin-top:2px}
-.ic-count{display:inline-flex;align-items:center;gap:5px;margin-top:12px;padding:3px 10px;background:var(--el-light);border:1px solid rgba(0,123,255,0.2);border-radius:20px;font-size:0.68rem;font-weight:600;color:var(--electric)}
+.ic-count{display:inline-flex;align-items:center;gap:5px;margin-top:12px;padding:3px 10px;background:var(--el-light);border:1px solid rgba(37,99,235,0.2);border-radius:20px;font-size:0.68rem;font-weight:600;color:var(--electric)}
 
 /* SCORECARD PREVIEW */
-.score-preview{background:linear-gradient(145deg,var(--navy),var(--deep-navy));border:1px solid rgba(0,123,255,0.2);border-radius:20px;padding:36px;margin-top:48px;position:relative;overflow:hidden}
+.score-preview{background:linear-gradient(145deg,var(--navy),var(--deep-navy));border:1px solid rgba(37,99,235,0.2);border-radius:20px;padding:36px;margin-top:48px;position:relative;overflow:hidden}
 .score-preview::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--electric),var(--orange))}
 .sp-inner{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
 .sp-bands{display:flex;flex-direction:column;gap:12px}
 .sp-band{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:10px;transition:all 0.2s}
 .sp-band:hover{transform:translateX(4px)}
 .spb-red{background:rgba(255,60,60,0.06);border:1px solid rgba(255,60,60,0.15)}
-.spb-amber{background:rgba(255,122,0,0.06);border:1px solid rgba(255,122,0,0.15)}
+.spb-amber{background:rgba(217,119,6,0.06);border:1px solid rgba(217,119,6,0.15)}
 .spb-green{background:rgba(0,200,100,0.06);border:1px solid rgba(0,200,100,0.15)}
 .spb-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
 .spb-red .spb-dot{background:#ff3c3c}
@@ -163,7 +163,7 @@ nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;display:flex;
 /* WHO IT'S FOR */
 .who-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:36px}
 .who-item{display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(255,255,255,0.025);border:1px solid var(--dim);border-radius:10px;font-size:0.88rem;color:var(--gray-300);transition:all 0.2s}
-.who-item:hover{border-color:rgba(0,123,255,0.2);background:var(--el-light);color:var(--off-white)}
+.who-item:hover{border-color:rgba(37,99,235,0.2);background:var(--el-light);color:var(--off-white)}
 .who-icon{font-size:1.1rem;flex-shrink:0}
 
 /* WHY IT MATTERS */
@@ -174,12 +174,12 @@ nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;display:flex;
 .ws-label{font-size:0.78rem;color:var(--gray-400);line-height:1.4}
 
 /* OPT-IN SECTION */
-.optin-section{padding:var(--sp) 6%;background:linear-gradient(135deg,var(--navy) 0%,#0d1f3c 100%);border-top:1px solid rgba(0,123,255,0.18);border-bottom:1px solid rgba(0,123,255,0.18);position:relative;overflow:hidden}
-.optin-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(0,123,255,0.08) 0%,transparent 65%);pointer-events:none}
+.optin-section{padding:var(--sp) 6%;background:linear-gradient(135deg,var(--navy) 0%,#0d1f3c 100%);border-top:1px solid rgba(37,99,235,0.18);border-bottom:1px solid rgba(37,99,235,0.18);position:relative;overflow:hidden}
+.optin-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:400px;background:radial-gradient(ellipse,rgba(37,99,235,0.08) 0%,transparent 65%);pointer-events:none}
 .optin-inner{max-width:560px;margin:0 auto;text-align:center;position:relative;z-index:1}
 .optin-h2{font-family:var(--font-d);font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-0.025em;margin-bottom:12px}
 .optin-sub{font-size:0.97rem;color:var(--gray-400);line-height:1.72;margin-bottom:28px}
-.optin-form{background:rgba(5,8,16,0.6);border:1px solid rgba(0,123,255,0.2);border-radius:16px;padding:28px}
+.optin-form{background:rgba(5,8,16,0.6);border:1px solid rgba(37,99,235,0.2);border-radius:16px;padding:28px}
 
 /* FOOTER */
 footer{background:var(--black);border-top:1px solid var(--dim);padding:44px 6% 24px;text-align:center}
@@ -217,12 +217,12 @@ footer{background:var(--black);border-top:1px solid var(--dim);padding:44px 6% 2
 .nav-arrow{font-size:0.5rem;opacity:0.45;margin-left:1px;transition:opacity 0.2s,transform 0.2s}
 .nav-item:hover .nav-arrow{opacity:1;transform:rotate(180deg)}
 .nav-item:hover .nav-drop{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-.nav-drop{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(-8px);background:rgba(5,8,16,0.98);border:1px solid rgba(0,123,255,0.18);border-radius:14px;padding:8px;opacity:0;visibility:hidden;transition:opacity 0.18s,transform 0.18s,visibility 0.18s;z-index:300;backdrop-filter:blur(24px);box-shadow:0 24px 48px rgba(0,0,0,0.55);min-width:210px}
-.nav-drop::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:12px;height:12px;background:rgba(5,8,16,0.98);border-top:1px solid rgba(0,123,255,0.18);border-left:1px solid rgba(0,123,255,0.18);clip-path:polygon(0 0,100% 0,0 100%);transform:translateX(-50%) rotate(45deg)}
+.nav-drop{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(-8px);background:rgba(5,8,16,0.98);border:1px solid rgba(37,99,235,0.18);border-radius:14px;padding:8px;opacity:0;visibility:hidden;transition:opacity 0.18s,transform 0.18s,visibility 0.18s;z-index:300;backdrop-filter:blur(24px);box-shadow:0 24px 48px rgba(0,0,0,0.55);min-width:210px}
+.nav-drop::before{content:'';position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:12px;height:12px;background:rgba(5,8,16,0.98);border-top:1px solid rgba(37,99,235,0.18);border-left:1px solid rgba(37,99,235,0.18);clip-path:polygon(0 0,100% 0,0 100%);transform:translateX(-50%) rotate(45deg)}
 .drop-section{padding:4px 0}.drop-section+.drop-section{border-top:1px solid rgba(255,255,255,0.05);margin-top:4px;padding-top:8px}
 .drop-label{font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(68,85,102,0.8);padding:2px 10px 6px;font-weight:700}
 .drop-link{display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:8px;text-decoration:none;color:rgba(136,153,170,0.9);font-size:0.79rem;transition:all 0.14s;white-space:nowrap}
-.drop-link:hover{background:rgba(0,123,255,0.08);color:#fff}
+.drop-link:hover{background:rgba(37,99,235,0.08);color:#fff}
 .drop-link .di{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.78rem;flex-shrink:0}
 .drop-link .dt{display:flex;flex-direction:column;gap:1px}
 .drop-link .dt span{font-size:0.65rem;color:rgba(68,85,102,0.7)}
@@ -238,7 +238,7 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
 .footer-brand p { font-size: 0.84rem; color: #8899aa; max-width: 220px; line-height: 1.65; margin-top: 12px; }
 .footer-socials { display: flex; gap: 10px; margin-top: 20px; }
 .footer-social-btn { width: 36px; height: 36px; background: rgba(255,255,255,0.06); border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 0.84rem; text-decoration: none; color: #8899aa; transition: all 0.2s; }
-.footer-social-btn:hover { background: #007bff; color: #fff; transform: translateY(-2px); }
+.footer-social-btn:hover { background: #2563EB; color: #fff; transform: translateY(-2px); }
 .footer-col h5 { font-family: var(--font-d, 'Syne', sans-serif); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #445566; margin-bottom: 16px; }
 .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
 .footer-col a { color: #8899aa; text-decoration: none; font-size: 0.84rem; transition: color 0.2s; }
@@ -248,6 +248,64 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
 .footer-bottom a:hover { color: #8899aa; }
 @media(max-width:1000px) { .footer-grid { grid-template-columns: 1fr 1fr 1fr; } }
 @media(max-width:640px) { .footer-grid { grid-template-columns: 1fr 1fr; } .footer-bottom { flex-direction: column; gap: 8px; } }
+
+
+/* ── OPTION D + 3D UPGRADES ── */
+.service-card,.svc-card,.value-card,.process-step,.tier-card,[class*="price-card"] {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.service-card:hover,.svc-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(37,99,235,0.45);
+  box-shadow: 0 24px 60px rgba(37,99,235,0.16);
+}
+.acc-o {
+  background-image: linear-gradient(90deg, #D97706, #F59E0B, #D97706);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shimmer 4s linear infinite;
+}
+.acc-b {
+  background-image: linear-gradient(90deg, #2563EB, #60A5FA, #2563EB);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shimmer 4s linear infinite;
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(1.5); }
+}
+.section-label::before,.sec-label::before {
+  content: '';
+  display: inline-block;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: #D97706;
+  margin-right: 8px; vertical-align: middle;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+.btn-primary,.btn-cta-primary {
+  overflow: hidden; position: relative;
+}
+.btn-primary::after,.btn-cta-primary::after {
+  content: '';
+  position: absolute; top: -50%; left: -75%;
+  width: 50%; height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease; pointer-events: none;
+}
+.btn-primary:hover::after,.btn-cta-primary:hover::after { left: 125%; }
+.reveal {
+  transition: opacity 0.75s cubic-bezier(0.22,1,0.36,1),
+              transform 0.75s cubic-bezier(0.22,1,0.36,1);
+}
 
 </style>
 </head>
@@ -264,14 +322,14 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
 </div>
 
 <!-- NAV — minimal, no distractions -->
-<nav id="funnel-nav" style="position:fixed;top:var(--urgency-h,44px);left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:var(--nav-h,68px);backdrop-filter:blur(22px) saturate(1.4);background:rgba(5,8,16,0.72);border-bottom:1px solid rgba(0,123,255,0.1);transition:background 0.35s,box-shadow 0.35s">
+<nav id="funnel-nav" style="position:fixed;top:var(--urgency-h,44px);left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:var(--nav-h,68px);backdrop-filter:blur(22px) saturate(1.4);background:rgba(5,8,16,0.72);border-bottom:1px solid rgba(37,99,235,0.1);transition:background 0.35s,box-shadow 0.35s">
   <a href="/" aria-label="CyberMagnet — Home" style="display:inline-flex;align-items:center;text-decoration:none;line-height:1">
-    <svg width="220" height="44" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <text x="100" y="17" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="2">CYBER</text>
-      <circle cx="6" cy="21" r="2" fill="#FF7A35"/>
-      <line x1="8" y1="21" x2="192" y2="21" stroke="#FF7A35" stroke-width="1.5"/>
-      <circle cx="194" cy="21" r="2" fill="#FF7A35"/>
-      <text x="100" y="36" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#FF7A35" text-anchor="middle" letter-spacing="2">MAGNET</text>
+    <svg width="240" height="48" viewBox="0 0 220 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <text x="110" y="18" font-family="'Montserrat','Syne',sans-serif" font-size="18" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="2.5">CYBER</text>
+      <circle cx="6" cy="24" r="3" fill="#D97706"/>
+      <line x1="10" y1="24" x2="210" y2="24" stroke="#D97706" stroke-width="2"/>
+      <circle cx="214" cy="24" r="3" fill="#D97706"/>
+      <text x="110" y="42" font-family="'Montserrat','Syne',sans-serif" font-size="18" font-weight="900" fill="#D97706" text-anchor="middle" letter-spacing="2.5">MAGNET</text>
     </svg>
   </a>
   <ul style="display:flex;gap:2rem;list-style:none" class="nav-links">
@@ -281,25 +339,25 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
         <div class="drop-cols">
           <div class="drop-section">
             <div class="drop-label">Marketing</div>
-            <a class="drop-link" href="/services/seo/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128269;</div><div class="dt">SEO &amp; Visibility<span>Get found on Google</span></div></a>
-            <a class="drop-link" href="/services/google-business-profile/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128205;</div><div class="dt">Google Business Profile<span>Dominate local search</span></div></a>
-            <a class="drop-link" href="/services/social-media-management/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128241;</div><div class="dt">Social Media<span>Content that converts</span></div></a>
-            <a class="drop-link" href="/services/social-media-advertising/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128202;</div><div class="dt">Paid Advertising<span>Meta &amp; Google Ads</span></div></a>
-            <a class="drop-link" href="/services/email-marketing/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128140;</div><div class="dt">Email Marketing<span>Nurture &amp; retain</span></div></a>
-            <a class="drop-link" href="/services/cold-calling/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128222;</div><div class="dt">Cold Calling<span>Outbound prospecting</span></div></a>
+            <a class="drop-link" href="/services/seo/"><div class="di" style="background:rgba(37,99,235,0.1)">&#128269;</div><div class="dt">SEO &amp; Visibility<span>Get found on Google</span></div></a>
+            <a class="drop-link" href="/services/google-business-profile/"><div class="di" style="background:rgba(37,99,235,0.1)">&#128205;</div><div class="dt">Google Business Profile<span>Dominate local search</span></div></a>
+            <a class="drop-link" href="/services/social-media-management/"><div class="di" style="background:rgba(37,99,235,0.1)">&#128241;</div><div class="dt">Social Media<span>Content that converts</span></div></a>
+            <a class="drop-link" href="/services/social-media-advertising/"><div class="di" style="background:rgba(37,99,235,0.1)">&#128202;</div><div class="dt">Paid Advertising<span>Meta &amp; Google Ads</span></div></a>
+            <a class="drop-link" href="/services/email-marketing/"><div class="di" style="background:rgba(37,99,235,0.1)">&#128140;</div><div class="dt">Email Marketing<span>Nurture &amp; retain</span></div></a>
+            <a class="drop-link" href="/services/cold-calling/"><div class="di" style="background:rgba(37,99,235,0.1)">&#128222;</div><div class="dt">Cold Calling<span>Outbound prospecting</span></div></a>
           </div>
           <div class="drop-section">
             <div class="drop-label">Creative &amp; Tech</div>
-            <a class="drop-link" href="/services/website-design/"><div class="di" style="background:rgba(255,122,0,0.1)">&#127758;</div><div class="dt">Website Design<span>High-converting sites</span></div></a>
-            <a class="drop-link" href="/services/funnel-building/"><div class="di" style="background:rgba(255,122,0,0.1)">&#127919;</div><div class="dt">Funnel Building<span>End-to-end funnels</span></div></a>
-            <a class="drop-link" href="/services/branding-packages/"><div class="di" style="background:rgba(255,122,0,0.1)">&#127775;</div><div class="dt">Branding<span>Identity &amp; strategy</span></div></a>
-            <a class="drop-link" href="/services/graphic-design/"><div class="di" style="background:rgba(255,122,0,0.1)">&#127912;</div><div class="dt">Graphic Design<span>Assets that stand out</span></div></a>
-            <a class="drop-link" href="/services/video-editing/"><div class="di" style="background:rgba(255,122,0,0.1)">&#127916;</div><div class="dt">Video Editing<span>Reels, ads &amp; more</span></div></a>
+            <a class="drop-link" href="/services/website-design/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127758;</div><div class="dt">Website Design<span>High-converting sites</span></div></a>
+            <a class="drop-link" href="/services/funnel-building/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127919;</div><div class="dt">Funnel Building<span>End-to-end funnels</span></div></a>
+            <a class="drop-link" href="/services/branding-packages/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127775;</div><div class="dt">Branding<span>Identity &amp; strategy</span></div></a>
+            <a class="drop-link" href="/services/graphic-design/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127912;</div><div class="dt">Graphic Design<span>Assets that stand out</span></div></a>
+            <a class="drop-link" href="/services/video-editing/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127916;</div><div class="dt">Video Editing<span>Reels, ads &amp; more</span></div></a>
             <a class="drop-link" href="/services/ai-phone-receptionist/"><div class="di" style="background:rgba(0,180,220,0.1)">&#129302;</div><div class="dt">AI Receptionist<span>24/7 lead capture</span></div></a>
           </div>
         </div>
         <div class="drop-section" style="border-top:1px solid rgba(255,255,255,0.05);margin-top:4px;padding-top:8px;padding-bottom:2px">
-          <a class="drop-link" href="/services/" style="color:#007bff;font-weight:600"><div class="di" style="background:rgba(0,123,255,0.08)">&#9729;</div><div class="dt">View All Services<span>Full service catalogue</span></div></a>
+          <a class="drop-link" href="/services/" style="color:#2563EB;font-weight:600"><div class="di" style="background:rgba(37,99,235,0.08)">&#9729;</div><div class="dt">View All Services<span>Full service catalogue</span></div></a>
         </div>
       </div>
     </li>
@@ -308,15 +366,15 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
       <div class="nav-drop">
         <div class="drop-section">
           <div class="drop-label">Full Systems</div>
-          <a class="drop-link" href="/systems/appointment/"><div class="di" style="background:rgba(0,123,255,0.1)">&#128197;</div>Appointment System</a>
-          <a class="drop-link" href="/systems/local-business/"><div class="di" style="background:rgba(255,122,0,0.1)">&#128205;</div>Local Business System</a>
+          <a class="drop-link" href="/systems/appointment/"><div class="di" style="background:rgba(37,99,235,0.1)">&#128197;</div>Appointment System</a>
+          <a class="drop-link" href="/systems/local-business/"><div class="di" style="background:rgba(217,119,6,0.1)">&#128205;</div>Local Business System</a>
           <a class="drop-link" href="/systems/ai-automation/"><div class="di" style="background:rgba(0,180,220,0.1)">&#129302;</div>AI Automation System</a>
           <a class="drop-link" href="/systems/content-repurposing/"><div class="di" style="background:rgba(160,80,255,0.1)">&#127908;</div>Content Repurposing</a>
         </div>
         <div class="drop-section">
           <div class="drop-label">Micro-Systems</div>
-          <a class="drop-link" href="/systems/micro/social-media/"><div class="di" style="background:rgba(255,122,0,0.1)">&#128247;</div>Social Media Audit</a>
-          <a class="drop-link" href="/systems/micro/web-analytics/"><div class="di" style="background:rgba(0,123,255,0.1)">&#127760;</div>Website Audit</a>
+          <a class="drop-link" href="/systems/micro/social-media/"><div class="di" style="background:rgba(217,119,6,0.1)">&#128247;</div>Social Media Audit</a>
+          <a class="drop-link" href="/systems/micro/web-analytics/"><div class="di" style="background:rgba(37,99,235,0.1)">&#127760;</div>Website Audit</a>
           <a class="drop-link" href="/systems/micro/review-automation/"><div class="di" style="background:rgba(0,200,100,0.1)">&#128269;</div>Competitor Analysis</a>
           <a class="drop-link" href="/systems/micro/graphics/"><div class="di" style="background:rgba(160,80,255,0.1)">&#127912;</div>Quick Fix Graphics</a>
         </div>
@@ -329,7 +387,7 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
     <li><a href="/portfolio/" style="color:var(--gray-400,#8899aa);text-decoration:none;font-size:0.84rem;letter-spacing:0.05em;text-transform:uppercase">Portfolio</a></li>
     <li><a href="/about/" style="color:var(--gray-400,#8899aa);text-decoration:none;font-size:0.84rem;letter-spacing:0.05em;text-transform:uppercase">About</a></li>
   </ul>
-  <a href="/funnels/free-seo-audit/" style="background:var(--orange,#ff7a00);color:#fff;border:none;padding:9px 22px;border-radius:6px;font-size:0.84rem;font-weight:500;text-decoration:none">Free SEO Audit</a>
+  <a href="/funnels/free-seo-audit/" style="background:var(--orange,#D97706);color:#fff;border:none;padding:9px 22px;border-radius:6px;font-size:0.84rem;font-weight:500;text-decoration:none">Free SEO Audit</a>
   <div class="nav-ham" style="display:none;flex-direction:column;gap:5px;cursor:pointer"><span style="width:22px;height:2px;background:#fff;border-radius:2px"></span><span style="width:22px;height:2px;background:#fff;border-radius:2px"></span><span style="width:22px;height:2px;background:#fff;border-radius:2px"></span></div>
 </nav>
 
@@ -591,10 +649,10 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
       <a href="/" aria-label="CyberMagnet" style="display:inline-flex;text-decoration:none;line-height:1;margin-bottom:10px">
         <svg width="200" height="40" viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <text x="100" y="17" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="2">CYBER</text>
-          <circle cx="6" cy="21" r="2" fill="#FF7A35"/>
-          <line x1="8" y1="21" x2="192" y2="21" stroke="#FF7A35" stroke-width="1.5"/>
-          <circle cx="194" cy="21" r="2" fill="#FF7A35"/>
-          <text x="100" y="36" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#FF7A35" text-anchor="middle" letter-spacing="2">MAGNET</text>
+          <circle cx="6" cy="21" r="2" fill="#D97706"/>
+          <line x1="8" y1="21" x2="192" y2="21" stroke="#D97706" stroke-width="1.5"/>
+          <circle cx="194" cy="21" r="2" fill="#D97706"/>
+          <text x="100" y="36" font-family="'Montserrat','Syne',sans-serif" font-size="15" font-weight="900" fill="#D97706" text-anchor="middle" letter-spacing="2">MAGNET</text>
         </svg>
       </a>
       <p>Premium digital marketing for growth-focused local businesses. Based in Dallas, TX.</p>
@@ -701,6 +759,42 @@ handleForm(document.getElementById('optin-form'));
     });
   }, { threshold: 0.06, rootMargin: '0px 0px -20px 0px' });
   revEls.forEach(function(el) { obs.observe(el); });
+})();
+</script>
+<script>
+(function(){
+  function tilt(sel,max,sc){
+    document.querySelectorAll(sel).forEach(function(c){
+      c.style.transformStyle='preserve-3d';
+      c.addEventListener('mousemove',function(e){
+        var r=c.getBoundingClientRect(),
+            x=(e.clientX-r.left)/r.width-0.5,
+            y=(e.clientY-r.top)/r.height-0.5;
+        c.style.transition='transform 0.1s ease';
+        c.style.transform='perspective(800px) rotateX('+(y*max*-1)+'deg) rotateY('+(x*max)+'deg) scale('+sc+')';
+      });
+      c.addEventListener('mouseleave',function(){
+        c.style.transition='transform 0.5s cubic-bezier(0.34,1.56,0.64,1)';
+        c.style.transform='perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
+      });
+    });
+  }
+  tilt('.service-card,.svc-card',8,1.03);
+  tilt('.value-card,.ba-stat-card',5,1.02);
+  tilt('.feature-card,.process-step',5,1.02);
+  var orb=document.querySelector('.hero-orb'),orbO=document.querySelector('.hero-orb-o');
+  if(orb||orbO){
+    var tick=false;
+    document.addEventListener('mousemove',function(e){
+      if(tick)return;tick=true;
+      requestAnimationFrame(function(){
+        var x=(e.clientX/window.innerWidth-0.5)*30,y=(e.clientY/window.innerHeight-0.5)*20;
+        if(orb)orb.style.transform='translate('+x+'px,'+y+'px)';
+        if(orbO)orbO.style.transform='translate('+(x*-0.6)+'px,'+(y*-0.6)+'px)';
+        tick=false;
+      });
+    });
+  }
 })();
 </script>
 </body>

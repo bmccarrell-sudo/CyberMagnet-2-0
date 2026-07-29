@@ -1169,23 +1169,21 @@ section + section::before {
   .ba-chip { font-size: 0.68rem; padding: 4px 10px; }
 }
 
+
+/* ── BA CARDS WRAPPER — full width single column ── */
+.ba-cards-wrapper {
+  width: 100%;
+  padding: 0;
+}
+.ba-cards-wrapper .ba-card-hp {
+  width: 100%;
+  margin-bottom: 0;
+}
+
 </style>
 </head>
 <body>
 
-<!-- ── URGENCY BAR ── -->
-<div class="urgency-bar">
-  <span class="ub-dot"></span>
-  <span>Only <strong>3 client slots</strong> available this month</span>
-  <span class="ub-sep">·</span>
-  <span>50+ businesses transformed</span>
-  <span class="ub-sep">·</span>
-  <span>Avg. 3.8× ROI</span>
-  <span class="ub-sep">·</span>
-  <a class="ub-link" href="/funnels/free-seo-audit/">Claim your spot →</a>
-</div>
-
-<!-- ── NAV ── -->
 <nav id="main-nav">
   <a href="/" class="logo" aria-label="CyberMagnet — Home" style="display:inline-flex;align-items:center;text-decoration:none;line-height:1">
     <svg width="240" height="48" viewBox="0 0 220 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -1273,10 +1271,10 @@ section + section::before {
   </div>
 </div>
 
-<!-- ══════════════════════════════════════════════════════════
-     HERO
-══════════════════════════════════════════════════════════ -->
-  <section class="page-hero">
+
+
+<!-- ══ PORTFOLIO HERO ══ -->
+<section class="page-hero">
   <canvas id="hero-canvas"></canvas>
   <div class="hero-grid"></div>
   <div class="hero-orb"></div>
@@ -1299,15 +1297,15 @@ section + section::before {
     </div>
   </div>
 </section>
+
+
 <div style="height:3px;background:linear-gradient(90deg,#D97706,#2563EB);width:100%"></div>
 
 
-<!-- ══════════════════════════════════════════════════════════
-     SECTION 1 — WEBSITE BEFORE / AFTER SLIDERS
-══════════════════════════════════════════════════════════ -->
+<!-- ══ FILTER TABS ══ -->
 
-<div style="padding:28px 6% 16px;background:linear-gradient(to bottom,var(--black),rgba(8,13,22,0.95));border-bottom:1px solid rgba(255,255,255,0.04)">
-  <div class="port-filter-row">
+<div style="background:var(--black,#080D16);padding:28px 6% 20px;border-bottom:1px solid rgba(255,255,255,0.05)">
+  <div style="display:flex;flex-wrap:wrap;gap:8px">
     <button class="port-filter-btn active" data-filter="all">All Work</button>
     <button class="port-filter-btn" data-filter="ba web">Websites &amp; Apps</button>
     <button class="port-filter-btn" data-filter="ba">Full Transformations</button>
@@ -1316,18 +1314,19 @@ section + section::before {
   </div>
 </div>
 
+
+<!-- ══════════════════════════════════════════════════════════
+     SECTION 1 — BEFORE / AFTER CARDS
+══════════════════════════════════════════════════════════ -->
 <section class="section-pad bg-deep" id="websites">
   <div class="sec-header reveal">
-    <div class="sec-label">Website Transformations</div>
+    <div class="sec-label">Real Work. Real Results.</div>
     <h2 class="sec-h2">Drag to Reveal the Transformation</h2>
-    <p class="sec-sub">Every site we rebuild is faster, cleaner, and engineered to convert. Before is on the left — drag left to reveal the After on the right.</p>
+    <p class="sec-sub">Every project started with a business owner who needed more. Drag any slider left to reveal the Before, right to see the After.</p>
   </div>
 
-  <div style="padding:0 6%">
-    <!-- ── BEFORE / AFTER WEB TRANSFORMATIONS ── -->
-  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-bottom:20px">
-
-    <!-- ═══════════════════════════════════════════════════
+  <div class="ba-cards-wrapper">
+<!-- ═══════════════════════════════════════════════════
          CARD 1 — THOMPSON HVAC  (before: dated, after: dark electric)
     ═══════════════════════════════════════════════════ -->
     <div class="ba-card-hp reveal" data-category="ba">
@@ -1483,7 +1482,9 @@ section + section::before {
   </div>
 </div>
 
-    <!-- ═══════════════════════════════════════════════════
+    
+
+<!-- ═══════════════════════════════════════════════════
          CARD 2 — CHEN PROPERTY GROUP  (before: dull, after: gold premium)
     ═══════════════════════════════════════════════════ -->
     <div class="ba-card-hp reveal" data-category="ba">
@@ -1619,7 +1620,9 @@ section + section::before {
   </div>
 </div>
 
-    <!-- ═══════════════════════════════════════════════════
+    
+
+<!-- ═══════════════════════════════════════════════════
          CARD 3 — LEWIS LEGAL GROUP  (before: stuffy, after: clean authority)
     ═══════════════════════════════════════════════════ -->
     <div class="ba-card-hp reveal" data-category="ba seo">
@@ -1764,7 +1767,9 @@ section + section::before {
   </div>
 </div>
 
-    <!-- ═══════════════════════════════════════════════════
+    
+
+<!-- ═══════════════════════════════════════════════════
          CARD 4 — SOLACE WELLNESS  (before: cluttered, after: premium purple)
     ═══════════════════════════════════════════════════ -->
     <div class="ba-card-hp reveal" data-category="ba brand">
@@ -1898,7 +1903,9 @@ section + section::before {
   </div>
 </div>
 
-    <!-- ═══════════════════════════════════════════════════
+    
+
+<!-- ═══════════════════════════════════════════════════
          CARD 5 — CORECOACH  (before: cold grey, after: bold orange funnel)
     ═══════════════════════════════════════════════════ -->
     <div class="ba-card-hp reveal" data-category="ba">
@@ -2028,7 +2035,9 @@ section + section::before {
   </div>
 </div>
 
-    <!-- ═══════════════════════════════════════════════════
+    
+
+<!-- ═══════════════════════════════════════════════════
          CARD 6 — NEXUS B2B  (before: outdated IT, after: dark green authority)
     ═══════════════════════════════════════════════════ -->
     <div class="ba-card-hp reveal" data-category="ba seo">
@@ -2185,26 +2194,9 @@ section + section::before {
   </div>
 </div>
 
-  <script>
-  // Sliders — Before left (base), After right (drag left to reveal more After)
-  document.querySelectorAll('[data-slider-hp]').forEach(wrap => {
-    const after = wrap.querySelector('.ba-after-hp');
-    const handle = wrap.querySelector('.ba-handle-hp');
-    let drag = false;
-    function setPos(x) {
-      const r = wrap.getBoundingClientRect();
-      const p = Math.min(Math.max((x - r.left) / r.width, 0.05), 0.95);
-      after.style.clipPath = `inset(0 0 0 ${p*100}%)`;
-      handle.style.left = (p*100) + '%';
-    }
-    wrap.addEventListener('mousedown', e => { drag=true; setPos(e.clientX); e.preventDefault(); });
-    wrap.addEventListener('touchstart', e => { drag=true; setPos(e.touches[0].clientX); },{passive:true});
-    document.addEventListener('mousemove', e => { if(drag) setPos(e.clientX); });
-    document.addEventListener('touchmove', e => { if(drag) setPos(e.touches[0].clientX); },{passive:true});
-    document.addEventListener('mouseup', () => drag=false);
-    document.addEventListener('touchend', () => drag=false);
-  });
-  </script>
+  
+
+
 
 
 <!-- ═══════════════════════════════════════════════════
@@ -2317,7 +2309,9 @@ section + section::before {
     </div>
   </div>
 </div>
-    <!-- ═══════════════════════════════════════════════════
+    
+
+<!-- ═══════════════════════════════════════════════════
          EXCEL BLACK CAR SERVICE
     ═══════════════════════════════════════════════════ -->
     <div class="ba-card-hp reveal" data-category="ba web">
@@ -2442,7 +2436,9 @@ section + section::before {
     </div>
   </div>
 </div>
-    <!-- ═══════════════════════════════════════════════════
+    
+
+<!-- ═══════════════════════════════════════════════════
          CYBERMAGNET CRM
     ═══════════════════════════════════════════════════ -->
     <div class="ba-card-hp reveal" data-category="ba web">
@@ -2570,7 +2566,9 @@ section + section::before {
     </div>
   </div>
 </div>
-    <!-- ═══════════════════════════════════════════════════
+    
+
+<!-- ═══════════════════════════════════════════════════
          CAMP CHECK-IN APP
     ═══════════════════════════════════════════════════ -->
     <div class="ba-card-hp reveal" data-category="ba web">
@@ -2702,7 +2700,12 @@ section + section::before {
   </div>
 </div>
 
+
+  </div>
+
 </section>
+
+
 
 <!-- ══════════════════════════════════════════════════════════
      SECTION 2 — BRAND & GRAPHIC DESIGN (FLIP CARDS)
@@ -3330,6 +3333,8 @@ section + section::before {
 </div>
 
 <!-- FOOTER -->
+
+
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
@@ -3586,5 +3591,126 @@ document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
   });
 })();
 </script>
+</body>
+</html>
+
+
+<!-- BA SLIDER + FILTER JS -->
+<script>
+/* ── BA SLIDER HP ──────────────────────────────────────────────────────────── */
+(function() {
+  document.querySelectorAll('.ba-slider-hp[data-slider-hp]').forEach(function(slider) {
+    var after = slider.querySelector('.ba-after-hp');
+    var handle = slider.querySelector('.ba-handle-hp');
+    if (!after || !handle) return;
+    var dragging = false;
+
+    function setPos(clientX) {
+      var rect = slider.getBoundingClientRect();
+      var pct  = Math.max(0.05, Math.min(0.95, (clientX - rect.left) / rect.width));
+      after.style.clipPath = 'inset(0 ' + ((1-pct)*100).toFixed(1) + '% 0 0)';
+      handle.style.left    = (pct * 100).toFixed(1) + '%';
+    }
+
+    // Mouse
+    slider.addEventListener('mousedown', function(e) { dragging = true; setPos(e.clientX); });
+    document.addEventListener('mousemove', function(e) { if (dragging) setPos(e.clientX); });
+    document.addEventListener('mouseup',   function()  { dragging = false; });
+
+    // Touch
+    slider.addEventListener('touchstart', function(e) { dragging = true; setPos(e.touches[0].clientX); e.preventDefault(); }, { passive: false });
+    document.addEventListener('touchmove', function(e) { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+    document.addEventListener('touchend',  function()  { dragging = false; });
+  });
+})();
+
+/* ── PORTFOLIO FILTER ──────────────────────────────────────────────────────── */
+(function() {
+  var btns  = document.querySelectorAll('.port-filter-btn');
+  var cards = document.querySelectorAll('.ba-card-hp');
+  // Also get the results strips below each card
+  var strips = document.querySelectorAll('.ba-card-hp + div');
+
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var filter = btn.dataset.filter;
+
+      // Update active button
+      btns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+
+      // Show/hide cards
+      cards.forEach(function(card) {
+        var cat = card.dataset.category || '';
+        var show = filter === 'all' || cat === filter || cat.indexOf(filter) > -1;
+        card.style.display = show ? '' : 'none';
+        // Find the next sibling div (results strip)
+        var next = card.nextElementSibling;
+        if (next && next.tagName !== 'DIV'.toLowerCase()) next = null;
+        if (next) next.style.display = show ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
+
+<!-- MOBILE NAV + TILT JS -->
+<script>
+(function(){
+  function tilt(sel,max,sc){
+    document.querySelectorAll(sel).forEach(function(c){
+      c.style.transformStyle='preserve-3d';
+      c.addEventListener('mousemove',function(e){
+        var r=c.getBoundingClientRect(),
+            x=(e.clientX-r.left)/r.width-0.5,
+            y=(e.clientY-r.top)/r.height-0.5;
+        c.style.transition='transform 0.1s ease';
+        c.style.transform='perspective(800px) rotateX('+(y*max*-1)+'deg) rotateY('+(x*max)+'deg) scale('+sc+')';
+      });
+      c.addEventListener('mouseleave',function(){
+        c.style.transition='transform 0.5s cubic-bezier(0.34,1.56,0.64,1)';
+        c.style.transform='perspective(800px) rotateX(0deg) rotateY(0deg) scale(1)';
+      });
+    });
+  }
+  tilt('.service-card,.svc-card',8,1.03);
+  tilt('.value-card,.ba-stat-card',5,1.02);
+  tilt('.feature-card,.process-step',5,1.02);
+  var orb=document.querySelector('.hero-orb'),orbO=document.querySelector('.hero-orb-o');
+  if(orb||orbO){
+    var tick=false;
+    document.addEventListener('mousemove',function(e){
+      if(tick)return;tick=true;
+      requestAnimationFrame(function(){
+        var x=(e.clientX/window.innerWidth-0.5)*30,y=(e.clientY/window.innerHeight-0.5)*20;
+        if(orb)orb.style.transform='translate('+x+'px,'+y+'px)';
+        if(orbO)orbO.style.transform='translate('+(x*-0.6)+'px,'+(y*-0.6)+'px)';
+        tick=false;
+      });
+    });
+  }
+})();
+</script><script>
+(function(){
+  var h=document.getElementById('nav-ham'),d=document.getElementById('mob-drawer'),o=document.getElementById('mob-overlay'),c=document.getElementById('mob-close');
+  if(!h||!d)return;
+  function open(){d.classList.add('open');o&&o.classList.add('open');h.classList.add('open');h.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';}
+  function close(){d.classList.remove('open');o&&o.classList.remove('open');h.classList.remove('open');h.setAttribute('aria-expanded','false');document.body.style.overflow='';}
+  h.addEventListener('click',function(){d.classList.contains('open')?close():open();});
+  if(c)c.addEventListener('click',close);
+  if(o)o.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  d.querySelectorAll('a').forEach(function(a){a.addEventListener('click',close);});
+  // Desktop dropdown
+  document.querySelectorAll('.nav-item').forEach(function(item){
+    var drop=item.querySelector('.nav-drop');if(!drop)return;
+    drop.style.cssText='opacity:0;visibility:hidden;transform:translateY(-8px);pointer-events:none;transition:opacity 0.2s,transform 0.2s,visibility 0.2s';
+    var t;
+    item.addEventListener('mouseenter',function(){clearTimeout(t);drop.style.opacity='1';drop.style.visibility='visible';drop.style.transform='translateY(0)';drop.style.pointerEvents='auto';});
+    item.addEventListener('mouseleave',function(){t=setTimeout(function(){drop.style.opacity='0';drop.style.visibility='hidden';drop.style.transform='translateY(-8px)';drop.style.pointerEvents='none';},120);});
+  });
+})();
+</script>
+
 </body>
 </html>

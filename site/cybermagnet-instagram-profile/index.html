@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CyberMagnet Instagram Profile Photo</title>
+<style>
+  body { background: #1a1a1a; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; font-family: Arial, sans-serif; gap: 32px; }
+  .label { color: #666; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; text-align: center; }
+  .preview-wrap { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  canvas { display: block; }
+  .ig-circle { border-radius: 50%; overflow: hidden; border: 3px solid #333; }
+  .row { display: flex; gap: 40px; align-items: flex-end; }
+  .dl-btn {
+    margin-top: 32px; padding: 12px 32px; background: linear-gradient(135deg, #D97706, #2563EB);
+    color: #fff; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 700;
+    cursor: pointer; text-decoration: none; display: inline-block;
+  }
+</style>
+</head>
+<body>
+
+<div class="label">CyberMagnet — Instagram Profile Photo (320×320)</div>
+
+<div class="row">
+  <div class="preview-wrap">
+    <div class="label">Square</div>
+    <canvas id="c-square" width="320" height="320"></canvas>
+  </div>
+  <div class="preview-wrap">
+    <div class="label">Circle preview (as seen on Instagram)</div>
+    <canvas id="c-circle" width="320" height="320" class="ig-circle"></canvas>
+  </div>
+  <div class="preview-wrap">
+    <div class="label">Small preview (feed size)</div>
+    <canvas id="c-small" width="80" height="80" class="ig-circle"></canvas>
+  </div>
+</div>
+
+<button class="dl-btn" onclick="download()">⬇ Download PNG (320×320)</button>
+
+<script>
+function drawLogo(canvas) {
+  const W = canvas.width, H = canvas.height;
+  const ctx = canvas.getContext('2d');
+  const dpr = 1;
+
+  // ── BACKGROUND ───────────────────────────────────────────────────────────
+  // Deep navy gradient
+  const bg = ctx.createRadialGradient(W*0.35, H*0.3, 0, W*0.5, H*0.5, W*0.75);
+  bg.addColorStop(0, '#0E1C35');
+  bg.addColorStop(1, '#050D1F');
+  ctx.fillStyle = bg;
+  ctx.fillRect(0, 0, W, H);
+
+  // Subtle grid
+  ctx.strokeStyle = 'rgba(37,99,235,0.06)';
+  ctx.lineWidth = 0.5;
+  const grid = W / 8;
+  for (let x = 0; x <= W; x += grid) {
+    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+  }
+  for (let y = 0; y <= H; y += grid) {
+    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+  }
+
+  // Subtle glow orb (gold)
+  const glow = ctx.createRadialGradient(W*0.5, H*0.5, 0, W*0.5, H*0.5, W*0.4);
+  glow.addColorStop(0, 'rgba(217,119,6,0.08)');
+  glow.addColorStop(1, 'transparent');
+  ctx.fillStyle = glow;
+  ctx.fillRect(0, 0, W, H);
+
+  // ── LOGO ELEMENTS ─────────────────────────────────────────────────────────
+  const cx = W / 2;
+  const cy = H / 2;
+
+  // Scale factor — design at 320px
+  const scale = W / 320;
+
+  // Text sizes
+  const fontSizeLarge = 42 * scale;
+  const fontSizeSmall = 13 * scale;
+
+  // CYBER text
+  ctx.font = `900 ${fontSizeLarge}px 'Montserrat', 'Arial Black', sans-serif`;
+  ctx.fillStyle = '#F5F3EF';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'alphabetic';
+  ctx.letterSpacing = `${8 * scale}px`;
+  ctx.fillText('CYBER', cx, cy - 18 * scale);
+
+  // Line + dots
+  const lineY    = cy + 4 * scale;
+  const dotR     = 5 * scale;
+  const lineLeft  = cx - 110 * scale;
+  const lineRight = cx + 110 * scale;
+
+  // Gradient line
+  const lineGrad = ctx.createLinearGradient(lineLeft, 0, lineRight, 0);
+  lineGrad.addColorStop(0,   '#D97706');
+  lineGrad.addColorStop(0.5, '#F59E0B');
+  lineGrad.addColorStop(1,   '#D97706');
+
+  ctx.strokeStyle = lineGrad;
+  ctx.lineWidth   = 2.5 * scale;
+  ctx.beginPath();
+  ctx.moveTo(lineLeft + dotR, lineY);
+  ctx.lineTo(lineRight - dotR, lineY);
+  ctx.stroke();
+
+  // Left dot
+  ctx.fillStyle = '#D97706';
+  ctx.beginPath();
+  ctx.arc(lineLeft, lineY, dotR, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Right dot
+  ctx.beginPath();
+  ctx.arc(lineRight, lineY, dotR, 0, Math.PI * 2);
+  ctx.fill();
+
+  // MAGNET text
+  ctx.font = `900 ${fontSizeLarge}px 'Montserrat', 'Arial Black', sans-serif`;
+  ctx.fillStyle = '#D97706';
+  ctx.letterSpacing = `${8 * scale}px`;
+  ctx.fillText('MAGNET', cx, cy + 52 * scale);
+
+  // Tagline
+  ctx.font = `600 ${fontSizeSmall}px 'Montserrat', Arial, sans-serif`;
+  ctx.fillStyle = 'rgba(255,255,255,0.25)';
+  ctx.letterSpacing = `${3 * scale}px`;
+  ctx.fillText('AI-POWERED MARKETING', cx, cy + 74 * scale);
+}
+
+// Draw all three canvases
+const sq  = document.getElementById('c-square');
+const cir = document.getElementById('c-circle');
+const sm  = document.getElementById('c-small');
+
+drawLogo(sq);
+drawLogo(cir);
+drawLogo(sm);
+
+function download() {
+  const link = document.createElement('a');
+  link.download = 'cybermagnet-instagram-profile.png';
+  link.href = sq.toDataURL('image/png');
+  link.click();
+}
+</script>
+
+</body>
+</html>

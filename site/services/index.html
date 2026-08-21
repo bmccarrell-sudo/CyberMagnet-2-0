@@ -57,6 +57,8 @@
   --radius-sm:   6px;
   --radius-md:   12px;
   --radius-lg:   20px;
+
+  --grad-r:      linear-gradient(90deg, #2563EB, #D97706);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -245,7 +247,7 @@ footer{background:var(--black);border-top:1px solid var(--dim);padding:60px 6% 3
   .cat-header{flex-direction:column;align-items:flex-start;gap:14px}
 }
 @media(max-width:600px){
-  :root{--urgency-h:36px}
+  
   .urgency-bar{font-size:0.7rem}
   .footer-grid{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column;gap:8px}
@@ -380,12 +382,7 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
 
 
 /* ── GOLD → COBALT GRADIENT SYSTEM ── */
-:root {
-  --grad: linear-gradient(90deg, #D97706, #2563EB);
-  --grad-r: linear-gradient(90deg, #2563EB, #D97706);
-  --grad-d: linear-gradient(135deg, #D97706, #2563EB);
-  --grad-text: var(--grad-text);
-}
+
 
 /* Gradient text utility */
 .grad-text {

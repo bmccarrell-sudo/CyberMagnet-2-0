@@ -64,6 +64,8 @@
   --radius-sm:   6px;
   --radius-md:   12px;
   --radius-lg:   20px;
+
+  --grad-r:      linear-gradient(90deg, #2563EB, #D97706);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -692,7 +694,7 @@ select:focus { color: var(--white); }
   padding: 0;
 }
 .faq-item.open .faq-a {
-  max-height: 200px;
+  max-height: 500px;
   padding-bottom: 20px;
 }
 
@@ -892,12 +894,7 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
 
 
 /* ── GOLD → COBALT GRADIENT SYSTEM ── */
-:root {
-  --grad: linear-gradient(90deg, #D97706, #2563EB);
-  --grad-r: linear-gradient(90deg, #2563EB, #D97706);
-  --grad-d: linear-gradient(135deg, #D97706, #2563EB);
-  --grad-text: var(--grad-text);
-}
+
 
 /* Gradient text utility */
 .grad-text {
@@ -1904,6 +1901,18 @@ revEls.forEach(el => obs.observe(el));
     });
   });
 })();
+</script>
+
+<script>
+/* ── FAQ ACCORDION ── */
+document.querySelectorAll('.faq-q').forEach(function(q) {
+  q.addEventListener('click', function() {
+    var item = q.parentElement;
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+    if (!isOpen) item.classList.add('open');
+  });
+});
 </script>
 </body>
 </html>

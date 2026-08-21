@@ -9,35 +9,61 @@
 <meta name="description" content="CyberMagnet's Terms and Conditions — the rules governing use of our website and services.">
 <style>
 :root {
-  --black:      #050810;
-  --deep-navy:  #0a1628;
-  --navy:       #0a2540;
-  --electric:   #2563EB;
-  --el-glow:    rgba(37,99,235,0.25);
-  --el-light:   rgba(37,99,235,0.08);
-  --orange:     #D97706;
-  --orange-hot: #ff9500;
-  --or-glow:    rgba(217,119,6,0.32);
-  --or-light:   rgba(217,119,6,0.08);
-  --off-white:  #dce8f5;
-  --gray-300:   #aabdd0;
-  --gray-400:   #8899aa;
-  --gray-600:   #445566;
-  --dim:        rgba(255,255,255,0.06);
-  --success:    #00c864;
-  --font-d:     'Syne', sans-serif;
-  --font-b:     'DM Sans', sans-serif;
-  --sp:         clamp(72px, 9vw, 120px);
-  --urgency-h:  44px;
-  --nav-h:      68px;
-  --max-w:      860px;
+  /* ── Backgrounds ── */
+  --black:       #050810;
+  --deep-navy:   #080e1c;
+  --navy:        #0a1628;
+  --mid-blue:    #152240;
+
+  /* ── Brand ── */
+  --gold:        #D97706;
+  --gold-light:  #F0A020;
+  --gold-dim:    rgba(217,119,6,0.14);
+  --gold-glow:   rgba(217,119,6,0.30);
+  --cobalt:      #2563EB;
+  --cobalt-light:#3B7FF5;
+  --cobalt-dim:  rgba(37,99,235,0.12);
+  --cobalt-glow: rgba(37,99,235,0.28);
+
+  /* ── Aliases (for legacy var() references) ── */
+  --orange:      #D97706;
+  --electric:    #2563EB;
+  --el-glow:     rgba(37,99,235,0.28);
+  --or-glow:     rgba(217,119,6,0.30);
+
+  /* ── Text ── */
+  --white:       #ffffff;
+  --off-white:   #EEF2F7;
+  --gray-300:    #aabdd0;
+  --gray-400:    #8899aa;
+  --gray-600:    #445566;
+  --dim:         rgba(255,255,255,0.06);
+
+  /* ── Gradients ── */
+  --grad:        linear-gradient(90deg, #D97706, #2563EB);
+  --grad-135:    linear-gradient(135deg, #D97706, #2563EB);
+  --grad-text:   linear-gradient(90deg, #D97706, #3B7FF5);
+  --grad-gold:   linear-gradient(90deg, #D97706, #F0A020, #D97706);
+  --grad-cobalt: linear-gradient(90deg, #2563EB, #3B7FF5, #2563EB);
+
+  /* ── Typography ── */
+  --font-d:      'Syne', sans-serif;
+  --font-b:      'DM Sans', sans-serif;
+
+  /* ── Layout ── */
+  --sp:          clamp(80px, 10vw, 140px);
+  --urgency-h:   44px;
+  --nav-h:       68px;
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--black);color:#dce8f5;font-family:var(--font-b);font-weight:300;line-height:1.8;overflow-x:hidden}
+body{background:var(--black);color:var(--off-white);font-family:var(--font-b);font-weight:300;line-height:1.8;overflow-x:hidden}
 
 /* ── URGENCY BAR ── */
-.urgency-bar{position:fixed;top:0;left:0;right:0;z-index:300;height:var(--urgency-h);display:flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(90deg,#cc5f00,var(--orange),#e07000,var(--orange),#cc5f00);background-size:300% 100%;animation:urg-shift 5s ease-in-out infinite;font-size:0.8rem;font-weight:500;color:#fff;padding:0 5%;overflow:hidden}
+.urgency-bar{position:fixed;top:0;left:0;right:0;z-index:300;height:var(--urgency-h);display:flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(90deg,#B86200,var(--orange),#C97300,var(--orange),#B86200);background-size:300% 100%;animation:urg-shift 5s ease-in-out infinite;font-size:0.8rem;font-weight:500;color:#fff;padding:0 5%;overflow:hidden}
 .urgency-bar::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.07) 50%,transparent);animation:urg-sheen 3.5s ease-in-out infinite;pointer-events:none}
 @keyframes urg-shift{0%,100%{background-position:0%}50%{background-position:100%}}
 @keyframes urg-sheen{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
@@ -53,7 +79,7 @@ nav.scrolled{background:rgba(5,8,16,0.96);box-shadow:0 2px 40px rgba(0,0,0,0.5)}
 .nav-links a{color:var(--gray-400);text-decoration:none;font-size:0.84rem;letter-spacing:0.05em;text-transform:uppercase;font-weight:400;transition:color 0.2s}
 .nav-links a:hover,.nav-links a.active{color:#fff}
 .nav-cta{background:var(--orange);color:#fff;border:none;padding:9px 22px;border-radius:6px;font-family:var(--font-b);font-size:0.84rem;font-weight:500;cursor:pointer;text-decoration:none;transition:all 0.2s}
-.nav-cta:hover{background:var(--orange-hot);transform:translateY(-1px);box-shadow:0 4px 18px var(--or-glow)}
+.nav-cta:hover{opacity: 0.88; background: var(--grad);transform:translateY(-1px);box-shadow:0 4px 18px var(--or-glow)}
 .nav-ham{display:none;flex-direction:column;gap:5px;cursor:pointer}
 .nav-ham span{width:22px;height:2px;background:#fff;border-radius:2px}
 
@@ -199,14 +225,14 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
   box-shadow: 0 24px 60px rgba(37,99,235,0.16);
 }
 .acc-o {
-  background-image: linear-gradient(90deg, #D97706, #F59E0B, #D97706);
+  background-image: linear-gradient(90deg, #D97706, var(--gold-light), #D97706);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200% auto;
   animation: shimmer 4s linear infinite;
 }
 .acc-b {
-  background-image: linear-gradient(90deg, #2563EB, #60A5FA, #2563EB);
+  background-image: linear-gradient(90deg, #2563EB, var(--cobalt-light), #2563EB);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200% auto;
@@ -254,7 +280,7 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
   --grad: linear-gradient(90deg, #D97706, #2563EB);
   --grad-r: linear-gradient(90deg, #2563EB, #D97706);
   --grad-d: linear-gradient(135deg, #D97706, #2563EB);
-  --grad-text: linear-gradient(90deg, #F59E0B, #60A5FA);
+  --grad-text: var(--grad-text);
 }
 
 /* Gradient text utility */
@@ -669,7 +695,7 @@ section + section::before {
     </div>
   </div>
 </section>
-<div style="height:3px;background:linear-gradient(90deg,#D97706,#2563EB);width:100%"></div>
+<div style="height:3px;background:var(--grad);width:100%"></div>
 
 
 <main class="legal-wrap">
@@ -695,14 +721,14 @@ section + section::before {
   </div>
 
   <div class="legal-highlight reveal">
-    <p>These Terms and Conditions (&ldquo;Terms&rdquo;) constitute a legally binding agreement between you and <strong style="color:#dce8f5">CyberMagnet Marketing Solutions LLC</strong> (&ldquo;CyberMagnet,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;). By accessing our website, requesting a consultation, or engaging our services, you agree to be bound by these Terms. If you do not agree, do not use our website or services.</p>
+    <p>These Terms and Conditions (&ldquo;Terms&rdquo;) constitute a legally binding agreement between you and <strong style="color:var(--off-white)">CyberMagnet Marketing Solutions LLC</strong> (&ldquo;CyberMagnet,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;). By accessing our website, requesting a consultation, or engaging our services, you agree to be bound by these Terms. If you do not agree, do not use our website or services.</p>
   </div>
 
   <!-- 1 -->
   <section class="legal-section reveal" id="t1">
     <span class="section-num">01</span>
     <h2>Acceptance of Terms</h2>
-    <p>By accessing <strong style="color:#dce8f5">cybermagnet.net</strong> or any of its subpages, submitting a contact or enquiry form, booking a consultation, purchasing a digital product, or entering into a service agreement with CyberMagnet, you confirm that:</p>
+    <p>By accessing <strong style="color:var(--off-white)">cybermagnet.net</strong> or any of its subpages, submitting a contact or enquiry form, booking a consultation, purchasing a digital product, or entering into a service agreement with CyberMagnet, you confirm that:</p>
     <ul>
       <li>You are at least 18 years of age, or the legal age of majority in your jurisdiction</li>
       <li>You have the authority to enter into binding agreements on behalf of yourself or the business you represent</li>
@@ -751,11 +777,11 @@ section + section::before {
     <h2>Payment &amp; Fees</h2>
     <p>All fees, payment schedules, and methods will be specified in your Service Agreement or at the point of purchase.</p>
     <ul>
-      <li><strong style="color:#dce8f5">Invoices</strong> are due within the number of days specified on the invoice (typically 7 or 14 days)</li>
-      <li><strong style="color:#dce8f5">Setup fees</strong> are generally non-refundable once work has commenced</li>
-      <li><strong style="color:#dce8f5">Monthly retainers</strong> are billed in advance and are non-refundable for the current billing period</li>
-      <li><strong style="color:#dce8f5">Late payments</strong> may incur a late fee of 1.5% per month on the outstanding balance</li>
-      <li><strong style="color:#dce8f5">Digital products</strong> are sold as-is with no refunds unless a product is materially defective or not as described</li>
+      <li><strong style="color:var(--off-white)">Invoices</strong> are due within the number of days specified on the invoice (typically 7 or 14 days)</li>
+      <li><strong style="color:var(--off-white)">Setup fees</strong> are generally non-refundable once work has commenced</li>
+      <li><strong style="color:var(--off-white)">Monthly retainers</strong> are billed in advance and are non-refundable for the current billing period</li>
+      <li><strong style="color:var(--off-white)">Late payments</strong> may incur a late fee of 1.5% per month on the outstanding balance</li>
+      <li><strong style="color:var(--off-white)">Digital products</strong> are sold as-is with no refunds unless a product is materially defective or not as described</li>
       <li>We reserve the right to suspend Services if payment is overdue by more than 14 days</li>
       <li>All prices are in US dollars unless otherwise stated</li>
     </ul>
@@ -770,10 +796,10 @@ section + section::before {
   <section class="legal-section reveal" id="t5">
     <span class="section-num">05</span>
     <h2>Intellectual Property</h2>
-    <p><strong style="color:#dce8f5">Our pre-existing materials:</strong> All tools, methodologies, templates, frameworks, software, code libraries, and other proprietary materials developed by CyberMagnet prior to or independently of your engagement (&ldquo;Background IP&rdquo;) remain the sole property of CyberMagnet. We grant you a non-exclusive, non-transferable licence to use Background IP solely as incorporated into your deliverables.</p>
-    <p><strong style="color:#dce8f5">Client deliverables:</strong> Upon receipt of full payment for a project, CyberMagnet assigns to you all ownership rights in the custom deliverables created specifically for you (excluding Background IP, third-party assets, and stock content).</p>
-    <p><strong style="color:#dce8f5">Your materials:</strong> You retain full ownership of any content, images, data, branding, or materials you provide to us. You grant CyberMagnet a licence to use such materials solely for the purpose of delivering Services.</p>
-    <p><strong style="color:#dce8f5">Portfolio use:</strong> Unless you expressly request otherwise in writing, you grant CyberMagnet the right to display and reference completed work in our portfolio, case studies, and marketing materials.</p>
+    <p><strong style="color:var(--off-white)">Our pre-existing materials:</strong> All tools, methodologies, templates, frameworks, software, code libraries, and other proprietary materials developed by CyberMagnet prior to or independently of your engagement (&ldquo;Background IP&rdquo;) remain the sole property of CyberMagnet. We grant you a non-exclusive, non-transferable licence to use Background IP solely as incorporated into your deliverables.</p>
+    <p><strong style="color:var(--off-white)">Client deliverables:</strong> Upon receipt of full payment for a project, CyberMagnet assigns to you all ownership rights in the custom deliverables created specifically for you (excluding Background IP, third-party assets, and stock content).</p>
+    <p><strong style="color:var(--off-white)">Your materials:</strong> You retain full ownership of any content, images, data, branding, or materials you provide to us. You grant CyberMagnet a licence to use such materials solely for the purpose of delivering Services.</p>
+    <p><strong style="color:var(--off-white)">Portfolio use:</strong> Unless you expressly request otherwise in writing, you grant CyberMagnet the right to display and reference completed work in our portfolio, case studies, and marketing materials.</p>
     <ul>
       <li>Digital products sold on our website remain the intellectual property of CyberMagnet; purchase grants you a personal, non-commercial, non-transferable licence to use the product unless otherwise specified</li>
       <li>You may not resell, sublicense, reproduce, or distribute our digital products without written permission</li>
@@ -846,8 +872,8 @@ section + section::before {
   <section class="legal-section reveal" id="t10">
     <span class="section-num">10</span>
     <h2>Termination</h2>
-    <p><strong style="color:#dce8f5">By you:</strong> You may terminate an ongoing Service engagement by providing written notice as specified in your Service Agreement (typically 30 days). Fees for work completed and any non-cancellable third-party costs incurred up to the termination date remain payable.</p>
-    <p><strong style="color:#dce8f5">By us:</strong> We may suspend or terminate Services immediately if:</p>
+    <p><strong style="color:var(--off-white)">By you:</strong> You may terminate an ongoing Service engagement by providing written notice as specified in your Service Agreement (typically 30 days). Fees for work completed and any non-cancellable third-party costs incurred up to the termination date remain payable.</p>
+    <p><strong style="color:var(--off-white)">By us:</strong> We may suspend or terminate Services immediately if:</p>
     <ul>
       <li>You breach these Terms or a Service Agreement and fail to remedy the breach within 10 business days of written notice</li>
       <li>Payment is overdue by more than 30 days</li>
@@ -879,12 +905,12 @@ section + section::before {
   <section class="legal-section reveal" id="t12">
     <span class="section-num">12</span>
     <h2>Governing Law &amp; Disputes</h2>
-    <p>These Terms are governed by and construed in accordance with the laws of the <strong style="color:#dce8f5">State of Texas</strong>, without regard to its conflict of law principles.</p>
+    <p>These Terms are governed by and construed in accordance with the laws of the <strong style="color:var(--off-white)">State of Texas</strong>, without regard to its conflict of law principles.</p>
     <p>Any dispute arising out of or relating to these Terms or your use of our Services shall be resolved as follows:</p>
     <ul>
-      <li><strong style="color:#dce8f5">Informal resolution first</strong> &mdash; you agree to contact us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dab3b4bcb59ab9a3b8bfa8b7bbbdb4bfaef4b4bfae">[email&#160;protected]</a> and attempt to resolve any dispute informally before initiating formal proceedings</li>
-      <li><strong style="color:#dce8f5">Binding arbitration</strong> &mdash; if informal resolution fails within 30 days, disputes shall be submitted to binding arbitration in Dallas County, Texas, under the rules of the American Arbitration Association</li>
-      <li><strong style="color:#dce8f5">Class action waiver</strong> &mdash; you agree to resolve disputes only on an individual basis and waive the right to participate in a class action lawsuit or class-wide arbitration</li>
+      <li><strong style="color:var(--off-white)">Informal resolution first</strong> &mdash; you agree to contact us at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="dab3b4bcb59ab9a3b8bfa8b7bbbdb4bfaef4b4bfae">[email&#160;protected]</a> and attempt to resolve any dispute informally before initiating formal proceedings</li>
+      <li><strong style="color:var(--off-white)">Binding arbitration</strong> &mdash; if informal resolution fails within 30 days, disputes shall be submitted to binding arbitration in Dallas County, Texas, under the rules of the American Arbitration Association</li>
+      <li><strong style="color:var(--off-white)">Class action waiver</strong> &mdash; you agree to resolve disputes only on an individual basis and waive the right to participate in a class action lawsuit or class-wide arbitration</li>
       <li>Notwithstanding the above, either party may seek injunctive or other equitable relief in a court of competent jurisdiction</li>
     </ul>
   </section>
@@ -908,10 +934,10 @@ section + section::before {
     <p>Questions about these Terms? We&rsquo;re straightforward people &mdash; reach out and we&rsquo;ll give you a straight answer.</p>
     <div class="legal-contact-box">
       <h3>CyberMagnet Marketing Solutions LLC</h3>
-      <p><strong style="color:#dce8f5">Email:</strong> <a href="/cdn-cgi/l/email-protection#a2cbccc4cde2c1dbc0c7d0cfc3c5ccc7d68cccc7d6"><span class="__cf_email__" data-cfemail="670e09010827041e0502150a060009021349090213">[email&#160;protected]</span></a></p>
-      <p><strong style="color:#dce8f5">Phone:</strong> <a href="tel:+19723385778">(972) 338-5778</a></p>
-      <p><strong style="color:#dce8f5">Business Hours:</strong> Monday &ndash; Friday, 10:00 AM &ndash; 4:00 PM CT</p>
-      <p><strong style="color:#dce8f5">Location:</strong> Dallas, Texas, United States</p>
+      <p><strong style="color:var(--off-white)">Email:</strong> <a href="/cdn-cgi/l/email-protection#a2cbccc4cde2c1dbc0c7d0cfc3c5ccc7d68cccc7d6"><span class="__cf_email__" data-cfemail="670e09010827041e0502150a060009021349090213">[email&#160;protected]</span></a></p>
+      <p><strong style="color:var(--off-white)">Phone:</strong> <a href="tel:+19723385778">(972) 338-5778</a></p>
+      <p><strong style="color:var(--off-white)">Business Hours:</strong> Monday &ndash; Friday, 10:00 AM &ndash; 4:00 PM CT</p>
+      <p><strong style="color:var(--off-white)">Location:</strong> Dallas, Texas, United States</p>
     </div>
   </section>
 

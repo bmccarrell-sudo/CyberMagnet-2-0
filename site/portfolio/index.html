@@ -16,29 +16,54 @@
    ============================================================ */
 
 :root {
-  --black:      #050810;
-  --deep-navy:  #0a1628;
-  --navy:       #0a2540;
-  --mid-blue:   #1b3b6f;
-  --electric:   #2563EB;
-  --el-glow:    rgba(37,99,235,0.25);
-  --el-light:   rgba(37,99,235,0.08);
-  --orange:     #D97706;
-  --orange-hot: #ff9500;
-  --or-glow:    rgba(217,119,6,0.32);
-  --or-light:   rgba(217,119,6,0.08);
-  --white:      #ffffff;
-  --off-white:  #dce8f5;
-  --gray-300:   #aabdd0;
-  --gray-400:   #8899aa;
-  --gray-600:   #445566;
-  --dim:        rgba(255,255,255,0.06);
-  --success:    #00c864;
-  --font-d:     'Syne', sans-serif;
-  --font-b:     'DM Sans', sans-serif;
-  --sp:         clamp(72px, 9vw, 120px);
-  --urgency-h:  44px;
-  --nav-h:      68px;
+  /* ── Backgrounds ── */
+  --black:       #050810;
+  --deep-navy:   #080e1c;
+  --navy:        #0a1628;
+  --mid-blue:    #152240;
+
+  /* ── Brand ── */
+  --gold:        #D97706;
+  --gold-light:  #F0A020;
+  --gold-dim:    rgba(217,119,6,0.14);
+  --gold-glow:   rgba(217,119,6,0.30);
+  --cobalt:      #2563EB;
+  --cobalt-light:#3B7FF5;
+  --cobalt-dim:  rgba(37,99,235,0.12);
+  --cobalt-glow: rgba(37,99,235,0.28);
+
+  /* ── Aliases (for legacy var() references) ── */
+  --orange:      #D97706;
+  --electric:    #2563EB;
+  --el-glow:     rgba(37,99,235,0.28);
+  --or-glow:     rgba(217,119,6,0.30);
+
+  /* ── Text ── */
+  --white:       #ffffff;
+  --off-white:   #EEF2F7;
+  --gray-300:    #aabdd0;
+  --gray-400:    #8899aa;
+  --gray-600:    #445566;
+  --dim:         rgba(255,255,255,0.06);
+
+  /* ── Gradients ── */
+  --grad:        linear-gradient(90deg, #D97706, #2563EB);
+  --grad-135:    linear-gradient(135deg, #D97706, #2563EB);
+  --grad-text:   linear-gradient(90deg, #D97706, #3B7FF5);
+  --grad-gold:   linear-gradient(90deg, #D97706, #F0A020, #D97706);
+  --grad-cobalt: linear-gradient(90deg, #2563EB, #3B7FF5, #2563EB);
+
+  /* ── Typography ── */
+  --font-d:      'Syne', sans-serif;
+  --font-b:      'DM Sans', sans-serif;
+
+  /* ── Layout ── */
+  --sp:          clamp(80px, 10vw, 140px);
+  --urgency-h:   44px;
+  --nav-h:       68px;
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -57,7 +82,7 @@ body {
   position: fixed; top: 0; left: 0; right: 0; z-index: 300;
   height: var(--urgency-h);
   display: flex; align-items: center; justify-content: center; gap: 6px;
-  background: linear-gradient(90deg, #cc5f00, var(--orange), #e07000, var(--orange), #cc5f00);
+  background: linear-gradient(90deg, #B86200, var(--orange), #C97300, var(--orange), #B86200);
   background-size: 300% 100%;
   animation: urg-shift 5s ease-in-out infinite;
   font-family: var(--font-b); font-size: 0.8rem; font-weight: 500;
@@ -88,7 +113,7 @@ nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,
 .nav-links a { color: var(--gray-400); text-decoration: none; font-size: 0.84rem; letter-spacing: 0.05em; text-transform: uppercase; font-weight: 400; transition: color 0.2s; }
 .nav-links a:hover, .nav-links a.active { color: #fff; }
 .nav-cta { background: var(--orange); color: #fff; border: none; padding: 9px 22px; border-radius: 6px; font-family: var(--font-b); font-size: 0.84rem; font-weight: 500; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; }
-.nav-cta:hover { background: var(--orange-hot); transform: translateY(-1px); box-shadow: 0 4px 18px var(--or-glow); }
+.nav-cta:hover { opacity: 0.88; background: var(--grad); transform: translateY(-1px); box-shadow: 0 4px 18px var(--or-glow); }
 .nav-ham { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
 .nav-ham span { width: 22px; height: 2px; background: #fff; border-radius: 2px; }
 
@@ -134,7 +159,7 @@ nav.scrolled { background: rgba(5,8,16,0.96); box-shadow: 0 2px 40px rgba(0,0,0,
 .bg-black { background: var(--black); }
 .bg-navy  { background: var(--navy); }
 
-.sec-label { color: var(--orange,#D97706); display: inline-flex; align-items: center; gap: 10px; font-size: 0.73rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--electric); margin-bottom: 12px; }
+.sec-label { color: var(--orange,#D97706); display: inline-flex; align-items: center; gap: 10px; font-size: 0.73rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
 .sec-label::before { content: ''; width: 20px; height: 1px; background: var(--electric); }
 .sec-label.o { color: var(--orange); }
 .sec-label.o::before { background: var(--orange); }
@@ -803,14 +828,14 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
   box-shadow: 0 24px 60px rgba(37,99,235,0.16);
 }
 .acc-o {
-  background-image: linear-gradient(90deg, #D97706, #F59E0B, #D97706);
+  background-image: linear-gradient(90deg, #D97706, var(--gold-light), #D97706);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200% auto;
   animation: shimmer 4s linear infinite;
 }
 .acc-b {
-  background-image: linear-gradient(90deg, #2563EB, #60A5FA, #2563EB);
+  background-image: linear-gradient(90deg, #2563EB, var(--cobalt-light), #2563EB);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200% auto;
@@ -858,7 +883,7 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
   --grad: linear-gradient(90deg, #D97706, #2563EB);
   --grad-r: linear-gradient(90deg, #2563EB, #D97706);
   --grad-d: linear-gradient(135deg, #D97706, #2563EB);
-  --grad-text: linear-gradient(90deg, #F59E0B, #60A5FA);
+  --grad-text: var(--grad-text);
 }
 
 /* Gradient text utility */
@@ -1486,7 +1511,7 @@ section + section::before {
 </section>
 
 
-<div style="height:3px;background:linear-gradient(90deg,#D97706,#2563EB);width:100%"></div>
+<div style="height:3px;background:var(--grad);width:100%"></div>
 
 
 <!-- ══ FILTER TABS ══ -->
@@ -1605,7 +1630,7 @@ section + section::before {
               <div style="font-size:0.38rem;color:#8899aa;margin-top:4px;line-height:1.5">Licensed & insured HVAC specialists. Same-day service,<br>upfront pricing, and a 5-star guarantee.</div>
               <div style="display:flex;gap:5px;margin-top:7px">
                 <div style="background:#D97706;border-radius:3px;padding:4px 10px;font-size:0.4rem;font-weight:700;color:#fff">Get Free Estimate →</div>
-                <div style="border:1px solid rgba(255,255,255,0.2);border-radius:3px;padding:4px 8px;font-size:0.4rem;color:#dce8f5">See Our Work</div>
+                <div style="border:1px solid rgba(255,255,255,0.2);border-radius:3px;padding:4px 8px;font-size:0.4rem;color:var(--off-white)">See Our Work</div>
               </div>
             </div>
             <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(37,99,235,0.08);flex-shrink:0">
@@ -1625,19 +1650,19 @@ section + section::before {
             <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;padding:6px;flex:1">
               <div style="background:rgba(37,99,235,0.05);border:1px solid rgba(37,99,235,0.1);border-radius:5px;padding:6px">
                 <div style="font-size:0.65rem;margin-bottom:3px">❄️</div>
-                <div style="font-size:0.42rem;font-weight:700;color:#dce8f5;margin-bottom:2px">AC Install</div>
+                <div style="font-size:0.42rem;font-weight:700;color:var(--off-white);margin-bottom:2px">AC Install</div>
                 <div style="height:3px;background:rgba(37,99,235,0.2);border-radius:1px;margin-bottom:2px"></div>
                 <div style="height:3px;background:rgba(37,99,235,0.12);border-radius:1px;width:70%"></div>
               </div>
               <div style="background:rgba(37,99,235,0.05);border:1px solid rgba(37,99,235,0.1);border-radius:5px;padding:6px">
                 <div style="font-size:0.65rem;margin-bottom:3px">🔥</div>
-                <div style="font-size:0.42rem;font-weight:700;color:#dce8f5;margin-bottom:2px">Heating</div>
+                <div style="font-size:0.42rem;font-weight:700;color:var(--off-white);margin-bottom:2px">Heating</div>
                 <div style="height:3px;background:rgba(37,99,235,0.2);border-radius:1px;margin-bottom:2px"></div>
                 <div style="height:3px;background:rgba(37,99,235,0.12);border-radius:1px;width:55%"></div>
               </div>
               <div style="background:rgba(37,99,235,0.05);border:1px solid rgba(37,99,235,0.1);border-radius:5px;padding:6px">
                 <div style="font-size:0.65rem;margin-bottom:3px">⚙️</div>
-                <div style="font-size:0.42rem;font-weight:700;color:#dce8f5;margin-bottom:2px">Maintenance</div>
+                <div style="font-size:0.42rem;font-weight:700;color:var(--off-white);margin-bottom:2px">Maintenance</div>
                 <div style="height:3px;background:rgba(37,99,235,0.2);border-radius:1px;margin-bottom:2px"></div>
                 <div style="height:3px;background:rgba(37,99,235,0.12);border-radius:1px;width:80%"></div>
               </div>
@@ -2049,17 +2074,17 @@ section + section::before {
             <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;padding:5px;flex:1">
               <div style="background:rgba(160,80,255,0.05);border:1px solid rgba(160,80,255,0.1);border-radius:5px;padding:5px;text-align:center">
                 <div style="font-size:0.65rem;margin-bottom:2px">🧘</div>
-                <div style="font-size:0.38rem;font-weight:700;color:#dce8f5;margin-bottom:2px">Yoga</div>
+                <div style="font-size:0.38rem;font-weight:700;color:var(--off-white);margin-bottom:2px">Yoga</div>
                 <div style="height:3px;background:rgba(160,80,255,0.2);border-radius:1px"></div>
               </div>
               <div style="background:rgba(160,80,255,0.05);border:1px solid rgba(160,80,255,0.1);border-radius:5px;padding:5px;text-align:center">
                 <div style="font-size:0.65rem;margin-bottom:2px">💆</div>
-                <div style="font-size:0.38rem;font-weight:700;color:#dce8f5;margin-bottom:2px">Massage</div>
+                <div style="font-size:0.38rem;font-weight:700;color:var(--off-white);margin-bottom:2px">Massage</div>
                 <div style="height:3px;background:rgba(160,80,255,0.2);border-radius:1px"></div>
               </div>
               <div style="background:rgba(160,80,255,0.05);border:1px solid rgba(160,80,255,0.1);border-radius:5px;padding:5px;text-align:center">
                 <div style="font-size:0.65rem;margin-bottom:2px">✨</div>
-                <div style="font-size:0.38rem;font-weight:700;color:#dce8f5;margin-bottom:2px">Reiki</div>
+                <div style="font-size:0.38rem;font-weight:700;color:var(--off-white);margin-bottom:2px">Reiki</div>
                 <div style="height:3px;background:rgba(160,80,255,0.2);border-radius:1px"></div>
               </div>
             </div>
@@ -2334,19 +2359,19 @@ section + section::before {
             <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;padding:5px;flex:1">
               <div style="background:rgba(0,200,100,0.04);border:1px solid rgba(0,200,100,0.1);border-radius:5px;padding:5px">
                 <div style="font-size:0.55rem;margin-bottom:2px">🤖</div>
-                <div style="font-size:0.38rem;font-weight:700;color:#dce8f5;margin-bottom:2px">AI Outreach</div>
+                <div style="font-size:0.38rem;font-weight:700;color:var(--off-white);margin-bottom:2px">AI Outreach</div>
                 <div style="height:3px;background:rgba(0,200,100,0.2);border-radius:1px;margin-bottom:1px"></div>
                 <div style="height:3px;background:rgba(0,200,100,0.1);border-radius:1px;width:70%"></div>
               </div>
               <div style="background:rgba(0,200,100,0.04);border:1px solid rgba(0,200,100,0.1);border-radius:5px;padding:5px">
                 <div style="font-size:0.55rem;margin-bottom:2px">📊</div>
-                <div style="font-size:0.38rem;font-weight:700;color:#dce8f5;margin-bottom:2px">CRM Sync</div>
+                <div style="font-size:0.38rem;font-weight:700;color:var(--off-white);margin-bottom:2px">CRM Sync</div>
                 <div style="height:3px;background:rgba(0,200,100,0.2);border-radius:1px;margin-bottom:1px"></div>
                 <div style="height:3px;background:rgba(0,200,100,0.1);border-radius:1px;width:55%"></div>
               </div>
               <div style="background:rgba(0,200,100,0.04);border:1px solid rgba(0,200,100,0.1);border-radius:5px;padding:5px">
                 <div style="font-size:0.55rem;margin-bottom:2px">⚡</div>
-                <div style="font-size:0.38rem;font-weight:700;color:#dce8f5;margin-bottom:2px">Auto Follow-up</div>
+                <div style="font-size:0.38rem;font-weight:700;color:var(--off-white);margin-bottom:2px">Auto Follow-up</div>
                 <div style="height:3px;background:rgba(0,200,100,0.2);border-radius:1px;margin-bottom:1px"></div>
                 <div style="height:3px;background:rgba(0,200,100,0.1);border-radius:1px;width:80%"></div>
               </div>
@@ -2717,12 +2742,12 @@ section + section::before {
           <span>Company</span><span>Status</span><span>Service</span>
         </div>
         <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;padding:3px 5px;font-size:0.33rem;border-bottom:1px solid rgba(255,255,255,0.04)">
-          <span style="color:#dce8f5">Smith HVAC</span>
+          <span style="color:var(--off-white)">Smith HVAC</span>
           <span style="color:#D97706">Proposal</span>
           <span style="color:#445566">SEO</span>
         </div>
         <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr;padding:3px 5px;font-size:0.33rem">
-          <span style="color:#dce8f5">Excel Black Car</span>
+          <span style="color:var(--off-white)">Excel Black Car</span>
           <span style="color:#34D399">Client</span>
           <span style="color:#445566">Web</span>
         </div>

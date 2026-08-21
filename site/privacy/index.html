@@ -9,35 +9,61 @@
 <meta name="description" content="CyberMagnet's Privacy Policy — how we collect, use, and protect your personal information.">
 <style>
 :root {
-  --black:      #050810;
-  --deep-navy:  #0a1628;
-  --navy:       #0a2540;
-  --electric:   #2563EB;
-  --el-glow:    rgba(37,99,235,0.25);
-  --el-light:   rgba(37,99,235,0.08);
-  --orange:     #D97706;
-  --orange-hot: #ff9500;
-  --or-glow:    rgba(217,119,6,0.32);
-  --or-light:   rgba(217,119,6,0.08);
-  --off-white:  #dce8f5;
-  --gray-300:   #aabdd0;
-  --gray-400:   #8899aa;
-  --gray-600:   #445566;
-  --dim:        rgba(255,255,255,0.06);
-  --success:    #00c864;
-  --font-d:     'Syne', sans-serif;
-  --font-b:     'DM Sans', sans-serif;
-  --sp:         clamp(72px, 9vw, 120px);
-  --urgency-h:  44px;
-  --nav-h:      68px;
-  --max-w:      860px;
+  /* ── Backgrounds ── */
+  --black:       #050810;
+  --deep-navy:   #080e1c;
+  --navy:        #0a1628;
+  --mid-blue:    #152240;
+
+  /* ── Brand ── */
+  --gold:        #D97706;
+  --gold-light:  #F0A020;
+  --gold-dim:    rgba(217,119,6,0.14);
+  --gold-glow:   rgba(217,119,6,0.30);
+  --cobalt:      #2563EB;
+  --cobalt-light:#3B7FF5;
+  --cobalt-dim:  rgba(37,99,235,0.12);
+  --cobalt-glow: rgba(37,99,235,0.28);
+
+  /* ── Aliases (for legacy var() references) ── */
+  --orange:      #D97706;
+  --electric:    #2563EB;
+  --el-glow:     rgba(37,99,235,0.28);
+  --or-glow:     rgba(217,119,6,0.30);
+
+  /* ── Text ── */
+  --white:       #ffffff;
+  --off-white:   #EEF2F7;
+  --gray-300:    #aabdd0;
+  --gray-400:    #8899aa;
+  --gray-600:    #445566;
+  --dim:         rgba(255,255,255,0.06);
+
+  /* ── Gradients ── */
+  --grad:        linear-gradient(90deg, #D97706, #2563EB);
+  --grad-135:    linear-gradient(135deg, #D97706, #2563EB);
+  --grad-text:   linear-gradient(90deg, #D97706, #3B7FF5);
+  --grad-gold:   linear-gradient(90deg, #D97706, #F0A020, #D97706);
+  --grad-cobalt: linear-gradient(90deg, #2563EB, #3B7FF5, #2563EB);
+
+  /* ── Typography ── */
+  --font-d:      'Syne', sans-serif;
+  --font-b:      'DM Sans', sans-serif;
+
+  /* ── Layout ── */
+  --sp:          clamp(80px, 10vw, 140px);
+  --urgency-h:   44px;
+  --nav-h:       68px;
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--black);color:#dce8f5;font-family:var(--font-b);font-weight:300;line-height:1.8;overflow-x:hidden}
+body{background:var(--black);color:var(--off-white);font-family:var(--font-b);font-weight:300;line-height:1.8;overflow-x:hidden}
 
 /* ── URGENCY BAR ── */
-.urgency-bar{position:fixed;top:0;left:0;right:0;z-index:300;height:var(--urgency-h);display:flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(90deg,#cc5f00,var(--orange),#e07000,var(--orange),#cc5f00);background-size:300% 100%;animation:urg-shift 5s ease-in-out infinite;font-size:0.8rem;font-weight:500;color:#fff;padding:0 5%;overflow:hidden}
+.urgency-bar{position:fixed;top:0;left:0;right:0;z-index:300;height:var(--urgency-h);display:flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(90deg,#B86200,var(--orange),#C97300,var(--orange),#B86200);background-size:300% 100%;animation:urg-shift 5s ease-in-out infinite;font-size:0.8rem;font-weight:500;color:#fff;padding:0 5%;overflow:hidden}
 .urgency-bar::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.07) 50%,transparent);animation:urg-sheen 3.5s ease-in-out infinite;pointer-events:none}
 @keyframes urg-shift{0%,100%{background-position:0%}50%{background-position:100%}}
 @keyframes urg-sheen{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
@@ -53,7 +79,7 @@ nav.scrolled{background:rgba(5,8,16,0.96);box-shadow:0 2px 40px rgba(0,0,0,0.5)}
 .nav-links a{color:var(--gray-400);text-decoration:none;font-size:0.84rem;letter-spacing:0.05em;text-transform:uppercase;font-weight:400;transition:color 0.2s}
 .nav-links a:hover,.nav-links a.active{color:#fff}
 .nav-cta{background:var(--orange);color:#fff;border:none;padding:9px 22px;border-radius:6px;font-family:var(--font-b);font-size:0.84rem;font-weight:500;cursor:pointer;text-decoration:none;transition:all 0.2s}
-.nav-cta:hover{background:var(--orange-hot);transform:translateY(-1px);box-shadow:0 4px 18px var(--or-glow)}
+.nav-cta:hover{opacity: 0.88; background: var(--grad);transform:translateY(-1px);box-shadow:0 4px 18px var(--or-glow)}
 .nav-ham{display:none;flex-direction:column;gap:5px;cursor:pointer}
 .nav-ham span{width:22px;height:2px;background:#fff;border-radius:2px}
 
@@ -199,14 +225,14 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
   box-shadow: 0 24px 60px rgba(37,99,235,0.16);
 }
 .acc-o {
-  background-image: linear-gradient(90deg, #D97706, #F59E0B, #D97706);
+  background-image: linear-gradient(90deg, #D97706, var(--gold-light), #D97706);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200% auto;
   animation: shimmer 4s linear infinite;
 }
 .acc-b {
-  background-image: linear-gradient(90deg, #2563EB, #60A5FA, #2563EB);
+  background-image: linear-gradient(90deg, #2563EB, var(--cobalt-light), #2563EB);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200% auto;
@@ -254,7 +280,7 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
   --grad: linear-gradient(90deg, #D97706, #2563EB);
   --grad-r: linear-gradient(90deg, #2563EB, #D97706);
   --grad-d: linear-gradient(135deg, #D97706, #2563EB);
-  --grad-text: linear-gradient(90deg, #F59E0B, #60A5FA);
+  --grad-text: var(--grad-text);
 }
 
 /* Gradient text utility */
@@ -669,7 +695,7 @@ section + section::before {
     </div>
   </div>
 </section>
-<div style="height:3px;background:linear-gradient(90deg,#D97706,#2563EB);width:100%"></div>
+<div style="height:3px;background:var(--grad);width:100%"></div>
 
 
 <main class="legal-wrap">
@@ -692,7 +718,7 @@ section + section::before {
   </div>
 
   <div class="legal-highlight reveal">
-    <p><strong style="color:#dce8f5">Your privacy matters to us.</strong> CyberMagnet Marketing Solutions LLC (&ldquo;CyberMagnet,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) is committed to protecting the personal information you share with us. This Privacy Policy explains how we collect, use, disclose, and safeguard information when you visit our website, use our services, or interact with us in any way.</p>
+    <p><strong style="color:var(--off-white)">Your privacy matters to us.</strong> CyberMagnet Marketing Solutions LLC (&ldquo;CyberMagnet,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) is committed to protecting the personal information you share with us. This Privacy Policy explains how we collect, use, disclose, and safeguard information when you visit our website, use our services, or interact with us in any way.</p>
   </div>
 
   <!-- 1 -->
@@ -700,21 +726,21 @@ section + section::before {
     <span class="section-num">01</span>
     <h2>Information We Collect</h2>
     <p>We collect information in several ways depending on how you interact with us:</p>
-    <p><strong style="color:#dce8f5">Information You Provide Directly</strong></p>
+    <p><strong style="color:var(--off-white)">Information You Provide Directly</strong></p>
     <ul>
       <li>Name, email address, phone number, and business details submitted through our contact forms, audit request forms, or strategy call booking pages</li>
       <li>Project details, goals, and business information you share during consultations or onboarding</li>
       <li>Payment and billing information processed securely through third-party payment processors (we do not store full card details)</li>
       <li>Communications you send to us by email, phone, or chat</li>
     </ul>
-    <p><strong style="color:#dce8f5">Information Collected Automatically</strong></p>
+    <p><strong style="color:var(--off-white)">Information Collected Automatically</strong></p>
     <ul>
       <li>IP address, browser type, device type, and operating system</li>
       <li>Pages visited, time spent on pages, referring URLs, and clickstream data</li>
       <li>Cookie and tracking pixel data (described further in Section 3)</li>
       <li>Geographic location at the country or city level based on IP address</li>
     </ul>
-    <p><strong style="color:#dce8f5">Information from Third Parties</strong></p>
+    <p><strong style="color:var(--off-white)">Information from Third Parties</strong></p>
     <ul>
       <li>Business and contact data from publicly available sources or marketing platforms for prospecting purposes</li>
       <li>Data from social media platforms if you interact with our pages or connect accounts</li>
@@ -730,12 +756,12 @@ section + section::before {
     <h2>How We Use Your Information</h2>
     <p>We use the information we collect for the following purposes:</p>
     <ul>
-      <li><strong style="color:#dce8f5">Service delivery</strong> &mdash; to provide, manage, and improve the marketing, web design, SEO, and automation services you engage us for</li>
-      <li><strong style="color:#dce8f5">Communication</strong> &mdash; to respond to enquiries, send proposals, deliver reports, and provide customer support</li>
-      <li><strong style="color:#dce8f5">Marketing</strong> &mdash; to send promotional emails, newsletters, and service updates where you have consented or where we have a legitimate interest in contacting you</li>
-      <li><strong style="color:#dce8f5">Analytics &amp; improvement</strong> &mdash; to understand how our website and services are used and to make improvements</li>
-      <li><strong style="color:#dce8f5">Legal compliance</strong> &mdash; to meet our legal obligations, enforce our terms, and protect our rights and those of others</li>
-      <li><strong style="color:#dce8f5">Billing &amp; administration</strong> &mdash; to process payments, issue invoices, and maintain business records</li>
+      <li><strong style="color:var(--off-white)">Service delivery</strong> &mdash; to provide, manage, and improve the marketing, web design, SEO, and automation services you engage us for</li>
+      <li><strong style="color:var(--off-white)">Communication</strong> &mdash; to respond to enquiries, send proposals, deliver reports, and provide customer support</li>
+      <li><strong style="color:var(--off-white)">Marketing</strong> &mdash; to send promotional emails, newsletters, and service updates where you have consented or where we have a legitimate interest in contacting you</li>
+      <li><strong style="color:var(--off-white)">Analytics &amp; improvement</strong> &mdash; to understand how our website and services are used and to make improvements</li>
+      <li><strong style="color:var(--off-white)">Legal compliance</strong> &mdash; to meet our legal obligations, enforce our terms, and protect our rights and those of others</li>
+      <li><strong style="color:var(--off-white)">Billing &amp; administration</strong> &mdash; to process payments, issue invoices, and maintain business records</li>
     </ul>
     <p>We will not sell your personal information to third parties. We will not use your data for purposes materially different from those described here without obtaining your consent.</p>
   </section>
@@ -748,10 +774,10 @@ section + section::before {
     <h2>Cookies &amp; Tracking Technologies</h2>
     <p>Our website uses cookies and similar tracking technologies to enhance your browsing experience and gather analytics data. Cookies are small text files stored on your device. We use:</p>
     <ul>
-      <li><strong style="color:#dce8f5">Essential cookies</strong> &mdash; required for the website to function correctly; cannot be disabled</li>
-      <li><strong style="color:#dce8f5">Analytics cookies</strong> &mdash; Google Analytics and similar tools that help us understand visitor behaviour (anonymised where possible)</li>
-      <li><strong style="color:#dce8f5">Marketing &amp; retargeting pixels</strong> &mdash; Meta Pixel and Google Ads tags that allow us to serve relevant advertising to visitors on other platforms</li>
-      <li><strong style="color:#dce8f5">Functional cookies</strong> &mdash; third-party tools such as Calendly for appointment booking or chat widgets</li>
+      <li><strong style="color:var(--off-white)">Essential cookies</strong> &mdash; required for the website to function correctly; cannot be disabled</li>
+      <li><strong style="color:var(--off-white)">Analytics cookies</strong> &mdash; Google Analytics and similar tools that help us understand visitor behaviour (anonymised where possible)</li>
+      <li><strong style="color:var(--off-white)">Marketing &amp; retargeting pixels</strong> &mdash; Meta Pixel and Google Ads tags that allow us to serve relevant advertising to visitors on other platforms</li>
+      <li><strong style="color:var(--off-white)">Functional cookies</strong> &mdash; third-party tools such as Calendly for appointment booking or chat widgets</li>
     </ul>
     <p>You may disable non-essential cookies through your browser settings or a cookie consent tool. Note that disabling cookies may affect the functionality of certain parts of our site.</p>
   </section>
@@ -764,10 +790,10 @@ section + section::before {
     <h2>How We Share Your Information</h2>
     <p>We do not sell your data. We may share information with the following categories of third parties for legitimate business purposes:</p>
     <ul>
-      <li><strong style="color:#dce8f5">Service providers</strong> &mdash; tools and platforms we use to operate our business, including CRM software (GoHighLevel, HubSpot), email platforms, payment processors, cloud hosting providers, and project management tools. These providers are contractually required to protect your data.</li>
-      <li><strong style="color:#dce8f5">Analytics providers</strong> &mdash; Google Analytics, Meta, and similar platforms that help us measure marketing performance</li>
-      <li><strong style="color:#dce8f5">Legal authorities</strong> &mdash; when required by law, court order, or to protect the safety, rights, or property of CyberMagnet or the public</li>
-      <li><strong style="color:#dce8f5">Business transfers</strong> &mdash; in the event of a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction</li>
+      <li><strong style="color:var(--off-white)">Service providers</strong> &mdash; tools and platforms we use to operate our business, including CRM software (GoHighLevel, HubSpot), email platforms, payment processors, cloud hosting providers, and project management tools. These providers are contractually required to protect your data.</li>
+      <li><strong style="color:var(--off-white)">Analytics providers</strong> &mdash; Google Analytics, Meta, and similar platforms that help us measure marketing performance</li>
+      <li><strong style="color:var(--off-white)">Legal authorities</strong> &mdash; when required by law, court order, or to protect the safety, rights, or property of CyberMagnet or the public</li>
+      <li><strong style="color:var(--off-white)">Business transfers</strong> &mdash; in the event of a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction</li>
     </ul>
     <div class="legal-highlight">
       <p>We require all third parties who handle your data on our behalf to maintain appropriate security measures and to use your data only as instructed by us.</p>
@@ -798,12 +824,12 @@ section + section::before {
     <h2>Your Rights &amp; Choices</h2>
     <p>Depending on your location and applicable law, you may have the following rights regarding your personal information:</p>
     <ul>
-      <li><strong style="color:#dce8f5">Access</strong> &mdash; request a copy of the personal information we hold about you</li>
-      <li><strong style="color:#dce8f5">Correction</strong> &mdash; request that we correct inaccurate or incomplete information</li>
-      <li><strong style="color:#dce8f5">Deletion</strong> &mdash; request that we delete your personal data, subject to legal retention obligations</li>
-      <li><strong style="color:#dce8f5">Opt-out of marketing</strong> &mdash; unsubscribe from email communications at any time using the link in any email, or by contacting us directly</li>
-      <li><strong style="color:#dce8f5">Restriction</strong> &mdash; request that we restrict the processing of your data in certain circumstances</li>
-      <li><strong style="color:#dce8f5">Portability</strong> &mdash; request a machine-readable copy of your data where technically feasible</li>
+      <li><strong style="color:var(--off-white)">Access</strong> &mdash; request a copy of the personal information we hold about you</li>
+      <li><strong style="color:var(--off-white)">Correction</strong> &mdash; request that we correct inaccurate or incomplete information</li>
+      <li><strong style="color:var(--off-white)">Deletion</strong> &mdash; request that we delete your personal data, subject to legal retention obligations</li>
+      <li><strong style="color:var(--off-white)">Opt-out of marketing</strong> &mdash; unsubscribe from email communications at any time using the link in any email, or by contacting us directly</li>
+      <li><strong style="color:var(--off-white)">Restriction</strong> &mdash; request that we restrict the processing of your data in certain circumstances</li>
+      <li><strong style="color:var(--off-white)">Portability</strong> &mdash; request a machine-readable copy of your data where technically feasible</li>
     </ul>
     <p>To exercise any of these rights, please contact us at <a href="/cdn-cgi/l/email-protection#88e1e6eee7c8ebf1eaedfae5e9efe6edfca6e6edfc" style="color:var(--electric)"><span class="__cf_email__" data-cfemail="10797e767f5073697275627d71777e75643e7e7564">[email&#160;protected]</span></a>. We will respond within 30 days.</p>
   </section>
@@ -861,10 +887,10 @@ section + section::before {
     <p>If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your personal information, please contact us:</p>
     <div class="legal-contact-box">
       <h3>CyberMagnet Marketing Solutions LLC</h3>
-      <p><strong style="color:#dce8f5">Email:</strong> <a href="/cdn-cgi/l/email-protection#f0999e969fb093899295829d91979e9584de9e9584"><span class="__cf_email__" data-cfemail="7811161e17381b011a1d0a15191f161d0c56161d0c">[email&#160;protected]</span></a></p>
-      <p><strong style="color:#dce8f5">Phone:</strong> <a href="tel:+19723385778">(972) 338-5778</a></p>
-      <p><strong style="color:#dce8f5">Business Hours:</strong> Monday &ndash; Friday, 10:00 AM &ndash; 4:00 PM CT</p>
-      <p><strong style="color:#dce8f5">Location:</strong> Dallas, Texas, United States</p>
+      <p><strong style="color:var(--off-white)">Email:</strong> <a href="/cdn-cgi/l/email-protection#f0999e969fb093899295829d91979e9584de9e9584"><span class="__cf_email__" data-cfemail="7811161e17381b011a1d0a15191f161d0c56161d0c">[email&#160;protected]</span></a></p>
+      <p><strong style="color:var(--off-white)">Phone:</strong> <a href="tel:+19723385778">(972) 338-5778</a></p>
+      <p><strong style="color:var(--off-white)">Business Hours:</strong> Monday &ndash; Friday, 10:00 AM &ndash; 4:00 PM CT</p>
+      <p><strong style="color:var(--off-white)">Location:</strong> Dallas, Texas, United States</p>
     </div>
   </section>
 

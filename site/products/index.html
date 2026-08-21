@@ -10,37 +10,61 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
 :root {
-  --black:      #050810;
-  --deep-navy:  #0a1628;
-  --navy:       #0a2540;
-  --electric:   #2563EB;
-  --el-glow:    rgba(37,99,235,0.28);
-  --el-light:   rgba(37,99,235,0.08);
-  --orange:     #D97706;
-  --orange-hot: #ff9500;
-  --or-glow:    rgba(217,119,6,0.35);
-  --or-light:   rgba(217,119,6,0.08);
-  --gold:       #c9a84c;
-  --gold-light: rgba(201,168,76,0.08);
-  --white:      #ffffff;
-  --off-white:  #dce8f5;
-  --gray-300:   #aabdd0;
-  --gray-400:   #8899aa;
-  --gray-600:   #445566;
-  --dim:        rgba(255,255,255,0.06);
-  --success:    #00c864;
-  --font-d:     'Syne', sans-serif;
-  --font-b:     'DM Sans', sans-serif;
-  --sp:         clamp(64px, 8vw, 104px);
-  --urgency-h:  44px;
-  --nav-h:      68px;
+  /* ── Backgrounds ── */
+  --black:       #050810;
+  --deep-navy:   #080e1c;
+  --navy:        #0a1628;
+  --mid-blue:    #152240;
+
+  /* ── Brand ── */
+  --gold:        #D97706;
+  --gold-light:  #F0A020;
+  --gold-dim:    rgba(217,119,6,0.14);
+  --gold-glow:   rgba(217,119,6,0.30);
+  --cobalt:      #2563EB;
+  --cobalt-light:#3B7FF5;
+  --cobalt-dim:  rgba(37,99,235,0.12);
+  --cobalt-glow: rgba(37,99,235,0.28);
+
+  /* ── Aliases (for legacy var() references) ── */
+  --orange:      #D97706;
+  --electric:    #2563EB;
+  --el-glow:     rgba(37,99,235,0.28);
+  --or-glow:     rgba(217,119,6,0.30);
+
+  /* ── Text ── */
+  --white:       #ffffff;
+  --off-white:   #EEF2F7;
+  --gray-300:    #aabdd0;
+  --gray-400:    #8899aa;
+  --gray-600:    #445566;
+  --dim:         rgba(255,255,255,0.06);
+
+  /* ── Gradients ── */
+  --grad:        linear-gradient(90deg, #D97706, #2563EB);
+  --grad-135:    linear-gradient(135deg, #D97706, #2563EB);
+  --grad-text:   linear-gradient(90deg, #D97706, #3B7FF5);
+  --grad-gold:   linear-gradient(90deg, #D97706, #F0A020, #D97706);
+  --grad-cobalt: linear-gradient(90deg, #2563EB, #3B7FF5, #2563EB);
+
+  /* ── Typography ── */
+  --font-d:      'Syne', sans-serif;
+  --font-b:      'DM Sans', sans-serif;
+
+  /* ── Layout ── */
+  --sp:          clamp(80px, 10vw, 140px);
+  --urgency-h:   44px;
+  --nav-h:       68px;
+  --radius-sm:   6px;
+  --radius-md:   12px;
+  --radius-lg:   20px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--black);color:var(--white);font-family:var(--font-b);font-weight:300;line-height:1.7;overflow-x:hidden}
 
 /* URGENCY BAR */
-.urgency-bar{position:fixed;top:0;left:0;right:0;z-index:300;height:var(--urgency-h);display:flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(90deg,#cc5f00,var(--orange),#e07000,var(--orange),#cc5f00);background-size:300% 100%;animation:urg-shift 5s ease-in-out infinite;font-size:0.8rem;font-weight:500;color:#fff;padding:0 5%;overflow:hidden}
+.urgency-bar{position:fixed;top:0;left:0;right:0;z-index:300;height:var(--urgency-h);display:flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(90deg,#B86200,var(--orange),#C97300,var(--orange),#B86200);background-size:300% 100%;animation:urg-shift 5s ease-in-out infinite;font-size:0.8rem;font-weight:500;color:#fff;padding:0 5%;overflow:hidden}
 .urgency-bar::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.07) 50%,transparent);animation:urg-sheen 3.5s ease-in-out infinite;pointer-events:none}
 @keyframes urg-shift{0%,100%{background-position:0%}50%{background-position:100%}}
 @keyframes urg-sheen{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
@@ -58,7 +82,7 @@ nav.scrolled{background:rgba(5,8,16,0.96);box-shadow:0 2px 40px rgba(0,0,0,0.5)}
 .nav-links a{color:var(--gray-400);text-decoration:none;font-size:0.84rem;letter-spacing:0.05em;text-transform:uppercase;font-weight:400;transition:color 0.2s}
 .nav-links a:hover,.nav-links a.active{color:#fff}
 .nav-cta{background:var(--orange);color:#fff;border:none;padding:9px 22px;border-radius:6px;font-family:var(--font-b);font-size:0.84rem;font-weight:500;cursor:pointer;text-decoration:none;transition:all 0.2s}
-.nav-cta:hover{background:var(--orange-hot);transform:translateY(-1px);box-shadow:0 4px 18px var(--or-glow)}
+.nav-cta:hover{opacity: 0.88; background: var(--grad);transform:translateY(-1px);box-shadow:0 4px 18px var(--or-glow)}
 .nav-ham{display:none;flex-direction:column;gap:5px;cursor:pointer}
 .nav-ham span{width:22px;height:2px;background:#fff;border-radius:2px}
 /* ── NAV DROPDOWN ── */
@@ -358,7 +382,7 @@ footer{background:var(--black);border-top:1px solid var(--dim);padding:56px 6% 2
 .quiz-bar-fill{height:100%;background:linear-gradient(90deg,#2563EB,#00b4dc);border-radius:2px;transition:width 0.4s ease}
 .quiz-step-label{font-size:0.72rem;color:#445566;white-space:nowrap}
 .quiz-body{padding:20px 28px 28px}
-.quiz-question{font-family:var(--font-d);font-size:1rem;font-weight:700;color:#dce8f5;margin-bottom:16px;line-height:1.35}
+.quiz-question{font-family:var(--font-d);font-size:1rem;font-weight:700;color:var(--off-white);margin-bottom:16px;line-height:1.35}
 .quiz-options{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
 .quiz-option{background:rgba(255,255,255,0.025);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:12px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:flex-start;gap:12px}
 .quiz-option:hover{border-color:rgba(37,99,235,0.35);background:rgba(37,99,235,0.06)}
@@ -371,7 +395,7 @@ footer{background:var(--black);border-top:1px solid var(--dim);padding:56px 6% 2
 .quiz-opt-hint{font-size:0.74rem;color:#445566;margin-top:2px}
 .quiz-nav{display:flex;gap:10px;justify-content:space-between;align-items:center}
 .quiz-btn-back{background:transparent;border:1px solid rgba(255,255,255,0.1);color:#8899aa;padding:10px 20px;border-radius:8px;font-size:0.84rem;cursor:pointer;transition:all 0.15s}
-.quiz-btn-back:hover{border-color:rgba(255,255,255,0.2);color:#dce8f5}
+.quiz-btn-back:hover{border-color:rgba(255,255,255,0.2);color:var(--off-white)}
 .quiz-btn-next{background:var(--electric);color:#fff;border:none;padding:10px 24px;border-radius:8px;font-size:0.84rem;font-weight:600;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:6px}
 .quiz-btn-next:hover{background:#0066e0;transform:translateY(-1px)}
 .quiz-btn-next:disabled{opacity:0.35;cursor:not-allowed;transform:none}
@@ -398,7 +422,7 @@ footer{background:var(--black);border-top:1px solid var(--dim);padding:56px 6% 2
 .quiz-cta-secondary:hover{border-color:rgba(37,99,235,0.3);color:#2563EB}
 .quiz-input-group{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
 .quiz-input-group label{font-size:0.8rem;color:#8899aa;font-weight:500}
-.quiz-input{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:11px 14px;color:#dce8f5;font-size:0.88rem;font-family:var(--font-b);width:100%;transition:border-color 0.15s;outline:none}
+.quiz-input{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:11px 14px;color:var(--off-white);font-size:0.88rem;font-family:var(--font-b);width:100%;transition:border-color 0.15s;outline:none}
 .quiz-input:focus{border-color:rgba(37,99,235,0.4);background:rgba(37,99,235,0.04)}
 .quiz-input::placeholder{color:#445566}
 textarea.quiz-input{resize:vertical;min-height:80px}
@@ -434,14 +458,14 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
   box-shadow: 0 24px 60px rgba(37,99,235,0.16);
 }
 .acc-o {
-  background-image: linear-gradient(90deg, #D97706, #F59E0B, #D97706);
+  background-image: linear-gradient(90deg, #D97706, var(--gold-light), #D97706);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200% auto;
   animation: shimmer 4s linear infinite;
 }
 .acc-b {
-  background-image: linear-gradient(90deg, #2563EB, #60A5FA, #2563EB);
+  background-image: linear-gradient(90deg, #2563EB, var(--cobalt-light), #2563EB);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 200% auto;
@@ -489,7 +513,7 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
   --grad: linear-gradient(90deg, #D97706, #2563EB);
   --grad-r: linear-gradient(90deg, #2563EB, #D97706);
   --grad-d: linear-gradient(135deg, #D97706, #2563EB);
-  --grad-text: linear-gradient(90deg, #F59E0B, #60A5FA);
+  --grad-text: var(--grad-text);
 }
 
 /* Gradient text utility */
@@ -925,7 +949,7 @@ section + section::before {
     </div>
   </div>
 </section>
-<div style="height:3px;background:linear-gradient(90deg,#D97706,#2563EB);width:100%"></div>
+<div style="height:3px;background:var(--grad);width:100%"></div>
 
 
 <!-- ══════════════════════════════════════════════════════
@@ -1331,7 +1355,7 @@ section + section::before {
                     <div style="font-size:0.4rem;font-weight:900;color:#fff;letter-spacing:0.04em">YOUR<br>BRAND</div>
                   </div>
                   <div style="background:linear-gradient(135deg,#1a1a2e,#2a1200);border-radius:3px;display:flex;align-items:center;justify-content:center;padding:3px">
-                    <div style="font-size:0.4rem;font-weight:900;background:linear-gradient(90deg,#2563EB,#D97706);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:0.04em">BRAND</div>
+                    <div style="font-size:0.4rem;font-weight:900;background:linear-gradient(90deg,#D97706,#2563EB);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:0.04em">BRAND</div>
                   </div>
                 </div>
               </div>
@@ -2665,7 +2689,7 @@ function submitQuiz(productKey, fitLevel) {
     <div class="quiz-body" style="text-align:center;padding:48px 28px">
       <div style="font-size:3rem;margin-bottom:16px">&#127881;</div>
       <div style="font-family:var(--font-d);font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:10px">You're all set!</div>
-      <div style="font-size:0.9rem;color:#8899aa;line-height:1.65;margin-bottom:28px">We've received your answers. We'll be in touch at <strong style="color:#dce8f5">${email}</strong> shortly — usually within one business day.</div>
+      <div style="font-size:0.9rem;color:#8899aa;line-height:1.65;margin-bottom:28px">We've received your answers. We'll be in touch at <strong style="color:var(--off-white)">${email}</strong> shortly — usually within one business day.</div>
       <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
         <a href="/funnels/strategy-call/" class="quiz-cta-primary">Book a strategy call &#8594;</a>
         <button class="quiz-cta-secondary" onclick="closeQuiz()">Back to products</button>

@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+
+# Block funnel thank-you and qualifier pages from indexing
+Disallow: /funnels/thank-you/
+Disallow: /funnels/strategy-call/qualifier/
+
+# Block admin and API paths
+Disallow: /api/
+Disallow: /admin/
+
+# Allow all major crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://cybermagnet.net/sitemap.xml

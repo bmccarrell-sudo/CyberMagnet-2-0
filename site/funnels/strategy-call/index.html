@@ -1141,7 +1141,32 @@ section + section::before {
 /* Fallback: ensure fade-up elements become visible */
 .hero-kicker, .hero-h1, .hero-sub, .hero-ctas, .hero-proof {
   animation-fill-mode: both;
-}</style>
+}
+/* ── NAV#MAIN-NAV POSITIONING (this page) ── */
+nav#main-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  height: var(--nav-h, 68px);
+  background: rgba(8,13,22,0.94);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  gap: 20px;
+}
+.nav-cta {
+  padding: 9px 20px; border-radius: 7px;
+  font-size: 0.84rem; font-weight: 700;
+  background: linear-gradient(90deg, #D97706, #2563EB);
+  color: #fff; text-decoration: none;
+  white-space: nowrap; flex-shrink: 0;
+  transition: opacity 0.15s;
+}
+.nav-cta:hover { opacity: 0.88; }
+</style>
 </head>
 <body>
 
@@ -1819,7 +1844,7 @@ document.querySelectorAll('.faq-q').forEach(q => {
 const revEls = document.querySelectorAll('.reveal');
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
-}, { threshold: 0.07, rootMargin: '0px 0px -24px 0px' });
+}, { threshold: 0.01, rootMargin: '0px 0px 0px 0px' });
 revEls.forEach(el => obs.observe(el));
 </script>
 <script>

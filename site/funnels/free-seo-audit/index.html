@@ -1196,9 +1196,61 @@ section + section::before {
   .nav-drop-wide { min-width: 340px; }
   .drop-cols { grid-template-columns: 1fr !important; }
 }
+.urgency-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 300;
+  height: var(--urgency-h);
+  background: linear-gradient(90deg, #1a4fd8, var(--cobalt), #3B7FF5, var(--cobalt), #1a4fd8);
+  background-size: 300% 100%;
+  animation: urgency-shift 6s ease-in-out infinite;
+  font-family: var(--font-b);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.ub-track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: ub-scroll 22s linear infinite;
+  will-change: transform;
+  min-width: max-content;
+}
+.ub-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding-right: 60px;
+}
+.ub-link {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+@keyframes ub-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes urgency-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
 </style>
 </head>
 <body>
+<div class="urgency-bar" role="banner" aria-label="Limited availability notice">
+  <div class="ub-track">
+    <span class="ub-inner">🟠 &nbsp;Only <strong>3 client spots</strong> available this month &nbsp;·&nbsp; 50+ brands scaled &nbsp;·&nbsp; Avg. 3.8× ROI &nbsp;·&nbsp; <a class="ub-link" href="/funnels/strategy-call/" style="color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:2px">Claim your spot →</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="ub-inner">🟠 &nbsp;Only <strong>3 client spots</strong> available this month &nbsp;·&nbsp; 50+ brands scaled &nbsp;·&nbsp; Avg. 3.8× ROI &nbsp;·&nbsp; <a class="ub-link" href="/funnels/strategy-call/" style="color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:2px">Claim your spot →</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
+</div>
 
 <!-- BG CANVAS -->
 <canvas id="bg-canvas"></canvas>

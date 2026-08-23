@@ -201,7 +201,7 @@ nav {
   display: flex; gap: 2.4rem; list-style: none;
 }
 .nav-links a {
-  color: rgba(255,255,255,0.80);
+  color: rgba(255,255,255,0.85);
   text-decoration: none;
   font-size: 0.88rem;
   letter-spacing: 0.05em;
@@ -237,8 +237,8 @@ nav {
 .hero {
   position: relative;
   min-height: 100vh;
-  display: flex; align-items: center;
-  padding: calc(var(--urgency-h) + var(--nav-h) + 40px) 6% 80px;
+  display: flex; align-items: flex-start; flex-direction: column;
+  padding: calc(var(--urgency-h) + var(--nav-h) + 8px) 6% 80px;
   overflow: hidden;
 }
 
@@ -1132,7 +1132,7 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
 
   /* Nav */
   .nav-links { gap: 1.6rem; }
-  .nav-links a { font-size: 0.88rem; }
+  .nav-links a { font-size: 0.88rem; font-weight: 600; color: rgba(255,255,255,0.85); }
 
   /* Hero */
   .hero { padding-left: 5%; padding-right: 5%; }
@@ -1452,8 +1452,8 @@ section + section::before {
   gap: 24px; list-style: none; margin: 0; padding: 0;
 }
 .nav-links a, .nav-links .nav-parent {
-  font-size: 0.88rem; color: var(--off-white, #dce8f5);
-  text-decoration: none; font-weight: 500;
+  font-size: 0.88rem; color: rgba(255,255,255,0.85);
+  text-decoration: none; font-weight: 600;
   cursor: pointer; background: none; border: none;
   padding: 0; transition: color 0.15s;
   display: flex; align-items: center; gap: 4px;

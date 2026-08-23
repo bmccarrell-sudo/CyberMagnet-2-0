@@ -1,1 +1,1 @@
-# CyberMagnet Website
+# CyberMagnet

@@ -72,7 +72,7 @@
 
   /* ── Layout ── */
   --sp:          clamp(80px, 10vw, 140px);
-  --urgency-h:   44px;
+  --urgency-h:   32px;
   --nav-h:       68px;
   --radius-sm:   6px;
   --radius-md:   12px;
@@ -99,18 +99,37 @@ body {
   top: 0; left: 0; right: 0;
   z-index: 300;
   height: var(--urgency-h);
-  display: flex; align-items: center; justify-content: center;
-  gap: 6px;
   background: linear-gradient(90deg, #1a4fd8, var(--cobalt), #3B7FF5, var(--cobalt), #1a4fd8);
   background-size: 300% 100%;
   animation: urgency-shift 6s ease-in-out infinite;
   font-family: var(--font-b);
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   font-weight: 500;
   color: var(--white);
   letter-spacing: 0.02em;
-  padding: 0 5%;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.ub-track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: ub-scroll 22s linear infinite;
+  will-change: transform;
+  min-width: max-content;
+}
+.ub-track:hover { animation-play-state: paused; }
+.ub-track:hover { animation-play-state: paused; }
+.ub-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding-right: 60px;
+}
+@keyframes ub-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 .urgency-bar::before {
@@ -289,7 +308,7 @@ nav.scrolled {
 
 .hero-h1 {
   font-family: var(--font-d);
-  font-size: clamp(2.8rem, 6vw, 5.4rem);
+  font-size: clamp(1.7rem, 3.4vw, 2.8rem);
   font-weight: 800;
   line-height: 1.04;
   letter-spacing: -0.03em;
@@ -380,10 +399,24 @@ nav.scrolled {
 
 /* Hero stats */
 .hero-stats {
-  display: flex; gap: 44px; margin-top: 58px;
+  display: flex;
+  gap: 0;
+  margin-top: 36px;
   animation: fade-up 0.8s 0.42s ease both;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
 }
+.hero-stats > div {
+  flex: 1;
+  min-width: 0;
+  padding: 0 16px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+}
+.hero-stats > div:last-child { border-right: none; }
+.hero-stats > div:last-child { border-right: none; }
 .stat-num {
   font-family: var(--font-d);
   font-size: 2.2rem; font-weight: 800;
@@ -1695,14 +1728,9 @@ section + section::before {
 
 <!-- ── URGENCY BAR ── -->
 <div class="urgency-bar" role="banner" aria-label="Limited availability notice">
-  <span class="ub-dot"></span>
-  <span>Only <strong>3 client slots</strong> available this month</span>
-  <span class="ub-sep">·</span>
-  <span>50+ brands scaled</span>
-  <span class="ub-sep">·</span>
-  <span>Avg. 3.8× ROI</span>
-  <span class="ub-sep">·</span>
-  <a class="ub-link" href="/funnels/strategy-call/">Claim your spot →</a>
+  <div class="ub-track">
+    <span class="ub-inner">🟠 &nbsp;Only <strong>3 client spots</strong> available this month &nbsp;·&nbsp; 50+ brands scaled &nbsp;·&nbsp; Avg. 3.8× ROI &nbsp;·&nbsp; <a class="ub-link" href="/funnels/strategy-call/" style="color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:2px">Claim your spot →</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="ub-inner">🟠 &nbsp;Only <strong>3 client spots</strong> available this month &nbsp;·&nbsp; 50+ brands scaled &nbsp;·&nbsp; Avg. 3.8× ROI &nbsp;·&nbsp; <a class="ub-link" href="/funnels/strategy-call/" style="color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:2px">Claim your spot →</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
 </div>
 
 <!-- ── NAV ── -->
@@ -2045,7 +2073,7 @@ nav.scrolled {
 
 .hero-h1 {
   font-family: var(--font-d);
-  font-size: clamp(2.8rem, 6vw, 5.4rem);
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
   font-weight: 800;
   line-height: 1.04;
   letter-spacing: -0.03em;
@@ -2136,10 +2164,21 @@ nav.scrolled {
 
 /* Hero stats */
 .hero-stats {
-  display: flex; gap: 44px; margin-top: 58px;
+  display: flex;
+  gap: 0;
+  margin-top: 48px;
   animation: fade-up 0.8s 0.42s ease both;
   flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
 }
+.hero-stats > div {
+  flex: 1 1 120px;
+  text-align: center;
+  padding: 0 20px;
+  border-right: 1px solid rgba(255,255,255,0.07);
+}
+.hero-stats > div:last-child { border-right: none; }
 .stat-num {
   font-family: var(--font-d);
   font-size: 2.2rem; font-weight: 800;
@@ -3063,14 +3102,9 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
 
 <!-- ── URGENCY BAR ── -->
 <div class="urgency-bar" role="banner" aria-label="Limited availability notice">
-  <span class="ub-dot"></span>
-  <span>Only <strong>3 client slots</strong> available this month</span>
-  <span class="ub-sep">·</span>
-  <span>50+ brands scaled</span>
-  <span class="ub-sep">·</span>
-  <span>Avg. 3.8× ROI</span>
-  <span class="ub-sep">·</span>
-  <a class="ub-link" href="/funnels/strategy-call/">Claim your spot →</a>
+  <div class="ub-track">
+    <span class="ub-inner">🟠 &nbsp;Only <strong>3 client spots</strong> available this month &nbsp;·&nbsp; 50+ brands scaled &nbsp;·&nbsp; Avg. 3.8× ROI &nbsp;·&nbsp; <a class="ub-link" href="/funnels/strategy-call/" style="color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:2px">Claim your spot →</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="ub-inner">🟠 &nbsp;Only <strong>3 client spots</strong> available this month &nbsp;·&nbsp; 50+ brands scaled &nbsp;·&nbsp; Avg. 3.8× ROI &nbsp;·&nbsp; <a class="ub-link" href="/funnels/strategy-call/" style="color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:2px">Claim your spot →</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
 </div>
 
 <!-- ── NAV ── -->
@@ -3529,7 +3563,7 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
 
 <!-- ── DIFFERENTIATOR STRIP ── -->
 <div style="background:var(--black);border-top:1px solid rgba(255,255,255,0.04);border-bottom:1px solid rgba(255,255,255,0.04);padding:40px 6%;overflow:hidden">
-  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px;align-items:center">
+  <div style="max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:40px 60px;align-items:center">
     <div class="reveal" style="text-align:center">
       <div class="grad-text" style="font-family:var(--font-d);font-size:1.8rem;font-weight:800;line-height:1;margin-bottom:5px">Dallas-Based</div>
       <div style="font-size:0.8rem;color:var(--gray-600)">Local market expertise, not offshore execution</div>
@@ -3537,14 +3571,6 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
     <div class="reveal" style="text-align:center">
       <div style="font-family:var(--font-d);font-size:1.8rem;font-weight:800;color:var(--orange);line-height:1;margin-bottom:5px">AI-First</div>
       <div style="font-size:0.8rem;color:var(--gray-600)">Systems your competitors don't have yet</div>
-    </div>
-    <div class="reveal" style="text-align:center">
-      <div class="grad-text" style="font-family:var(--font-d);font-size:1.8rem;font-weight:800;line-height:1;margin-bottom:5px">No Lock-In</div>
-      <div style="font-size:0.8rem;color:var(--gray-600)">Month-to-month after your first 3 months</div>
-    </div>
-    <div class="reveal" style="text-align:center">
-      <div style="font-family:var(--font-d);font-size:1.8rem;font-weight:800;color:var(--orange);line-height:1;margin-bottom:5px">You Talk to Ben</div>
-      <div style="font-size:0.8rem;color:var(--gray-600)">No account managers. Direct access, always.</div>
     </div>
     <div class="reveal" style="text-align:center">
       <div class="grad-text" style="font-family:var(--font-d);font-size:1.8rem;font-weight:800;line-height:1;margin-bottom:5px">ROI-Tied</div>
@@ -4651,22 +4677,22 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
       <div style="background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:18px 20px;text-align:center">
         <div style="font-size:1.2rem;margin-bottom:6px">🌐</div>
         <div style="font-size:0.82rem;font-weight:700;color:#fff;margin-bottom:3px">Website Design</div>
-        <div style="font-size:0.78rem;color:var(--gray-600)">$3,500 – $6,500 one-time</div>
+        <div style="font-size:0.78rem;color:var(--gray-600)">from $2,500 one-time</div>
       </div>
       <div style="background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:18px 20px;text-align:center">
         <div style="font-size:1.2rem;margin-bottom:6px">⭐</div>
         <div style="font-size:0.82rem;font-weight:700;color:#fff;margin-bottom:3px">Brand Identity</div>
-        <div style="font-size:0.78rem;color:var(--gray-600)">$2,500 – $4,000 one-time</div>
+        <div style="font-size:0.78rem;color:var(--gray-600)">from $1,200 one-time</div>
       </div>
       <div style="background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:18px 20px;text-align:center">
         <div style="font-size:1.2rem;margin-bottom:6px">🎯</div>
-        <div style="font-size:0.82rem;font-weight:700;color:#fff;margin-bottom:3px">Funnel Build</div>
-        <div style="font-size:0.78rem;color:var(--gray-600)">$2,000 – $4,500 one-time</div>
+        <div style="font-size:0.82rem;font-weight:700;color:#fff;margin-bottom:3px">Funnel Building</div>
+        <div style="font-size:0.78rem;color:var(--gray-600)">from $1,500 one-time</div>
       </div>
       <div style="background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:18px 20px;text-align:center">
         <div style="font-size:1.2rem;margin-bottom:6px">🤖</div>
-        <div style="font-size:0.82rem;font-weight:700;color:#fff;margin-bottom:3px">AI Systems Setup</div>
-        <div style="font-size:0.78rem;color:var(--gray-600)">$1,500 – $3,500 one-time</div>
+        <div style="font-size:0.82rem;font-weight:700;color:#fff;margin-bottom:3px">AI Receptionist</div>
+        <div style="font-size:0.78rem;color:var(--gray-600)">$500 setup + $350/mo</div>
       </div>
     </div>
 

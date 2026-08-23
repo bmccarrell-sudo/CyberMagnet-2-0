@@ -65,7 +65,7 @@
 
   /* ── Layout ── */
   --sp:          clamp(80px, 10vw, 140px);
-  --urgency-h:   44px;
+  --urgency-h:   0px;
   --nav-h:       68px;
   --radius-sm:   6px;
   --radius-md:   12px;
@@ -103,7 +103,7 @@ body{background:var(--black);color:var(--white);font-family:var(--font-b);font-w
 .hero{
   position:relative;min-height:100vh;
   display:flex;flex-direction:column;justify-content:center;
-  padding:100px 6% 80px;overflow:hidden;
+  padding:80px 6% 60px;overflow:hidden;
 }
 
 /* Cinematic background layers */
@@ -138,11 +138,11 @@ body{background:var(--black);color:var(--white);font-family:var(--font-b);font-w
 /* Gold kicker */
 .hero-kicker{
   display:inline-flex;align-items:center;gap:10px;
-  background:var(--gold-light);
-  border:1px solid rgba(201,168,76,0.3);
+  background:rgba(217,119,6,0.08);
+  border:1px solid rgba(217,119,6,0.35);
   border-radius:4px;padding:6px 18px;
   font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:var(--gold);font-weight:600;
+  color:rgba(255,255,255,0.75);font-weight:600;
   margin-bottom:28px;
   animation:fade-up 0.7s ease both;
 }
@@ -151,7 +151,7 @@ body{background:var(--black);color:var(--white);font-family:var(--font-b);font-w
 /* Mega headline */
 .hero-h1{
   font-family:var(--font-d);
-  font-size:clamp(2rem,5.5vw,4.5rem);
+  font-size:clamp(1.8rem,4.2vw,3.6rem);
   font-weight:800;line-height:0.95;
   letter-spacing:-0.04em;
   margin-bottom:28px;
@@ -242,6 +242,8 @@ body{background:var(--black);color:var(--white);font-family:var(--font-b);font-w
 .hero-proof{
   display:flex;gap:36px;flex-wrap:wrap;
   animation:fade-up 0.7s 0.32s ease both;
+  justify-content:flex-start;
+  margin-top:40px;
 }
 .hp-item{display:flex;flex-direction:column}
 .hp-val{

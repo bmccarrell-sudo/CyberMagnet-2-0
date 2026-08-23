@@ -482,7 +482,7 @@ body{background:var(--black);color:var(--white);font-family:var(--font-b);font-w
 .hero{
   position:relative;min-height:100vh;
   display:flex;flex-direction:column;justify-content:center;
-  padding:80px 6% 60px;overflow:hidden;
+  padding:calc(var(--urgency-h) + var(--nav-h) + 16px) 6% 60px;overflow:hidden;
 }
 .hero-bg{
   position:absolute;inset:0;
@@ -770,6 +770,27 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.06);
   padding:32px 6%;text-align:center;font-size:0.78rem;color:var(--gray-600)}
 footer a{color:var(--gray-600);text-decoration:none}
 footer a:hover{color:var(--gray-400)}
+
+/* ── SCROLL HIDE/SHOW ── */
+.urgency-bar,
+nav#main-nav,
+nav[id="main-nav"] {
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1),
+              opacity 0.35s cubic-bezier(0.4,0,0.2,1),
+              background 0.35s,
+              box-shadow 0.35s;
+}
+.urgency-bar.header-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+nav#main-nav.header-hidden,
+nav[id="main-nav"].header-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
 </style>
 </head>
 <body>
@@ -1239,5 +1260,41 @@ if (_canvas) {
 })();
 </script>
 
+<script>
+/* ── SCROLL HIDE / SHOW (urgency bar + nav) ── */
+(function() {
+  var ub  = document.querySelector('.urgency-bar');
+  var nav = document.getElementById('main-nav');
+  if (!nav) return;
+  var lastY    = 0;
+  var ticking  = false;
+  var hidden   = false;
+  var THRESHOLD = 80; /* px scrolled before hide kicks in */
+
+  function update() {
+    var y = window.scrollY || window.pageYOffset;
+    var goingDown = y > lastY;
+    var delta = Math.abs(y - lastY);
+
+    if (delta < 4) { ticking = false; return; } /* ignore tiny jitters */
+
+    if (goingDown && y > THRESHOLD && !hidden) {
+      hidden = true;
+      nav.classList.add('header-hidden');
+      if (ub) ub.classList.add('header-hidden');
+    } else if (!goingDown && hidden) {
+      hidden = false;
+      nav.classList.remove('header-hidden');
+      if (ub) ub.classList.remove('header-hidden');
+    }
+    lastY   = y;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function() {
+    if (!ticking) { requestAnimationFrame(update); ticking = true; }
+  }, { passive: true });
+})();
+</script>
 </body>
 </html>

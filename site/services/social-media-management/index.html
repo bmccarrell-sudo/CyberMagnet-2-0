@@ -106,7 +106,7 @@ nav{
   border-bottom:1px solid rgba(37,99,235,0.1);
   transition:background 0.35s,box-shadow 0.35s;
 }
-nav.scrolled{background:rgba(5,8,16,0.96);box-shadow:0 2px 40px rgba(0,0,0,0.5)}
+
 .logo{font-family:var(--font-d);font-weight:800;font-size:1.4rem;letter-spacing:-0.02em;color:#fff;text-decoration:none}
 .logo span{color:var(--electric)}
 .nav-links{display:flex;gap:2.4rem;list-style:none}
@@ -773,6 +773,27 @@ section + section::before {
   .nav-drop-wide { min-width: 340px; }
   .drop-cols { grid-template-columns: 1fr !important; }
 }
+
+/* ── SCROLL HIDE/SHOW ── */
+.urgency-bar,
+nav#main-nav,
+nav[id="main-nav"] {
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1),
+              opacity 0.35s cubic-bezier(0.4,0,0.2,1),
+              background 0.35s,
+              box-shadow 0.35s;
+}
+.urgency-bar.header-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+nav#main-nav.header-hidden,
+nav[id="main-nav"].header-hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
 </style>
 </head>
 <body>
@@ -1126,6 +1147,42 @@ revEls.forEach(el => obs.observe(el));
       }, 120);
     });
   });
+})();
+</script>
+<script>
+/* ── SCROLL HIDE / SHOW (urgency bar + nav) ── */
+(function() {
+  var ub  = document.querySelector('.urgency-bar');
+  var nav = document.getElementById('main-nav');
+  if (!nav) return;
+  var lastY    = 0;
+  var ticking  = false;
+  var hidden   = false;
+  var THRESHOLD = 80; /* px scrolled before hide kicks in */
+
+  function update() {
+    var y = window.scrollY || window.pageYOffset;
+    var goingDown = y > lastY;
+    var delta = Math.abs(y - lastY);
+
+    if (delta < 4) { ticking = false; return; } /* ignore tiny jitters */
+
+    if (goingDown && y > THRESHOLD && !hidden) {
+      hidden = true;
+      nav.classList.add('header-hidden');
+      if (ub) ub.classList.add('header-hidden');
+    } else if (!goingDown && hidden) {
+      hidden = false;
+      nav.classList.remove('header-hidden');
+      if (ub) ub.classList.remove('header-hidden');
+    }
+    lastY   = y;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function() {
+    if (!ticking) { requestAnimationFrame(update); ticking = true; }
+  }, { passive: true });
 })();
 </script>
 </body>

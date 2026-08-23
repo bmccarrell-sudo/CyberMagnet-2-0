@@ -52,7 +52,7 @@
 
   /* ── Layout ── */
   --sp:          clamp(80px, 10vw, 140px);
-  --urgency-h:   44px;
+  --urgency-h:   32px;
   --nav-h:       68px;
   --radius-sm:   6px;
   --radius-md:   12px;
@@ -916,6 +916,11 @@ nav[id="main-nav"].header-hidden {
 </style>
 </head>
 <body>
+<div class="urgency-bar" role="banner" aria-label="Limited availability notice">
+  <div class="ub-track">
+    <span class="ub-inner">🟠 &nbsp;Only <strong>3 client spots</strong> available this month &nbsp;·&nbsp; 50+ brands scaled &nbsp;·&nbsp; Avg. 3.8× ROI &nbsp;·&nbsp; <a class="ub-link" href="/funnels/strategy-call/" style="color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:2px">Claim your spot →</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="ub-inner">🟠 &nbsp;Only <strong>3 client spots</strong> available this month &nbsp;·&nbsp; 50+ brands scaled &nbsp;·&nbsp; Avg. 3.8× ROI &nbsp;·&nbsp; <a class="ub-link" href="/funnels/strategy-call/" style="color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:2px">Claim your spot →</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
+</div>
 
 <!-- MINIMAL HEADER -->
 <header style="position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:68px;backdrop-filter:blur(22px);background:rgba(5,8,16,0.85);border-bottom:1px solid rgba(37,99,235,0.1)">

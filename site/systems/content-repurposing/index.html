@@ -7,7 +7,54 @@
 <meta name="description" content="CyberMagnet's Content Repurposing System turns your raw footage into branded short-form clips, AI clone videos, and a fully managed social media content engine — done for you every month.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<style>
+<style>.urgency-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 300;
+  height: var(--urgency-h);
+  background: linear-gradient(90deg, #1a4fd8, var(--cobalt), #3B7FF5, var(--cobalt), #1a4fd8);
+  background-size: 300% 100%;
+  animation: urgency-shift 6s ease-in-out infinite;
+  font-family: var(--font-b);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.ub-track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  animation: ub-scroll 22s linear infinite;
+  will-change: transform;
+  min-width: max-content;
+}
+.ub-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  padding-right: 60px;
+}
+.ub-link {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+@keyframes ub-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes urgency-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
 :root {
   /* ── Backgrounds ── */
   --black:       #050810;
@@ -52,7 +99,7 @@
 
   /* ── Layout ── */
   --sp:          clamp(80px, 10vw, 140px);
-  --urgency-h:   44px;
+  --urgency-h:   32px;
   --nav-h:       68px;
   --radius-sm:   6px;
   --radius-md:   12px;
@@ -63,14 +110,12 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--black);color:var(--white);font-family:var(--font-b);font-weight:300;line-height:1.7;overflow-x:hidden}
-.urgency-bar{position:fixed;top:0;left:0;right:0;z-index:300;height:var(--urgency-h);display:flex;align-items:center;justify-content:center;gap:6px;background:linear-gradient(90deg,#B86200,var(--orange),#C97300,var(--orange),#B86200);background-size:300% 100%;animation:urg-shift 5s ease-in-out infinite;font-size:0.8rem;font-weight:500;color:#fff;padding:0 5%;overflow:hidden}
 .urgency-bar::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.07) 50%,transparent);animation:urg-sheen 3.5s ease-in-out infinite;pointer-events:none}
 @keyframes urg-shift{0%,100%{background-position:0%}50%{background-position:100%}}
 @keyframes urg-sheen{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
 .ub-dot{width:7px;height:7px;background:rgba(255,255,255,0.9);border-radius:50%;flex-shrink:0;animation:ub-p 1.8s ease-in-out infinite}
 @keyframes ub-p{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.35;transform:scale(0.65)}}
 .ub-sep{color:rgba(255,255,255,0.4);margin:0 10px;font-size:0.65rem}
-.ub-link{color:#fff;text-decoration:underline;text-underline-offset:2px;font-weight:600;white-space:nowrap}
 nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:var(--nav-h);backdrop-filter:blur(22px) saturate(1.4);background:rgba(5,8,16,0.72);border-bottom:1px solid rgba(37,99,235,0.1);transition:background 0.35s,box-shadow 0.35s}
 
 .logo{font-family:var(--font-d);font-weight:800;font-size:1.4rem;letter-spacing:-0.02em;color:#fff;text-decoration:none}
@@ -764,14 +809,13 @@ nav[id="main-nav"].header-hidden {
 </style>
 </head>
 <body>
-<div class="urgency-bar">
-  <span class="ub-dot"></span>
-  <span>Only <strong>3 client slots</strong> available this month</span>
-  <span class="ub-sep">·</span>
-  <span>First content batch delivered within 5 business days</span>
-  <span class="ub-sep">·</span>
-  <a class="ub-link" href="/funnels/strategy-call/">Book a Strategy Call →</a>
+<div class="urgency-bar" role="banner" aria-label="Limited availability notice">
+  <div class="ub-track">
+    <span class="ub-inner">🟠 &nbsp;Only <strong>3 client spots</strong> available this month &nbsp;·&nbsp; 50+ brands scaled &nbsp;·&nbsp; Avg. 3.8× ROI &nbsp;·&nbsp; <a class="ub-link" href="/funnels/strategy-call/" style="color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:2px">Claim your spot →</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="ub-inner">🟠 &nbsp;Only <strong>3 client spots</strong> available this month &nbsp;·&nbsp; 50+ brands scaled &nbsp;·&nbsp; Avg. 3.8× ROI &nbsp;·&nbsp; <a class="ub-link" href="/funnels/strategy-call/" style="color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:2px">Claim your spot →</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
 </div>
+
+<!-- ── NAV ── -->
 <nav id="main-nav">
   <a href="/" class="logo" aria-label="CyberMagnet — Home" style="display:inline-flex;align-items:center;text-decoration:none;line-height:1;flex-shrink:0">
     <svg width="200" height="42" viewBox="0 0 220 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">

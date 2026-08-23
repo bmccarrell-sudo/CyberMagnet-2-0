@@ -481,8 +481,8 @@ body{background:var(--black);color:var(--white);font-family:var(--font-b);font-w
 .btn-secondary-lux:hover::before{opacity:1}
 .hero{
   position:relative;min-height:100vh;
-  display:flex;flex-direction:column;justify-content:center;
-  padding:calc(var(--urgency-h) + var(--nav-h) + 16px) 6% 60px;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:flex-start;
+  padding:calc(var(--urgency-h) + var(--nav-h) + 24px) 6% 60px;overflow:hidden;
 }
 .hero-bg{
   position:absolute;inset:0;
@@ -640,12 +640,14 @@ body{background:var(--black);color:var(--white);font-family:var(--font-b);font-w
   padding:calc(var(--urgency-h) + var(--nav-h) + 40px) 6% 80px;
   overflow:hidden;
 }
-nav#main-nav{
-  position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 5%;height:var(--nav-h);
-  background:rgba(8,13,22,0.94);backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(255,255,255,0.06);gap:20px;
+nav {
+  position: fixed; top: var(--urgency-h); left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 6%; height: var(--nav-h);
+  backdrop-filter: blur(22px) saturate(1.4);
+  background: rgba(5,8,16,0.72);
+  border-bottom: 1px solid rgba(37,99,235,0.1);
+  transition: background 0.35s, box-shadow 0.35s;
 }
 
 /* ── VALUE GRID ── */
@@ -802,7 +804,7 @@ nav[id="main-nav"].header-hidden {
   </div>
 </div>
 
-<!-- CANONICAL NAV -->
+<!-- ── NAV ── -->
 <nav id="main-nav">
   <a href="/" class="logo" aria-label="CyberMagnet — Home" style="display:inline-flex;align-items:center;text-decoration:none;line-height:1;flex-shrink:0">
     <svg width="200" height="42" viewBox="0 0 220 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">

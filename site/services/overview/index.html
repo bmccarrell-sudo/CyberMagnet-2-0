@@ -58,7 +58,7 @@
 
   /* ── Layout ── */
   --sp:          clamp(80px, 10vw, 140px);
-  --urgency-h:   44px;
+  --urgency-h:   32px;
   --nav-h:       68px;
   --radius-sm:   6px;
   --radius-md:   12px;
@@ -1354,15 +1354,10 @@ nav[id="main-nav"].header-hidden {
 <body>
 
 <!-- ── URGENCY BAR ── -->
-<div class="urgency-bar">
-  <span class="ub-dot"></span>
-  <span>Only <strong>3 client slots</strong> available this month</span>
-  <span class="ub-sep">·</span>
-  <span>50+ brands scaled</span>
-  <span class="ub-sep">·</span>
-  <span>Avg. 3.8× ROI</span>
-  <span class="ub-sep">·</span>
-  <a class="ub-link" href="/funnels/free-seo-audit/">Claim your spot →</a>
+<div class="urgency-bar" role="banner" aria-label="Limited availability notice">
+  <div class="ub-track">
+    <span class="ub-inner">🟠 &nbsp;Only <strong>3 client spots</strong> available this month &nbsp;·&nbsp; 50+ brands scaled &nbsp;·&nbsp; Avg. 3.8× ROI &nbsp;·&nbsp; <a class="ub-link" href="/funnels/strategy-call/" style="color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:2px">Claim your spot →</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="ub-inner">🟠 &nbsp;Only <strong>3 client spots</strong> available this month &nbsp;·&nbsp; 50+ brands scaled &nbsp;·&nbsp; Avg. 3.8× ROI &nbsp;·&nbsp; <a class="ub-link" href="/funnels/strategy-call/" style="color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:2px">Claim your spot →</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
 </div>
 
 <!-- ── NAV ── -->

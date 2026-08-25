@@ -137,13 +137,22 @@ body{background:#050810;color:#EEF2F7;font-family:'DM Sans',sans-serif;font-weig
 }
 
 /* ── URGENCY BAR & SCROLL HIDE ── */
-.urgency-bar{
-  position:fixed;top:0;left:0;right:0;z-index:300;
-  height:var(--urgency-h);
-  background:linear-gradient(90deg,#1a4fd8,var(--cobalt),#3B7FF5,var(--cobalt),#1a4fd8);
-  background-size:300% 100%;animation:urgency-shift 6s ease-in-out infinite;
-  font-family:var(--font-b);font-size:0.72rem;font-weight:500;
-  color:var(--white);letter-spacing:0.02em;overflow:hidden;display:flex;align-items:center;
+.urgency-bar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 300;
+  height: var(--urgency-h);
+  background: linear-gradient(90deg,#1a4fd8,var(--cobalt),#3B7FF5,var(--cobalt),#1a4fd8);
+  background-size: 300% 100%;
+  animation: urgency-shift 6s ease-in-out infinite;
+  font-family: var(--font-b);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 .ub-track{display:flex;align-items:center;white-space:nowrap;animation:ub-scroll 22s linear infinite;will-change:transform;min-width:max-content}
 .ub-track:hover{animation-play-state:paused}
@@ -152,7 +161,24 @@ body{background:#050810;color:#EEF2F7;font-family:'DM Sans',sans-serif;font-weig
 @keyframes ub-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @keyframes urgency-shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 
-.urgency-bar,.urgency-bar+nav {
+.urgency-bar {
+  position: fixed;
+  top: var(--urgency-h);
+  left: 0; right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6%;
+  height: var(--nav-h);
+  backdrop-filter: blur(22px) saturate(1.4);
+  background: rgba(5,8,16,0.92);
+  border-bottom: 1px solid rgba(37,99,235,0.1);
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1),
+              opacity 0.35s cubic-bezier(0.4,0,0.2,1),
+              background 0.35s, box-shadow 0.35s;
+}
+nav#main-nav {
   position: fixed;
   top: var(--urgency-h);
   left: 0; right: 0;
@@ -702,32 +728,32 @@ footer{
   </a>
   <ul class="nav-links" id="nav-links">
     <li class="nav-item">
-      <a href="/services/" class="nav-parent">Solutions <span class="nav-arrow">&#9660;</span></a>
+      <a href="/solutions/" class="nav-parent">Solutions <span class="nav-arrow">&#9660;</span></a>
       <div class="nav-drop nav-drop-wide" id="solutions-drop">
         <div class="drop-cols">
           <div class="drop-section">
             <div class="drop-label">AI &amp; Automation</div>
-            <a class="drop-link" href="/services/ai-phone-receptionist/"><div class="di" style="background:rgba(37,99,235,0.1)">&#129302;</div><div class="dt">AI Phone Receptionist<span>24/7 lead capture</span></div></a>
+            <a class="drop-link" href="/solutions/ai-phone-receptionist/"><div class="di" style="background:rgba(37,99,235,0.1)">&#129302;</div><div class="dt">AI Phone Receptionist<span>24/7 lead capture</span></div></a>
             <a class="drop-link" href="/systems/ai-automation/"><div class="di" style="background:rgba(37,99,235,0.1)">&#9889;</div><div class="dt">AI Automation System<span>Eliminate manual tasks</span></div></a>
             <a class="drop-link" href="/systems/appointment/"><div class="di" style="background:rgba(37,99,235,0.1)">&#128197;</div><div class="dt">Appointment System<span>Fill your calendar</span></div></a>
           </div>
           <div class="drop-section">
             <div class="drop-label">Marketing &amp; Growth</div>
-            <a class="drop-link" href="/services/seo/"><div class="di" style="background:rgba(217,119,6,0.1)">&#128269;</div><div class="dt">SEO &amp; Local Dominance<span>Own your city on Google</span></div></a>
-            <a class="drop-link" href="/services/website-design/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127758;</div><div class="dt">Website Design<span>Built to convert</span></div></a>
-            <a class="drop-link" href="/services/funnel-building/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127919;</div><div class="dt">Funnel Building<span>Turn traffic into revenue</span></div></a>
-            <a class="drop-link" href="/services/social-media-advertising/"><div class="di" style="background:rgba(217,119,6,0.1)">&#128202;</div><div class="dt">Paid Advertising<span>Meta &amp; Google Ads</span></div></a>
-            <a class="drop-link" href="/services/branding-packages/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127775;</div><div class="dt">Brand Identity<span>Command premium pricing</span></div></a>
+            <a class="drop-link" href="/solutions/seo/"><div class="di" style="background:rgba(217,119,6,0.1)">&#128269;</div><div class="dt">SEO &amp; Local Dominance<span>Own your city on Google</span></div></a>
+            <a class="drop-link" href="/solutions/website-design/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127758;</div><div class="dt">Website Design<span>Built to convert</span></div></a>
+            <a class="drop-link" href="/solutions/funnel-building/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127919;</div><div class="dt">Funnel Building<span>Turn traffic into revenue</span></div></a>
+            <a class="drop-link" href="/solutions/social-media-advertising/"><div class="di" style="background:rgba(217,119,6,0.1)">&#128202;</div><div class="dt">Paid Advertising<span>Meta &amp; Google Ads</span></div></a>
+            <a class="drop-link" href="/solutions/branding-packages/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127775;</div><div class="dt">Brand Identity<span>Command premium pricing</span></div></a>
           </div>
         </div>
         <div style="padding:10px 16px 12px;border-top:1px solid rgba(255,255,255,0.05);display:flex;gap:16px;flex-wrap:wrap">
-          <a href="/services/" style="font-size:0.78rem;color:#2563EB;font-weight:600;text-decoration:none">View all services →</a>
+          <a href="/solutions/" style="font-size:0.78rem;color:#2563EB;font-weight:600;text-decoration:none">View all solutions →</a>
           <a href="/ai-systems/" style="font-size:0.78rem;color:#D97706;font-weight:600;text-decoration:none">🤖 AI Systems →</a>
           <a href="/how-we-work/" style="font-size:0.78rem;color:#7A90AA;font-weight:600;text-decoration:none">How we work →</a>
         </div>
       </div>
     </li>
-    <li><a href="/portfolio/">Results</a></li>
+    <li><a href="/results/">Results</a></li>
     <li><a href="/about/">About</a></li>
     <li><a href="/products/">Products</a></li>
     <li><a href="/blog/">Blog</a></li>
@@ -759,24 +785,24 @@ footer{
       (972) 338-5778
     </a>
     <div class="mob-section-label">AI &amp; Automation</div>
-    <a href="/services/ai-phone-receptionist/" class="mob-link">&#129302; AI Phone Receptionist</a>
+    <a href="/solutions/ai-phone-receptionist/" class="mob-link">&#129302; AI Phone Receptionist</a>
     <a href="/systems/ai-automation/" class="mob-link">&#9889; AI Automation System</a>
     <a href="/systems/appointment/" class="mob-link">&#128197; Appointment System</a>
     <a href="/ai-systems/" class="mob-link" style="color:#D97706">&#128161; AI Systems Overview</a>
     <div class="mob-section-label">Marketing &amp; Growth</div>
-    <a href="/services/seo/" class="mob-link">&#128269; SEO &amp; Local Dominance</a>
-    <a href="/services/website-design/" class="mob-link">&#127758; Website Design</a>
-    <a href="/services/funnel-building/" class="mob-link">&#127919; Funnel Building</a>
-    <a href="/services/social-media-advertising/" class="mob-link">&#128202; Paid Advertising</a>
-    <a href="/services/branding-packages/" class="mob-link">&#127775; Brand Identity</a>
+    <a href="/solutions/seo/" class="mob-link">&#128269; SEO &amp; Local Dominance</a>
+    <a href="/solutions/website-design/" class="mob-link">&#127758; Website Design</a>
+    <a href="/solutions/funnel-building/" class="mob-link">&#127919; Funnel Building</a>
+    <a href="/solutions/social-media-advertising/" class="mob-link">&#128202; Paid Advertising</a>
+    <a href="/solutions/branding-packages/" class="mob-link">&#127775; Brand Identity</a>
     <div class="mob-divider"></div>
     <a href="/roi-calculator/" class="mob-link" style="color:#34D399">&#128176; ROI Calculator</a>
     <a href="/how-we-work/" class="mob-link">&#128338; How We Work</a>
-    <a href="/portfolio/" class="mob-link">&#127942; Results &amp; Portfolio</a>
+    <a href="/results/" class="mob-link">&#127942; Results &amp; Portfolio</a>
     <a href="/about/" class="mob-link">&#128100; About Ben</a>
     <a href="/products/" class="mob-link">&#128230; Digital Products</a>
     <a href="/blog/" class="mob-link">&#128221; Blog</a>
-    <a href="/services/" class="mob-link" style="color:#2563EB">&#9729; View All Services</a>
+    <a href="/solutions/" class="mob-link" style="color:#2563EB">&#9729; View All Solutions</a>
   </nav>
   <div class="mob-footer">
     <a href="/funnels/strategy-call/" class="mob-cta">Book a Free Strategy Call ↗</a>
@@ -869,19 +895,19 @@ footer{
         <div class="svc-icon">🔍</div>
         <div class="svc-name">Local SEO & GBP</div>
         <div class="svc-desc">Own the top 3 on Google Maps for every service you offer. More calls, more clicks, more clients — without paying for ads.</div>
-        <a href="/services/seo/" class="svc-link">Explore SEO →</a>
+        <a href="/solutions/seo/" class="svc-link">Explore SEO →</a>
       </div>
       <div class="svc-card reveal">
         <div class="svc-icon">🤖</div>
         <div class="svc-name">AI Phone Receptionist</div>
         <div class="svc-desc">Answer every call 24/7, qualify leads, and book appointments automatically — even at 2am. Starting at $350/mo.</div>
-        <a href="/services/ai-phone-receptionist/" class="svc-link">Explore AI Receptionist →</a>
+        <a href="/solutions/ai-phone-receptionist/" class="svc-link">Explore AI Receptionist →</a>
       </div>
       <div class="svc-card reveal">
         <div class="svc-icon">🌐</div>
         <div class="svc-name">Website Design</div>
         <div class="svc-desc">Conversion-engineered websites that turn visitors into calls and bookings — not just another pretty site nobody finds.</div>
-        <a href="/services/website-design/" class="svc-link">Explore Websites →</a>
+        <a href="/solutions/website-design/" class="svc-link">Explore Websites →</a>
       </div>
       <div class="svc-card reveal">
         <div class="svc-icon">⚡</div>
@@ -893,17 +919,17 @@ footer{
         <div class="svc-icon">🎯</div>
         <div class="svc-name">Funnel Building</div>
         <div class="svc-desc">High-converting funnels built around your buyer's psychology — from first click to booked appointment, fully optimized.</div>
-        <a href="/services/funnel-building/" class="svc-link">Explore Funnels →</a>
+        <a href="/solutions/funnel-building/" class="svc-link">Explore Funnels →</a>
       </div>
       <div class="svc-card reveal">
         <div class="svc-icon">⭐</div>
         <div class="svc-name">Brand Identity</div>
         <div class="svc-desc">Visual identity and messaging that commands attention and justifies premium pricing before you say a word.</div>
-        <a href="/services/branding-packages/" class="svc-link">Explore Branding →</a>
+        <a href="/solutions/branding-packages/" class="svc-link">Explore Branding →</a>
       </div>
     </div>
     <div style="text-align:center;margin-top:36px">
-      <a href="/services/" class="cta-secondary" style="display:inline-flex">View all services →</a>
+      <a href="/solutions/" class="cta-secondary" style="display:inline-flex">View all solutions →</a>
     </div>
   </div>
 </section>
@@ -1176,17 +1202,17 @@ footer{
     </div>
     <div class="footer-col">
       <h4>Solutions</h4>
-      <a href="/services/seo/">Local SEO</a>
-      <a href="/services/ai-phone-receptionist/">AI Receptionist</a>
-      <a href="/services/website-design/">Website Design</a>
-      <a href="/services/funnel-building/">Funnel Building</a>
-      <a href="/services/branding-packages/">Brand Identity</a>
-      <a href="/services/">All Services</a>
+      <a href="/solutions/seo/">Local SEO</a>
+      <a href="/solutions/ai-phone-receptionist/">AI Receptionist</a>
+      <a href="/solutions/website-design/">Website Design</a>
+      <a href="/solutions/funnel-building/">Funnel Building</a>
+      <a href="/solutions/branding-packages/">Brand Identity</a>
+      <a href="/solutions/">All Solutions</a>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
       <a href="/about/">About Ben</a>
-      <a href="/portfolio/">Client Results</a>
+      <a href="/results/">Client Results</a>
       <a href="/blog/">Blog</a>
       <a href="/products/">Digital Products</a>
       <a href="/how-we-work/">How We Work</a>

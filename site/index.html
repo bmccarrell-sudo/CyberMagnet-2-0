@@ -238,7 +238,7 @@ nav#main-nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;
 
 /* ── HERO ── */
 .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;
-  justify-content:flex-start;padding:164px 10% 60px;overflow:hidden;}
+  justify-content:flex-start;padding:calc(var(--urgency-h) + var(--nav-h) + 64px) 6% 60px;overflow:hidden;}
 .hero-kicker{
   display:inline-flex;align-items:center;gap:10px;
   background:rgba(217,119,6,0.08);
@@ -378,7 +378,7 @@ nav#main-nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;
 .sec-h2{font-family:var(--font-d);font-weight:800;font-size:clamp(1.8rem,3.5vw,3rem);letter-spacing:-0.03em;line-height:1.05;margin-bottom:16px}
 .sec-sub{font-size:1rem;color:var(--gray-400);max-width:600px;line-height:1.65;margin-bottom:48px}
 .grad-text{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease}
+.reveal{opacity:1;transform:translateY(0);transition:opacity 0.65s ease,transform 0.65s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
 /* ── PROBLEM ── */
@@ -891,8 +891,31 @@ nav#main-nav.header-hidden,.urgency-bar.header-hidden{transform:translateY(-100%
 /* ── SCROLL REVEAL ── */
 (function(){
   var els=document.querySelectorAll('.reveal');
-  var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.05});
-  els.forEach(function(el){obs.observe(el);});
+  // Set initial hidden state via JS (so non-JS users always see content)
+  els.forEach(function(el){
+    el.style.opacity='0';
+    el.style.transform='translateY(24px)';
+  });
+  // Fallback: make all visible after 2s regardless
+  setTimeout(function(){
+    els.forEach(function(el){ el.style.opacity='1'; el.style.transform='translateY(0)'; });
+  }, 2000);
+  // IO for animated reveals
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.style.opacity='1';
+          e.target.style.transform='translateY(0)';
+          obs.unobserve(e.target);
+        }
+      });
+    },{threshold:0.01,rootMargin:'0px 0px 50px 0px'});
+    els.forEach(function(el){obs.observe(el);});
+  } else {
+    // No IO support - show everything immediately
+    els.forEach(function(el){ el.style.opacity='1'; el.style.transform='translateY(0)'; });
+  }
 })();
 
 /* ── SCROLL HIDE/SHOW ── */

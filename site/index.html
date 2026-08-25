@@ -179,13 +179,25 @@ body{background:#050810;color:#EEF2F7;font-family:'DM Sans',sans-serif;font-weig
 }
 .nav-links a, .nav-links .nav-parent {
   font-size: 0.88rem; color: var(--off-white, #dce8f5);
-  text-decoration: none; font-weight: 500;
+  text-decoration: none; font-weight: 600;
   cursor: pointer; background: none; border: none;
   padding: 0; transition: color 0.15s;
   display: flex; align-items: center; gap: 4px;
   position: relative;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 .nav-links a:hover, .nav-links .nav-parent:hover { color: #fff; }
+.nav-links a {
+  color: rgba(255,255,255,0.80);
+  text-decoration: none;
+  font-size: 0.88rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: #fff; }
 .nav-links a::after {
   content: ''; position: absolute; left: 0; bottom: -2px;
   width: 0; height: 1px; background: var(--orange, #D97706);
@@ -354,9 +366,8 @@ body{background:#050810;color:#EEF2F7;font-family:'DM Sans',sans-serif;font-weig
 /* ── HERO ── */
 .hero{
   position:relative;min-height:100vh;
-  display:flex;align-items:stretch;flex-direction:column;
-  padding:calc(var(--urgency-h) + var(--nav-h) + 64px) 6% 80px;
-  overflow:hidden;
+  display:flex;flex-direction:column;justify-content:flex-start;
+  padding:calc(var(--urgency-h) + var(--nav-h) + 64px) 6% 60px;overflow:hidden;
 }
 .hero-bg{
   position:absolute;inset:0;
@@ -377,7 +388,7 @@ body{background:#050810;color:#EEF2F7;font-family:'DM Sans',sans-serif;font-weig
 .hero-h1{
   font-family:var(--font-d);font-weight:900;line-height:0.92;
   letter-spacing:-0.03em;margin-bottom:28px;
-  font-size:clamp(2rem,5.5vw,5rem);
+  font-size:clamp(1.8rem,4.2vw,3.6rem);
 }
 .h1-line1{display:block;color:var(--off-white)}
 .h1-line2{display:block;color:var(--off-white)}
@@ -598,7 +609,7 @@ footer{
 
 /* ── MOBILE ── */
 @media(max-width:768px){
-  .hero-h1{font-size:clamp(2rem,5.5vw,5rem);border-right:none;padding:10px;border-bottom:1px solid rgba(255,255,255,0.07)}
+  .hero-h1{font-size:clamp(1.8rem,4.2vw,3.6rem);border-right:none;padding:10px;border-bottom:1px solid rgba(255,255,255,0.07)}
   .stat:nth-child(3),.stat:nth-child(4){border-bottom:none}
 }
 
@@ -741,17 +752,17 @@ footer{
   <div class="hero-content">
     <div class="hero-kicker" style="opacity:1">AI-Powered Marketing · Dallas–Fort Worth, TX</div>
     <h1 class="hero-h1" style="opacity:1">
-      <span class="line-stroke">YOUR BUSINESS</span>
-      <span class="line-white">DESERVES TO</span>
-      <span class="line-gold">DOMINATE</span>
-      <span class="line-blue">ITS MARKET.</span>
+      <span class="line-stroke">WHILE YOU WORK,</span>
+      <span class="line-white">WE MAKE SURE</span>
+      <span class="line-gold">THEY FIND</span>
+      <span class="line-blue">YOU FIRST.</span>
     </h1>
     <p class="hero-sub" style="opacity:1">
-      CyberMagnet builds <strong>AI-powered marketing systems</strong> for DFW service businesses — local SEO, websites, funnels, and automation that generate leads while you focus on the work.
+      Most DFW businesses lose clients to competitors who aren't even better — they just <strong>show up first</strong>. CyberMagnet fixes that with AI-powered SEO, automated lead capture, and systems that work while you sleep.
     </p>
     <div class="hero-ctas" style="opacity:1">
       <a href="/funnels/strategy-call/" class="cta-primary">📅 Book a Free Strategy Call ↗</a>
-      <a href="/portfolio/" class="cta-secondary">See Client Results →</a>
+      <a href="/funnels/free-seo-audit/" class="cta-secondary">🔍 Get a Free SEO Audit</a>
     </div>
     <div class="hero-stats" style="opacity:1">
       <div class="stat"><span class="stat-num">3.8×</span><span class="stat-label">Average ROI<br>Delivered</span></div>

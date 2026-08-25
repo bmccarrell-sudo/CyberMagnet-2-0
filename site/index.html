@@ -181,7 +181,7 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 6%; height: var(--nav-h);
   backdrop-filter: blur(22px) saturate(1.4);
-  background: rgba(5,8,16,0.92);
+  background: rgba(5,8,16,0.72);
   border-bottom: 1px solid rgba(37,99,235,0.1);
   transition: background 0.35s, box-shadow 0.35s;
 }
@@ -211,19 +211,7 @@ nav {
 }
 .nav-links a:hover { color: var(--white); }
 
-.nav-cta {
-  background: var(--grad);
-  color: var(--white);
-  border: none;
-  padding: 9px 22px;
-  border-radius: 6px;
-  font-family: var(--font-b);
-  font-size: 0.84rem;
-  font-weight: 500;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-}
+.nav-cta{background: var(--orange);color:#fff;border:none;padding:9px 22px;border-radius:6px;font-family:var(--font-b);font-size:0.84rem;font-weight:500;cursor:pointer;text-decoration:none;transition:background 0.2s,transform 0.2s,box-shadow 0.2s}
 .nav-cta:hover {
   opacity: 0.88; background: var(--grad);
   transform: translateY(-1px);
@@ -237,7 +225,7 @@ nav {
 .hero {
   position: relative;
   min-height: 100vh;
-  display: flex; align-items: flex-start; flex-direction: column;
+  display: flex; align-items: stretch; flex-direction: column;
   padding: calc(var(--urgency-h) + var(--nav-h) + 8px) 6% 80px;
   overflow: hidden;
 }
@@ -1400,14 +1388,11 @@ footer { background: var(--black, #050810); border-top: 1px solid rgba(255,255,2
 }
 
 /* Gradient nav CTA */
-.nav-cta {
-  background: var(--grad) !important;
-  border: none !important;
-}
+.nav-cta { background: var(--orange); }
 
 /* Gradient section label dot */
 .section-label::before, .sec-label::before {
-  background: var(--grad) !important;
+  background: var(--orange);
 }
 
 /* Gradient progress bar */
@@ -1440,7 +1425,7 @@ section + section::before {
 
 /* Gradient on "Most Popular" badge */
 .featured-badge, [style*="Most Popular"] {
-  background: var(--grad) !important;
+  background: var(--orange);
 }
 
 
@@ -1506,7 +1491,7 @@ section + section::before {
 .nav-cta {
   padding: 9px 20px; border-radius: 7px;
   font-size: 0.84rem; font-weight: 700;
-  background: linear-gradient(90deg, #D97706, #2563EB);
+  background: var(--orange);
   color: #fff; text-decoration: none;
   white-space: nowrap; flex-shrink: 0;
   transition: opacity 0.15s;

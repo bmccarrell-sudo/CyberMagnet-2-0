@@ -196,8 +196,8 @@ nav {
 
 .hero-h1 {
   font-family: var(--font-d);
-  font-size: clamp(2.6rem, 5.5vw, 5rem);
-  font-weight: 800; line-height: 1.04; letter-spacing: -0.03em;
+  font-size:clamp(1.8rem,4.2vw,3.6rem);
+  font-weight:800; line-height:0.95; letter-spacing:-0.04em;
   margin-bottom: 20px;
   animation: fade-up 0.6s 0.08s ease both;
 }
@@ -205,7 +205,7 @@ nav {
 .hero-h1 .acc-o { color: var(--orange); }
 
 .hero-sub {
-  font-size: clamp(1rem, 1.8vw, 1.12rem);
+  font-size:clamp(1.1rem,2vw,1.5rem);
   color: #B8D0E8; max-width: 600px;
   line-height: 1.75;
   animation: fade-up 0.6s 0.16s ease both;
@@ -1187,7 +1187,7 @@ section + section::before {
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 .nav-drop-wide { min-width: 520px; }
-.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 14px 10px 8px; }
+.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 10px 6px; }
 .drop-section { padding: 0 6px; }
 .drop-label {
   font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em;
@@ -1196,7 +1196,7 @@ section + section::before {
 }
 .drop-link {
   display: flex; align-items: center; gap: 10px;
-  padding: 7px 8px; border-radius: 8px; text-decoration: none;
+  padding: 9px 10px; border-radius: 8px; text-decoration: none;
   transition: background 0.15s; color: var(--off-white, #dce8f5);
 }
 .drop-link:hover { background: rgba(255,255,255,0.05); }
@@ -1349,7 +1349,13 @@ nav[id="main-nav"].header-hidden {
   opacity: 0;
   pointer-events: none;
 }
-</style>
+.h1-accent {
+  background: linear-gradient(90deg, var(--gold), #3B7FF5);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.h1-accent-blue { color: var(--cobalt); }</style>
 </head>
 <body>
 
@@ -1585,7 +1591,7 @@ nav[id="main-nav"].header-hidden {
         <div class="visual-card-main">
           <div class="vc-header">
             <div class="vc-icon">⚡</div>
-            <div class="vc-status" style="color:var(--orange)">Brand live</div>
+            <div class="vc-status" class="h1-accent">Brand live</div>
           </div>
           <div class="brand-palette" style="margin-bottom:16px">
             <div class="bp-swatch bp1"></div>
@@ -1638,7 +1644,7 @@ nav[id="main-nav"].header-hidden {
         <div class="visual-card-main">
           <div class="vc-header">
             <div class="vc-icon">🎯</div>
-            <div class="vc-status" style="color:var(--orange)">Funnel active</div>
+            <div class="vc-status" class="h1-accent">Funnel active</div>
           </div>
           <div class="funnel-stages">
             <div class="funnel-stage">
@@ -2065,7 +2071,7 @@ nav[id="main-nav"].header-hidden {
 
 <!-- ── CTA BANNER ── -->
 <div class="cta-banner">
-  <h2 class="reveal">Not Sure Where<br>to <span style="color:var(--electric)">Start?</span></h2>
+  <h2 class="reveal">Not Sure Where<br>to <span class="h1-accent-blue">Start?</span></h2>
   <p class="reveal">Book a free strategy call. We'll review your current situation, identify your highest-leverage growth opportunities, and recommend the right engagement — no sales pressure, no obligation.</p>
   <div class="cta-btns reveal">
     <a href="/funnels/free-seo-audit/" class="btn-primary">Get Free SEO Audit ↗</a>

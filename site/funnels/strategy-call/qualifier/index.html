@@ -138,9 +138,9 @@ nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;display:flex;
 .page-kicker{display:inline-flex;align-items:center;gap:9px;background:var(--el-light);border:1px solid rgba(37,99,235,0.22);border-radius:30px;padding:6px 16px;font-size:0.73rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--electric);margin-bottom:20px}
 .page-kicker::before{content:'';width:6px;height:6px;background:var(--success);border-radius:50%;animation:blink 1.6s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
-.page-h1{font-family:var(--font-d);font-size:clamp(2rem,4vw,3.2rem);font-weight:800;line-height:1.06;letter-spacing:-0.03em;margin-bottom:16px}
+.page-h1{font-family:var(--font-d);font-size:clamp(1.8rem,4.2vw,3.6rem);font-weight:800;line-height:0.95;letter-spacing:-0.04em;margin-bottom:16px}
 .page-h1 .b{color:var(--electric)}.page-h1 .o{color:var(--orange)}
-.page-sub{font-size:1rem;color:var(--gray-400);line-height:1.75;margin-bottom:28px;max-width:500px}
+.page-sub{font-size:clamp(1.1rem,2vw,1.5rem);color:var(--gray-400);line-height:1.75;margin-bottom:28px;max-width:500px}
 .page-sub strong{color:var(--off-white);font-weight:400}
 
 /* WHAT HAPPENS NEXT */
@@ -503,7 +503,7 @@ section + section::before {
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 .nav-drop-wide { min-width: 520px; }
-.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 14px 10px 8px; }
+.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 10px 6px; }
 .drop-section { padding: 0 6px; }
 .drop-label {
   font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em;
@@ -512,7 +512,7 @@ section + section::before {
 }
 .drop-link {
   display: flex; align-items: center; gap: 10px;
-  padding: 7px 8px; border-radius: 8px; text-decoration: none;
+  padding: 9px 10px; border-radius: 8px; text-decoration: none;
   transition: background 0.15s; color: var(--off-white, #dce8f5);
 }
 .drop-link:hover { background: rgba(255,255,255,0.05); }

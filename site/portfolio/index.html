@@ -191,10 +191,10 @@ nav {
 .hero-label { display: inline-flex; align-items: center; gap: 9px; background: var(--el-light); border: 1px solid rgba(37,99,235,0.2); border-radius: 30px; padding: 6px 16px; font-size: 0.73rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--electric); margin-bottom: 22px; animation: fade-up 0.6s ease both; }
 .hero-label::before { content: ''; width: 6px; height: 6px; background: var(--electric); border-radius: 50%; animation: blink 1.6s ease-in-out infinite; }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.2} }
-.hero-h1 { font-family: var(--font-d); font-size: clamp(2.8rem, 5.5vw, 5.2rem); font-weight: 800; line-height: 1.04; letter-spacing: -0.03em; margin-bottom: 20px; animation: fade-up 0.6s 0.08s ease both; }
+.hero-h1 { font-family: var(--font-d); font-size:clamp(1.8rem,4.2vw,3.6rem); font-weight:800; line-height:0.95; letter-spacing:-0.04em; margin-bottom: 20px; animation: fade-up 0.6s 0.08s ease both; }
 .hero-h1 .acc-b { color: var(--electric); }
 .hero-h1 .acc-o { color: var(--orange); }
-.hero-sub { font-size: clamp(1rem, 1.8vw, 1.15rem); color: #B8D0E8; max-width: 620px; line-height: 1.72; margin-bottom: 36px; animation: fade-up 0.6s 0.16s ease both; }
+.hero-sub { font-size:clamp(1.1rem,2vw,1.5rem); color: #B8D0E8; max-width: 620px; line-height: 1.72; margin-bottom: 36px; animation: fade-up 0.6s 0.16s ease both; }
 
 .hero-proof-row { display: flex; gap: 32px; flex-wrap: wrap; animation: fade-up 0.6s 0.24s ease both; }
 .hp-stat { display: flex; flex-direction: column; }
@@ -1288,7 +1288,7 @@ section + section::before {
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 .nav-drop-wide { min-width: 520px; }
-.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 14px 10px 8px; }
+.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 10px 6px; }
 .drop-section { padding: 0 6px; }
 .drop-label {
   font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em;
@@ -1297,7 +1297,7 @@ section + section::before {
 }
 .drop-link {
   display: flex; align-items: center; gap: 10px;
-  padding: 7px 8px; border-radius: 8px; text-decoration: none;
+  padding: 9px 10px; border-radius: 8px; text-decoration: none;
   transition: background 0.15s; color: var(--off-white, #dce8f5);
 }
 .drop-link:hover { background: rgba(255,255,255,0.05); }
@@ -1450,7 +1450,13 @@ nav[id="main-nav"].header-hidden {
   opacity: 0;
   pointer-events: none;
 }
-</style>
+.h1-accent {
+  background: linear-gradient(90deg, var(--gold), #3B7FF5);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.h1-accent-blue { color: var(--cobalt); }</style>
 </head>
 <body>
 <div class="urgency-bar" role="banner" aria-label="Limited availability notice">
@@ -3034,7 +3040,7 @@ nav[id="main-nav"].header-hidden {
             </div>
           </div>
           <div class="flip-card-info" style="border-top:1px solid rgba(37,99,235,0.2)">
-            <div class="flip-client" style="color:var(--electric)">Veritas Law Group — Rebrand</div>
+            <div class="flip-client" class="h1-accent-blue">Veritas Law Group — Rebrand</div>
             <div class="flip-desc">Geometric monogram, electric blue authority palette, modern sans-serif. Immediately conveys premium and trustworthy.</div>
           </div>
           <div style="padding:10px 18px 14px;display:flex;gap:8px">
@@ -3075,7 +3081,7 @@ nav[id="main-nav"].header-hidden {
             </div>
           </div>
           <div class="flip-card-info" style="border-top:1px solid rgba(217,119,6,0.2)">
-            <div class="flip-client" style="color:var(--orange)">Solace Wellness — Rebrand</div>
+            <div class="flip-client" class="h1-accent">Solace Wellness — Rebrand</div>
             <div class="flip-desc">Abstract circular mark, warm terracotta palette, clean Syne display type. Premium, calm, and distinctly ownable.</div>
           </div>
           <div style="padding:10px 18px 14px;display:flex;gap:8px">
@@ -3117,7 +3123,7 @@ nav[id="main-nav"].header-hidden {
             </div>
           </div>
           <div class="flip-card-info" style="border-top:1px solid rgba(37,99,235,0.2)">
-            <div class="flip-client" style="color:var(--electric)">NexCore — Rebrand</div>
+            <div class="flip-client" class="h1-accent-blue">NexCore — Rebrand</div>
             <div class="flip-desc">Dual-letter geometric mark with orange accent node. Clean, modern, and immediately communicates precision and reliability.</div>
           </div>
           <div style="padding:10px 18px 14px;display:flex;gap:8px">
@@ -3160,7 +3166,7 @@ nav[id="main-nav"].header-hidden {
             </div>
           </div>
           <div class="flip-card-info" style="border-top:1px solid rgba(217,119,6,0.2)">
-            <div class="flip-client" style="color:var(--orange)">The Founders Table — Rebrand</div>
+            <div class="flip-client" class="h1-accent">The Founders Table — Rebrand</div>
             <div class="flip-desc">Editorial wordmark with vertical rule accent. Warm, sophisticated, and consistent across menus, signage, and digital.</div>
           </div>
           <div style="padding:10px 18px 14px;display:flex;gap:8px">
@@ -3201,7 +3207,7 @@ nav[id="main-nav"].header-hidden {
             </div>
           </div>
           <div class="flip-card-info" style="border-top:1px solid rgba(37,99,235,0.2)">
-            <div class="flip-client" style="color:var(--electric)">Apex Fitness — Rebrand</div>
+            <div class="flip-client" class="h1-accent-blue">Apex Fitness — Rebrand</div>
             <div class="flip-desc">Letter-mark with electric blue accent, high-contrast dark palette. Positions as performance-grade, not just another gym.</div>
           </div>
           <div style="padding:10px 18px 14px;display:flex;gap:8px">
@@ -3243,7 +3249,7 @@ nav[id="main-nav"].header-hidden {
             </div>
           </div>
           <div class="flip-card-info" style="border-top:1px solid rgba(37,99,235,0.2)">
-            <div class="flip-client" style="color:var(--electric)">Meridian Realty — Rebrand</div>
+            <div class="flip-client" class="h1-accent-blue">Meridian Realty — Rebrand</div>
             <div class="flip-desc">Gradient vertical rule as the mark — referencing an architectural element. Refined, modern, and aspirational for the luxury market.</div>
           </div>
           <div style="padding:10px 18px 14px;display:flex;gap:8px">
@@ -3392,7 +3398,7 @@ nav[id="main-nav"].header-hidden {
         </div>
         <div class="post-img-after">
           <div class="pia-gradient" style="background:linear-gradient(160deg,#1a0800 0%,#3d1800 100%)">
-            <div class="pia-eyebrow" style="color:var(--orange)">The framework I used</div>
+            <div class="pia-eyebrow" class="h1-accent">The framework I used</div>
             <div class="pia-headline">From $4k to $47k/month in 11 months. Here's the system.</div>
             <div class="pia-cta" style="background:var(--electric)">Get the Breakdown →</div>
           </div>
@@ -3609,7 +3615,7 @@ nav[id="main-nav"].header-hidden {
      CTA BANNER
 ══════════════════════════════════════════════════════════ -->
 <div class="cta-banner">
-  <h2 class="reveal">Ready to Be Our Next <span style="color:var(--electric)">Success Story?</span></h2>
+  <h2 class="reveal">Ready to Be Our Next <span class="h1-accent-blue">Success Story?</span></h2>
   <p class="reveal">Every project above started with a free consultation. Book yours today — walk away with a clear picture of what's possible for your business, at no cost and zero obligation.</p>
   <div class="cta-btns reveal">
     <a href="/funnels/free-seo-audit/" class="btn-primary">Get Free SEO Audit ↗</a>

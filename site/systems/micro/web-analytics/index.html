@@ -157,9 +157,9 @@ nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;display:flex;
 .breadcrumb a:hover{color:var(--gray-400)}
 .hero-kicker{display:inline-flex;align-items:center;gap:9px;background:var(--accent-light);border:1px solid var(--hover-border);border-radius:30px;padding:6px 16px;font-size:0.73rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
 .hero-kicker::before{content:'';width:6px;height:6px;background:var(--accent);border-radius:50%;animation:blink 1.6s ease-in-out infinite}
-.hero-h1{font-family:var(--font-d);font-size:clamp(2.4rem,5vw,4.4rem);font-weight:800;line-height:1.04;letter-spacing:-0.03em;margin-bottom:18px}
+.hero-h1{font-family:var(--font-d);font-size:clamp(1.8rem,4.2vw,3.6rem);font-weight:800;line-height:0.95;letter-spacing:-0.04em;margin-bottom:18px}
 .hero-h1 .b{color:var(--accent)}.hero-h1 .o{color:var(--orange)}
-.hero-sub{font-size:clamp(0.97rem,1.7vw,1.12rem);color:#B8D0E8;max-width:620px;line-height:1.75;margin-bottom:32px}
+.hero-sub{font-size:clamp(1.1rem,2vw,1.5rem);color:#B8D0E8;max-width:620px;line-height:1.75;margin-bottom:32px}
 .hero-sub strong{color:var(--off-white);font-weight:400}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:44px}
 .trust-strip{display:flex;gap:24px;flex-wrap:wrap;padding-top:30px;border-top:1px solid var(--dim)}
@@ -634,7 +634,7 @@ section + section::before {
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 .nav-drop-wide { min-width: 520px; }
-.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 14px 10px 8px; }
+.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 10px 6px; }
 .drop-section { padding: 0 6px; }
 .drop-label {
   font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em;
@@ -643,7 +643,7 @@ section + section::before {
 }
 .drop-link {
   display: flex; align-items: center; gap: 10px;
-  padding: 7px 8px; border-radius: 8px; text-decoration: none;
+  padding: 9px 10px; border-radius: 8px; text-decoration: none;
   transition: background 0.15s; color: var(--off-white, #dce8f5);
 }
 .drop-link:hover { background: rgba(255,255,255,0.05); }
@@ -796,7 +796,8 @@ nav[id="main-nav"].header-hidden {
   opacity: 0;
   pointer-events: none;
 }
-</style>
+
+.h1-accent-blue { color: var(--cobalt); }</style>
 </head>
 <body>
 <div class="urgency-bar" role="banner" aria-label="Limited availability notice">
@@ -1235,7 +1236,7 @@ nav[id="main-nav"].header-hidden {
 </section>
 
 <div class="cta-section">
-  <h2 class="cta-h2 reveal">Ready to Know Exactly What's <span style="color:var(--electric)">Holding Your Site Back?</span></h2>
+  <h2 class="cta-h2 reveal">Ready to Know Exactly What's <span class="h1-accent-blue">Holding Your Site Back?</span></h2>
   <p class="cta-sub reveal">Book a strategy call or order your audit now. We'll deliver your prioritised fix roadmap within 48–96 hours.</p>
   <div class="cta-btns reveal">
     <a href="/funnels/strategy-call/" class="btn-primary">📅 Book My Strategy Call</a>

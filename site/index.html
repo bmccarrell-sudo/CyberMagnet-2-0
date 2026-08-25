@@ -209,7 +209,7 @@ body{background:#050810;color:#EEF2F7;font-family:'DM Sans',sans-serif;font-weig
 /* ── DROPDOWN ───────────────────────────────── */
 .nav-item { position: relative; }
 .nav-drop {
-  position: absolute; top: calc(100% + 12px); left: 50%;
+  position: absolute; top: calc(100% + 6px); left: 50%;
   transform: translateX(-50%) translateY(-8px);
   background: #0a1222; border: 1px solid rgba(255,255,255,0.09);
   border-radius: 14px; z-index: 500; min-width: 280px;
@@ -218,7 +218,7 @@ body{background:#050810;color:#EEF2F7;font-family:'DM Sans',sans-serif;font-weig
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 .nav-drop-wide { min-width: 520px; }
-.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 14px 10px 8px; }
+.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 10px 10px 6px; }
 .drop-section { padding: 0 6px; }
 .drop-label {
   font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em;
@@ -227,7 +227,7 @@ body{background:#050810;color:#EEF2F7;font-family:'DM Sans',sans-serif;font-weig
 }
 .drop-link {
   display: flex; align-items: center; gap: 10px;
-  padding: 7px 8px; border-radius: 8px; text-decoration: none;
+  padding: 10px 12px; border-radius: 8px; text-decoration: none;
   transition: background 0.15s; color: var(--off-white, #dce8f5);
 }
 .drop-link:hover { background: rgba(255,255,255,0.05); }
@@ -386,8 +386,8 @@ body{background:#050810;color:#EEF2F7;font-family:'DM Sans',sans-serif;font-weig
 
 .hero-badge::before{content:'◆';font-size:0.5rem;color:var(--gold);margin-right:2px}
 .hero-h1{
-  font-family:var(--font-d);font-weight:900;line-height:0.92;
-  letter-spacing:-0.03em;margin-bottom:28px;
+  font-family:var(--font-d);font-weight:800;line-height:0.95;
+  letter-spacing:-0.04em;margin-bottom:28px;
   font-size:clamp(1.8rem,4.2vw,3.6rem);
 }
 .h1-line1{display:block;color:var(--off-white)}
@@ -399,7 +399,7 @@ body{background:#050810;color:#EEF2F7;font-family:'DM Sans',sans-serif;font-weig
   -webkit-text-fill-color:transparent;
 }
 .hero-sub{
-  font-size:clamp(1rem,1.8vw,1.25rem);color:var(--gray-300);
+  font-size:clamp(1.1rem,2vw,1.5rem);color:var(--gray-300);
   line-height:1.65;max-width:600px;margin-bottom:40px;font-weight:300;
 }
 .hero-sub strong{color:var(--off-white);font-weight:500}
@@ -609,7 +609,10 @@ footer{
 
 /* ── MOBILE ── */
 @media(max-width:768px){
-  .hero-h1{font-size:clamp(1.8rem,4.2vw,3.6rem);border-right:none;padding:10px;border-bottom:1px solid rgba(255,255,255,0.07)}
+  .hero-h1{font-size:clamp(1.8rem,4.2vw,3.6rem);border-right:none;padding:10px;border-bottom:1px solid rgba(255,255,255,0.07)  font-family:var(--font-d);
+  line-height:0.95;
+  letter-spacing:-0.04em;
+}
   .stat:nth-child(3),.stat:nth-child(4){border-bottom:none}
 }
 
@@ -782,7 +785,7 @@ footer{
 </div>
 
 <!-- ═══ HERO ═══════════════════════════════════════════════════════════════ -->
-<section class="hero" id="home">
+<section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <canvas id="hero-canvas"></canvas>
@@ -1344,7 +1347,7 @@ revEls.forEach(el => obs.observe(el));
       sel.innerHTML = '<div class="bsum-empty">← Select services to build your package</div>';
     } else {
       sel.innerHTML = names.map(function(n) {
-        return '<span class="bsum-tag">' + n + '<button onclick="removeItem('' + n + '')" title="Remove">✕</button></span>';
+        return '<span class="bsum-tag">' + n + '<button onclick="removeItem(\'' + n + '\')" title="Remove">✕</button></span>';
       }).join('');
     }
 

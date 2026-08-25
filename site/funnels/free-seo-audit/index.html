@@ -1054,7 +1054,7 @@ section + section::before {
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 .nav-drop-wide { min-width: 520px; }
-.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 14px 10px 8px; }
+.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 10px 6px; }
 .drop-section { padding: 0 6px; }
 .drop-label {
   font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em;
@@ -1063,7 +1063,7 @@ section + section::before {
 }
 .drop-link {
   display: flex; align-items: center; gap: 10px;
-  padding: 7px 8px; border-radius: 8px; text-decoration: none;
+  padding: 9px 10px; border-radius: 8px; text-decoration: none;
   transition: background 0.15s; color: var(--off-white, #dce8f5);
 }
 .drop-link:hover { background: rgba(255,255,255,0.05); }
@@ -1277,7 +1277,8 @@ nav#main-nav {
   background: rgba(5,8,16,0.92);
   backdrop-filter: blur(22px);
   border-bottom: 1px solid rgba(37,99,235,0.1);
-}</style>
+}
+.h1-accent-blue { color: var(--cobalt); }</style>
 </head>
 <body>
 <div class="urgency-bar" role="banner" aria-label="Limited availability notice">
@@ -1720,7 +1721,7 @@ nav#main-nav {
 
   <!-- BOTTOM CTA -->
   <div class="bottom-cta">
-    <h2 class="reveal">Still on the fence?<br><span style="color:var(--electric)">It's completely free.</span></h2>
+    <h2 class="reveal">Still on the fence?<br><span class="h1-accent-blue">It's completely free.</span></h2>
     <p class="reveal">The worst outcome is you get a clear picture of your SEO health at no cost. The best outcome is you find the exact issues that have been costing you rankings — and fix them.</p>
     <a href="#" class="btn-cta-bottom reveal" onclick="document.querySelector('.form-panel').scrollIntoView({behavior:'smooth'});return false;">
       Claim Your Free Audit ↗

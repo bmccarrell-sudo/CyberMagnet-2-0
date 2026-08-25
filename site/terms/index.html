@@ -139,9 +139,9 @@ nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;display:flex;
 .breadcrumb a{color:var(--gray-600);text-decoration:none;transition:color 0.2s}
 .breadcrumb a:hover{color:var(--gray-400)}
 .hero-label{display:inline-flex;align-items:center;gap:9px;background:var(--el-light);border:1px solid rgba(37,99,235,0.2);border-radius:30px;padding:5px 14px;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--electric);margin-bottom:18px}
-.hero-h1{font-family:var(--font-d);font-size:clamp(2.4rem,5vw,4rem);font-weight:800;line-height:1.06;letter-spacing:-0.03em;margin-bottom:14px;color:#fff}
+.hero-h1{font-family:var(--font-d);font-size:clamp(1.8rem,4.2vw,3.6rem);font-weight:800;line-height:0.95;letter-spacing:-0.04em;margin-bottom:14px;color:#fff}
 .hero-h1 .acc{color:var(--electric)}
-.hero-sub{font-size:0.98rem;color:#B8D0E8;max-width:560px;line-height:1.72}
+.hero-sub{font-size:clamp(1.1rem,2vw,1.5rem);color:#B8D0E8;max-width:560px;line-height:1.72}
 .hero-meta{display:flex;gap:20px;margin-top:22px;flex-wrap:wrap}
 .hero-meta-item{font-size:0.78rem;color:var(--gray-600);display:flex;align-items:center;gap:5px}
 .hero-meta-item::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gray-600);flex-shrink:0}
@@ -471,7 +471,7 @@ section + section::before {
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 .nav-drop-wide { min-width: 520px; }
-.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 14px 10px 8px; }
+.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 10px 6px; }
 .drop-section { padding: 0 6px; }
 .drop-label {
   font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em;
@@ -480,7 +480,7 @@ section + section::before {
 }
 .drop-link {
   display: flex; align-items: center; gap: 10px;
-  padding: 7px 8px; border-radius: 8px; text-decoration: none;
+  padding: 9px 10px; border-radius: 8px; text-decoration: none;
   transition: background 0.15s; color: var(--off-white, #dce8f5);
 }
 .drop-link:hover { background: rgba(255,255,255,0.05); }

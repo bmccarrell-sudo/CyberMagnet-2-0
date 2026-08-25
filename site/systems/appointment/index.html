@@ -167,11 +167,11 @@ nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;display:flex;
 .hero-kicker::before{content:'';width:6px;height:6px;background:var(--electric);border-radius:50%;animation:blink 1.6s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
 
-.hero-h1{font-family:var(--font-d);font-size:clamp(2.6rem,5.5vw,5rem);font-weight:800;line-height:1.03;letter-spacing:-0.03em;margin-bottom:20px}
+.hero-h1{font-family:var(--font-d);font-size:clamp(1.8rem,4.2vw,3.6rem);font-weight:800;line-height:0.95;letter-spacing:-0.04em;margin-bottom:20px}
 .hero-h1 .b{color:var(--electric)}
 .hero-h1 .o{color:var(--orange)}
 
-.hero-sub{font-size:clamp(1rem,1.8vw,1.15rem);color:#B8D0E8;max-width:660px;line-height:1.75;margin-bottom:36px}
+.hero-sub{font-size:clamp(1.1rem,2vw,1.5rem);color:#B8D0E8;max-width:660px;line-height:1.75;margin-bottom:36px}
 .hero-sub strong{color:var(--off-white);font-weight:400}
 
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:52px}
@@ -691,7 +691,7 @@ section + section::before {
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 .nav-drop-wide { min-width: 520px; }
-.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 14px 10px 8px; }
+.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 10px 6px; }
 .drop-section { padding: 0 6px; }
 .drop-label {
   font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em;
@@ -700,7 +700,7 @@ section + section::before {
 }
 .drop-link {
   display: flex; align-items: center; gap: 10px;
-  padding: 7px 8px; border-radius: 8px; text-decoration: none;
+  padding: 9px 10px; border-radius: 8px; text-decoration: none;
   transition: background 0.15s; color: var(--off-white, #dce8f5);
 }
 .drop-link:hover { background: rgba(255,255,255,0.05); }
@@ -853,7 +853,8 @@ nav[id="main-nav"].header-hidden {
   opacity: 0;
   pointer-events: none;
 }
-</style>
+
+.h1-accent-blue { color: var(--cobalt); }</style>
 </head>
 <body>
 
@@ -1462,7 +1463,7 @@ nav[id="main-nav"].header-hidden {
      FINAL CTA
 ══════════════════════════════════════════════════════ -->
 <div class="cta-section">
-  <h2 class="cta-h2 reveal">Ready to Fill Your <span style="color:var(--electric)">Calendar?</span></h2>
+  <h2 class="cta-h2 reveal">Ready to Fill Your <span class="h1-accent-blue">Calendar?</span></h2>
   <p class="cta-sub reveal">Book a free strategy call and we'll walk you through which tier fits your business, what your prospect list should look like, and what a realistic appointment volume target looks like within 30 days of launch.</p>
   <div class="cta-btns reveal">
     <a href="/funnels/strategy-call/" class="btn-primary">📅 Book My Strategy Call</a>

@@ -214,16 +214,16 @@ nav {
 
 .hero-h1 {
   font-family: var(--font-d);
-  font-size: clamp(3rem, 6.5vw, 6rem);
-  font-weight: 800; line-height: 1.02;
-  letter-spacing: -0.03em; margin-bottom: 24px;
+  font-size:clamp(1.8rem,4.2vw,3.6rem);
+  font-weight:800; line-height:0.95;
+  letter-spacing:-0.04em; margin-bottom: 24px;
   animation: fade-up 0.6s 0.08s ease both;
 }
 .hero-h1 .acc-b { color: var(--electric); }
 .hero-h1 .acc-o { color: var(--orange); }
 
 .hero-sub {
-  font-size: clamp(1rem, 1.9vw, 1.2rem);
+  font-size:clamp(1.1rem,2vw,1.5rem);
   color: #B8D0E8; max-width: 680px;
   line-height: 1.72; margin-bottom: 40px;
   animation: fade-up 0.6s 0.16s ease both;
@@ -1008,7 +1008,7 @@ section + section::before {
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 .nav-drop-wide { min-width: 520px; }
-.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 14px 10px 8px; }
+.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 10px 6px; }
 .drop-section { padding: 0 6px; }
 .drop-label {
   font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em;
@@ -1017,7 +1017,7 @@ section + section::before {
 }
 .drop-link {
   display: flex; align-items: center; gap: 10px;
-  padding: 7px 8px; border-radius: 8px; text-decoration: none;
+  padding: 9px 10px; border-radius: 8px; text-decoration: none;
   transition: background 0.15s; color: var(--off-white, #dce8f5);
 }
 .drop-link:hover { background: rgba(255,255,255,0.05); }
@@ -1170,7 +1170,13 @@ nav[id="main-nav"].header-hidden {
   opacity: 0;
   pointer-events: none;
 }
-</style>
+.h1-accent {
+  background: linear-gradient(90deg, var(--gold), #3B7FF5);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.h1-accent-blue { color: var(--cobalt); }</style>
 </head>
 <body>
 
@@ -1324,7 +1330,7 @@ nav[id="main-nav"].header-hidden {
   <div class="story-inner">
         <div class="story-text reveal">
           <div class="section-label" style="margin-bottom:14px">The Story</div>
-          <h2 style="font-family:var(--font-d);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:#fff;line-height:1.15;margin-bottom:20px">I built CyberMagnet because<br><span style="color:var(--orange)">good businesses were losing<br>to worse ones.</span></h2>
+          <h2 style="font-family:var(--font-d);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:#fff;line-height:1.15;margin-bottom:20px">I built CyberMagnet because<br><span class="h1-accent">good businesses were losing<br>to worse ones.</span></h2>
 
           <p style="font-size:0.95rem;color:var(--gray-400);line-height:1.82;margin-bottom:18px">My name is Ben McCarrell. I'm a Dallas-based marketer, builder, and the only person you'll ever deal with at CyberMagnet. No account managers, no offshore teams, no bait-and-switch where you sign with one person and get handed to another.</p>
 
@@ -1370,11 +1376,11 @@ nav[id="main-nav"].header-hidden {
               </div>
             </div>
             <div style="display:flex;flex-direction:column;gap:10px">
-              <div style="display:flex;align-items:center;gap:10px;font-size:0.84rem;color:var(--gray-400)"><span style="color:var(--electric)">✓</span> Digital Marketing Strategy</div>
-              <div style="display:flex;align-items:center;gap:10px;font-size:0.84rem;color:var(--gray-400)"><span style="color:var(--electric)">✓</span> AI Systems &amp; Automation</div>
-              <div style="display:flex;align-items:center;gap:10px;font-size:0.84rem;color:var(--gray-400)"><span style="color:var(--electric)">✓</span> SEO &amp; Local Search</div>
-              <div style="display:flex;align-items:center;gap:10px;font-size:0.84rem;color:var(--gray-400)"><span style="color:var(--electric)">✓</span> Conversion Rate Optimisation</div>
-              <div style="display:flex;align-items:center;gap:10px;font-size:0.84rem;color:var(--gray-400)"><span style="color:var(--electric)">✓</span> Funnel &amp; Web Design</div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:0.84rem;color:var(--gray-400)"><span class="h1-accent-blue">✓</span> Digital Marketing Strategy</div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:0.84rem;color:var(--gray-400)"><span class="h1-accent-blue">✓</span> AI Systems &amp; Automation</div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:0.84rem;color:var(--gray-400)"><span class="h1-accent-blue">✓</span> SEO &amp; Local Search</div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:0.84rem;color:var(--gray-400)"><span class="h1-accent-blue">✓</span> Conversion Rate Optimisation</div>
+              <div style="display:flex;align-items:center;gap:10px;font-size:0.84rem;color:var(--gray-400)"><span class="h1-accent-blue">✓</span> Funnel &amp; Web Design</div>
             </div>
             <div style="height:1px;background:rgba(37,99,235,0.12);margin:20px 0"></div>
             <div style="display:flex;gap:10px">
@@ -1774,7 +1780,7 @@ nav[id="main-nav"].header-hidden {
 <div class="cta-banner">
   <h2 class="reveal">
     Ready to Work with an Agency<br>
-    <span style="color:var(--electric)">That Actually Cares?</span>
+    <span class="h1-accent-blue">That Actually Cares?</span>
   </h2>
   <p class="reveal">
     Book a free strategy call with our team. We'll review your current digital presence, identify your highest-leverage growth opportunities, and give you a clear roadmap — no pitch, no pressure, no obligation.

@@ -185,9 +185,9 @@ nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;display:flex;
 .hero-label{display:inline-flex;align-items:center;gap:9px;background:var(--el-light);border:1px solid rgba(37,99,235,0.22);border-radius:30px;padding:6px 16px;font-size:0.73rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--electric);margin-bottom:22px}
 .hero-label::before{content:'';width:6px;height:6px;background:var(--success);border-radius:50%;animation:live-blink 1.6s ease-in-out infinite}
 @keyframes live-blink{0%,100%{opacity:1}50%{opacity:0.2}}
-.hero-h1{font-family:var(--font-d);font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:800;line-height:1.05;letter-spacing:-0.03em;margin-bottom:18px}
+.hero-h1{font-family:var(--font-d);font-size:clamp(1.8rem,4.2vw,3.6rem);font-weight:800;line-height:0.95;letter-spacing:-0.04em;margin-bottom:18px}
 .hero-h1 .b{color:var(--electric)}.hero-h1 .o{color:var(--orange)}
-.hero-sub{font-size:1.02rem;color:#B8D0E8;line-height:1.75;margin-bottom:28px}
+.hero-sub{font-size:clamp(1.1rem,2vw,1.5rem);color:#B8D0E8;line-height:1.75;margin-bottom:28px}
 .hero-sub strong{color:var(--off-white);font-weight:400}
 .hero-bullets{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:32px}
 .hb-item{display:flex;align-items:flex-start;gap:10px;font-size:0.88rem;color:var(--gray-300)}
@@ -534,7 +534,7 @@ section + section::before {
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 .nav-drop-wide { min-width: 520px; }
-.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 14px 10px 8px; }
+.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 10px 6px; }
 .drop-section { padding: 0 6px; }
 .drop-label {
   font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em;
@@ -543,7 +543,7 @@ section + section::before {
 }
 .drop-link {
   display: flex; align-items: center; gap: 10px;
-  padding: 7px 8px; border-radius: 8px; text-decoration: none;
+  padding: 9px 10px; border-radius: 8px; text-decoration: none;
   transition: background 0.15s; color: var(--off-white, #dce8f5);
 }
 .drop-link:hover { background: rgba(255,255,255,0.05); }
@@ -696,7 +696,8 @@ nav[id="main-nav"].header-hidden {
   opacity: 0;
   pointer-events: none;
 }
-</style>
+
+.h1-accent-blue { color: var(--cobalt); }</style>
 </head>
 <body>
 
@@ -977,7 +978,7 @@ nav[id="main-nav"].header-hidden {
 <section class="optin-section" id="optin">
   <div class="optin-inner">
     <div class="sec-label center reveal">Free Download</div>
-    <h2 class="optin-h2 reveal">Get Your Free Checklist <span style="color:var(--electric)">Right Now.</span></h2>
+    <h2 class="optin-h2 reveal">Get Your Free Checklist <span class="h1-accent-blue">Right Now.</span></h2>
     <p class="optin-sub reveal">Enter your name and email below — we'll send you the PDF immediately. No spam. No pitch. Just the checklist.</p>
     <div class="optin-form reveal rd1">
       <form novalidate id="optin-form">

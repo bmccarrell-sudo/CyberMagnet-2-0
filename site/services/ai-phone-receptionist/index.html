@@ -192,8 +192,8 @@ nav{
 .hero-icon{font-size:2.8rem;margin-bottom:16px;display:block;animation:fade-up 0.5s ease both}
 .hero-h1{
   font-family:var(--font-d);
-  font-size:clamp(2.4rem,5vw,4.6rem);
-  font-weight:800;line-height:1.05;letter-spacing:-0.03em;
+  font-size:clamp(1.8rem,4.2vw,3.6rem);
+  font-weight:800;line-height:0.95;letter-spacing:-0.04em;
   margin-bottom:18px;
   animation:fade-up 0.6s 0.08s ease both;
 }
@@ -669,7 +669,7 @@ section + section::before {
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 .nav-drop-wide { min-width: 520px; }
-.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 14px 10px 8px; }
+.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 10px 6px; }
 .drop-section { padding: 0 6px; }
 .drop-label {
   font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em;
@@ -678,7 +678,7 @@ section + section::before {
 }
 .drop-link {
   display: flex; align-items: center; gap: 10px;
-  padding: 7px 8px; border-radius: 8px; text-decoration: none;
+  padding: 9px 10px; border-radius: 8px; text-decoration: none;
   transition: background 0.15s; color: var(--off-white, #dce8f5);
 }
 .drop-link:hover { background: rgba(255,255,255,0.05); }
@@ -848,6 +848,14 @@ nav[id="main-nav"].header-hidden {
 .qf-submit:hover{opacity:0.88}
 .qf-micro{text-align:center;font-size:0.75rem;color:var(--gray-600)}
 @media(max-width:560px){.qf-row{grid-template-columns:1fr}}
+
+select.qf-input { color: var(--off-white); }
+select.qf-input option { background: #0d1628; color: #EEF2F7; }
+select.qf-input option:disabled { color: #8899aa; }.h1-accent {
+  background: linear-gradient(90deg, var(--gold), #3B7FF5);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 </style>
 
 <script type="application/ld+json">
@@ -996,7 +1004,7 @@ nav[id="main-nav"].header-hidden {
     </div>
     <span class="hero-icon">📲</span>
     <div class="hero-badge">AI Phone Receptionist</div>
-    <h1 class="hero-h1">Never miss a lead again.<br><span style="color:var(--orange)">Not even at 2am.</span></h1>
+    <h1 class="hero-h1">Never miss a lead again.<br><span class="h1-accent">Not even at 2am.</span></h1>
     <p class="hero-tagline">Professional ai phone receptionist — delivered with transparent pricing, measurable results, and no long-term lock-in.</p>
   </div>
 </section>
@@ -1314,6 +1322,83 @@ revEls.forEach(el => obs.observe(el));
   window.addEventListener('scroll', function() {
     if (!ticking) { requestAnimationFrame(update); ticking = true; }
   }, { passive: true });
+})();
+</script>
+<script>
+/* ── SERVICE QUALIFIER QUIZ ── */
+(function() {
+  var overlay = document.querySelector('.sqo');
+  var btnOpen = document.querySelector('.svc-quiz-btn');
+  if (!overlay || !btnOpen) return;
+  var questions = overlay.querySelectorAll('.sqo-q');
+  var current = 0;
+  var results = {};
+
+  function show(idx) {
+    questions.forEach(function(q, i) { q.style.display = i === idx ? 'block' : 'none'; });
+  }
+
+  function openQuiz() {
+    overlay.style.opacity = '1';
+    overlay.style.pointerEvents = 'auto';
+    document.body.style.overflow = 'hidden';
+    current = 0;
+    results = {};
+    show(0);
+  }
+
+  function closeQuiz() {
+    overlay.style.opacity = '0';
+    overlay.style.pointerEvents = 'none';
+    document.body.style.overflow = '';
+  }
+
+  // Expose globally so onclick can reach it
+  var pageName = document.querySelector('meta[name="page-id"]');
+  var key = pageName ? 'openSvcQuiz_' + pageName.content : 'openSvcQuiz';
+  window[key] = openQuiz;
+  // Also expose generic fallback
+  window.openSvcQuiz = openQuiz;
+
+  // Patch the button to use the generic fallback
+  if (btnOpen) btnOpen.setAttribute('onclick', 'openSvcQuiz()');
+
+  overlay.querySelectorAll('.sqo-close').forEach(function(btn) {
+    btn.addEventListener('click', closeQuiz);
+  });
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeQuiz();
+  });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeQuiz(); });
+
+  overlay.querySelectorAll('.sqo-opt').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var q = btn.closest('.sqo-q');
+      var qid = q ? q.dataset.qid : current;
+      results[qid] = btn.dataset.value;
+      current++;
+      if (current < questions.length) {
+        show(current);
+      } else {
+        // Show result
+        var allQuestions = overlay.querySelector('.sqo-questions');
+        var resultDiv = overlay.querySelector('.sqo-result');
+        if (allQuestions) allQuestions.style.display = 'none';
+        if (resultDiv) {
+          resultDiv.style.display = 'block';
+          var yesCount = Object.values(results).filter(function(v) { return v === 'yes'; }).length;
+          var total = Object.keys(results).length;
+          var good = yesCount >= Math.ceil(total * 0.6);
+          var msg = resultDiv.querySelector('.sqo-msg');
+          var cta = resultDiv.querySelector('.sqo-cta');
+          if (msg) msg.textContent = good
+            ? "Great news — this service is a strong fit for your business. Book a free call and we'll build a plan around your goals."
+            : "This service might not be your highest-leverage move right now. Book a free strategy call — we'll point you toward what will actually move the needle.";
+          if (cta) cta.href = '/funnels/strategy-call/';
+        }
+      }
+    });
+  });
 })();
 </script>
 </body>

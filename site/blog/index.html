@@ -158,10 +158,10 @@ nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;display:flex;
 .hero-label{display:inline-flex;align-items:center;gap:9px;background:var(--el-light);border:1px solid rgba(37,99,235,0.2);border-radius:30px;padding:6px 16px;font-size:0.73rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--electric);margin-bottom:22px;animation:fade-up 0.6s ease both}
 .hero-label::before{content:'';width:6px;height:6px;background:var(--electric);border-radius:50%;animation:blink 1.6s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.2}}
-.hero-h1{font-family:var(--font-d);font-size:clamp(2.8rem,5.5vw,5rem);font-weight:800;line-height:1.03;letter-spacing:-0.03em;margin-bottom:18px;animation:fade-up 0.6s 0.08s ease both}
+.hero-h1{font-family:var(--font-d);font-size:clamp(1.8rem,4.2vw,3.6rem);font-weight:800;line-height:0.95;letter-spacing:-0.04em;margin-bottom:18px;animation:fade-up 0.6s 0.08s ease both}
 .hero-h1 .acc-b{color:var(--electric)}
 .hero-h1 .acc-pull{font-family:var(--font-pull);font-style:italic;font-weight:700;color:var(--off-white);letter-spacing:-0.01em}
-.hero-sub{font-size:clamp(0.96rem,1.7vw,1.12rem);color:#B8D0E8;max-width:620px;line-height:1.75;animation:fade-up 0.6s 0.16s ease both}
+.hero-sub{font-size:clamp(1.1rem,2vw,1.5rem);color:#B8D0E8;max-width:620px;line-height:1.75;animation:fade-up 0.6s 0.16s ease both}
 .hero-sub strong{color:var(--off-white);font-weight:400}
 @keyframes fade-up{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 
@@ -674,7 +674,7 @@ section + section::before {
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 .nav-drop-wide { min-width: 520px; }
-.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 14px 10px 8px; }
+.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 10px 6px; }
 .drop-section { padding: 0 6px; }
 .drop-label {
   font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em;
@@ -683,7 +683,7 @@ section + section::before {
 }
 .drop-link {
   display: flex; align-items: center; gap: 10px;
-  padding: 7px 8px; border-radius: 8px; text-decoration: none;
+  padding: 9px 10px; border-radius: 8px; text-decoration: none;
   transition: background 0.15s; color: var(--off-white, #dce8f5);
 }
 .drop-link:hover { background: rgba(255,255,255,0.05); }
@@ -836,7 +836,8 @@ nav[id="main-nav"].header-hidden {
   opacity: 0;
   pointer-events: none;
 }
-</style>
+
+.h1-accent-blue { color: var(--cobalt); }</style>
 </head>
 <body>
 
@@ -1019,7 +1020,7 @@ nav[id="main-nav"].header-hidden {
           <div class="post-tag tag-web" style="margin-bottom:10px">Web Design</div>
           <div class="post-title">Why Your Website Gets Traffic But Zero Leads — And Exactly How to Fix It</div>
           <div class="post-excerpt">Most business websites have one fatal flaw: they were designed to look good, not to convert. Here's the conversion architecture framework we use for every CyberMagnet client — and how to apply it to your site today.</div>
-          <div class="post-meta"><span>Dec 18, 2025</span><span class="pm-sep">·</span><span>8 min read</span><span class="pm-sep">·</span><span style="color:var(--electric)">Featured</span></div>
+          <div class="post-meta"><span>Dec 18, 2025</span><span class="pm-sep">·</span><span>8 min read</span><span class="pm-sep">·</span><span class="h1-accent-blue">Featured</span></div>
         </div>
       </a>
 

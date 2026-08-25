@@ -179,8 +179,8 @@ nav{
 .hero-icon{font-size:2.8rem;margin-bottom:16px;display:block;animation:fade-up 0.5s ease both}
 .hero-h1{
   font-family:var(--font-d);
-  font-size:clamp(2.4rem,5vw,4.6rem);
-  font-weight:800;line-height:1.05;letter-spacing:-0.03em;
+  font-size:clamp(1.8rem,4.2vw,3.6rem);
+  font-weight:800;line-height:0.95;letter-spacing:-0.04em;
   margin-bottom:18px;
   animation:fade-up 0.6s 0.08s ease both;
 }
@@ -656,7 +656,7 @@ section + section::before {
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
 }
 .nav-drop-wide { min-width: 520px; }
-.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0; padding: 14px 10px 8px; }
+.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 10px 6px; }
 .drop-section { padding: 0 6px; }
 .drop-label {
   font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em;
@@ -665,7 +665,7 @@ section + section::before {
 }
 .drop-link {
   display: flex; align-items: center; gap: 10px;
-  padding: 7px 8px; border-radius: 8px; text-decoration: none;
+  padding: 9px 10px; border-radius: 8px; text-decoration: none;
   transition: background 0.15s; color: var(--off-white, #dce8f5);
 }
 .drop-link:hover { background: rgba(255,255,255,0.05); }
@@ -818,7 +818,13 @@ nav[id="main-nav"].header-hidden {
   opacity: 0;
   pointer-events: none;
 }
-</style>
+.h1-accent {
+  background: linear-gradient(90deg, var(--gold), #3B7FF5);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.h1-accent-blue { color: var(--cobalt); }</style>
 </head>
 <body>
 
@@ -952,7 +958,7 @@ nav[id="main-nav"].header-hidden {
 <section style="padding:clamp(72px,9vw,110px) 6%;background:var(--black)">
   <div style="max-width:1100px;margin:0 auto">
     <div class="section-label reveal" style="text-align:center;margin-bottom:14px">How It Works</div>
-    <h2 class="section-h2 reveal" style="text-align:center;margin-bottom:16px">One connected system.<br><span style="color:var(--orange)">Every part talks to every other part.</span></h2>
+    <h2 class="section-h2 reveal" style="text-align:center;margin-bottom:16px">One connected system.<br><span class="h1-accent">Every part talks to every other part.</span></h2>
     <p class="section-sub reveal" style="text-align:center;max-width:580px;margin:0 auto 60px">Most businesses have disconnected tools — a CRM here, a scheduling app there, a phone that nobody answers after 5pm. We build them into one integrated system that runs itself.</p>
 
     <!-- System flow diagram -->
@@ -1016,11 +1022,11 @@ nav[id="main-nav"].header-hidden {
         </div>
         <p style="font-size:0.87rem;color:var(--gray-400);line-height:1.75;margin-bottom:16px">A natural-sounding AI answers every call — even at 2am. It qualifies the caller, books appointments into your calendar, captures contact info, and texts you a summary. Callers can't tell it's AI unless you tell them.</p>
         <div style="display:flex;flex-direction:column;gap:7px">
-          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span style="color:var(--electric)">✓</span> 24/7 call answering — never miss a lead</div>
-          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span style="color:var(--electric)">✓</span> Live calendar integration (books in real time)</div>
-          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span style="color:var(--electric)">✓</span> Emergency escalation to your cell</div>
-          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span style="color:var(--electric)">✓</span> Post-call SMS to caller with your info</div>
-          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span style="color:var(--electric)">✓</span> Live in 5–10 business days</div>
+          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span class="h1-accent-blue">✓</span> 24/7 call answering — never miss a lead</div>
+          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span class="h1-accent-blue">✓</span> Live calendar integration (books in real time)</div>
+          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span class="h1-accent-blue">✓</span> Emergency escalation to your cell</div>
+          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span class="h1-accent-blue">✓</span> Post-call SMS to caller with your info</div>
+          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span class="h1-accent-blue">✓</span> Live in 5–10 business days</div>
         </div>
         <a href="/services/ai-phone-receptionist/" style="display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:0.82rem;font-weight:600;color:var(--electric);text-decoration:none">Learn more →</a>
       </div>
@@ -1035,11 +1041,11 @@ nav[id="main-nav"].header-hidden {
         </div>
         <p style="font-size:0.87rem;color:var(--gray-400);line-height:1.75;margin-bottom:16px">We map every manual task in your business that can be automated — lead follow-up, client onboarding, review requests, invoice reminders — and build the workflows that handle them. Most clients save 15–20 hours per week.</p>
         <div style="display:flex;flex-direction:column;gap:7px">
-          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span style="color:var(--orange)">✓</span> Automated lead follow-up sequences</div>
-          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span style="color:var(--orange)">✓</span> Client onboarding workflows</div>
-          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span style="color:var(--orange)">✓</span> Review request automation</div>
-          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span style="color:var(--orange)">✓</span> CRM pipeline management</div>
-          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span style="color:var(--orange)">✓</span> Connects to your existing tools</div>
+          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span class="h1-accent">✓</span> Automated lead follow-up sequences</div>
+          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span class="h1-accent">✓</span> Client onboarding workflows</div>
+          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span class="h1-accent">✓</span> Review request automation</div>
+          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span class="h1-accent">✓</span> CRM pipeline management</div>
+          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span class="h1-accent">✓</span> Connects to your existing tools</div>
         </div>
         <a href="/systems/ai-automation/" style="display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:0.82rem;font-weight:600;color:var(--orange);text-decoration:none">Learn more →</a>
       </div>
@@ -1054,10 +1060,10 @@ nav[id="main-nav"].header-hidden {
         </div>
         <p style="font-size:0.87rem;color:var(--gray-400);line-height:1.75;margin-bottom:16px">A fully automated booking system that fills your calendar without back-and-forth. Prospects pick a time, get a confirmation, receive automated reminders, and show up. You just do the work.</p>
         <div style="display:flex;flex-direction:column;gap:7px">
-          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span style="color:var(--electric)">✓</span> Online booking on your website</div>
-          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span style="color:var(--electric)">✓</span> Automated confirmation + reminders</div>
-          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span style="color:var(--electric)">✓</span> No-show follow-up automation</div>
-          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span style="color:var(--electric)">✓</span> Integrates with Google Calendar</div>
+          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span class="h1-accent-blue">✓</span> Online booking on your website</div>
+          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span class="h1-accent-blue">✓</span> Automated confirmation + reminders</div>
+          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span class="h1-accent-blue">✓</span> No-show follow-up automation</div>
+          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span class="h1-accent-blue">✓</span> Integrates with Google Calendar</div>
         </div>
         <a href="/systems/appointment/" style="display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:0.82rem;font-weight:600;color:var(--electric);text-decoration:none">Learn more →</a>
       </div>
@@ -1072,10 +1078,10 @@ nav[id="main-nav"].header-hidden {
         </div>
         <p style="font-size:0.87rem;color:var(--gray-400);line-height:1.75;margin-bottom:16px">You record one short video or write one blog post. We turn it into Instagram captions, a LinkedIn post, a TikTok script, email subject lines, and a YouTube description — automatically, every week.</p>
         <div style="display:flex;flex-direction:column;gap:7px">
-          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span style="color:var(--orange)">✓</span> One input → 6 platform outputs</div>
-          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span style="color:var(--orange)">✓</span> AI-written, human-reviewed</div>
-          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span style="color:var(--orange)">✓</span> Consistent posting without the work</div>
-          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span style="color:var(--orange)">✓</span> Your voice, your brand</div>
+          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span class="h1-accent">✓</span> One input → 6 platform outputs</div>
+          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span class="h1-accent">✓</span> AI-written, human-reviewed</div>
+          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span class="h1-accent">✓</span> Consistent posting without the work</div>
+          <div style="font-size:0.8rem;color:var(--off-white);display:flex;gap:8px"><span class="h1-accent">✓</span> Your voice, your brand</div>
         </div>
         <a href="/systems/content-repurposing/" style="display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-size:0.82rem;font-weight:600;color:var(--orange);text-decoration:none">Learn more →</a>
       </div>
@@ -1088,7 +1094,7 @@ nav[id="main-nav"].header-hidden {
 <section style="padding:clamp(64px,8vw,96px) 6%;background:var(--deep-navy);border-top:1px solid rgba(255,255,255,0.04)">
   <div style="max-width:1000px;margin:0 auto">
     <div class="section-label reveal" style="text-align:center;margin-bottom:14px">The Setup</div>
-    <h2 class="section-h2 reveal" style="text-align:center;margin-bottom:16px">What every AI system<br><span style="color:var(--orange)">includes as standard.</span></h2>
+    <h2 class="section-h2 reveal" style="text-align:center;margin-bottom:16px">What every AI system<br><span class="h1-accent">includes as standard.</span></h2>
     <p class="section-sub reveal" style="text-align:center;max-width:540px;margin:0 auto 48px">We don't hand you a login and wish you luck. Every system we build comes fully configured, trained on your business, and supported.</p>
 
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
@@ -1128,7 +1134,7 @@ nav[id="main-nav"].header-hidden {
 
 <!-- ── CTA ─────────────────────────────────────────────────────────────────── -->
 <section class="cta-banner" style="text-align:center;padding:clamp(72px,9vw,110px) 6%">
-  <h2 class="reveal" style="font-family:var(--font-d);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#fff;line-height:1.15;margin-bottom:14px">Ready to see what we'd build<br><span style="color:var(--orange)">for your business?</span></h2>
+  <h2 class="reveal" style="font-family:var(--font-d);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#fff;line-height:1.15;margin-bottom:14px">Ready to see what we'd build<br><span class="h1-accent">for your business?</span></h2>
   <p class="reveal" style="font-size:0.95rem;color:var(--gray-400);max-width:500px;margin:0 auto 32px;line-height:1.75">Book a free 30-minute call. We'll map out exactly which systems would make the biggest difference for your specific situation.</p>
   <div class="hero-ctas reveal" style="justify-content:center">
     <a href="/funnels/strategy-call/" class="btn-primary">Book a Free Strategy Call ↗</a>

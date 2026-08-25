@@ -49,7 +49,7 @@
     {"@type": "City", "name": "Arlington"}
   ],
   "serviceType": ["Local SEO", "Website Design", "AI Marketing Automation", "Funnel Building", "Brand Identity", "AI Phone Receptionist"],
-  "priceRange": "$950–$7,500/month",
+  "priceRange": "$950–$8,500/month",
   "openingHours": "Mo-Fr 09:00-18:00",
   "sameAs": [
     "https://www.instagram.com/cybermagnet",
@@ -76,7 +76,7 @@
       "name": "How much does CyberMagnet's marketing service cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "CyberMagnet offers monthly retainer packages starting at $950/month for the Starter tier, $1,500/month for Launch, $3,500/month for Growth, and $7,500/month for the full Command system. One-time services like website design start at $3,500."
+        "text": "CyberMagnet offers monthly retainer packages starting at $950/month for the Starter tier, $1,800/month for Launch, $3,500/month for Growth, and $8,500/month for the full Command system. One-time services like website design start at $3,500."
       }
     },
     {
@@ -152,7 +152,23 @@ body{background:#050810;color:#EEF2F7;font-family:'DM Sans',sans-serif;font-weig
 @keyframes ub-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @keyframes urgency-shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 
-.urgency-bar,.urgency-bar+nav{transition:transform 0.35s cubic-bezier(0.4,0,0.2,1),opacity 0.35s cubic-bezier(0.4,0,0.2,1)}
+.urgency-bar,.urgency-bar+nav {
+  position: fixed;
+  top: var(--urgency-h);
+  left: 0; right: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6%;
+  height: var(--nav-h);
+  backdrop-filter: blur(22px) saturate(1.4);
+  background: rgba(5,8,16,0.92);
+  border-bottom: 1px solid rgba(37,99,235,0.1);
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1),
+              opacity 0.35s cubic-bezier(0.4,0,0.2,1),
+              background 0.35s, box-shadow 0.35s;
+}
 .header-hidden{transform:translateY(-100%);opacity:0;pointer-events:none}
 
 /* ── NAV BASE ───────────────────────────────── */
@@ -356,18 +372,12 @@ body{background:#050810;color:#EEF2F7;font-family:'DM Sans',sans-serif;font-weig
 }
 #hero-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .hero-content{position:relative;z-index:2;width:100%;max-width:860px}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(217,119,6,0.08);border:1px solid rgba(217,119,6,0.30);
-  border-radius:4px;padding:5px 14px;
-  font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;
-  color:rgba(255,255,255,0.70);font-weight:600;margin-bottom:24px;
-}
+
 .hero-badge::before{content:'◆';font-size:0.5rem;color:var(--gold);margin-right:2px}
 .hero-h1{
   font-family:var(--font-d);font-weight:900;line-height:0.92;
   letter-spacing:-0.03em;margin-bottom:28px;
-  font-size:clamp(2.8rem,6.5vw,6rem);
+  font-size:clamp(2rem,5.5vw,5rem);
 }
 .h1-line1{display:block;color:var(--off-white)}
 .h1-line2{display:block;color:var(--off-white)}
@@ -588,11 +598,36 @@ footer{
 
 /* ── MOBILE ── */
 @media(max-width:768px){
-  .hero-h1{font-size:clamp(2.2rem,9vw,3.6rem)}
-  .hero-stats{flex-wrap:wrap}
-  .stat{flex:1 1 45%;border-right:none;padding:10px;border-bottom:1px solid rgba(255,255,255,0.07)}
+  .hero-h1{font-size:clamp(2rem,5.5vw,5rem);border-right:none;padding:10px;border-bottom:1px solid rgba(255,255,255,0.07)}
   .stat:nth-child(3),.stat:nth-child(4){border-bottom:none}
 }
+
+.line-stroke{
+  display:block;
+  -webkit-text-stroke:2px rgba(255,255,255,0.2);
+  color:transparent;
+}
+.line-white{display:block;color:#fff}
+.line-gold{
+  display:block;
+  background:linear-gradient(90deg,var(--gold),#e8c96a,var(--gold));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  background-size:200%;
+  animation:gold-shimmer 4s ease-in-out infinite;
+}
+.line-blue{display:block;color:var(--electric)}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(217,119,6,0.08);
+  border:1px solid rgba(217,119,6,0.35);
+  border-radius:4px;padding:6px 18px;
+  font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(255,255,255,0.75);font-weight:600;
+  margin-bottom:28px;
+  opacity:1;
+}
+@keyframes gold-shimmer{0%,100%{background-position:0%}50%{background-position:100%}}
 </style>
 </head>
 <body>
@@ -704,20 +739,21 @@ footer{
   <div class="hero-grid"></div>
   <canvas id="hero-canvas"></canvas>
   <div class="hero-content">
-    <div class="hero-badge">AI-Powered Marketing · Dallas–Fort Worth, TX</div>
-    <h1 class="hero-h1">
-      <span class="h1-line1">Stop Losing Clients</span>
-      <span class="h1-line2">To Competitors Who</span>
-      <span class="h1-line3">Market Better.</span>
+    <div class="hero-kicker" style="opacity:1">AI-Powered Marketing · Dallas–Fort Worth, TX</div>
+    <h1 class="hero-h1" style="opacity:1">
+      <span class="line-stroke">YOUR BUSINESS</span>
+      <span class="line-white">DESERVES TO</span>
+      <span class="line-gold">DOMINATE</span>
+      <span class="line-blue">ITS MARKET.</span>
     </h1>
-    <p class="hero-sub">
+    <p class="hero-sub" style="opacity:1">
       CyberMagnet builds <strong>AI-powered marketing systems</strong> for DFW service businesses — local SEO, websites, funnels, and automation that generate leads while you focus on the work.
     </p>
-    <div class="hero-ctas">
+    <div class="hero-ctas" style="opacity:1">
       <a href="/funnels/strategy-call/" class="cta-primary">📅 Book a Free Strategy Call ↗</a>
       <a href="/portfolio/" class="cta-secondary">See Client Results →</a>
     </div>
-    <div class="hero-stats">
+    <div class="hero-stats" style="opacity:1">
       <div class="stat"><span class="stat-num">3.8×</span><span class="stat-label">Average ROI<br>Delivered</span></div>
       <div class="stat"><span class="stat-num">20hrs</span><span class="stat-label">Saved Per Week<br>With AI</span></div>
       <div class="stat"><span class="stat-num">97%</span><span class="stat-label">Client Retention<br>Rate</span></div>
@@ -886,7 +922,7 @@ footer{
     <div class="tiers">
       <div class="tier reveal">
         <div class="tier-name">Starter</div>
-        <div class="tier-price">$750<span>/mo</span></div>
+        <div class="tier-price">$950<span>/mo</span></div>
         <div class="tier-tagline">For businesses under $50K/yr getting started</div>
         <div class="tier-divider"></div>
         <ul class="tier-features">
@@ -900,7 +936,7 @@ footer{
       </div>
       <div class="tier reveal">
         <div class="tier-name">Launch</div>
-        <div class="tier-price">$1,500<span>/mo</span></div>
+        <div class="tier-price">$1,800<span>/mo</span></div>
         <div class="tier-tagline">For businesses getting serious about growth</div>
         <div class="tier-divider"></div>
         <ul class="tier-features">
@@ -933,7 +969,7 @@ footer{
       </div>
       <div class="tier reveal">
         <div class="tier-name">Command</div>
-        <div class="tier-price">$7,500<span>/mo</span></div>
+        <div class="tier-price">$8,500<span>/mo</span></div>
         <div class="tier-tagline">For businesses scaling aggressively</div>
         <div class="tier-divider"></div>
         <ul class="tier-features">
@@ -953,22 +989,22 @@ footer{
       <div class="oo-card reveal">
         <div class="oo-icon">🌐</div>
         <div class="oo-name">Website Design</div>
-        <div class="oo-price">from $2,500 one-time</div>
+        <div class="oo-price">from $3,500 one-time</div>
       </div>
       <div class="oo-card reveal">
         <div class="oo-icon">⭐</div>
         <div class="oo-name">Brand Identity</div>
-        <div class="oo-price">from $1,200 one-time</div>
+        <div class="oo-price">from $1,800 one-time</div>
       </div>
       <div class="oo-card reveal">
         <div class="oo-icon">🎯</div>
         <div class="oo-name">Funnel Building</div>
-        <div class="oo-price">from $1,500 one-time</div>
+        <div class="oo-price">from $2,500 one-time</div>
       </div>
       <div class="oo-card reveal">
         <div class="oo-icon">🤖</div>
         <div class="oo-name">AI Receptionist</div>
-        <div class="oo-price">$500 setup + $350/mo</div>
+        <div class="oo-price">$600 setup + $400/mo</div>
       </div>
     </div>
     <p style="text-align:center;font-size:0.82rem;color:var(--gray-600)">Not sure which package fits? <a href="/funnels/strategy-call/" style="color:var(--gold);font-weight:600">Book a free strategy call →</a> We'll only recommend what you actually need.</p>

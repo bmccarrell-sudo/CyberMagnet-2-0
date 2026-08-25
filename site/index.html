@@ -395,27 +395,9 @@ nav#main-nav {
   display:flex;flex-direction:column;justify-content:flex-start;
   padding:calc(var(--urgency-h) + var(--nav-h) + 64px) 10% 60px;overflow:hidden;
 }
-.hero-bg{
-  position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse 70% 55% at 65% 45%,rgba(37,99,235,0.08) 0%,transparent 60%),
-    radial-gradient(ellipse 45% 40% at 15% 75%,rgba(217,119,6,0.06) 0%,transparent 55%),
-    var(--black);
-}
-.hero-grid{
-  position:absolute;inset:0;pointer-events:none;
-  background-image:linear-gradient(rgba(217,119,6,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(217,119,6,0.02) 1px,transparent 1px);
-  background-size:80px 80px;
-}
 #hero-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.hero-content{position:relative;z-index:2;width:100%;max-width:860px}
 
 .hero-badge::before{content:'◆';font-size:0.5rem;color:var(--gold);margin-right:2px}
-.hero-h1{
-  font-family:var(--font-d);font-weight:800;line-height:0.95;
-  letter-spacing:-0.04em;margin-bottom:28px;
-  font-size:clamp(1.8rem,4.2vw,3.6rem);
-}
 .h1-line1{display:block;color:var(--off-white)}
 .h1-line2{display:block;color:var(--off-white)}
 .h1-line3{
@@ -423,10 +405,6 @@ nav#main-nav {
   background:var(--grad-text);
   -webkit-background-clip:text;background-clip:text;
   -webkit-text-fill-color:transparent;
-}
-.hero-sub{
-  font-size:clamp(1.1rem,2vw,1.5rem);color:var(--gray-300);
-  line-height:1.65;max-width:600px;margin-bottom:40px;font-weight:300;
 }
 .hero-sub strong{color:var(--off-white);font-weight:500}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:52px}
@@ -635,39 +613,9 @@ footer{
 
 /* ── MOBILE ── */
 @media(max-width:768px){
-  .hero-h1{font-size:clamp(1.8rem,4.2vw,3.6rem);border-right:none;padding:10px;border-bottom:1px solid rgba(255,255,255,0.07)  font-family:var(--font-d);
-  line-height:0.95;
-  letter-spacing:-0.04em;
-}
-  .stat:nth-child(3),.stat:nth-child(4){border-bottom:none}
+    .stat:nth-child(3),.stat:nth-child(4){border-bottom:none}
 }
 
-.line-stroke{
-  display:block;
-  -webkit-text-stroke:2px rgba(255,255,255,0.2);
-  color:transparent;
-}
-.line-white{display:block;color:#fff}
-.line-gold{
-  display:block;
-  background:linear-gradient(90deg,var(--gold),#e8c96a,var(--gold));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-  background-size:200%;
-  animation:gold-shimmer 4s ease-in-out infinite;
-}
-.line-blue{display:block;color:var(--electric)}
-.hero-kicker{
-  display:inline-flex;align-items:center;gap:10px;
-  background:rgba(217,119,6,0.08);
-  border:1px solid rgba(217,119,6,0.35);
-  border-radius:4px;padding:6px 18px;
-  font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:rgba(255,255,255,0.75);font-weight:600;
-  margin-bottom:28px;
-  opacity:1;
-}
-@keyframes gold-shimmer{0%,100%{background-position:0%}50%{background-position:100%}}
 
 /* ── BUNDLE CONFIGURATOR ── */
 .bundle-section { background: var(--black); }
@@ -705,6 +653,133 @@ footer{
 .bsum-micro { text-align: center; font-size: 0.72rem; color: var(--gray-600); margin-top: 10px; }
 @media(max-width:900px) { .bundle-wrap{grid-template-columns:1fr} .bundle-summary{position:static} }
 @media(max-width:640px) { .bundle-grid{grid-template-columns:1fr} }
+
+.final-cta{
+  padding:100px 6%;text-align:center;
+  background:linear-gradient(160deg,var(--black) 0%,var(--deep-navy) 50%,var(--black) 100%);
+  position:relative;overflow:hidden;
+  border-top:1px solid rgba(201,168,76,0.12);
+}
+.fc-kicker{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:12px;position:relative}
+.fc-h2{
+  font-family:var(--font-d);font-size:clamp(1.8rem,4.5vw,3.8rem);
+  font-weight:800;letter-spacing:-0.04em;line-height:0.96;
+  margin-bottom:24px;position:relative;
+}
+.fc-sub{font-size:1.05rem;color:var(--gray-400);max-width:560px;margin:0 auto 44px;line-height:1.75;position:relative}
+.fc-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative}
+.fc-micro{margin-top:20px;font-size:0.8rem;color:var(--gray-400);position:relative;letter-spacing:0.02em}
+.btn-primary-lux{
+  position:relative;overflow:hidden;
+  display:inline-flex;align-items:center;gap:10px;
+  background:linear-gradient(135deg,var(--orange),#e06800);
+  color:#fff;border:none;
+  padding:18px 40px;border-radius:8px;
+  font-family:var(--font-d);font-size:1rem;font-weight:700;
+  cursor:pointer;text-decoration:none;
+  transition:all 0.3s;
+  animation:cta-pulse 3s ease-in-out infinite;
+  box-shadow:0 0 0 0 var(--or-glow);
+}
+.btn-secondary-lux{
+  position:relative;overflow:hidden;
+  display:inline-flex;align-items:center;gap:10px;
+  background:transparent;
+  color:var(--off-white);
+  border:1px solid rgba(201,168,76,0.4);
+  padding:18px 36px;border-radius:8px;
+  font-family:var(--font-d);font-size:1rem;font-weight:600;
+  cursor:pointer;text-decoration:none;
+  transition:all 0.3s;
+}
+.l1{display:block;color:#fff}
+.l2{
+  display:block;
+  background:linear-gradient(90deg,var(--gold),#e8c96a,var(--electric));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  background-size:200%;
+  animation:gold-shimmer 5s ease-in-out infinite;
+}
+.l3{display:block;color:var(--orange)}
+.hero-kicker{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(217,119,6,0.08);
+  border:1px solid rgba(217,119,6,0.35);
+  border-radius:4px;padding:6px 18px;
+  font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(255,255,255,0.75);font-weight:600;
+  margin-bottom:28px;
+  opacity:1;
+}
+.line-stroke{
+  display:block;
+  -webkit-text-stroke:2px rgba(255,255,255,0.2);
+  color:transparent;
+}
+.line-white{display:block;color:#fff}
+.line-gold{
+  display:block;
+  background:linear-gradient(90deg,var(--gold),#e8c96a,var(--gold));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  background-size:200%;
+  animation:gold-shimmer 4s ease-in-out infinite;
+}
+.line-blue{display:block;color:var(--electric)}
+.hero-h1{
+  font-family:var(--font-d);
+  font-size:clamp(1.8rem,4.2vw,3.6rem);
+  font-weight:800;line-height:0.95;
+  letter-spacing:-0.04em;
+  margin-bottom:28px;
+  opacity:1;
+}
+.hero-sub{
+  font-family:var(--font-pull);
+  font-style:italic;font-size:clamp(1.1rem,2vw,1.5rem);
+  color:var(--gray-300);max-width:680px;
+  line-height:1.55;margin-bottom:44px;
+  opacity:1;
+}
+.hero-ctas{
+  display:flex;gap:16px;flex-wrap:wrap;
+  opacity:1;
+  margin-bottom:60px;
+}
+.hero-proof{
+  display:flex;gap:36px;flex-wrap:wrap;
+  opacity:1;
+  justify-content:flex-start;
+  margin-top:40px;
+}
+.hp-item{display:flex;flex-direction:column}
+.hp-val{
+  font-family:var(--font-d);font-size:2rem;font-weight:800;line-height:1;color:#fff;
+}
+.hp-label{font-size:0.72rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.07em;margin-top:3px}
+.hero-content{position:relative;z-index:2;max-width:900px}
+.hero-bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 50%, rgba(37,99,235,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 20% 80%, rgba(217,119,6,0.05) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,168,76,0.04) 0%, transparent 50%),
+    var(--black);
+  animation:bg-shift 12s ease-in-out infinite alternate;
+}
+.hero-grid{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(201,168,76,0.025) 1px,transparent 1px);
+  background-size:72px 72px;
+}
+@keyframes gold-shimmer{0%,100%{background-position:0%}50%{background-position:100%}}
+@keyframes cta-pulse{0%,100%{box-shadow:0 0 0 0 rgba(217,119,6,0.4)}50%{box-shadow:0 0 0 10px rgba(217,119,6,0)}}
+@keyframes bg-shift{
+  0%{background-position:0% 50%}
+  100%{background-position:100% 50%}
+}
 </style>
 </head>
 <body>
@@ -823,18 +898,16 @@ footer{
       <span class="line-gold">THEY FIND</span>
       <span class="line-blue">YOU FIRST.</span>
     </h1>
-    <p class="hero-sub" style="opacity:1">
-      Most DFW businesses lose clients to competitors who aren't even better — they just <strong>show up first</strong>. CyberMagnet fixes that with AI-powered SEO, automated lead capture, and systems that work while you sleep.
-    </p>
+    <p class="hero-sub" style="opacity:1">Most DFW businesses lose clients to competitors who aren't even better — they just <strong>show up first</strong>. CyberMagnet fixes that with AI-powered SEO, automated lead capture, and systems that work while you sleep.</p>
     <div class="hero-ctas" style="opacity:1">
-      <a href="/funnels/strategy-call/" class="cta-primary">📅 Book a Free Strategy Call ↗</a>
-      <a href="/funnels/free-seo-audit/" class="cta-secondary">🔍 Get a Free SEO Audit</a>
+      <a href="/funnels/strategy-call/" class="btn-primary-lux">📅 Book a Free Strategy Call ↗</a>
+      <a href="/funnels/free-seo-audit/" class="btn-secondary-lux">🔍 Get a Free SEO Audit</a>
     </div>
-    <div class="hero-stats" style="opacity:1">
-      <div class="stat"><span class="stat-num">3.8×</span><span class="stat-label">Average ROI<br>Delivered</span></div>
-      <div class="stat"><span class="stat-num">20hrs</span><span class="stat-label">Saved Per Week<br>With AI</span></div>
-      <div class="stat"><span class="stat-num">97%</span><span class="stat-label">Client Retention<br>Rate</span></div>
-      <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Local Businesses<br>Scaled</span></div>
+    <div class="hero-proof" style="opacity:1">
+      <div class="hp-item"><span class="hp-val">3.8×</span><span class="hp-label">Average ROI</span></div>
+      <div class="hp-item"><span class="hp-val">20hrs</span><span class="hp-label">Saved Per Week</span></div>
+      <div class="hp-item"><span class="hp-val">97%</span><span class="hp-label">Client Retention</span></div>
+      <div class="hp-item"><span class="hp-val">50+</span><span class="hp-label">Businesses Scaled</span></div>
     </div>
   </div>
 </section>
@@ -1176,17 +1249,21 @@ footer{
 </section>
 
 <!-- ═══ FINAL CTA ══════════════════════════════════════════════════════════════ -->
-<section class="cta-section reveal">
-  <div class="cta-inner">
-    <div class="cta-eyebrow">One Decision. Significant Results.</div>
-    <h2 class="cta-h2">Stop Losing to Competitors<br>Who Market Better.</h2>
-    <p class="cta-sub">Book a free 30-minute strategy call. We'll audit your current presence, show you exactly what's holding you back, and give you a roadmap to fix it — yours to keep, whether you hire us or not.</p>
-    <div class="cta-buttons">
-      <a href="/funnels/strategy-call/" class="cta-primary">📅 Book My Free Strategy Call ↗</a>
-      <a href="/funnels/free-seo-audit/" class="cta-secondary">🔍 Get a Free SEO Audit First</a>
-    </div>
-    <div class="cta-micro">Spots filling fast · <span>Less than 60 seconds to secure yours</span> · Zero obligation</div>
+<section class="final-cta">
+  <div class="fc-kicker">One Decision. Significant Results.</div>
+  <h2 class="fc-h2">
+    <span class="l1">STOP LOSING</span>
+    <span class="l2">TO YOUR COMPETITORS.</span>
+    <span class="l3">START NOW.</span>
+  </h2>
+  <p class="fc-sub">
+    <strong>Availability is limited and demand is high.</strong> Every week without a clear digital growth strategy is a week your competitors are widening the gap. The call is free. The plan is yours to keep. The only question is whether you'll act on it today.
+  </p>
+  <div class="fc-ctas">
+    <a href="/funnels/strategy-call/" class="btn-primary-lux">📅 Book My Strategy Call — It's Free</a>
+    <a href="/funnels/free-seo-audit/" class="btn-secondary-lux">🔍 Get My Free Website Audit First</a>
   </div>
+  <div class="fc-micro">Spots filling fast · <span>Less than 60 seconds to secure yours</span> · Zero obligation</div>
 </section>
 
 <!-- ═══ FOOTER ═════════════════════════════════════════════════════════════════ -->

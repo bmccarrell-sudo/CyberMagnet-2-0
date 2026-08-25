@@ -232,8 +232,8 @@ nav#main-nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;
 }
 @media (max-width: 720px) {
   .nav-links { display: none !important; }
-  .nav-cta  
-
+  .nav-cta   { display: none !important; }
+  .nav-ham   { display: flex !important; }
 }
 
 /* ── HERO ── */
@@ -281,6 +281,7 @@ nav#main-nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;
 }
 .hp-label{font-size:0.72rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.07em;margin-top:3px}
 .hero-content{position:relative;z-index:2;max-width:900px}
+#hero-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .hero-bg{
   position:absolute;inset:0;
   background:

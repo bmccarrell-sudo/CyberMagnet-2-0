@@ -757,7 +757,7 @@ section + section::before {
   transition: background 0.2s;
 }
 .mob-close:hover { background: rgba(255,255,255,0.1); }
-.mob-nav { flex: 1; padding: 16px 0; overflow-y: auto; }
+.mob-.mob-nav { flex: 1; padding: 16px 0; overflow-y: auto; }
 .mob-section-label {
   font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em;
   text-transform: uppercase; color: rgba(255,255,255,0.25);
@@ -831,6 +831,23 @@ nav[id="main-nav"].header-hidden {
   opacity: 0;
   pointer-events: none;
 }
+
+/* ── QUOTE FORM ── */
+.quote-section{padding:clamp(48px,7vw,80px) 6%;background:var(--deep-navy);border-top:1px solid rgba(255,255,255,0.05)}
+.quote-inner{max-width:680px;margin:0 auto}
+.quote-kicker{font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px}
+.quote-h2{font-family:var(--font-d);font-size:clamp(1.4rem,2.8vw,2rem);font-weight:800;color:var(--off-white);margin-bottom:10px}
+.quote-sub{font-size:0.88rem;color:var(--gray-400);margin-bottom:28px;line-height:1.6}
+.qf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.qf-field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.qf-label{font-size:0.75rem;color:var(--gray-400);font-weight:500;letter-spacing:0.04em;text-transform:uppercase}
+.qf-input{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:10px 14px;font-size:0.88rem;color:var(--off-white);font-family:var(--font-b);transition:border-color 0.2s;outline:none;width:100%}
+.qf-input:focus{border-color:rgba(37,99,235,0.5)}
+.qf-textarea{resize:vertical;min-height:80px}
+.qf-submit{display:block;width:100%;padding:13px 20px;border-radius:10px;background:var(--grad);color:#fff;font-size:0.92rem;font-weight:700;border:none;cursor:pointer;font-family:var(--font-b);transition:opacity 0.2s;margin-bottom:10px}
+.qf-submit:hover{opacity:0.88}
+.qf-micro{text-align:center;font-size:0.75rem;color:var(--gray-600)}
+@media(max-width:560px){.qf-row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -1043,6 +1060,56 @@ nav[id="main-nav"].header-hidden {
   </div>
 </div>
 
+
+
+<!-- ── QUOTE REQUEST ── -->
+<section class="quote-section" id="get-quote">
+  <div class="quote-inner">
+    <div class="quote-kicker">Skip the Call for Now?</div>
+    <h2 class="quote-h2">Request a Quote for This Service</h2>
+    <p class="quote-sub">Tell us what you need and we'll send you a detailed quote within 24 hours — no obligation, no pitch, just a number.</p>
+    <form class="quote-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY">
+      <input type="hidden" name="subject" value="Quote Request — CyberMagnet">
+      <input type="hidden" name="redirect" value="https://cybermagnet.net/funnels/thank-you/">
+      <div class="qf-row">
+        <div class="qf-field">
+          <label class="qf-label">Your Name</label>
+          <input class="qf-input" type="text" name="name" placeholder="Ben McCarrell" required>
+        </div>
+        <div class="qf-field">
+          <label class="qf-label">Business Name</label>
+          <input class="qf-input" type="text" name="business" placeholder="Your Business LLC" required>
+        </div>
+      </div>
+      <div class="qf-row">
+        <div class="qf-field">
+          <label class="qf-label">Phone</label>
+          <input class="qf-input" type="tel" name="phone" placeholder="(972) 338-5778" required>
+        </div>
+        <div class="qf-field">
+          <label class="qf-label">Email</label>
+          <input class="qf-input" type="email" name="email" placeholder="you@yourbusiness.com" required>
+        </div>
+      </div>
+      <div class="qf-field">
+        <label class="qf-label">What tier are you interested in? (Optional)</label>
+        <select class="qf-input" name="tier">
+          <option value="">Not sure — just give me a quote</option>
+          <option value="starter">Starter</option>
+          <option value="growth">Growth</option>
+          <option value="premium">Premium</option>
+        </select>
+      </div>
+      <div class="qf-field">
+        <label class="qf-label">Anything specific you want included or asked about?</label>
+        <textarea class="qf-input qf-textarea" name="message" placeholder="e.g. I have a plumbing company in Fort Worth, 3 trucks, want to rank in the top 3 on Google Maps..." rows="3"></textarea>
+      </div>
+      <button type="submit" class="qf-submit">Send My Quote Request →</button>
+      <div class="qf-micro">We respond within 24 hours · No commitment required</div>
+    </form>
+  </div>
+</section>
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">

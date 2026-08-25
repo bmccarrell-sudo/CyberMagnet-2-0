@@ -367,7 +367,7 @@ body{background:#050810;color:#EEF2F7;font-family:'DM Sans',sans-serif;font-weig
 .hero{
   position:relative;min-height:100vh;
   display:flex;flex-direction:column;justify-content:flex-start;
-  padding:calc(var(--urgency-h) + var(--nav-h) + 64px) 6% 60px;overflow:hidden;
+  padding:calc(var(--urgency-h) + var(--nav-h) + 64px) 10% 60px;overflow:hidden;
 }
 .hero-bg{
   position:absolute;inset:0;
@@ -639,6 +639,43 @@ footer{
   opacity:1;
 }
 @keyframes gold-shimmer{0%,100%{background-position:0%}50%{background-position:100%}}
+
+/* ── BUNDLE CONFIGURATOR ── */
+.bundle-section { background: var(--black); }
+.bundle-wrap { display: grid; grid-template-columns: 1fr 320px; gap: 32px; align-items: start; margin-top: 48px; }
+.bundle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.bundle-cat { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.07); border-radius: 14px; padding: 20px; }
+.bcat-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+.bitem { display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; cursor: pointer; transition: background 0.15s; margin-bottom: 4px; }
+.bitem:hover { background: rgba(255,255,255,0.04); }
+.bitem input { display: none; }
+.bitem-check { width: 18px; height: 18px; border-radius: 5px; border: 1.5px solid rgba(255,255,255,0.2); flex-shrink: 0; transition: all 0.15s; position: relative; }
+.bitem input:checked ~ .bitem-check { background: var(--grad); border-color: transparent; }
+.bitem input:checked ~ .bitem-check::after { content: "✓"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 800; color: #fff; }
+.bitem-name { flex: 1; font-size: 0.84rem; color: var(--gray-300); }
+.bitem input:checked ~ .bitem-check ~ .bitem-name { color: #fff; }
+.bitem-price { font-size: 0.75rem; color: var(--gold); font-weight: 600; white-space: nowrap; }
+
+.bundle-summary { position: sticky; top: calc(var(--urgency-h) + var(--nav-h) + 20px); }
+.bsum-inner { background: rgba(255,255,255,0.02); border: 1px solid rgba(37,99,235,0.3); border-radius: 16px; padding: 24px; }
+.bsum-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cobalt); margin-bottom: 14px; }
+.bsum-selected { min-height: 60px; margin-bottom: 14px; }
+.bsum-empty { font-size: 0.82rem; color: var(--gray-600); font-style: italic; }
+.bsum-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.25); border-radius: 6px; padding: 4px 10px; font-size: 0.75rem; color: var(--gray-300); margin: 3px 3px 3px 0; }
+.bsum-tag button { background: none; border: none; color: var(--gray-600); cursor: pointer; font-size: 0.7rem; padding: 0; line-height: 1; }
+.bsum-tag button:hover { color: #ef4444; }
+.bsum-divider { height: 1px; background: rgba(255,255,255,0.07); margin: 14px 0; }
+.bsum-total-row, .bsum-onetime-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.bsum-total-label, .bsum-onetime-label { font-size: 0.8rem; color: var(--gray-400); }
+.bsum-total-val { font-family: var(--font-d); font-size: 1.8rem; font-weight: 800; color: var(--off-white); }
+.bsum-total-val span { font-size: 0.78rem; color: var(--gray-400); font-family: var(--font-b); font-weight: 400; }
+.bsum-onetime-val { font-family: var(--font-d); font-size: 1.1rem; font-weight: 700; color: var(--gold); }
+.bsum-note { font-size: 0.75rem; color: #22c55e; margin-bottom: 12px; padding: 6px 10px; background: rgba(34,197,94,0.08); border-radius: 6px; border: 1px solid rgba(34,197,94,0.2); }
+.bsum-cta { display: block; text-align: center; padding: 13px 20px; border-radius: 10px; background: var(--grad); color: #fff; font-size: 0.88rem; font-weight: 700; text-decoration: none; margin-top: 16px; transition: opacity 0.2s; }
+.bsum-cta:hover { opacity: 0.88; }
+.bsum-micro { text-align: center; font-size: 0.72rem; color: var(--gray-600); margin-top: 10px; }
+@media(max-width:900px) { .bundle-wrap{grid-template-columns:1fr} .bundle-summary{position:static} }
+@media(max-width:640px) { .bundle-grid{grid-template-columns:1fr} }
 </style>
 </head>
 <body>
@@ -919,6 +956,68 @@ footer{
         <div class="fit-item no">You need results this week — real marketing compounds over time and we won't promise otherwise</div>
         <div class="fit-item no">Your business doesn't have an existing customer base or proven offer — we amplify what works</div>
         <div class="fit-item no">You're not comfortable with AI tools being part of your marketing stack</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══ BUNDLE CONFIGURATOR ══════════════════════════════════════════════════ -->
+<section class="section bundle-section" id="build-bundle">
+  <div class="section-inner">
+    <div class="sec-eyebrow reveal" style="text-align:center">Build Your Own</div>
+    <h2 class="sec-h2 reveal" style="text-align:center">Pick Exactly What Your Business Needs.<br><span class="grad-text">See Your Price Instantly.</span></h2>
+    <p class="sec-sub reveal" style="text-align:center;margin-left:auto;margin-right:auto">Not sure which package fits? Select the services you want and we'll show you a custom price — then book a free call to finalize everything. No commitment required.</p>
+
+    <div class="bundle-wrap">
+      <!-- SERVICES PICKER -->
+      <div class="bundle-grid reveal">
+        <div class="bundle-cat">
+          <div class="bcat-label">📍 Visibility & SEO</div>
+          <label class="bitem"><input type="checkbox" data-price="500" data-name="Local SEO"><span class="bitem-check"></span><span class="bitem-name">Local SEO</span><span class="bitem-price">$500/mo</span></label>
+          <label class="bitem"><input type="checkbox" data-price="350" data-name="Google Business Profile"><span class="bitem-check"></span><span class="bitem-name">Google Business Profile</span><span class="bitem-price">$350/mo</span></label>
+          <label class="bitem"><input type="checkbox" data-price="300" data-name="Review Generation"><span class="bitem-check"></span><span class="bitem-name">Review Generation</span><span class="bitem-price">$300/mo</span></label>
+        </div>
+        <div class="bundle-cat">
+          <div class="bcat-label">🤖 AI & Automation</div>
+          <label class="bitem"><input type="checkbox" data-price="400" data-name="AI Phone Receptionist"><span class="bitem-check"></span><span class="bitem-name">AI Phone Receptionist</span><span class="bitem-price">$400/mo</span></label>
+          <label class="bitem"><input type="checkbox" data-price="500" data-name="AI Chatbot"><span class="bitem-check"></span><span class="bitem-name">AI Website Chatbot</span><span class="bitem-price">$500/mo</span></label>
+          <label class="bitem"><input type="checkbox" data-price="750" data-name="Lead Generation"><span class="bitem-check"></span><span class="bitem-name">Lead Generation</span><span class="bitem-price">$750/mo</span></label>
+        </div>
+        <div class="bundle-cat">
+          <div class="bcat-label">📱 Social & Content</div>
+          <label class="bitem"><input type="checkbox" data-price="600" data-name="Social Media Management"><span class="bitem-check"></span><span class="bitem-name">Social Media Management</span><span class="bitem-price">$600/mo</span></label>
+          <label class="bitem"><input type="checkbox" data-price="750" data-name="Social Media Ads"><span class="bitem-check"></span><span class="bitem-name">Paid Advertising</span><span class="bitem-price">$750/mo</span></label>
+          <label class="bitem"><input type="checkbox" data-price="500" data-name="Email Marketing"><span class="bitem-check"></span><span class="bitem-name">Email Marketing</span><span class="bitem-price">$500/mo</span></label>
+        </div>
+        <div class="bundle-cat">
+          <div class="bcat-label">🌐 Web & Brand</div>
+          <label class="bitem"><input type="checkbox" data-price="2500" data-name="Website Design" data-onetime="true"><span class="bitem-check"></span><span class="bitem-name">Website Design</span><span class="bitem-price">from $2,500</span></label>
+          <label class="bitem"><input type="checkbox" data-price="1500" data-name="Funnel Building" data-onetime="true"><span class="bitem-check"></span><span class="bitem-name">Funnel Building</span><span class="bitem-price">from $1,500</span></label>
+          <label class="bitem"><input type="checkbox" data-price="1200" data-name="Brand Identity" data-onetime="true"><span class="bitem-check"></span><span class="bitem-name">Brand Identity</span><span class="bitem-price">from $1,200</span></label>
+        </div>
+      </div>
+
+      <!-- TOTAL + CTA -->
+      <div class="bundle-summary reveal">
+        <div class="bsum-inner">
+          <div class="bsum-label">Your Custom Package</div>
+          <div class="bsum-selected" id="bsum-selected">
+            <div class="bsum-empty">← Select services to build your package</div>
+          </div>
+          <div class="bsum-divider"></div>
+          <div class="bsum-total-row">
+            <span class="bsum-total-label">Monthly Total</span>
+            <span class="bsum-total-val" id="bsum-monthly">$0<span>/mo</span></span>
+          </div>
+          <div class="bsum-onetime-row" id="bsum-onetime-wrap" style="display:none">
+            <span class="bsum-onetime-label">One-Time Total</span>
+            <span class="bsum-onetime-val" id="bsum-onetime">$0</span>
+          </div>
+          <div class="bsum-note" id="bsum-discount" style="display:none"></div>
+          <a href="/funnels/strategy-call/" class="bsum-cta" id="bsum-cta">Select services above →</a>
+          <div class="bsum-micro">Free call · No commitment · Prices finalized on call</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1209,5 +1308,87 @@ revEls.forEach(el => obs.observe(el));
 })();
 </script>
 
+
+<script>
+/* ── BUNDLE CONFIGURATOR ── */
+(function() {
+  var items = {};
+  var checkboxes = document.querySelectorAll('.bitem input[type="checkbox"]');
+  
+  checkboxes.forEach(function(cb) {
+    cb.addEventListener('change', function() {
+      var name = cb.dataset.name;
+      var price = parseInt(cb.dataset.price);
+      var onetime = cb.dataset.onetime === 'true';
+      if (cb.checked) {
+        items[name] = { price: price, onetime: onetime };
+      } else {
+        delete items[name];
+      }
+      updateSummary();
+    });
+  });
+
+  function updateSummary() {
+    var monthly = 0, oneTime = 0;
+    var names = Object.keys(items);
+    
+    names.forEach(function(n) {
+      if (items[n].onetime) oneTime += items[n].price;
+      else monthly += items[n].price;
+    });
+
+    // Selected tags
+    var sel = document.getElementById('bsum-selected');
+    if (names.length === 0) {
+      sel.innerHTML = '<div class="bsum-empty">← Select services to build your package</div>';
+    } else {
+      sel.innerHTML = names.map(function(n) {
+        return '<span class="bsum-tag">' + n + '<button onclick="removeItem('' + n + '')" title="Remove">✕</button></span>';
+      }).join('');
+    }
+
+    // Monthly total
+    document.getElementById('bsum-monthly').innerHTML = '$' + monthly.toLocaleString() + '<span>/mo</span>';
+
+    // One-time
+    var oWrap = document.getElementById('bsum-onetime-wrap');
+    if (oneTime > 0) {
+      oWrap.style.display = 'flex';
+      document.getElementById('bsum-onetime').textContent = 'from $' + oneTime.toLocaleString();
+    } else {
+      oWrap.style.display = 'none';
+    }
+
+    // Bundle discount note
+    var disc = document.getElementById('bsum-discount');
+    if (names.length >= 3 && monthly > 0) {
+      disc.style.display = 'block';
+      disc.textContent = '✓ Bundle of ' + names.length + ' services — ask about package pricing on your call';
+    } else {
+      disc.style.display = 'none';
+    }
+
+    // CTA
+    var cta = document.getElementById('bsum-cta');
+    if (names.length > 0) {
+      var params = encodeURIComponent(names.join(', '));
+      cta.href = '/funnels/strategy-call/?services=' + params;
+      cta.textContent = '📅 Book a Call to Finalize ↗';
+    } else {
+      cta.href = '/funnels/strategy-call/';
+      cta.textContent = 'Select services above →';
+    }
+  }
+
+  window.removeItem = function(name) {
+    delete items[name];
+    document.querySelectorAll('.bitem input').forEach(function(cb) {
+      if (cb.dataset.name === name) cb.checked = false;
+    });
+    updateSummary();
+  };
+})();
+</script>
 </body>
 </html>

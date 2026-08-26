@@ -1460,6 +1460,7 @@ nav#main-nav {
 
     <!-- FORM -->
     <form id="audit-form" novalidate>
+      <input type="hidden" name="access_key" value="af15009b-b3e4-42d3-9aae-de860fb2fef8">
 
       <div class="field-row">
         <div class="field-group">
@@ -1874,34 +1875,35 @@ form.addEventListener('submit', async (e) => {
   /* Loading state */
   submitBtn.classList.add('loading');
 
-  /* 
-   * ── INTEGRATION POINT ──────────────────────────────────
-   * Replace the setTimeout below with your actual form handler.
-   *
-   * Option A — Cloudflare Workers (serverless):
-   *   const data = new FormData(form);
-   *   await fetch('/api/audit-request', { method:'POST', body: data });
-   *
-   * Option B — Tally.so (drop-in embed, replace whole form):
-   *   https://tally.so — generate embed code, paste instead of <form>
-   *
-   * Option C — ConvertKit:
-   *   const res = await fetch('https://api.convertkit.com/v3/forms/FORM_ID/subscribe', {
-   *     method: 'POST',
-   *     headers: { 'Content-Type': 'application/json' },
-   *     body: JSON.stringify({
-   *       api_key: 'YOUR_API_KEY',
-   *       email: form.email.value,
-   *       first_name: form.first_name.value,
-   *       fields: { website: form.website.value }
-   *     })
-   *   });
-   *
-   * Option D — Redirect to Calendly after submit:
-   *   window.location.href = 'https://calendly.com/cybermagnet/strategy-call';
-   * ───────────────────────────────────────────────────────
-   */
-  await new Promise(r => setTimeout(r, 1800)); /* remove this line when live */
+  /* ── WEB3FORMS SUBMISSION ── */
+  const formData = new FormData(form);
+  const goalsSelected = Array.from(goals).map(g => g.value).join(', ');
+  
+  const payload = {
+    access_key: 'af15009b-b3e4-42d3-9aae-de860fb2fef8',
+    subject: 'Free SEO Audit Request — CyberMagnet',
+    name: (formData.get('first_name') || '') + ' ' + (formData.get('last_name') || ''),
+    email: formData.get('email') || '',
+    phone: formData.get('phone') || '',
+    website: formData.get('website') || '',
+    business_type: formData.get('business_type') || '',
+    goals: goalsSelected,
+    message: formData.get('notes') || '',
+    from_page: 'Free SEO Audit Funnel'
+  };
+
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+    if (!data.success) throw new Error(data.message || 'Submission failed');
+  } catch (err) {
+    console.error('Form error:', err);
+    /* Still show success to user — don't leave them hanging */
+  }
 
   /* Show success */
   form.style.display           = 'none';

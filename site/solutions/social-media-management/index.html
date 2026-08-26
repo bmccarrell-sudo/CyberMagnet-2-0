@@ -1354,5 +1354,116 @@ revEls.forEach(el => obs.observe(el));
   });
 })();
 </script>
+
+<!-- ── SERVICE QUALIFIER QUIZ OVERLAY ── -->
+<div class="sqo" style="position:fixed;inset:0;background:rgba(5,8,16,0.92);z-index:500;
+  display:flex;align-items:center;justify-content:center;padding:20px;
+  opacity:0;pointer-events:none;transition:opacity 0.25s" id="sqo-overlay">
+  <div style="background:#0a0f1e;border:1px solid rgba(255,255,255,0.1);border-radius:16px;
+    max-width:560px;width:100%;padding:36px;position:relative">
+    <button class="sqo-close" onclick="window.closeQuiz()" style="position:absolute;top:16px;right:16px;
+      background:none;border:none;color:#8899aa;font-size:20px;cursor:pointer;line-height:1">&times;</button>
+    <div class="sqo-questions" id="sqo-questions">
+      <div class="sqo-q" data-qid="0" style="display:none">
+        <div style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:#D97706;margin-bottom:12px">Question 1 of 4</div>
+        <div style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:24px">Do you have an active local business with existing customers?</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <button class="sqo-opt" data-value="yes" style="padding:12px 18px;border-radius:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#EEF2F7;font-size:0.9rem;cursor:pointer;text-align:left;transition:all 0.15s">Yes, established business</button>
+          <button class="sqo-opt" data-value="yes" style="padding:12px 18px;border-radius:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#EEF2F7;font-size:0.9rem;cursor:pointer;text-align:left;transition:all 0.15s">Yes, newer but generating revenue</button>
+          <button class="sqo-opt" data-value="no" style="padding:12px 18px;border-radius:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#EEF2F7;font-size:0.9rem;cursor:pointer;text-align:left;transition:all 0.15s">No, still in pre-launch</button>
+        </div>
+      </div>
+      <div class="sqo-q" data-qid="1" style="display:none">
+        <div style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:#D97706;margin-bottom:12px">Question 2 of 4</div>
+        <div style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:24px">Are you open to a 3-month minimum commitment?</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <button class="sqo-opt" data-value="yes" style="padding:12px 18px;border-radius:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#EEF2F7;font-size:0.9rem;cursor:pointer;text-align:left;transition:all 0.15s">Yes, I understand real results take time</button>
+          <button class="sqo-opt" data-value="no" style="padding:12px 18px;border-radius:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#EEF2F7;font-size:0.9rem;cursor:pointer;text-align:left;transition:all 0.15s">I need results faster than that</button>
+        </div>
+      </div>
+      <div class="sqo-q" data-qid="2" style="display:none">
+        <div style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:#D97706;margin-bottom:12px">Question 3 of 4</div>
+        <div style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:24px">What&rsquo;s your primary goal right now?</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <button class="sqo-opt" data-value="yes" style="padding:12px 18px;border-radius:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#EEF2F7;font-size:0.9rem;cursor:pointer;text-align:left;transition:all 0.15s">Generate more leads and inbound calls</button>
+          <button class="sqo-opt" data-value="yes" style="padding:12px 18px;border-radius:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#EEF2F7;font-size:0.9rem;cursor:pointer;text-align:left;transition:all 0.15s">Build a stronger online presence</button>
+          <button class="sqo-opt" data-value="yes" style="padding:12px 18px;border-radius:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#EEF2F7;font-size:0.9rem;cursor:pointer;text-align:left;transition:all 0.15s">Automate and save time</button>
+          <button class="sqo-opt" data-value="no" style="padding:12px 18px;border-radius:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#EEF2F7;font-size:0.9rem;cursor:pointer;text-align:left;transition:all 0.15s">I&rsquo;m just researching for now</button>
+        </div>
+      </div>
+      <div class="sqo-q" data-qid="3" style="display:none">
+        <div style="font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:#D97706;margin-bottom:12px">Question 4 of 4</div>
+        <div style="font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:24px">Are you comfortable with a professional reviewing your business and giving honest feedback?</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <button class="sqo-opt" data-value="yes" style="padding:12px 18px;border-radius:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#EEF2F7;font-size:0.9rem;cursor:pointer;text-align:left;transition:all 0.15s">Absolutely, I want honest input</button>
+          <button class="sqo-opt" data-value="no" style="padding:12px 18px;border-radius:8px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#EEF2F7;font-size:0.9rem;cursor:pointer;text-align:left;transition:all 0.15s">I&rsquo;d prefer to keep it high-level</button>
+        </div>
+      </div>
+    </div>
+    <div class="sqo-result" id="sqo-result" style="display:none;text-align:center">
+      <div style="font-size:2rem;margin-bottom:16px" id="sqo-icon">&#128994;</div>
+      <div style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:12px" id="sqo-headline">Looks like a great fit!</div>
+      <p style="font-size:0.88rem;color:#8899aa;line-height:1.65;margin-bottom:24px" class="sqo-msg"></p>
+      <a href="/funnels/strategy-call/" class="sqo-cta" style="display:inline-block;padding:12px 24px;border-radius:8px;background:linear-gradient(90deg,#D97706,#2563EB);color:#fff;font-weight:700;text-decoration:none">Book a Free Strategy Call &#8599;</a>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ── QUALIFIER QUIZ ── */
+(function(){
+  var overlay = document.getElementById('sqo-overlay');
+  var questions = overlay ? overlay.querySelectorAll('.sqo-q') : [];
+  var current = 0;
+  var results = {};
+
+  function show(idx){ questions.forEach(function(q,i){ q.style.display = i===idx?'block':'none'; }); }
+
+  function openQuiz(){
+    if(!overlay) return;
+    overlay.style.opacity='1'; overlay.style.pointerEvents='auto';
+    document.body.style.overflow='hidden';
+    current=0; results={};
+    show(0);
+  }
+  function closeQuiz(){
+    if(!overlay) return;
+    overlay.style.opacity='0'; overlay.style.pointerEvents='none';
+    document.body.style.overflow='';
+  }
+
+  window.openSvcQuiz = openQuiz;
+  window.closeQuiz   = closeQuiz;
+  // Also expose page-specific key for backward compat
+  document.querySelectorAll('.svc-quiz-btn').forEach(function(btn){
+    btn.setAttribute('onclick','window.openSvcQuiz()');
+  });
+
+  overlay && overlay.addEventListener('click', function(e){ if(e.target===overlay) closeQuiz(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeQuiz(); });
+
+  overlay && overlay.querySelectorAll('.sqo-opt').forEach(function(btn){
+    btn.addEventListener('mouseover', function(){ this.style.background='rgba(37,99,235,0.15)'; this.style.borderColor='rgba(37,99,235,0.4)'; });
+    btn.addEventListener('mouseout',  function(){ this.style.background='rgba(255,255,255,0.04)'; this.style.borderColor='rgba(255,255,255,0.1)'; });
+    btn.addEventListener('click', function(){
+      results[current] = btn.dataset.value;
+      current++;
+      if(current < questions.length){ show(current); }
+      else {
+        overlay.querySelector('.sqo-questions').style.display='none';
+        var res = overlay.querySelector('.sqo-result');
+        res.style.display='block';
+        var yesCount = Object.values(results).filter(function(v){ return v==='yes'; }).length;
+        var good = yesCount >= 3;
+        overlay.querySelector('#sqo-icon').textContent = good ? '&#128994;' : '&#128993;';
+        overlay.querySelector('#sqo-headline').textContent = good ? 'Looks like a great fit!' : 'You might be a fit — let's talk.';
+        overlay.querySelector('.sqo-msg').textContent = good
+          ? 'Based on your answers, this service aligns well with where your business is right now. Book a free call and we'll map out a plan together.'
+          : 'There's still potential here — a strategy call will help us figure out the best starting point for your business.';
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>

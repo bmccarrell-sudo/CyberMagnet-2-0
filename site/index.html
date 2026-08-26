@@ -963,7 +963,7 @@ nav#main-nav.header-hidden,.urgency-bar.header-hidden{transform:translateY(-100%
     var rate=getDiscount(mCount),savings=Math.round(monthly*rate),final=monthly-savings;
     var sel=document.getElementById('bsum-selected');
     if(names.length===0){sel.innerHTML='<div class="bsum-empty">← Select services to build your package</div>';}
-    else{sel.innerHTML=names.map(function(n){return '<span class="bsum-tag">'+n+'<button onclick="removeItem(''+n+'')" title="Remove">✕</button></span>';}).join('');}
+    else{sel.innerHTML=names.map(function(n){return '<span class="bsum-tag">'+n+'<button onclick="removeItem('"+ n +"')" title="Remove">✕</button></span>';}).join('');}
     var moEl=document.getElementById('bsum-monthly');
     if(rate>0&&monthly>0){moEl.innerHTML='<span style="text-decoration:line-through;opacity:0.4;font-size:1.1rem">$'+monthly.toLocaleString()+'</span> $'+final.toLocaleString()+'<span>/mo</span>';}
     else{moEl.innerHTML='$'+monthly.toLocaleString()+'<span>/mo</span>';}

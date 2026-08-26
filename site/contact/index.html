@@ -1503,5 +1503,66 @@ revEls.forEach(el => obs.observe(el));
   }, { passive: true });
 })();
 </script>
+
+<script>
+/* ── CONTACT FORM SUBMISSION ── */
+(function(){
+  var form = document.getElementById('contact-form-el');
+  var successState = document.getElementById('success-state');
+  if(!form) return;
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var submitBtn = form.querySelector('.btn-submit');
+    if(submitBtn) submitBtn.classList.add('loading');
+
+    // Basic validation
+    var required = form.querySelectorAll('[required]');
+    var valid = true;
+    required.forEach(function(field){
+      if(!field.value.trim()){
+        field.style.borderColor = 'rgba(255,60,60,0.5)';
+        valid = false;
+        field.addEventListener('input', function(){
+          field.style.borderColor = '';
+        }, {once:true});
+      }
+    });
+    if(!valid){
+      if(submitBtn) submitBtn.classList.remove('loading');
+      return;
+    }
+
+    // Collect form data
+    var data = new FormData(form);
+    var payload = {
+      access_key: 'af15009b-b3e4-42d3-9aae-de860fb2fef8',
+      subject: 'New Contact Form Submission — CyberMagnet',
+      name: data.get('name') || form.querySelector('[name="name"], [id="c-name"]') && form.querySelector('[name="name"], [id="c-name"]').value || '',
+      email: data.get('email') || form.querySelector('[type="email"]') && form.querySelector('[type="email"]').value || '',
+      phone: data.get('phone') || (form.querySelector('[type="tel"]') ? form.querySelector('[type="tel"]').value : ''),
+      message: data.get('message') || (form.querySelector('textarea') ? form.querySelector('textarea').value : ''),
+      from_page: 'Contact Page'
+    };
+
+    try {
+      var res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify(payload)
+      });
+      var json = await res.json();
+      if(!json.success) throw new Error(json.message);
+    } catch(err) {
+      console.error('Contact form error:', err);
+    }
+
+    // Show success regardless
+    form.style.display = 'none';
+    if(successState) successState.style.display = 'flex';
+    if(submitBtn) submitBtn.classList.remove('loading');
+  });
+})();
+</script>
 </body>
 </html>

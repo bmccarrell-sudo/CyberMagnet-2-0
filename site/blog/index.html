@@ -1645,5 +1645,38 @@ revEls.forEach(el => obs.observe(el));
   }, { passive: true });
 })();
 </script>
+
+<script>
+/* ── NEWSLETTER SUBSCRIBE ── */
+(function(){
+  var form = document.getElementById('nl-form');
+  if(!form) return;
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    var emailEl = document.getElementById('nl-email');
+    var email = emailEl ? emailEl.value.trim() : '';
+    if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+      if(emailEl) emailEl.style.borderColor = 'rgba(255,60,60,0.5)';
+      return;
+    }
+    var btn = form.querySelector('button[type="submit"]');
+    if(btn){ btn.textContent = 'Subscribing...'; btn.disabled = true; }
+    try {
+      await fetch('https://api.web3forms.com/submit', {
+        method:'POST',
+        headers:{'Content-Type':'application/json','Accept':'application/json'},
+        body: JSON.stringify({
+          access_key: 'af15009b-b3e4-42d3-9aae-de860fb2fef8',
+          subject: 'New Blog Newsletter Subscriber — CyberMagnet',
+          email: email,
+          from_page: 'Blog Page'
+        })
+      });
+    } catch(err){ console.error(err); }
+    if(btn){ btn.textContent = '✓ Subscribed!'; }
+    if(emailEl){ emailEl.value = ''; emailEl.style.borderColor = ''; }
+  });
+})();
+</script>
 </body>
 </html>

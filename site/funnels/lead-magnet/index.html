@@ -1061,12 +1061,25 @@ function handleForm(form) {
 
     if (!valid) return;
 
-    /* ── INTEGRATION POINT ──────────────────────────────────────
+    /* ── WEB3FORMS (live) ── */
+      try {
+        await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json','Accept':'application/json'},
+          body: JSON.stringify({
+            access_key: 'af15009b-b3e4-42d3-9aae-de860fb2fef8',
+            name: name,
+            email: email,
+            subject: 'New Lead Magnet Download — CyberMagnet',
+            from_page: 'Lead Magnet Funnel'
+          })
+        });
+      } catch(e) { console.error(e); }
        Replace with your email provider:
        Option A — Web3Forms (free):
          fetch('https://api.web3forms.com/submit', {
            method:'POST', headers:{'Content-Type':'application/json'},
-           body: JSON.stringify({ access_key:'YOUR_KEY', name, email,
+           body: JSON.stringify({ access_key:'af15009b-b3e4-42d3-9aae-de860fb2fef8', name, email,
              subject:'New lead magnet download' })
          });
        Option B — GoHighLevel webhook

@@ -534,6 +534,15 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
 /* ── SCROLL HIDE ── */
 .urgency-bar,.urgency-bar+*,.header-hidden{transition:transform 0.35s cubic-bezier(0.4,0,0.2,1),opacity 0.35s cubic-bezier(0.4,0,0.2,1)}
 nav#main-nav.header-hidden,.urgency-bar.header-hidden{transform:translateY(-100%);opacity:0;pointer-events:none}
+
+/* ── REVEAL ANIMATION ENHANCEMENTS ── */
+.reveal{transition:opacity 0.6s cubic-bezier(0.4,0,0.2,1),transform 0.6s cubic-bezier(0.4,0,0.2,1)}
+.reveal.delay-1{transition-delay:0.1s}
+.reveal.delay-2{transition-delay:0.2s}
+.reveal.delay-3{transition-delay:0.3s}
+.reveal.delay-4{transition-delay:0.4s}
+/* Counter-animation for proof stats numbers */
+.proof-num{font-variant-numeric:tabular-nums}
 </style>
 </head>
 <body>
@@ -672,9 +681,9 @@ nav#main-nav.header-hidden,.urgency-bar.header-hidden{transform:translateY(-100%
     <h2 class="sec-h2 reveal">Good Businesses Lose to Worse Ones<br><span class="grad-text">Because of Marketing, Not Quality.</span></h2>
     <p class="sec-sub reveal">You do great work. Your clients love you. But your phone isn&#8217;t ringing the way it should &#8212; because competitors figured out something you haven&#8217;t yet.</p>
     <div class="problem-grid">
-      <div class="problem-card reveal"><div class="pc-icon">&#128222;</div><div class="pc-title">Calls Going to Voicemail</div><div class="pc-body">Most callers won&#8217;t leave a message. They hang up and call the next business on Google. Every missed call is a missed job.</div><div class="pc-stat">62% of callers don&#8217;t leave voicemail &#8212; they call your competitor</div></div>
-      <div class="problem-card reveal"><div class="pc-icon">&#128269;</div><div class="pc-title">Invisible on Google</div><div class="pc-body">97% of local searches never go past page 1. If you&#8217;re not in the top 3 on Google Maps, you don&#8217;t exist to that customer.</div><div class="pc-stat">97% of searches never reach page 2</div></div>
-      <div class="problem-card reveal"><div class="pc-icon">&#128371;</div><div class="pc-title">Leads Falling Through the Cracks</div><div class="pc-body">Without a follow-up system, 80% of leads go cold before you speak to them. That&#8217;s a systems problem &#8212; and systems problems have systems solutions.</div><div class="pc-stat">80% of leads go cold without same-day follow-up</div></div>
+      <div class="problem-card reveal delay-1"><div class="pc-icon">&#128222;</div><div class="pc-title">Calls Going to Voicemail</div><div class="pc-body">Most callers won&#8217;t leave a message. They hang up and call the next business on Google. Every missed call is a missed job.</div><div class="pc-stat">62% of callers don&#8217;t leave voicemail &#8212; they call your competitor</div></div>
+      <div class="problem-card reveal delay-2"><div class="pc-icon">&#128269;</div><div class="pc-title">Invisible on Google</div><div class="pc-body">97% of local searches never go past page 1. If you&#8217;re not in the top 3 on Google Maps, you don&#8217;t exist to that customer.</div><div class="pc-stat">97% of searches never reach page 2</div></div>
+      <div class="problem-card reveal delay-3"><div class="pc-icon">&#128371;</div><div class="pc-title">Leads Falling Through the Cracks</div><div class="pc-body">Without a follow-up system, 80% of leads go cold before you speak to them. That&#8217;s a systems problem &#8212; and systems problems have systems solutions.</div><div class="pc-stat">80% of leads go cold without same-day follow-up</div></div>
       <div class="problem-card reveal"><div class="pc-icon">&#9200;</div><div class="pc-title">Doing It All Manually</div><div class="pc-body">Scheduling, following up, posting on social, answering the same questions &#8212; every hour spent on this is an hour not spent on billable work.</div><div class="pc-stat">10&#8211;20 hrs/week recovered by CyberMagnet clients on average</div></div>
     </div>
   </div>
@@ -697,11 +706,11 @@ nav#main-nav.header-hidden,.urgency-bar.header-hidden{transform:translateY(-100%
     <h2 class="sec-h2 reveal">Systems That Grow Your Business<br><span class="grad-text">While You Run It.</span></h2>
     <p class="sec-sub reveal">Most agencies sell deliverables. We build integrated systems &#8212; SEO, AI, automation, and conversion &#8212; that compound and work together.</p>
     <div class="services-grid">
-      <div class="svc-card reveal"><div class="svc-icon">&#128269;</div><div class="svc-name">Local SEO &amp; GBP</div><div class="svc-desc">Own the top 3 on Google Maps for every service you offer. More calls, more clicks, more clients &#8212; without paying for ads.</div><a href="/solutions/seo/" class="svc-link">Explore SEO &#8594;</a></div>
-      <div class="svc-card reveal"><div class="svc-icon">&#129302;</div><div class="svc-name">AI Phone Receptionist</div><div class="svc-desc">Answer every call 24/7, qualify leads, and book appointments automatically &#8212; even at 2am. Starting at $400/mo.</div><a href="/solutions/ai-phone-receptionist/" class="svc-link">Explore AI Receptionist &#8594;</a></div>
-      <div class="svc-card reveal"><div class="svc-icon">&#127760;</div><div class="svc-name">Website Design</div><div class="svc-desc">Conversion-engineered websites that turn visitors into calls and bookings &#8212; not just another pretty site nobody finds.</div><a href="/solutions/website-design/" class="svc-link">Explore Websites &#8594;</a></div>
-      <div class="svc-card reveal"><div class="svc-icon">&#9889;</div><div class="svc-name">AI Automation</div><div class="svc-desc">Map every manual task in your business and replace it with an automated workflow. Save 10&#8211;20 hours a week.</div><a href="/systems/ai-automation/" class="svc-link">Explore Automation &#8594;</a></div>
-      <div class="svc-card reveal"><div class="svc-icon">&#127919;</div><div class="svc-name">Funnel Building</div><div class="svc-desc">High-converting funnels built around your buyer&#8217;s psychology &#8212; from first click to booked appointment.</div><a href="/solutions/funnel-building/" class="svc-link">Explore Funnels &#8594;</a></div>
+      <div class="svc-card reveal delay-1"><div class="svc-icon">&#128269;</div><div class="svc-name">Local SEO &amp; GBP</div><div class="svc-desc">Own the top 3 on Google Maps for every service you offer. More calls, more clicks, more clients &#8212; without paying for ads.</div><a href="/solutions/seo/" class="svc-link">Explore SEO &#8594;</a></div>
+      <div class="svc-card reveal delay-2"><div class="svc-icon">&#129302;</div><div class="svc-name">AI Phone Receptionist</div><div class="svc-desc">Answer every call 24/7, qualify leads, and book appointments automatically &#8212; even at 2am. Starting at $400/mo.</div><a href="/solutions/ai-phone-receptionist/" class="svc-link">Explore AI Receptionist &#8594;</a></div>
+      <div class="svc-card reveal delay-1"><div class="svc-icon">&#127760;</div><div class="svc-name">Website Design</div><div class="svc-desc">Conversion-engineered websites that turn visitors into calls and bookings &#8212; not just another pretty site nobody finds.</div><a href="/solutions/website-design/" class="svc-link">Explore Websites &#8594;</a></div>
+      <div class="svc-card reveal delay-2"><div class="svc-icon">&#9889;</div><div class="svc-name">AI Automation</div><div class="svc-desc">Map every manual task in your business and replace it with an automated workflow. Save 10&#8211;20 hours a week.</div><a href="/systems/ai-automation/" class="svc-link">Explore Automation &#8594;</a></div>
+      <div class="svc-card reveal delay-3"><div class="svc-icon">&#127919;</div><div class="svc-name">Funnel Building</div><div class="svc-desc">High-converting funnels built around your buyer&#8217;s psychology &#8212; from first click to booked appointment.</div><a href="/solutions/funnel-building/" class="svc-link">Explore Funnels &#8594;</a></div>
       <div class="svc-card reveal"><div class="svc-icon">&#11088;</div><div class="svc-name">Brand Identity</div><div class="svc-desc">Visual identity and messaging that commands attention and justifies premium pricing before you say a word.</div><a href="/solutions/branding-packages/" class="svc-link">Explore Branding &#8594;</a></div>
     </div>
     <div style="text-align:center;margin-top:36px"><a href="/solutions/" class="btn-secondary-lux" style="display:inline-flex">View all solutions &#8594;</a></div>
@@ -714,9 +723,9 @@ nav#main-nav.header-hidden,.urgency-bar.header-hidden{transform:translateY(-100%
     <div class="sec-eyebrow reveal" style="text-align:center">Our Process</div>
     <h2 class="sec-h2 reveal" style="text-align:center">From Strategy to Scale &#8212;<br><span class="grad-text">No Guesswork, No Surprises.</span></h2>
     <div class="process-steps">
-      <div class="process-step reveal"><div class="ps-num">01</div><div class="ps-title">Discovery &amp; Audit</div><div class="ps-body">We pull your rankings, audit your competitors, and map every gap between where you are and where your market leader sits.</div></div>
-      <div class="process-step reveal"><div class="ps-num">02</div><div class="ps-title">Strategy Blueprint</div><div class="ps-body">Custom roadmap aligned to your revenue goals &#8212; timelines, KPIs, and growth milestones defined before we touch anything.</div></div>
-      <div class="process-step reveal"><div class="ps-num">03</div><div class="ps-title">Build &amp; Launch</div><div class="ps-body">Rapid execution across channels &#8212; funnels, SEO, AI systems, and campaigns go live fast. You see progress in week one.</div></div>
+      <div class="process-step reveal delay-1"><div class="ps-num">01</div><div class="ps-title">Discovery &amp; Audit</div><div class="ps-body">We pull your rankings, audit your competitors, and map every gap between where you are and where your market leader sits.</div></div>
+      <div class="process-step reveal delay-2"><div class="ps-num">02</div><div class="ps-title">Strategy Blueprint</div><div class="ps-body">Custom roadmap aligned to your revenue goals &#8212; timelines, KPIs, and growth milestones defined before we touch anything.</div></div>
+      <div class="process-step reveal delay-3"><div class="ps-num">03</div><div class="ps-title">Build &amp; Launch</div><div class="ps-body">Rapid execution across channels &#8212; funnels, SEO, AI systems, and campaigns go live fast. You see progress in week one.</div></div>
       <div class="process-step reveal"><div class="ps-num">04</div><div class="ps-title">Optimize &amp; Scale</div><div class="ps-body">Monthly reporting tied to real revenue. We test, learn, and amplify what works to compound your growth month over month.</div></div>
     </div>
   </div>

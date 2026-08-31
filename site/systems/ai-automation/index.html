@@ -277,7 +277,6 @@ footer{background:var(--black);border-top:1px solid var(--dim);padding:60px 6% 3
 .reveal{opacity:0;transform:translateY(26px);transition:opacity 0.65s ease,transform 0.65s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 .rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}
-.nav-ham{display:flex}
   .overview-inner{grid-template-columns:1fr;gap:48px}
   .included-grid{grid-template-columns:1fr 1fr}
   .tiers-grid{grid-template-columns:1fr}
@@ -802,6 +801,19 @@ nav[id="main-nav"].header-hidden {
   opacity: 0;
   pointer-events: none;
 }
+
+/* ── FOOTER ── */
+footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);padding:48px 6% 32px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand p{font-size:0.83rem;color:var(--gray-400);line-height:1.65;margin-top:14px;max-width:280px}
+.footer-col h4{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--off-white);margin-bottom:14px}
+.footer-col a{display:block;font-size:0.82rem;color:var(--gray-400);text-decoration:none;margin-bottom:8px;transition:color 0.2s}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.05);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:0.75rem;color:var(--gray-600)}
+.footer-bottom a{color:var(--gray-600);text-decoration:none}
+.footer-bottom a:hover{color:var(--gray-400)}
+@media(max-width:800px){.footer-inner{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.footer-inner{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -853,6 +865,7 @@ nav[id="main-nav"].header-hidden {
     <li><a href="/about/">About</a></li>
     <li><a href="/products/">Products</a></li>
     <li><a href="/blog/">Blog</a></li>
+    <li><a href="/roi-calculator/">ROI Calc</a></li>
   </ul>
   <a href="tel:+19723385778" class="nav-phone">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8.1 9.7a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg>
@@ -1011,9 +1024,9 @@ nav[id="main-nav"].header-hidden {
         <div class="tier-header">
           <div class="tier-name">Starter</div>
           <div class="tier-price-block">
-            <div class="tier-setup"><span class="curr">$</span>300</div>
+            <div class="tier-setup"><span class="curr">$</span>750</div>
             <div class="tier-setup-label">one-time setup fee</div>
-            <div class="tier-retainer">+ <strong>$750/mo</strong> retainer <span class="opt">(optional)</span></div>
+            <div class="tier-retainer">+ <strong>$300/mo</strong> retainer <span class="opt">(optional)</span></div>
           </div>
           <div class="tier-tagline">For businesses deploying AI for the first time — a chatbot, basic AI receptionist, and automated CRM entry to stop losing leads.</div>
         </div>
@@ -1035,9 +1048,9 @@ nav[id="main-nav"].header-hidden {
         <div class="tier-header">
           <div class="tier-name">Growth</div>
           <div class="tier-price-block">
-            <div class="tier-setup"><span class="curr">$</span>600</div>
+            <div class="tier-setup"><span class="curr">$</span>1,500</div>
             <div class="tier-setup-label">one-time setup fee</div>
-            <div class="tier-retainer">+ <strong>$750/mo</strong> retainer <span class="opt">(optional)</span></div>
+            <div class="tier-retainer">+ <strong>$400/mo</strong> retainer <span class="opt">(optional)</span></div>
           </div>
           <div class="tier-tagline">For businesses ready to automate their full lead funnel — advanced AI qualification, omnichannel follow-up, and deal pipeline management.</div>
         </div>
@@ -1060,9 +1073,9 @@ nav[id="main-nav"].header-hidden {
         <div class="tier-header">
           <div class="tier-name">Premium</div>
           <div class="tier-price-block">
-            <div class="tier-setup"><span class="curr">$</span>1,200</div>
+            <div class="tier-setup"><span class="curr">$</span>2,500</div>
             <div class="tier-setup-label">one-time setup fee</div>
-            <div class="tier-retainer">+ <strong>$300/mo</strong> retainer <span class="opt">(optional)</span></div>
+            <div class="tier-retainer">+ <strong>$600/mo</strong> retainer <span class="opt">(optional)</span></div>
           </div>
           <div class="tier-tagline">A fully custom AI stack trained on your business — unlimited workflows, voice clone, and a dedicated AI strategist managing everything.</div>
         </div>
@@ -1351,50 +1364,14 @@ nav[id="main-nav"].header-hidden {
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <a href="/" aria-label="CyberMagnet" style="display:inline-flex;text-decoration:none;line-height:1;margin-bottom:10px">
-        <svg width="200" height="42" viewBox="0 0 220 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <text x="110" y="17" font-family="'Montserrat','Syne',sans-serif" font-size="22" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="7">CYBER</text>
-          <circle cx="6" cy="23" r="3" fill="#D97706"/><line x1="10" y1="23" x2="210" y2="23" stroke="#D97706" stroke-width="2"/><circle cx="214" cy="23" r="3" fill="#D97706"/>
-          <text x="110" y="42" font-family="'Montserrat','Syne',sans-serif" font-size="22" font-weight="900" fill="#D97706" text-anchor="middle" letter-spacing="7">MAGNET</text>
-        </svg>
-      </a>
-      <p>Premium digital marketing for growth-focused local businesses. Based in Dallas, TX.</p>
-      <div class="footer-socials">
-        <a href="https://www.tiktok.com/@cybermagnetms" class="social-btn" aria-label="TikTok">&#9834;</a>
-        <a href="https://www.linkedin.com/company/cybermagnet-marketing-solutions/" class="social-btn" aria-label="LinkedIn">in</a>
-        <a href="https://www.youtube.com/@cybermagnetms" class="social-btn" aria-label="YouTube">&#9654;</a>
-        <a href="https://www.instagram.com/cybermagnetms/" class="social-btn" aria-label="Instagram">&#9678;</a>
-      </div>
+      <svg width="160" height="34" viewBox="0 0 220 46" xmlns="http://www.w3.org/2000/svg"><text x="110" y="17" font-family="'Montserrat','Syne',sans-serif" font-size="22" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="7">CYBER</text><circle cx="6" cy="23" r="3" fill="#D97706"/><line x1="10" y1="23" x2="210" y2="23" stroke="#D97706" stroke-width="2"/><circle cx="214" cy="23" r="3" fill="#D97706"/><text x="110" y="42" font-family="'Montserrat','Syne',sans-serif" font-size="22" font-weight="900" fill="#D97706" text-anchor="middle" letter-spacing="7">MAGNET</text></svg>
+      <p>AI-powered marketing and automation for DFW service businesses. More leads, more time, better results.</p>
     </div>
-    <div class="footer-col">
-      <h4>Solutions</h4>
-      <a href="/solutions/seo/">Local SEO</a>
-      <a href="/solutions/ai-phone-receptionist/">AI Receptionist</a>
-      <a href="/solutions/website-design/">Website Design</a>
-      <a href="/solutions/funnel-building/">Funnel Building</a>
-      <a href="/solutions/branding-packages/">Brand Identity</a>
-      <a href="/solutions/">All Solutions</a>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <a href="/about/">About Ben</a>
-      <a href="/results/">Client Results</a>
-      <a href="/blog/">Blog</a>
-      <a href="/products/">Digital Products</a>
-      <a href="/how-we-work/">How We Work</a>
-    </div>
-    <div class="footer-col">
-      <h4>Get Started</h4>
-      <a href="/funnels/strategy-call/">Free Strategy Call</a>
-      <a href="/funnels/free-seo-audit/">Free SEO Audit</a>
-      <a href="tel:+19723385778">(972) 338-5778</a>
-      <a href="mailto:hello@cybermagnet.net">hello@cybermagnet.net</a>
-    </div>
+    <div class="footer-col"><h4>Solutions</h4><a href="/solutions/seo/">Local SEO</a><a href="/solutions/ai-phone-receptionist/">AI Receptionist</a><a href="/solutions/website-design/">Website Design</a><a href="/solutions/funnel-building/">Funnel Building</a><a href="/solutions/branding-packages/">Brand Identity</a><a href="/solutions/">All Solutions</a></div>
+    <div class="footer-col"><h4>Company</h4><a href="/about/">About Ben</a><a href="/results/">Client Results</a><a href="/blog/">Blog</a><a href="/products/">Digital Products</a><a href="/how-we-work/">How We Work</a><a href="/roi-calculator/">ROI Calculator</a></div>
+    <div class="footer-col"><h4>Get Started</h4><a href="/funnels/strategy-call/">Free Strategy Call</a><a href="/funnels/free-seo-audit/">Free SEO Audit</a><a href="tel:+19723385778">(972) 338-5778</a><a href="mailto:hello@cybermagnet.net">hello@cybermagnet.net</a></div>
   </div>
-  <div class="footer-bottom" style="max-width:1100px;margin:0 auto">
-    <span>&#169; 2025 CyberMagnet Marketing Solutions LLC &middot; Dallas, Texas</span>
-    <span><a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a></span>
-  </div>
+  <div class="footer-bottom"><span>&#169; 2025 CyberMagnet Marketing Solutions LLC &#xB7; Dallas, Texas</span><span><a href="/privacy/">Privacy</a> &#xB7; <a href="/terms/">Terms</a></span></div>
 </footer>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 const nav = document.getElementById('main-nav');

@@ -641,14 +641,24 @@ section + section::before {
   gap: 24px; list-style: none; margin: 0; padding: 0;
 }
 .nav-links a, .nav-links .nav-parent {
-  font-size: 0.88rem; color: var(--off-white, #dce8f5);
-  text-decoration: none; font-weight: 500;
+  font-size: 0.88rem; color: rgba(255,255,255,0.85);
+  text-decoration: none; font-weight: 600;
   cursor: pointer; background: none; border: none;
   padding: 0; transition: color 0.15s;
   display: flex; align-items: center; gap: 4px;
   position: relative;
 }
 .nav-links a:hover, .nav-links .nav-parent:hover { color: #fff; }
+.nav-links a {
+  color: rgba(255,255,255,0.80);
+  text-decoration: none;
+  font-size: 0.88rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: #fff; }
 .nav-links a::after {
   content: ''; position: absolute; left: 0; bottom: -2px;
   width: 0; height: 1px; background: var(--orange, #D97706);
@@ -757,7 +767,154 @@ section + section::before {
   transition: background 0.2s;
 }
 .mob-close:hover { background: rgba(255,255,255,0.1); }
-.mob-.mob-nav { flex: 1; padding: 16px 0; overflow-y: auto; }
+.mob-nav { flex: 1; padding: 16px 0; overflow-y: auto; }
+.mob-section-label {
+  font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(255,255,255,0.25);
+  padding: 14px 20px 6px; margin-top: 4px;
+}
+.mob-link {
+  display: flex; align-items: center; gap: 10px;
+  padding: 11px 20px; font-size: 0.93rem;
+  color: var(--muted, #7A90AA); text-decoration: none;
+  transition: all 0.15s;
+}
+.mob-link:hover, .mob-link:active {
+  color: var(--off-white, #dce8f5);
+  background: rgba(255,255,255,0.04);
+  padding-left: 26px;
+}
+.mob-divider {
+  height: 1px; background: rgba(255,255,255,0.06); margin: 12px 20px;
+}
+.mob-footer {
+  padding: 16px 20px 28px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex; flex-direction: column; gap: 10px; flex-shrink: 0;
+}
+.mob-cta {
+  display: block; text-align: center; padding: 13px;
+  background: var(--electric, #2563EB); color: #fff;
+  border-radius: 8px; font-weight: 700; font-size: 0.9rem;
+  text-decoration: none; transition: opacity 0.2s;
+}
+.mob-cta:hover { opacity: 0.88; }
+.mob-cta-sec {
+  display: block; text-align: center; padding: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--muted, #7A90AA); border-radius: 8px;
+  font-size: 0.86rem; text-decoration: none; transition: all 0.2s;
+}
+.mob-cta-sec:hover { border-color: var(--orange, #D97706); color: var(--orange, #D97706); }
+
+/* ── RESPONSIVE BREAKPOINTS ──────────────────── */
+@media (max-width: 860px) {
+  .nav-phone { display: none !important; }
+}
+@media (max-width: 720px) {
+  .nav-links { display: none !important; }
+  .nav-cta   { di
+/* ── DROPDOWN ───────────────────────────────── */
+.nav-item { position: relative; }
+.nav-drop {
+  position: absolute; top: calc(100% + 12px); left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  background: #0a1222; border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 14px; z-index: 500; min-width: 280px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(37,99,235,0.06);
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+.nav-drop-wide { min-width: 520px; }
+.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 10px 6px; }
+.drop-section { padding: 0 6px; }
+.drop-label {
+  font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(255,255,255,0.3);
+  padding: 0 6px 6px; margin-bottom: 2px;
+}
+.drop-link {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 10px; border-radius: 8px; text-decoration: none;
+  transition: background 0.15s; color: var(--off-white, #dce8f5);
+}
+.drop-link:hover { background: rgba(255,255,255,0.05); }
+.di {
+  width: 30px; height: 30px; border-radius: 7px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem; flex-shrink: 0;
+}
+.dt { display: flex; flex-direction: column; }
+.dt { font-size: 0.82rem; font-weight: 600; color: var(--off-white, #dce8f5); line-height: 1.2; }
+.dt span { font-size: 0.72rem; color: var(--gray-600, #445566); font-weight: 400; margin-top: 1px; }
+
+/* ── NAV CTA + PHONE ─────────────────────────── */
+.nav-cta {
+  padding: 9px 20px; border-radius: 7px;
+  font-size: 0.84rem; font-weight: 700;
+  background: linear-gradient(90deg, #D97706, #2563EB);
+  color: #fff; text-decoration: none;
+  white-space: nowrap; flex-shrink: 0;
+  transition: opacity 0.15s;
+}
+.nav-cta:hover { opacity: 0.88; }
+.nav-phone {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 0.82rem; font-weight: 600;
+  color: var(--off-white, #dce8f5); text-decoration: none;
+  white-space: nowrap; flex-shrink: 0;
+  transition: color 0.15s;
+}
+.nav-phone:hover { color: var(--orange, #D97706); }
+
+/* ── HAMBURGER ───────────────────────────────── */
+.nav-ham {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; background: none; border: none;
+  padding: 6px; flex-shrink: 0;
+}
+.nav-ham span {
+  display: block; width: 22px; height: 2px;
+  background: var(--off-white, #dce8f5); border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.nav-ham.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-ham.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-ham.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── MOBILE DRAWER ───────────────────────────── */
+.mob-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
+  z-index: 998; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.mob-overlay.open { opacity: 1; pointer-events: auto; }
+.mob-drawer {
+  position: fixed; top: 0; right: 0; bottom: 0;
+  width: min(340px, 90vw);
+  background: #0E1829;
+  border-left: 1px solid rgba(255,255,255,0.07);
+  z-index: 999; display: flex; flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  overflow-y: auto;
+}
+.mob-drawer.open { transform: translateX(0); }
+.mob-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.06); flex-shrink: 0;
+}
+.mob-close {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,0.06); border: none;
+  color: var(--off-white, #dce8f5); font-size: 1.1rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+.mob-close:hover { background: rgba(255,255,255,0.1); }
+.mob-nav { flex: 1; padding: 16px 0; overflow-y: auto; }
 .mob-section-label {
   font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em;
   text-transform: uppercase; color: rgba(255,255,255,0.25);
@@ -1256,83 +1413,7 @@ revEls.forEach(el => obs.observe(el));
   }, { passive: true });
 })();
 </script>
-<script>
-/* ── SERVICE QUALIFIER QUIZ ── */
-(function() {
-  var overlay = document.querySelector('.sqo');
-  var btnOpen = document.querySelector('.svc-quiz-btn');
-  if (!overlay || !btnOpen) return;
-  var questions = overlay.querySelectorAll('.sqo-q');
-  var current = 0;
-  var results = {};
 
-  function show(idx) {
-    questions.forEach(function(q, i) { q.style.display = i === idx ? 'block' : 'none'; });
-  }
-
-  function openQuiz() {
-    overlay.style.opacity = '1';
-    overlay.style.pointerEvents = 'auto';
-    document.body.style.overflow = 'hidden';
-    current = 0;
-    results = {};
-    show(0);
-  }
-
-  function closeQuiz() {
-    overlay.style.opacity = '0';
-    overlay.style.pointerEvents = 'none';
-    document.body.style.overflow = '';
-  }
-
-  // Expose globally so onclick can reach it
-  var pageName = document.querySelector('meta[name="page-id"]');
-  var key = pageName ? 'openSvcQuiz_' + pageName.content : 'openSvcQuiz';
-  window[key] = openQuiz;
-  // Also expose generic fallback
-  window.openSvcQuiz = openQuiz;
-
-  // Patch the button to use the generic fallback
-  if (btnOpen) btnOpen.setAttribute('onclick', 'openSvcQuiz()');
-
-  overlay.querySelectorAll('.sqo-close').forEach(function(btn) {
-    btn.addEventListener('click', closeQuiz);
-  });
-  overlay.addEventListener('click', function(e) {
-    if (e.target === overlay) closeQuiz();
-  });
-  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeQuiz(); });
-
-  overlay.querySelectorAll('.sqo-opt').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var q = btn.closest('.sqo-q');
-      var qid = q ? q.dataset.qid : current;
-      results[qid] = btn.dataset.value;
-      current++;
-      if (current < questions.length) {
-        show(current);
-      } else {
-        // Show result
-        var allQuestions = overlay.querySelector('.sqo-questions');
-        var resultDiv = overlay.querySelector('.sqo-result');
-        if (allQuestions) allQuestions.style.display = 'none';
-        if (resultDiv) {
-          resultDiv.style.display = 'block';
-          var yesCount = Object.values(results).filter(function(v) { return v === 'yes'; }).length;
-          var total = Object.keys(results).length;
-          var good = yesCount >= Math.ceil(total * 0.6);
-          var msg = resultDiv.querySelector('.sqo-msg');
-          var cta = resultDiv.querySelector('.sqo-cta');
-          if (msg) msg.textContent = good
-            ? "Great news — this service is a strong fit for your business. Book a free call and we'll build a plan around your goals."
-            : "This service might not be your highest-leverage move right now. Book a free strategy call — we'll point you toward what will actually move the needle.";
-          if (cta) cta.href = '/funnels/strategy-call/';
-        }
-      }
-    });
-  });
-})();
-</script>
 
 <!-- ── SERVICE QUALIFIER QUIZ OVERLAY ── -->
 <div class="sqo" style="position:fixed;inset:0;background:rgba(5,8,16,0.92);z-index:500;

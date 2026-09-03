@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Refer a Business -- Earn 10% | CyberMagnet Referral Program</title>
+<meta name="description" content="Know a local business that needs marketing help? Refer them to CyberMagnet and earn 10% of everything they invest -- flat project or monthly retainer. No cap.">
+<link rel="canonical" href="https://cybermagnet.net/referral/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:164px}
+body{background:#050810;color:#EEF2F7;font-family:"DM Sans",system-ui,sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+:root{--black:#050810;--deep-navy:#080e1c;--gold:#D97706;--cobalt:#2563EB;
+  --grad:linear-gradient(90deg,#D97706,#2563EB);
+  --grad-text:linear-gradient(90deg,#D97706,#3B7FF5);
+  --off-white:#EEF2F7;--gray-400:#8899aa;--gray-600:#445566;
+  --font-d:"Syne",system-ui,sans-serif;--font-b:"DM Sans",system-ui,sans-serif;
+  --urgency-h:32px;--nav-h:68px;--sp:clamp(52px,6vw,80px)}
+.urgency-bar{position:fixed;top:0;left:0;right:0;z-index:300;height:var(--urgency-h);
+  background:linear-gradient(90deg,#1a4fd8,#2563EB,#3B7FF5,#2563EB,#1a4fd8);
+  background-size:300% 100%;animation:urgency-shift 6s ease-in-out infinite;
+  font-family:var(--font-b);font-size:0.72rem;font-weight:500;color:#fff;
+  letter-spacing:0.02em;overflow:hidden;display:flex;align-items:center}
+.ub-track{display:flex;align-items:center;white-space:nowrap;animation:ub-scroll 22s linear infinite;min-width:max-content}
+.ub-inner{padding:0 2rem}
+.ub-link{color:#fff;font-weight:700;text-decoration:underline}
+@keyframes ub-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes urgency-shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+nav#main-nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;padding:0 6%;height:var(--nav-h);
+  backdrop-filter:blur(22px) saturate(1.4);background:rgba(5,8,16,0.92);
+  border-bottom:1px solid rgba(37,99,235,0.1);
+  transition:transform 0.35s cubic-bezier(0.4,0,0.2,1),opacity 0.35s}
+.header-hidden{transform:translateY(-100%);opacity:0;pointer-events:none}
+/*  NAV BASE  */
+
+.nav-links {
+  display: flex; align-items: center;
+  gap: 24px; list-style: none; margin: 0; padding: 0;
+}
+.nav-links a, .nav-links .nav-parent {
+  font-size: 0.88rem; color: rgba(255,255,255,0.85);
+  text-decoration: none; font-weight: 600;
+  cursor: pointer; background: none; border: none;
+  padding: 0; transition: color 0.15s;
+  display: flex; align-items: center; gap: 4px;
+  position: relative;
+}
+.nav-links a:hover, .nav-links .nav-parent:hover { color: #fff; }
+.nav-links a {
+  color: rgba(255,255,255,0.80);
+  text-decoration: none;
+  font-size: 0.88rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: #fff; }
+.nav-links a::after {
+  content: ''; position: absolute; left: 0; bottom: -2px;
+  width: 0; height: 1px; background: var(--orange, #D97706);
+  transition: width 0.25s ease;
+}
+.nav-links a:hover::after { width: 100%; }
+.nav-arrow { font-size: 0.6rem; opacity: 0.6; margin-left: 2px; }
+
+/*  DROPDOWN  */
+.nav-item { position: relative; }
+.nav-drop {
+  position: absolute; top: calc(100% + 12px); left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  background: #0a1222; border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 14px; z-index: 500; min-width: 280px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(37,99,235,0.06);
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+.nav-drop-wide { min-width: 520px; }
+.drop-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; padding: 10px 10px 6px; }
+.drop-section { padding: 0 6px; }
+.drop-label {
+  font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(255,255,255,0.3);
+  padding: 0 6px 6px; margin-bottom: 2px;
+}
+.drop-link {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 10px; border-radius: 8px; text-decoration: none;
+  transition: background 0.15s; color: var(--off-white, #dce8f5);
+}
+.drop-link:hover { background: rgba(255,255,255,0.05); }
+.di {
+  width: 30px; height: 30px; border-radius: 7px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem; flex-shrink: 0;
+}
+.dt { display: flex; flex-direction: column; }
+.dt { font-size: 0.82rem; font-weight: 600; color: var(--off-white, #dce8f5); line-height: 1.2; }
+.dt span { font-size: 0.72rem; color: var(--gray-600, #445566); font-weight: 400; margin-top: 1px; }
+
+/*  NAV CTA + PHONE  */
+.nav-cta {
+  padding: 9px 20px; border-radius: 7px;
+  font-size: 0.84rem; font-weight: 700;
+  background: linear-gradient(90deg, #D97706, #2563EB);
+  color: #fff; text-decoration: none;
+  white-space: nowrap; flex-shrink: 0;
+  transition: opacity 0.15s;
+}
+.nav-cta:hover { opacity: 0.88; }
+.nav-phone {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 0.82rem; font-weight: 600;
+  color: var(--off-white, #dce8f5); text-decoration: none;
+  white-space: nowrap; flex-shrink: 0;
+  transition: color 0.15s;
+}
+.nav-phone:hover { color: var(--orange, #D97706); }
+
+/*  HAMBURGER  */
+.nav-ham {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; background: none; border: none;
+  padding: 6px; flex-shrink: 0;
+}
+.nav-ham span {
+  display: block; width: 22px; height: 2px;
+  background: var(--off-white, #dce8f5); border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.nav-ham.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-ham.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.nav-ham.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/*  MOBILE DRAWER  */
+.mob-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
+  z-index: 998; opacity: 0; pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.mob-overlay.open { opacity: 1; pointer-events: auto; }
+.mob-drawer {
+  position: fixed; top: 0; right: 0; bottom: 0;
+  width: min(340px, 90vw);
+  background: #0E1829;
+  border-left: 1px solid rgba(255,255,255,0.07);
+  z-index: 999; display: flex; flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  overflow-y: auto;
+}
+.mob-drawer.open { transform: translateX(0); }
+.mob-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.06); flex-shrink: 0;
+}
+.mob-close {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(255,255,255,0.06); border: none;
+  color: var(--off-white, #dce8f5); font-size: 1.1rem;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+.mob-close:hover { background: rgba(255,255,255,0.1); }
+.mob-nav { flex: 1; padding: 16px 0; overflow-y: auto; }
+.mob-section-label {
+  font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(255,255,255,0.25);
+  padding: 14px 20px 6px; margin-top: 4px;
+}
+.mob-link {
+  display: flex; align-items: center; gap: 10px;
+  padding: 11px 20px; font-size: 0.93rem;
+  color: var(--muted, #7A90AA); text-decoration: none;
+  transition: all 0.15s;
+}
+.mob-link:hover, .mob-link:active {
+  color: var(--off-white, #dce8f5);
+  background: rgba(255,255,255,0.04);
+  padding-left: 26px;
+}
+.mob-divider {
+  height: 1px; background: rgba(255,255,255,0.06); margin: 12px 20px;
+}
+.mob-footer {
+  padding: 16px 20px 28px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex; flex-direction: column; gap: 10px; flex-shrink: 0;
+}
+.mob-cta {
+  display: block; text-align: center; padding: 13px;
+  background: var(--electric, #2563EB); color: #fff;
+  border-radius: 8px; font-weight: 700; font-size: 0.9rem;
+  text-decoration: none; transition: opacity 0.2s;
+}
+.mob-cta:hover { opacity: 0.88; }
+.mob-cta-sec {
+  display: block; text-align: center; padding: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--muted, #7A90AA); border-radius: 8px;
+  font-size: 0.86rem; text-decoration: none; transition: all 0.2s;
+}
+.mob-cta-sec:hover { border-color: var(--orange, #D97706); color: var(--orange, #D97706); }
+
+/*  RESPONSIVE BREAKPOINTS  */
+@media (max-width: 860px) {
+  .nav-phone { display: none !important; }
+}
+@media (max-width: 720px) {
+  .nav-links { display: none !important; }
+  .nav-cta   { display: none !important; }
+  .nav-ham   { display: flex !important; }
+}
+
+
+/* HERO */
+.ref-hero{
+  padding:calc(100px + 64px) 6% 64px;
+  padding-top:calc(var(--urgency-h) + var(--nav-h) + 64px);
+  background:#080e1c;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.ref-hero::before{
+  content:"";
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(217,119,6,0.08),transparent 70%);
+  pointer-events:none;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(217,119,6,0.12);border:1px solid rgba(217,119,6,0.3);border-radius:20px;
+  padding:6px 18px;font-size:0.78rem;font-weight:600;color:#D97706;
+  margin-bottom:20px;letter-spacing:0.04em;position:relative;z-index:1;
+}
+.ref-hero h1{
+  font-family:"Syne",system-ui,sans-serif;
+  font-size:clamp(2.4rem,5.5vw,4.2rem);
+  font-weight:800;letter-spacing:-0.03em;line-height:1.05;color:#fff;
+  margin-bottom:18px;position:relative;z-index:1;
+}
+.grad-text{
+  background:linear-gradient(90deg,#D97706,#3B7FF5);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.ref-hero-desc{
+  font-size:1.05rem;color:#8899aa;max-width:580px;
+  margin:0 auto 48px;line-height:1.7;position:relative;z-index:1;
+}
+/* HOW-IT-WORKS STRIP */
+.how-strip{
+  display:flex;flex-direction:row;gap:0;
+  justify-content:center;max-width:800px;margin:0 auto 44px;
+  background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);
+  border-radius:12px;overflow:hidden;position:relative;z-index:1;
+}
+.how-step{
+  flex:1;padding:20px 16px;text-align:center;
+  border-right:1px solid rgba(255,255,255,0.07);
+}
+.how-step:last-child{border-right:none}
+.how-num{
+  font-family:"Syne",system-ui,sans-serif;
+  font-size:1.6rem;font-weight:800;line-height:1;margin-bottom:6px;
+  background:linear-gradient(90deg,#D97706,#3B7FF5);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.how-label{font-size:0.78rem;color:#8899aa;line-height:1.4}
+/* EARNINGS CARDS */
+.earn-strip{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:16px;max-width:760px;margin:0 auto;
+  position:relative;z-index:1;
+}
+.earn-card{
+  background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);
+  border-radius:12px;padding:20px 16px;text-align:center;
+}
+.earn-scenario{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:#445566;margin-bottom:8px}
+.earn-amount{
+  font-family:"Syne",system-ui,sans-serif;
+  font-size:1.5rem;font-weight:800;line-height:1;margin-bottom:6px;
+  background:linear-gradient(90deg,#D97706,#3B7FF5);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.earn-detail{font-size:0.75rem;color:#445566}
+.deadline{
+  display:inline-flex;align-items:center;gap:8px;margin-top:28px;
+  background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);
+  border-radius:8px;padding:9px 18px;font-size:0.8rem;color:#f87171;
+  font-weight:500;position:relative;z-index:1;
+}
+/* FORM SECTION */
+.ref-section{padding:var(--sp) 6%;background:#050810}
+.ref-wrap{max-width:900px;margin:0 auto}
+.form-header{text-align:center;margin-bottom:44px}
+.form-header h2{font-family:"Syne",system-ui,sans-serif;font-size:clamp(1.8rem,3.5vw,2.6rem);
+  font-weight:800;letter-spacing:-0.03em;color:#fff;margin-bottom:10px}
+.form-header p{font-size:0.92rem;color:#8899aa;max-width:480px;margin:0 auto}
+.form-panel{
+  background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);
+  border-radius:14px;padding:28px;margin-bottom:16px;
+}
+.panel-label{display:flex;align-items:center;gap:10px;margin-bottom:22px}
+.panel-icon{
+  width:32px;height:32px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;flex-shrink:0;
+}
+.panel-icon.gold{background:rgba(217,119,6,0.15);border:1px solid rgba(217,119,6,0.25)}
+.panel-icon.blue{background:rgba(37,99,235,0.15);border:1px solid rgba(37,99,235,0.25)}
+.panel-title{font-family:"Syne",system-ui,sans-serif;font-size:1rem;font-weight:700;color:#fff}
+.panel-sub{font-size:0.78rem;color:#445566;margin-top:2px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.frow.full{grid-template-columns:1fr}
+.fg{display:flex;flex-direction:column;gap:5px}
+.fg label{font-size:0.73rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#8899aa}
+.fg label .req{color:#D97706}
+.fg input,.fg select,.fg textarea{
+  background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);
+  border-radius:8px;padding:11px 14px;font-size:0.9rem;color:#EEF2F7;
+  font-family:"DM Sans",system-ui,sans-serif;font-weight:300;
+  outline:none;transition:border-color 0.2s,background 0.2s;width:100%;
+}
+.fg input:focus,.fg select:focus,.fg textarea:focus{
+  border-color:rgba(37,99,235,0.5);background:rgba(37,99,235,0.05);
+}
+.fg input.err,.fg select.err,.fg textarea.err{border-color:rgba(239,68,68,0.5)}
+.fg select{-webkit-appearance:none;appearance:none;cursor:pointer}
+.fg select option{background:#0a0f1e;color:#EEF2F7}
+.fg textarea{resize:vertical;min-height:90px}
+.field-hint{font-size:0.72rem;color:#445566;margin-top:2px}
+/* CHECKBOXES */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.src-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.chk,.rdo{position:relative}
+.chk input[type=checkbox],.rdo input[type=radio]{position:absolute;opacity:0;width:0;height:0}
+.chk label{
+  display:flex;align-items:center;gap:8px;padding:9px 12px;
+  background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);
+  border-radius:8px;font-size:0.8rem;color:#8899aa;
+  cursor:pointer;transition:all 0.15s;user-select:none;
+}
+.rdo label{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:4px;padding:10px 8px;text-align:center;
+  background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);
+  border-radius:8px;font-size:0.75rem;color:#8899aa;
+  cursor:pointer;transition:all 0.15s;user-select:none;
+}
+.rdo label .src-icon{font-size:1.2rem}
+.chk input:checked+label{background:rgba(37,99,235,0.1);border-color:rgba(37,99,235,0.35);color:#EEF2F7}
+.rdo input:checked+label{background:rgba(217,119,6,0.1);border-color:rgba(217,119,6,0.35);color:#EEF2F7}
+.chk label::before{
+  content:"";width:14px;height:14px;border-radius:4px;
+  border:1.5px solid rgba(255,255,255,0.2);flex-shrink:0;transition:all 0.15s;
+}
+.chk input:checked+label::before{
+  background:#2563EB;border-color:#2563EB;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 12 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 5l3 3 7-7' stroke='white' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:center;background-size:10px;
+}
+/* SUBMIT */
+.submit-area{margin-top:24px;text-align:center}
+.btn-submit{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 36px;border-radius:12px;
+  background:linear-gradient(90deg,#D97706,#2563EB);
+  color:#fff;font-size:1rem;font-weight:700;
+  border:none;cursor:pointer;
+  font-family:"DM Sans",system-ui,sans-serif;
+  transition:opacity 0.2s;
+  box-shadow:0 8px 24px rgba(37,99,235,0.25);
+}
+.btn-submit:hover{opacity:0.88}
+.btn-submit.loading{opacity:0.6;pointer-events:none}
+.spinner{
+  width:18px;height:18px;
+  border:2px solid rgba(255,255,255,0.3);
+  border-top-color:#fff;border-radius:50%;
+  animation:spin 0.8s linear infinite;display:none;
+}
+.btn-submit.loading .spinner{display:block}
+.btn-submit.loading .btn-label{display:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+.submit-note{font-size:0.75rem;color:#445566;margin-top:12px}
+/* SUCCESS */
+.success-state{display:none;text-align:center;padding:60px 20px}
+.success-icon{font-size:3.5rem;margin-bottom:16px}
+.success-state h3{font-family:"Syne",system-ui,sans-serif;font-size:1.8rem;font-weight:800;color:#fff;margin-bottom:12px}
+.success-state .success-desc{font-size:0.95rem;color:#8899aa;max-width:440px;margin:0 auto 28px;line-height:1.7}
+.success-details{
+  background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);
+  border-radius:10px;padding:16px 20px;max-width:380px;margin:0 auto 24px;text-align:left;
+}
+.sdr{display:flex;justify-content:space-between;font-size:0.82rem;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.sdr:last-child{border-bottom:none}
+.sdr-l{color:#445566}.sdr-v{color:#EEF2F7;font-weight:500}
+/* FAQ */
+.faq-section{padding:var(--sp) 6% calc(var(--sp)*0.6);background:#080e1c}
+.faq-inner{max-width:720px;margin:0 auto}
+.faq-title{font-family:"Syne",system-ui,sans-serif;font-size:1.5rem;font-weight:800;color:#fff;text-align:center;margin-bottom:32px}
+.faq-item{border-bottom:1px solid rgba(255,255,255,0.06)}
+.faq-q{
+  width:100%;background:none;border:none;color:#EEF2F7;
+  font-size:0.92rem;font-weight:600;
+  font-family:"DM Sans",system-ui,sans-serif;
+  text-align:left;padding:16px 0;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.faq-chevron{font-size:0.8rem;color:#445566;transition:transform 0.25s;flex-shrink:0}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.3s ease}
+.faq-a p{font-size:0.85rem;color:#8899aa;line-height:1.7;padding-bottom:14px}
+.faq-item.open .faq-chevron{transform:rotate(180deg)}
+@media(max-width:720px){
+  .how-strip{flex-direction:column}
+  .how-step{border-right:none;border-bottom:1px solid rgba(255,255,255,0.07)}
+  .how-step:last-child{border-bottom:none}
+  .earn-strip,.frow,.svc-grid{grid-template-columns:1fr}
+  .src-grid{grid-template-columns:1fr 1fr}
+  .form-panel{padding:18px 14px}
+}
+</style>
+</head>
+<body>
+<div class="urgency-bar" role="banner" aria-label="Limited availability notice">
+  <div class="ub-track">
+    <span class="ub-inner">🟠 &nbsp;Only <strong>3 client spots</strong> available this month &nbsp;·&nbsp; 50+ brands scaled &nbsp;·&nbsp; Avg. 3.8× ROI &nbsp;·&nbsp; <a class="ub-link" href="/funnels/strategy-call/" style="color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:2px">Claim your spot →</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="ub-inner">🟠 &nbsp;Only <strong>3 client spots</strong> available this month &nbsp;·&nbsp; 50+ brands scaled &nbsp;·&nbsp; Avg. 3.8× ROI &nbsp;·&nbsp; <a class="ub-link" href="/funnels/strategy-call/" style="color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:2px">Claim your spot →</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+  </div>
+</div>
+
+<!-- ── NAV ── -->
+<nav id="main-nav">
+  <a href="/" class="logo" aria-label="CyberMagnet — Home" style="display:inline-flex;align-items:center;text-decoration:none;line-height:1;flex-shrink:0">
+    <svg width="200" height="42" viewBox="0 0 220 46" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <text x="110" y="17" font-family="'Montserrat','Syne',sans-serif" font-size="22" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="7">CYBER</text>
+      <circle cx="6" cy="23" r="3" fill="#D97706"/>
+      <line x1="10" y1="23" x2="210" y2="23" stroke="#D97706" stroke-width="2"/>
+      <circle cx="214" cy="23" r="3" fill="#D97706"/>
+      <text x="110" y="42" font-family="'Montserrat','Syne',sans-serif" font-size="22" font-weight="900" fill="#D97706" text-anchor="middle" letter-spacing="7">MAGNET</text>
+    </svg>
+  </a>
+  <ul class="nav-links" id="nav-links">
+    <li class="nav-item">
+      <a href="/solutions/" class="nav-parent">Solutions <span class="nav-arrow">&#9660;</span></a>
+      <div class="nav-drop nav-drop-wide" id="solutions-drop">
+        <div class="drop-cols">
+          <div class="drop-section">
+            <div class="drop-label">AI &amp; Automation</div>
+            <a class="drop-link" href="/solutions/ai-phone-receptionist/"><div class="di" style="background:rgba(37,99,235,0.1)">&#129302;</div><div class="dt">AI Phone Receptionist<span>24/7 lead capture</span></div></a>
+            <a class="drop-link" href="/systems/ai-automation/"><div class="di" style="background:rgba(37,99,235,0.1)">&#9889;</div><div class="dt">AI Automation System<span>Eliminate manual tasks</span></div></a>
+            <a class="drop-link" href="/systems/appointment/"><div class="di" style="background:rgba(37,99,235,0.1)">&#128197;</div><div class="dt">Appointment System<span>Fill your calendar</span></div></a>
+          </div>
+          <div class="drop-section">
+            <div class="drop-label">Marketing &amp; Growth</div>
+            <a class="drop-link" href="/solutions/seo/"><div class="di" style="background:rgba(217,119,6,0.1)">&#128269;</div><div class="dt">SEO &amp; Local Dominance<span>Own your city on Google</span></div></a>
+            <a class="drop-link" href="/solutions/website-design/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127758;</div><div class="dt">Website Design<span>Built to convert</span></div></a>
+            <a class="drop-link" href="/solutions/funnel-building/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127919;</div><div class="dt">Funnel Building<span>Turn traffic into revenue</span></div></a>
+            <a class="drop-link" href="/solutions/social-media-advertising/"><div class="di" style="background:rgba(217,119,6,0.1)">&#128202;</div><div class="dt">Paid Advertising<span>Meta &amp; Google Ads</span></div></a>
+            <a class="drop-link" href="/solutions/branding-packages/"><div class="di" style="background:rgba(217,119,6,0.1)">&#127775;</div><div class="dt">Brand Identity<span>Command premium pricing</span></div></a>
+          </div>
+        </div>
+        <div style="padding:10px 16px 12px;border-top:1px solid rgba(255,255,255,0.05);display:flex;gap:16px;flex-wrap:wrap">
+          <a href="/solutions/" style="font-size:0.78rem;color:#2563EB;font-weight:600;text-decoration:none">View all solutions →</a>
+          <a href="/ai-systems/" style="font-size:0.78rem;color:#D97706;font-weight:600;text-decoration:none">🤖 AI Systems →</a>
+          <a href="/how-we-work/" style="font-size:0.78rem;color:#7A90AA;font-weight:600;text-decoration:none">How we work →</a>
+        </div>
+      </div>
+    </li>
+    <li><a href="/results/">Results</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/products/">Products</a></li>
+    <li><a href="/blog/">Blog</a></li>
+    <li><a href="/roi-calculator/">ROI Calc</a></li>
+  </ul>
+  <a href="tel:+19723385778" class="nav-phone">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8.1 9.7a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg>
+    (972) 338-5778
+  </a>
+  <a href="/funnels/strategy-call/" class="nav-cta">Book a Call ↗</a>
+  <button class="nav-ham" id="nav-ham" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mob-overlay" id="mob-overlay"></div>
+<div class="mob-drawer" id="mob-drawer" aria-hidden="true">
+  <div class="mob-head">
+    <svg width="160" height="34" viewBox="0 0 220 46" xmlns="http://www.w3.org/2000/svg">
+      <text x="110" y="17" font-family="'Montserrat','Syne',sans-serif" font-size="22" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="7">CYBER</text>
+      <circle cx="6" cy="23" r="3" fill="#D97706"/><line x1="10" y1="23" x2="210" y2="23" stroke="#D97706" stroke-width="2"/><circle cx="214" cy="23" r="3" fill="#D97706"/>
+      <text x="110" y="42" font-family="'Montserrat','Syne',sans-serif" font-size="22" font-weight="900" fill="#D97706" text-anchor="middle" letter-spacing="7">MAGNET</text>
+    </svg>
+    <button class="mob-close" id="mob-close" aria-label="Close menu">&#x2715;</button>
+  </div>
+  <nav class="mob-nav">
+    <a href="tel:+19723385778" class="mob-link" style="color:var(--off-white,#dce8f5);font-weight:600;border-bottom:1px solid rgba(255,255,255,0.05);margin-bottom:6px;padding-bottom:14px">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8.1 9.7a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.7 2z"/></svg>
+      (972) 338-5778
+    </a>
+    <div class="mob-section-label">AI &amp; Automation</div>
+    <a href="/solutions/ai-phone-receptionist/" class="mob-link">&#129302; AI Phone Receptionist</a>
+    <a href="/systems/ai-automation/" class="mob-link">&#9889; AI Automation System</a>
+    <a href="/systems/appointment/" class="mob-link">&#128197; Appointment System</a>
+    <a href="/ai-systems/" class="mob-link" style="color:#D97706">&#128161; AI Systems Overview</a>
+    <div class="mob-section-label">Marketing &amp; Growth</div>
+    <a href="/solutions/seo/" class="mob-link">&#128269; SEO &amp; Local Dominance</a>
+    <a href="/solutions/website-design/" class="mob-link">&#127758; Website Design</a>
+    <a href="/solutions/funnel-building/" class="mob-link">&#127919; Funnel Building</a>
+    <a href="/solutions/social-media-advertising/" class="mob-link">&#128202; Paid Advertising</a>
+    <a href="/solutions/branding-packages/" class="mob-link">&#127775; Brand Identity</a>
+    <div class="mob-divider"></div>
+    <a href="/roi-calculator/" class="mob-link" style="color:#34D399">&#128176; ROI Calculator</a>
+    <a href="/how-we-work/" class="mob-link">&#128338; How We Work</a>
+    <a href="/results/" class="mob-link">&#127942; Results &amp; Portfolio</a>
+    <a href="/about/" class="mob-link">&#128100; About Ben</a>
+    <a href="/products/" class="mob-link">&#128230; Digital Products</a>
+    <a href="/blog/" class="mob-link">&#128221; Blog</a>
+    <a href="/solutions/" class="mob-link" style="color:#2563EB">&#9729; View All Solutions</a>
+  </nav>
+  <div class="mob-footer">
+    <a href="/funnels/strategy-call/" class="mob-cta">Book a Free Strategy Call ↗</a>
+    <a href="/funnels/free-seo-audit/" class="mob-cta-sec">Get a Free SEO Audit</a>
+  </div>
+</div>
+<section class="ref-hero">
+  <div class="hero-badge">&#127873; Referral Program &nbsp;&middot;&nbsp; Active through Dec 31, 2025</div>
+  <h1>Know Someone Who<br><span class="grad-text">Needs to Grow?</span></h1>
+  <p class="ref-hero-desc">Refer any local business to CyberMagnet and earn <strong style="color:#fff">10% of everything they invest</strong> &mdash; flat project or monthly retainer. No cap. No fine print.</p>
+  <div class="how-strip">
+    <div class="how-step"><div class="how-num">01</div><div class="how-label">Fill out the form below with their info &amp; yours</div></div>
+    <div class="how-step"><div class="how-num">02</div><div class="how-label">We reach out &amp; run a free strategy call</div></div>
+    <div class="how-step"><div class="how-num">03</div><div class="how-label">They sign &mdash; we pay you 10%, fast</div></div>
+  </div>
+  <div class="earn-strip">
+    <div class="earn-card"><div class="earn-scenario">Website Project</div><div class="earn-amount">$250</div><div class="earn-detail">10% of a $2,500 build</div></div>
+    <div class="earn-card"><div class="earn-scenario">Monthly SEO Retainer</div><div class="earn-amount">$50/mo</div><div class="earn-detail">10% of $500/mo every month active</div></div>
+    <div class="earn-card"><div class="earn-scenario">AI Automation System</div><div class="earn-amount">$75 + $30/mo</div><div class="earn-detail">10% of $750 setup + $300/mo retainer</div></div>
+  </div>
+  <div class="deadline">&#9888;&nbsp; <strong>Offer ends December 31, 2025</strong> &mdash; Submit your referral before then to lock in your payout</div>
+</section>
+
+<section class="ref-section">
+  <div class="ref-wrap">
+    <div class="form-header">
+      <h2>Submit a Referral</h2>
+      <p>Takes less than 2 minutes. We handle everything from here.</p>
+    </div>
+
+    <div class="success-state" id="success-state">
+      <div class="success-icon">&#127873;</div>
+      <h3>Referral Received!</h3>
+      <p class="success-desc">We'll reach out to <strong id="s-biz" style="color:#fff"></strong> within 24 hours and keep you updated every step of the way.</p>
+      <div class="success-details">
+        <div class="sdr"><span class="sdr-l">Referred by</span><span class="sdr-v" id="s-ref"></span></div>
+        <div class="sdr"><span class="sdr-l">Business referred</span><span class="sdr-v" id="s-biz2"></span></div>
+        <div class="sdr"><span class="sdr-l">Your payout (if signed)</span><span class="sdr-v" style="color:#D97706">10% of contract value</span></div>
+        <div class="sdr"><span class="sdr-l">Offer valid through</span><span class="sdr-v">Dec 31, 2025</span></div>
+      </div>
+      <p style="font-size:0.8rem;color:#445566">Questions? Call <a href="tel:+19723385778" style="color:#2563EB">(972) 338-5778</a></p>
+    </div>
+
+    <form id="ref-form" novalidate>
+      <div class="form-panel">
+        <div class="panel-label">
+          <div class="panel-icon gold">&#127968;</div>
+          <div><div class="panel-title">Business You're Referring</div><div class="panel-sub">Tell us about the business that needs help</div></div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label>Business Name <span class="req">*</span></label><input type="text" name="biz_name" placeholder="e.g. Dallas HVAC Pros" required></div>
+          <div class="fg"><label>Owner / Decision Maker <span class="req">*</span></label><input type="text" name="biz_owner" placeholder="e.g. Marcus Johnson" required></div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label>Business Phone <span class="req">*</span></label><input type="tel" name="biz_phone" placeholder="(214) 555-0100" required></div>
+          <div class="fg"><label>Business Email</label><input type="email" name="biz_email" placeholder="owner@business.com"><span class="field-hint">Optional but helps us reach them faster</span></div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label>Industry / Type <span class="req">*</span></label>
+            <select name="biz_type" required>
+              <option value="" disabled selected>Select&hellip;</option>
+              <option>HVAC</option><option>Plumbing</option><option>Electrical</option>
+              <option>Roofing / Contracting</option><option>Cleaning Services</option>
+              <option>Landscaping</option><option>Beauty / Salon / Spa</option>
+              <option>Med Spa / Aesthetics</option><option>Dental / Healthcare</option>
+              <option>Real Estate</option><option>Restaurant / Food Service</option>
+              <option>Fitness / Gym</option><option>Auto / Transportation</option>
+              <option>Retail / E-commerce</option><option>Professional Services</option>
+              <option>Nonprofit</option><option>Other</option>
+            </select>
+          </div>
+          <div class="fg"><label>City / Location</label><input type="text" name="biz_location" placeholder="e.g. Arlington, TX"></div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label>Website (if any)</label><input type="url" name="biz_website" placeholder="https://"></div>
+          <div class="fg"><label>Est. Monthly Revenue</label>
+            <select name="biz_revenue">
+              <option value="" disabled selected>Select range&hellip;</option>
+              <option>Under $5K/mo</option><option>$5K-$15K/mo</option>
+              <option>$15K-$50K/mo</option><option>$50K-$100K/mo</option>
+              <option>$100K+/mo</option><option>Not sure</option>
+            </select>
+            <span class="field-hint">Helps us tailor the right package</span>
+          </div>
+        </div>
+        <div class="fg" style="margin-bottom:0">
+          <label style="margin-bottom:10px">What might they need? <span style="color:#445566;font-weight:400;text-transform:none;letter-spacing:0">(check all that apply)</span></label>
+          <div class="svc-grid">
+            <div class="chk"><input type="checkbox" id="s1" name="needs" value="Website Design"><label for="s1">&#127760; Website Design</label></div>
+            <div class="chk"><input type="checkbox" id="s2" name="needs" value="Local SEO"><label for="s2">&#128269; Local SEO</label></div>
+            <div class="chk"><input type="checkbox" id="s3" name="needs" value="AI Receptionist"><label for="s3">&#129302; AI Receptionist</label></div>
+            <div class="chk"><input type="checkbox" id="s4" name="needs" value="Social Media"><label for="s4">&#128247; Social Media</label></div>
+            <div class="chk"><input type="checkbox" id="s5" name="needs" value="Funnel Building"><label for="s5">&#127919; Funnel Building</label></div>
+            <div class="chk"><input type="checkbox" id="s6" name="needs" value="Brand Identity"><label for="s6">&#11088; Brand Identity</label></div>
+            <div class="chk"><input type="checkbox" id="s7" name="needs" value="AI Automation"><label for="s7">&#9889; AI Automation</label></div>
+            <div class="chk"><input type="checkbox" id="s8" name="needs" value="Paid Advertising"><label for="s8">&#128176; Paid Ads</label></div>
+            <div class="chk"><input type="checkbox" id="s9" name="needs" value="Not Sure"><label for="s9">&#129300; Not Sure</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-panel">
+        <div class="panel-label">
+          <div class="panel-icon blue">&#128172;</div>
+          <div><div class="panel-title">Context &amp; Pain Points</div><div class="panel-sub">The more we know, the better our first conversation goes</div></div>
+        </div>
+        <div class="frow full">
+          <div class="fg"><label>What problems are they dealing with?</label>
+            <textarea name="biz_pain" placeholder="e.g. No website, losing calls to competitors, not showing up on Google, wasting money on ads with no ROI..."></textarea>
+          </div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label>Your Relationship to Them</label>
+            <select name="relationship">
+              <option value="" disabled selected>Select&hellip;</option>
+              <option>Friend / Family</option><option>My current client</option>
+              <option>Former colleague</option><option>Neighbor / Community member</option>
+              <option>Met through networking</option>
+              <option>I am a CyberMagnet client referring another business</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="fg"><label>How ready are they?</label>
+            <select name="readiness">
+              <option value="" disabled selected>Select&hellip;</option>
+              <option>Very ready -- actively looking for help</option>
+              <option>Open -- would listen to the right pitch</option>
+              <option>Needs convincing</option>
+              <option>Not sure -- just thought of them</option>
+            </select>
+          </div>
+        </div>
+        <div class="frow full">
+          <div class="fg"><label>Best way / time to reach them</label>
+            <input type="text" name="best_time" placeholder="e.g. Call after 5pm, text first, mention my name, email preferred...">
+          </div>
+        </div>
+      </div>
+
+      <div class="form-panel">
+        <div class="panel-label">
+          <div class="panel-icon gold">&#128176;</div>
+          <div><div class="panel-title">Your Information -- So We Can Pay You</div><div class="panel-sub">How we track your referral and send your 10%</div></div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label>Your First Name <span class="req">*</span></label><input type="text" name="ref_fname" placeholder="Alex" required autocomplete="given-name"></div>
+          <div class="fg"><label>Your Last Name <span class="req">*</span></label><input type="text" name="ref_lname" placeholder="Rivera" required autocomplete="family-name"></div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label>Your Phone <span class="req">*</span></label><input type="tel" name="ref_phone" placeholder="(972) 555-0100" required autocomplete="tel"></div>
+          <div class="fg"><label>Your Email <span class="req">*</span></label><input type="email" name="ref_email" placeholder="you@email.com" required autocomplete="email"></div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label>Preferred Payout Method</label>
+            <select name="ref_pay">
+              <option value="" disabled selected>Select&hellip;</option>
+              <option>Zelle</option><option>Venmo</option><option>Cash App</option>
+              <option>PayPal</option><option>Check</option><option>Other / TBD</option>
+            </select>
+          </div>
+          <div class="fg"><label>Payout Handle / Details</label>
+            <input type="text" name="ref_pay_handle" placeholder="e.g. @yourhandle or phone for Zelle">
+            <span class="field-hint">Can add later -- helps us move fast when they sign</span>
+          </div>
+        </div>
+        <div class="fg" style="margin-top:6px">
+          <label style="margin-bottom:10px">How did you hear about this referral program?</label>
+          <div class="src-grid">
+            <div class="rdo"><input type="radio" id="src1" name="ref_source" value="I'm a CyberMagnet client"><label for="src1"><span class="src-icon">&#129302;</span>I'm a client</label></div>
+            <div class="rdo"><input type="radio" id="src2" name="ref_source" value="Word of mouth"><label for="src2"><span class="src-icon">&#128483;</span>Word of mouth</label></div>
+            <div class="rdo"><input type="radio" id="src3" name="ref_source" value="Social media"><label for="src3"><span class="src-icon">&#128247;</span>Social media</label></div>
+            <div class="rdo"><input type="radio" id="src4" name="ref_source" value="Other"><label for="src4"><span class="src-icon">&#127775;</span>Other</label></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="submit-area">
+        <button type="submit" class="btn-submit" id="ref-submit">
+          <span class="btn-label">&#127873; Submit My Referral</span>
+          <div class="spinner"></div>
+        </button>
+        <p class="submit-note">By submitting you confirm a genuine relationship with this business. Your info is never sold or shared.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="faq-title">Frequently Asked Questions</div>
+    <div class="faq-item"><button class="faq-q">When do I get paid? <span class="faq-chevron">&#9660;</span></button><div class="faq-a"><p>Within 7 business days of receiving the client's first payment. For monthly retainers, you receive your 10% every month they remain active for the duration of the referral program.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Is there a limit to how many I can refer? <span class="faq-chevron">&#9660;</span></button><div class="faq-a"><p>No limit. Refer as many businesses as you want before December 31, 2025. Each referral is tracked independently and pays out separately.</p></div></div>
+    <div class="faq-item"><button class="faq-q">What if they don't sign right away? <span class="faq-chevron">&#9660;</span></button><div class="faq-a"><p>If you submit before December 31 and they later sign -- even in early 2026 -- you still earn the payout. The referral submission date is what counts, not the signing date.</p></div></div>
+    <div class="faq-item"><button class="faq-q">What services qualify? <span class="faq-chevron">&#9660;</span></button><div class="faq-a"><p>All CyberMagnet service engagements qualify: website design, SEO, AI receptionist, social media, funnel building, branding, and AI automation. Digital product purchases do not qualify.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Does the business know I referred them? <span class="faq-chevron">&#9660;</span></button><div class="faq-a"><p>Yes -- we mention your name when we reach out, which often makes the conversation warmer. If you'd prefer anonymity, note that in the context field and we'll respect it.</p></div></div>
+    <div class="faq-item"><button class="faq-q">Do I need to be a CyberMagnet client to refer? <span class="faq-chevron">&#9660;</span></button><div class="faq-a"><p>No. Anyone who genuinely knows a business that could benefit is eligible to refer and earn.</p></div></div>
+  </div>
+</section>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <svg width="160" height="34" viewBox="0 0 220 46" xmlns="http://www.w3.org/2000/svg"><text x="110" y="17" font-family="'Montserrat','Syne',sans-serif" font-size="22" font-weight="900" fill="#F5F3EF" text-anchor="middle" letter-spacing="7">CYBER</text><circle cx="6" cy="23" r="3" fill="#D97706"/><line x1="10" y1="23" x2="210" y2="23" stroke="#D97706" stroke-width="2"/><circle cx="214" cy="23" r="3" fill="#D97706"/><text x="110" y="42" font-family="'Montserrat','Syne',sans-serif" font-size="22" font-weight="900" fill="#D97706" text-anchor="middle" letter-spacing="7">MAGNET</text></svg>
+      <p>AI-powered marketing and automation for DFW service businesses. More leads, more time, better results.</p>
+    </div>
+    <div class="footer-col"><h4>Solutions</h4><a href="/solutions/seo/">Local SEO</a><a href="/solutions/ai-phone-receptionist/">AI Receptionist</a><a href="/solutions/website-design/">Website Design</a><a href="/solutions/funnel-building/">Funnel Building</a><a href="/solutions/branding-packages/">Brand Identity</a><a href="/solutions/">All Solutions</a></div>
+    <div class="footer-col"><h4>Company</h4><a href="/about/">About Ben</a><a href="/results/">Client Results</a><a href="/blog/">Blog</a><a href="/products/">Digital Products</a><a href="/how-we-work/">How We Work</a><a href="/roi-calculator/">ROI Calculator</a></div>
+    <div class="footer-col"><h4>Get Started</h4><a href="/funnels/strategy-call/">Free Strategy Call</a><a href="/funnels/free-seo-audit/">Free SEO Audit</a><a href="tel:+19723385778">(972) 338-5778</a><a href="mailto:hello@cybermagnet.net">hello@cybermagnet.net</a></div>
+  </div>
+  <div class="footer-bottom"><span>&#169; 2025 CyberMagnet Marketing Solutions LLC &#xB7; Dallas, Texas</span><span><a href="/privacy/">Privacy</a> &#xB7; <a href="/terms/">Terms</a></span></div>
+</footer>
+<script>
+(function(){
+  var ub=document.querySelector(".urgency-bar"),nav=document.getElementById("main-nav");
+  if(!nav)return;
+  var lastY=0,ticking=false,hidden=false;
+  function update(){var y=window.scrollY,d=Math.abs(y-lastY);if(d<4){ticking=false;return;}
+    if(y>lastY&&y>80&&!hidden){hidden=true;nav.classList.add("header-hidden");if(ub)ub.classList.add("header-hidden");}
+    else if(y<lastY&&hidden){hidden=false;nav.classList.remove("header-hidden");if(ub)ub.classList.remove("header-hidden");}
+    lastY=y;ticking=false;}
+  window.addEventListener("scroll",function(){if(!ticking){requestAnimationFrame(update);ticking=true;}},{passive:true});
+})();
+(function(){
+  var ham=document.getElementById("nav-ham"),drawer=document.getElementById("mob-drawer"),overlay=document.getElementById("mob-overlay"),cl=document.getElementById("mob-close");
+  if(!ham||!drawer)return;
+  function op(){drawer.classList.add("open");if(overlay)overlay.classList.add("open");ham.classList.add("open");document.body.style.overflow="hidden";}
+  function cl2(){drawer.classList.remove("open");if(overlay)overlay.classList.remove("open");ham.classList.remove("open");document.body.style.overflow="";}
+  ham.addEventListener("click",function(){drawer.classList.contains("open")?cl2():op();});
+  if(cl)cl.addEventListener("click",cl2);
+  if(overlay)overlay.addEventListener("click",cl2);
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")cl2();});
+  document.querySelectorAll(".nav-item").forEach(function(item){
+    var drop=item.querySelector(".nav-drop");if(!drop)return;var t;
+    item.addEventListener("mouseenter",function(){clearTimeout(t);drop.style.cssText="opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto";});
+    item.addEventListener("mouseleave",function(){t=setTimeout(function(){drop.style.cssText="opacity:0;visibility:hidden;transform:translateX(-50%) translateY(-8px);pointer-events:none";},120);});
+  });
+})();
+document.querySelectorAll(".faq-q").forEach(function(btn){
+  btn.addEventListener("click",function(){
+    var item=btn.closest(".faq-item"),ans=item.querySelector(".faq-a"),isOpen=item.classList.contains("open");
+    document.querySelectorAll(".faq-item.open").forEach(function(i){i.classList.remove("open");i.querySelector(".faq-a").style.maxHeight="";});
+    if(!isOpen){item.classList.add("open");ans.style.maxHeight=ans.scrollHeight+"px";}
+  });
+});
+(function(){
+  var form=document.getElementById("ref-form"),success=document.getElementById("success-state"),btn=document.getElementById("ref-submit");
+  if(!form)return;
+  form.addEventListener("submit",async function(e){
+    e.preventDefault();
+    var valid=true;
+    form.querySelectorAll("[required]").forEach(function(f){
+      f.classList.remove("err");
+      if(!f.value.trim()){f.classList.add("err");valid=false;f.addEventListener("input",function(){f.classList.remove("err");},{once:true});}
+    });
+    if(!valid){form.querySelector(".err").scrollIntoView({behavior:"smooth",block:"center"});return;}
+    btn.classList.add("loading");
+    var needs=Array.from(form.querySelectorAll("[name=needs]:checked")).map(function(c){return c.value;}).join(", ");
+    var src=(form.querySelector("[name=ref_source]:checked")||{}).value||"";
+    var payload={
+      access_key:"af15009b-b3e4-42d3-9aae-de860fb2fef8",
+      subject:"New Referral Submission -- CyberMagnet",
+      name:form.ref_fname.value+" "+form.ref_lname.value,
+      email:form.ref_email.value,phone:form.ref_phone.value,
+      biz_name:form.biz_name.value,biz_owner:form.biz_owner.value,
+      biz_phone:form.biz_phone.value,biz_email:form.biz_email.value||"",
+      biz_type:form.biz_type.value,biz_location:form.biz_location.value||"",
+      biz_website:form.biz_website.value||"",biz_revenue:form.biz_revenue.value||"",
+      needs_services:needs,pain_points:form.biz_pain.value||"",
+      relationship:form.relationship.value||"",readiness:form.readiness.value||"",
+      best_contact_time:form.best_time.value||"",
+      payout_method:form.ref_pay.value||"",payout_handle:form.ref_pay_handle.value||"",
+      referral_source:src,from_page:"Referral Program Funnel"
+    };
+    try{
+      var res=await fetch("https://api.web3forms.com/submit",{method:"POST",
+        headers:{"Content-Type":"application/json","Accept":"application/json"},
+        body:JSON.stringify(payload)});
+      var data=await res.json();
+      if(!data.success)throw new Error(data.message);
+    }catch(err){console.error(err);}
+    document.getElementById("s-ref").textContent=form.ref_fname.value+" "+form.ref_lname.value;
+    document.getElementById("s-biz").textContent=form.biz_name.value;
+    document.getElementById("s-biz2").textContent=form.biz_name.value;
+    form.style.display="none";success.style.display="block";
+    success.scrollIntoView({behavior:"smooth",block:"start"});
+    btn.classList.remove("loading");
+  });
+})();
+</script>
+</body>
+</html>

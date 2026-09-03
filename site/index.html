@@ -3,57 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CyberMagnet | AI Marketing Agency — Dallas, TX</title>
-<meta name="description" content="CyberMagnet helps DFW small businesses stop losing leads and save 10-15 hrs/week with AI automation, local SEO, websites, and funnels. Free strategy call.">
+<title>CyberMagnet | AI + SEO Systems for DFW Service Businesses</title>
+<meta name="description" content="CyberMagnet builds Visibility, Conversion, and Automation systems for local service businesses in Dallas-Fort Worth. Get found. Get leads. Run on autopilot.">
 <link rel="canonical" href="https://cybermagnet.net/">
-<meta name="robots" content="index, follow">
-<meta property="og:title" content="CyberMagnet | AI Marketing Agency — Dallas, TX">
-<meta property="og:description" content="CyberMagnet helps DFW small businesses dominate local search with AI-powered SEO, automation, and funnels.">
+<meta property="og:title" content="CyberMagnet | AI + SEO Systems for DFW Service Businesses">
 <meta property="og:url" content="https://cybermagnet.net/">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:164px}
-body{background:#050810;color:#EEF2F7;font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
+body{background:#050810;color:#EEF2F7;font-family:"DM Sans",system-ui,sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden}
 :root{
-  --black:#050810;--deep-navy:#080e1c;--navy:#0a1628;
-  --gold:#D97706;--gold-dim:rgba(217,119,6,0.12);
-  --cobalt:#2563EB;--electric:#2563EB;--orange:#D97706;
+  --black:#050810;--navy:#080e1c;--mid:#0a1628;
+  --gold:#D97706;--cobalt:#2563EB;--electric:#3B7FF5;
   --grad:linear-gradient(90deg,#D97706,#2563EB);
-  --grad-text:linear-gradient(90deg,#D97706,#3B7FF5);
-  --white:#fff;--off-white:#EEF2F7;
-  --gray-300:#aabdd0;--gray-400:#8899aa;--gray-600:#445566;
-  --font-d:'Syne',sans-serif;--font-b:'DM Sans',sans-serif;
-  --urgency-h:32px;--nav-h:68px;
-  --sp:clamp(52px,6vw,80px);--radius:10px;
+  --grad-r:linear-gradient(90deg,#2563EB,#D97706);
+  --off-white:#EEF2F7;--g3:#aabdd0;--g4:#8899aa;--g6:#445566;
+  --fd:"Syne",system-ui,sans-serif;--fb:"DM Sans",system-ui,sans-serif;
+  --uh:32px;--nh:68px;
+  --sp:clamp(64px,7vw,100px);--sp-sm:clamp(40px,4vw,60px);
+  --r:14px;
 }
-
-/* ── URGENCY BAR ── */
-.urgency-bar{position:fixed;top:0;left:0;right:0;z-index:300;height:var(--urgency-h);
-  background:linear-gradient(90deg,#1a4fd8,var(--cobalt),#3B7FF5,var(--cobalt),#1a4fd8);
-  background-size:300% 100%;animation:urgency-shift 6s ease-in-out infinite;
-  font-family:var(--font-b);font-size:0.72rem;font-weight:500;
-  color:var(--white);letter-spacing:0.02em;overflow:hidden;display:flex;align-items:center;}
-.ub-track{display:flex;align-items:center;white-space:nowrap;animation:ub-scroll 22s linear infinite;will-change:transform;min-width:max-content}
-.ub-track:hover{animation-play-state:paused}
-.ub-inner{padding:0 2rem}
+/* -- URGENCY BAR -- */
+.urgency-bar{position:fixed;top:0;left:0;right:0;z-index:300;height:var(--uh);
+  background:linear-gradient(90deg,#1a4fd8,#2563EB,#3B7FF5,#2563EB,#1a4fd8);
+  background-size:300% 100%;animation:ubs 6s ease-in-out infinite;
+  font-family:var(--fb);font-size:0.72rem;font-weight:500;color:#fff;
+  letter-spacing:0.02em;overflow:hidden;display:flex;align-items:center}
+.ub-track{display:flex;white-space:nowrap;animation:ubt 22s linear infinite;min-width:max-content}
+.ub-inner{padding:0 2.5rem}
 .ub-link{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:2px}
-@keyframes ub-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-@keyframes urgency-shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-
-/* ── NAV ── */
-nav#main-nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;
+@keyframes ubt{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes ubs{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+/* -- NAV -- */
+nav#main-nav{position:fixed;top:var(--uh);left:0;right:0;z-index:200;
   display:flex;align-items:center;justify-content:space-between;
-  padding:0 6%;height:var(--nav-h);
+  padding:0 6%;height:var(--nh);
   backdrop-filter:blur(22px) saturate(1.4);background:rgba(5,8,16,0.92);
   border-bottom:1px solid rgba(37,99,235,0.1);
-  transition:transform 0.35s cubic-bezier(0.4,0,0.2,1),opacity 0.35s cubic-bezier(0.4,0,0.2,1),background 0.35s;}
+  transition:transform 0.35s cubic-bezier(0.4,0,0.2,1),opacity 0.35s}
 .header-hidden{transform:translateY(-100%);opacity:0;pointer-events:none}
-
-/* ── NAV BASE ───────────────────────────────── */
+/*  NAV BASE  */
 
 .nav-links {
   display: flex; align-items: center;
@@ -86,7 +79,7 @@ nav#main-nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;
 .nav-links a:hover::after { width: 100%; }
 .nav-arrow { font-size: 0.6rem; opacity: 0.6; margin-left: 2px; }
 
-/* ── DROPDOWN ───────────────────────────────── */
+/*  DROPDOWN  */
 .nav-item { position: relative; }
 .nav-drop {
   position: absolute; top: calc(100% + 12px); left: 50%;
@@ -120,7 +113,7 @@ nav#main-nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;
 .dt { font-size: 0.82rem; font-weight: 600; color: var(--off-white, #dce8f5); line-height: 1.2; }
 .dt span { font-size: 0.72rem; color: var(--gray-600, #445566); font-weight: 400; margin-top: 1px; }
 
-/* ── NAV CTA + PHONE ─────────────────────────── */
+/*  NAV CTA + PHONE  */
 .nav-cta {
   padding: 9px 20px; border-radius: 7px;
   font-size: 0.84rem; font-weight: 700;
@@ -139,7 +132,7 @@ nav#main-nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;
 }
 .nav-phone:hover { color: var(--orange, #D97706); }
 
-/* ── HAMBURGER ───────────────────────────────── */
+/*  HAMBURGER  */
 .nav-ham {
   display: none; flex-direction: column; gap: 5px;
   cursor: pointer; background: none; border: none;
@@ -154,7 +147,7 @@ nav#main-nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;
 .nav-ham.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .nav-ham.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ── MOBILE DRAWER ───────────────────────────── */
+/*  MOBILE DRAWER  */
 .mob-overlay {
   position: fixed; inset: 0;
   background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);
@@ -186,7 +179,7 @@ nav#main-nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;
   transition: background 0.2s;
 }
 .mob-close:hover { background: rgba(255,255,255,0.1); }
-.mob-.mob-nav { flex: 1; padding: 16px 0; overflow-y: auto; }
+.mob-nav { flex: 1; padding: 16px 0; overflow-y: auto; }
 .mob-section-label {
   font-size: 0.67rem; font-weight: 700; letter-spacing: 0.1em;
   text-transform: uppercase; color: rgba(255,255,255,0.25);
@@ -226,323 +219,268 @@ nav#main-nav{position:fixed;top:var(--urgency-h);left:0;right:0;z-index:200;
 }
 .mob-cta-sec:hover { border-color: var(--orange, #D97706); color: var(--orange, #D97706); }
 
-/* ── RESPONSIVE BREAKPOINTS ──────────────────── */
+/*  RESPONSIVE BREAKPOINTS  */
 @media (max-width: 860px) {
   .nav-phone { display: none !important; }
 }
 @media (max-width: 720px) {
   .nav-links { display: none !important; }
-  .nav-cta   { display: none !important; }
-  .nav-ham   { display: flex !important; }
-}
-
-/* ── HERO ── */
-.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;
-  justify-content:flex-start;padding:calc(var(--urgency-h) + var(--nav-h) + 64px) 6% 60px;overflow:hidden;}
-.hero-kicker{
-  display:inline-flex;align-items:center;gap:10px;
-  background:rgba(217,119,6,0.08);
-  border:1px solid rgba(217,119,6,0.35);
-  border-radius:4px;padding:6px 18px;
-  font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;
-  color:rgba(255,255,255,0.75);font-weight:600;
-  margin-bottom:28px;
-  opacity:1;
-}
-.hero-h1{
-  font-family:var(--font-d);
-  font-size:clamp(1.8rem,4.2vw,3.6rem);
-  font-weight:800;line-height:0.95;
-  letter-spacing:-0.04em;
-  margin-bottom:28px;
-  opacity:1;
-}
-.hero-sub{
-  font-family:var(--font-pull);
-  font-style:italic;font-size:clamp(1.1rem,2vw,1.5rem);
-  color:var(--gray-300);max-width:680px;
-  line-height:1.55;margin-bottom:44px;
-  opacity:1;
-}
-.hero-ctas{
-  display:flex;gap:16px;flex-wrap:wrap;
-  opacity:1;
-  margin-bottom:60px;
-}
-.hero-proof{
-  display:flex;gap:36px;flex-wrap:wrap;
-  opacity:1;
-  justify-content:flex-start;
-  margin-top:40px;
-}
-.hp-item{display:flex;flex-direction:column}
-.hp-val{
-  font-family:var(--font-d);font-size:2rem;font-weight:800;line-height:1;color:#fff;
-}
-.hp-label{font-size:0.72rem;color:var(--gray-400);text-transform:uppercase;letter-spacing:0.07em;margin-top:3px}
-.hero-content{position:relative;z-index:2;max-width:900px}
-#hero-canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.hero-bg{
-  position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse 80% 60% at 70% 50%, rgba(37,99,235,0.07) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 40% at 20% 80%, rgba(217,119,6,0.05) 0%, transparent 55%),
-    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,168,76,0.04) 0%, transparent 50%),
-    var(--black);
-  animation:bg-shift 12s ease-in-out infinite alternate;
-}
-.hero-grid{
-  position:absolute;inset:0;pointer-events:none;
-  background-image:
-    linear-gradient(rgba(201,168,76,0.025) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(201,168,76,0.025) 1px,transparent 1px);
-  background-size:72px 72px;
-}
-.line-stroke{
-  display:block;
-  -webkit-text-stroke:2px rgba(255,255,255,0.2);
-  color:transparent;
-}
-.line-white{display:block;color:#fff}
-.line-gold{
-  display:block;
-  background:linear-gradient(90deg,var(--gold),#e8c96a,var(--gold));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  background-clip:text;
-  background-size:200%;
-  animation:gold-shimmer 4s ease-in-out infinite;
-}
-.line-blue{display:block;color:var(--electric)}
-.btn-primary-lux{
-  position:relative;overflow:hidden;
-  display:inline-flex;align-items:center;gap:10px;
-  background:linear-gradient(135deg,var(--orange),#e06800);
-  color:#fff;border:none;
-  padding:18px 40px;border-radius:8px;
-  font-family:var(--font-d);font-size:1rem;font-weight:700;
-  cursor:pointer;text-decoration:none;
-  transition:all 0.3s;
-  animation:cta-pulse 3s ease-in-out infinite;
-  box-shadow:0 0 0 0 var(--or-glow);
-}
-.btn-secondary-lux{
-  position:relative;overflow:hidden;
-  display:inline-flex;align-items:center;gap:10px;
-  background:transparent;
-  color:var(--off-white);
-  border:1px solid rgba(201,168,76,0.4);
-  padding:18px 36px;border-radius:8px;
-  font-family:var(--font-d);font-size:1rem;font-weight:600;
-  cursor:pointer;text-decoration:none;
-  transition:all 0.3s;
-}
-.final-cta{
-  padding:100px 6%;text-align:center;
-  background:linear-gradient(160deg,var(--black) 0%,var(--deep-navy) 50%,var(--black) 100%);
-  position:relative;overflow:hidden;
-  border-top:1px solid rgba(201,168,76,0.12);
-}
-.fc-kicker{font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:12px;position:relative}
-.fc-h2{
-  font-family:var(--font-d);font-size:clamp(1.8rem,4.5vw,3.8rem);
-  font-weight:800;letter-spacing:-0.04em;line-height:0.96;
-  margin-bottom:24px;position:relative;
-}
-.fc-sub{font-size:1.05rem;color:var(--gray-400);max-width:560px;margin:0 auto 44px;line-height:1.75;position:relative}
-.fc-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative}
-.fc-micro{margin-top:20px;font-size:0.8rem;color:var(--gray-400);position:relative;letter-spacing:0.02em}
-.l1{display:block;color:#fff}
-.l2{
-  display:block;
-  background:linear-gradient(90deg,var(--gold),#e8c96a,var(--electric));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  background-size:200%;
-  animation:gold-shimmer 5s ease-in-out infinite;
-}
-.l3{display:block;color:var(--orange)}
-@keyframes gold-shimmer{0%,100%{background-position:0%}50%{background-position:100%}}
-@keyframes cta-pulse{0%,100%{box-shadow:0 0 0 0 rgba(217,119,6,0.4)}50%{box-shadow:0 0 0 10px rgba(217,119,6,0)}}
-@keyframes ub-scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-@keyframes urgency-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50%       { background-position: 100% 50%; }
-}
-
-/* ── SECTION BASE ── */
-.section{padding:var(--sp) 6%}
-.section-inner{max-width:1100px;margin:0 auto}
-.sec-eyebrow{font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:12px}
-.sec-h2{font-family:var(--font-d);font-weight:800;font-size:clamp(1.8rem,3.5vw,3rem);letter-spacing:-0.03em;line-height:1.05;margin-bottom:16px}
-.sec-sub{font-size:1rem;color:var(--gray-400);max-width:600px;line-height:1.65;margin-bottom:48px}
-.grad-text{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.reveal{opacity:1;transform:translateY(0);transition:opacity 0.65s ease,transform 0.65s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-
-/* ── PROBLEM ── */
-.problem-section{background:var(--deep-navy)}
-.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:48px}
-.problem-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:28px 24px;transition:border-color 0.3s}
-.problem-card:hover{border-color:rgba(217,119,6,0.25)}
-.pc-icon{font-size:1.6rem;margin-bottom:14px}
-.pc-title{font-family:var(--font-d);font-size:1rem;font-weight:700;color:var(--off-white);margin-bottom:8px}
-.pc-body{font-size:0.86rem;color:var(--gray-400);line-height:1.6}
-.pc-stat{font-size:0.78rem;color:var(--gold);font-weight:600;margin-top:10px}
-@media(max-width:640px){.problem-grid{grid-template-columns:1fr}}
-
-/* ── SERVICES ── */
-.services-section{background:var(--black)}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.svc-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:28px 24px;transition:border-color 0.3s,transform 0.3s}
-.svc-card:hover{border-color:rgba(37,99,235,0.35);transform:translateY(-4px)}
-.svc-icon{font-size:1.5rem;margin-bottom:14px}
-.svc-name{font-family:var(--font-d);font-size:0.95rem;font-weight:700;color:var(--off-white);margin-bottom:6px}
-.svc-desc{font-size:0.83rem;color:var(--gray-400);line-height:1.55;margin-bottom:14px}
-.svc-link{font-size:0.78rem;color:var(--cobalt);font-weight:600;text-decoration:none}
-.svc-link:hover{color:var(--gold)}
-@media(max-width:900px){.services-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.services-grid{grid-template-columns:1fr}}
-
-/* ── PROOF BANNER ── */
-.proof-section{background:linear-gradient(90deg,rgba(37,99,235,0.08),rgba(217,119,6,0.08));
-  border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05);padding:48px 6%;}
-.proof-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-.proof-stat{text-align:center;padding:0 20px;border-right:1px solid rgba(255,255,255,0.07)}
-.proof-stat:last-child{border-right:none}
-.proof-num{font-family:var(--font-d);font-size:clamp(2rem,4vw,3.2rem);font-weight:800;line-height:1;
-  background:var(--grad-text);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
-.proof-label{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--gray-400);line-height:1.4}
-@media(max-width:640px){.proof-grid{grid-template-columns:1fr 1fr;gap:24px}.proof-stat{border-right:none;padding:0}}
-
-/* ── PROCESS ── */
-.process-section{background:var(--deep-navy)}
-.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:56px}
-.process-steps::before{content:'';position:absolute;top:36px;left:calc(12.5% + 8px);right:calc(12.5% + 8px);height:2px;background:var(--grad);z-index:0}
-.process-step{text-align:center;padding:0 16px;position:relative;z-index:1}
-.ps-num{width:72px;height:72px;border-radius:50%;background:var(--grad);color:#fff;font-family:var(--font-d);font-size:1.4rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;box-shadow:0 0 32px rgba(217,119,6,0.2)}
-.ps-title{font-family:var(--font-d);font-size:0.92rem;font-weight:700;color:var(--off-white);margin-bottom:8px}
-.ps-body{font-size:0.82rem;color:var(--gray-400);line-height:1.55}
-@media(max-width:700px){.process-steps{grid-template-columns:1fr 1fr;gap:32px}.process-steps::before{display:none}}
-
-/* ── FIT ── */
-.fit-section{background:var(--black)}
-.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}
-.fit-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:14px;padding:32px}
-.fit-card.yes{border-color:rgba(37,99,235,0.2)}.fit-card.no{border-color:rgba(217,119,6,0.12)}
-.fit-head{font-family:var(--font-d);font-size:1rem;font-weight:700;margin-bottom:20px;display:flex;align-items:center;gap:10px}
-.fit-head.yes{color:#22c55e}.fit-head.no{color:var(--gold)}
-.fit-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;font-size:0.86rem;color:var(--gray-300);line-height:1.5}
-.fit-item::before{flex-shrink:0;margin-top:3px;font-size:0.7rem}
-.fit-item.yes::before{content:'✓';color:#22c55e;font-weight:700}
-.fit-item.no::before{content:'✕';color:var(--gold);font-weight:700}
-@media(max-width:640px){.fit-grid{grid-template-columns:1fr}}
-
-/* ── BUNDLE ── */
-.bundle-section{background:var(--black)}
-.bundle-wrap{display:grid;grid-template-columns:1fr 320px;gap:32px;align-items:start;margin-top:48px}
-.bundle-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.bundle-cat{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:20px}
-.bcat-label{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-.bitem{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;cursor:pointer;transition:background 0.15s;margin-bottom:4px}
-.bitem:hover{background:rgba(255,255,255,0.04)}
-.bitem input{display:none}
-.bitem-check{width:18px;height:18px;border-radius:5px;border:1.5px solid rgba(255,255,255,0.2);flex-shrink:0;transition:all 0.15s;position:relative}
-.bitem input:checked ~ .bitem-check{background:var(--grad);border-color:transparent}
-.bitem input:checked ~ .bitem-check::after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:800;color:#fff}
-.bitem-name{flex:1;font-size:0.84rem;color:var(--gray-300)}
-.bitem input:checked ~ .bitem-check ~ .bitem-name{color:#fff}
-.bitem-price{font-size:0.75rem;color:var(--gold);font-weight:600;white-space:nowrap}
-.bundle-summary{position:sticky;top:calc(var(--urgency-h) + var(--nav-h) + 20px)}
-.bsum-inner{background:rgba(255,255,255,0.02);border:1px solid rgba(37,99,235,0.3);border-radius:16px;padding:24px}
-.bsum-label{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--cobalt);margin-bottom:14px}
-.bsum-selected{min-height:60px;margin-bottom:14px}
-.bsum-empty{font-size:0.82rem;color:var(--gray-600);font-style:italic}
-.bsum-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(37,99,235,0.1);border:1px solid rgba(37,99,235,0.25);border-radius:6px;padding:4px 10px;font-size:0.75rem;color:var(--gray-300);margin:3px 3px 3px 0}
-.bsum-tag button{background:none;border:none;color:var(--gray-600);cursor:pointer;font-size:0.7rem;padding:0;line-height:1}
-.bsum-tag button:hover{color:#ef4444}
-.bsum-divider{height:1px;background:rgba(255,255,255,0.07);margin:14px 0}
-.bsum-total-row,.bsum-onetime-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
-.bsum-total-label,.bsum-onetime-label{font-size:0.8rem;color:var(--gray-400)}
-.bsum-total-val{font-family:var(--font-d);font-size:1.8rem;font-weight:800;color:var(--off-white)}
-.bsum-total-val span{font-size:0.78rem;color:var(--gray-400);font-family:var(--font-b);font-weight:400}
-.bsum-onetime-val{font-family:var(--font-d);font-size:1.1rem;font-weight:700;color:var(--gold)}
-.bsum-note{font-size:0.75rem;color:#22c55e;margin-bottom:12px;padding:6px 10px;background:rgba(34,197,94,0.08);border-radius:6px;border:1px solid rgba(34,197,94,0.2);line-height:1.5}
-.bsum-note strong{color:#22c55e}
-.bsum-cta{display:block;text-align:center;padding:13px 20px;border-radius:10px;background:var(--grad);color:#fff;font-size:0.88rem;font-weight:700;text-decoration:none;margin-top:16px;transition:opacity 0.2s}
-.bsum-cta:hover{opacity:0.88}
-.bsum-micro{text-align:center;font-size:0.72rem;color:var(--gray-600);margin-top:10px}
-@media(max-width:900px){.bundle-wrap{grid-template-columns:1fr}.bundle-summary{position:static}}
-@media(max-width:640px){.bundle-grid{grid-template-columns:1fr}}
-
-/* ── PRICING ── */
-.pricing-section{background:var(--deep-navy)}
-.pricing-note{font-size:0.82rem;color:var(--gray-600);margin-bottom:36px;line-height:1.6}
-.tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:32px}
-.tier{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:28px 22px;position:relative;transition:border-color 0.3s}
-.tier:hover{border-color:rgba(37,99,235,0.3)}
-.tier.popular{border-color:rgba(37,99,235,0.4);background:rgba(37,99,235,0.05)}
-.tier-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--grad);color:#fff;font-size:0.68rem;font-weight:700;padding:3px 12px;border-radius:20px;white-space:nowrap}
-.tier-name{font-family:var(--font-d);font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
-.tier-price{font-family:var(--font-d);font-size:2rem;font-weight:800;color:var(--off-white);line-height:1;margin-bottom:4px}
-.tier-price span{font-size:0.82rem;color:var(--gray-400);font-weight:400;font-family:var(--font-b)}
-.tier-tagline{font-size:0.8rem;color:var(--gray-400);margin-bottom:18px;line-height:1.4}
-.tier-divider{height:1px;background:rgba(255,255,255,0.06);margin-bottom:18px}
-.tier-features{list-style:none;margin-bottom:24px}
-.tier-features li{font-size:0.8rem;color:var(--gray-300);padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;gap:8px;align-items:flex-start;line-height:1.4}
-.tier-features li::before{content:'✓';color:var(--gold);font-size:0.68rem;margin-top:3px;flex-shrink:0}
-.tier-cta{display:block;text-align:center;padding:10px 16px;border-radius:8px;font-size:0.84rem;font-weight:600;text-decoration:none;background:rgba(37,99,235,0.12);color:var(--cobalt);border:1px solid rgba(37,99,235,0.25);transition:all 0.2s}
-.tier.popular .tier-cta{background:var(--grad);color:#fff;border:none}
-.tier-cta:hover{background:var(--cobalt);color:#fff}
-.tier.popular .tier-cta:hover{opacity:0.88}
-.one-offs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
-.oo-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:10px;padding:16px;text-align:center}
-.oo-icon{font-size:1.2rem;margin-bottom:8px}
-.oo-name{font-size:0.78rem;font-weight:600;color:var(--off-white);margin-bottom:4px}
-.oo-price{font-size:0.75rem;color:var(--gold)}
-@media(max-width:900px){.tiers{grid-template-columns:1fr 1fr}.one-offs{grid-template-columns:1fr 1fr}}
-@media(max-width:500px){.tiers{grid-template-columns:1fr}}
-
-/* ── TESTIMONIALS ── */
-.testi-section{background:var(--black);overflow:hidden}
-.testi-track-wrap{overflow:hidden;margin:0 -6%}
-.testi-track{display:flex;gap:20px;animation:testi-scroll 28s linear infinite;width:max-content;padding:8px 6% 8px}
-.testi-track:hover{animation-play-state:paused}
-@keyframes testi-scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.testi-card{flex-shrink:0;width:320px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:24px}
-.testi-stars{font-size:0.85rem;margin-bottom:10px;color:var(--gold)}
-.testi-text{font-size:0.85rem;color:var(--gray-300);line-height:1.6;margin-bottom:14px;font-style:italic}
-.testi-author{font-size:0.75rem;color:var(--gray-600);font-weight:600;text-transform:uppercase;letter-spacing:0.06em}
-
-/* ── FOOTER ── */
-footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);padding:48px 6% 32px}
-.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
-.footer-brand p{font-size:0.83rem;color:var(--gray-400);line-height:1.65;margin-top:14px;max-width:280px}
-.footer-col h4{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--off-white);margin-bottom:14px}
-.footer-col a{display:block;font-size:0.82rem;color:var(--gray-400);text-decoration:none;margin-bottom:8px;transition:color 0.2s}
-.footer-col a:hover{color:var(--gold)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,0.05);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:0.75rem;color:var(--gray-600)}
-.footer-bottom a{color:var(--gray-600);text-decoration:none}
-.footer-bottom a:hover{color:var(--gray-400)}
-@media(max-width:800px){.footer-inner{grid-template-columns:1fr 1fr}}
-@media(max-width:500px){.footer-inner{grid-template-columns:1fr}}
-
-/* ── QUOTE FORM (for service pages - not needed here but keeps CSS complete) ── */
-.quote-section{padding:clamp(48px,7vw,80px) 6%;background:var(--deep-navy);border-top:1px solid rgba(255,255,255,0.05)}
-
-/* ── SCROLL HIDE ── */
-.urgency-bar,.urgency-bar+*,.header-hidden{transition:transform 0.35s cubic-bezier(0.4,0,0.2,1),opacity 0.35s cubic-bezier(0.4,0,0.2,1)}
-nav#main-nav.header-hidden,.urgency-bar.header-hidden{transform:translateY(-100%);opacity:0;pointer-events:none}
-
-/* ── REVEAL ANIMATION ENHANCEMENTS ── */
+  .nav-cta   { di
+/* -- REVEAL -- */
+}}
 .reveal{transition:opacity 0.6s cubic-bezier(0.4,0,0.2,1),transform 0.6s cubic-bezier(0.4,0,0.2,1)}
-.reveal.delay-1{transition-delay:0.1s}
-.reveal.delay-2{transition-delay:0.2s}
-.reveal.delay-3{transition-delay:0.3s}
-.reveal.delay-4{transition-delay:0.4s}
-/* Counter-animation for proof stats numbers */
-.proof-num{font-variant-numeric:tabular-nums}
+.d1{transition-delay:0.1s}.d2{transition-delay:0.2s}.d3{transition-delay:0.3s}.d4{transition-delay:0.4s}
+
+/* -- SHARED -- */
+.section-eyebrow{font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:12px}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.section-h2{font-family:var(--fd);font-size:clamp(2rem,4vw,3.2rem);font-weight:800;
+  letter-spacing:-0.03em;line-height:1.1;color:#fff;margin-bottom:16px}
+.section-sub{font-size:1rem;color:var(--g4);max-width:560px;line-height:1.7;margin-bottom:var(--sp-sm)}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;
+  background:var(--grad);color:#fff;font-size:0.92rem;font-weight:700;
+  text-decoration:none;transition:opacity 0.2s;white-space:nowrap}
+.btn-primary:hover{opacity:0.88}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:10px;
+  background:transparent;color:#fff;font-size:0.92rem;font-weight:600;
+  text-decoration:none;border:1px solid rgba(255,255,255,0.15);transition:all 0.2s;white-space:nowrap}
+.btn-secondary:hover{border-color:rgba(255,255,255,0.35)}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+
+/* -- HERO -- */
+.hero{
+  min-height:100vh;
+  padding:calc(var(--uh) + var(--nh) + 80px) 6% 80px;
+  display:flex;align-items:center;
+  position:relative;overflow:hidden;
+  background:var(--black);
+}
+.hero-canvas{position:absolute;inset:0;opacity:0.5}
+.hero-glow{position:absolute;width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(37,99,235,0.15),transparent 70%);
+  top:50%;right:10%;transform:translateY(-50%);pointer-events:none}
+.hero-glow-2{position:absolute;width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(217,119,6,0.08),transparent 70%);
+  bottom:10%;left:5%;pointer-events:none}
+.hero-inner{max-width:1100px;margin:0 auto;width:100%;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;
+  background:rgba(37,99,235,0.1);border:1px solid rgba(37,99,235,0.25);
+  border-radius:20px;padding:5px 14px;font-size:0.72rem;font-weight:600;
+  color:var(--electric);letter-spacing:0.06em;margin-bottom:24px}
+.hero-badge span{width:6px;height:6px;border-radius:50%;background:#22c55e;
+  box-shadow:0 0 8px #22c55e;flex-shrink:0}
+.hero-h1{font-family:var(--fd);font-size:clamp(3rem,7vw,6rem);
+  font-weight:900;letter-spacing:-0.04em;line-height:0.95;color:#fff;
+  margin-bottom:28px;max-width:900px}
+.hero-h1 em{font-style:normal;background:var(--grad);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{font-size:1.15rem;color:var(--g4);max-width:540px;
+  line-height:1.65;margin-bottom:40px}
+.hero-sub strong{color:var(--off-white)}
+.hero-proof{display:flex;gap:32px;margin-top:52px;padding-top:40px;
+  border-top:1px solid rgba(255,255,255,0.06);flex-wrap:wrap}
+.hp-item{}
+.hp-num{font-family:var(--fd);font-size:1.8rem;font-weight:800;line-height:1;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;margin-bottom:2px}
+.hp-label{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--g6)}
+
+/* -- SYSTEMS SECTION -- */
+.systems-section{padding:var(--sp) 6%;background:var(--navy)}
+.systems-inner{max-width:1100px;margin:0 auto}
+.systems-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
+.sys-card{
+  background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);
+  border-radius:var(--r);padding:32px 28px;
+  display:flex;flex-direction:column;gap:0;
+  position:relative;overflow:hidden;
+  transition:border-color 0.3s,transform 0.3s;
+}
+.sys-card:hover{border-color:rgba(37,99,235,0.3);transform:translateY(-3px)}
+.sys-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px}
+.sys-card.vis::before{background:linear-gradient(90deg,#2563EB,#3B7FF5)}
+.sys-card.conv::before{background:linear-gradient(90deg,#D97706,#f59e0b)}
+.sys-card.auto::before{background:linear-gradient(90deg,#7c3aed,#a855f7)}
+.sys-num{font-family:var(--fd);font-size:0.72rem;font-weight:700;letter-spacing:0.12em;
+  text-transform:uppercase;margin-bottom:16px}
+.sys-card.vis .sys-num{color:#3B7FF5}
+.sys-card.conv .sys-num{color:#D97706}
+.sys-card.auto .sys-num{color:#a855f7}
+.sys-icon{font-size:2rem;margin-bottom:16px;display:block}
+.sys-title{font-family:var(--fd);font-size:1.3rem;font-weight:800;color:#fff;
+  margin-bottom:10px;letter-spacing:-0.02em}
+.sys-desc{font-size:0.88rem;color:var(--g4);line-height:1.65;margin-bottom:22px}
+.sys-features{display:flex;flex-direction:column;gap:7px;margin-bottom:26px;flex:1}
+.sys-feat{display:flex;align-items:flex-start;gap:9px;font-size:0.82rem;color:var(--g3)}
+.sys-feat::before{content:"";width:5px;height:5px;border-radius:50%;
+  background:rgba(255,255,255,0.25);flex-shrink:0;margin-top:7px}
+.sys-card.vis .sys-feat::before{background:#3B7FF5}
+.sys-card.conv .sys-feat::before{background:#D97706}
+.sys-card.auto .sys-feat::before{background:#a855f7}
+.sys-link{font-size:0.8rem;font-weight:600;text-decoration:none;
+  display:inline-flex;align-items:center;gap:5px;transition:gap 0.2s}
+.sys-card.vis .sys-link{color:#3B7FF5}
+.sys-card.conv .sys-link{color:#D97706}
+.sys-card.auto .sys-link{color:#a855f7}
+.sys-link:hover{gap:9px}
+
+/* -- PROOF -- */
+.proof-section{padding:var(--sp) 6%;background:var(--black)}
+.proof-inner{max-width:1100px;margin:0 auto}
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:rgba(255,255,255,0.06);border-radius:var(--r);overflow:hidden;margin-bottom:52px}
+.proof-stat{background:var(--black);padding:32px 24px;text-align:center}
+.ps-num{font-family:var(--fd);font-size:clamp(2rem,4vw,3rem);font-weight:800;line-height:1;
+  background:var(--grad);-webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;margin-bottom:8px}
+.ps-label{font-size:0.8rem;color:var(--g4);line-height:1.4}
+.proof-quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pq{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);
+  border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:12px}
+.pq-text{font-size:0.88rem;color:var(--g3);line-height:1.65;font-style:italic;flex:1}
+.pq-author{display:flex;align-items:center;gap:10px}
+.pq-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:0.78rem;font-weight:700;color:#fff;flex-shrink:0}
+.pq-name{font-size:0.82rem;font-weight:600;color:#fff}
+.pq-biz{font-size:0.72rem;color:var(--g6)}
+.pq-stars{color:#f59e0b;font-size:0.75rem;letter-spacing:1px}
+
+/* -- PACKAGES -- */
+.packages-section{padding:var(--sp) 6%;background:var(--navy)}
+.packages-inner{max-width:1100px;margin:0 auto}
+.pkg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:52px}
+.pkg-card{
+  background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.07);
+  border-radius:var(--r);padding:28px 22px;
+  display:flex;flex-direction:column;position:relative;
+  transition:border-color 0.3s,transform 0.3s;
+}
+.pkg-card:hover{border-color:rgba(255,255,255,0.15);transform:translateY(-3px)}
+.pkg-card.featured{background:rgba(37,99,235,0.06);border-color:rgba(37,99,235,0.3)}
+.pkg-card.featured:hover{border-color:rgba(37,99,235,0.5)}
+.pkg-badge{position:absolute;top:-1px;left:50%;transform:translateX(-50%);
+  background:var(--grad);color:#fff;font-size:0.65rem;font-weight:700;
+  letter-spacing:0.08em;padding:3px 12px;border-radius:0 0 8px 8px;white-space:nowrap}
+.pkg-tier{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--g6);margin-bottom:8px;font-weight:600}
+.pkg-name{font-family:var(--fd);font-size:1.1rem;font-weight:800;color:#fff;
+  margin-bottom:8px;line-height:1.2}
+.pkg-tagline{font-size:0.8rem;color:var(--g4);line-height:1.5;margin-bottom:20px}
+.pkg-price{margin-bottom:20px}
+.pkg-from{font-size:0.72rem;color:var(--g6);text-transform:uppercase;letter-spacing:0.06em}
+.pkg-amount{font-family:var(--fd);font-size:1.8rem;font-weight:800;color:#fff;line-height:1}
+.pkg-period{font-size:0.78rem;color:var(--g6)}
+.pkg-features{display:flex;flex-direction:column;gap:8px;flex:1;margin-bottom:24px}
+.pf{display:flex;align-items:flex-start;gap:8px;font-size:0.8rem;color:var(--g3)}
+.pf-check{color:#22c55e;flex-shrink:0;margin-top:2px;font-size:0.72rem}
+.pkg-cta{display:block;text-align:center;padding:11px;border-radius:8px;
+  font-size:0.82rem;font-weight:700;text-decoration:none;transition:all 0.2s}
+.pkg-card:not(.featured) .pkg-cta{background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);color:#fff}
+.pkg-card:not(.featured) .pkg-cta:hover{background:rgba(255,255,255,0.1)}
+.pkg-card.featured .pkg-cta{background:var(--grad);color:#fff}
+
+/* -- WHY -- */
+.why-section{padding:var(--sp) 6%;background:var(--black)}
+.why-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.why-content{}
+.why-points{display:flex;flex-direction:column;gap:24px;margin-top:36px}
+.why-point{display:flex;gap:16px}
+.wp-icon{width:40px;height:40px;border-radius:10px;background:rgba(37,99,235,0.1);
+  border:1px solid rgba(37,99,235,0.2);display:flex;align-items:center;
+  justify-content:center;font-size:18px;flex-shrink:0;margin-top:2px}
+.wp-title{font-family:var(--fd);font-size:0.95rem;font-weight:700;color:#fff;margin-bottom:4px}
+.wp-desc{font-size:0.84rem;color:var(--g4);line-height:1.6}
+.why-visual{position:relative}
+.why-card{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);
+  border-radius:var(--r);padding:28px;position:relative;overflow:hidden}
+.why-card::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse at top right,rgba(37,99,235,0.08),transparent 60%)}
+.why-card-title{font-family:var(--fd);font-size:0.72rem;font-weight:700;
+  letter-spacing:0.12em;text-transform:uppercase;color:var(--g6);margin-bottom:20px}
+.why-metric{display:flex;justify-content:space-between;align-items:center;
+  padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.why-metric:last-child{border-bottom:none}
+.wm-label{font-size:0.84rem;color:var(--g4)}
+.wm-val{font-family:var(--fd);font-size:0.92rem;font-weight:700;color:#22c55e}
+.why-note{font-size:0.75rem;color:var(--g6);margin-top:16px;line-height:1.5}
+
+/* -- FINAL CTA -- */
+.final-cta{padding:var(--sp) 6%;background:var(--navy);text-align:center;
+  position:relative;overflow:hidden}
+.final-cta::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(37,99,235,0.08),transparent 70%)}
+.fc-inner{max-width:680px;margin:0 auto;position:relative;z-index:1}
+.fc-h2{font-family:var(--fd);font-size:clamp(2rem,4.5vw,3.5rem);font-weight:800;
+  letter-spacing:-0.03em;line-height:1.05;color:#fff;margin-bottom:16px}
+.fc-sub{font-size:1rem;color:var(--g4);line-height:1.7;margin-bottom:36px}
+.fc-note{font-size:0.78rem;color:var(--g6);margin-top:16px}
+
+/* -- FOOTER -- */
+footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);padding:48px 6% 32px}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.footer-brand p{font-size:0.83rem;color:var(--g4);line-height:1.65;margin-top:14px;max-width:280px}
+.footer-col h4{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;
+  text-transform:uppercase;color:var(--off-white);margin-bottom:14px}
+.footer-col a{display:block;font-size:0.82rem;color:var(--g4);text-decoration:none;
+  margin-bottom:8px;transition:color 0.2s}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.05);padding-top:24px;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:12px;font-size:0.75rem;color:var(--g6);
+  max-width:1100px;margin:0 auto}
+.footer-bottom a{color:var(--g6);text-decoration:none}
+.footer-socials{display:flex;gap:10px;margin-top:16px}
+.social-btn{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);color:var(--g4);
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;font-size:0.82rem;font-weight:600;transition:all 0.2s}
+.social-btn:hover{border-color:rgba(217,119,6,0.4);color:var(--gold)}
+
+/* -- REFERRAL POPUP -- */
+.ref-popup-overlay{position:fixed;inset:0;background:rgba(3,5,12,0.82);
+  backdrop-filter:blur(6px);z-index:800;display:flex;align-items:center;
+  justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity 0.3s}
+.ref-popup-overlay.open{opacity:1;pointer-events:auto}
+.ref-popup{background:#080e1c;border:1px solid rgba(255,255,255,0.1);border-radius:20px;
+  max-width:520px;width:100%;padding:36px 36px 32px;position:relative;
+  transform:translateY(20px) scale(0.97);transition:transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  box-shadow:0 40px 80px rgba(0,0,0,0.6)}
+.ref-popup-overlay.open .ref-popup{transform:translateY(0) scale(1)}
+.ref-popup-close{position:absolute;top:14px;right:14px;width:30px;height:30px;border-radius:6px;
+  background:rgba(255,255,255,0.06);border:none;color:#8899aa;font-size:16px;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s}
+.ref-popup-close:hover{background:rgba(255,255,255,0.12)}
+.ref-popup-eyebrow{font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;
+  color:#D97706;font-weight:700;margin-bottom:10px}
+.ref-popup h3{font-family:"Syne",sans-serif;font-size:1.7rem;font-weight:800;
+  letter-spacing:-0.02em;color:#fff;line-height:1.15;margin-bottom:12px}
+.ref-popup p{font-size:0.9rem;color:#8899aa;line-height:1.65;margin-bottom:20px}
+.ref-popup-examples{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:24px}
+.rpe{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);
+  border-radius:10px;padding:12px 14px}
+.rpe-amount{font-family:"Syne",sans-serif;font-size:1.1rem;font-weight:800;
+  background:linear-gradient(90deg,#D97706,#3B7FF5);-webkit-background-clip:text;
+  background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:2px}
+.rpe-desc{font-size:0.72rem;color:#445566}
+.ref-popup-cta{display:block;width:100%;text-align:center;padding:14px;border-radius:10px;
+  background:linear-gradient(90deg,#D97706,#2563EB);color:#fff;font-size:0.95rem;
+  font-weight:700;text-decoration:none;transition:opacity 0.2s;margin-bottom:10px}
+.ref-popup-cta:hover{opacity:0.88}
+.ref-popup-dismiss{display:block;text-align:center;font-size:0.78rem;color:#445566;
+  cursor:pointer;background:none;border:none;width:100%;padding:4px;
+  font-family:"DM Sans",sans-serif;transition:color 0.2s}
+.ref-popup-dismiss:hover{color:#8899aa}
+.ref-popup-deadline{display:flex;align-items:center;gap:6px;font-size:0.75rem;
+  color:#f87171;margin-bottom:20px;background:rgba(239,68,68,0.07);
+  border:1px solid rgba(239,68,68,0.15);border-radius:6px;padding:7px 12px}
+
+/* -- RESPONSIVE -- */
+@media(max-width:1024px){.systems-grid,.pkg-grid{grid-template-columns:1fr 1fr}.proof-grid{grid-template-columns:1fr 1fr}.proof-quotes{grid-template-columns:1fr 1fr}.why-inner{grid-template-columns:1fr;gap:48px}}
+@media(max-width:720px){.hero-h1{font-size:clamp(2.6rem,9vw,3.6rem)}.systems-grid,.pkg-grid,.proof-quotes{grid-template-columns:1fr}.proof-grid{grid-template-columns:1fr 1fr}.footer-inner{grid-template-columns:1fr 1fr}.hero-proof{gap:20px}.cta-row{flex-direction:column}}
+@media(max-width:480px){.proof-grid{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -647,230 +585,320 @@ nav#main-nav.header-hidden,.urgency-bar.header-hidden{transform:translateY(-100%
     <a href="/funnels/free-seo-audit/" class="mob-cta-sec">Get a Free SEO Audit</a>
   </div>
 </div>
-
-<!-- ═══ HERO ═══════════════════════════════════════════════════════ -->
+<!-- ════════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <canvas id="hero-canvas"></canvas>
-  <div class="hero-content">
-    <div class="hero-kicker" style="opacity:1">AI-Powered Marketing · Dallas–Fort Worth, TX</div>
-    <h1 class="hero-h1" style="opacity:1">
-      <span class="line-stroke">WHILE YOU WORK,</span>
-      <span class="line-white">WE MAKE SURE</span>
-      <span class="line-gold">THEY FIND</span>
-      <span class="line-blue">YOU FIRST.</span>
+  <canvas class="hero-canvas" id="hero-canvas"></canvas>
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+  <div class="hero-inner">
+    <div class="hero-badge reveal"><span></span>Serving DFW Service Businesses</div>
+    <h1 class="hero-h1 reveal">
+      Your business<br>
+      runs on <em>leads.</em><br>
+      We build the<br>
+      system that<br>
+      delivers them.
     </h1>
-    <p class="hero-sub" style="opacity:1">Most DFW businesses lose clients to competitors who aren&#8217;t even better &#8212; they just <strong>show up first</strong>. CyberMagnet fixes that with AI-powered SEO, automated lead capture, and systems that work while you sleep.</p>
-    <div class="hero-ctas" style="opacity:1">
-      <a href="/funnels/strategy-call/" class="btn-primary-lux">&#128197; Book a Free Strategy Call &#8599;</a>
-      <a href="/funnels/free-seo-audit/" class="btn-secondary-lux">&#128269; Get a Free SEO Audit</a>
+    <p class="hero-sub reveal d1">
+      CyberMagnet builds <strong>Visibility, Conversion, and Automation systems</strong>
+      for local service businesses in Dallas&#x2013;Fort Worth.
+      Get found. Get leads. Run on autopilot.
+    </p>
+    <div class="cta-row reveal d2">
+      <a href="/funnels/strategy-call/" class="btn-primary">&#128197; Book a Free Strategy Call</a>
+      <a href="/funnels/free-seo-audit/" class="btn-secondary">&#128269; Get a Free SEO Audit</a>
     </div>
-    <div class="hero-proof" style="opacity:1">
-      <div class="hp-item"><span class="hp-val">3.8&#xD7;</span><span class="hp-label">Average ROI</span></div>
-      <div class="hp-item"><span class="hp-val">20hrs</span><span class="hp-label">Saved Per Week</span></div>
-      <div class="hp-item"><span class="hp-val">97%</span><span class="hp-label">Client Retention</span></div>
-      <div class="hp-item"><span class="hp-val">50+</span><span class="hp-label">Businesses Scaled</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ PROBLEM ═══════════════════════════════════════════════════════ -->
-<section class="section problem-section">
-  <div class="section-inner">
-    <div class="sec-eyebrow reveal">The Real Problem</div>
-    <h2 class="sec-h2 reveal">Good Businesses Lose to Worse Ones<br><span class="grad-text">Because of Marketing, Not Quality.</span></h2>
-    <p class="sec-sub reveal">You do great work. Your clients love you. But your phone isn&#8217;t ringing the way it should &#8212; because competitors figured out something you haven&#8217;t yet.</p>
-    <div class="problem-grid">
-      <div class="problem-card reveal delay-1"><div class="pc-icon">&#128222;</div><div class="pc-title">Calls Going to Voicemail</div><div class="pc-body">Most callers won&#8217;t leave a message. They hang up and call the next business on Google. Every missed call is a missed job.</div><div class="pc-stat">62% of callers don&#8217;t leave voicemail &#8212; they call your competitor</div></div>
-      <div class="problem-card reveal delay-2"><div class="pc-icon">&#128269;</div><div class="pc-title">Invisible on Google</div><div class="pc-body">97% of local searches never go past page 1. If you&#8217;re not in the top 3 on Google Maps, you don&#8217;t exist to that customer.</div><div class="pc-stat">97% of searches never reach page 2</div></div>
-      <div class="problem-card reveal delay-3"><div class="pc-icon">&#128371;</div><div class="pc-title">Leads Falling Through the Cracks</div><div class="pc-body">Without a follow-up system, 80% of leads go cold before you speak to them. That&#8217;s a systems problem &#8212; and systems problems have systems solutions.</div><div class="pc-stat">80% of leads go cold without same-day follow-up</div></div>
-      <div class="problem-card reveal"><div class="pc-icon">&#9200;</div><div class="pc-title">Doing It All Manually</div><div class="pc-body">Scheduling, following up, posting on social, answering the same questions &#8212; every hour spent on this is an hour not spent on billable work.</div><div class="pc-stat">10&#8211;20 hrs/week recovered by CyberMagnet clients on average</div></div>
+    <div class="hero-proof reveal d3">
+      <div class="hp-item"><div class="hp-num">3.8&#xD7;</div><div class="hp-label">Average ROI</div></div>
+      <div class="hp-item"><div class="hp-num">50+</div><div class="hp-label">Businesses Scaled</div></div>
+      <div class="hp-item"><div class="hp-num">97%</div><div class="hp-label">Client Retention</div></div>
+      <div class="hp-item"><div class="hp-num">4+</div><div class="hp-label">Years in DFW</div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ PROOF ═══════════════════════════════════════════════════════ -->
-<div class="proof-section reveal">
-  <div class="proof-grid">
-    <div class="proof-stat"><div class="proof-num">3.8&#xD7;</div><div class="proof-label">Average ROI Delivered</div></div>
-    <div class="proof-stat"><div class="proof-num">50+</div><div class="proof-label">DFW Businesses Scaled</div></div>
-    <div class="proof-stat"><div class="proof-num">97%</div><div class="proof-label">Client Retention Rate</div></div>
-    <div class="proof-stat"><div class="proof-num">4+</div><div class="proof-label">Years in Business</div></div>
-  </div>
-</div>
-
-<!-- ═══ SERVICES ═══════════════════════════════════════════════════════ -->
-<section class="section services-section">
-  <div class="section-inner">
-    <div class="sec-eyebrow reveal">What We Build</div>
-    <h2 class="sec-h2 reveal">Systems That Grow Your Business<br><span class="grad-text">While You Run It.</span></h2>
-    <p class="sec-sub reveal">Most agencies sell deliverables. We build integrated systems &#8212; SEO, AI, automation, and conversion &#8212; that compound and work together.</p>
-    <div class="services-grid">
-      <div class="svc-card reveal delay-1"><div class="svc-icon">&#128269;</div><div class="svc-name">Local SEO &amp; GBP</div><div class="svc-desc">Own the top 3 on Google Maps for every service you offer. More calls, more clicks, more clients &#8212; without paying for ads.</div><a href="/solutions/seo/" class="svc-link">Explore SEO &#8594;</a></div>
-      <div class="svc-card reveal delay-2"><div class="svc-icon">&#129302;</div><div class="svc-name">AI Phone Receptionist</div><div class="svc-desc">Answer every call 24/7, qualify leads, and book appointments automatically &#8212; even at 2am. Starting at $400/mo.</div><a href="/solutions/ai-phone-receptionist/" class="svc-link">Explore AI Receptionist &#8594;</a></div>
-      <div class="svc-card reveal delay-1"><div class="svc-icon">&#127760;</div><div class="svc-name">Website Design</div><div class="svc-desc">Conversion-engineered websites that turn visitors into calls and bookings &#8212; not just another pretty site nobody finds.</div><a href="/solutions/website-design/" class="svc-link">Explore Websites &#8594;</a></div>
-      <div class="svc-card reveal delay-2"><div class="svc-icon">&#9889;</div><div class="svc-name">AI Automation</div><div class="svc-desc">Map every manual task in your business and replace it with an automated workflow. Save 10&#8211;20 hours a week.</div><a href="/systems/ai-automation/" class="svc-link">Explore Automation &#8594;</a></div>
-      <div class="svc-card reveal delay-3"><div class="svc-icon">&#127919;</div><div class="svc-name">Funnel Building</div><div class="svc-desc">High-converting funnels built around your buyer&#8217;s psychology &#8212; from first click to booked appointment.</div><a href="/solutions/funnel-building/" class="svc-link">Explore Funnels &#8594;</a></div>
-      <div class="svc-card reveal"><div class="svc-icon">&#11088;</div><div class="svc-name">Brand Identity</div><div class="svc-desc">Visual identity and messaging that commands attention and justifies premium pricing before you say a word.</div><a href="/solutions/branding-packages/" class="svc-link">Explore Branding &#8594;</a></div>
+<!-- ════════════════════════════════════════
+     THE CYBERMAGNET SYSTEM (3 PILLARS)
+════════════════════════════════════════ -->
+<section class="systems-section">
+  <div class="systems-inner">
+    <div class="reveal">
+      <div class="section-eyebrow">The CyberMagnet System</div>
+      <h2 class="section-h2">Three systems.<br>One clear outcome.</h2>
+      <p class="section-sub">Most agencies sell you services. We build you systems. Each one is designed to work on its own &#8212; or together as a complete growth engine.</p>
     </div>
-    <div style="text-align:center;margin-top:36px"><a href="/solutions/" class="btn-secondary-lux" style="display:inline-flex">View all solutions &#8594;</a></div>
-  </div>
-</section>
+    <div class="systems-grid">
 
-<!-- ═══ PROCESS ═══════════════════════════════════════════════════════ -->
-<section class="section process-section">
-  <div class="section-inner">
-    <div class="sec-eyebrow reveal" style="text-align:center">Our Process</div>
-    <h2 class="sec-h2 reveal" style="text-align:center">From Strategy to Scale &#8212;<br><span class="grad-text">No Guesswork, No Surprises.</span></h2>
-    <div class="process-steps">
-      <div class="process-step reveal delay-1"><div class="ps-num">01</div><div class="ps-title">Discovery &amp; Audit</div><div class="ps-body">We pull your rankings, audit your competitors, and map every gap between where you are and where your market leader sits.</div></div>
-      <div class="process-step reveal delay-2"><div class="ps-num">02</div><div class="ps-title">Strategy Blueprint</div><div class="ps-body">Custom roadmap aligned to your revenue goals &#8212; timelines, KPIs, and growth milestones defined before we touch anything.</div></div>
-      <div class="process-step reveal delay-3"><div class="ps-num">03</div><div class="ps-title">Build &amp; Launch</div><div class="ps-body">Rapid execution across channels &#8212; funnels, SEO, AI systems, and campaigns go live fast. You see progress in week one.</div></div>
-      <div class="process-step reveal"><div class="ps-num">04</div><div class="ps-title">Optimize &amp; Scale</div><div class="ps-body">Monthly reporting tied to real revenue. We test, learn, and amplify what works to compound your growth month over month.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ FIT ═══════════════════════════════════════════════════════ -->
-<section class="section fit-section">
-  <div class="section-inner">
-    <div class="sec-eyebrow reveal">Honest Talk</div>
-    <h2 class="sec-h2 reveal">CyberMagnet Isn&#8217;t for Everyone.<br><span class="grad-text">Here&#8217;s Who It Is For.</span></h2>
-    <div class="fit-grid">
-      <div class="fit-card yes reveal">
-        <div class="fit-head yes">&#9989; We&#8217;re a great fit if you&#8230;</div>
-        <div class="fit-item yes">Run a local service business and want consistent inbound leads &#8212; not just referrals</div>
-        <div class="fit-item yes">Are serious about growth and willing to invest in a system that works long-term</div>
-        <div class="fit-item yes">Want a direct relationship with your strategist &#8212; not an account manager who read your file this morning</div>
-        <div class="fit-item yes">Understand real results take 60&#8211;90 days to build and compound</div>
-        <div class="fit-item yes">Are open to AI systems that save time, capture more leads, and work while you sleep</div>
+      <!-- VISIBILITY -->
+      <div class="sys-card vis reveal d1">
+        <div class="sys-num">System 01 / Visibility</div>
+        <span class="sys-icon">&#128269;</span>
+        <div class="sys-title">Visibility System</div>
+        <p class="sys-desc">Get in front of the right people at the right moment &#8212; in your city, in your category, at the top of the page.</p>
+        <div class="sys-features">
+          <div class="sys-feat">Local SEO &amp; Google Map Pack dominance</div>
+          <div class="sys-feat">Google Business Profile optimization</div>
+          <div class="sys-feat">Review generation &amp; reputation management</div>
+          <div class="sys-feat">Website SEO &amp; technical foundation</div>
+          <div class="sys-feat">Content &amp; ranking systems</div>
+        </div>
+        <a href="/solutions/seo/" class="sys-link">See Visibility Services &#8594;</a>
       </div>
-      <div class="fit-card no reveal">
-        <div class="fit-head no">&#10007; We&#8217;re probably not the right fit if&#8230;</div>
-        <div class="fit-item no">You&#8217;re shopping for the lowest price and comparing five agencies</div>
-        <div class="fit-item no">You want to approve every social post and control every execution detail</div>
-        <div class="fit-item no">You need results this week &#8212; real marketing compounds over time</div>
-        <div class="fit-item no">Your business doesn&#8217;t have an existing customer base or proven offer</div>
-        <div class="fit-item no">You&#8217;re not comfortable with AI tools being part of your marketing stack</div>
+
+      <!-- CONVERSION -->
+      <div class="sys-card conv reveal d2">
+        <div class="sys-num">System 02 / Conversion</div>
+        <span class="sys-icon">&#127919;</span>
+        <div class="sys-title">Conversion System</div>
+        <p class="sys-desc">Traffic means nothing without conversions. We build the assets that turn visitors into booked appointments and paying clients.</p>
+        <div class="sys-features">
+          <div class="sys-feat">High-converting website design</div>
+          <div class="sys-feat">Lead funnels &amp; landing pages</div>
+          <div class="sys-feat">Brand identity &amp; positioning</div>
+          <div class="sys-feat">Paid advertising (Google &amp; Meta)</div>
+          <div class="sys-feat">Conversion rate optimization</div>
+        </div>
+        <a href="/solutions/website-design/" class="sys-link">See Conversion Services &#8594;</a>
       </div>
+
+      <!-- AUTOMATION -->
+      <div class="sys-card auto reveal d3">
+        <div class="sys-num">System 03 / Automation</div>
+        <span class="sys-icon">&#129302;</span>
+        <div class="sys-title">Automation System</div>
+        <p class="sys-desc">Stop losing leads to slow response times. Our AI systems answer calls, qualify leads, book appointments, and follow up &#8212; 24/7.</p>
+        <div class="sys-features">
+          <div class="sys-feat">AI Phone Receptionist (24/7 answering)</div>
+          <div class="sys-feat">Automated follow-up &amp; lead nurturing</div>
+          <div class="sys-feat">Appointment booking system</div>
+          <div class="sys-feat">AI chatbot &amp; lead qualification</div>
+          <div class="sys-feat">CRM workflows &amp; pipeline automation</div>
+        </div>
+        <a href="/solutions/ai-phone-receptionist/" class="sys-link">See Automation Services &#8594;</a>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ═══ BUNDLE CONFIGURATOR ═══════════════════════════════════════════ -->
-<section class="section bundle-section" id="build-bundle">
-  <div class="section-inner">
-    <div class="sec-eyebrow reveal" style="text-align:center">Build Your Own</div>
-    <h2 class="sec-h2 reveal" style="text-align:center">Pick Exactly What Your Business Needs.<br><span class="grad-text">See Your Price Instantly.</span></h2>
-    <p class="sec-sub reveal" style="text-align:center;margin-left:auto;margin-right:auto">Select the services you want and we&#8217;ll show you a custom price &#8212; bundle discounts applied automatically. Book a call to finalize.</p>
-    <div class="bundle-wrap">
-      <div class="bundle-grid reveal">
-        <div class="bundle-cat">
-          <div class="bcat-label">&#128205; Visibility &amp; SEO</div>
-          <label class="bitem"><input type="checkbox" data-price="500" data-name="Local SEO"><span class="bitem-check"></span><span class="bitem-name">Local SEO</span><span class="bitem-price">$500/mo</span></label>
-          <label class="bitem"><input type="checkbox" data-price="350" data-name="Google Business Profile"><span class="bitem-check"></span><span class="bitem-name">Google Business Profile</span><span class="bitem-price">$350/mo</span></label>
-          <label class="bitem"><input type="checkbox" data-price="300" data-name="Review Generation"><span class="bitem-check"></span><span class="bitem-name">Review Generation</span><span class="bitem-price">$300/mo</span></label>
-        </div>
-        <div class="bundle-cat">
-          <div class="bcat-label">&#129302; AI &amp; Automation</div>
-          <label class="bitem"><input type="checkbox" data-price="400" data-name="AI Phone Receptionist"><span class="bitem-check"></span><span class="bitem-name">AI Phone Receptionist</span><span class="bitem-price">$400/mo</span></label>
-          <label class="bitem"><input type="checkbox" data-price="500" data-name="AI Chatbot"><span class="bitem-check"></span><span class="bitem-name">AI Website Chatbot</span><span class="bitem-price">$500/mo</span></label>
-          <label class="bitem"><input type="checkbox" data-price="750" data-name="Lead Generation"><span class="bitem-check"></span><span class="bitem-name">Lead Generation</span><span class="bitem-price">$750/mo</span></label>
-        </div>
-        <div class="bundle-cat">
-          <div class="bcat-label">&#128241; Social &amp; Content</div>
-          <label class="bitem"><input type="checkbox" data-price="600" data-name="Social Media Management"><span class="bitem-check"></span><span class="bitem-name">Social Media Management</span><span class="bitem-price">$600/mo</span></label>
-          <label class="bitem"><input type="checkbox" data-price="750" data-name="Paid Advertising"><span class="bitem-check"></span><span class="bitem-name">Paid Advertising</span><span class="bitem-price">$750/mo</span></label>
-          <label class="bitem"><input type="checkbox" data-price="500" data-name="Email Marketing"><span class="bitem-check"></span><span class="bitem-name">Email Marketing</span><span class="bitem-price">$500/mo</span></label>
-        </div>
-        <div class="bundle-cat">
-          <div class="bcat-label">&#127760; Web &amp; Brand</div>
-          <label class="bitem"><input type="checkbox" data-price="2500" data-name="Website Design" data-onetime="true"><span class="bitem-check"></span><span class="bitem-name">Website Design</span><span class="bitem-price">from $2,500</span></label>
-          <label class="bitem"><input type="checkbox" data-price="1500" data-name="Funnel Building" data-onetime="true"><span class="bitem-check"></span><span class="bitem-name">Funnel Building</span><span class="bitem-price">from $1,500</span></label>
-          <label class="bitem"><input type="checkbox" data-price="1200" data-name="Brand Identity" data-onetime="true"><span class="bitem-check"></span><span class="bitem-name">Brand Identity</span><span class="bitem-price">from $1,200</span></label>
+<!-- ════════════════════════════════════════
+     PROOF
+════════════════════════════════════════ -->
+<section class="proof-section">
+  <div class="proof-inner">
+    <div class="reveal" style="text-align:center;margin-bottom:0">
+      <div class="section-eyebrow" style="text-align:center">Real Results</div>
+      <h2 class="section-h2" style="text-align:center">Numbers don&#8217;t lie.</h2>
+    </div>
+    <div class="proof-grid reveal d1">
+      <div class="proof-stat">
+        <div class="ps-num">$0&#x2192;$18K</div>
+        <div class="ps-label">Monthly revenue in 4 months<br>for a new Arlington plumber</div>
+      </div>
+      <div class="proof-stat">
+        <div class="ps-num">Top 3</div>
+        <div class="ps-label">Google Maps ranking in 60 days<br>for a Fort Worth HVAC company</div>
+      </div>
+      <div class="proof-stat">
+        <div class="ps-num">+31%</div>
+        <div class="ps-label">More booked appointments<br>in month 1 with AI receptionist</div>
+      </div>
+      <div class="proof-stat">
+        <div class="ps-num">4.7%</div>
+        <div class="ps-label">End-to-end funnel conversion<br>vs. 2.5% industry average</div>
+      </div>
+    </div>
+    <div class="proof-quotes reveal d2">
+      <div class="pq">
+        <div class="pq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="pq-text">&#8220;Before CyberMagnet, we were invisible online. Now we rank in the top 3 for every major keyword in our city. Calls tripled in 90 days.&#8221;</p>
+        <div class="pq-author">
+          <div class="pq-avatar" style="background:linear-gradient(135deg,#1a4fd8,#3B7FF5)">MR</div>
+          <div><div class="pq-name">Marcus R.</div><div class="pq-biz">HVAC Contractor &mdash; Fort Worth</div></div>
         </div>
       </div>
-      <div class="bundle-summary reveal">
-        <div class="bsum-inner">
-          <div class="bsum-label">Your Custom Package</div>
-          <div class="bsum-selected" id="bsum-selected"><div class="bsum-empty">&#8592; Select services to build your package</div></div>
-          <div class="bsum-divider"></div>
-          <div class="bsum-total-row"><span class="bsum-total-label">Monthly Total</span><span class="bsum-total-val" id="bsum-monthly">$0<span>/mo</span></span></div>
-          <div class="bsum-onetime-row" id="bsum-onetime-wrap" style="display:none"><span class="bsum-onetime-label">One-Time Total</span><span class="bsum-onetime-val" id="bsum-onetime">$0</span></div>
-          <div class="bsum-note" id="bsum-discount" style="display:none"></div>
-          <a href="/funnels/strategy-call/" class="bsum-cta" id="bsum-cta">Select services above &#8594;</a>
-          <div class="bsum-micro">Free call &#xB7; No commitment &#xB7; Prices finalized on call</div>
+      <div class="pq">
+        <div class="pq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="pq-text">&#8220;The AI receptionist paid for itself in the first week. We stopped losing after-hours calls and our booking rate went up immediately.&#8221;</p>
+        <div class="pq-author">
+          <div class="pq-avatar" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">JL</div>
+          <div><div class="pq-name">Jessica L.</div><div class="pq-biz">Cleaning Company &mdash; Dallas</div></div>
+        </div>
+      </div>
+      <div class="pq">
+        <div class="pq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="pq-text">&#8220;They built a website and SEO system that generated $18K per month in new revenue within 4 months. Zero ad spend. Just organic leads.&#8221;</p>
+        <div class="pq-author">
+          <div class="pq-avatar" style="background:linear-gradient(135deg,#D97706,#f59e0b)">DK</div>
+          <div><div class="pq-name">David K.</div><div class="pq-biz">Plumbing Company &mdash; Arlington</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══ PRICING ═══════════════════════════════════════════════════════ -->
-<section class="section pricing-section" id="pricing">
-  <div class="section-inner">
-    <div class="sec-eyebrow reveal">Investment</div>
-    <h2 class="sec-h2 reveal">Simple, Transparent Packages.<br><span class="grad-text">No Surprises.</span></h2>
-    <p class="pricing-note reveal">Every package includes direct access to Ben, monthly reporting, and a dedicated strategist &#8212; no account managers, no runaround. 3-month minimum, then month-to-month.</p>
-    <div class="tiers">
-      <div class="tier reveal"><div class="tier-name">Starter</div><div class="tier-price">$950<span>/mo</span></div><div class="tier-tagline">For businesses getting started</div><div class="tier-divider"></div><ul class="tier-features"><li>Google Business Profile setup &amp; management</li><li>Local SEO fundamentals</li><li>6 branded social posts/month</li><li>Monthly performance snapshot</li><li>Review request system</li></ul><a href="/funnels/strategy-call/" class="tier-cta">Get started &#8594;</a></div>
-      <div class="tier reveal"><div class="tier-name">Launch</div><div class="tier-price">$1,800<span>/mo</span></div><div class="tier-tagline">For businesses getting serious</div><div class="tier-divider"></div><ul class="tier-features"><li>GBP optimisation &amp; management</li><li>Local SEO &#8212; on-page, citations, GMB posts</li><li>12 branded social posts/month</li><li>Monthly performance report with rankings</li><li>Review generation system</li><li>Direct access to Ben</li></ul><a href="/funnels/strategy-call/" class="tier-cta">Get started &#8594;</a></div>
-      <div class="tier popular reveal"><div class="tier-badge">Most Popular</div><div class="tier-name">Growth</div><div class="tier-price">$3,500<span>/mo</span></div><div class="tier-tagline">For businesses ready to dominate</div><div class="tier-divider"></div><ul class="tier-features"><li>Everything in Launch</li><li>Website management &amp; CRO</li><li>Paid ads management (Meta + Google)</li><li>Email marketing + automation</li><li>AI chatbot on your website</li><li>Lead follow-up automation</li><li>Bi-weekly strategy calls</li><li>20 social posts/month</li></ul><a href="/funnels/strategy-call/" class="tier-cta">Book a strategy call &#8594;</a></div>
-      <div class="tier reveal"><div class="tier-name">Command</div><div class="tier-price">$8,500<span>/mo</span></div><div class="tier-tagline">For businesses scaling aggressively</div><div class="tier-divider"></div><ul class="tier-features"><li>Everything in Growth</li><li>AI phone receptionist &#8212; 24/7</li><li>Full automation system (CRM, follow-up)</li><li>Content repurposing &#8594; 6 platforms</li><li>Appointment system</li><li>Weekly strategy calls with Ben</li><li>Priority same-day response</li><li>Quarterly brand &amp; strategy deep-dive</li></ul><a href="/funnels/strategy-call/" class="tier-cta">Let&#8217;s talk scope &#8594;</a></div>
+<!-- ════════════════════════════════════════
+     PACKAGES (OUTCOME-BASED)
+════════════════════════════════════════ -->
+<section class="packages-section">
+  <div class="packages-inner">
+    <div class="reveal" style="text-align:center">
+      <div class="section-eyebrow" style="text-align:center">Packages</div>
+      <h2 class="section-h2" style="text-align:center">Pick your outcome.</h2>
+      <p class="section-sub" style="text-align:center;margin:0 auto var(--sp-sm)">Every package is built around a result, not a list of tasks. Start where you are. Scale when you&#8217;re ready.</p>
     </div>
-    <div class="one-offs">
-      <div class="oo-card reveal"><div class="oo-icon">&#127760;</div><div class="oo-name">Website Design</div><div class="oo-price">from $2,500 one-time</div></div>
-      <div class="oo-card reveal"><div class="oo-icon">&#11088;</div><div class="oo-name">Brand Identity</div><div class="oo-price">from $1,800 one-time</div></div>
-      <div class="oo-card reveal"><div class="oo-icon">&#127919;</div><div class="oo-name">Funnel Building</div><div class="oo-price">from $2,500 one-time</div></div>
-      <div class="oo-card reveal"><div class="oo-icon">&#129302;</div><div class="oo-name">AI Receptionist</div><div class="oo-price">$600 setup + $400/mo</div></div>
+    <div class="pkg-grid">
+
+      <div class="pkg-card reveal">
+        <div class="pkg-tier">Starter</div>
+        <div class="pkg-name">Lead Flow Starter</div>
+        <p class="pkg-tagline">Get found locally and start generating inbound calls within 60 days.</p>
+        <div class="pkg-price">
+          <div class="pkg-from">from</div>
+          <div class="pkg-amount">$500<span class="pkg-period">/mo</span></div>
+        </div>
+        <div class="pkg-features">
+          <div class="pf"><span class="pf-check">&#10003;</span>Local SEO foundation</div>
+          <div class="pf"><span class="pf-check">&#10003;</span>Google Business Profile optimization</div>
+          <div class="pf"><span class="pf-check">&#10003;</span>Review generation system</div>
+          <div class="pf"><span class="pf-check">&#10003;</span>Monthly ranking reports</div>
+          <div class="pf"><span class="pf-check">&#10003;</span>On-page SEO</div>
+        </div>
+        <a href="/funnels/strategy-call/" class="pkg-cta">Get Started &rarr;</a>
+      </div>
+
+      <div class="pkg-card featured reveal d1">
+        <div class="pkg-badge">Most Popular</div>
+        <div class="pkg-tier">Growth</div>
+        <div class="pkg-name">Local Dominance System</div>
+        <p class="pkg-tagline">Dominate your local market with SEO, a converting website, and automated follow-up.</p>
+        <div class="pkg-price">
+          <div class="pkg-from">from</div>
+          <div class="pkg-amount">$1,200<span class="pkg-period">/mo</span></div>
+        </div>
+        <div class="pkg-features">
+          <div class="pf"><span class="pf-check">&#10003;</span>Everything in Lead Flow Starter</div>
+          <div class="pf"><span class="pf-check">&#10003;</span>Conversion-focused website build</div>
+          <div class="pf"><span class="pf-check">&#10003;</span>Lead capture funnels</div>
+          <div class="pf"><span class="pf-check">&#10003;</span>AI follow-up automation</div>
+          <div class="pf"><span class="pf-check">&#10003;</span>Monthly strategy calls</div>
+        </div>
+        <a href="/funnels/strategy-call/" class="pkg-cta">Get Started &rarr;</a>
+      </div>
+
+      <div class="pkg-card reveal d2">
+        <div class="pkg-tier">Automation</div>
+        <div class="pkg-name">Full Automation Stack</div>
+        <p class="pkg-tagline">Run your entire lead pipeline on autopilot. AI answers calls, books jobs, and follows up.</p>
+        <div class="pkg-price">
+          <div class="pkg-from">from</div>
+          <div class="pkg-amount">$2,000<span class="pkg-period">/mo</span></div>
+        </div>
+        <div class="pkg-features">
+          <div class="pf"><span class="pf-check">&#10003;</span>Everything in Local Dominance</div>
+          <div class="pf"><span class="pf-check">&#10003;</span>AI Phone Receptionist (24/7)</div>
+          <div class="pf"><span class="pf-check">&#10003;</span>Appointment booking automation</div>
+          <div class="pf"><span class="pf-check">&#10003;</span>CRM workflows &amp; lead routing</div>
+          <div class="pf"><span class="pf-check">&#10003;</span>AI chatbot &amp; lead qualification</div>
+        </div>
+        <a href="/funnels/strategy-call/" class="pkg-cta">Get Started &rarr;</a>
+      </div>
+
+      <div class="pkg-card reveal d3">
+        <div class="pkg-tier">Enterprise</div>
+        <div class="pkg-name">Scale &amp; Command</div>
+        <p class="pkg-tagline">Full-stack growth system for businesses ready to own their entire market.</p>
+        <div class="pkg-price">
+          <div class="pkg-from">from</div>
+          <div class="pkg-amount">$3,500<span class="pkg-period">/mo</span></div>
+        </div>
+        <div class="pkg-features">
+          <div class="pf"><span class="pf-check">&#10003;</span>Everything in Full Automation Stack</div>
+          <div class="pf"><span class="pf-check">&#10003;</span>Paid ads management (Google &amp; Meta)</div>
+          <div class="pf"><span class="pf-check">&#10003;</span>Brand identity &amp; positioning</div>
+          <div class="pf"><span class="pf-check">&#10003;</span>Content &amp; social media system</div>
+          <div class="pf"><span class="pf-check">&#10003;</span>Dedicated account strategist</div>
+        </div>
+        <a href="/funnels/strategy-call/" class="pkg-cta">Get Started &rarr;</a>
+      </div>
+
     </div>
-    <p style="text-align:center;font-size:0.82rem;color:var(--gray-600)">Not sure which package fits? <a href="/funnels/strategy-call/" style="color:var(--gold);font-weight:600">Book a free strategy call &#8594;</a> We&#8217;ll only recommend what you actually need.</p>
+    <p style="text-align:center;font-size:0.82rem;color:var(--g6);margin-top:24px">Not sure which fits? <a href="/funnels/strategy-call/" style="color:var(--cobalt)">Book a free call</a> and we&#8217;ll map out the right system for your business.</p>
   </div>
 </section>
 
-<!-- ═══ TESTIMONIALS ═══════════════════════════════════════════════════════ -->
-<section class="section testi-section">
-  <div class="section-inner">
-    <div class="sec-eyebrow reveal" style="text-align:center">Client Results</div>
-    <h2 class="sec-h2 reveal" style="text-align:center">Real Businesses. <span class="grad-text">Real Numbers.</span></h2>
-  </div>
-  <div class="testi-track-wrap" style="margin-top:40px">
-    <div class="testi-track">
-      <div class="testi-card"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="testi-text">&#8220;CyberMagnet tripled our organic traffic in 8 months. Their SEO approach is methodical and the results speak for themselves.&#8221;</div><div class="testi-author">James Mitchell &#8212; CEO, StellarShop</div></div>
-      <div class="testi-card"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="testi-text">&#8220;The brand refresh completely transformed how our market perceives us. Premium, authoritative, on point.&#8221;</div><div class="testi-author">Sarah Reyes &#8212; Founder, Axiom SaaS</div></div>
-      <div class="testi-card"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="testi-text">&#8220;Their funnel converted at 4.7% &#8212; nearly double our previous agency&#8217;s best. The AI automation alone saved us 20 hours a week.&#8221;</div><div class="testi-author">Tom Kellerman &#8212; Director, CoreCoach</div></div>
-      <div class="testi-card"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="testi-text">&#8220;What sets CyberMagnet apart is their strategic thinking. They didn&#8217;t just execute &#8212; they changed how we think about growth entirely.&#8221;</div><div class="testi-author">Amara Lewis &#8212; CMO, Nexus B2B</div></div>
-      <div class="testi-card"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="testi-text">&#8220;We went from invisible on Google to ranking top 3 in our city for every major keyword in under 90 days.&#8221;</div><div class="testi-author">Derek W. &#8212; HVAC Owner, Fort Worth</div></div>
-      <div class="testi-card"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="testi-text">&#8220;Ethical, transparent, and genuinely invested in our success. Rare to find that combination in a digital agency.&#8221;</div><div class="testi-author">Michael Park &#8212; Owner, VaultFi</div></div>
-      <!-- Duplicate for seamless loop -->
-      <div class="testi-card"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="testi-text">&#8220;CyberMagnet tripled our organic traffic in 8 months. Their SEO approach is methodical and the results speak for themselves.&#8221;</div><div class="testi-author">James Mitchell &#8212; CEO, StellarShop</div></div>
-      <div class="testi-card"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="testi-text">&#8220;The brand refresh completely transformed how our market perceives us. Premium, authoritative, on point.&#8221;</div><div class="testi-author">Sarah Reyes &#8212; Founder, Axiom SaaS</div></div>
-      <div class="testi-card"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="testi-text">&#8220;Their funnel converted at 4.7% &#8212; nearly double our previous agency&#8217;s best. The AI automation alone saved us 20 hours a week.&#8221;</div><div class="testi-author">Tom Kellerman &#8212; Director, CoreCoach</div></div>
-      <div class="testi-card"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="testi-text">&#8220;What sets CyberMagnet apart is their strategic thinking. They didn&#8217;t just execute &#8212; they changed how we think about growth entirely.&#8221;</div><div class="testi-author">Amara Lewis &#8212; CMO, Nexus B2B</div></div>
-      <div class="testi-card"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="testi-text">&#8220;We went from invisible on Google to ranking top 3 in our city for every major keyword in under 90 days.&#8221;</div><div class="testi-author">Derek W. &#8212; HVAC Owner, Fort Worth</div></div>
-      <div class="testi-card"><div class="testi-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="testi-text">&#8220;Ethical, transparent, and genuinely invested in our success. Rare to find that combination in a digital agency.&#8221;</div><div class="testi-author">Michael Park &#8212; Owner, VaultFi</div></div>
+<!-- ════════════════════════════════════════
+     WHY CYBERMAGNET
+════════════════════════════════════════ -->
+<section class="why-section">
+  <div class="why-inner">
+    <div class="why-content reveal">
+      <div class="section-eyebrow">Why CyberMagnet</div>
+      <h2 class="section-h2">Built different.<br>On purpose.</h2>
+      <p style="font-size:0.95rem;color:var(--g4);line-height:1.7;margin-bottom:8px">Most agencies give you reports. We give you results. There&#8217;s a difference.</p>
+      <div class="why-points">
+        <div class="why-point">
+          <div class="wp-icon">&#9889;</div>
+          <div>
+            <div class="wp-title">Systems, not services</div>
+            <div class="wp-desc">We don&#8217;t sell you SEO. We build a system that makes your business impossible to ignore in your local market.</div>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="wp-icon">&#127919;</div>
+          <div>
+            <div class="wp-title">DFW-local by design</div>
+            <div class="wp-desc">We serve one market: Dallas&#x2013;Fort Worth. We know the neighborhoods, the competition, and what moves the needle here.</div>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="wp-icon">&#129302;</div>
+          <div>
+            <div class="wp-title">AI-first, not AI-gimmick</div>
+            <div class="wp-desc">Our automation tools do real work: answer calls, book jobs, follow up leads. Not dashboards. Not vanity metrics.</div>
+          </div>
+        </div>
+        <div class="why-point">
+          <div class="wp-icon">&#128200;</div>
+          <div>
+            <div class="wp-title">Outcomes over activity</div>
+            <div class="wp-desc">We measure success in revenue, leads, and rankings. Not hours billed or reports sent.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="why-visual reveal d2">
+      <div class="why-card">
+        <div class="why-card-title">What a CyberMagnet system delivers</div>
+        <div class="why-metric"><span class="wm-label">Avg. time to first ranking improvement</span><span class="wm-val">30&#x2013;45 days</span></div>
+        <div class="why-metric"><span class="wm-label">AI receptionist answer rate</span><span class="wm-val">100%</span></div>
+        <div class="why-metric"><span class="wm-label">Average funnel conversion rate</span><span class="wm-val">4.7%</span></div>
+        <div class="why-metric"><span class="wm-label">Client retention rate</span><span class="wm-val">97%</span></div>
+        <div class="why-metric"><span class="wm-label">Average ROI across all clients</span><span class="wm-val">3.8&#xD7;</span></div>
+        <div class="why-metric"><span class="wm-label">Years building DFW local brands</span><span class="wm-val">4+</span></div>
+        <p class="why-note">Numbers based on active client averages. Results vary by market, service type, and starting position.</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- ════════════════════════════════════════
+     FINAL CTA
+════════════════════════════════════════ -->
 <section class="final-cta">
-  <div class="fc-kicker">One Decision. Significant Results.</div>
-  <h2 class="fc-h2">
-    <span class="l1">STOP LOSING</span>
-    <span class="l2">TO YOUR COMPETITORS.</span>
-    <span class="l3">START NOW.</span>
-  </h2>
-  <p class="fc-sub">
-    <strong>Availability is limited and demand is high.</strong> Every week without a clear digital growth strategy is a week your competitors are widening the gap. The call is free. The plan is yours to keep. The only question is whether you'll act on it today.
-  </p>
-  <div class="fc-ctas">
-    <a href="/funnels/strategy-call/" class="btn-primary-lux">📅 Book My Strategy Call — It's Free</a>
-    <a href="/funnels/free-seo-audit/" class="btn-secondary-lux">🔍 Get My Free Website Audit First</a>
+  <div class="fc-inner reveal">
+    <div class="section-eyebrow" style="text-align:center">Ready to grow?</div>
+    <h2 class="fc-h2">Stop losing leads to<br>businesses that just<br><em style="font-style:normal;background:linear-gradient(90deg,#D97706,#3B7FF5);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent">show up first.</em></h2>
+    <p class="fc-sub">Book a free 30-minute strategy call. We&#8217;ll review your market, show you where you&#8217;re leaving money on the table, and map out the right system for your business.</p>
+    <div class="cta-row" style="justify-content:center">
+      <a href="/funnels/strategy-call/" class="btn-primary" style="font-size:1rem;padding:16px 32px">&#128197; Book a Free Strategy Call</a>
+      <a href="/results/" class="btn-secondary" style="font-size:1rem;padding:16px 32px">&#128247; See Client Results</a>
+    </div>
+    <p class="fc-note">Free. No pitch. No pressure. Just clarity.</p>
   </div>
-  <div class="fc-micro">Spots filling fast · <span>Less than 60 seconds to secure yours</span> · Zero obligation</div>
 </section>
-
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
@@ -883,112 +911,90 @@ nav#main-nav.header-hidden,.urgency-bar.header-hidden{transform:translateY(-100%
   </div>
   <div class="footer-bottom"><span>&#169; 2025 CyberMagnet Marketing Solutions LLC &#xB7; Dallas, Texas</span><span><a href="/privacy/">Privacy</a> &#xB7; <a href="/terms/">Terms</a></span></div>
 </footer>
+<!-- REFERRAL POPUP -->
+<div class="ref-popup-overlay" id="ref-popup-overlay" role="dialog" aria-modal="true">
+  <div class="ref-popup">
+    <button class="ref-popup-close" id="ref-popup-close">&#10005;</button>
+    <div class="ref-popup-eyebrow">&#127873; Limited-time offer</div>
+    <h3>Refer a Business.<br>Earn 10% Cash.</h3>
+    <p>Know a local business that needs a website, SEO, or AI automation? Send them our way and earn <strong style="color:#fff">10% of everything they invest</strong>.</p>
+    <div class="ref-popup-deadline">&#9888; Offer ends December 31, 2025</div>
+    <div class="ref-popup-examples">
+      <div class="rpe"><div class="rpe-amount">$250</div><div class="rpe-desc">10% of a $2,500 website</div></div>
+      <div class="rpe"><div class="rpe-amount">$50/mo</div><div class="rpe-desc">10% of $500/mo SEO</div></div>
+      <div class="rpe"><div class="rpe-amount">$75+$30/mo</div><div class="rpe-desc">10% of AI automation</div></div>
+      <div class="rpe"><div class="rpe-amount">No cap</div><div class="rpe-desc">Refer as many as you want</div></div>
+    </div>
+    <a href="/referral/" class="ref-popup-cta">Submit a Referral &rarr;</a>
+    <button class="ref-popup-dismiss" id="ref-popup-dismiss">No thanks</button>
+  </div>
+</div>
 
 <script>
-/* ── PARTICLES ── */
+/* PARTICLES */
 (function(){
-  var canvas=document.getElementById('hero-canvas');
+  var canvas=document.getElementById("hero-canvas");
   if(!canvas)return;
-  var ctx=canvas.getContext('2d');
+  var ctx=canvas.getContext("2d");
   var W,H,pts=[];
-  function resize(){W=canvas.width=canvas.offsetWidth;H=canvas.height=canvas.offsetHeight;pts=[];var n=Math.min(Math.floor(W*H/12000),80);for(var i=0;i<n;i++){var g=Math.random()>0.55;pts.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.4+0.3,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,a:Math.random()*.3+.05,g:g});}}
-  function draw(){ctx.clearRect(0,0,W,H);for(var i=0;i<pts.length;i++){for(var j=i+1;j<pts.length;j++){var dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y,d=Math.hypot(dx,dy);if(d<110){ctx.beginPath();ctx.strokeStyle=pts[i].g?'rgba(201,168,76,'+(1-d/110)*.06+')':'rgba(37,99,235,'+(1-d/110)*.07+')';ctx.lineWidth=.5;ctx.moveTo(pts[i].x,pts[i].y);ctx.lineTo(pts[j].x,pts[j].y);ctx.stroke();}}}
-  for(var k=0;k<pts.length;k++){var p=pts[k];ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=p.g?'rgba(201,168,76,'+p.a+')':'rgba(37,99,235,'+p.a+')';ctx.fill();p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;}
-  requestAnimationFrame(draw);}
-  window.addEventListener('resize',resize);resize();draw();
+  function resize(){W=canvas.width=canvas.offsetWidth;H=canvas.height=canvas.offsetHeight;pts=[];var n=Math.min(Math.floor(W*H/12000),80);for(var i=0;i<n;i++){var g=Math.random()>0.55;pts.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.6+0.3,vx:(Math.random()-0.5)*0.18,vy:(Math.random()-0.5)*0.18,gold:g});}}
+  function draw(){ctx.clearRect(0,0,W,H);pts.forEach(function(p){ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=p.gold?"rgba(217,119,6,0.6)":"rgba(59,127,245,0.6)";ctx.fill();p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=W;if(p.x>W)p.x=0;if(p.y<0)p.y=H;if(p.y>H)p.y=0;});requestAnimationFrame(draw);}
+  window.addEventListener("resize",resize);resize();draw();
 })();
 
-/* ── SCROLL REVEAL ── */
+/* SCROLL REVEAL */
 (function(){
-  var els=document.querySelectorAll('.reveal');
-  // Set initial hidden state via JS (so non-JS users always see content)
-  els.forEach(function(el){
-    el.style.opacity='0';
-    el.style.transform='translateY(24px)';
-  });
-  // Fallback: make all visible after 2s regardless
-  setTimeout(function(){
-    els.forEach(function(el){ el.style.opacity='1'; el.style.transform='translateY(0)'; });
-  }, 2000);
-  // IO for animated reveals
-  if('IntersectionObserver' in window){
-    var obs=new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){
-          e.target.style.opacity='1';
-          e.target.style.transform='translateY(0)';
-          obs.unobserve(e.target);
-        }
-      });
-    },{threshold:0.01,rootMargin:'0px 0px 50px 0px'});
+  var els=document.querySelectorAll(".reveal");
+  els.forEach(function(el){el.style.opacity="0";el.style.transform="translateY(24px)";});
+  setTimeout(function(){els.forEach(function(el){el.style.opacity="1";el.style.transform="translateY(0)";});},2000);
+  if("IntersectionObserver" in window){
+    var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.style.opacity="1";e.target.style.transform="translateY(0)";obs.unobserve(e.target);}});},{threshold:0.12,rootMargin:"0px 0px -40px 0px"});
     els.forEach(function(el){obs.observe(el);});
-  } else {
-    // No IO support - show everything immediately
-    els.forEach(function(el){ el.style.opacity='1'; el.style.transform='translateY(0)'; });
   }
 })();
 
-/* ── SCROLL HIDE/SHOW ── */
+/* NAV SCROLL HIDE */
 (function(){
-  var ub=document.querySelector('.urgency-bar');
-  var nav=document.getElementById('main-nav');
+  var ub=document.querySelector(".urgency-bar"),nav=document.getElementById("main-nav");
   if(!nav)return;
   var lastY=0,ticking=false,hidden=false;
-  function update(){var y=window.scrollY,delta=Math.abs(y-lastY);if(delta<4){ticking=false;return;}
-  if(y>lastY&&y>80&&!hidden){hidden=true;nav.classList.add('header-hidden');if(ub)ub.classList.add('header-hidden');}
-  else if(y<lastY&&hidden){hidden=false;nav.classList.remove('header-hidden');if(ub)ub.classList.remove('header-hidden');}
-  lastY=y;ticking=false;}
-  window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(update);ticking=true;}},{passive:true});
+  function update(){var y=window.scrollY,d=Math.abs(y-lastY);if(d<4){ticking=false;return;}
+    if(y>lastY&&y>80&&!hidden){hidden=true;nav.classList.add("header-hidden");if(ub)ub.classList.add("header-hidden");}
+    else if(y<lastY&&hidden){hidden=false;nav.classList.remove("header-hidden");if(ub)ub.classList.remove("header-hidden");}
+    lastY=y;ticking=false;}
+  window.addEventListener("scroll",function(){if(!ticking){requestAnimationFrame(update);ticking=true;}},{passive:true});
 })();
 
-/* ── MOBILE NAV ── */
+/* MOBILE NAV */
 (function(){
-  var ham=document.getElementById('nav-ham'),drawer=document.getElementById('mob-drawer'),overlay=document.getElementById('mob-overlay'),closeBtn=document.getElementById('mob-close');
+  var ham=document.getElementById("nav-ham"),drawer=document.getElementById("mob-drawer"),overlay=document.getElementById("mob-overlay"),cl=document.getElementById("mob-close");
   if(!ham||!drawer)return;
-  function openNav(){drawer.classList.add('open');if(overlay)overlay.classList.add('open');ham.classList.add('open');document.body.style.overflow='hidden';}
-  function closeNav(){drawer.classList.remove('open');if(overlay)overlay.classList.remove('open');ham.classList.remove('open');document.body.style.overflow='';}
-  ham.addEventListener('click',function(){drawer.classList.contains('open')?closeNav():openNav();});
-  if(closeBtn)closeBtn.addEventListener('click',closeNav);
-  if(overlay)overlay.addEventListener('click',closeNav);
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeNav();});
-  drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeNav);});
-  document.querySelectorAll('.nav-item').forEach(function(item){
-    var drop=item.querySelector('.nav-drop');if(!drop)return;var timer;
-    item.addEventListener('mouseenter',function(){clearTimeout(timer);drop.style.cssText='opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto';});
-    item.addEventListener('mouseleave',function(){timer=setTimeout(function(){drop.style.cssText='opacity:0;visibility:hidden;transform:translateX(-50%) translateY(-8px);pointer-events:none';},120);});
+  function op(){drawer.classList.add("open");if(overlay)overlay.classList.add("open");ham.classList.add("open");document.body.style.overflow="hidden";}
+  function cl2(){drawer.classList.remove("open");if(overlay)overlay.classList.remove("open");ham.classList.remove("open");document.body.style.overflow="";}
+  ham.addEventListener("click",function(){drawer.classList.contains("open")?cl2():op();});
+  if(cl)cl.addEventListener("click",cl2);
+  if(overlay)overlay.addEventListener("click",cl2);
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")cl2();});
+  document.querySelectorAll(".nav-item").forEach(function(item){
+    var drop=item.querySelector(".nav-drop");if(!drop)return;var t;
+    item.addEventListener("mouseenter",function(){clearTimeout(t);drop.style.cssText="opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);pointer-events:auto";});
+    item.addEventListener("mouseleave",function(){t=setTimeout(function(){drop.style.cssText="opacity:0;visibility:hidden;transform:translateX(-50%) translateY(-8px);pointer-events:none";},120);});
   });
 })();
 
-/* ── BUNDLE CONFIGURATOR ── */
+/* REFERRAL POPUP */
 (function(){
-  var items={};
-  var checkboxes=document.querySelectorAll('.bitem input[type="checkbox"]');
-  checkboxes.forEach(function(cb){cb.addEventListener('change',function(){var name=cb.dataset.name,price=parseInt(cb.dataset.price),onetime=cb.dataset.onetime==='true';if(cb.checked){items[name]={price:price,onetime:onetime};}else{delete items[name];}updateSummary();});});
-  function getDiscount(n){if(n>=5)return 0.15;if(n>=4)return 0.12;if(n>=3)return 0.10;if(n>=2)return 0.05;return 0;}
-  function nextHint(n){if(n===1)return 'Add 1 more monthly service to unlock <strong>5% off</strong>';if(n===2)return 'Add 1 more for <strong>10% off</strong>';if(n===3)return 'Add 1 more for <strong>12% off</strong>';if(n===4)return 'Add 1 more for <strong>15% off</strong>';if(n>=5)return 'Maximum bundle rate — great value!';return '';}
-  function updateSummary(){
-    var monthly=0,oneTime=0,names=Object.keys(items);
-    var mCount=names.filter(function(n){return !items[n].onetime;}).length;
-    names.forEach(function(n){if(items[n].onetime)oneTime+=items[n].price;else monthly+=items[n].price;});
-    var rate=getDiscount(mCount),savings=Math.round(monthly*rate),final=monthly-savings;
-    var sel=document.getElementById('bsum-selected');
-    if(names.length===0){sel.innerHTML='<div class="bsum-empty">← Select services to build your package</div>';}
-    else{sel.innerHTML=names.map(function(n){return '<span class="bsum-tag">'+n+'<button onclick="removeItem(&#39;'+n+'&#39;)" title="Remove">✕</button></span>';}).join('');}
-    var moEl=document.getElementById('bsum-monthly');
-    if(rate>0&&monthly>0){moEl.innerHTML='<span style="text-decoration:line-through;opacity:0.4;font-size:1.1rem">$'+monthly.toLocaleString()+'</span> $'+final.toLocaleString()+'<span>/mo</span>';}
-    else{moEl.innerHTML='$'+monthly.toLocaleString()+'<span>/mo</span>';}
-    var oWrap=document.getElementById('bsum-onetime-wrap');
-    if(oneTime>0){oWrap.style.display='flex';document.getElementById('bsum-onetime').textContent='from $'+oneTime.toLocaleString();}
-    else{oWrap.style.display='none';}
-    var disc=document.getElementById('bsum-discount');
-    if(rate>0&&monthly>0){disc.style.display='block';disc.innerHTML='🏷 <strong>'+Math.round(rate*100)+'% bundle discount</strong> — saving $'+savings.toLocaleString()+'/mo &nbsp;·&nbsp; '+nextHint(mCount);}
-    else if(mCount===1){disc.style.display='block';disc.innerHTML=nextHint(mCount);}
-    else{disc.style.display='none';}
-    var cta=document.getElementById('bsum-cta');
-    if(names.length>0){cta.href='/funnels/strategy-call/?services='+encodeURIComponent(names.join(', '))+(rate>0?'&discount='+Math.round(rate*100)+'pct':'');cta.textContent='📅 Book a Call to Finalize ↗';}
-    else{cta.href='/funnels/strategy-call/';cta.textContent='Select services above →';}
-  }
-  window.removeItem=function(name){delete items[name];document.querySelectorAll('.bitem input').forEach(function(cb){if(cb.dataset.name===name)cb.checked=false;});updateSummary();};
+  var overlay=document.getElementById("ref-popup-overlay");
+  var closeBtn=document.getElementById("ref-popup-close");
+  var dismissBtn=document.getElementById("ref-popup-dismiss");
+  if(!overlay)return;
+  function closePopup(){overlay.classList.remove("open");document.body.style.overflow="";try{sessionStorage.setItem("ref_popup_dismissed","1");}catch(e){}}
+  try{if(sessionStorage.getItem("ref_popup_dismissed"))return;}catch(e){}
+  setTimeout(function(){overlay.classList.add("open");document.body.style.overflow="hidden";},8000);
+  closeBtn.addEventListener("click",closePopup);
+  dismissBtn.addEventListener("click",closePopup);
+  overlay.addEventListener("click",function(e){if(e.target===overlay)closePopup();});
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closePopup();});
 })();
 </script>
 </body>

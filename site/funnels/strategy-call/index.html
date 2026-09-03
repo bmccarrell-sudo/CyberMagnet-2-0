@@ -953,6 +953,11 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
 .footer-bottom a:hover{color:var(--gray-400)}
 @media(max-width:800px){.footer-inner{grid-template-columns:1fr 1fr}}
 @media(max-width:500px){.footer-inner{grid-template-columns:1fr}}
+
+/* CALENDLY EMBED */
+.calendly-wrap{margin-top:32px;border-radius:12px;overflow:hidden;
+  border:1px solid rgba(255,255,255,0.08);background:#fff;min-height:700px}
+.calendly-inline-widget{min-width:320px;height:700px}
 </style>
 </head>
 <body>
@@ -1210,11 +1215,19 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,0.05);paddi
     <div class="bk-kicker">Limited spots available</div>
     <h2 class="bk-h2">Ready to Stop Losing Leads?</h2>
     <p class="bk-sub">Book your free 30-minute strategy call below. We'll review your current presence, show you what's costing you clients, and hand you a clear plan to fix it.</p>
-    <div class="bk-ctas">
-      <a href="https://calendly.com/cybermagnet" class="bk-btn-primary">📅 Book My Free Strategy Call</a>
-      <a href="/funnels/free-seo-audit/" class="bk-btn-secondary">🔍 Get a Free SEO Audit First</a>
+    <div class="calendly-wrap">
+      <!-- Calendly inline widget begin -->
+      <div class="calendly-inline-widget"
+           data-url="https://calendly.com/cybermagnet/strategy-call?hide_landing_page_details=1&hide_gdpr_banner=1&primary_color=D97706"
+           style="min-width:320px;height:700px;"></div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <!-- Calendly inline widget end -->
     </div>
-    <div class="bk-micro">Spots filling fast · <span>Under 60 seconds to book</span> · Zero obligation · Free to keep the plan</div>
+    <div class="bk-micro" style="margin-top:16px">Free · No pitch · No pressure · Just clarity on your next move</div>
+    <p style="text-align:center;font-size:0.78rem;color:#445566;margin-top:8px">
+      Prefer a different time? <a href="tel:+19723385778" style="color:#2563EB">(972) 338-5778</a> or 
+      <a href="mailto:hello@cybermagnet.net" style="color:#2563EB">hello@cybermagnet.net</a>
+    </p>
   </div>
 </section>
 
